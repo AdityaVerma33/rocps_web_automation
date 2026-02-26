@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="2.4.589.0" version="37">
+    <Decoder name="Mediation" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="Record" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" allowEOFTerm="false" terminator="lf" root="false" name="Record" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="1" generate="field" name="Event_Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="2" generate="field" name="Record_Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="3" generate="field" name="Call_Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="4" generate="field" name="Calling_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="5" generate="field" name="Called_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="6" generate="field" name="Datetime" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="yyyy-MM-dd HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="7" generate="field" name="Duration" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="8" generate="field" name="Subscriber_Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="9" generate="field" name="Volume" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="10" generate="field" name="APN_ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="11" generate="field" name="APN_Operator" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="12" generate="field" name="IMSI" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="13" generate="field" name="IMEI" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="14" generate="field" name="Call_Direction" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="15" generate="field" name="IN_Trunk" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="16" generate="field" name="IN_Operator_Name" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="17" generate="field" name="Out_Trunk" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="18" generate="field" name="Out_Operator_Name" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="19" generate="field" name="Cell_ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="105" xPos="120" name="Record" width="50" type="Record" recordType="Record" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output"/>
+                </Outputs>
+            </Node>
+            <Node height="60" yPos="100" xPos="245" name="Mapping" width="60" type="Mapping" recordType="mediation_fingerprint" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="$$RecordNumber" target="med_record_number"/>
+                    <Mapping expression="$$RecordAddress" target="med_record_address"/>
+                    <Mapping expression="$$RecordLength" target="med_record_length"/>
+                    <Mapping expression="$$RecordType" target="med_record_type"/>
+                    <Mapping expression="Calling_Number" target="med_a_number"/>
+                    <Mapping expression="Called_Number" target="med_b_number"/>
+                    <Mapping expression="Datetime" target="med_time_stamp"/>
+                    <Mapping expression="ToInteger(Duration)" target="med_duration"/>
+                    <Mapping expression="Event_Type" target="med_event_type"/>
+                    <Mapping expression="Record_Type" target="med_rec_type_name"/>
+                    <Mapping expression="Call_Type" target="med_call_type"/>
+                    <Mapping expression="'N'" target="med_duplicate_fl"/>
+                    <Mapping expression="$$Filename" target="med_file_name"/>
+                    <Mapping expression="Global_ID()" target="med_id"/>
+                    <Mapping expression="HourPart(Datetime)" target="med_part_key"/>
+                    <Mapping expression="Calling_Number" target="med_a_number_normalised"/>
+                    <Mapping expression="Called_Number" target="med_b_number_normalised"/>
+                    <Mapping expression="APN_ID" target="med_apn_network_id"/>
+                    <Mapping expression="ToInteger(Volume)" target="med_volume"/>
+                    <Mapping expression="Subscription_Type" target="med_subscription_type"/>
+                    <Mapping expression="Calling_Number" target="med_a_number_normalized"/>
+                    <Mapping expression="Called_Number" target="med_b_number_normalized"/>
+                    <Mapping expression="APN_ID" target="med_apn"/>
+                    <Mapping expression="APN_Operator" target="med_apn_operator"/>
+                    <Mapping expression="IMSI" target="med_imsi"/>
+                    <Mapping expression="IMEI" target="med_imei"/>
+                    <Mapping expression="Datetime" target="med_start_dttm"/>
+                    <Mapping expression="Call_Direction" target="med_call_direction"/>
+                    <Mapping target="med_switch_name"/>
+                    <Mapping expression="IN_Trunk" target="med_in_trunk"/>
+                    <Mapping expression="Subscriber_Type" target="med_subscriber_type"/>
+                    <Mapping expression="Hash(Calling_Number, Datetime)" target="med_duplicate_hashcode"/>
+                    <Mapping expression="IN_Operator_Name" target="med_in_operator_name"/>
+                    <Mapping expression="Out_Trunk" target="med_out_trunk"/>
+                    <Mapping expression="Out_Operator_Name" target="med_out_operator_name"/>
+                    <Mapping expression="Cell_ID" target="med_cell_id"/>
+                    <Mapping target="med_extra2"/>
+                    <Mapping expression="'aljawal-rbt'" target="med_extra1"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="105" UsagePartitionId="GetUsagePartitionId('Issues Usage Group', med_start_dttm, SecondPart(med_start_dttm))" xPos="375" unicode="false" name="Spark Output" width="60" outputKey="med" charset="windows-1252" filename="Concatenate( $$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat' )" type="SparkOutput" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="med" description="Global_ID" name="Global_ID" blockSize="1000000" type="GenerateId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="mediation_fingerprint">
+                <Field id="20" name="med_id" nullable="false" type="integer"/>
+                <Field id="21" name="sts_id" nullable="false" type="integer"/>
+                <Field id="22" name="sfl_id" nullable="false" type="integer"/>
+                <Field id="23" name="med_record_number" nullable="false" type="integer"/>
+                <Field id="24" name="med_record_address" nullable="false" type="integer"/>
+                <Field id="25" name="med_record_length" nullable="false" type="integer"/>
+                <Field id="26" name="med_record_type" nullable="false" type="string"/>
+                <Field id="27" name="med_duplicate_hashcode" nullable="true" type="integer"/>
+                <Field id="28" name="med_duplicate_fl" nullable="false" type="string"/>
+                <Field id="29" name="med_file_name" nullable="true" type="string"/>
+                <Field id="30" name="med_event_type" nullable="true" type="string"/>
+                <Field id="31" name="med_rec_type_name" nullable="true" type="string"/>
+                <Field id="32" name="med_call_type" nullable="true" type="string"/>
+                <Field id="33" name="med_a_number" nullable="true" type="string"/>
+                <Field id="34" name="med_a_number_normalized" nullable="true" type="string"/>
+                <Field id="35" name="med_b_number" nullable="true" type="string"/>
+                <Field id="36" name="med_b_number_normalized" nullable="true" type="string"/>
+                <Field id="37" name="msc_c_number" nullable="true" type="string"/>
+                <Field id="38" name="msc_c_number_normalized" nullable="true" type="string"/>
+                <Field id="39" name="med_apn" nullable="true" type="string"/>
+                <Field id="40" name="med_apn_operator" nullable="true" type="string"/>
+                <Field id="41" name="med_imsi" nullable="true" type="string"/>
+                <Field id="42" name="med_imei" nullable="true" type="string"/>
+                <Field id="43" name="med_start_dttm" nullable="false" type="datetime"/>
+                <Field id="44" name="med_duration" nullable="true" type="integer"/>
+                <Field id="45" name="med_volume" nullable="true" type="integer"/>
+                <Field id="46" name="med_call_direction" nullable="true" type="string"/>
+                <Field id="47" name="med_switch_name" nullable="true" type="string"/>
+                <Field id="48" name="med_in_trunk" nullable="true" type="string"/>
+                <Field id="49" name="med_in_operator_name" nullable="true" type="string"/>
+                <Field id="50" name="med_out_trunk" nullable="true" type="string"/>
+                <Field id="51" name="med_out_operator_name" nullable="true" type="string"/>
+                <Field id="52" name="med_cell_id" nullable="true" type="string"/>
+                <Field id="53" name="med_subscriber_type" nullable="true" type="string"/>
+                <Field id="54" name="med_part_key" nullable="true" type="integer"/>
+                <Field id="55" name="med_rate" nullable="true" type="decimal"/>
+                <Field id="56" name="med_extra1" nullable="true" type="string"/>
+                <Field id="57" name="med_extra2" nullable="true" type="string"/>
+                <Field id="58" name="med_extra3" nullable="true" type="string"/>
+                <Field id="59" name="med_extra4" nullable="true" type="string"/>
+                <Field id="60" name="med_extra5" nullable="true" type="string"/>
+                <Field id="61" name="med_extra6" nullable="true" type="string"/>
+                <Field id="62" name="med_extra7" nullable="true" type="string"/>
+                <Field id="63" name="med_extra8" nullable="true" type="string"/>
+                <Field id="64" name="med_extra9" nullable="true" type="string"/>
+                <Field id="65" name="med_extra10" nullable="true" type="string"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

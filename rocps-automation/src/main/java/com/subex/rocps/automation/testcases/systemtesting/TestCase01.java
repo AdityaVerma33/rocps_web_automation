@@ -1,0 +1,192 @@
+package com.subex.rocps.automation.testcases.systemtesting;
+
+import com.subex.rocps.automation.helpers.application.aggregation.AggregationResult;
+import com.subex.rocps.automation.helpers.application.matchandrate.EventIdentiferDefinition;
+import com.subex.rocps.automation.helpers.application.matchandrate.EventMatchRule;
+import com.subex.rocps.automation.helpers.application.matchandrate.EventMatchRuleGroup;
+import com.subex.rocps.automation.helpers.application.networkConfiguraiton.DialStringSet;
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.Account;
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.BillProfile;
+import com.subex.rocps.automation.helpers.application.system.TaskSchedule;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+import com.subex.automation.helpers.application.screens.BandHelper;
+import com.subex.automation.helpers.application.screens.ElementCreateHelper;
+import com.subex.automation.helpers.application.screens.FastEntryHelper;
+import com.subex.automation.helpers.application.screens.TariffClassHelper;
+import com.subex.automation.helpers.application.screens.TariffHelper;
+import com.subex.automation.helpers.application.screens.TaskSearchHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class TestCase01 extends PSAcceptanceTest {
+	String path = System.getProperty("user.dir") + "\\src\\main\\resources\\";
+	String workBookName = "SystemTestCases.xlsx";
+	String sheetName = "Mnr-DialStringMatch";
+
+	@org.testng.annotations.Test(priority = 1, description = "element creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createElement() throws Exception {
+		try {
+			ElementCreateHelper eleObj = new ElementCreateHelper();
+			eleObj.createElement(path, workBookName, sheetName, "Elements", 1);
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 2, description = "band creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createElement" })
+	public void createband() throws Exception {
+		try {
+			BandHelper bandObj = new BandHelper();
+			bandObj.createBand(path, workBookName, sheetName, "Bands", 1);
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 3, description = "tariff class creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createband" })
+	public void createTariffClass() throws Exception {
+		try {
+			TariffClassHelper tariffObj = new TariffClassHelper();
+			tariffObj.createTariffClass(path, workBookName, sheetName, "TariffClass", 1);
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 4, description = "tariff creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createTariffClass" })
+	public void createTariff() throws Exception {
+		try {
+			TariffHelper tariffObj = new TariffHelper();
+			FastEntryHelper fastEntryObj = new FastEntryHelper();
+			tariffObj.createTariff(path, workBookName, sheetName, "Tariff", 1);
+			fastEntryObj.createFastEntry(path, workBookName, sheetName, "FastEntry", 1);
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 5, description = "event identifier definition creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createTariff" })
+	public void createEventIdentifierDefn() throws Exception {
+		try {
+			EventIdentiferDefinition evenObj = new EventIdentiferDefinition(path, workBookName, sheetName,
+					"EventIdentifierDefinition");
+			evenObj.eventCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 6, description = "dial stringset creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createEventIdentifierDefn" })
+	public void createDialStringSet() throws Exception {
+		try {
+			DialStringSet eventObj = new DialStringSet(path, workBookName, sheetName, "DialStringSet");
+			eventObj.dialStringCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 7, description = "event match rule group creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createDialStringSet" })
+	public void createEventMatchRuleGroup() throws Exception {
+		try {
+			EventMatchRuleGroup eventObj = new EventMatchRuleGroup(path, workBookName, sheetName,
+					"EventMatchRuleGroup");
+			eventObj.configureEventMatchRuleGroup();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 8, description = "account creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createEventMatchRuleGroup" })
+	public void createAccount() throws Exception {
+		try {
+			Account accObj = new Account(path, workBookName, sheetName, "Account");
+			accObj.accountCreation();
+		} catch (Exception e) {
+			FailureHelper.reportFailure(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 9, description = "bill profile creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createAccount" })
+	public void createBillProfile() throws Exception {
+		try {
+			BillProfile billObj = new BillProfile(path, workBookName, sheetName, "BillProfile");
+			billObj.billProfileCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 10, description = "event match rule creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"createBillProfile" })
+	public void eventMatchRule() throws Exception {
+		try {
+			EventMatchRule eventObj = new EventMatchRule(path, workBookName, sheetName, "EventMatchRule");
+			eventObj.configureEventMatchRule();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 11, description = "scheduling file collection and verify task status", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"eventMatchRule" })
+	public void scheduleFileCollection() throws Exception {
+		try {
+
+			TaskSchedule taskObj = new TaskSchedule();
+			taskObj.fileCollection(path, workBookName, sheetName, "FileSchedule", 1);
+			TaskSearchHelper tskObj = new TaskSearchHelper();
+			tskObj.verifyTaskStatus(path, workBookName, sheetName, "MnrTaskStatus", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 12, description = "run aggregation master task and verifying task status", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
+			"scheduleFileCollection" })
+	public void recurringtasks() throws Exception {
+		try {
+
+			TaskSearchHelper tskObj = new TaskSearchHelper();
+			TaskSchedule taskObj1 = new TaskSchedule();
+			taskObj1.scheduleRecurringTask(path, workBookName, sheetName, "RecurringTask", 1);
+			tskObj.verifyTaskStatus(path, workBookName, sheetName, "AggrTaskStatus", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 13, description = "verifying aggregation result", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void verifyAggregationResult() throws Exception {
+		try {
+			AggregationResult aggrResObj = new AggregationResult(path, workBookName, sheetName, "AggregationResult");
+			aggrResObj.viewAggregationResult();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+}

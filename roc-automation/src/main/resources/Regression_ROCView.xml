@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression">
+	<!-- Web application fixture -->
+	<listeners>
+      <!-- <listener class-name="com.subex.roc.automation.TestNG.BeforeAndAfterExecution"/>
+      <listener class-name="com.subex.roc.automation.TestNG.RetryListener"/>
+      <listener class-name="com.subex.roc.automation.TestNG.EmailableReporter"/> -->
+      <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="ROCView_OR.properties"></parameter>
+	<test name="ROC View Regression" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.rocview.testCreation" /> 
+		</classes>
+	</test>
+</suite>

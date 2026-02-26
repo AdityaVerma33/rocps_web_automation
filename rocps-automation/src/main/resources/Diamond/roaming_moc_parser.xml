@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="1.0.2048.481" version="165">
+    <Decoder name="MOC Parser" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="MocRecord" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" terminator="crlf" allowEOFTerm="false" root="false" name="MocRecord" tokens="42" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="EvtDttm" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="dd/MM/yyyy HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="1" generate="field" name="EvtCount" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="2" generate="field" name="EvtUsage" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="3" generate="field" name="imsi" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="4" generate="field" name="msisdn" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="5" generate="field" name="min" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="6" generate="field" name="mdn" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="7" generate="field" name="calledNumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="8" generate="field" name="dialledDigits" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="9" generate="field" name="calledPlace" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="10" generate="field" name="calledRegion" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="11" generate="field" name="smsDestinationNumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="12" generate="field" name="destinationNetwork" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="13" generate="field" name="simToolkitIndicator" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="14" generate="field" name="causeforTermination" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="15" generate="field" name="recEntityId" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="16" generate="field" name="msg_desc" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="17" generate="field" name="inSwitch" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="18" generate="field" name="outSwitch" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="19" generate="field" name="inRoute" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="20" generate="field" name="outRoute" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="21" generate="field" name="callReference" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="22" generate="field" name="locationAreaCode" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="23" generate="field" name="cellIdentity" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="24" generate="field" name="homeBid" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="25" generate="field" name="homeLocationDesc" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="26" generate="field" name="servingNetwork" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="27" generate="field" name="servingBid" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="28" generate="field" name="servingLocationDesc" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="29" generate="field" name="imei" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="30" generate="field" name="esn" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="31" generate="field" name="teleServiceCode" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="32" generate="field" name="bearerServiceCode" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="33" generate="field" name="transparencyIndicator" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="34" generate="field" name="fixedNetworkUserRate" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="35" generate="field" name="userProtocolIndicator" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="36" generate="field" name="guarenteedBitRate" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="37" generate="field" name="maximumBitRate" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="38" generate="field" name="thirdPartyNumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="39" generate="field" name="cLIRStatusIndicator" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="40" generate="field" name="hSCSDIndicator" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="41" generate="field" name="supplServiceCode" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="135" xPos="15" name="Moc Record" width="90" type="Record" recordType="MocRecord" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="135" width="80" unicode="false" outputKey="moc_event" type="SparkOutput" EventUsage="evt_usage" height="50" UsagePartitionId="GetUsagePartitionId(motc_dttm, SecondPart(motc_dttm))" EventCount="evt_count" xPos="540" name="MocEvent" EventDatetime="evt_dttm" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="130" xPos="290" name="Moc Mapping" width="60" type="Mapping" recordType="moc_event" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events>
+                            <Event expression="recEntityId" name="moc_rec_entity_type" target="$moc_rec_entity_type" type="assign"/>
+                            <Event expression="msg_desc" name="moc_msg_desc" target="$moc_msg_desc" type="assign"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="StatisticDateTime(motc_dttm)" name="Datetime Stats" type="execute"/>
+                            <Event expression="StatisticUsage(totalCallEventDuration)" name="Usage Stats" type="execute"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="GetEventId()" target="evt_id"/>
+                    <Mapping expression="EvtDttm" target="evt_dttm"/>
+                    <Mapping expression="EvtCount" target="evt_count"/>
+                    <Mapping expression="EvtUsage" target="evt_usage"/>
+                    <Mapping expression="$$StreamId" target="stm_id"/>
+                    <Mapping expression="$$TaskId" target="tsk_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="$$RecordAddress" target="record_address"/>
+                    <Mapping expression="$$RecordLength" target="record_length"/>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="imsi" target="imsi"/>
+                    <Mapping expression="msisdn" target="msisdn"/>
+                    <Mapping expression="mdn" target="mdn"/>
+                    <Mapping expression="calledPlace" target="calledPlace"/>
+                    <Mapping expression="calledRegion" target="calledRegion"/>
+                    <Mapping expression="simToolkitIndicator" target="simToolkitIndicator"/>
+                    <Mapping expression="callReference" target="callReference"/>
+                    <Mapping expression="homeBid" target="homeBid"/>
+                    <Mapping expression="servingNetwork" target="servingNetwork"/>
+                    <Mapping expression="servingBid" target="servingBid"/>
+                    <Mapping expression="imei" target="imei"/>
+                    <Mapping expression="esn" target="esn"/>
+                    <Mapping expression="thirdPartyNumber" target="thirdPartyNumber"/>
+                    <Mapping expression="teleServiceCode" target="teleServiceCode"/>
+                    <Mapping expression="bearerServiceCode" target="bearerServiceCode"/>
+                    <Mapping expression="maximumBitRate" target="maximumBitRate"/>
+                    <Mapping expression="hSCSDIndicator" target="hSCSDIndicator"/>
+                    <Mapping expression="EvtDttm" target="motc_dttm"/>
+                    <Mapping expression="GetEventId()" target="motc_id"/>
+                    <Mapping expression="min" target="motc_min"/>
+                    <Mapping expression="calledNumber" target="dialCode"/>
+                    <Mapping expression="dialledDigits" target="dialedDigits"/>
+                    <Mapping expression="smsDestinationNumber" target="smsNumber"/>
+                    <Mapping expression="destinationNetwork" target="motc_network"/>
+                    <Mapping expression="ToString(EvtDttm, 'CCYYMMddHHmmss')" target="callEventStartDttmLocal"/>
+                    <Mapping expression="EvtUsage" target="totalCallEventDuration"/>
+                    <Mapping expression="causeforTermination" target="causeForTerm"/>
+                    <Mapping expression="locationAreaCode" target="locationArea"/>
+                    <Mapping target="recEntityCode"/>
+                    <Mapping expression="cellIdentity" target="cellId"/>
+                    <Mapping expression="homeLocationDesc" target="homeLocationDescription"/>
+                    <Mapping expression="servingLocationDesc" target="servingLocationDescription"/>
+                    <Mapping expression="supplServiceCode" target="supplServiceCode"/>
+                    <Mapping expression="cLIRStatusIndicator" target="clirIndicator"/>
+                    <Mapping expression="transparencyIndicator" target="transparencyIndicator"/>
+                    <Mapping expression="'MOC'" target="eventType"/>
+                    <Mapping target="chargingTimeStamputcOffset"/>
+                    <Mapping expression="guarenteedBitRate" target="guaranteedBitRate"/>
+                    <Mapping expression="userProtocolIndicator" target="userProtocolIndicator"/>
+                    <Mapping target="cseInformation"/>
+                    <Mapping expression="fixedNetworkUserRate" target="fnur"/>
+                    <Mapping target="callEventStartUtcCode"/>
+                    <Mapping expression="0" target="seq_no"/>
+                </Mappings>
+            </Node>
+            <Node height="60" yPos="290" xPos="290" name="Tap Event Mapping" width="60" type="Mapping" recordType="tap_event" nodeKey="shape4">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="stm_id" target="stm_id"/>
+                    <Mapping expression="tsk_id" target="tsk_id"/>
+                    <Mapping expression="sfl_id" target="sfl_id"/>
+                    <Mapping expression="GetTapEventId()" target="evt_id"/>
+                    <Mapping expression="motc_dttm" target="evt_dttm"/>
+                    <Mapping expression="1" target="evt_count"/>
+                    <Mapping expression="totalCallEventDuration" target="evt_usage"/>
+                    <Mapping expression="$$Filename" target="tap_file_name"/>
+                    <Mapping expression="'MOC'" target="tap_event_type"/>
+                    <Mapping expression="'MOC'" target="tap_rec_type_name"/>
+                    <Mapping expression="imsi" target="tap_imsi"/>
+                    <Mapping expression="msisdn" target="tap_msisdn"/>
+                    <Mapping expression="dialCode" target="tap_called_number"/>
+                    <Mapping expression="ToInteger(IsNull(teleServiceCode, bearerServiceCode))" target="tap_service_code"/>
+                    <Mapping expression="dialedDigits" target="tap_dialed_digits"/>
+                    <Mapping expression="HourOfDay(motc_dttm)" target="tap_hour_of_day"/>
+                    <Mapping expression="Now()" target="tap_parse_date_time"/>
+                    <Mapping expression="motc_id" target="rec_id"/>
+                    <Mapping expression="$MocTinId" target="tin_id"/>
+                    <Mapping target="thd_id"/>
+                    <Mapping expression="locationArea" target="tap_location"/>
+                    <Mapping expression="$moc_rec_entity_type" target="tap_rec_entity_type"/>
+                    <Mapping expression="$moc_msg_desc" target="tap_message_desc"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="295" UsagePartitionId="GetUsagePartitionId('Default SubPartitioned Usage Group',evt_dttm, HourOfDay(evt_dttm), Mod(SecondOfMinute(evt_dttm), 2))" xPos="545" unicode="false" name="Tap Event" width="75" outputKey="tap_event" charset="windows-1252" filename="Concatenate( $$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat' )" type="SparkOutput" nodeKey="shape5">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape4">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="MocEvent" name="GetEventId" blockSize="10000" type="GenerateLongId"/>
+            <DynamicFunction objectKey="TapEvent" name="GetTapEventId" blockSize="10000" type="GenerateLongId"/>
+            <DynamicFunction allowDuplicates="true" tableName="table_inst" name="TableInst" type="SQLKeyCacheLookup">
+                <LookupKeys>
+                    <LookupKey key="tin_table_name"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="tin_id"/>
+                </ResultCols>
+            </DynamicFunction>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="moc_event">
+                <Field id="42" name="motc_id" nullable="false" type="integer"/>
+                <Field id="43" name="motc_dttm" nullable="false" type="datetime"/>
+                <Field id="44" name="stm_id" nullable="false" type="integer"/>
+                <Field id="45" name="tsk_id" nullable="false" type="integer"/>
+                <Field id="46" name="sfl_id" nullable="false" type="integer"/>
+                <Field id="47" name="sts_id" nullable="false" type="integer"/>
+                <Field id="3" name="imsi" nullable="true" type="string"/>
+                <Field id="4" name="msisdn" nullable="true" type="string"/>
+                <Field id="48" name="motc_min" nullable="true" type="string"/>
+                <Field id="6" name="mdn" nullable="true" type="string"/>
+                <Field id="49" name="rapFileSequenceNumber" nullable="true" type="string"/>
+                <Field id="50" name="dialCode" nullable="true" type="string"/>
+                <Field id="51" name="dialedDigits" nullable="true" type="string"/>
+                <Field id="9" name="calledPlace" nullable="true" type="string"/>
+                <Field id="10" name="calledRegion" nullable="true" type="string"/>
+                <Field id="52" name="smsNumber" nullable="true" type="string"/>
+                <Field id="53" name="motc_network" nullable="true" type="string"/>
+                <Field id="54" name="callEventStartDttmLocal" nullable="true" type="string"/>
+                <Field id="55" name="callEventStartUtcCode" nullable="true" type="integer"/>
+                <Field id="56" name="totalCallEventDuration" nullable="true" type="integer"/>
+                <Field id="13" name="simToolkitIndicator" nullable="true" type="string"/>
+                <Field id="57" name="causeForTerm" nullable="true" type="integer"/>
+                <Field id="58" name="recEntityCode" nullable="true" type="integer"/>
+                <Field id="21" name="callReference" nullable="true" type="string"/>
+                <Field id="59" name="locationArea" nullable="true" type="integer"/>
+                <Field id="60" name="cellId" nullable="true" type="integer"/>
+                <Field id="24" name="homeBid" nullable="true" type="string"/>
+                <Field id="61" name="homeLocationDescription" nullable="true" type="string"/>
+                <Field id="26" name="servingNetwork" nullable="true" type="string"/>
+                <Field id="27" name="servingBid" nullable="true" type="string"/>
+                <Field id="62" name="servingLocationDescription" nullable="true" type="string"/>
+                <Field id="29" name="imei" nullable="true" type="string"/>
+                <Field id="30" name="esn" nullable="true" type="string"/>
+                <Field id="41" name="supplServiceCode" nullable="true" type="string"/>
+                <Field id="38" name="thirdPartyNumber" nullable="true" type="string"/>
+                <Field id="63" name="clirIndicator" nullable="true" type="integer"/>
+                <Field id="64" name="camelServiceLevel" nullable="true" type="integer"/>
+                <Field id="65" name="camelServiceKey" nullable="true" type="integer"/>
+                <Field id="66" name="defaultCallHandling" nullable="true" type="integer"/>
+                <Field id="67" name="exchangeRateCode" nullable="true" type="integer"/>
+                <Field id="68" name="discountCode" nullable="true" type="integer"/>
+                <Field id="69" name="discount" nullable="true" type="integer"/>
+                <Field id="70" name="discountableAmount" nullable="true" type="integer"/>
+                <Field id="71" name="camelInvocationFee" nullable="true" type="integer"/>
+                <Field id="72" name="camelDestinationNumber" nullable="true" type="string"/>
+                <Field id="73" name="accessPointNameNI" nullable="true" type="string"/>
+                <Field id="74" name="accessPointNameOI" nullable="true" type="string"/>
+                <Field id="75" name="cseInformation" nullable="true" type="string"/>
+                <Field id="31" name="teleServiceCode" nullable="true" type="string"/>
+                <Field id="32" name="bearerServiceCode" nullable="true" type="string"/>
+                <Field id="33" name="transparencyIndicator" nullable="true" type="integer"/>
+                <Field id="76" name="fnur" nullable="true" type="integer"/>
+                <Field id="35" name="userProtocolIndicator" nullable="true" type="integer"/>
+                <Field id="77" name="guaranteedBitRate" nullable="true" type="string"/>
+                <Field id="37" name="maximumBitRate" nullable="true" type="string"/>
+                <Field id="78" name="chargingTimeStamplocal" nullable="true" type="string"/>
+                <Field id="79" name="chargingTimeStamputcOffset" nullable="true" type="integer"/>
+                <Field id="40" name="hSCSDIndicator" nullable="true" type="string"/>
+                <Field id="80" name="eventType" nullable="true" type="string"/>
+                <Field name="seq_no" nullable="true" type="integer" id="81"/>
+            </RecordType>
+            <RecordType name="tap_event">
+                <Field id="82" name="evt_id" nullable="false" type="integer"/>
+                <Field id="83" name="evt_dttm" nullable="false" type="datetime"/>
+                <Field id="84" name="evt_count" nullable="false" type="integer"/>
+                <Field id="85" name="evt_usage" nullable="false" type="integer"/>
+                <Field id="44" name="stm_id" nullable="false" type="integer"/>
+                <Field id="45" name="tsk_id" nullable="false" type="integer"/>
+                <Field id="46" name="sfl_id" nullable="false" type="integer"/>
+                <Field id="86" name="tap_file_name" nullable="false" type="string"/>
+                <Field id="87" name="tap_sender" nullable="true" type="string"/>
+                <Field id="88" name="tap_recipient" nullable="true" type="string"/>
+                <Field id="89" name="tap_event_type" nullable="false" type="string"/>
+                <Field id="90" name="tap_rec_type_name" nullable="false" type="string"/>
+                <Field id="91" name="tap_imsi" nullable="true" type="string"/>
+                <Field id="92" name="tap_msisdn" nullable="true" type="string"/>
+                <Field id="93" name="tap_called_number" nullable="true" type="string"/>
+                <Field id="94" name="tap_dialed_digits" nullable="true" type="string"/>
+                <Field id="95" name="tap_service_code" nullable="true" type="integer"/>
+                <Field id="96" name="tap_location" nullable="true" type="integer"/>
+                <Field id="97" name="tap_pdp_address" nullable="true" type="string"/>
+                <Field id="98" name="tap_gprs_destination" nullable="true" type="string"/>
+                <Field id="99" name="tap_rec_entity_type" nullable="true" type="string"/>
+                <Field id="100" name="tap_message_desc" nullable="true" type="string"/>
+                <Field id="101" name="tap_hour_of_day" nullable="false" type="integer"/>
+                <Field id="102" name="tap_parse_date_time" nullable="false" type="datetime"/>
+                <Field id="103" name="rec_id" nullable="false" type="integer"/>
+                <Field id="104" name="tin_id" nullable="false" type="integer"/>
+                <Field id="105" name="thd_id" nullable="true" type="integer"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global id="0" initialValue="TableInst_tin_id('moc_event')" name="MocTinId" type="integer" serializable="false"/>
+            <Global id="1" name="moc_rec_entity_type" serializable="false" type="string"/>
+            <Global id="2" name="moc_msg_desc" serializable="false" type="string"/>
+        </Globals>
+    </Mappings>
+</Diamond>

@@ -1,0 +1,57 @@
+package com.subex.rocps.automation.helpers.application.bills.billrequest;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+//import java.util.Map;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CheckBoxHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.EntityComboHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSDataComponentHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSEntityComboHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+public class BillRequestDetailImpl extends PSAcceptanceTest {
+
+	public PSGenericHelper genericHelperObj = new PSGenericHelper();
+	PSDataComponentHelper psDataComponentHelper=new PSDataComponentHelper();
+
+	/*
+	 * This Method is used to Create a new Bill Request
+	 */
+	public void createNewBillRequest(String clientPartition) throws Exception {
+		genericHelperObj.clickNewAction(clientPartition);
+		GenericHelper.waitForLoadmask();
+		assertEquals(NavigationHelper.getScreenTitle(), "New Bill Request");
+	}
+
+	/*
+	 * This Method is used to Generate the Bill Request
+	 */
+
+	public void saveBillRequest() throws Exception {
+		ButtonHelper.click("PS_Details_billRequest_Save");
+		GenericHelper.waitForLoadmask();
+		ButtonHelper.click("PS_Details_billRequest_PopUp");
+		GenericHelper.waitForLoadmask();
+
+	}
+
+	/*
+	 * This Method is used to fill Details of Bill Request
+	 */
+
+	public void billRequestDetails(String billProfileName, String billPeriod, String testBillCheckBox)
+			throws Exception {
+		PSEntityComboHelper.selectUsingGridFilterTextBox("PS_Details_billRequest_billPrf_popUp", "Bill Profile",
+				"PS_Details_billRequest_bilPrfSearch", billProfileName, "Bill Profile Name");
+		ComboBoxHelper.select("PS_Details_billRequest_billPrd", billPeriod);
+		//psDataComponentHelper.selectComboBoxVal("PS_Details_billRequest_billPrd", billPeriod);
+		if (!ValidationHelper.isTrue(testBillCheckBox)) {
+			CheckBoxHelper.uncheck("PS_Details_billRequest_tbCheckBox");
+		}
+	}
+
+}

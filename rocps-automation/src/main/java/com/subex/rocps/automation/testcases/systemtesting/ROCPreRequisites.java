@@ -1,0 +1,127 @@
+package com.subex.rocps.automation.testcases.systemtesting;
+
+import com.subex.rocps.automation.helpers.application.system.Streams;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+import com.subex.automation.helpers.application.ReferenceTableHelper;
+import com.subex.automation.helpers.application.screens.StreamControllerHelper;
+import com.subex.automation.helpers.application.screens.TaskControllerHelper;
+import com.subex.automation.helpers.application.screens.UsageGroupHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class ROCPreRequisites extends PSAcceptanceTest {
+	String path = System.getProperty("user.dir") + "\\src\\main\\resources\\";
+	String workBookName = "SystemTestCases.xlsx";
+	String sheetName = "Pre-requisites";
+
+	@org.testng.annotations.Test(priority = 1, description = "data source location creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createDataSourceLocation() throws Exception {
+		try {
+			ReferenceTableHelper obj = new ReferenceTableHelper();
+			obj.dataSourceLocation(path, workBookName, sheetName, "DataSourceLocation", 1);
+		} catch (Exception e) {
+			FailureHelper.reportFailure(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 2, description = "data source connection creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createDataSourceConnection() throws Exception {
+		try {
+			ReferenceTableHelper obj = new ReferenceTableHelper();
+			obj.dataSourceConnection(path, workBookName, sheetName, "DSC", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 3, description = "usage server creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createUsageServer() throws Exception {
+		try {
+			ReferenceTableHelper obj = new ReferenceTableHelper();
+			obj.usageServer(path, workBookName, sheetName, "UsageServer", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 4, description = "usage group creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createUsageGroup() throws Exception {
+		try {
+			UsageGroupHelper obj = new UsageGroupHelper();
+			obj.createUsageGroup(path, workBookName, sheetName, "UsageGroup", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 5, description = "attach usage server", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void attachUsageServer() throws Exception {
+		try {
+			UsageGroupHelper obj = new UsageGroupHelper();
+			obj.attachUsageServer(path, workBookName, sheetName, "AttachUsageServer", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 6, description = "schema creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void schema() throws Exception {
+		try {
+			ReferenceTableHelper obj = new ReferenceTableHelper();
+			obj.schema(path, workBookName, sheetName, "Schema", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 7, description = "stream controller creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createStreamController() throws Exception {
+		try {
+			StreamControllerHelper obj = new StreamControllerHelper();
+			obj.createStreamController(path, workBookName, sheetName, "StreamController", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 8, description = "task controller creation", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createTaskController() throws Exception {
+		try {
+			TaskControllerHelper obj = new TaskControllerHelper();
+			obj.createTaskController(path, workBookName, sheetName, "TaskController", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 9, description = "Create billing stream", groups = {
+			"Prerequisites4" }, retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
+	public void createBillingstream() throws Exception {
+		try {
+
+			Streams streamObj = new Streams();
+			streamObj.newStreamConfig(path, workBookName, sheetName, "Streams", 1);
+			streamObj.saveStreamDetail();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+}

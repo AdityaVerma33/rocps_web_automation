@@ -1,0 +1,2805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.0.v201405191524 Build &lt;4.4.0.v20140606-1451></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">HOME</property>
+            <property name="id">7</property>
+            <expression name="value">params["tempFileDirectory"].value</expression>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="tempFileDirectory" id="4484">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="salesTax" id="4634">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="usageTotal" id="4674">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeTotal" id="4675">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="creditTotal" id="4676">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="total" id="4677">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <!--<scalar-parameter name="operatorLogo" id="4818">
+            <text-property name="promptText">operatorLogo</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>-->
+        <scalar-parameter name="dueDate" id="4830">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <!--<scalar-parameter name="paymentTerm" id="4831">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>-->
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="Data Source" id="7">
+            <property name="HOME">C:\Documents and Settings\harigovind.raveendra\Desktop\Working Rpt\Latest TSV's</property>
+            <property name="DELIMTYPE">TAB</property>
+            <property name="CHARSET">UTF-8</property>
+            <property name="INCLCOLUMNNAME">YES</property>
+            <property name="INCLTYPELINE">NO</property>
+            <property name="TRAILNULLCOLS">NO</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Data Set" id="8">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">From</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">From</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">To</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">To</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Band</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Band</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Tariff</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff Rate Name</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Tariff Rate Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Setup Amount</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Setup Amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Currency</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Currency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bill Period</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Bill Period</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Billed Usage</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Billed Usage</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SetupAmt</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">SetupAmt</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Amount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UsageAmt</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">UsageAmt</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Revenue Amount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Revenue Amount</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">From</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">To</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Band</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Tariff</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Tariff Rate Name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Setup Amount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Bill Period</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Count</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Billed Usage</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">SetupAmt</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Amount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">UsageAmt</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">Revenue Amount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">From</property>
+                    <property name="nativeName">From</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">To</property>
+                    <property name="nativeName">To</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Band</property>
+                    <property name="nativeName">Band</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Tariff</property>
+                    <property name="nativeName">Tariff</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Tariff Rate Name</property>
+                    <property name="nativeName">Tariff Rate Name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Setup Amount</property>
+                    <property name="nativeName">Setup Amount</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Bill Period</property>
+                    <property name="nativeName">Bill Period</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Count</property>
+                    <property name="nativeName">Count</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Billed Usage</property>
+                    <property name="nativeName">Billed Usage</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">SetupAmt</property>
+                    <property name="nativeName">SetupAmt</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">Amount</property>
+                    <property name="nativeName">Amount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">UsageAmt</property>
+                    <property name="nativeName">UsageAmt</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">Revenue Amount</property>
+                    <property name="nativeName">Revenue Amount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "From", "To", "Band", "Tariff", "Tariff Rate Name", "Setup Amount", "Currency", "Bill Period", "Count", "Billed Usage", "SetupAmt", "Amount", "UsageAmt", "Revenue Amount" from "Bill_Breakdown.tsv" : {"From","From",STRING;"To","To",STRING;"Band","Band",STRING;"Tariff","Tariff",STRING;"Tariff Rate Name","Tariff Rate Name",STRING;"Setup Amount","Setup Amount",STRING;"Currency","Currency",STRING;"Bill Period","Bill Period",STRING;"Count","Count",INT;"Billed Usage","Billed Usage",BIGDECIMAL;"SetupAmt","SetupAmt",BIGDECIMAL;"Amount","Amount",BIGDECIMAL;"UsageAmt","UsageAmt",BIGDECIMAL;"Revenue Amount","Revenue Amount",BIGDECIMAL}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>From</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>From</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>To</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>To</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Band</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Band</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff Rate Name</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff Rate Name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Setup Amount</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Setup Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Bill Period</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Bill Period</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Count</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Count</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Billed Usage</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Billed Usage</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SetupAmt</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SetupAmt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Amount</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>UsageAmt</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>UsageAmt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Revenue Amount</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Revenue Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Line Item Data Set" id="4516">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Band</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Band</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Tariff</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff Rate Name</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Tariff Rate Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Currency</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Currency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bill Period</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Bill Period</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bli Amt</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Bli Amt</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bli Stx Amt</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Bli Stx Amt</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Band</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Tariff</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Tariff Rate Name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Bill Period</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Bli Amt</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Bli Stx Amt</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Band</property>
+                    <property name="nativeName">Band</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Tariff</property>
+                    <property name="nativeName">Tariff</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Tariff Rate Name</property>
+                    <property name="nativeName">Tariff Rate Name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Bill Period</property>
+                    <property name="nativeName">Bill Period</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Bli Amt</property>
+                    <property name="nativeName">Bli Amt</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Bli Stx Amt</property>
+                    <property name="nativeName">Bli Stx Amt</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Band", "Tariff", "Tariff Rate Name", "Currency", "Bill Period", "Bli Amt", "Bli Stx Amt" from "summ_Bill_Breakdown.tsv" : {"Band","Band",STRING;"Tariff","Tariff",STRING;"Tariff Rate Name","Tariff Rate Name",STRING;"Currency","Currency",STRING;"Bill Period","Bill Period",STRING;"Bli Amt","Bli Amt",STRING;"Bli Stx Amt","Bli Stx Amt",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Band</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Band</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff Rate Name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff Rate Name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Bill Period</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Bill Period</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Data Set1" id="4700">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Band</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Band</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Tariff</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff Rate Name</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Tariff Rate Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Currency</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Currency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Service</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Service</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Count</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Billed Usage</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Billed Usage</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SetupAmt</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">SetupAmt</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Amount</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UsageAmt</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">UsageAmt</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Band</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Tariff</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Tariff Rate Name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Service</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Count</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Billed Usage</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">SetupAmt</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Amount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">UsageAmt</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Band</property>
+                    <property name="nativeName">Band</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Tariff</property>
+                    <property name="nativeName">Tariff</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Tariff Rate Name</property>
+                    <property name="nativeName">Tariff Rate Name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Service</property>
+                    <property name="nativeName">Service</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Count</property>
+                    <property name="nativeName">Count</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Billed Usage</property>
+                    <property name="nativeName">Billed Usage</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">SetupAmt</property>
+                    <property name="nativeName">SetupAmt</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Amount</property>
+                    <property name="nativeName">Amount</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">UsageAmt</property>
+                    <property name="nativeName">UsageAmt</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Band", "Tariff", "Tariff Rate Name", "Currency", "Service", "Count", "Billed Usage", "SetupAmt", "Amount", "UsageAmt" from "Bill_Breakdown_1.tsv" : {"Band","Band",STRING;"Tariff","Tariff",STRING;"Tariff Rate Name","Tariff Rate Name",STRING;"Currency","Currency",STRING;"Service","Service",STRING;"Count","Count",STRING;"Billed Usage","Billed Usage",BIGDECIMAL;"SetupAmt","SetupAmt",BIGDECIMAL;"Amount","Amount",BIGDECIMAL;"UsageAmt","UsageAmt",BIGDECIMAL}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Band</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Band</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff Rate Name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff Rate Name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Service</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Service</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Count</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Count</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Billed Usage</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Billed Usage</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SetupAmt</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SetupAmt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Amount</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>UsageAmt</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>UsageAmt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Line Item Data Set2" id="4701">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Band</property>
+                    <text-property name="heading">Band</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff</property>
+                    <text-property name="heading">Tariff</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tariff Rate Name</property>
+                    <text-property name="heading">Tariff Rate Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Currency</property>
+                    <text-property name="heading">Currency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Service</property>
+                    <text-property name="heading">Service</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bli Amt</property>
+                    <text-property name="heading">Bli Amt</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bli Stx Amt</property>
+                    <text-property name="heading">Bli Stx Amt</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Band</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Tariff</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Tariff Rate Name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Service</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Bli Amt</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Bli Stx Amt</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Band</property>
+                    <property name="nativeName">Band</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Tariff</property>
+                    <property name="nativeName">Tariff</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Tariff Rate Name</property>
+                    <property name="nativeName">Tariff Rate Name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Service</property>
+                    <property name="nativeName">Service</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Bli Amt</property>
+                    <property name="nativeName">Bli Amt</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Bli Stx Amt</property>
+                    <property name="nativeName">Bli Stx Amt</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Band", "Tariff", "Tariff Rate Name", "Currency", "Service", "Bli Amt", "Bli Stx Amt" from "summ_Bill_Breakdown_1.tsv" : {"Band","Band",STRING;"Tariff","Tariff",STRING;"Tariff Rate Name","Tariff Rate Name",STRING;"Currency","Currency",STRING;"Service","Service",STRING;"Bli Amt","Bli Amt",STRING;"Bli Stx Amt","Bli Stx Amt",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Band</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Band</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff Rate Name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff Rate Name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Service</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Service</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Bli Amt</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Bli Amt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Bli Stx Amt</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Bli Stx Amt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-header>
+                <image id="4483">
+                    <property name="height">0.46875in</property>
+                    <property name="width">1.2395833333333333in</property>
+                    <property name="source">embed</property>
+                    <property name="imageName">OperatorLogo.jpg</property>
+                </image>
+            </page-header>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4620">
+            <column id="4621"/>
+            <row id="4628">
+                <cell id="4629">
+                    <text id="4630">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[BILL]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4687">
+                <cell id="4688">
+                    <text id="4689"/>
+                </cell>
+            </row>
+            <row id="4652">
+                <cell id="4653">
+                    <grid id="4654">
+                        <column id="4655"/>
+                        <column id="4656"/>
+                        <row id="4657">
+                            <cell id="4658">
+                                <text id="4669">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Usage :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4659">
+                                <text-data id="4673">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["usageTotal"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4660">
+                            <cell id="4661">
+                                <text id="4670">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Charge :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4662">
+                                <text-data id="4678">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["chargeTotal"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4663">
+                            <cell id="4664">
+                                <text id="4671">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Credit :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4665">
+                                <text-data id="4679">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["creditTotal"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4666">
+                            <cell id="4667">
+                                <text id="4672">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Total :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4668">
+                                <text-data id="4680">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["total"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4819">
+                            <cell id="4820"/>
+                            <cell id="4821"/>
+                        </row>
+                        <row id="4822">
+                            <cell id="4823">
+                                <text id="4828">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">normal</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Due Date :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4824">
+                                <text-data id="4832">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["dueDate"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4825">
+                            <cell id="4826">
+                                <text id="4829">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Payment Term :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4827">
+                                <text-data id="4833">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">paymentTerm</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="4681">
+                <cell id="4682">
+                    <text id="4683"/>
+                </cell>
+            </row>
+            <row id="4631">
+                <cell id="4632">
+                    <text id="4633">
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bill Breakdown Details]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4622">
+                <cell id="4623">
+                    <table id="9">
+                        <property name="fontSize">10pt</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">From</property>
+                                <text-property name="displayName">From</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["From"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">To</property>
+                                <text-property name="displayName">To</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["To"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Band</property>
+                                <text-property name="displayName">Band</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Band"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff</property>
+                                <text-property name="displayName">Tariff</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff Rate Name</property>
+                                <text-property name="displayName">Tariff Rate Name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff Rate Name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Setup Amount</property>
+                                <text-property name="displayName">Setup Amount</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Setup Amount"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Currency</property>
+                                <text-property name="displayName">Currency</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Currency"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Bill Period</property>
+                                <text-property name="displayName">Bill Period</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Bill Period"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Count</property>
+                                <text-property name="displayName">Count</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Count"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Billed Usage</property>
+                                <text-property name="displayName">Billed Usage</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Billed Usage"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SetupAmt</property>
+                                <text-property name="displayName">SetupAmt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SetupAmt"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Amount</property>
+                                <text-property name="displayName">Amount</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Amount"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">UsageAmt</property>
+                                <text-property name="displayName">UsageAmt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["UsageAmt"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Revenue Amount</property>
+                                <text-property name="displayName">Revenue Amount</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Revenue Amount"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="83">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="84">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="85">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="86">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="87">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="88">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="89">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="90">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="91">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="92">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="93">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="94">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="95">
+                            <property name="width">7%</property>
+                        </column>
+                        <column id="96">
+                            <property name="width">7%</property>
+                        </column>
+                        <header>
+                            <row id="10">
+                                <cell id="11">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="12">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">From</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="13">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="14">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">To</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="15">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="16">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Band</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="17">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="18">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Tariff</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="19">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="20">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Tariff Rate Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="21">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="22">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Setup Amount</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="23">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="24">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Currency</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="25">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="26">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Bill Period</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="27">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="28">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Count</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="29">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="30">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Billed Usage</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="31">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="32">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">SetupAmt</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="33">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="34">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Amount</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="35">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="36">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">UsageAmt</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="37">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="38">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Revenue Amount</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="39">
+                                <cell id="40">
+                                    <data id="41">
+                                        <property name="resultSetColumn">From</property>
+                                    </data>
+                                </cell>
+                                <cell id="42">
+                                    <data id="43">
+                                        <property name="resultSetColumn">To</property>
+                                    </data>
+                                </cell>
+                                <cell id="44">
+                                    <data id="45">
+                                        <property name="resultSetColumn">Band</property>
+                                    </data>
+                                </cell>
+                                <cell id="46">
+                                    <data id="47">
+                                        <property name="resultSetColumn">Tariff</property>
+                                    </data>
+                                </cell>
+                                <cell id="48">
+                                    <data id="49">
+                                        <property name="resultSetColumn">Tariff Rate Name</property>
+                                    </data>
+                                </cell>
+                                <cell id="50">
+                                    <data id="51">
+                                        <property name="resultSetColumn">Setup Amount</property>
+                                    </data>
+                                </cell>
+                                <cell id="52">
+                                    <data id="53">
+                                        <property name="resultSetColumn">Currency</property>
+                                    </data>
+                                </cell>
+                                <cell id="54">
+                                    <data id="55">
+                                        <property name="resultSetColumn">Bill Period</property>
+                                    </data>
+                                </cell>
+                                <cell id="56">
+                                    <data id="57">
+                                        <property name="resultSetColumn">Count</property>
+                                    </data>
+                                </cell>
+                                <cell id="58">
+                                    <data id="59">
+                                        <property name="resultSetColumn">Billed Usage</property>
+                                    </data>
+                                </cell>
+                                <cell id="60">
+                                    <data id="61">
+                                        <property name="resultSetColumn">SetupAmt</property>
+                                    </data>
+                                </cell>
+                                <cell id="62">
+                                    <data id="63">
+                                        <property name="resultSetColumn">Amount</property>
+                                    </data>
+                                </cell>
+                                <cell id="64">
+                                    <data id="65">
+                                        <property name="resultSetColumn">UsageAmt</property>
+                                    </data>
+                                </cell>
+                                <cell id="66">
+                                    <data id="67">
+                                        <property name="resultSetColumn">Revenue Amount</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="68">
+                                <cell id="69"/>
+                                <cell id="70"/>
+                                <cell id="71"/>
+                                <cell id="72"/>
+                                <cell id="73"/>
+                                <cell id="74"/>
+                                <cell id="75"/>
+                                <cell id="76"/>
+                                <cell id="77"/>
+                                <cell id="78"/>
+                                <cell id="79"/>
+                                <cell id="80"/>
+                                <cell id="81"/>
+                                <cell id="82"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="4684">
+                <cell id="4685">
+                    <text id="4686"/>
+                </cell>
+            </row>
+            <row id="4649">
+                <cell id="4650">
+                    <text id="4651">
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bill Line Item Details]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4624">
+                <cell id="4625">
+                    <table id="4517">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="dataSet">Line Item Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Band</property>
+                                <text-property name="displayName">Band</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Band"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff</property>
+                                <text-property name="displayName">Tariff</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff Rate Name</property>
+                                <text-property name="displayName">Tariff Rate Name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff Rate Name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Currency</property>
+                                <text-property name="displayName">Currency</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Currency"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Bill Period</property>
+                                <text-property name="displayName">Bill Period</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Bill Period"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Bli Amt</property>
+                                <text-property name="displayName">Bli Amt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Bli Amt"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Bli Stx Amt</property>
+                                <text-property name="displayName">Bli Stx Amt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Bli Stx Amt"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="4546"/>
+                        <column id="4547"/>
+                        <column id="4548"/>
+                        <column id="4549"/>
+                        <column id="4550"/>
+                        <column id="4639"/>
+                        <column id="4644">
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">!params["salesTax"].value</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <header>
+                            <row id="4551">
+                                <cell id="4552">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4520">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Band</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4553">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4522">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Tariff</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4554">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4524">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Tariff Rate Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4555">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4526">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Currency</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4556">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4528">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Bill Period</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4635">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4645">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Bli Amt</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4640">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4647">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Bli Stx Amt</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="4529">
+                                <cell id="4530">
+                                    <data id="4531">
+                                        <property name="resultSetColumn">Band</property>
+                                    </data>
+                                </cell>
+                                <cell id="4532">
+                                    <data id="4533">
+                                        <property name="resultSetColumn">Tariff</property>
+                                    </data>
+                                </cell>
+                                <cell id="4534">
+                                    <data id="4535">
+                                        <property name="resultSetColumn">Tariff Rate Name</property>
+                                    </data>
+                                </cell>
+                                <cell id="4536">
+                                    <data id="4537">
+                                        <property name="resultSetColumn">Currency</property>
+                                    </data>
+                                </cell>
+                                <cell id="4538">
+                                    <data id="4539">
+                                        <property name="resultSetColumn">Bill Period</property>
+                                    </data>
+                                </cell>
+                                <cell id="4637">
+                                    <data id="4646">
+                                        <property name="resultSetColumn">Bli Amt</property>
+                                    </data>
+                                </cell>
+                                <cell id="4642">
+                                    <data id="4648">
+                                        <property name="resultSetColumn">Bli Stx Amt</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="4540">
+                                <cell id="4541"/>
+                                <cell id="4542"/>
+                                <cell id="4543"/>
+                                <cell id="4544"/>
+                                <cell id="4545"/>
+                                <cell id="4638"/>
+                                <cell id="4643"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="4690">
+                <cell id="4691">
+                    <text id="4698"/>
+                </cell>
+            </row>
+            <row id="4692">
+                <cell id="4693">
+                    <text id="4699">
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bill Breakdown 1 Details]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4694">
+                <cell id="4695">
+                    <table id="4702">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="dataSet">Data Set1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Band</property>
+                                <text-property name="displayName">Band</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Band"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff</property>
+                                <text-property name="displayName">Tariff</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff Rate Name</property>
+                                <text-property name="displayName">Tariff Rate Name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff Rate Name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Currency</property>
+                                <text-property name="displayName">Currency</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Currency"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Service</property>
+                                <text-property name="displayName">Service</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Service"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Count</property>
+                                <text-property name="displayName">Count</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Count"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Billed Usage</property>
+                                <text-property name="displayName">Billed Usage</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Billed Usage"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SetupAmt</property>
+                                <text-property name="displayName">SetupAmt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SetupAmt"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Amount</property>
+                                <text-property name="displayName">Amount</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Amount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">UsageAmt</property>
+                                <text-property name="displayName">UsageAmt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["UsageAmt"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <column id="4756"/>
+                        <column id="4757"/>
+                        <column id="4758"/>
+                        <column id="4759"/>
+                        <column id="4760"/>
+                        <column id="4761"/>
+                        <column id="4762"/>
+                        <column id="4763"/>
+                        <column id="4764"/>
+                        <column id="4765"/>
+                        <header>
+                            <row id="4703">
+                                <cell id="4704">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4705">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Band</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4706">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4707">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Tariff</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4708">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4709">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Tariff Rate Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4710">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4711">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Currency</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4712">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4713">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Service</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4714">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4715">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Count</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4716">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4717">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Billed Usage</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4718">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4719">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">SetupAmt</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4720">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4721">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Amount</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4722">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4723">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">UsageAmt</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="4724">
+                                <cell id="4725">
+                                    <data id="4726">
+                                        <property name="resultSetColumn">Band</property>
+                                    </data>
+                                </cell>
+                                <cell id="4727">
+                                    <data id="4728">
+                                        <property name="resultSetColumn">Tariff</property>
+                                    </data>
+                                </cell>
+                                <cell id="4729">
+                                    <data id="4730">
+                                        <property name="resultSetColumn">Tariff Rate Name</property>
+                                    </data>
+                                </cell>
+                                <cell id="4731">
+                                    <data id="4732">
+                                        <property name="resultSetColumn">Currency</property>
+                                    </data>
+                                </cell>
+                                <cell id="4733">
+                                    <data id="4734">
+                                        <property name="resultSetColumn">Service</property>
+                                    </data>
+                                </cell>
+                                <cell id="4735">
+                                    <data id="4736">
+                                        <property name="resultSetColumn">Count</property>
+                                    </data>
+                                </cell>
+                                <cell id="4737">
+                                    <data id="4738">
+                                        <property name="resultSetColumn">Billed Usage</property>
+                                    </data>
+                                </cell>
+                                <cell id="4739">
+                                    <data id="4740">
+                                        <property name="resultSetColumn">SetupAmt</property>
+                                    </data>
+                                </cell>
+                                <cell id="4741">
+                                    <data id="4742">
+                                        <property name="resultSetColumn">Amount</property>
+                                    </data>
+                                </cell>
+                                <cell id="4743">
+                                    <data id="4744">
+                                        <property name="resultSetColumn">UsageAmt</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="4745">
+                                <cell id="4746"/>
+                                <cell id="4747"/>
+                                <cell id="4748"/>
+                                <cell id="4749"/>
+                                <cell id="4750"/>
+                                <cell id="4751"/>
+                                <cell id="4752"/>
+                                <cell id="4753"/>
+                                <cell id="4754"/>
+                                <cell id="4755"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="4696">
+                <cell id="4697">
+                    <text id="4770"/>
+                </cell>
+            </row>
+            <row id="4766">
+                <cell id="4767">
+                    <text id="4771">
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bill Line Item1 Details]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4768">
+                <cell id="4769">
+                    <table id="4772">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="dataSet">Line Item Data Set2</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Band</property>
+                                <text-property name="displayName">Band</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Band"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff</property>
+                                <text-property name="displayName">Tariff</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Tariff Rate Name</property>
+                                <text-property name="displayName">Tariff Rate Name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Tariff Rate Name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Currency</property>
+                                <text-property name="displayName">Currency</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Currency"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Service</property>
+                                <text-property name="displayName">Service</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Service"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Bli Amt</property>
+                                <text-property name="displayName">Bli Amt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Bli Amt"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Bli Stx Amt</property>
+                                <text-property name="displayName">Bli Stx Amt</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Bli Stx Amt"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <column id="4811"/>
+                        <column id="4812"/>
+                        <column id="4813"/>
+                        <column id="4814"/>
+                        <column id="4815"/>
+                        <column id="4816"/>
+                        <column id="4817">
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">!params["salesTax"].value</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <header>
+                            <row id="4773">
+                                <cell id="4774">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4775">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Band</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4776">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4777">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Tariff</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4778">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4779">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Tariff Rate Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4780">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4781">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Currency</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4782">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4783">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Service</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4784">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4785">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Bli Amt</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4786">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <label id="4787">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Bli Stx Amt</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="4788">
+                                <cell id="4789">
+                                    <data id="4790">
+                                        <property name="resultSetColumn">Band</property>
+                                    </data>
+                                </cell>
+                                <cell id="4791">
+                                    <data id="4792">
+                                        <property name="resultSetColumn">Tariff</property>
+                                    </data>
+                                </cell>
+                                <cell id="4793">
+                                    <data id="4794">
+                                        <property name="resultSetColumn">Tariff Rate Name</property>
+                                    </data>
+                                </cell>
+                                <cell id="4795">
+                                    <data id="4796">
+                                        <property name="resultSetColumn">Currency</property>
+                                    </data>
+                                </cell>
+                                <cell id="4797">
+                                    <data id="4798">
+                                        <property name="resultSetColumn">Service</property>
+                                    </data>
+                                </cell>
+                                <cell id="4799">
+                                    <data id="4800">
+                                        <property name="resultSetColumn">Bli Amt</property>
+                                    </data>
+                                </cell>
+                                <cell id="4801">
+                                    <data id="4802">
+                                        <property name="resultSetColumn">Bli Stx Amt</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="4803">
+                                <cell id="4804"/>
+                                <cell id="4805"/>
+                                <cell id="4806"/>
+                                <cell id="4807"/>
+                                <cell id="4808"/>
+                                <cell id="4809"/>
+                                <cell id="4810"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="4626">
+                <cell id="4627"/>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">OperatorLogo.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQA
+                BgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8f
+                Hx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f
+                Hx8fHx8fHx8f/8AAEQgALQB3AwERAAIRAQMRAf/EAKkAAAICAwEBAAAAAAAAAAAAAAYHAAUCAwQIAQEA
+                AgMBAQAAAAAAAAAAAAAAAAECBAUDBhAAAQMCAwUEBwQGCwEAAAAAAgEDBBEFABIGIUETFAcxUWEigTIj
+                MxUWCHGxQmKRoVJyQ3TBksLSU2OzxHU2FzcRAAEDAwIDBAcHBQEAAAAAAAEAAgMRBAUhEjFBE1FhgTLw
+                kaHB4SIzcbHR8UIjFFJicoKiFf/aAAwDAQACEQMRAD8A9U4EKYEKYEKYEKYEJWddtb6m0rGs52KWkQpZ
+                vjIVWmncyNo2o+8E6UzL2Yk0LXxNrHMXbxWlET9K77dL9oS23W6vcxOkcbjOoIhXI8YD5QQRTyim7CPF
+                VMhE2OYtboBT7kWYSpqYEKYELRLnRIYgclxGxMsoktaVpXdirdXsVuAZHbQTRdYoXSGjRVbEdRxlTYIX
+                KouRa+VV3bUrjvHI14q0gjuUC0g0OiFDXq2pVbGwAO4CKYa/1kQfux00Vsfxv7/+Vi3rG92qdFhattjc
+                Nqa4LEe7wnVeh8UvVB3OLbjSkuwaoqL34KINsx4JidWnI8fijDCVJLjq71XXRjMeDb2QfvMwFcDi1Vtp
+                qqjnJEVFJVJKCnht8ZNFVqY7H9cku0aErIP1BdQ4cpp+4NsS4h7VYNng5h/IYUX07cS2ha78PA4UbUH7
+                Uy+o3VG82bRtl1BZ4iR3Lo4iHGuDRZwBWyLaIkPdsXuxEBZVlYNfK5jjXb2K+6Uatumq9JDdrmLQylfd
+                aVGBUAyhSmxVLv78IhV8hbthl2t4UQf1g6s6o0hqWNbbU3FKO7ECQSvtkZZyccFaKJhsoCYbRVXcbjo5
+                oy51a1VD9QE56fpXRs59BR6Wyb7qClBzOMskVEWuyq4bVZw7A2SQDl+JQ/YutN4sWjbXp3T0QVmx0dWT
+                LeHibXHjMUabFdwklVL9GGWqxLjGySukedDy8F2WX6h9aQbiKXxhmbEqiPtI3wHhGu1QVKJXwJP0YNqh
+                LhonN+Q0PrXoGzajtF3sTN8hvotuebV7in5cgjXOh19VQVFQsc6LzcsLmP2EfMkprD6ibm7cChaQjAkc
+                SyjMfBXHXVTe212CPdWq/ZiYat62wrQ2sp17FTt9dOpFufBL9BakxT9eNJjLHUh/KSIP3LiMkLHja4Aj
+                vVj/AMqB30yQe0Gqb2kLxbdSWhL3pV4oxZlCVb3tqC4iIqgSbdy7FT9WPOzYV8B32jtjv6Tqw/h6cFmX
+                Dix3TnG4cnDiie23gJRlHeBY85v3jBb/ABFd6YtY/KtncY3jpzN4tP3jtCoz2pYNwO5h5oY60zYsXpvd
+                0fVEKQLbMcd5Ok4Kjl8Uy5vRjYbxXbFtJnbTkias/wCXa1X4hyfbv43C/vYSqab+6qU31AdO7vdnY+pb
+                SyUo4zHAnRm0zOI2BEYuAKbSpnVCRPDxxNpWzh71rKxu0qdEM6W62xXmIdp1zbGrjBhk2UaYDaK40bVE
+                AjaXylSm1Rp9i4Zb2K1cYsgl0LtpPJE/1GTYs7Rdjmw3RfiSJaOMvAtRISZJUVFwmqphWlsrgeIHvV79
+                PP8A86b/AJt/+zhO4qvmfr+AS2+pT/vEL/jm/wDWdxJq1cH9E/5e4Lu64f8ARtB/yn+3Ywm8VzxX1pft
+                95R30D0vbLdomNd22xK43XO4/IVKkgA4QA2K7hRBqvjhOKzsvO50pb+lqx6/aYttw0TIvBtiNxtStmzI
+                REQlA3BbNsl3p5qp4pgaU8RO5sob+lyUOndSXGL0g1NbmnFRo5kRsV3iMpDV1E8CSPRftXEiNVtTQNN0
+                x3cfZ+arOn+v3tGvyJcS1R5s19EAZT6nmbBO0QyqlMy9q4ZFV1vLMTgAuICJdRddbnqGzyLVc7BDdjSB
+                VO13MBfhMFrsIV2ouEGqrDiWxuDmvNQt304XOVG1nKt+1I06IROBtpnZJCAvQhEnpwOUc3GDEHcwV6Dv
+                UCO/HWQbqRnoyK43LVcqAg7VUi/Z78Y+TxjbloIO2Vvld2fBYFtOWGlKtPEJLR7zO6p9RbdDEEXTeni5
+                iSSLQHjAveKn+YSIIj+zVcXrUyCJvVp1aa0W1JE20hcR5n6Du/JPrHZebSt6o9ZXtIX2HaocDmTTK9PJ
+                5CASZJFoDJby7y2olKbdtJBtVr2GMEzC4mnZ8Uq+rOudDarahyrNa3ot5QqzJTgg2hN5VTISARcQs1KE
+                vYmJAUWvjrSaEkPdVvJEkzR99mfT5b0JgzkwZBXFpj8aRSVzaifuuZ6d2FXVVW3LG3p10Ip4+miqekvW
+                SBpC0v2i6w3n4pPFIYej5VMSMUQgITIEp5aoqLhubVdsjjHTODmmh71Qaqvlz6ma9ZWBFVtyTkiQI6rV
+                RaBVLM4vZ+IiLuT7MMCgVm3ibaw6nhqUf/UhECFZNKw29rcZH2QXwbbZFPuxFqzsI7c957ae9UHSrrQm
+                k7d8GvMV2Ta0JXIjrNOK1nVVIcpKKEKlt7di17dzLaqxkMZ1nb2Gjuax6rdZx1bAGy2eM7GtimLkhx6n
+                FeUVqA5RUkEUXb2rVadmANonj8Z0Tvcau+5Fuk+kMx3pFcYEttWL1eFGay0flVsmNsds69iltrXszeGE
+                XaqlcZEC5Dh5G6evj6dyB+mfUiR0/nzbPe4DjkE3ayGMqI+w+NBUkE6ItUSipXup4siq0L6yFyA5h19h
+                COdSfUdYGoeXTtuckTSpRyYAtsgm+ogSkS/owg1Z8GFeT85oO5HGi+oUK9aSc1Jc4fwOIwqi48+Q8I0F
+                EqTRbCIa7PV7diVxEhZ91ZlknTad5Si151Jv3US7N6U0qy4lsfNBQPVckqO3O4q+o0NM1F+1e5JgUW1a
+                WLLZvUkPzD2fFNLTOgY2h7BGcgrxZ7Ko5dHv8dSSh07hHsHw8cedzjHsLbpnmi4jtYeKoG8/kvLHeV3l
+                7uxHCS2Fic2hew4fFzflpm+7GsLpnR61fk27vClVldJ2/bzrRV+otKae1HFSLeoLcxodramioYKu8DFU
+                IfQuLIKlDcPiNWGiHLV0U6cW2WMtq18d0Fq2klw3gRe31CXKvpRcG4q1JlJ3Cm71I5RERKImzsphLPS/
+                v3SzpPcJ77kyNHiTABX5IMSOXoG9w2xJBFNvrZcPcVfiyc7BQO9equdLaT0HpsVWxsRmXXETNI4iOukK
+                5f4hkRUXOOxFptTvwErjPdyS+c1X3Utr0FqMIY3tI88G8xxParRBPYR1bJPL7OikuzZgBUYbmSKuw0qu
+                GVoTpdcrXAtJxYZxkRz4Yjb1HcqmpHwnBPiEmdVVUqqYKldWX8zXFwdqVwaX0V0htN4QbWEZ+6AJOtG+
+                8r6jwzMDVvOqhmAmyzZdo0wFxUpsjNIKF2ndojKVqKzxWmHnJCGzJzcF1lCeBUFUQiUm0JEEa7VXZhKi
+                hPUkPpZqg0+KxglSyypHdbafCQ8hKQCrJNiJvBVsto5hREr2bcMFWYLyWLymgQzqvSHSXp/aG74/ZTny
+                HTRuFEfccJCcUVLzia5URETbmFfswwSVpW1zc3LtgdtHNLCXddedUb01b4rVY7SJwLexVqHGbTYhFu2f
+                tLt3J3YloFrtjhtGbjx7eZXoHpz0zs+i7eotUlXV9E5ueQohLs9RveIIu7fvxAmq83e3zp3a6N5BGBgJ
+                gQGlRJFQkXei4g9gcCDqCqQNDUKls7anEn2hxVpHI2RLfw3EXL/TjzeJj3RTWjj5C5v+rq0WhdOo5ko/
+                VQ+IV3j0yzlMCFMCEtdTppv5nkrcTmrIWWxyKMDEQBm8GPw6KZKZLTL75Ea7a4E1Wn/5dzA5+e4/KrzG
+                WnueVd4vEybO3JmyfxODTZTAhdLn/n/wJzirJ4XCDmOHyvEpSZXNwfZ5ve56b6b64ELag6WXVNsW3uSR
+                pcl4gC2wTJPZ5nD8ymJCGfjU4Qr+bdgQsb18hZ5fxDnK5nfV4NcnHmZ+Hl82XPxu3bTLXAhWMj5L+B2j
+                nlcVrM/yS0jofMcUc3ufZ8biUy5d9a78CSr2Plrmbdyy3f4hlH5VokfPytXM3K5/Z8Lh+vzHmyZfDAmr
+                Pqz8l/JzPzjzHLcVvl+Dk5vj5V9XL7OuXNm/D+rDar+N6vU/a4058FZdOPkb5eb+T+FyGzjZPfcSn8fN
+                58/73o2YDVc73rb/AN3j6cEVYSpqYELS1ynMP8LJzHl5jLTN2eXN6OzFeLpdR+3b1NN1OPdXw4Lo7dtF
+                a7eS/9k=
+</property>
+        </structure>
+    </list-property>
+</report>

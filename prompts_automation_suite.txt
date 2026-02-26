@@ -1,0 +1,152 @@
+Framework Guardrails  -->  (paste once per chat/session)
+
+Should be used at the top of Copilot chat so it stays aligned.
+
+			Prompt
+
+			Follow ROCPS automation architecture: TestNG XML → PSAcceptanceTest → TC class → Module Helper → Component Helpers → WebDriver.
+			Constraints:
+
+			TC classes must remain thin (only create helper + call helper methods).
+
+			No hardcoded locators; use OR keys from PS_OR.properties/Tariff_OR.properties.
+
+			Prefer component helpers (TextBoxHelper, ComboBoxHelper, GridHelper, ComboBoxHelper, ButtonHelper, FrameHelper, etc.).
+
+			No Thread.sleep; use WebDriverWait/ExpectedConditions or framework wait utilities.
+
+			Add meaningful assertions/validations and use framework failure handling patterns.
+				Don’t: accept Thread.sleep
+				Don’t: hardcode locators
+				Don’t: place raw Selenium in TC
+				Don’t: use RetryAnalyzer to hide real flakiness
+
+Prompt 1 -> To generate a suite with sepcific test cases which can be run as a smoke test for every release.
+
+			You are working in ROCPS Selenium Java TestNG Maven framework where test methods are inside classes under com.subex.rocps.automation.testcases.functionaltesting.* and each TC method calls a helper (example pattern like agentCreation() shown in our framework doc). 
+
+			ROCPS_Framework_Analysis
+
+			Task: Create a new TestNG suite XML named CICD_PostBuild_Smoke.xml for post-build validation.
+			Rules:
+
+			The suite must run fast (target < 15 minutes).
+
+			For each selected TC class, include only the “basic sanity” methods:
+
+			one Create method (naming like *Creation) and
+
+			one Search/Validation method (naming like *colVal or *Search).
+
+			Use <methods><include name="..."/></methods> blocks per class.
+
+			Do NOT include full class execution; method-includes only.
+
+			Output only valid XML (no explanations).
+
+			Include these classes (start list):
+
+			com.subex.rocps.automation.testcases.functionaltesting.TCAgent (include: agentCreation, agentcolVal)
+
+			com.subex.rocps.automation.testcases.functionaltesting.TCAccount (pick the matching create + validation methods from the class)
+
+			<add more classes here>
+
+			If a class does not have a clear *Creation method, choose the closest “create/save” method and the closest “search/grid validation” method.
+			
+	
+Prompt 2 --> 
+			You are implementing ROCPS Selenium automation.
+			Write a new method in <Helper>.java using component helpers (TextBoxHelper, ComboBoxHelper, GridHelper).
+			Must:
+			use OR keys
+			include waits
+			exception handling using framework pattern
+			Steps: <paste test steps>	
+Prompt 3 --> Prompt: Flaky Failure Fix
+
+			Diagnose this flaky failure. Suggest WebDriverWait improvements and locator stabilization.
+			Provide code changes.
+
+Prompt4  -->  AI PR Review
+
+			Review this Code change as ROCPS automation architect. Flag flakiness risks, OR violations, missing assertions, duplication.
+
+Prompt 4 -->  Implement a new helper methods.
+			Implement a new method <methodName>() inside <ModuleHelper>.java.
+			Inputs come from Excel row already loaded in this helper (path/workbook/sheet/key/rowIndex pattern).
+			Steps:
+
+			<step1>
+
+			<step2>
+
+			<step3>
+			Use OR keys (do not hardcode locators). Prefer component helpers.
+			Add waits for page readiness + element clickable/visible.
+			Add validations: <expected result>.
+			Handle exceptions using existing framework pattern.
+
+Prompt 5 --> Existing locators keep breaking.
+
+			Review these OR locators and suggest more stable alternatives.
+			Provide:
+
+			improved locator
+
+			fallback locator
+
+			reason and risk
+			Current OR entries:
+			<paste key=value lines>
+			Context: <screen/flow>	
+		
+Prompt 6 --> Wait strategy for dynamic pages
+
+			Fix flakiness for this helper method.
+			Identify root cause (overlay, ajax refresh, stale, iframe, animation).
+			Replace sleeps with WebDriverWait / ExpectedConditions (clickable/visibility/invisibility).
+			Keep framework style and component helpers.
+			Code + error:
+			<paste method + stacktrace>
+
+
+Prompt 7 --> When Team writes steps but weak validations.
+
+
+				Suggest strong, automation-friendly validations for this scenario.
+				Provide at least:
+
+				2 must-have assertions
+
+				2 secondary assertions
+
+				2 negative case checks (if applicable)
+				Scenario: <paste steps + expected results>
+				
+Prompt 8 --> When Similar code appears in multiple helper methods.
+
+			Refactor this code to reduce duplication and improve maintainability.
+			Move repeated UI sequences into reusable helper/private methods.
+			Keep behavior unchanged.
+			Ensure OR-driven locators and component helpers remain used.
+			Code: <paste sections>
+			
+			
+Prompt 9 --> Handle Grid action
+
+			Using existing GridHelper, implement these actions:
+
+			search/filter by <column> with value <value from Excel>
+
+			select row where <column> equals <value>
+
+			validate column <column> equals expected <expected>
+			Provide method(s) inside <Helper>.java and OR keys needed.
+
+Prompt 10 --> Handle Dropdown  using ComboBoxHelper in new test case.
+
+			Implement robust dropdown selection using ComboBoxHelper.
+			Dropdown: <element> OR key: <key>
+			Select by visible text/value from Excel: <excelColumn>
+			Include waits and fallback if option not loaded initially.

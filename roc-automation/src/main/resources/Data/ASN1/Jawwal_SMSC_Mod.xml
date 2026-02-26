@@ -1,0 +1,2319 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" version="146" softwareVersion="1.0.14822.0">
+    <Decoder name="Jawwal_SMSC" type="asn1">
+        <RecordType root="false" name="CallRecord" type="asn1">
+            <Logic name="CallRecord" optional="false" type="ASN1Record" generate="record">
+                <Logic type="ASN1Sequence">
+                    <Logic name="origAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="0"/>
+                    </Logic>
+                    <Logic name="origAddressGSM" optional="true" id="0" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="1"/>
+                    </Logic>
+                    <Logic name="recipAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="2"/>
+                    </Logic>
+                    <Logic name="recipAddressGSM" optional="true" id="1" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="3"/>
+                    </Logic>
+                    <Logic name="submitDate" optional="true" id="2" type="ASN1Record" generate="field">
+                        <Logic recordType="Date" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="4"/>
+                    </Logic>
+                    <Logic name="submitTime" optional="true" id="3" type="ASN1Record" generate="field">
+                        <Logic recordType="Time" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="5"/>
+                    </Logic>
+                    <Logic name="status" optional="true" id="4" type="ASN1Record" generate="field">
+                        <Logic recordType="Status" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="6"/>
+                    </Logic>
+                    <Logic name="terminDate" optional="true" id="5" type="ASN1Record" generate="field">
+                        <Logic recordType="Date" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="7"/>
+                    </Logic>
+                    <Logic name="terminTime" optional="true" id="6" type="ASN1Record" generate="field">
+                        <Logic recordType="Time" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="8"/>
+                    </Logic>
+                    <Logic name="lengthOfMessage" optional="true" id="7" type="ASN1Record" generate="field">
+                        <Logic recordType="MessageLength" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="9"/>
+                    </Logic>
+                    <Logic name="prioIndicator" optional="true" id="8" type="ASN1Record" generate="field">
+                        <ASN1Field type="octetstring"/>
+                        <Identifier implicit="true" tagClass="context" idValue="10"/>
+                    </Logic>
+                    <Logic name="validityPeriod" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="Period" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="11"/>
+                    </Logic>
+                    <Logic name="deferIndicator" optional="true" id="9" type="ASN1Record" generate="field">
+                        <ASN1Field type="octetstring"/>
+                        <Identifier implicit="true" tagClass="context" idValue="12"/>
+                    </Logic>
+                    <Logic name="deferPeriod" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="Period" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="13"/>
+                    </Logic>
+                    <Logic name="notifIndicator" optional="true" id="10" type="ASN1Record" generate="field">
+                        <ASN1Field type="octetstring"/>
+                        <Identifier implicit="true" tagClass="context" idValue="14"/>
+                    </Logic>
+                    <Logic name="notifAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="15"/>
+                    </Logic>
+                    <Logic name="notifAddressGSM" optional="true" id="11" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="16"/>
+                    </Logic>
+                    <Logic name="vsmscid" optional="true" id="12" type="ASN1Record" generate="field">
+                        <Logic recordType="RangeVSMSC" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="17"/>
+                    </Logic>
+                    <Logic name="vsmsctype" optional="true" id="13" type="ASN1Record" generate="field">
+                        <Logic recordType="TypeVSMSC" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="18"/>
+                    </Logic>
+                    <Logic name="dgtiAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="19"/>
+                    </Logic>
+                    <Logic name="dgtiAddressGSM" optional="true" id="14" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="20"/>
+                    </Logic>
+                    <Logic name="destPointCode" optional="true" id="15" type="ASN1Record" generate="field">
+                        <Logic recordType="C7PointCode" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="21"/>
+                    </Logic>
+                    <Logic name="ogtiAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="22"/>
+                    </Logic>
+                    <Logic name="ogtiAddressGSM" optional="true" id="16" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="23"/>
+                    </Logic>
+                    <Logic name="origPointCode" optional="true" id="17" type="ASN1Record" generate="field">
+                        <Logic recordType="C7PointCode" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="24"/>
+                    </Logic>
+                    <Logic name="orglSubmitDate" optional="true" id="18" type="ASN1Record" generate="field">
+                        <Logic recordType="Date" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="25"/>
+                    </Logic>
+                    <Logic name="orglSubmitTime" optional="true" id="19" type="ASN1Record" generate="field">
+                        <Logic recordType="Time" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="26"/>
+                    </Logic>
+                    <Logic name="transparentPid" optional="true" id="20" type="ASN1Record" generate="field">
+                        <Logic recordType="TransparentPid" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="27"/>
+                    </Logic>
+                    <Logic name="mesgReplyPath" optional="true" id="21" type="ASN1Record" generate="field">
+                        <Logic recordType="MesgReplyPath" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="28"/>
+                    </Logic>
+                    <Logic name="recipIntlMobileSubId" optional="true" id="22" type="ASN1Record" generate="field">
+                        <Logic recordType="IMSI" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="29"/>
+                    </Logic>
+                    <Logic name="callingLineId" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="30"/>
+                    </Logic>
+                    <Logic name="callingLineIdGSM" optional="true" id="23" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="31"/>
+                    </Logic>
+                    <Logic name="consolidation" optional="true" id="24" type="ASN1Record" generate="field">
+                        <ASN1Field type="ia5string"/>
+                        <Identifier implicit="true" tagClass="context" idValue="32"/>
+                    </Logic>
+                    <Logic name="portNumber" optional="true" id="25" type="ASN1Record" generate="field">
+                        <Logic recordType="PortNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="33"/>
+                    </Logic>
+                    <Logic name="aser" optional="true" id="26" type="ASN1Record" generate="field">
+                        <Logic recordType="AdditionalServices" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="34"/>
+                    </Logic>
+                    <Logic name="mser" optional="true" id="27" type="ASN1Record" generate="field">
+                        <Logic recordType="RequestedServices" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="35"/>
+                    </Logic>
+                    <Logic name="nser" optional="true" id="28" type="ASN1Record" generate="field">
+                        <Logic recordType="NewServices" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="36"/>
+                    </Logic>
+                    <Logic name="xser" optional="true" id="29" type="ASN1Record" generate="field">
+                        <Logic recordType="ExtraServices" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="37"/>
+                    </Logic>
+                    <Logic name="origIntlMobileSubId" optional="true" id="30" type="ASN1Record" generate="field">
+                        <Logic recordType="IMSI" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="38"/>
+                    </Logic>
+                    <Logic name="billid" optional="true" id="31" type="ASN1Record" generate="field">
+                        <Logic recordType="BillingIdentifier" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="39"/>
+                    </Logic>
+                    <Logic name="lang" optional="true" id="32" type="ASN1Record" generate="field">
+                        <Logic recordType="LanguageIndicator" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="40"/>
+                    </Logic>
+                    <Logic name="cbat" optional="true" id="33" type="ASN1Record" generate="field">
+                        <ASN1Field type="ia5string"/>
+                        <Identifier implicit="true" tagClass="context" idValue="41"/>
+                    </Logic>
+                    <Logic name="ppPser" optional="true" id="34" type="ASN1Record" generate="field">
+                        <Logic recordType="PrepaidPrimSer" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="42"/>
+                    </Logic>
+                    <Logic name="ppAser" optional="true" id="35" type="ASN1Record" generate="field">
+                        <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="43"/>
+                    </Logic>
+                    <Logic name="ppAserDuringJam" optional="true" id="36" type="ASN1Record" generate="field">
+                        <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="44"/>
+                    </Logic>
+                    <Logic name="ppAserFree" optional="true" id="37" type="ASN1Record" generate="field">
+                        <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="45"/>
+                    </Logic>
+                    <Logic name="ppAserRecip" optional="true" id="38" type="ASN1Record" generate="field">
+                        <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="46"/>
+                    </Logic>
+                    <Logic name="smeReference" optional="true" id="39" type="ASN1Record" generate="field">
+                        <Logic recordType="SmeReference" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="47"/>
+                    </Logic>
+                    <Logic name="smsContentDcs" optional="true" id="40" type="ASN1Record" generate="field">
+                        <ASN1Field type="ia5string"/>
+                        <Identifier implicit="true" tagClass="context" idValue="48"/>
+                    </Logic>
+                    <Logic name="smsContents" optional="true" id="41" type="ASN1Record" generate="field">
+                        <Logic recordType="SMS_STRING" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="49"/>
+                    </Logic>
+                    <Logic name="cmReferenceNr" optional="true" id="42" type="ASN1Record" generate="field">
+                        <Logic recordType="CmReference" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="50"/>
+                    </Logic>
+                    <Logic name="currentSegment" optional="true" id="43" type="ASN1Record" generate="field">
+                        <Logic recordType="CmNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="51"/>
+                    </Logic>
+                    <Logic name="segmentsTotal" optional="true" id="44" type="ASN1Record" generate="field">
+                        <Logic recordType="CmNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="52"/>
+                    </Logic>
+                    <Logic name="textFormatting" optional="true" id="45" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsBitString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="53"/>
+                    </Logic>
+                    <Logic name="bytesCompressedData" optional="true" id="46" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsBytesCompressed" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="54"/>
+                    </Logic>
+                    <Logic name="predefinedAnimations" optional="true" id="47" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="55"/>
+                    </Logic>
+                    <Logic name="userDefinedAnimations" optional="true" id="48" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="56"/>
+                    </Logic>
+                    <Logic name="predefinedSounds" optional="true" id="49" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="57"/>
+                    </Logic>
+                    <Logic name="userDefinedSounds" optional="true" id="50" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="58"/>
+                    </Logic>
+                    <Logic name="blackWhitePictures" optional="true" id="51" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="59"/>
+                    </Logic>
+                    <Logic name="standardWvg" optional="true" id="52" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="60"/>
+                    </Logic>
+                    <Logic name="characterSizeWvg" optional="true" id="53" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="61"/>
+                    </Logic>
+                    <Logic name="greyscalePictures" optional="true" id="54" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="62"/>
+                    </Logic>
+                    <Logic name="colourPictures" optional="true" id="55" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="63"/>
+                    </Logic>
+                    <Logic name="businessCards" optional="true" id="56" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="64"/>
+                    </Logic>
+                    <Logic name="calendarEntries" optional="true" id="57" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="65"/>
+                    </Logic>
+                    <Logic name="polyphonicMelodies" optional="true" id="58" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsNumber" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="66"/>
+                    </Logic>
+                    <Logic name="bit8PortNumberDest" optional="true" id="59" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsPortNumbers8" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="67"/>
+                    </Logic>
+                    <Logic name="bit16PortNumberDest" optional="true" id="60" type="ASN1Record" generate="field">
+                        <Logic recordType="EmsPortNumbers16" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="68"/>
+                    </Logic>
+                    <Logic name="lmsgNrSeg" optional="true" id="61" type="ASN1Record" generate="field">
+                        <Logic recordType="LmsgNumseg" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="69"/>
+                    </Logic>
+                    <Logic name="messageReference" optional="true" id="62" type="ASN1Record" generate="field">
+                        <Logic recordType="MsgRef" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="70"/>
+                    </Logic>
+                    <Logic name="boolSer" optional="true" id="63" type="ASN1Record" generate="field">
+                        <Logic recordType="BooleanServices" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="71"/>
+                    </Logic>
+                    <Logic name="origLASN" optional="true" id="64" type="ASN1Record" generate="field">
+                        <ASN1Field type="ia5string"/>
+                        <Identifier implicit="true" tagClass="context" idValue="72"/>
+                    </Logic>
+                    <Logic name="recipLASN" optional="true" id="65" type="ASN1Record" generate="field">
+                        <ASN1Field type="ia5string"/>
+                        <Identifier implicit="true" tagClass="context" idValue="73"/>
+                    </Logic>
+                    <Logic name="origMsgID" optional="true" id="66" type="ASN1Record" generate="field">
+                        <Logic recordType="MsgIdentification" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="74"/>
+                    </Logic>
+                    <Logic name="recipMsgID" optional="true" id="67" type="ASN1Record" generate="field">
+                        <ASN1Field type="ia5string"/>
+                        <Identifier implicit="true" tagClass="context" idValue="75"/>
+                    </Logic>
+                    <Logic name="receiptDate" optional="true" id="68" type="ASN1Record" generate="field">
+                        <Logic recordType="Date" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="76"/>
+                    </Logic>
+                    <Logic name="receiptTime" optional="true" id="69" type="ASN1Record" generate="field">
+                        <Logic recordType="Time" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="77"/>
+                    </Logic>
+                    <Logic name="isr" optional="true" id="70" type="ASN1Record" generate="field">
+                        <Logic recordType="ISRFlags" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="78"/>
+                    </Logic>
+                    <Logic name="recipAltAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="79"/>
+                    </Logic>
+                    <Logic name="generatedSegments" optional="true" id="71" type="ASN1Record" generate="field">
+                        <Logic recordType="NumGenSegments" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="80"/>
+                    </Logic>
+                    <Logic name="serviceType" optional="true" id="72" type="ASN1Record" generate="field">
+                        <ASN1Field type="ia5string"/>
+                        <Identifier implicit="true" tagClass="context" idValue="81"/>
+                    </Logic>
+                    <Logic name="deliveryAttempts" optional="true" id="73" type="ASN1Record" generate="field">
+                        <Logic recordType="DeliveryAttempts" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="82"/>
+                    </Logic>
+                    <Logic name="untranslOrigAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="83"/>
+                    </Logic>
+                    <Logic name="untranslOrigAddressGSM" optional="true" id="74" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="84"/>
+                    </Logic>
+                    <Logic name="untranslRecipAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="85"/>
+                    </Logic>
+                    <Logic name="untranslRecipAddressGSM" optional="true" id="75" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="86"/>
+                    </Logic>
+                    <Logic name="msgError" optional="true" id="76" type="ASN1Record" generate="field">
+                        <Logic recordType="MessageError" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="87"/>
+                    </Logic>
+                    <Logic name="tpDCS" optional="true" id="77" type="ASN1Record" generate="field">
+                        <Logic recordType="GSM_TP_DCS" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="88"/>
+                    </Logic>
+                    <Logic name="genericUrgencyLevel" optional="true" id="78" type="ASN1Record" generate="field">
+                        <Logic recordType="GenericUrgencyLevel" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="89"/>
+                    </Logic>
+                    <Logic name="ifaceUrgencyLevel" optional="true" id="79" type="ASN1Record" generate="field">
+                        <Logic recordType="IfaceUrgencyLevel" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="90"/>
+                    </Logic>
+                    <Logic name="teleserviceId" optional="true" id="80" type="ASN1Record" generate="field">
+                        <Logic recordType="TeleserviceIdentifier" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="91"/>
+                    </Logic>
+                    <Logic name="origAddrGroup" optional="true" id="81" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressGroupId" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="92"/>
+                    </Logic>
+                    <Logic name="recipAddrGroup" optional="true" id="82" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressGroupId" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="93"/>
+                    </Logic>
+                    <Logic name="origNetworkType" optional="true" id="83" type="ASN1Record" generate="field">
+                        <Logic recordType="MobileNetworkType" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="94"/>
+                    </Logic>
+                    <Logic name="recipNetworkType" optional="true" id="84" type="ASN1Record" generate="field">
+                        <Logic recordType="MobileNetworkType" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="95"/>
+                    </Logic>
+                    <Logic name="origServicePrice" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="MoneyType" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="96"/>
+                    </Logic>
+                    <Logic name="recipServicePrice" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="MoneyType" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="97"/>
+                    </Logic>
+                    <Logic name="cser" optional="true" id="85" type="ASN1Record" generate="field">
+                        <Logic recordType="CServices" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="98"/>
+                    </Logic>
+                    <Logic name="origSPBPStatus" optional="true" id="86" type="ASN1Record" generate="field">
+                        <Logic recordType="SPBPStatus" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="99"/>
+                    </Logic>
+                    <Logic name="recipSPBPStatus" optional="true" id="87" type="ASN1Record" generate="field">
+                        <Logic recordType="SPBPStatus" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="100"/>
+                    </Logic>
+                    <Logic name="billidSMPP" optional="true" id="88" type="ASN1Record" generate="field">
+                        <Logic recordType="BillingIdentifierSMPP" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="101"/>
+                    </Logic>
+                    <Logic name="enumResult" optional="true" id="89" type="ASN1Record" generate="field">
+                        <Logic recordType="ENUMResult" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="102"/>
+                    </Logic>
+                    <Logic name="dser" optional="true" id="90" type="ASN1Record" generate="field">
+                        <Logic recordType="DServices" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="103"/>
+                    </Logic>
+                    <Logic name="importance" optional="true" id="91" type="ASN1Record" generate="field">
+                        <Logic recordType="MsgImportance" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="104"/>
+                    </Logic>
+                    <Logic name="forwAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="105"/>
+                    </Logic>
+                    <Logic name="forwAddressGSM" optional="true" id="92" type="ASN1Record" generate="field">
+                        <Logic recordType="AddressString" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="106"/>
+                    </Logic>
+                    <Logic name="privateContainer" optional="true" id="93" type="ASN1Record" generate="field">
+                        <Logic recordType="PrivateDataContainer" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="107"/>
+                    </Logic>
+                    <Logic name="rbdlFlags1" optional="true" id="94" type="ASN1Record" generate="field">
+                        <Logic recordType="RbdlFlags1" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="108"/>
+                    </Logic>
+                    <Logic name="rbdlFlags2" optional="true" id="95" type="ASN1Record" generate="field">
+                        <Logic recordType="RbdlFlags2" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="109"/>
+                    </Logic>
+                    <Logic name="origSCAddress" optional="true" type="ASN1Record" generate="record">
+                        <Logic recordType="AddressInformation" type="recordReference"/>
+                        <Identifier implicit="true" tagClass="context" idValue="110"/>
+                    </Logic>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="CommandRecord" type="asn1">
+            <Identifier implicit="true" tagClass="application" idValue="0"/>
+            <Logic type="ASN1Sequence">
+                <Logic name="commandType" optional="true" id="96" type="ASN1Record" generate="field">
+                    <Logic recordType="CommandType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="origAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="origAddressGSM" optional="true" id="0" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="recipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="recipAddressGSM" optional="true" id="1" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+                <Logic name="cmdTerminReason" optional="true" id="97" type="ASN1Record" generate="field">
+                    <Logic recordType="CmdTerminReason" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="5"/>
+                </Logic>
+                <Logic name="vsmscid" optional="true" id="12" type="ASN1Record" generate="field">
+                    <Logic recordType="RangeVSMSC" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="6"/>
+                </Logic>
+                <Logic name="vsmsctype" optional="true" id="13" type="ASN1Record" generate="field">
+                    <Logic recordType="TypeVSMSC" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="7"/>
+                </Logic>
+                <Logic name="ogtiAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="8"/>
+                </Logic>
+                <Logic name="ogtiAddressGSM" optional="true" id="16" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="9"/>
+                </Logic>
+                <Logic name="origPointCode" optional="true" id="17" type="ASN1Record" generate="field">
+                    <Logic recordType="C7PointCode" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="10"/>
+                </Logic>
+                <Logic name="orglSubmitDate" optional="true" id="18" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="11"/>
+                </Logic>
+                <Logic name="orglSubmitTime" optional="true" id="19" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="12"/>
+                </Logic>
+                <Logic name="origIntlMobileSubId" optional="true" id="30" type="ASN1Record" generate="field">
+                    <Logic recordType="IMSI" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="13"/>
+                </Logic>
+                <Logic name="callingLineId" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="14"/>
+                </Logic>
+                <Logic name="callingLineIdGSM" optional="true" id="23" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="15"/>
+                </Logic>
+                <Logic name="consolidation" optional="true" id="24" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="16"/>
+                </Logic>
+                <Logic name="billid" optional="true" id="31" type="ASN1Record" generate="field">
+                    <Logic recordType="BillingIdentifier" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="17"/>
+                </Logic>
+                <Logic name="smeReference" optional="true" id="39" type="ASN1Record" generate="field">
+                    <Logic recordType="SmeReference" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="18"/>
+                </Logic>
+                <Logic name="smsContentDcs" optional="true" id="40" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="19"/>
+                </Logic>
+                <Logic name="smsContents" optional="true" id="41" type="ASN1Record" generate="field">
+                    <Logic recordType="SMS_STRING" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="20"/>
+                </Logic>
+                <Logic name="messageReference" optional="true" id="62" type="ASN1Record" generate="field">
+                    <Logic recordType="MsgRef" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="21"/>
+                </Logic>
+                <Logic name="serviceType" optional="true" id="72" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="22"/>
+                </Logic>
+                <Logic name="tpDCS" optional="true" id="77" type="ASN1Record" generate="field">
+                    <Logic recordType="GSM_TP_DCS" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="23"/>
+                </Logic>
+                <Logic name="origAddrGroup" optional="true" id="81" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressGroupId" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="24"/>
+                </Logic>
+                <Logic name="recipAddrGroup" optional="true" id="82" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressGroupId" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="25"/>
+                </Logic>
+                <Logic name="origNetworkType" optional="true" id="83" type="ASN1Record" generate="field">
+                    <Logic recordType="MobileNetworkType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="26"/>
+                </Logic>
+                <Logic name="origLASN" optional="true" id="64" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="27"/>
+                </Logic>
+                <Logic name="nser" optional="true" id="28" type="ASN1Record" generate="field">
+                    <Logic recordType="NewServices" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="28"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="NotificationRecord" type="asn1">
+            <Identifier implicit="true" tagClass="application" idValue="1"/>
+            <Logic type="ASN1Sequence">
+                <Logic name="orglOrigAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="orglOrigAddressGSM" optional="true" id="98" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="orglRecipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="orglRecipAddressGSM" optional="true" id="99" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="orglNotifAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+                <Logic name="orglNotifAddressGSM" optional="true" id="100" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="5"/>
+                </Logic>
+                <Logic name="submitDate" optional="true" id="2" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="6"/>
+                </Logic>
+                <Logic name="submitTime" optional="true" id="3" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="7"/>
+                </Logic>
+                <Logic name="orglSubmitDate" optional="true" id="18" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="8"/>
+                </Logic>
+                <Logic name="orglSubmitTime" optional="true" id="19" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="9"/>
+                </Logic>
+                <Logic name="status" optional="true" id="4" type="ASN1Record" generate="field">
+                    <Logic recordType="Status" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="10"/>
+                </Logic>
+                <Logic name="terminDate" optional="true" id="5" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="11"/>
+                </Logic>
+                <Logic name="terminTime" optional="true" id="6" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="12"/>
+                </Logic>
+                <Logic name="lengthOfMessage" optional="true" id="7" type="ASN1Record" generate="field">
+                    <Logic recordType="MessageLength" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="13"/>
+                </Logic>
+                <Logic name="validityPeriod" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="Period" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="14"/>
+                </Logic>
+                <Logic name="vsmscid" optional="true" id="12" type="ASN1Record" generate="field">
+                    <Logic recordType="RangeVSMSC" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="15"/>
+                </Logic>
+                <Logic name="vsmsctype" optional="true" id="13" type="ASN1Record" generate="field">
+                    <Logic recordType="TypeVSMSC" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="16"/>
+                </Logic>
+                <Logic name="consolidation" optional="true" id="24" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="17"/>
+                </Logic>
+                <Logic name="billid" optional="true" id="31" type="ASN1Record" generate="field">
+                    <Logic recordType="BillingIdentifier" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="18"/>
+                </Logic>
+                <Logic name="smeReference" optional="true" id="39" type="ASN1Record" generate="field">
+                    <Logic recordType="SmeReference" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="19"/>
+                </Logic>
+                <Logic name="smsContentDcs" optional="true" id="40" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="20"/>
+                </Logic>
+                <Logic name="smsContents" optional="true" id="41" type="ASN1Record" generate="field">
+                    <Logic recordType="SMS_STRING" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="21"/>
+                </Logic>
+                <Logic name="messageReference" optional="true" id="62" type="ASN1Record" generate="field">
+                    <Logic recordType="MsgRef" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="22"/>
+                </Logic>
+                <Logic name="recipLASN" optional="true" id="65" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="23"/>
+                </Logic>
+                <Logic name="origMsgID" optional="true" id="66" type="ASN1Record" generate="field">
+                    <Logic recordType="MsgIdentification" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="24"/>
+                </Logic>
+                <Logic name="isr" optional="true" id="70" type="ASN1Record" generate="field">
+                    <Logic recordType="ISRFlags" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="25"/>
+                </Logic>
+                <Logic name="boolSer" optional="true" id="63" type="ASN1Record" generate="field">
+                    <Logic recordType="BooleanServicesNotif" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="26"/>
+                </Logic>
+                <Logic name="recipAltAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="27"/>
+                </Logic>
+                <Logic name="serviceType" optional="true" id="72" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="28"/>
+                </Logic>
+                <Logic name="dgtiAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="29"/>
+                </Logic>
+                <Logic name="dgtiAddressGSM" optional="true" id="14" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="30"/>
+                </Logic>
+                <Logic name="destPointCode" optional="true" id="15" type="ASN1Record" generate="field">
+                    <Logic recordType="C7PointCode" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="31"/>
+                </Logic>
+                <Logic name="orglOgtiAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="32"/>
+                </Logic>
+                <Logic name="orglOgtiAddressGSM" optional="true" id="101" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="33"/>
+                </Logic>
+                <Logic name="orglOrigPointCode" optional="true" id="102" type="ASN1Record" generate="field">
+                    <Logic recordType="C7PointCode" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="34"/>
+                </Logic>
+                <Logic name="deliveryAttempts" optional="true" id="73" type="ASN1Record" generate="field">
+                    <Logic recordType="DeliveryAttempts" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="35"/>
+                </Logic>
+                <Logic name="orglUntranslOrigAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="36"/>
+                </Logic>
+                <Logic name="orglUntranslOrigAddressGSM" optional="true" id="103" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="37"/>
+                </Logic>
+                <Logic name="orglUntranslRecipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="38"/>
+                </Logic>
+                <Logic name="orglUntranslRecipAddressGSM" optional="true" id="104" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="39"/>
+                </Logic>
+                <Logic name="msgError" optional="true" id="76" type="ASN1Record" generate="field">
+                    <Logic recordType="MessageError" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="40"/>
+                </Logic>
+                <Logic name="tpDCS" optional="true" id="77" type="ASN1Record" generate="field">
+                    <Logic recordType="GSM_TP_DCS" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="41"/>
+                </Logic>
+                <Logic name="orglOrigAddrGroup" optional="true" id="105" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressGroupId" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="42"/>
+                </Logic>
+                <Logic name="orglRecipAddrGroup" optional="true" id="106" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressGroupId" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="43"/>
+                </Logic>
+                <Logic name="recipNetworkType" optional="true" id="84" type="ASN1Record" generate="field">
+                    <Logic recordType="MobileNetworkType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="44"/>
+                </Logic>
+                <Logic name="orglRecipNetworkType" optional="true" id="107" type="ASN1Record" generate="field">
+                    <Logic recordType="MobileNetworkType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="45"/>
+                </Logic>
+                <Logic name="recipIntlMobileSubId" optional="true" id="22" type="ASN1Record" generate="field">
+                    <Logic recordType="IMSI" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="46"/>
+                </Logic>
+                <Logic name="orglRecipIntlMobileSubId" optional="true" id="108" type="ASN1Record" generate="field">
+                    <Logic recordType="IMSI" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="47"/>
+                </Logic>
+                <Logic name="origServicePrice" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="MoneyType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="48"/>
+                </Logic>
+                <Logic name="recipServicePrice" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="MoneyType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="49"/>
+                </Logic>
+                <Logic name="ppPser" optional="true" id="34" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidPrimSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="50"/>
+                </Logic>
+                <Logic name="ppAser" optional="true" id="35" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="51"/>
+                </Logic>
+                <Logic name="ppAserDuringJam" optional="true" id="36" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="52"/>
+                </Logic>
+                <Logic name="ppAserFree" optional="true" id="37" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="53"/>
+                </Logic>
+                <Logic name="origSPBPStatus" optional="true" id="86" type="ASN1Record" generate="field">
+                    <Logic recordType="SPBPStatus" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="54"/>
+                </Logic>
+                <Logic name="recipSPBPStatus" optional="true" id="87" type="ASN1Record" generate="field">
+                    <Logic recordType="SPBPStatus" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="55"/>
+                </Logic>
+                <Logic name="orglNotifDate" optional="true" id="109" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="56"/>
+                </Logic>
+                <Logic name="orglNotifTime" optional="true" id="110" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="57"/>
+                </Logic>
+                <Logic name="billidSMPP" optional="true" id="88" type="ASN1Record" generate="field">
+                    <Logic recordType="BillingIdentifierSMPP" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="58"/>
+                </Logic>
+                <Logic name="origLASN" optional="true" id="64" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="59"/>
+                </Logic>
+                <Logic name="nser" optional="true" id="28" type="ASN1Record" generate="field">
+                    <Logic recordType="NewServices" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="60"/>
+                </Logic>
+                <Logic name="enumResult" optional="true" id="89" type="ASN1Record" generate="field">
+                    <Logic recordType="ENUMResult" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="61"/>
+                </Logic>
+                <Logic name="cser" optional="true" id="85" type="ASN1Record" generate="field">
+                    <Logic recordType="CServicesNTF" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="62"/>
+                </Logic>
+                <Logic name="dser" optional="true" id="90" type="ASN1Record" generate="field">
+                    <Logic recordType="DServicesNTF" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="63"/>
+                </Logic>
+                <Logic name="importance" optional="true" id="91" type="ASN1Record" generate="field">
+                    <Logic recordType="MsgImportance" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="64"/>
+                </Logic>
+                <Logic name="rbdlFlags1" optional="true" id="94" type="ASN1Record" generate="field">
+                    <Logic recordType="RbdlFlags1" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="65"/>
+                </Logic>
+                <Logic name="rbdlFlags2" optional="true" id="95" type="ASN1Record" generate="field">
+                    <Logic recordType="RbdlFlags2" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="66"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="SummaryRecord" type="asn1">
+            <Identifier implicit="true" tagClass="application" idValue="2"/>
+            <Logic type="ASN1Sequence">
+                <Logic name="origAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="origAddressGSM" optional="true" id="0" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="recipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="recipAddressGSM" optional="true" id="1" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="status" optional="true" id="4" type="ASN1Record" generate="field">
+                    <Logic recordType="Status" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+                <Logic name="vsmscid" optional="true" id="12" type="ASN1Record" generate="field">
+                    <Logic recordType="RangeVSMSC" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="5"/>
+                </Logic>
+                <Logic name="vsmsctype" optional="true" id="13" type="ASN1Record" generate="field">
+                    <Logic recordType="TypeVSMSC" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="6"/>
+                </Logic>
+                <Logic name="dgtiAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="7"/>
+                </Logic>
+                <Logic name="dgtiAddressGSM" optional="true" id="14" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="8"/>
+                </Logic>
+                <Logic name="destPointCode" optional="true" id="15" type="ASN1Record" generate="field">
+                    <Logic recordType="C7PointCode" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="9"/>
+                </Logic>
+                <Logic name="ogtiAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="10"/>
+                </Logic>
+                <Logic name="ogtiAddressGSM" optional="true" id="16" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="11"/>
+                </Logic>
+                <Logic name="origPointCode" optional="true" id="17" type="ASN1Record" generate="field">
+                    <Logic recordType="C7PointCode" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="12"/>
+                </Logic>
+                <Logic name="transparentPid" optional="true" id="20" type="ASN1Record" generate="field">
+                    <Logic recordType="TransparentPid" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="13"/>
+                </Logic>
+                <Logic name="recipIntlMobileSubId" optional="true" id="22" type="ASN1Record" generate="field">
+                    <Logic recordType="IMSI" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="14"/>
+                </Logic>
+                <Logic name="callingLineId" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="15"/>
+                </Logic>
+                <Logic name="callingLineIdGSM" optional="true" id="23" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="16"/>
+                </Logic>
+                <Logic name="origIntlMobileSubId" optional="true" id="30" type="ASN1Record" generate="field">
+                    <Logic recordType="IMSI" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="17"/>
+                </Logic>
+                <Logic name="billid" optional="true" id="31" type="ASN1Record" generate="field">
+                    <Logic recordType="BillingIdentifier" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="18"/>
+                </Logic>
+                <Logic name="ppPser" optional="true" id="34" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidPrimSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="19"/>
+                </Logic>
+                <Logic name="totalUdLength" optional="true" id="111" type="ASN1Record" generate="field">
+                    <Logic recordType="UdLength" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="20"/>
+                </Logic>
+                <Logic name="submissionTimeFirst" optional="true" id="112" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="21"/>
+                </Logic>
+                <Logic name="submissionDateFirst" optional="true" id="113" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="22"/>
+                </Logic>
+                <Logic name="submissionTimeLast" optional="true" id="114" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="23"/>
+                </Logic>
+                <Logic name="submissionDateLast" optional="true" id="115" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="24"/>
+                </Logic>
+                <Logic name="deliveryTimeFirst" optional="true" id="116" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="25"/>
+                </Logic>
+                <Logic name="deliveryDateFirst" optional="true" id="117" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="26"/>
+                </Logic>
+                <Logic name="deliveryTimeLast" optional="true" id="118" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="27"/>
+                </Logic>
+                <Logic name="deliveryDateLast" optional="true" id="119" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="28"/>
+                </Logic>
+                <Logic name="cmReferenceNr" optional="true" id="42" type="ASN1Record" generate="field">
+                    <Logic recordType="CmReference" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="29"/>
+                </Logic>
+                <Logic name="segmentsTotal" optional="true" id="44" type="ASN1Record" generate="field">
+                    <Logic recordType="CmNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="30"/>
+                </Logic>
+                <Logic name="segmentsAccepted" optional="true" id="120" type="ASN1Record" generate="field">
+                    <Logic recordType="CmNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="31"/>
+                </Logic>
+                <Logic name="segmentsDelivered" optional="true" id="121" type="ASN1Record" generate="field">
+                    <Logic recordType="CmNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="32"/>
+                </Logic>
+                <Logic name="segmentsDuplicate" optional="true" id="122" type="ASN1Record" generate="field">
+                    <Logic recordType="CmNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="33"/>
+                </Logic>
+                <Logic name="segmentsReplaced" optional="true" id="123" type="ASN1Record" generate="field">
+                    <Logic recordType="CmNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="34"/>
+                </Logic>
+                <Logic name="textFormatting" optional="true" id="45" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsBitString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="35"/>
+                </Logic>
+                <Logic name="bytesCompressedData" optional="true" id="46" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsBytesCompressed" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="36"/>
+                </Logic>
+                <Logic name="predefinedAnimations" optional="true" id="47" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="37"/>
+                </Logic>
+                <Logic name="userDefinedAnimations" optional="true" id="48" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="38"/>
+                </Logic>
+                <Logic name="predefinedSounds" optional="true" id="49" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="39"/>
+                </Logic>
+                <Logic name="userDefinedSounds" optional="true" id="50" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="40"/>
+                </Logic>
+                <Logic name="blackWhitePictures" optional="true" id="51" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="41"/>
+                </Logic>
+                <Logic name="standardWvg" optional="true" id="52" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="42"/>
+                </Logic>
+                <Logic name="characterSizeWvg" optional="true" id="53" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="43"/>
+                </Logic>
+                <Logic name="greyscalePictures" optional="true" id="54" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="44"/>
+                </Logic>
+                <Logic name="colourPictures" optional="true" id="55" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="45"/>
+                </Logic>
+                <Logic name="businessCards" optional="true" id="56" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="46"/>
+                </Logic>
+                <Logic name="calendarEntries" optional="true" id="57" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="47"/>
+                </Logic>
+                <Logic name="polyphonicMelodies" optional="true" id="58" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="48"/>
+                </Logic>
+                <Logic name="bit8PortNumberDest" optional="true" id="59" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsPortNumbers8" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="49"/>
+                </Logic>
+                <Logic name="bit16PortNumberDest" optional="true" id="60" type="ASN1Record" generate="field">
+                    <Logic recordType="EmsPortNumbers16" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="50"/>
+                </Logic>
+                <Logic name="boolSer" optional="true" id="63" type="ASN1Record" generate="field">
+                    <Logic recordType="BooleanServicesCM" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="51"/>
+                </Logic>
+                <Logic name="recipAltAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="52"/>
+                </Logic>
+                <Logic name="serviceType" optional="true" id="72" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="53"/>
+                </Logic>
+                <Logic name="totalAttempts" optional="true" id="124" type="ASN1Record" generate="field">
+                    <Logic recordType="DeliveryAttempts" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="54"/>
+                </Logic>
+                <Logic name="segmError" optional="true" id="125" type="ASN1Record" generate="field">
+                    <Logic recordType="MessageError" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="55"/>
+                </Logic>
+                <Logic name="teleserviceId" optional="true" id="80" type="ASN1Record" generate="field">
+                    <Logic recordType="TeleserviceIdentifier" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="56"/>
+                </Logic>
+                <Logic name="nSer" optional="true" id="126" type="ASN1Record" generate="field">
+                    <Logic recordType="NewServicesCM" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="57"/>
+                </Logic>
+                <Logic name="origAddrGroup" optional="true" id="81" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressGroupId" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="58"/>
+                </Logic>
+                <Logic name="recipAddrGroup" optional="true" id="82" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressGroupId" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="59"/>
+                </Logic>
+                <Logic name="origNetworkType" optional="true" id="83" type="ASN1Record" generate="field">
+                    <Logic recordType="MobileNetworkType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="60"/>
+                </Logic>
+                <Logic name="recipNetworkType" optional="true" id="84" type="ASN1Record" generate="field">
+                    <Logic recordType="MobileNetworkType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="61"/>
+                </Logic>
+                <Logic name="prioIndicator" optional="true" id="8" type="ASN1Record" generate="field">
+                    <ASN1Field type="octetstring"/>
+                    <Identifier implicit="true" tagClass="context" idValue="62"/>
+                </Logic>
+                <Logic name="validityPeriod" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="Period" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="63"/>
+                </Logic>
+                <Logic name="deferIndicator" optional="true" id="9" type="ASN1Record" generate="field">
+                    <ASN1Field type="octetstring"/>
+                    <Identifier implicit="true" tagClass="context" idValue="64"/>
+                </Logic>
+                <Logic name="deferPeriod" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="Period" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="65"/>
+                </Logic>
+                <Logic name="notifIndicator" optional="true" id="10" type="ASN1Record" generate="field">
+                    <ASN1Field type="octetstring"/>
+                    <Identifier implicit="true" tagClass="context" idValue="66"/>
+                </Logic>
+                <Logic name="notifAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="67"/>
+                </Logic>
+                <Logic name="notifAddressGSM" optional="true" id="11" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="68"/>
+                </Logic>
+                <Logic name="mesgReplyPath" optional="true" id="21" type="ASN1Record" generate="field">
+                    <Logic recordType="MesgReplyPath" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="69"/>
+                </Logic>
+                <Logic name="consolidation" optional="true" id="24" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="70"/>
+                </Logic>
+                <Logic name="portNumber" optional="true" id="25" type="ASN1Record" generate="field">
+                    <Logic recordType="PortNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="71"/>
+                </Logic>
+                <Logic name="aser" optional="true" id="26" type="ASN1Record" generate="field">
+                    <Logic recordType="AdditionalServices" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="72"/>
+                </Logic>
+                <Logic name="mser" optional="true" id="27" type="ASN1Record" generate="field">
+                    <Logic recordType="RequestedServices" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="73"/>
+                </Logic>
+                <Logic name="xser" optional="true" id="29" type="ASN1Record" generate="field">
+                    <Logic recordType="ExtraServices" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="74"/>
+                </Logic>
+                <Logic name="lang" optional="true" id="32" type="ASN1Record" generate="field">
+                    <Logic recordType="LanguageIndicator" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="75"/>
+                </Logic>
+                <Logic name="cbat" optional="true" id="33" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="76"/>
+                </Logic>
+                <Logic name="ppAser" optional="true" id="35" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="77"/>
+                </Logic>
+                <Logic name="ppAserDuringJam" optional="true" id="36" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="78"/>
+                </Logic>
+                <Logic name="ppAserFree" optional="true" id="37" type="ASN1Record" generate="field">
+                    <Logic recordType="PrepaidAddSer" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="79"/>
+                </Logic>
+                <Logic name="origLASN" optional="true" id="64" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="80"/>
+                </Logic>
+                <Logic name="recipLASN" optional="true" id="65" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="81"/>
+                </Logic>
+                <Logic name="isr" optional="true" id="70" type="ASN1Record" generate="field">
+                    <Logic recordType="ISRFlags" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="82"/>
+                </Logic>
+                <Logic name="untranslOrigAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="83"/>
+                </Logic>
+                <Logic name="untranslOrigAddressGSM" optional="true" id="74" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="84"/>
+                </Logic>
+                <Logic name="untranslRecipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="85"/>
+                </Logic>
+                <Logic name="untranslRecipAddressGSM" optional="true" id="75" type="ASN1Record" generate="field">
+                    <Logic recordType="AddressString" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="86"/>
+                </Logic>
+                <Logic name="tpDCS" optional="true" id="77" type="ASN1Record" generate="field">
+                    <Logic recordType="GSM_TP_DCS" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="87"/>
+                </Logic>
+                <Logic name="genericUrgencyLevel" optional="true" id="78" type="ASN1Record" generate="field">
+                    <Logic recordType="GenericUrgencyLevel" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="88"/>
+                </Logic>
+                <Logic name="ifaceUrgencyLevel" optional="true" id="79" type="ASN1Record" generate="field">
+                    <Logic recordType="IfaceUrgencyLevel" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="89"/>
+                </Logic>
+                <Logic name="enumResult" optional="true" id="89" type="ASN1Record" generate="field">
+                    <Logic recordType="ENUMResult" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="90"/>
+                </Logic>
+                <Logic name="cser" optional="true" id="85" type="ASN1Record" generate="field">
+                    <Logic recordType="CServicesCM" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="91"/>
+                </Logic>
+                <Logic name="dser" optional="true" id="90" type="ASN1Record" generate="field">
+                    <Logic recordType="DServices" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="92"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="FailedLoginRecord" type="asn1">
+            <Identifier implicit="true" tagClass="application" idValue="3"/>
+            <Logic type="ASN1Sequence">
+                <Logic name="userType" optional="true" id="127" type="ASN1Record" generate="field">
+                    <Logic recordType="UserType" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="userAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="netwAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="failReason" optional="true" id="128" type="ASN1Record" generate="field">
+                    <Logic recordType="FailReason" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="failDate" optional="true" id="129" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+                <Logic name="failTime" optional="true" id="130" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="5"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="FaxReportRecord" type="asn1">
+            <Identifier implicit="true" tagClass="application" idValue="4"/>
+            <Logic type="ASN1Sequence">
+                <Logic name="faxOrigAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="faxRecipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="status" optional="true" id="4" type="ASN1Record" generate="field">
+                    <Logic recordType="Status" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="faxDeliveryDate" optional="true" id="131" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="faxDeliveryTime" optional="true" id="132" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+                <Logic name="faxFirstDeliveryDate" optional="true" id="133" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="5"/>
+                </Logic>
+                <Logic name="faxFirstDeliveryTime" optional="true" id="134" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="6"/>
+                </Logic>
+                <Logic name="faxLastDeliveryDate" optional="true" id="135" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="7"/>
+                </Logic>
+                <Logic name="faxLastDeliveryTime" optional="true" id="136" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="8"/>
+                </Logic>
+                <Logic name="numberOfPages" optional="true" id="137" type="ASN1Record" generate="field">
+                    <Logic recordType="NumberOfPages" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="9"/>
+                </Logic>
+                <Logic name="numberOfAttempts" optional="true" id="138" type="ASN1Record" generate="field">
+                    <Logic recordType="DeliveryAttempts" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="10"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="AlertRecord" type="asn1">
+            <Identifier implicit="true" tagClass="application" idValue="5"/>
+            <Logic type="ASN1Sequence">
+                <Logic name="recipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="recipLASN" optional="true" id="65" type="ASN1Record" generate="field">
+                    <ASN1Field type="ia5string"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="submitDate" optional="true" id="2" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="submitTime" optional="true" id="3" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="untranslRecipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="SendRoutingInfoRecord" type="asn1">
+            <Identifier implicit="true" tagClass="application" idValue="6"/>
+            <Logic type="ASN1Sequence">
+                <Logic name="scAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="untranslRecipAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="UTF8AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="phishingIndicator" optional="true" id="139" type="ASN1Record" generate="field">
+                    <ASN1Field type="octetstring"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="recipIntlMobileSubId" optional="true" id="22" type="ASN1Record" generate="field">
+                    <Logic recordType="IMSI" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="recipMSC" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+                <Logic name="recipSGSN" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="5"/>
+                </Logic>
+                <Logic name="ogtiAddress" optional="true" type="ASN1Record" generate="record">
+                    <Logic recordType="AddressInformation" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="6"/>
+                </Logic>
+                <Logic name="origPointCode" optional="true" id="17" type="ASN1Record" generate="field">
+                    <Logic recordType="C7PointCode" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="7"/>
+                </Logic>
+                <Logic name="rbdlFlags1" optional="true" id="94" type="ASN1Record" generate="field">
+                    <Logic recordType="RbdlFlags1" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="8"/>
+                </Logic>
+                <Logic name="rbdlFlags2" optional="true" id="95" type="ASN1Record" generate="field">
+                    <Logic recordType="RbdlFlags2" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="9"/>
+                </Logic>
+                <Logic name="submitDate" optional="true" id="2" type="ASN1Record" generate="field">
+                    <Logic recordType="Date" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="10"/>
+                </Logic>
+                <Logic name="submitTime" optional="true" id="3" type="ASN1Record" generate="field">
+                    <Logic recordType="Time" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="11"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="AddressInformation" type="asn1">
+            <Logic type="ASN1Sequence">
+                <Logic name="ton" optional="true" id="140" type="ASN1Record" generate="field">
+                    <Logic recordType="TypeOfNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="npi" optional="true" id="141" type="ASN1Record" generate="field">
+                    <Logic recordType="NumberingPlanIndicator" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="pid" optional="true" id="142" type="ASN1Record" generate="field">
+                    <Logic recordType="ProtocolIdentifier" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="msisdn" optional="true" id="143" type="ASN1Record" generate="field">
+                    <Logic recordType="IA5STRING" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+                <Logic name="msisdnUTF8" optional="true" id="144" type="ASN1Record" generate="field">
+                    <ASN1Field type="octetstring"/>
+                    <Identifier implicit="true" tagClass="context" idValue="4"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="UTF8AddressInformation" type="asn1">
+            <Logic type="ASN1Sequence">
+                <Logic name="ton" optional="true" id="140" type="ASN1Record" generate="field">
+                    <Logic recordType="TypeOfNumber" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="npi" optional="true" id="141" type="ASN1Record" generate="field">
+                    <Logic recordType="NumberingPlanIndicator" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="pid" optional="true" id="142" type="ASN1Record" generate="field">
+                    <Logic recordType="ProtocolIdentifier" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+                <Logic name="msisdn" optional="true" id="143" type="ASN1Record" generate="field">
+                    <ASN1Field postByteSwap="false" preByteSwap="false" type="octetstring" byteReversed="false" nibbleSwap="false"/>
+                    <Identifier implicit="true" tagClass="context" idValue="3"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="TypeOfNumber" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="NumberingPlanIndicator" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="ProtocolIdentifier" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="BillingIdentifier" type="asn1">
+            <ASN1Field type="ia5string"/>
+        </RecordType>
+        <RecordType name="BillingIdentifierSMPP" type="asn1">
+            <ASN1Field type="octetstring"/>
+        </RecordType>
+        <RecordType name="MsgIdentification" type="asn1">
+            <ASN1Field type="ia5string"/>
+        </RecordType>
+        <RecordType name="Date" type="asn1">
+            <ASN1Field postByteSwap="false" preByteSwap="false" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="octetstring" encoding="windows-1252" byteReversed="false" nibbleSwap="false"/>
+        </RecordType>
+        <RecordType name="Time" type="asn1">
+            <ASN1Field type="octetstring"/>
+        </RecordType>
+        <RecordType name="Status" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="MessageLength" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="LanguageIndicator" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="Period" type="asn1">
+            <Logic type="ASN1Sequence">
+                <Logic name="hours" optional="true" id="145" type="ASN1Record" generate="field">
+                    <Logic recordType="HoursPeriod" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="minutes" optional="true" id="146" type="ASN1Record" generate="field">
+                    <Logic recordType="Minutes" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="HoursPeriod" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="Minutes" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="RangeVSMSC" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="TypeVSMSC" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="C7PointCode" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="TransparentPid" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="PortNumber" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="SmeReference" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="MesgReplyPath" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="CommandType" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="CmdTerminReason" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="AdditionalServices" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="RequestedServices" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="NewServices" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="ExtraServices" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="CServices" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="CServicesCM" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="CServicesNTF" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="DServices" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="DServicesNTF" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="PrepaidPrimSer" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="PrepaidAddSer" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="ISRFlags" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="UdLength" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="CmReference" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="CmNumber" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="EmsBitString" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="EmsBytesCompressed" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="EmsNumber" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="EmsPortNumbers8" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="EmsPortNumbers16" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="LmsgNumseg" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="BooleanServices" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="BooleanServicesNotif" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="BooleanServicesCM" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="SMS_STRING" type="asn1">
+            <ASN1Field type="octetstring"/>
+        </RecordType>
+        <RecordType name="MsgRef" type="asn1">
+            <ASN1Field postByteSwap="false" preByteSwap="false" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="octetstring" encoding="windows-1252" byteReversed="false" nibbleSwap="false"/>
+        </RecordType>
+        <RecordType name="NumGenSegments" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="DeliveryAttempts" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="GenericUrgencyLevel" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="IfaceUrgencyLevel" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="TBCD_STRING" type="asn1">
+            <ASN1Field postByteSwap="false" preByteSwap="false" termChar="F" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="octetstring" encoding="windows-1252" byteReversed="false" nibbleSwap="true"/>
+        </RecordType>
+        <RecordType name="AddressString" type="asn1">
+            <ASN1Field type="octetstring"/>
+        </RecordType>
+        <RecordType name="IMSI" type="asn1">
+            <Logic recordType="TBCD_STRING" type="recordReference"/>
+        </RecordType>
+        <RecordType name="MessageError" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="GSM_TP_DCS" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="TeleserviceIdentifier" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="NewServicesCM" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="AddressGroupId" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="MobileNetworkType" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="MoneyType" type="asn1">
+            <Logic type="ASN1Sequence">
+                <Logic name="currency" optional="true" id="147" type="ASN1Record" generate="field">
+                    <Logic recordType="MoneyCurrency" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="0"/>
+                </Logic>
+                <Logic name="exponent" optional="true" id="148" type="ASN1Record" generate="field">
+                    <Logic recordType="MoneyExponent" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="1"/>
+                </Logic>
+                <Logic name="value" optional="true" id="149" type="ASN1Record" generate="field">
+                    <Logic recordType="MoneyValue" type="recordReference"/>
+                    <Identifier implicit="true" tagClass="context" idValue="2"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType name="MoneyCurrency" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="MoneyExponent" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="MoneyValue" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="SPBPStatus" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="ENUMResult" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="NumberOfPages" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="UserType" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="FailReason" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="MsgImportance" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="RbdlFlags1" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="RbdlFlags2" type="asn1">
+            <ASN1Field type="integer"/>
+        </RecordType>
+        <RecordType name="PrivateDataContainer" type="asn1">
+            <ASN1Field type="octetstring"/>
+        </RecordType>
+        <RecordType root="false" name="IA5STRING" type="asn1">
+            <ASN1Field postByteSwap="false" preByteSwap="false" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="ia5string" encoding="windows-1252" byteReversed="false" nibbleSwap="false"/>
+        </RecordType>
+        <RecordType root="false" name="Dummy" type="asn1"/>
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="CallRecord" type="recordReference"/>
+            </Logic>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node yPos="80" recordType="CallRecord" width="50" name="Record" nodeKey="shape1" xPos="140" type="Record" height="50">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="If(Equal(origAddress.msisdn, NullString()), 1, 0)" name="CheckCallerNumberNull" type="assign" target="$IsCallerNumberNull"/>
+                            <Event expression="If(Equal(recipAddress.msisdn, NullString()), 1, 0)" name="CheckCalledNumberNull" type="assign" target="$IsCalledNumberNull"/>
+                            <Event expression="Add($iTotalRecords, 1)" name="GetTotalRecords" type="assign" target="$iTotalRecords"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="80" recordType="smsc" width="60" name="Mapping" nodeKey="shape2" xPos="240" type="Mapping" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events>
+                            <Event expression="DateTime(Add(2000, ToInteger(Substring(orglSubmitDate, 0, 2), 16)), ToInteger(Substring(orglSubmitDate, 2, 4), 16), ToInteger(Substring(orglSubmitDate, 4, 6), 16), ToInteger(Substring(orglSubmitTime, 0, 2), 16), ToInteger(Substring(orglSubmitTime, 2, 4), 16), ToInteger(Substring(orglSubmitTime, 4, 6), 16), 00)" name="Assing Datetime" type="assign" target="$G_Start_Dttm"/>
+                            <Event expression="LPM_Number_Plan_Prefix(ApplyStringRuleSet('1', recipAddress.msisdn, $SRS_ID))" name="Longest Matcher BNumber" type="assign" target="$G_Longest_Matcher_B_Number"/>
+                            <Event expression="Number_Plan_Lookup_mnp_traffic_type($G_Longest_Matcher_B_Number)" name="Traffic Type" type="assign" target="$G_Traffic_Type"/>
+                            <Event expression="Number_Plan_Lookup_mnp_operator($G_Longest_Matcher_B_Number)" name="Operator" type="assign" target="$G_Operator"/>
+                            <Event expression="Number_Plan_Lookup_mnp_destination($G_Longest_Matcher_B_Number)" name="Destination" type="assign" target="$G_Destination"/>
+                            <Event expression="If(Equal($G_Traffic_Type, NullString()), 'Unknown', $G_Traffic_Type)" name="FinalTrafficType" type="assign" target="$G_FinalTrafficType"/>
+                            <Event expression="If(Equal($G_Destination, NullString()), 'Unknown', $G_Destination)" name="FinalDestination" type="assign" target="$G_FinalDestination"/>
+                            <Event expression="If(Equal($G_Operator, NullString()), 'Unknown', $G_Operator)" name="FinalOperator" type="assign" target="$G_FinalOperator"/>
+                            <Event expression="If(NotEqual(origIntlMobileSubId, NullString()), origIntlMobileSubId, recipIntlMobileSubId)" name="Assign IMSI" type="assign" target="$G_IMSI"/>
+                            <Event expression="IsNull(If(And(RegexMatches('[a-zA-Z0-9!@#$%\-&amp;*()&lt;&gt;._+?= ].*', origAddress.msisdn), Not(RegexMatches('[0-9]*', origAddress.msisdn))), origAddress.msisdn, If(LessThan(Length(origAddress.msisdn), 9), Concatenate('+970', origAddress.msisdn), ApplyStringRuleSet('2', origAddress.msisdn, $SRS_ID))), IsNull(ApplyStringRuleSet('3', origAddress.msisdn, GetStringRuleSetID_srs_id('ER13')), Concatenate('+', origAddress.msisdn)))" name="CallerNumber" type="assign" target="$sCallerNumber"/>
+                            <Event expression="IsNull(If(And(RegexMatches('[a-zA-Z0-9!@#$%\-&amp;*()&lt;&gt;._+?= ].*', recipAddress.msisdn), Not(RegexMatches('[0-9]*',  recipAddress.msisdn))), recipAddress.msisdn, If(LessThan(Length(recipAddress.msisdn), 9), Concatenate('+970', recipAddress.msisdn), ApplyStringRuleSet('2', recipAddress.msisdn, $SRS_ID))), IsNull(ApplyStringRuleSet('3', recipAddress.msisdn, GetStringRuleSetID_srs_id('ER13')), Concatenate('+', recipAddress.msisdn)))" name="callednumber" type="assign" target="$sCalledNumber"/>
+                            <Event expression="If(And(NotEqual(Left($sCallerNumber, 1), '+'), Not(RegexMatches('([A-Z]|[a-z]|[A-Z][a-z])(.*)', $sCallerNumber))), Concatenate('+', $sCallerNumber), $sCallerNumber)" name="FinalCaller_Number" type="assign" target="$sFinalCallerNumber"/>
+                            <Event expression="If(Equal(If(NotEqual(origIntlMobileSubId, NullString()), 'SMSMO', If(NotEqual(recipIntlMobileSubId, NullString()), 'SMSMT', NullString())), 'SMSMO'), 1, If(Equal(If(NotEqual(origIntlMobileSubId, NullString()), 'SMSMO', If(NotEqual(recipIntlMobileSubId, NullString()), 'SMSMT', NullString())), 'SMSMT'), 2, 2))" name="recordtype" type="assign" target="$iRecordType"/>
+                            <Event expression="If(And(NotEqual(Left($sCalledNumber, 1), '+'), Not(RegexMatches('([A-Z]|[a-z]|[A-Z][a-z])(.*)', $sCalledNumber))), Concatenate('+', $sCalledNumber), $sCalledNumber)" name="FinalCalled_Number" type="assign" target="$sFinalCalledNumber"/>
+                            <Event expression="If(Equal($iRecordType, 1), $sFinalCallerNumber,$sFinalCalledNumber)" name="phonenumber" type="assign" target="$sPhoneNumber"/>
+                            <Event expression="If(Equal($iRecordType, 1), $sFinalCalledNumber,$sFinalCallerNumber)" name="otherpartynumber" type="assign" target="$sOtherPartynumber"/>
+                            <Event expression="If(Or(Equal(recipIntlMobileSubId, NullString()), Equal(Length(recipIntlMobileSubId), 0)), 1, If(NotEqual(LookUpForJawwalConf_config_value(Left(recipIntlMobileSubId, 6), 'IMSI'), NullString()), ToInteger(LookUpForJawwalConf_config_value(Left(recipIntlMobileSubId, 6), 'IMSI')), 6))" name="CDR_Type" type="assign" target="$iCDRType"/>
+                            <Event expression="Subscriber_Lookup_sub_rec($sPhoneNumber)" name="Sub_Rec" type="assign" target="$sSUB_REC"/>
+                            <Event expression="If(Equal($iCDRType,6), 0, ToInteger(Token($sSUB_REC,'|',5)))" name="Product_Type" type="assign" target="$iProductType"/>
+                            <Event expression="If(Equal($iCDRType,6), 2, If(Or(Equal($iProductType,1),Equal($iProductType,2)), ToInteger(Token($sSUB_REC,'|',0)), NullInteger()))" name="Subscriber_Id" type="assign" target="$iSubscriberId"/>
+                            <Event expression="If(Or(Equal(Left($sOtherPartynumber, 4), '+970'), Equal(Left($sOtherPartynumber, 4), '+972'), And(RegexMatches('[a-zA-Z0-9!@#$%\-&amp;*()&lt;&gt;._+?= ].*', $sOtherPartynumber), Not(RegexMatches('[0-9]*', Substring($sOtherPartynumber,1))))), 1, 3)" name="Call_Type" type="assign" target="$iCallType"/>
+                            <Event expression="If(Equal($iSubscriberId,NullInteger()), 1, $iSubscriberId)" name="Subscriber_Id1" type="assign" target="$iSubscriberId"/>
+                            <Event expression="If(Equal($iSubscriberId,1), 7, $iCDRType)" name="CDR_type1" type="assign" target="$iCDRType"/>
+                            <Event expression="If(Or(Equal(Length($sOtherPartynumber), 0), Equal($sOtherPartynumber, NullString())), 2, If(Or(Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',0))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',0)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',1))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',1)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',2))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',2)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',3))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',3)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',4))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',4)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',5))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',5)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',6))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',6)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',7))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',7)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',8))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',8)), Or(Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',9))), Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',9)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',10))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',10)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',11))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',11)), Equal(Left(Substring($sOtherPartynumber, 0), Length(Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',12))),Token($sCALL_TYPE_CALSSIFICATION_PREFIX,'|',12)))), 1, 2))" name="Call_Type_Classification" type="assign" target="$iCALL_TYPE_CLASSIFICATION"/>
+                            <Event expression="If(Or(Equal($iSubscriberId, 1), Equal($iSubscriberId, 2)), NullString(), Token($sSUB_REC,'|',11))" name="Sub_Rate_Plan" type="assign" target="$sSub_RatePlan"/>
+                            <Event expression="0.0" name="Value" type="assign" target="$dValue"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="Add($iTotalAcceptedRecords, 1)" name="GetTotalRecords" type="assign" target="$iTotalAcceptedRecords"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="GenID()" target="fng_id"/>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="$$RecordNumber" target="record_no"/>
+                    <Mapping expression="$$RecordAddress" target="record_address"/>
+                    <Mapping expression="$$RecordLength" target="record_length"/>
+                    <Mapping expression="$$RecordType" target="record_type"/>
+                    <Mapping expression="ogtiAddress.msisdn" target="a_number"/>
+                    <Mapping target="b_number"/>
+                    <Mapping expression="DateTime(2011, 01, 09, 09, 45, 34, 34)" target="start_date"/>
+                    <Mapping expression="origAddress.msisdn" target="fng_a_number"/>
+                    <Mapping expression="$$StreamStageId" target="fng_sts_id"/>
+                    <Mapping expression="$$StreamFileId" target="fng_sfl_id"/>
+                    <Mapping expression="$$RecordNumber" target="fng_record_number"/>
+                    <Mapping expression="$$RecordAddress" target="fng_record_address"/>
+                    <Mapping expression="$$RecordLength" target="fng_record_length"/>
+                    <Mapping expression="$$RecordType" target="fng_record_type"/>
+                    <Mapping expression="Hash(origAddress.msisdn, recipAddress.msisdn, $G_Start_Dttm)" target="fng_duplicate_hashcode"/>
+                    <Mapping expression="false" target="fng_duplicate_fl"/>
+                    <Mapping expression="ApplyStringRuleSet('1', origAddress.msisdn, $SRS_ID)" target="fng_a_number_normalized"/>
+                    <Mapping expression="recipAddress.msisdn" target="fng_b_number"/>
+                    <Mapping expression="status" target="fng_status"/>
+                    <Mapping expression="lengthOfMessage" target="fng_msg_length"/>
+                    <Mapping expression="vsmscid" target="fng_vsmscid"/>
+                    <Mapping expression="deliveryAttempts" target="fng_delivery_atmpts"/>
+                    <Mapping expression="serviceType" target="fng_servicetype"/>
+                    <Mapping expression="If(Equal(msgError, NullInteger()), 0, msgError)" target="fng_msg_error"/>
+                    <Mapping expression="teleserviceId" target="fng_teleservice_id"/>
+                    <Mapping expression="SL_Sub_Type(SKC_Subscriber_Type_fng_bill_cycle(ApplyStringRuleSet('1', origAddress.msisdn, $SRS_ID)))" target="fng_subscriber_type"/>
+                    <Mapping expression="Now()" target="fng_process_timestamp"/>
+                    <Mapping target="fng_delay_in_hr"/>
+                    <Mapping expression="$G_Start_Dttm" target="fng_start_dttm"/>
+                    <Mapping expression="HourPart($G_Start_Dttm)" target="fng_part_key"/>
+                    <Mapping expression="If(Equal($G_Start_Dttm, NullDateTime()), NullDecimal(), Add(Divide(Subtract(Millis(Now()), Millis($G_Start_Dttm)), Multiply(24, 60, 60, 1000)), Divide(Subtract( Divide(Subtract(Millis(Now()), Millis($G_Start_Dttm)), Multiply(60, 60, 1000)), Multiply(Divide(Subtract(Millis(Now()), Millis($G_Start_Dttm)), Multiply(24, 60, 60, 1000)) , 24 ) ), 100.00, 2)))" target="fng_cdr_delay"/>
+                    <Mapping expression="ApplyStringRuleSet('1', recipAddress.msisdn, $SRS_ID)" target="fng_b_number_normalized"/>
+                    <Mapping expression="If(Equal(Substring($G_IMSI, 0, 6), '425050'), 'Postpaid', If(Or(Equal(Substring($G_IMSI, 0, 6), '425051'), Equal(Substring($G_IMSI, 0, 6), '425052')), 'Prepaid', NullString()))" target="fng_prepaid_ind"/>
+                    <Mapping expression="$G_FinalTrafficType" target="fng_npl_traffic_type"/>
+                    <Mapping expression="$G_FinalOperator" target="fng_npl_operator"/>
+                    <Mapping expression="$G_FinalDestination" target="fng_npl_destination"/>
+                    <Mapping expression="origLASN" target="fng_extra1"/>
+                    <Mapping expression="If(NotEqual(origIntlMobileSubId, NullString()), 'SMSMO', If(NotEqual(recipIntlMobileSubId, NullString()), 'SMSMT', NullString()))" target="fng_call_type"/>
+                    <Mapping expression="ogtiAddress.msisdn" target="fng_extra2"/>
+                    <Mapping expression="$sFinalCallerNumber" target="fng_caller_number"/>
+                    <Mapping expression="$sFinalCalledNumber" target="fng_called_number"/>
+                    <Mapping expression="999" target="fng_network_id"/>
+                    <Mapping expression="$iRecordType" target="fng_fm_recordtype"/>
+                    <Mapping expression="$G_Start_Dttm" target="fng_receive_time"/>
+                    <Mapping expression="$iCallType" target="fng_fm_call_type"/>
+                    <Mapping expression="'NA'" target="fng_geogaphic_position"/>
+                    <Mapping expression="$iSubscriberId" target="fng_subscriber_id"/>
+                    <Mapping expression="$iCDRType" target="fng_cdr_type"/>
+                    <Mapping expression="2" target="fng_service_type"/>
+                    <Mapping expression="1" target="fng_cdr_category"/>
+                    <Mapping expression="1" target="fng_is_complete"/>
+                    <Mapping expression="0" target="fng_is_attempted"/>
+                    <Mapping expression="1" target="fng_service_number_type"/>
+                    <Mapping expression="$sPhoneNumber" target="fng_phone_number"/>
+                    <Mapping expression="$sOtherPartynumber" target="fng_other_party_number"/>
+                    <Mapping expression="LookUpForCountryCode_code(LPMForCountryCode(If(Equal($iRecordType, 1), $sFinalCalledNumber, $sFinalCallerNumber)))" target="fng_other_party_country_code"/>
+                    <Mapping expression="Now()" target="fng_spark_processing_time"/>
+                    <Mapping expression="IsNull(Token($sSUB_REC, '|', 2), 'Default')" target="fng_account_name"/>
+                    <Mapping expression="'12'" target="fng_ds_name"/>
+                    <Mapping expression="'0'" target="fng_optional_field_1"/>
+                    <Mapping expression="origAddress.msisdn" target="fng_optional_field_2"/>
+                    <Mapping expression="recipAddress.msisdn" target="fng_optional_field_3"/>
+                    <Mapping expression="ToString(lengthOfMessage)" target="fng_optional_field_4"/>
+                    <Mapping expression="DayOfYear($G_Start_Dttm)" target="fng_day_of_year"/>
+                    <Mapping expression="HourOfDay($G_Start_Dttm)" target="fng_hour_of_day"/>
+                    <Mapping expression="$sSub_RatePlan" target="fng_rate_plan"/>
+                    <Mapping expression="IsNull(ToInteger(Token($sSUB_REC, '|', 1)), 1)" target="fng_account_id"/>
+                    <Mapping expression="$dValue" target="fng_value"/>
+                    <Mapping expression="IsNull(LookUpForService_service($iCallType, 1, $iCDRType, $iRecordType, 2), 0)" target="fng_service"/>
+                    <Mapping expression="$iCALL_TYPE_CLASSIFICATION" target="fng_connection_type"/>
+                    <Mapping expression="0" target="fng_duration"/>
+                    <Mapping expression="$G_IMSI" target="fng_imsi"/>
+                    <Mapping expression="'1'" target="fng_aggregation_1"/>
+                    <Mapping expression="$$Filename" target="fng_filename"/>
+                    <Mapping expression="origAddress.msisdn" target="fng_raw_caller_number"/>
+                    <Mapping expression="recipAddress.msisdn" target="fng_raw_called_number"/>
+                    <Mapping target="fng_forwarded_number"/>
+                </Mappings>
+            </Node>
+            <Node filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" yPos="80" outputKey="smsc" UsagePartitionId="GetUsagePartitionId(fng_start_dttm, SecondPart(fng_start_dttm))" width="60" name="SMSC" unicode="false" nodeKey="shape3" xPos="365" type="SparkOutput" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node yPos="175" width="50" name="Event" nodeKey="shape4" xPos="605" type="Event" event="ParseBegin" height="50">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="Now()" name="startTime" type="assign" target="$dtSTART_TIME"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="170" recordType="RecordHeader" width="60" name="Create" nodeKey="shape5" xPos="490" type="Create" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape4"/>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="'Recordtype:1'" target="RecordType"/>
+                </Mappings>
+            </Node>
+            <Node yPos="335" width="50" name="Event" nodeKey="shape6" xPos="125" type="Event" event="ParseEnd" height="50">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="Now()" name="endTime" type="assign" target="$dtEND_TIME"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node charset="windows-1252" filename="$$Filename" yPos="175" outputKey="0" width="60" name="Output" unicode="false" nodeKey="shape7" xPos="375" type="Output" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape5">
+                        <OutputRecordType footer="false" delimiter="space" header="true" outputFieldNames="false" terminator="lf" type="delimited">
+                            <OutputFieldMappings/>
+                        </OutputRecordType>
+                        <Events/>
+                    </Input>
+                    <Input nodeOutput="Output" nodeKey="shape8">
+                        <OutputRecordType footer="false" delimiter="comma" header="false" outputFieldNames="false" terminator="lf" type="delimited">
+                            <OutputFieldMappings/>
+                        </OutputRecordType>
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node yPos="170" recordType="smsc_nff" width="60" name="NFF_Mapping" nodeKey="shape8" xPos="250" type="Mapping" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="fng_id" target="fng_id"/>
+                    <Mapping expression="fng_network_id" target="fng_network_id"/>
+                    <Mapping expression="fng_caller_number" target="fng_caller_number"/>
+                    <Mapping expression="fng_called_number" target="fng_called_number"/>
+                    <Mapping expression="fng_forwarded_number" target="fng_forwarded_number"/>
+                    <Mapping expression="fng_fm_recordtype" target="fng_fm_recordtype"/>
+                    <Mapping expression="fng_duration" target="fng_duration"/>
+                    <Mapping expression="fng_equipment_id" target="fng_equipment_id"/>
+                    <Mapping expression="fng_imsi" target="fng_imsi"/>
+                    <Mapping expression="fng_geogaphic_position" target="fng_geogaphic_position"/>
+                    <Mapping expression="fng_fm_call_type" target="fng_fm_call_type"/>
+                    <Mapping expression="fng_subscriber_id" target="fng_subscriber_id"/>
+                    <Mapping expression="fng_value" target="fng_value"/>
+                    <Mapping expression="fng_cdr_type" target="fng_cdr_type"/>
+                    <Mapping expression="fng_service_type" target="fng_service_type"/>
+                    <Mapping expression="fng_cdr_category" target="fng_cdr_category"/>
+                    <Mapping expression="fng_is_complete" target="fng_is_complete"/>
+                    <Mapping expression="fng_co_related_field" target="fng_co_related_field"/>
+                    <Mapping expression="fng_is_attempted" target="fng_is_attempted"/>
+                    <Mapping expression="fng_service" target="fng_service"/>
+                    <Mapping expression="fng_phone_number" target="fng_phone_number"/>
+                    <Mapping expression="fng_vpmn" target="fng_vpmn"/>
+                    <Mapping expression="fng_service_number_type" target="fng_service_number_type"/>
+                    <Mapping expression="fng_connection_type" target="fng_connection_type"/>
+                    <Mapping expression="fng_other_party_number" target="fng_other_party_number"/>
+                    <Mapping expression="fng_incoming_trunk_id" target="fng_incoming_trunk_id"/>
+                    <Mapping expression="fng_outgoing_trunk_id" target="fng_outgoing_trunk_id"/>
+                    <Mapping expression="fng_other_party_country_code" target="fng_other_party_country_code"/>
+                    <Mapping expression="fng_account_name" target="fng_account_name"/>
+                    <Mapping expression="fng_originating_smsc_address" target="fng_originating_smsc_address"/>
+                    <Mapping expression="fng_destination_smsc_address" target="fng_destination_smsc_address"/>
+                    <Mapping expression="fng_raw_caller_number" target="fng_raw_caller_number"/>
+                    <Mapping expression="fng_raw_called_number" target="fng_raw_called_number"/>
+                    <Mapping expression="fng_raw_forwarded_number" target="fng_raw_forwarded_number"/>
+                    <Mapping expression="fng_filename" target="fng_filename"/>
+                    <Mapping expression="fng_ds_name" target="fng_ds_name"/>
+                    <Mapping expression="fng_optional_field_1" target="fng_optional_field_1"/>
+                    <Mapping expression="fng_optional_field_2" target="fng_optional_field_2"/>
+                    <Mapping expression="fng_optional_field_3" target="fng_optional_field_3"/>
+                    <Mapping expression="fng_optional_field_4" target="fng_optional_field_4"/>
+                    <Mapping expression="fng_optional_field_5" target="fng_optional_field_5"/>
+                    <Mapping expression="fng_optional_field_6" target="fng_optional_field_6"/>
+                    <Mapping expression="fng_optional_field_7" target="fng_optional_field_7"/>
+                    <Mapping expression="fng_optional_field_8" target="fng_optional_field_8"/>
+                    <Mapping expression="fng_optional_field_9" target="fng_optional_field_9"/>
+                    <Mapping expression="fng_account_id" target="fng_account_id"/>
+                    <Mapping expression="fng_aggregation_1" target="fng_aggregation_1"/>
+                    <Mapping expression="fng_aggregation_2" target="fng_aggregation_2"/>
+                    <Mapping expression="fng_friends_and_family" target="fng_friends_and_family"/>
+                    <Mapping expression="fng_clear_service" target="fng_clear_service"/>
+                    <Mapping expression="fng_rate_plan" target="fng_rate_plan"/>
+                    <Mapping expression="fng_day_of_year" target="fng_day_of_year"/>
+                    <Mapping expression="fng_hour_of_day" target="fng_hour_of_day"/>
+                    <Mapping expression="ToString(fng_receive_time, 'yyyy/MM/dd HH:mm:ss')" target="fng_receive_time"/>
+                    <Mapping expression="ToString(fng_start_dttm, 'yyyy/MM/dd HH:mm:ss')" target="fng_start_dttm"/>
+                    <Mapping expression="ToString(fng_spark_processing_time, 'yyyy/MM/dd HH:mm:ss')" target="fng_spark_processing_time"/>
+                    <Mapping expression="ToString(fng_optional_field_10, 'yyyy/MM/dd HH:mm:ss')" target="fng_optional_field_10"/>
+                </Mappings>
+            </Node>
+            <Node yPos="330" recordType="SUMMARY_OUTPUT" width="60" name="Create" nodeKey="shape9" xPos="220" type="Create" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape6">
+                        <Events>
+                            <Event expression="Subtract(Seconds($dtEND_TIME),Seconds($dtSTART_TIME))" name="TimeTaken" type="assign" target="$iTIME_TAKEN"/>
+                            <Event expression="If(GreaterThan($iTIME_TAKEN, 0), Divide($iTotalRecords, ToDecimal($iTIME_TAKEN), 2), ToDecimal($iTotalRecords))" name="Speed" type="assign" target="$dSPEED"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="'Jawaal_SMSC_Mod'" target="DS_NAME"/>
+                    <Mapping expression="$$Filename" target="FILE_NAME"/>
+                    <Mapping expression="$iTotalRecords" target="TOTAL_RECORDS"/>
+                    <Mapping expression="$iTotalAcceptedRecords" target="ACCEPTED_RECORDS"/>
+                    <Mapping expression="0" target="REJECTED_RECORDS"/>
+                    <Mapping expression="Subtract($iTotalRecords, Add($iTotalAcceptedRecords, 0))" target="IGNORED_RECORDS"/>
+                    <Mapping expression="ToString($dtSTART_TIME, 'yyyyMMddHHmmss')" target="START_TIME"/>
+                    <Mapping expression="ToString($dtEND_TIME, 'yyyyMMddHHmmss')" target="END_TIME"/>
+                    <Mapping expression="$dSPEED" target="RECORD_PER_SECOND"/>
+                </Mappings>
+            </Node>
+            <Node yPos="325" recordType="SUMMARY_OUTPUT" width="60" name="Filter" nodeKey="shape10" xPos="320" type="Filter" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape9">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output expression="GreaterThan($iTotalAcceptedRecords,0)" name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node charset="windows-1252" filename="Concatenate('success_', $$Filename)" yPos="330" outputKey="0" width="60" name="Success_Output" unicode="false" nodeKey="shape11" xPos="440" type="Output" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape10">
+                        <OutputRecordType footer="false" delimiter="space" header="false" outputFieldNames="false" terminator="lf" type="delimited">
+                            <OutputFieldMappings/>
+                        </OutputRecordType>
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node charset="windows-1252" filename="Concatenate('summary_', $$Filename, '.summary')" yPos="465" outputKey="0" width="60" name="Summary_Output" unicode="false" nodeKey="shape12" xPos="215" type="Output" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape9">
+                        <OutputRecordType footer="false" delimiter="|" header="false" outputFieldNames="false" terminator="lf" type="delimited">
+                            <OutputFieldMappings/>
+                        </OutputRecordType>
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="smsc" name="GenID" type="GenerateLongId" blockSize="1000000"/>
+            <DynamicFunction name="GetStringRuleSetID" description="GetStringRuleSetID" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="string_rule_set">
+                <LookupKeys>
+                    <LookupKey key="srs_name"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="srs_id"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction exactMatchFlColumn="mnp_exactmatch_fl" name="LPM_Number_Plan_Prefix" description="LPM_Number_Plan_Prefix" validDigits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ#*+." type="SQLLongestMatcher" matchColumn="mnp_prefix" tableName="l_jawwal_number_plan">
+                <Keys/>
+            </DynamicFunction>
+            <DynamicFunction name="Number_Plan_Lookup" description="Number_Plan_Lookup" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="l_jawwal_number_plan">
+                <LookupKeys>
+                    <LookupKey key="mnp_id"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="mnp_destination"/>
+                    <ResultCol duplicates="false" name="mnp_operator"/>
+                    <ResultCol duplicates="false" name="mnp_traffic_type"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction name="Subscriber_Lookup" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="ds_subscriber_v">
+                <LookupKeys>
+                    <LookupKey key="phone_number"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="sub_rec"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction name="LPMForCountryCode" validDigits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+" type="SQLLongestMatcher" matchColumn="code" tableName="country_codes_v">
+                <Keys/>
+            </DynamicFunction>
+            <DynamicFunction name="LookUpForCountryCode" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="country_codes_v">
+                <LookupKeys>
+                    <LookupKey key="id"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="code"/>
+                    <ResultCol duplicates="false" name="description"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction name="LookUpForJawwalConf" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="jawwal_configuration">
+                <LookupKeys>
+                    <LookupKey key="config_key"/>
+                    <LookupKey key="config_type"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="config_value"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction name="SKC_Subscriber_Type" description="SKC_Subscriber_Type" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="crm_new">
+                <LookupKeys>
+                    <LookupKey key="fng_phone_number"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="fng_bill_cycle"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction name="LookUpForService" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="cdr_service">
+                <LookupKeys>
+                    <LookupKey key="call_type"/>
+                    <LookupKey key="cdr_category"/>
+                    <LookupKey key="cdr_type"/>
+                    <LookupKey key="record_type"/>
+                    <LookupKey key="service_type"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="service"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction valueType="string" name="SL_Sub_Type" type="StaticLookup" keyType="string" allowUnknownKeys="true">
+                <Lookups>
+                    <Lookup value="'Postpaid'" key="'POS'"/>
+                    <Lookup value="'Prepaid'" key="'PRE'"/>
+                    <Lookup value="'Mix'" key="'MIX'"/>
+                </Lookups>
+            </DynamicFunction>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="smsc">
+                <Field nullable="false" name="fng_id" id="150" type="integer"/>
+                <Field nullable="false" name="sts_id" id="151" type="integer"/>
+                <Field nullable="false" name="sfl_id" id="152" type="integer"/>
+                <Field nullable="false" name="fng_record_number" id="153" type="integer"/>
+                <Field nullable="false" name="fng_record_address" id="154" type="integer"/>
+                <Field nullable="false" name="fng_record_length" id="155" type="integer"/>
+                <Field nullable="false" name="fng_record_type" id="156" type="string"/>
+                <Field nullable="true" name="fng_duplicate_hashcode" id="157" type="integer"/>
+                <Field nullable="true" name="fng_duplicate_fl" id="158" type="boolean"/>
+                <Field nullable="true" name="fng_receive_time" id="159" type="datetime"/>
+                <Field nullable="true" name="fng_network_id" id="160" type="integer"/>
+                <Field nullable="true" name="fng_caller_number" id="161" type="string"/>
+                <Field nullable="true" name="fng_called_number" id="162" type="string"/>
+                <Field nullable="true" name="fng_forwarded_number" id="163" type="string"/>
+                <Field nullable="true" name="fng_fm_recordtype" id="164" type="integer"/>
+                <Field nullable="true" name="fng_duration" id="165" type="integer"/>
+                <Field nullable="false" name="fng_start_dttm" id="166" type="datetime"/>
+                <Field nullable="true" name="fng_equipment_id" id="167" type="string"/>
+                <Field nullable="true" name="fng_imsi" id="168" type="string"/>
+                <Field nullable="true" name="fng_geogaphic_position" id="169" type="string"/>
+                <Field nullable="true" name="fng_fm_call_type" id="170" type="integer"/>
+                <Field nullable="true" name="fng_subscriber_id" id="171" type="integer"/>
+                <Field nullable="true" name="fng_value" id="172" type="decimal"/>
+                <Field nullable="true" name="fng_cdr_type" id="173" type="integer"/>
+                <Field nullable="true" name="fng_service_type" id="174" type="integer"/>
+                <Field nullable="true" name="fng_cdr_category" id="175" type="integer"/>
+                <Field nullable="true" name="fng_is_complete" id="176" type="integer"/>
+                <Field nullable="true" name="fng_co_related_field" id="177" type="string"/>
+                <Field nullable="true" name="fng_is_attempted" id="178" type="integer"/>
+                <Field nullable="true" name="fng_service" id="179" type="integer"/>
+                <Field nullable="true" name="fng_phone_number" id="180" type="string"/>
+                <Field nullable="true" name="fng_vpmn" id="181" type="string"/>
+                <Field nullable="true" name="fng_service_number_type" id="182" type="integer"/>
+                <Field nullable="true" name="fng_connection_type" id="183" type="integer"/>
+                <Field nullable="true" name="fng_other_party_number" id="184" type="string"/>
+                <Field nullable="true" name="fng_incoming_trunk_id" id="185" type="string"/>
+                <Field nullable="true" name="fng_outgoing_trunk_id" id="186" type="string"/>
+                <Field nullable="true" name="fng_other_party_country_code" id="187" type="string"/>
+                <Field nullable="true" name="fng_spark_processing_time" id="188" type="datetime"/>
+                <Field nullable="true" name="fng_account_name" id="189" type="string"/>
+                <Field nullable="true" name="fng_originating_smsc_address" id="190" type="string"/>
+                <Field nullable="true" name="fng_destination_smsc_address" id="191" type="string"/>
+                <Field nullable="true" name="fng_raw_caller_number" id="192" type="string"/>
+                <Field nullable="true" name="fng_raw_called_number" id="193" type="string"/>
+                <Field nullable="true" name="fng_raw_forwarded_number" id="194" type="string"/>
+                <Field nullable="false" name="fng_filename" id="195" type="string"/>
+                <Field nullable="true" name="fng_ds_name" id="196" type="string"/>
+                <Field nullable="true" name="fng_optional_field_1" id="197" type="string"/>
+                <Field nullable="true" name="fng_optional_field_2" id="198" type="string"/>
+                <Field nullable="true" name="fng_optional_field_3" id="199" type="string"/>
+                <Field nullable="true" name="fng_optional_field_4" id="200" type="string"/>
+                <Field nullable="true" name="fng_optional_field_5" id="201" type="string"/>
+                <Field nullable="true" name="fng_optional_field_6" id="202" type="decimal"/>
+                <Field nullable="true" name="fng_optional_field_7" id="203" type="decimal"/>
+                <Field nullable="true" name="fng_optional_field_8" id="204" type="decimal"/>
+                <Field nullable="true" name="fng_optional_field_9" id="205" type="datetime"/>
+                <Field nullable="true" name="fng_optional_field_10" id="206" type="datetime"/>
+                <Field nullable="true" name="fng_account_id" id="207" type="integer"/>
+                <Field nullable="true" name="fng_aggregation_1" id="208" type="string"/>
+                <Field nullable="true" name="fng_aggregation_2" id="209" type="string"/>
+                <Field nullable="true" name="fng_friends_and_family" id="210" type="integer"/>
+                <Field nullable="true" name="fng_clear_service" id="211" type="string"/>
+                <Field nullable="true" name="fng_rate_plan" id="212" type="string"/>
+                <Field nullable="true" name="fng_day_of_year" id="213" type="integer"/>
+                <Field nullable="true" name="fng_hour_of_day" id="214" type="integer"/>
+                <Field nullable="true" name="fng_a_number" id="215" type="string"/>
+                <Field nullable="true" name="fng_a_number_normalized" id="216" type="string"/>
+                <Field nullable="true" name="fng_b_number" id="217" type="string"/>
+                <Field nullable="true" name="fng_b_number_normalized" id="218" type="string"/>
+                <Field nullable="true" name="fng_cdr_recordtype" id="219" type="string"/>
+                <Field nullable="true" name="fng_call_type" id="220" type="string"/>
+                <Field nullable="true" name="fng_record_sequence_no" id="221" type="integer"/>
+                <Field nullable="true" name="fng_status" id="222" type="integer"/>
+                <Field nullable="true" name="fng_msg_length" id="223" type="integer"/>
+                <Field nullable="true" name="fng_vsmscid" id="224" type="integer"/>
+                <Field nullable="true" name="fng_npl_traffic_type" id="225" type="string"/>
+                <Field nullable="true" name="fng_npl_operator" id="226" type="string"/>
+                <Field nullable="true" name="fng_npl_destination" id="227" type="string"/>
+                <Field nullable="true" name="fng_delivery_atmpts" id="228" type="integer"/>
+                <Field nullable="true" name="fng_servicetype" id="229" type="string"/>
+                <Field nullable="true" name="fng_msg_error" id="230" type="integer"/>
+                <Field nullable="true" name="fng_teleservice_id" id="231" type="integer"/>
+                <Field nullable="true" name="fng_prepaid_ind" id="232" type="string"/>
+                <Field nullable="true" name="fng_process_timestamp" id="233" type="datetime"/>
+                <Field nullable="true" name="fng_cdr_delay" id="234" type="decimal"/>
+                <Field nullable="true" name="fng_part_key" id="235" type="integer"/>
+                <Field nullable="true" name="fng_extra1" id="236" type="string"/>
+                <Field nullable="true" name="fng_extra2" id="237" type="string"/>
+                <Field nullable="true" name="fng_extra3" id="238" type="integer"/>
+                <Field nullable="true" name="fng_extra4" id="239" type="integer"/>
+                <Field nullable="true" name="fng_subscriber_type" id="240" type="string"/>
+            </RecordType>
+            <RecordType name="RecordHeader">
+                <Field nullable="true" name="RecordType" id="241" type="string"/>
+            </RecordType>
+            <RecordType name="smsc_nff">
+                <Field nullable="true" name="fng_receive_time" id="159" type="string"/>
+                <Field nullable="true" name="fng_network_id" id="160" type="integer"/>
+                <Field nullable="true" name="fng_caller_number" id="161" type="string"/>
+                <Field nullable="true" name="fng_called_number" id="162" type="string"/>
+                <Field nullable="true" name="fng_forwarded_number" id="163" type="string"/>
+                <Field nullable="true" name="fng_fm_recordtype" id="164" type="integer"/>
+                <Field nullable="true" name="fng_duration" id="165" type="integer"/>
+                <Field nullable="false" name="fng_start_dttm" id="166" type="string"/>
+                <Field nullable="true" name="fng_equipment_id" id="167" type="string"/>
+                <Field nullable="true" name="fng_imsi" id="168" type="string"/>
+                <Field nullable="true" name="fng_geogaphic_position" id="169" type="string"/>
+                <Field nullable="true" name="fng_fm_call_type" id="170" type="integer"/>
+                <Field nullable="true" name="fng_subscriber_id" id="171" type="integer"/>
+                <Field nullable="true" name="fng_value" id="172" type="decimal"/>
+                <Field nullable="true" name="fng_cdr_type" id="173" type="integer"/>
+                <Field nullable="true" name="fng_service_type" id="174" type="integer"/>
+                <Field nullable="true" name="fng_cdr_category" id="175" type="integer"/>
+                <Field nullable="true" name="fng_is_complete" id="176" type="integer"/>
+                <Field nullable="true" name="fng_co_related_field" id="177" type="string"/>
+                <Field nullable="true" name="fng_is_attempted" id="178" type="integer"/>
+                <Field nullable="true" name="fng_service" id="179" type="integer"/>
+                <Field nullable="true" name="fng_phone_number" id="180" type="string"/>
+                <Field nullable="true" name="fng_vpmn" id="181" type="string"/>
+                <Field nullable="true" name="fng_service_number_type" id="182" type="integer"/>
+                <Field nullable="true" name="fng_connection_type" id="183" type="integer"/>
+                <Field nullable="true" name="fng_other_party_number" id="184" type="string"/>
+                <Field nullable="true" name="fng_incoming_trunk_id" id="185" type="string"/>
+                <Field nullable="true" name="fng_outgoing_trunk_id" id="186" type="string"/>
+                <Field nullable="true" name="fng_other_party_country_code" id="187" type="string"/>
+                <Field nullable="true" name="fng_spark_processing_time" id="188" type="string"/>
+                <Field nullable="true" name="fng_account_name" id="189" type="string"/>
+                <Field nullable="true" name="fng_originating_smsc_address" id="190" type="string"/>
+                <Field nullable="true" name="fng_destination_smsc_address" id="191" type="string"/>
+                <Field nullable="true" name="fng_raw_caller_number" id="192" type="string"/>
+                <Field nullable="true" name="fng_raw_called_number" id="193" type="string"/>
+                <Field nullable="true" name="fng_raw_forwarded_number" id="194" type="string"/>
+                <Field nullable="false" name="fng_filename" id="195" type="string"/>
+                <Field nullable="true" name="fng_ds_name" id="196" type="string"/>
+                <Field nullable="true" name="fng_optional_field_1" id="197" type="string"/>
+                <Field nullable="true" name="fng_optional_field_2" id="198" type="string"/>
+                <Field nullable="true" name="fng_optional_field_3" id="199" type="string"/>
+                <Field nullable="true" name="fng_optional_field_4" id="200" type="string"/>
+                <Field nullable="true" name="fng_optional_field_5" id="201" type="string"/>
+                <Field nullable="true" name="fng_optional_field_6" id="202" type="decimal"/>
+                <Field nullable="true" name="fng_optional_field_7" id="203" type="decimal"/>
+                <Field nullable="true" name="fng_optional_field_8" id="204" type="decimal"/>
+                <Field nullable="true" name="fng_optional_field_9" id="205" type="datetime"/>
+                <Field nullable="true" name="fng_optional_field_10" id="206" type="string"/>
+                <Field nullable="true" name="fng_account_id" id="207" type="integer"/>
+                <Field nullable="true" name="fng_aggregation_1" id="208" type="string"/>
+                <Field nullable="true" name="fng_aggregation_2" id="209" type="string"/>
+                <Field nullable="true" name="fng_day_of_year" id="213" type="integer"/>
+                <Field nullable="true" name="fng_hour_of_day" id="214" type="integer"/>
+                <Field nullable="false" name="fng_id" id="150" type="integer"/>
+                <Field nullable="true" name="fng_friends_and_family" id="210" type="integer"/>
+                <Field nullable="true" name="fng_clear_service" id="211" type="string"/>
+                <Field nullable="true" name="fng_rate_plan" id="212" type="string"/>
+            </RecordType>
+            <RecordType name="SUMMARY_OUTPUT">
+                <Field nullable="true" name="DS_NAME" id="242" type="string"/>
+                <Field nullable="true" name="FILE_NAME" id="243" type="string"/>
+                <Field nullable="true" name="TOTAL_RECORDS" id="244" type="integer"/>
+                <Field nullable="true" name="ACCEPTED_RECORDS" id="245" type="integer"/>
+                <Field nullable="true" name="REJECTED_RECORDS" id="246" type="integer"/>
+                <Field nullable="true" name="IGNORED_RECORDS" id="247" type="integer"/>
+                <Field nullable="true" name="START_TIME" id="248" type="string"/>
+                <Field nullable="true" name="END_TIME" id="249" type="string"/>
+                <Field nullable="true" name="RECORD_PER_SECOND" id="250" type="decimal"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global name="G_Start_Dttm" id="0" type="datetime" serializable="false" initialValue="NullDateTime()"/>
+            <Global name="SRS_ID" id="1" type="integer" serializable="false" initialValue="GetStringRuleSetID_srs_id('SMSC')"/>
+            <Global name="G_Destination" id="2" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="G_Longest_Matcher_B_Number" id="3" type="integer" serializable="false" initialValue="NullInteger()"/>
+            <Global name="G_Operator" id="4" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="G_Traffic_Type" id="5" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="G_FinalDestination" id="6" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="G_FinalOperator" id="7" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="G_FinalTrafficType" id="8" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="G_IMSI" id="9" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="G_Orgl_Submit_Time" id="10" type="datetime" serializable="false" initialValue="NullDateTime()"/>
+            <Global name="IsCalledNumberNull" id="11" type="integer" serializable="false" initialValue="0"/>
+            <Global name="IsCallerNumberNull" id="12" type="integer" serializable="false" initialValue="0"/>
+            <Global name="sCalledNumber" id="13" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="sCallerNumber" id="14" type="string" serializable="false" initialValue="NullString()"/>
+            <Global name="iCallType" id="15" type="integer" serializable="false" initialValue="1"/>
+            <Global name="iCDRType" id="16" type="integer" serializable="false" initialValue="1"/>
+            <Global name="iProductType" id="17" type="integer" serializable="false" initialValue="0"/>
+            <Global name="iSubscriberId" id="18" type="integer" serializable="false" initialValue="1"/>
+            <Global name="sSUB_REC" id="19" type="string" serializable="false"/>
+            <Global name="sSub_RatePlan" id="20" type="string" serializable="false"/>
+            <Global name="iRating" id="21" type="integer" serializable="false"/>
+            <Global name="sService_Category" id="22" type="string" serializable="false"/>
+            <Global name="sCall_Type" id="23" type="string" serializable="false"/>
+            <Global name="dAirAmount" id="24" type="decimal" serializable="false"/>
+            <Global name="dPSTNAmount" id="25" type="decimal" serializable="false"/>
+            <Global name="dExtra_Charge" id="26" type="decimal" serializable="false" initialValue="0.0"/>
+            <Global name="sDestinationNumberType" id="27" type="string" serializable="false"/>
+            <Global name="sRoamerFlag" id="28" type="string" serializable="false"/>
+            <Global name="sZoneCode" id="29" type="string" serializable="false"/>
+            <Global name="sServiceBand" id="30" type="string" serializable="false"/>
+            <Global name="dValue" id="31" type="decimal" serializable="false"/>
+            <Global name="sCALL_TYPE_CALSSIFICATION_PREFIX" id="32" type="string" serializable="false" initialValue="LookUpForJawwalConf_config_value('CALLTYPE_CLASSIFICATION', 'COUNTRY_CODE')"/>
+            <Global name="iCALL_TYPE_CLASSIFICATION" id="33" type="integer" serializable="false"/>
+            <Global name="iMin_Chargeable_Unit" id="34" type="integer" serializable="false" initialValue="0"/>
+            <Global name="dMin_Charge" id="35" type="decimal" serializable="false" initialValue="0.0"/>
+            <Global name="dRate" id="36" type="decimal" serializable="false"/>
+            <Global name="iPulse" id="37" type="integer" serializable="false"/>
+            <Global name="sRaterData" id="38" type="string" serializable="false"/>
+            <Global name="dPSTN_Min_Charge" id="39" type="decimal" serializable="false" initialValue="0.0"/>
+            <Global name="iPSTN_Min_Chargeable_Unit" id="40" type="integer" serializable="false" initialValue="0"/>
+            <Global name="iPSTN_Pulse" id="41" type="integer" serializable="false" initialValue="0"/>
+            <Global name="sServiceType" id="42" type="string" serializable="false"/>
+            <Global name="dtEND_TIME" id="43" type="datetime" serializable="false"/>
+            <Global name="dtSTART_TIME" id="44" type="datetime" serializable="false"/>
+            <Global name="iTotalAcceptedRecords" id="45" type="integer" serializable="false" initialValue="0"/>
+            <Global name="iTotalRecords" id="46" type="integer" serializable="false" initialValue="0"/>
+            <Global name="dSPEED" id="47" type="decimal" serializable="false" initialValue="0.0"/>
+            <Global name="iTIME_TAKEN" id="48" type="integer" serializable="false" initialValue="0"/>
+            <Global name="sMatchType" id="49" type="string" serializable="false"/>
+            <Global name="sRatePlanData" id="50" type="string" serializable="false"/>
+            <Global name="dPSTN_Rate" id="51" type="decimal" serializable="false" initialValue="0.0"/>
+            <Global name="sDestNumberType" id="52" type="string" serializable="false"/>
+            <Global name="iRecordType" id="53" type="integer" serializable="false"/>
+            <Global name="sFinalCallerNumber" id="54" type="string" serializable="false"/>
+            <Global name="sFinalCalledNumber" id="55" type="string" serializable="false"/>
+            <Global name="sPhoneNumber" id="56" type="string" serializable="false"/>
+            <Global name="sOtherPartynumber" id="57" type="string" serializable="false"/>
+        </Globals>
+    </Mappings>
+</Diamond>

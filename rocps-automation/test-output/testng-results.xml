@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-26T10:55:06Z" name="CTAF" finished-at="2025-11-26T10:56:46Z" duration-ms="100783">
+    <groups>
+    </groups>
+    <test started-at="2025-11-26T10:55:06Z" name="Testing" finished-at="2025-11-26T10:56:46Z" duration-ms="100783">
+      <class name="com.subex.rocps.automation.testcases.systemtesting.TestCase19">
+        <test-method is-config="true" signature="getSuiteName(org.testng.ITestContext)[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:25:05Z" name="getSuiteName" finished-at="2025-11-26T16:25:05Z" duration-ms="8" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5b859845]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSuiteName -->
+        <test-method is-config="true" signature="initializeSuite(java.lang.String, java.lang.String)[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:25:05Z" name="initializeSuite" finished-at="2025-11-26T16:25:06Z" depends-on-methods="com.subex.automation.helpers.selenium.AcceptanceTest.getSuiteName" duration-ms="474" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[psconfig.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PS_OR.properties,Tariff_OR.properties]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeSuite -->
+        <test-method is-config="true" signature="checkInstallation()[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:25:06Z" name="checkInstallation" finished-at="2025-11-26T16:25:06Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkInstallation -->
+        <test-method is-config="true" signature="startWebDriver()[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:25:06Z" name="startWebDriver" finished-at="2025-11-26T16:25:11Z" duration-ms="5766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startWebDriver -->
+        <test-method is-config="true" signature="startApp(java.lang.String)[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:25:11Z" name="startApp" finished-at="2025-11-26T16:25:46Z" duration-ms="34298" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[psconfig.properties]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startApp -->
+        <test-method is-config="true" signature="handleTestMethodName(java.lang.reflect.Method)[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:25:46Z" name="handleTestMethodName" finished-at="2025-11-26T16:25:46Z" duration-ms="57" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.subex.rocps.automation.testcases.systemtesting.TestCase19.reVersionBill() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestMethodName -->
+        <test-method signature="reVersionBill()[pri:22, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:25:46Z" name="reVersionBill" description="hot bill - Reversion" finished-at="2025-11-26T16:26:44Z" duration-ms="58085" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Values are not matching  expected [2;125.2800;USD;Accepted;01/01/2025;01/31/2025] but found [3;0.0000;USD;Accepted;01/01/2025;01/31/2025]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Values are not matching  expected [2;125.2800;USD;Accepted;01/01/2025;01/31/2025] but found [3;0.0000;USD;Accepted;01/01/2025;01/31/2025]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at com.subex.rocps.automation.helpers.application.genericHelpers.DataVerificationHelper.validateRowData(DataVerificationHelper.java:207)
+	at com.subex.rocps.automation.helpers.application.genericHelpers.DataVerificationHelper.validateData(DataVerificationHelper.java:48)
+	at com.subex.rocps.automation.helpers.application.bills.Bills.hotBill(Bills.java:232)
+	at com.subex.rocps.automation.helpers.application.bills.Bills.billGeneration(Bills.java:189)
+	at com.subex.rocps.automation.helpers.application.bills.Bills.billAction(Bills.java:131)
+	at com.subex.rocps.automation.testcases.systemtesting.TestCase19.reVersionBill(TestCase19.java:209)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reVersionBill -->
+        <test-method is-config="true" signature="updateReport(java.lang.reflect.Method)[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:26:44Z" name="updateReport" finished-at="2025-11-26T16:26:44Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.subex.rocps.automation.testcases.systemtesting.TestCase19.reVersionBill() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateReport -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:26:44Z" name="closeBrowser" finished-at="2025-11-26T16:26:46Z" duration-ms="2171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:26:44Z" name="endReport" finished-at="2025-11-26T16:26:44Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+        <test-method is-config="true" signature="resetParameters()[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:26:46Z" name="resetParameters" finished-at="2025-11-26T16:26:46Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetParameters -->
+        <test-method is-config="true" signature="stopDriver()[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:26:46Z" name="stopDriver" finished-at="2025-11-26T16:26:46Z" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopDriver -->
+        <test-method is-config="true" signature="stopWebDriver()[pri:0, instance:com.subex.rocps.automation.testcases.systemtesting.TestCase19@312aa7c]" started-at="2025-11-26T16:26:46Z" name="stopWebDriver" finished-at="2025-11-26T16:26:47Z" depends-on-methods="com.subex.automation.helpers.selenium.ROCAcceptanceTest.stopDriver" duration-ms="778" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopWebDriver -->
+      </class> <!-- com.subex.rocps.automation.testcases.systemtesting.TestCase19 -->
+    </test> <!-- Testing -->
+  </suite> <!-- CTAF -->
+</testng-results>

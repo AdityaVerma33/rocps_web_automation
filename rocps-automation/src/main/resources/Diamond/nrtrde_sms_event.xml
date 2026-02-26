@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+
+<Diamond application="rocps" version="109" softwareVersion="3.7.4096.0">
+    <Decoder name="SMS" type="ascii">
+        <RecordType root="false" name="SMS" length="463" type="fixedlengthascii" generate="record">
+            <Field offset="0.0" name="CDR_TYPE" length="5.0" trimQuotes="true" trimWhiteSpace="true" id="0" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="5.0" name="MSISDN" length="32.0" trimQuotes="true" trimWhiteSpace="true" id="1" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="37.0" name="IMSI" length="15.0" trimQuotes="true" trimWhiteSpace="true" id="2" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="52.0" name="OTHER_NUM" length="32.0" trimQuotes="true" trimWhiteSpace="true" id="3" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="84.0" name="START_TIME" length="14.0" trimQuotes="true" trimWhiteSpace="true" id="4" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="98.0" name="SEND_STATUS" length="3.0" trimQuotes="true" trimWhiteSpace="true" id="5" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="101.0" name="SMS_PRIORITY" length="3.0" trimQuotes="true" trimWhiteSpace="true" id="6" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="104.0" name="MSC_ID" length="15.0" trimQuotes="true" trimWhiteSpace="true" id="7" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="119.0" name="LAC" length="10.0" trimQuotes="true" trimWhiteSpace="true" id="8" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="129.0" name="CELL" length="10.0" trimQuotes="true" trimWhiteSpace="true" id="9" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="139.0" name="CAUSE_FOR_TERM" length="4.0" trimQuotes="true" trimWhiteSpace="true" id="10" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="143.0" name="SRC_FILENAME" length="64.0" trimQuotes="true" trimWhiteSpace="true" id="11" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="207.0" name="PROCESS_TIME" length="14.0" trimQuotes="true" trimWhiteSpace="true" id="12" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="221.0" name="SERVICE_TYPE" length="2.0" trimQuotes="true" trimWhiteSpace="true" id="13" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="223.0" name="SERVICE_CODE" length="4.0" trimQuotes="true" trimWhiteSpace="true" id="14" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="227.0" name="CAMEL_SERVICE_ADDRESS" length="24.0" trimQuotes="true" trimWhiteSpace="true" id="15" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="251.0" name="CAMEL_SERVICE_LEVEL" length="4.0" trimQuotes="true" trimWhiteSpace="true" id="16" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="255.0" name="CAMEL_SERVICE_KEY" length="10.0" trimQuotes="true" trimWhiteSpace="true" id="17" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="265.0" name="CAMEL_CALL_DEFAULT" length="2.0" trimQuotes="true" trimWhiteSpace="true" id="18" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="267.0" name="CAMEL_MSC_ADDRESS" length="24.0" trimQuotes="true" trimWhiteSpace="true" id="19" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="291.0" name="CAMEL_REFERENCE_NUM" length="16.0" trimQuotes="true" trimWhiteSpace="true" id="20" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="307.0" name="CAMEL_INITIATED_INDICATOR" length="2.0" trimQuotes="true" trimWhiteSpace="true" id="21" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="309.0" name="CAMEL_MODIFICATION" length="2.0" trimQuotes="true" trimWhiteSpace="true" id="22" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="311.0" name="CAMEL_SERVICE_INFO" length="40.0" trimQuotes="true" trimWhiteSpace="true" id="23" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="351.0" name="MOBILE_STATION_MARK" length="6.0" trimQuotes="true" trimWhiteSpace="true" id="24" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="357.0" name="UTC_TIME_CODE" length="6.0" trimQuotes="true" trimWhiteSpace="true" id="25" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="363.0" name="B_PARTY_RN" length="5.0" trimQuotes="true" trimWhiteSpace="true" id="26" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="368.0" name="SMSC_ADDRESS" length="32.0" trimQuotes="true" trimWhiteSpace="true" id="27" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="400.0" name="DIALED_DIGITS" length="32.0" trimQuotes="true" trimWhiteSpace="true" id="28" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="432.0" name="RESERVE1" length="10.0" trimQuotes="true" trimWhiteSpace="true" id="29" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field offset="442.0" name="RESERVE2" length="20.0" trimQuotes="true" trimWhiteSpace="true" id="30" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+        </RecordType>
+        <RecordType root="true" name="ROOT" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="SMS" type="recordReference"/>
+            </Logic>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node yPos="520" recordType="SMS" width="50" name="SMS" nodeKey="shape3" xPos="130" type="Record" height="50">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="If(Or(Equal(CDR_TYPE, &quot;CSMOC&quot;), Equal(CDR_TYPE, &quot;CSCFW&quot;), Equal(CDR_TYPE, &quot;VIDMO&quot;), Equal(CDR_TYPE, &quot;SMSMO&quot;)), &quot;moc_event&quot;, If(Or(Equal(CDR_TYPE, &quot;CSMTC&quot;), Equal(CDR_TYPE, &quot;VIDMT&quot;), Equal(CDR_TYPE, &quot;SMSMT&quot;)), &quot;mtc_event&quot;, If(Equal(CDR_TYPE, &quot;GPRSO&quot;), &quot;gprs_event&quot;, NullString())))" name="FindTableName" type="assign" target="$TableName"/>
+                            <Event expression="If(Equal(CDR_TYPE, &quot;SMSMO&quot;), 22, If(Equal(CDR_TYPE, &quot;SMSMT&quot;), 21, If(Or(Equal(CDR_TYPE, &quot;CSMOC&quot;), Equal(CDR_TYPE, &quot;CSCFW&quot;), Equal(CDR_TYPE, &quot;CSMTC&quot;)), If(Equal(SERVICE_CODE,NullString()), 11, ToInteger(SERVICE_CODE)), 00)))" name="findTeleServiceCode" type="assign" target="$tele_service_code"/>
+                            <Event expression="If(Equal(Trim(IMSI),NullString()), NullString(), getTadigCode(IMSI))" name="Assign tadig code" type="assign" target="$tadigCode"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="465" recordType="nrtrde_moc_event" width="80" name="Mapping for M0C event" nodeKey="shape8" xPos="495" type="Mapping" height="70">
+                <Inputs>
+                    <Input nodeOutput="MOC" nodeKey="shape7">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="GetNRTRDEMocId()" target="pnme_id"/>
+                    <Mapping expression="ParseDateTime('YYYYMMddHHmmss', START_TIME)" target="pnme_dttm"/>
+                    <Mapping expression="$$StreamId" target="stm_id"/>
+                    <Mapping expression="$$TaskId" target="tsk_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="IMSI" target="imsi"/>
+                    <Mapping target="imei"/>
+                    <Mapping expression="START_TIME" target="call_evt_start_time"/>
+                    <Mapping expression="UTC_TIME_CODE" target="utc_offset_cd"/>
+                    <Mapping expression="ToInteger(Trim(CAUSE_FOR_TERM))" target="cause_for_term"/>
+                    <Mapping expression="$tele_service_code" target="tele_svc_cd"/>
+                    <Mapping expression="DIALED_DIGITS" target="dialled_digits"/>
+                    <Mapping expression="THIRD_PARTY_NUMBER" target="thrid_party_no"/>
+                    <Mapping expression="MSC_ID" target="rec_entity_id"/>
+                    <Mapping expression="RESERVE1" target="call_reference"/>
+                    <Mapping expression="HexToInteger(Trim(CELL))" target="cell_id"/>
+                    <Mapping expression="$tadigCode" target="tadig"/>
+                    <Mapping target="serving_nw"/>
+                    <Mapping expression="RESERVE1" target="call_reference"/>
+                    <Mapping expression="CDR_TYPE" target="cdr_type"/>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="If(Or(Equal(Trim(CDR_TYPE), 'CSMOC'), Equal(Trim(CDR_TYPE), 'CSCFW'), Equal(Trim(CDR_TYPE), 'VIDMO'), Equal(Trim(CDR_TYPE), 'SMSMO')), OTHER_NUM, '')" target="connected_no"/>
+                    <Mapping expression="0" target="call_event_duration"/>
+                    <Mapping target="third_party_no"/>
+                    <Mapping expression="MSISDN" target="msisdn"/>
+                    <Mapping expression="HexToInteger(Trim(LAC))" target="location_area_cd"/>
+                    <Mapping expression="ParseDateTime('YYYYMMddHHmmss', START_TIME)" target="evt_dttm"/>
+                </Mappings>
+            </Node>
+            <Node yPos="515" recordType="SMS" width="60" name="Filter" nodeKey="shape7" xPos="305" type="Filter" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape3">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output expression="Equal($TableName,'moc_event')" name="MOC">
+                        <Events/>
+                    </Output>
+                    <Output expression="Equal($TableName,'mtc_event')" name="MTC">
+                        <Events/>
+                    </Output>
+                    <Output name="GPRS">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="605" recordType="nrtrde_mtc_event" width="60" name="Mapping for MRTRDE MTC" nodeKey="shape9" xPos="510" type="Mapping" height="60">
+                <Inputs>
+                    <Input nodeOutput="MTC" nodeKey="shape7">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="GetNRTRDEMtcId()" target="pnmt_id"/>
+                    <Mapping expression="ParseDateTime('YYYYMMddHHmmss', START_TIME)" target="evt_dttm"/>
+                    <Mapping expression="$$StreamId" target="stm_id"/>
+                    <Mapping expression="$$TaskId" target="tsk_id"/>
+                    <Mapping expression="IMSI" target="imsi"/>
+                    <Mapping target="imei"/>
+                    <Mapping expression="START_TIME" target="call_evt_start_time"/>
+                    <Mapping expression="UTC_TIME_CODE" target="utc_offset_cd"/>
+                    <Mapping expression="0" target="call_event_duration"/>
+                    <Mapping expression="ToInteger(Trim(CAUSE_FOR_TERM))" target="cause_for_term"/>
+                    <Mapping expression="$tele_service_code" target="tele_svc_cd"/>
+                    <Mapping expression="MSC_ID" target="rec_entity_id"/>
+                    <Mapping expression="RESERVE1" target="call_reference"/>
+                    <Mapping expression="HexToInteger(Trim(LAC))" target="location_area_cd"/>
+                    <Mapping expression="MSISDN" target="msisdn"/>
+                    <Mapping expression="HexToInteger(Trim(CELL))" target="cell_id"/>
+                    <Mapping expression="$tadigCode" target="tadig"/>
+                    <Mapping expression="If(Or(Equal(Trim(CDR_TYPE), 'CSMTC'), Equal(Trim(CDR_TYPE), 'SMSMT'), Equal(Trim(CDR_TYPE), 'VIDMT')), OTHER_NUM, '')" target="calling_no"/>
+                    <Mapping expression="CDR_TYPE" target="cdr_type"/>
+                </Mappings>
+            </Node>
+            <Node charset="windows-1252" yPos="610" EventCount="1" UsagePartitionId="GetUsagePartitionId('Default Roaming SubPartitioned Usage Group', evt_dttm, HourOfDay(evt_dttm), Mod(MinuteOfHour(evt_dttm), 2))" xPos="645" type="RocpsOutput" outputKey="nrtrde_mtc_event" filename="Concatenate($$Filename, '_nrtrde_mtc_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" EventUsage="call_event_duration" EventDatetime="evt_dttm" name="Rocps NRTRDE MTC" width="60" unicode="false" nodeKey="shape10" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape9">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node charset="windows-1252" yPos="475" EventCount="1" UsagePartitionId="GetUsagePartitionId('Default Roaming SubPartitioned Usage Group', evt_dttm, HourOfDay(evt_dttm), Mod(MinuteOfHour(evt_dttm), 2))" xPos="640" type="RocpsOutput" outputKey="nrtrde_moc_event" filename="Concatenate($$Filename, '_nrtrde_moc_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" EventUsage="call_event_duration" EventDatetime="evt_dttm" name="NRTRDE MOC Output" width="60" unicode="false" nodeKey="shape11" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape8">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="NrtrdeMocEvent" name="GetNRTRDEMocId" type="GenerateLongId" blockSize="1000"/>
+            <DynamicFunction objectKey="NrtrdeMtcEvent" name="GetNRTRDEMtcId" type="GenerateLongId" blockSize="1000"/>
+            <DynamicFunction objectKey="SmsEvent" name="GetSMSEventID" type="GenerateLongId" blockSize="10000"/>
+            <DynamicFunction name="TableInst" description="Tin id from tin name" type="SQLKeyCacheLookup" allowDuplicates="true" tableName="table_inst">
+                <LookupKeys>
+                    <LookupKey key="tin_table_name"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="tin_id"/>
+                </ResultCols>
+            </DynamicFunction>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="tap_event">
+                <Field nullable="false" name="evt_id" id="31" type="integer"/>
+                <Field nullable="false" name="evt_dttm" id="32" type="datetime"/>
+                <Field nullable="false" name="evt_count" id="33" type="integer"/>
+                <Field nullable="false" name="evt_usage" id="34" type="integer"/>
+                <Field nullable="false" name="stm_id" id="35" type="integer"/>
+                <Field nullable="false" name="tsk_id" id="36" type="integer"/>
+                <Field nullable="false" name="sfl_id" id="37" type="integer"/>
+                <Field nullable="false" name="tin_id" id="38" type="integer"/>
+                <Field nullable="true" name="thd_id" id="39" type="integer"/>
+                <Field nullable="false" name="ire_revenue_amt" id="40" type="decimal"/>
+                <Field nullable="false" name="ire_revenue_cur_id" id="41" type="integer"/>
+                <Field nullable="true" name="ire_record_address" id="42" type="integer"/>
+                <Field nullable="true" name="ire_record_length" id="43" type="integer"/>
+                <Field nullable="false" name="CDR_TYPE" id="0" type="string"/>
+                <Field nullable="true" name="sim_charge_msisdn" id="44" type="string"/>
+                <Field nullable="false" name="sim_charge_imsi" id="45" type="string"/>
+                <Field nullable="true" name="imei" id="46" type="string"/>
+                <Field nullable="true" name="OTHER_NUM" id="3" type="string"/>
+                <Field nullable="true" name="MSRN" id="47" type="string"/>
+                <Field nullable="true" name="thrid_party_no" id="48" type="string"/>
+                <Field nullable="true" name="call_evt_start_time" id="49" type="string"/>
+                <Field nullable="true" name="total_call_evt_dur" id="50" type="integer"/>
+                <Field nullable="true" name="rec_entity_cd" id="51" type="string"/>
+                <Field nullable="true" name="FIRST_LAC" id="52" type="string"/>
+                <Field nullable="true" name="CELL" id="9" type="string"/>
+                <Field nullable="true" name="LAST_LAC" id="53" type="string"/>
+                <Field nullable="true" name="LAST_CELLID" id="54" type="string"/>
+                <Field nullable="true" name="OTHER_LAC" id="55" type="string"/>
+                <Field nullable="true" name="OTHER_CELLID" id="56" type="string"/>
+                <Field nullable="true" name="SERVICE_TYPE" id="13" type="string"/>
+                <Field nullable="true" name="SERVICE_CODE" id="14" type="string"/>
+                <Field nullable="true" name="cause_for_term" id="57" type="integer"/>
+                <Field nullable="true" name="SRC_FILENAME" id="11" type="string"/>
+                <Field nullable="true" name="PROCESS_TIME" id="12" type="string"/>
+                <Field nullable="true" name="SSCODE1" id="58" type="string"/>
+                <Field nullable="true" name="SSCODE2" id="59" type="string"/>
+                <Field nullable="true" name="SSCODE3" id="60" type="string"/>
+                <Field nullable="true" name="SSCODE4" id="61" type="string"/>
+                <Field nullable="true" name="SSCODE5" id="62" type="string"/>
+                <Field nullable="true" name="SSCODE6" id="63" type="string"/>
+                <Field nullable="true" name="SSCODE7" id="64" type="string"/>
+                <Field nullable="true" name="SSCODE8" id="65" type="string"/>
+                <Field nullable="true" name="SSCODE9" id="66" type="string"/>
+                <Field nullable="true" name="SSCODE10" id="67" type="string"/>
+                <Field nullable="true" name="CAMEL_SERVICE_ADDRESS" id="15" type="string"/>
+                <Field nullable="true" name="camel_svc_level" id="68" type="integer"/>
+                <Field nullable="true" name="camel_svc_key" id="69" type="integer"/>
+                <Field nullable="true" name="CAMEL_CALL_DEFAULT" id="18" type="string"/>
+                <Field nullable="true" name="CAMEL_MSC_ADDRESS" id="19" type="string"/>
+                <Field nullable="true" name="CAMEL_REFERENCE_NUM" id="20" type="string"/>
+                <Field nullable="true" name="CAMEL_INITIATED_INDICATOR" id="21" type="string"/>
+                <Field nullable="true" name="CAMEL_MODIFICATION" id="22" type="string"/>
+                <Field nullable="true" name="CAMEL_SERVICE_INFO" id="23" type="string"/>
+                <Field nullable="true" name="MOBILE_STATION_MARK" id="24" type="string"/>
+                <Field nullable="true" name="UTC_TIME_CODE" id="25" type="string"/>
+                <Field nullable="true" name="B_PARTY_RN" id="26" type="string"/>
+                <Field nullable="true" name="dialled_digits" id="70" type="string"/>
+                <Field nullable="true" name="call_reference" id="71" type="string"/>
+                <Field nullable="true" name="RESERVE2" id="30" type="string"/>
+                <Field nullable="true" name="SEND_STATUS" id="5" type="string"/>
+                <Field nullable="true" name="SMS_PRIORITY" id="6" type="string"/>
+                <Field nullable="true" name="SMSC_ADDRESS" id="27" type="string"/>
+                <Field nullable="true" name="charging_id" id="72" type="string"/>
+                <Field nullable="true" name="GGSN" id="73" type="string"/>
+                <Field nullable="true" name="SGSN" id="74" type="string"/>
+                <Field nullable="true" name="access_pt_name_ni" id="75" type="string"/>
+                <Field nullable="true" name="access_pt_name_oi" id="76" type="string"/>
+                <Field nullable="true" name="PDP_TYPE" id="77" type="string"/>
+                <Field nullable="true" name="pdp_address" id="78" type="string"/>
+                <Field nullable="true" name="FLOW_UP1" id="79" type="integer"/>
+                <Field nullable="true" name="FLOW_DOWN1" id="80" type="integer"/>
+                <Field nullable="true" name="TIME1" id="81" type="string"/>
+                <Field nullable="true" name="QOS1" id="82" type="string"/>
+                <Field nullable="true" name="FLOW_UP2" id="83" type="integer"/>
+                <Field nullable="true" name="FLOW_DOWN2" id="84" type="integer"/>
+                <Field nullable="true" name="TIME2" id="85" type="string"/>
+                <Field nullable="true" name="QOS2" id="86" type="string"/>
+                <Field nullable="true" name="FLOW_UP3" id="87" type="integer"/>
+                <Field nullable="true" name="FLOW_DOWN3" id="88" type="integer"/>
+                <Field nullable="true" name="TIME3" id="89" type="string"/>
+                <Field nullable="true" name="QOS3" id="90" type="string"/>
+                <Field nullable="true" name="FLOW_UP4" id="91" type="integer"/>
+                <Field nullable="true" name="FLOW_DOWN4" id="92" type="integer"/>
+                <Field nullable="true" name="TIME4" id="93" type="string"/>
+                <Field nullable="true" name="QOS4" id="94" type="string"/>
+                <Field nullable="true" name="FLOW_UP5" id="95" type="integer"/>
+                <Field nullable="true" name="FLOW_DOWN5" id="96" type="integer"/>
+                <Field nullable="true" name="TIME5" id="97" type="string"/>
+                <Field nullable="true" name="QOS5" id="98" type="string"/>
+                <Field nullable="true" name="FLOW_UP6" id="99" type="integer"/>
+                <Field nullable="true" name="FLOW_DOWN6" id="100" type="integer"/>
+                <Field nullable="true" name="TIME6" id="101" type="string"/>
+                <Field nullable="true" name="QOS6" id="102" type="string"/>
+                <Field nullable="true" name="network_init_pdp_ctxt" id="103" type="string"/>
+                <Field nullable="true" name="ENTITY_TYPE" id="104" type="string"/>
+                <Field nullable="true" name="data_volume_in" id="105" type="integer"/>
+                <Field nullable="true" name="data_volume_out" id="106" type="integer"/>
+                <Field nullable="false" name="PRIMARY_TADIG" id="107" type="string"/>
+                <Field nullable="true" name="ire_extra1" id="108" type="string"/>
+                <Field nullable="true" name="ire_extra2" id="109" type="string"/>
+                <Field nullable="true" name="ire_extra3" id="110" type="string"/>
+                <Field nullable="true" name="ire_extra4" id="111" type="string"/>
+                <Field nullable="true" name="ire_extra5" id="112" type="string"/>
+                <Field nullable="true" name="ire_extra6" id="113" type="string"/>
+                <Field nullable="true" name="ire_extra7" id="114" type="string"/>
+                <Field nullable="true" name="ire_extra8" id="115" type="string"/>
+                <Field nullable="true" name="ire_extra9" id="116" type="string"/>
+                <Field nullable="true" name="ire_extra10" id="117" type="string"/>
+                <Field nullable="true" name="pbss_process_time" id="118" type="datetime"/>
+                <Field nullable="true" name="min_charge_min" id="119" type="string"/>
+                <Field nullable="true" name="min_charge_mdn" id="120" type="string"/>
+                <Field nullable="true" name="rap_file_seq_no" id="121" type="integer"/>
+                <Field nullable="true" name="utc_offset_cd" id="122" type="string"/>
+                <Field nullable="true" name="esn" id="123" type="string"/>
+                <Field nullable="true" name="def_call_handl_ind" id="124" type="integer"/>
+                <Field nullable="true" name="exchange_rate_cd" id="125" type="integer"/>
+                <Field nullable="true" name="camel_disc_cd" id="126" type="integer"/>
+                <Field nullable="true" name="camel_disc_value" id="127" type="integer"/>
+                <Field nullable="true" name="camel_discable_amt" id="128" type="integer"/>
+                <Field nullable="true" name="camel_invoc_fee" id="129" type="integer"/>
+                <Field nullable="true" name="camel_dest_no" id="130" type="string"/>
+                <Field nullable="true" name="camel_access_pt_name_ni" id="131" type="string"/>
+                <Field nullable="true" name="camel_access_pt_name_oi" id="132" type="string"/>
+                <Field nullable="true" name="camel_cse_info" id="133" type="string"/>
+                <Field nullable="true" name="location_area_cd" id="134" type="integer"/>
+                <Field nullable="true" name="cell_identity" id="135" type="integer"/>
+                <Field nullable="true" name="home_bid" id="136" type="string"/>
+                <Field nullable="true" name="home_loc_desc" id="137" type="string"/>
+                <Field nullable="true" name="serving_nw" id="138" type="string"/>
+                <Field nullable="true" name="service_bid" id="139" type="string"/>
+                <Field nullable="true" name="serving_loc_desc" id="140" type="string"/>
+                <Field nullable="true" name="sim_toolkit_ind" id="141" type="string"/>
+                <Field nullable="true" name="tele_svc_cd" id="142" type="integer"/>
+                <Field nullable="true" name="bearer_svc_cd" id="143" type="integer"/>
+                <Field nullable="true" name="transparency_ind" id="144" type="string"/>
+                <Field nullable="true" name="fixed_nw_usr_rate" id="145" type="string"/>
+                <Field nullable="true" name="usr_protocol_ind" id="146" type="string"/>
+                <Field nullable="true" name="guar_bit_rate" id="147" type="integer"/>
+                <Field nullable="true" name="max_bit_rate" id="148" type="integer"/>
+                <Field nullable="true" name="charging_time_stamp" id="149" type="datetime"/>
+                <Field nullable="true" name="hscsd_ind" id="150" type="string"/>
+                <Field nullable="true" name="suppl_svc_cd" id="151" type="string"/>
+                <Field nullable="true" name="called_no" id="152" type="string"/>
+                <Field nullable="true" name="called_place" id="153" type="string"/>
+                <Field nullable="true" name="called_region" id="154" type="string"/>
+                <Field nullable="true" name="sms_dest_no" id="155" type="string"/>
+                <Field nullable="true" name="dest_network" id="156" type="string"/>
+                <Field nullable="true" name="calling_no" id="157" type="string"/>
+                <Field nullable="true" name="clir_status_ind" id="158" type="string"/>
+                <Field nullable="true" name="sms_orig_no" id="159" type="string"/>
+                <Field nullable="true" name="orig_network" id="160" type="string"/>
+                <Field nullable="true" name="network_access_id" id="161" type="string"/>
+                <Field nullable="true" name="partial_type_ind" id="162" type="string"/>
+                <Field nullable="true" name="pdp_context_start_time" id="163" type="datetime"/>
+                <Field nullable="true" name="ims_signalling_ctxt" id="164" type="string"/>
+            </RecordType>
+            <RecordType name="nrtrde_moc_event">
+                <Field nullable="false" name="pnme_id" id="165" type="integer"/>
+                <Field nullable="false" name="evt_dttm" id="32" type="datetime"/>
+                <Field nullable="true" name="tadig" id="166" type="string"/>
+                <Field nullable="true" name="imsi" id="167" type="string"/>
+                <Field nullable="true" name="imei" id="46" type="string"/>
+                <Field nullable="true" name="call_evt_start_time" id="49" type="string"/>
+                <Field nullable="true" name="utc_offset_cd" id="122" type="string"/>
+                <Field nullable="true" name="call_event_duration" id="168" type="integer"/>
+                <Field nullable="true" name="cause_for_term" id="57" type="integer"/>
+                <Field nullable="true" name="tele_svc_cd" id="142" type="integer"/>
+                <Field nullable="true" name="bearer_svc_cd" id="143" type="integer"/>
+                <Field nullable="true" name="suppl_svc_cd" id="151" type="string"/>
+                <Field nullable="true" name="dialled_digits" id="70" type="string"/>
+                <Field nullable="true" name="connected_no" id="169" type="string"/>
+                <Field nullable="true" name="third_party_no" id="170" type="string"/>
+                <Field nullable="true" name="rec_entity_id" id="171" type="string"/>
+                <Field nullable="true" name="call_reference" id="71" type="string"/>
+                <Field nullable="true" name="charge_amount" id="172" type="decimal"/>
+                <Field nullable="true" name="serving_nw" id="138" type="string"/>
+                <Field nullable="true" name="msisdn" id="173" type="string"/>
+                <Field nullable="true" name="location_area_cd" id="134" type="integer"/>
+                <Field nullable="true" name="cell_id" id="174" type="integer"/>
+                <Field nullable="true" name="pnfs_id" id="175" type="integer"/>
+                <Field nullable="true" name="cdr_type" id="176" type="string"/>
+                <Field nullable="false" name="stm_id" id="35" type="integer"/>
+                <Field nullable="false" name="tsk_id" id="36" type="integer"/>
+                <Field nullable="false" name="sfl_id" id="37" type="integer"/>
+                <Field nullable="false" name="sts_id" id="177" type="integer"/>
+            </RecordType>
+            <RecordType name="nrtrde_mtc_event">
+                <Field nullable="false" name="pnmt_id" id="178" type="integer"/>
+                <Field nullable="false" name="evt_dttm" id="32" type="datetime"/>
+                <Field nullable="true" name="tadig" id="166" type="string"/>
+                <Field nullable="true" name="imsi" id="167" type="string"/>
+                <Field nullable="true" name="imei" id="46" type="string"/>
+                <Field nullable="true" name="call_evt_start_time" id="49" type="string"/>
+                <Field nullable="true" name="utc_offset_cd" id="122" type="string"/>
+                <Field nullable="true" name="call_event_duration" id="168" type="integer"/>
+                <Field nullable="true" name="cause_for_term" id="57" type="integer"/>
+                <Field nullable="true" name="tele_svc_cd" id="142" type="integer"/>
+                <Field nullable="true" name="bearer_svc_cd" id="143" type="integer"/>
+                <Field nullable="true" name="calling_no" id="157" type="string"/>
+                <Field nullable="true" name="rec_entity_id" id="171" type="string"/>
+                <Field nullable="true" name="call_reference" id="71" type="string"/>
+                <Field nullable="true" name="charge_amount" id="172" type="decimal"/>
+                <Field nullable="true" name="serving_nw" id="138" type="string"/>
+                <Field nullable="true" name="msisdn" id="173" type="string"/>
+                <Field nullable="true" name="location_area_cd" id="134" type="integer"/>
+                <Field nullable="true" name="cell_id" id="174" type="integer"/>
+                <Field nullable="true" name="pnfs_id" id="175" type="integer"/>
+                <Field nullable="true" name="cdr_type" id="176" type="string"/>
+                <Field nullable="false" name="stm_id" id="35" type="integer"/>
+                <Field nullable="false" name="tsk_id" id="36" type="integer"/>
+                <Field nullable="false" name="sfl_id" id="37" type="integer"/>
+                <Field nullable="false" name="sts_id" id="177" type="integer"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global name="TableName" id="0" type="string" serializable="false"/>
+            <Global name="tele_service_code" id="1" type="integer" serializable="false"/>
+            <Global name="tadigCode" id="2" type="string" serializable="false"/>
+        </Globals>
+    </Mappings>
+</Diamond>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestExecution]" guice-stage="DEVELOPMENT" verbose="2">
+  <parameter name="driverFile" value="SmokeTestDriver.xlsx"/>
+  <parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties,PSSprint_OR.properties"/>
+  <parameter name="config" value="psconfig.properties"/>
+  <listeners>
+    <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+  </listeners>
+  <test name="Testing">
+    <classes>
+      <class name="com.subex.rocps.automation.testcases.functionaltesting.MyTestRoaming"/>
+    </classes>
+  </test> <!-- Testing -->
+</suite> <!-- Failed suite [TestExecution] -->

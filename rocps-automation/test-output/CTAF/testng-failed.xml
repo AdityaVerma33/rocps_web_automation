@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CTAF]" guice-stage="DEVELOPMENT" verbose="2">
+  <parameter name="driverFile" value="SmokeTestDriver.xlsx"/>
+  <parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties"/>
+  <parameter name="config" value="psconfig.properties"/>
+  <listeners>
+    <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+  </listeners>
+  <test name="Testing">
+    <classes>
+      <class name="com.subex.rocps.automation.testcases.systemtesting.TestCase19"/>
+    </classes>
+  </test> <!-- Testing -->
+  <test name="Testing(failed)">
+    <classes>
+      <class name="com.subex.rocps.automation.testcases.systemtesting.TestCase19">
+        <methods>
+          <include name="startApp"/>
+          <include name="startWebDriver"/>
+          <include name="checkInstallation"/>
+          <include name="initializeSuite"/>
+          <include name="handleTestMethodName"/>
+          <include name="resetParameters"/>
+          <include name="stopWebDriver"/>
+          <include name="endReport"/>
+          <include name="closeBrowser"/>
+          <include name="updateReport"/>
+          <include name="stopDriver"/>
+          <include name="getSuiteName"/>
+          <include name="reVersionBill"/>
+        </methods>
+      </class> <!-- com.subex.rocps.automation.testcases.systemtesting.TestCase19 -->
+    </classes>
+  </test> <!-- Testing(failed) -->
+</suite> <!-- Failed suite [CTAF] -->

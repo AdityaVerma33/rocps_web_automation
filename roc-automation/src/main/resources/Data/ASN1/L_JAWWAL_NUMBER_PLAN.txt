@@ -1,0 +1,3294 @@
+Prefix,Prefix Length,Destination,Traffic Type,Operator,Exact Match Flag
+97056,7,,Wataniya,Wataniya,N
+97256,7,,Wataniya,Wataniya,N
+56,3,,Wataniya,Wataniya,N
+HUN,3,,VPN-Hunting,VPN-Hunting,N
+DIV,3,,VPN-Diverting,VPN-Diverting,N
+B1B,3,,Voice SMS_Settings,MOIP_Org,N
+B2B,3,,Voice SMS_Settings,MOIP_Org,N
+B059,4,,Voice SMS_Local,MOIP_Org,N
+B5,2,,Voice SMS_Local,MOIP_Org,N
+B7,2,,Voice SMS_Local,MOIP_Org,N
+B8,2,,Voice SMS_Local,MOIP_Org,N
+B9,2,,Voice SMS_Local,MOIP_Org,N
+B00,3,,Voice SMS_International,MOIP_Org,N
+59155000,9,,Unknown-T,New VoiceMail,N
+155000,6,,VMS Originating VoiceMail 2,New VoiceMail,N
+97059155000,11,,VMS Originating VoiceMail 2,New VoiceMail,N
+97259155000,11,,VMS Originating VoiceMail 2,New VoiceMail,N
+B134,4,,VMS Originating VoiceMail 2,VoiceMail Testing,N
+B155,4,,VMS Originating VoiceMail 2,New VoiceMail,N
+B151,4,,VMS Originating,VMS,N
+B152,4,,VMS Originating,VMS,N
+0591205,7,,Free,VMF,N
+972591205,9,,Free,VMF-VMS Forwording,N
+88216,7,,Thuraya,Thurayya,N
+B2008,5,,Tawjihi,Tawjihi results,N
+B2010,5,,Tawjihi,Tawjihi Result,N
+B2011,5,,Tawjihi,Tawjihi Results 2011,N
+B2012,5,,Tawjihi,Tawjihi Results 2012,N
+140999,6,,SMS,SMS center,N
+141999,6,,SMS,SMS center,N
+6226,4,,RBT,Ring Back Tone-Test,N
+1200,4,,Premium SMS,Unknown,N
+1221,4,,Free,Unknown,N
+1249,4,,Premium SMS,Unknown,N
+1250,4,,Premium SMS,Unknown,N
+1260,4,,Premium SMS,Unknown,N
+1287,4,,Premium SMS,Unknown,N
+2651,4,,Premium SMS,Unknown,N
+37445,5,,Premium SMS,Unknown,N
+37527,5,,Premium SMS,Unknown,N
+37594,5,,Premium SMS,Unknown,N
+37626,5,,Premium SMS,Unknown,N
+37682,5,,Premium SMS,Unknown,N
+37693,5,,Premium SMS,Unknown,N
+37702,5,,Premium SMS,Unknown,N
+37744,5,,Premium SMS,Unknown,N
+37778,5,,Premium SMS,Unknown,N
+37876,5,,Premium SMS,Unknown,N
+37888,5,,Premium SMS,Unknown,N
+37904,5,,Premium SMS,Unknown,N
+37905,5,,Premium SMS,Unknown,N
+37907,5,,Premium SMS,Unknown,N
+37908,5,,Premium SMS,Unknown,N
+37909,5,,Premium SMS,Unknown,N
+37912,5,,Premium SMS,Unknown,N
+37913,5,,Premium SMS,Unknown,N
+37914,5,,Premium SMS,Unknown,N
+37916,5,,Premium SMS,Unknown,N
+37917,5,,Premium SMS,Unknown,N
+37920,5,,Premium SMS,Unknown,N
+37928,5,,Premium SMS,Unknown,N
+37952,5,,Premium SMS,Unknown,N
+37999,5,,Premium SMS,Unknown,N
+37593,6,,Premium SMS,Al Lubnania TV,N
+37805,6,,Premium SMS,Infinity TV- Adeem w jaded,N
+1201,4,,Premium SMS,SMS 2 Jawwal E-MAIL,N
+1202,4,,Premium SMS,Maan Breaking News,N
+1203,4,,Premium SMS,Amer Khaled,N
+1205,4,,Premium SMS,Aljazeera breaking,N
+1206,4,,Premium SMS,SMS 2 PalNet E-MAIL,N
+1207,4,,Premium SMS,SMS 2 E-MAIL Palestine on Line,N
+1209,4,,Premium SMS,PNN,N
+1212,4,,Free,SMS 2 Pal Internet,N
+1213,4,,Free,Al Sadaqa Competition,N
+1222,4,,Free,SMS 2 Jawwal E-Mail,N
+1246,4,,Premium SMS,SMS 2 Mehwer,N
+1247,4,,Premium SMS,SMS 2 ETV,N
+1248,4,,Premium SMS,Radio Alwan,N
+1261,4,,Premium SMS,SMS2Music Channel TV,N
+1262,4,,Premium SMS,SMS to Musica TV,N
+1267,4,,Premium SMS,Normina TV,N
+1277,4,,Premium SMS,Topup Number,N
+1285,4,,Premium SMS,Eqtisadiya TV,N
+1289,4,,Premium SMS,Imara,N
+1400,4,,Premium SMS,Maraseel,N
+1930,4,,Premium SMS,Arab Bank,N
+2011,4,,Premium SMS,Tawjihi Results,N
+2012,4,,Premium SMS,Tawjehi Campaign,N
+222,3,,Premium SMS,Unknown,N
+37012,5,,Premium SMS,Quethara TV,N
+37099,5,,Premium SMS,N Offer,N
+37100,5,,Premium SMS,Dardish Service - Selected Number,N
+37101,5,,Premium SMS,Romance Meter,N
+37102,5,,Premium SMS,Abu-Mahjoob,N
+37103,5,,Premium SMS,SMS TO WEB,N
+37104,5,,Premium SMS,Radio Nawras,N
+37105,5,,Premium SMS,Men and Women,N
+37106,5,,Premium SMS,Youth,N
+37107,5,,Premium SMS,SMS2TV-Pal-YalaNdar,N
+37108,5,,Premium SMS,SMS 2 rdio- ISIS radio,N
+37109,5,,Premium SMS,Khalil Radio,N
+37110,5,,Premium SMS,Serach Engine - MTC,N
+37111,5,,Premium SMS,Selected Numbers/ Kartak,N
+37112,5,,Premium SMS,call center-Daleel Jawwal service,N
+37113,5,,Premium SMS,SMS2radio-mawal radio-participations,N
+37114,5,,Premium SMS,Love Pull services,N
+37115,5,,Premium SMS,Spliting Kartak,N
+37116,5,,Premium SMS,User generated Content,N
+37117,5,,Premium SMS,Handicapped,N
+37118,5,,Premium SMS,STK_CMB,N
+37119,5,,Premium SMS,SMS advertisement,N
+37120,5,,Premium SMS,STK_Hat w 5od,N
+37121,5,,Premium SMS,STK_Dearest 2,N
+37122,5,,Premium SMS,Selected Numbers / International,N
+37123,5,,Premium SMS,ADC-Configuration,N
+37124,5,,Premium SMS,GPRS for Prepaid,N
+37126,5,,Premium SMS,Bulk Black List code,N
+37127,5,,Premium SMS,Amwaj Radio,N
+37128,5,,Premium SMS,SMS 2 Email,N
+37129,5,,Premium SMS,Qasaba Cinema,N
+37130,5,,Premium SMS,Kofeyah Group,N
+37131,5,,Premium SMS,Josor,N
+37132,5,,Premium SMS,Pull service-SMS messenger,N
+37133,5,,Premium SMS,Qudwa SMS Competition,N
+37134,5,,Premium SMS,SMS 2 Radio- Gaza Radio,N
+37135,5,,Premium SMS,competition on STARS FM radio,N
+37136,5,,Premium SMS,Mara7 TV,N
+37137,5,,Premium SMS,QudsNewspaper BN,N
+37138,5,,Premium SMS,3afaf wedding services,N
+37139,5,,Premium SMS,SMS2Radio-AqsaRadio,N
+37140,5,,Premium SMS,Al Watan VOice,N
+37141,5,,Premium SMS,Currency Rates,N
+37142,5,,Premium SMS,MCNTesting,N
+37143,5,,Premium SMS,TDM,N
+37144,5,,Premium SMS,Call Collect,N
+37145,5,,Premium SMS,Selmy rates,N
+37146,5,,Premium SMS,Ahalena service,N
+37147,5,,Premium SMS,central TV,N
+37148,5,,Premium SMS,SuperLink PSE,N
+37149,5,,Premium SMS,WAWChat,N
+37150,5,,Premium SMS,Euro 2008 Push,N
+37151,5,,Premium SMS,RBT SMS,N
+37152,5,,Premium SMS,Al- Arabiya,N
+37153,5,,Premium SMS,BBC,N
+37154,5,,Premium SMS,JMCC Bn,N
+37155,5,,Premium SMS,Maan Competition,N
+37156,5,,Premium SMS,Yoya Songs,N
+37157,5,,Premium SMS,Yoya Games,N
+37158,5,,Premium SMS,SamiYousef,N
+37159,5,,Premium SMS,Quds Newspaper - Hadara,N
+37160,5,,Premium SMS,Palprees,N
+37161,5,,Premium SMS,Entertainment Channels,N
+37162,5,,Premium SMS,Palpress,N
+37163,5,,Premium SMS,Job offer - 3yoon al Ghad,N
+37164,5,,Premium SMS,RBT,N
+37165,5,,Premium SMS,Shehabe News,N
+37166,5,,Premium SMS,MCB,N
+37167,5,,Premium SMS,Ramatan Sport Breaking news,N
+37168,5,,Premium SMS,Hadara Online Services,N
+37169,5,,Premium SMS,SMS migration,N
+37170,5,,Premium SMS,STK_Dearest Abroad,N
+37171,5,,Premium SMS,Missed Call Keeper,N
+37172,5,,Premium SMS,Tractors SMS notification,N
+37173,5,,Premium SMS,Holy Quran Services,N
+37174,5,,Premium SMS,Law Kan Bainana,N
+37175,5,,Premium SMS,HADARA-PSE,N
+37176,5,,Premium SMS,Mobis-PSE,N
+37177,5,,Premium SMS,MIT entertainment,N
+37178,5,,Premium SMS,Quds preaking news,N
+37179,5,,Premium SMS,pointing system,N
+37180,5,,Premium SMS,Ramdan services-Push cahnnels /HADARA,N
+37181,5,,Premium SMS,STK_Dardish FAF,N
+37182,5,,Premium SMS,know ur Package,N
+37183,5,,Premium SMS,Ramdan services-Push cahnnels/MIT,N
+37184,5,,Premium SMS,Maraseel,N
+37185,5,,Premium SMS,Pal press CC,N
+37186,5,,Premium SMS,Push service-Entertainment- Arabia cell,N
+37187,5,,Premium SMS,luky baby campaign,N
+37188,5,,Premium SMS,Paltel group SMS service,N
+37189,5,,Premium SMS,SDP,N
+37190,5,,Premium SMS,SMS Pull service-Emplyements info service,N
+37191,5,,Premium SMS,SMS Pull service-Humintation Aid info service,N
+37192,5,,Premium SMS,maan news,N
+37193,5,,Premium SMS,Islamic Services,N
+37194,5,,Premium SMS,Personality analysis,N
+37195,5,,Premium SMS,Aljazeera News,N
+37196,5,,Premium SMS,Takarub Islamic Services,N
+37197,5,,Premium SMS,PNN News,N
+37198,5,,Premium SMS,al i3jaz Al qur2ani,N
+37199,5,,Premium SMS,MaanNet-MaanNewsCh,N
+37200,5,,Premium SMS,Al Madeena Radio,N
+37201,5,,Premium SMS,Al Horriyah Radio,N
+37202,5,,Premium SMS,SMS Pull service- Marah TV,N
+37203,5,,Premium SMS,SMS Pull service- Roo7 TV,N
+37204,5,,Premium SMS,Jerzeem Radio,N
+37205,5,,Premium SMS,Pull service-yellow pages,N
+37206,5,,Premium SMS,Isystem Competition,N
+37207,5,,Premium SMS,radio al kalij,N
+37208,5,,Premium SMS,DAlil Al Zawaj TV,N
+37209,5,,Premium SMS,WTV SMS2TV,N
+37210,5,,Premium SMS,Bethlehem2000 Radio,N
+37211,5,,Premium SMS,YoyaLand Chat,N
+37212,5,,Premium SMS,Best buy,N
+37213,5,,Premium SMS,Al Nas TV SMS2TV,N
+37214,5,,Premium SMS,Pull services - Hafez TV- chat service,N
+37215,5,,Premium SMS,Unknown,N
+37216,5,,Premium SMS,SMS 2 TV Bader TV,N
+37217,5,,Premium SMS,Al Saha wa Al Jamal TV,N
+37218,5,,Premium SMS,Al Barakeh TV,N
+37219,5,,Premium SMS,Al khalijiya,N
+37220,5,,Premium SMS,RAYA FM,N
+37221,5,,Premium SMS,Maan Group Service,N
+37222,5,,Premium SMS,Funny,N
+37223,5,,Premium SMS,Eman Radio,N
+37224,5,,Premium SMS,Maan Group Service,N
+37225,5,,Premium SMS,Al Tet,N
+37226,5,,Premium SMS,Radio Future,N
+37227,5,,Premium SMS,Radio Mara7,N
+37228,5,,Premium SMS,Radio Lamasat Al-Sharq,N
+37229,5,,Premium SMS,SMS 2 TV-Al Tejariah TV,N
+37230,5,,Premium SMS,SMS2TV-RotanaTarapTV,N
+37231,5,,Premium SMS,El MOLD,N
+37232,5,,Premium SMS,SMS 2 TV -CTV Jenin,N
+37233,5,,Premium SMS,Port Said,N
+37234,5,,Premium SMS,Maan Group Service,N
+37235,5,,Premium SMS,Sports,N
+37236,5,,Premium SMS,Radio al-eradah,N
+37237,5,,Premium SMS,Shabeyat,N
+37238,5,,Premium SMS,Much TV,N
+37239,5,,Premium SMS,PullSMS-AdFromUrNum,N
+37240,5,,Premium SMS,SMS2TV- Mazika TV,N
+37241,5,,Premium SMS,PullSMS-EntertServ,N
+37242,5,,Premium SMS,PullSMS-HideWeKnow,N
+37243,5,,Premium SMS,GAMA TV,N
+37244,5,,Premium SMS,Sama Jirzim,N
+37245,5,,Premium SMS,SMS 2TV- Tamima TV,N
+37246,5,,Premium SMS,SMS 2TV- Alrai TV,N
+37247,5,,Premium SMS,SMS 2 TV-Al fajerTV,N
+37248,5,,Premium SMS,SMS 2 TV- Spicy TV,N
+37249,5,,Premium SMS,SMS 2 Radio-Al furasan Radio,N
+37250,5,,Premium SMS,SMS 2TV- Dream TV,N
+37251,5,,Premium SMS,SMS 2TV- ToolkarmTV,N
+37252,5,,Premium SMS,A7lam TV,N
+37253,5,,Premium SMS,SMS 2 Oyoon website,N
+37254,5,,Premium SMS,Lamest jamal TV- Jawwal,N
+37255,5,,Premium SMS,Al dawa2eyeh TV- Jawwal,N
+37256,5,,Premium SMS,escape TV,N
+37257,5,,Premium SMS,SMS 2TV- NorminiaTV,N
+37258,5,,Premium SMS,SMS2TV-Musica-ch,N
+37259,5,,Premium SMS,SMS2 Mehwer TV,N
+37260,5,,Premium SMS,SMS 2 TV-ETV,N
+37261,5,,Premium SMS,SMS 2 TV- Nojoom TV,N
+37262,5,,Premium SMS,Unknown,N
+37263,5,,Premium SMS,Aghaneena TV,N
+37264,5,,Premium SMS,Aman Radio,N
+37265,5,,Premium SMS,Horriyah TV,N
+37266,5,,Premium SMS,Maan Group Service,N
+37267,5,,Premium SMS,Masraweya,N
+37268,5,,Premium SMS,Al rasoul TV,N
+37269,5,,Premium SMS,Borouze TV,N
+37270,5,,Premium SMS,Unknown,N
+37271,5,,Premium SMS,Mara7 TV,N
+37272,5,,Premium SMS,AFM Masraweya,N
+37273,5,,Premium SMS,ATC TV,N
+37274,5,,Premium SMS,Recruitmint TV,N
+37275,5,,Premium SMS,Massaya,N
+37276,5,,Premium SMS,Al Ra7ma,N
+37277,5,,Premium SMS,Al-Huda,N
+37278,5,,Premium SMS,AlSa3a,N
+37279,5,,Premium SMS,Saeda,N
+37280,5,,Premium SMS,Nojoom TV1,N
+37281,5,,Premium SMS,Nojoom TV2,N
+37282,5,,Premium SMS,Nojoom TV3,N
+37283,5,,Premium SMS,Nojoom TV4,N
+37284,5,,Premium SMS,Sudanese TV,N
+37285,5,,Premium SMS,OTV,N
+37286,5,,Premium SMS,Al Deyaa,N
+37287,5,,Premium SMS,Jaweb warba7,N
+37288,5,,Premium SMS,Al Helal,N
+37289,5,,Premium SMS,Shadw Al Jira7 - Aqsa TV,N
+37290,5,,Premium SMS,radio Borouz,N
+37291,5,,Premium SMS,sada TV,N
+37292,5,,Premium SMS,Al uthmaniya TV,N
+37293,5,,Premium SMS,Angham TV,N
+37294,5,,Premium SMS,Radio Fawaseel,N
+37295,5,,Premium SMS,Sawt Al ghad,N
+37296,5,,Premium SMS,Modern TV,N
+37297,5,,Premium SMS,Modern TV Sports,N
+37298,5,,Premium SMS,SMS Pull service-Radio Kul Al nas,N
+37299,5,,Premium SMS,SMS to HALA TV,N
+3730,4,,Premium SMS,SMS 2 Bank of Palestine,N
+37300,5,,Premium SMS,Fawasel TV,N
+37301,5,,Premium SMS,Al-Sumariya TV,N
+37302,5,,Premium SMS,Arabian Travel TV,N
+37303,5,,Premium SMS,TXT TV,N
+37304,5,,Premium SMS,HI TV,N
+37305,5,,Premium SMS,Oyoun SMS2TV,N
+37306,5,,Premium SMS,Al Nas TV,N
+37307,5,,Premium SMS,radio AL Balad,N
+37308,5,,Premium SMS,Sokar,N
+37309,5,,Premium SMS,Al 3othamniya TV,N
+37310,5,,Premium SMS,Fonon TV,N
+37311,5,,Premium SMS,Baghdadiyah TV,N
+37312,5,,Premium SMS,Unknown,N
+37313,5,,Premium SMS,Amani TV- Jawwal,N
+37314,5,,Premium SMS,Adwa2 TV,N
+37315,5,,Premium SMS,Al Jazeera voting issues,N
+37316,5,,Premium SMS,Smash TV Chat and song dedication,N
+37317,5,,Premium SMS,SMS 2 TV-Al sakafeya TV,N
+37318,5,,Premium SMS,SMS 2 TV-Al osra w al tefel TV,N
+37319,5,,Premium SMS,Noor Al Khalejeyah,N
+37320,5,,Premium SMS,Bethlehem 2000 Radio - ESF,N
+37321,5,,Premium SMS,4shabab tv,N
+37322,5,,Premium SMS,SMS2web Amwaj,N
+37323,5,,Premium SMS,Venus SMS2TV,N
+37324,5,,Premium SMS,Unknown,N
+37325,5,,Premium SMS,Al Bawadi SMS2TV,N
+37326,5,,Premium SMS,El Danah SMS2TV,N
+37327,5,,Premium SMS,SMS 2 TV-drama TV,N
+37328,5,,Premium SMS,SMS 2 TV-Monawa3at TV,N
+37329,5,,Premium SMS,SMS 2 TV- Al reyada TV,N
+37330,5,,Premium SMS,SMS 2 Radio-Ram radio,N
+37331,5,,Premium SMS,Oyoun al- ghd,N
+37332,5,,Premium SMS,one radio,N
+37333,5,,Premium SMS,Camp,N
+37334,5,,Premium SMS,Al Rawae,N
+37335,5,,Premium SMS,Al muntada TV,N
+37336,5,,Premium SMS,Seven Stars,N
+37337,5,,Premium SMS,AL - Falasteenia Radio,N
+37338,5,,Premium SMS,Jana TV- Jawwal,N
+37339,5,,Premium SMS,Wasta TV,N
+37340,5,,Premium SMS,SMS Chat to Ghnaoya TV,N
+37341,5,,Premium SMS,ART Vision TV,N
+37342,5,,Premium SMS,Athir TV,N
+37343,5,,Premium SMS,EL SAHA TV,N
+37344,5,,Premium SMS,AL JARAS TV,N
+37345,5,,Premium SMS,Unknown,N
+37346,5,,Premium SMS,Majd TV,N
+37347,5,,Premium SMS,Al Farah TV,N
+37348,5,,Premium SMS,Sharq TV,N
+37349,5,,Premium SMS,Aafaq TV,N
+37350,5,,Premium SMS,Zawaj TV,N
+37351,5,,Premium SMS,Sawt il ghad,N
+37352,5,,Premium SMS,Game TV,N
+37353,5,,Premium SMS,Qitharah SMS2TV,N
+37354,5,,Premium SMS,Universe telecom,N
+37355,5,,Premium SMS,SMS to Radio,N
+37356,5,,Premium SMS,Toyor al janna,N
+37357,5,,Premium SMS,Najah TV,N
+37358,5,,Premium SMS,Bader tv,N
+37359,5,,Premium SMS,Unknown,N
+37360,5,,Premium SMS,Nablus TV,N
+37361,5,,Premium SMS,Tawjwhe,N
+37362,5,,Premium SMS,SMS2 Radio-Radio of liberty,N
+37363,5,,Premium SMS,Jenin Star TV,N
+37364,5,,Premium SMS,Aldiyar TV,N
+37365,5,,Premium SMS,Radio Isis,N
+37366,5,,Premium SMS,Al-Ru3a TV,N
+37367,5,,Premium SMS,Al reef Radio,N
+37368,5,,Premium SMS,UTV,N
+37369,5,,Premium SMS,Rafedeen SMS2TV,N
+3737,4,,Premium SMS,Jawwal Chat,N
+37370,5,,Premium SMS,Bassera TV,N
+37371,5,,Premium SMS,Afra7 TV,N
+37372,5,,Premium SMS,SMS 2 TV-Maraya TV,N
+37373,5,,Premium SMS,Twitter,N
+37374,5,,Premium SMS,Palestine news paper,N
+37375,5,,Premium SMS,Wat wet,N
+37376,5,,Premium SMS,Radio Yamama,N
+37377,5,,Premium SMS,Amwaj TV,N
+37378,5,,Premium SMS,Zahida Company,N
+37379,5,,Premium SMS,SMS 2 Radio-Radio Zain,N
+37380,5,,Premium SMS,Mega TV - Chat,N
+37381,5,,Premium SMS,Alray TV,N
+37382,5,,Premium SMS,Salwa TV,N
+37383,5,,Premium SMS,Kalijia SMS2TV,N
+37384,5,,Premium SMS,rotana sms,N
+37385,5,,Premium SMS,rotana clip,N
+37386,5,,Premium SMS,IMG TV,N
+37387,5,,Premium SMS,rotana zaman,N
+37388,5,,Premium SMS,Farah TV,N
+37389,5,,Premium SMS,EQTESADIA TV,N
+37390,5,,Premium SMS,al mishkat TV,N
+37391,5,,Premium SMS,rotana khalijia,N
+37392,5,,Premium SMS,Arab TV,N
+37393,5,,Premium SMS,Radio Al Kasaba,N
+37394,5,,Premium SMS,SMS Pull service-Lamasat Al sharq,N
+37395,5,,Premium SMS,DU Project,N
+37396,5,,Premium SMS,SmartsWay TV,N
+37397,5,,Premium SMS,westren competition,N
+37398,5,,Premium SMS,tomorrow Voice,N
+37399,5,,Premium SMS,Al Qeeq,N
+37400,5,,Premium SMS,Socca Star,N
+37401,5,,Premium SMS,Sham TV,N
+37402,5,,Premium SMS,E2 TV,N
+37403,5,,Premium SMS,Horoscopes/PUP/Chat - Escape TV,N
+37404,5,,Premium SMS,who wants 2be millionar,N
+37405,5,,Premium SMS,SMS 2 TV- Mazzika TV-competetion,N
+37406,5,,Premium SMS,Mondial 2006 Program,N
+37407,5,,Premium SMS,SMS 2 TV-Gama TV,N
+37408,5,,Premium SMS,MBC TV - TTN,N
+37409,5,,Premium SMS,Alforsa competetion-New TV,N
+37410,5,,Premium SMS,Citrus TV,N
+37411,5,,Premium SMS,Real Estate TV,N
+37412,5,,Premium SMS,Afrah TV,N
+37413,5,,Premium SMS,Nojoom SMS Competition,N
+37414,5,,Premium SMS,westren Competition,N
+37415,5,,Premium SMS,Al watan TV -Qtlat competetion,N
+37416,5,,Premium SMS,HI TV Voting,N
+37417,5,,Premium SMS,Al watan plus TV -Qtlat,N
+37418,5,,Premium SMS,Turkey,N
+37419,5,,Premium SMS,Next competetion -Pull service,N
+37420,5,,Premium SMS,Arab Idol,N
+37421,5,,Premium SMS,Rorana Zaman,N
+37422,5,,Premium SMS,Yellow pages competition,N
+37423,5,,Premium SMS,SMS 2 TV-future TV-super star,N
+37424,5,,Premium SMS,amwaj TV,N
+37425,5,,Premium SMS,Tiger Rice,N
+37426,5,,Premium SMS,Amwaj TV Competition,N
+37427,5,,Premium SMS,Al 3ahd TV,N
+37428,5,,Premium SMS,Chou bet2oul,N
+37429,5,,Premium SMS,Competition MBC Channel,N
+37430,5,,Premium SMS,Burhan TV,N
+37431,5,,Premium SMS,Qeethara TV,N
+37432,5,,Premium SMS,Yoyaland services,N
+37433,5,,Premium SMS,3anood Competition,N
+37434,5,,Premium SMS,Boomarange,N
+37435,5,,Premium SMS,Sbitany Competition,N
+37436,5,,Premium SMS,Unknown,N
+37437,5,,Premium SMS,Oyoon,N
+37438,5,,Premium SMS,El Madh TV,N
+37439,5,,Premium SMS,Radio Nawras - Students,N
+37440,5,,Premium SMS,Car Racing - Smile TV,N
+37441,5,,Premium SMS,Unknown,N
+37442,5,,Premium SMS,Wikit2oria,N
+37443,5,,Premium SMS,100% with Adel,N
+37444,5,,Premium SMS,Koony Ajmal,N
+37446,5,,Premium SMS,Quethara TV,N
+37447,5,,Premium SMS,Offers TV,N
+37448,5,,Premium SMS,Horouf w oloof,N
+37449,5,,Premium SMS,SMS2TV- LBC TV- DOND Program,N
+37450,5,,Premium SMS,SMS Voting (Zawaj TV),N
+37451,5,,Premium SMS,SMS2radio- mawal radio-competitions,N
+37452,5,,Premium SMS,Arab Tourism TV,N
+37453,5,,Premium SMS,Pull Service-Nablus TV,N
+37454,5,,Premium SMS,RAYA FM,N
+37455,5,,Premium SMS,Ramadan info. Competition,N
+37456,5,,Premium SMS,Mazadi Service,N
+37457,5,,Premium SMS,Al Saha SMS Competition,N
+37458,5,,Premium SMS,Rotan Radio,N
+37459,5,,Premium SMS,east voice,N
+37460,5,,Premium SMS,Alrai TV,N
+37461,5,,Premium SMS,logos and tones,N
+37462,5,,Premium SMS,konouz TV,N
+37463,5,,Premium SMS,shahrazad TV,N
+37464,5,,Premium SMS,tones and logos,N
+37465,5,,Premium SMS,sa7ar TV,N
+37466,5,,Premium SMS,SMS 2 TV-Iqraa TV,N
+37467,5,,Premium SMS,SMS2TV- Poem,N
+37468,5,,Premium SMS,Mega TV - Voting,N
+37469,5,,Premium SMS,Unknown,N
+37470,5,,Premium SMS,MIX TV,N
+37471,5,,Premium SMS,season travel,N
+37472,5,,Premium SMS,El Madh TV,N
+37473,5,,Premium SMS,Wanasah TV competetion,N
+37474,5,,Premium SMS,Hadara SMS Competition,N
+37475,5,,Premium SMS,SMS 2 TV- Alsharq TV,N
+37476,5,,Premium SMS,Al Fath TV,N
+37477,5,,Premium SMS,SMS2TV-comp.onRotanaNUT,N
+37478,5,,Premium SMS,Pull services- double u competetion- New TV,N
+37479,5,,Premium SMS,SMS 2 TV-Asia,N
+37480,5,,Premium SMS,ART Competition,N
+37481,5,,Premium SMS,MBC - Mint Competition,N
+37482,5,,Premium SMS,Alraya Competition,N
+37483,5,,Premium SMS,Ro2ya,N
+37484,5,,Premium SMS,ART sport,N
+37485,5,,Premium SMS,Jordan Today Tv,N
+37486,5,,Premium SMS,Yellow pages serviec,N
+37487,5,,Premium SMS,SMS 2 TV-KTV,N
+37488,5,,Premium SMS,Makka Competition,N
+37489,5,,Premium SMS,cash w bas-LBC TV competetion,N
+37490,5,,Premium SMS,SMScomp-HakimJallad,N
+37491,5,,Premium SMS,Kalam TV,N
+37492,5,,Premium SMS,MBC music TV- competition,N
+37493,5,,Premium SMS,Asfar website and and Magazine,N
+37494,5,,Premium SMS,MIT SMS Competition,N
+37495,5,,Premium SMS,Al Qeeq,N
+37496,5,,Premium SMS,Awtar TV - SMS2TV chatting,N
+37497,5,,Premium SMS,WWTBM on MBC,N
+37498,5,,Premium SMS,Bab Al 7ara SMS Competitio,N
+37499,5,,Premium SMS,LBC Fawazeer,N
+37500,5,,Premium SMS,Maan Group Service,N
+37501,5,,Premium SMS,Maan Group Service,N
+37502,5,,Premium SMS,Maan Group Service,N
+37503,5,,Premium SMS,Maan Group Service,N
+37504,5,,Premium SMS,Maan Group Service,N
+37505,5,,Premium SMS,Maan Group Service,N
+37506,5,,Premium SMS,Maan Group Service,N
+37507,5,,Premium SMS,Manar Radio,N
+37508,5,,Premium SMS,Awtar TV - VIP chatting,N
+37509,5,,Premium SMS,Tijariah TV,N
+37510,5,,Premium SMS,Unknown,N
+37511,5,,Premium SMS,sondok cash-programe,N
+37512,5,,Premium SMS,Ya ana ya Inta,N
+37513,5,,Premium SMS,sondok car-programe,N
+37514,5,,Premium SMS,Takarub,N
+37515,5,,Premium SMS,Al Tijariya TV,N
+37516,5,,Premium SMS,Takarub SMS Competition,N
+37517,5,,Premium SMS,Sada il islam,N
+37518,5,,Premium SMS,Mehnati,N
+37519,5,,Premium SMS,Mehnati Job Searching,N
+37520,5,,Premium SMS,Awal TV,N
+37521,5,,Premium SMS,al Hemma,N
+37522,5,,Premium SMS,al 7aj wal 3omra,N
+37523,5,,Premium SMS,AL rrai,N
+37524,5,,Premium SMS,atta,N
+37525,5,,Premium SMS,7ayeh wo selam,N
+37526,5,,Premium SMS,al-hayat kalemah On MBC TV,N
+37528,5,,Premium SMS,Music plus TV - SMS2TV chatting,N
+37529,5,,Premium SMS,Music plus TV,N
+37530,5,,Premium SMS,Boy or Girl,N
+37531,5,,Premium SMS,Gear One TV,N
+37532,5,,Premium SMS,Qudwa Competition - Hadara,N
+37533,5,,Premium SMS,Palestine TV - Hadara,N
+37534,5,,Premium SMS,info2cell,N
+37535,5,,Premium SMS,palestine TV,N
+37536,5,,Premium SMS,WTV(MT),N
+37537,5,,Premium SMS,Nart TV( MT),N
+37538,5,,Premium SMS,Hadi TV(MT),N
+37539,5,,Premium SMS,Sajaya TV(MT),N
+37540,5,,Premium SMS,al-Afasi TV(MT),N
+37541,5,,Premium SMS,Sawet el watan,N
+37542,5,,Premium SMS,Awtar TV -,N
+37544,5,,Premium SMS,Competition,N
+37545,5,,Premium SMS,Chatting & greeting,N
+37546,5,,Premium SMS,7akem Jalad,N
+37547,5,,Premium SMS,ciro cinema,N
+37548,5,,Premium SMS,telecinmea,N
+37549,5,,Premium SMS,panorama drama,N
+37550,5,,Premium SMS,nourmina,N
+37551,5,,Premium SMS,Jaredat Al Hadath,N
+37552,5,,Premium SMS,Kenz Competition,N
+37553,5,,Premium SMS,Call live Tv- dubai,N
+37554,5,,Premium SMS,Nojom FM,N
+37555,5,,Premium SMS,MaBrook Offer,N
+37556,5,,Premium SMS,Ta7lel Nafsi,N
+37557,5,,Premium SMS,7isab w Jawab,N
+37558,5,,Premium SMS,7akem w Jallad,N
+37559,5,,Premium SMS,Barclays League competition,N
+37560,5,,Premium SMS,hadara - Palestine TV,N
+37561,5,,Premium SMS,hadara - Palestine TV,N
+37562,5,,Premium SMS,hadara - Palestine TV,N
+37563,5,,Premium SMS,Meshwar Radio,N
+37564,5,,Premium SMS,hadara - Palestine TV,N
+37565,5,,Premium SMS,Competition,N
+37566,5,,Premium SMS,Epoints,N
+37567,5,,Premium SMS,Gold campaign,N
+37568,5,,Premium SMS,Hayat FM,N
+37569,5,,Premium SMS,Al jazeera,N
+37570,5,,Premium SMS,Jaras TV,N
+37571,5,,Premium SMS,Oyoon TV,N
+37572,5,,Premium SMS,Modern TV- Golden coins,N
+37573,5,,Premium SMS,Maan Group,N
+37574,5,,Premium SMS,Maan Group,N
+37575,5,,Premium SMS,Sofiya TV,N
+37576,5,,Premium SMS,Hanaya TV,N
+37577,5,,Premium SMS,Tefli Al-Habeeb TV,N
+37578,5,,Premium SMS,Sana TV,N
+37579,5,,Premium SMS,Al-Quds TV,N
+37580,5,,Premium SMS,Shada TV,N
+37581,5,,Premium SMS,Al-Teb Al-Nabawi,N
+37582,5,,Premium SMS,Kayfa TV,N
+37583,5,,Premium SMS,Al-Mojtamaa TV,N
+37584,5,,Premium SMS,Fact International,N
+37585,5,,Premium SMS,Al-Athar TV,N
+37586,5,,Premium SMS,Afkar Wa Mawaheb TV (AL-Majd),N
+37587,5,,Premium SMS,Al-Majd 1,N
+37588,5,,Premium SMS,Al-Majd Al-Ilmiya,N
+37589,5,,Premium SMS,Al-Majd Atfal,N
+37590,5,,Premium SMS,Amwaj TV,N
+37591,5,,Premium SMS,orfet eltaswq-mosabaq7,N
+37592,5,,Premium SMS,Jawaker,N
+37593,5,,Premium SMS,Unknown,N
+37595,5,,Premium SMS,Millionaire online game,N
+37596,5,,Premium SMS,Dr. Mubarak,N
+37597,5,,Premium SMS,Dream,N
+37598,5,,Premium SMS,Teevna TV,N
+37599,5,,Premium SMS,Aasi MBC channel,N
+37600,5,,Premium SMS,game team-Mazzika TV CHAT,N
+37601,5,,Premium SMS,Al-hafez TV CHAT,N
+37602,5,,Premium SMS,AL-nas TV CHAT,N
+37603,5,,Premium SMS,Al-seha wal jamal,N
+37604,5,,Premium SMS,Makka TV CHAT,N
+37605,5,,Premium SMS,Future Radio,N
+37606,5,,Premium SMS,Watann TV CHAT,N
+37607,5,,Premium SMS,ATC TV CHAT,N
+37608,5,,Premium SMS,Arab TV,N
+37609,5,,Premium SMS,Jummar TV CHAT,N
+37610,5,,Premium SMS,Radio AL-Reef(superlink),N
+37611,5,,Premium SMS,Radio Fann,N
+37612,5,,Premium SMS,yamama radio,N
+37613,5,,Premium SMS,Chat(Control call),N
+37614,5,,Premium SMS,Rotan Radio,N
+37615,5,,Premium SMS,Mawaly,N
+37616,5,,Premium SMS,Al quds master competition,N
+37617,5,,Premium SMS,Dream radio/Hadara,N
+37618,5,,Premium SMS,MBB2,N
+37619,5,,Premium SMS,Super link,N
+37620,5,,Premium SMS,Soreef Radio,N
+37621,5,,Premium SMS,Farah Radio,N
+37622,5,,Premium SMS,MBC TV,N
+37623,5,,Premium SMS,Radio Aman,N
+37623,5,,Premium SMS,Maan Group,N
+37624,5,,Premium SMS,Jericho Radio,N
+37625,5,,Premium SMS,AL-Sharq Radio,N
+37627,5,,Premium SMS,Terra information tec./MIT,N
+37628,5,,Premium SMS,AL-Mahaba Radio,N
+37629,5,,Premium SMS,sharjah TV,N
+37630,5,,Premium SMS,Unknown,N
+37631,5,,Premium SMS,Imsakiyah Competion,N
+37632,5,,Premium SMS,Facebock,N
+37633,5,,Premium SMS,Unknown,N
+37634,5,,Premium SMS,Unknown,N
+37635,5,,Premium SMS,SMS2TV - Al-Teb alnabawi,N
+37636,5,,Premium SMS,Traffic Ticket,N
+37637,5,,Premium SMS,Seba Radio - Jenin,N
+37638,5,,Premium SMS,Maan Group,N
+37639,5,,Premium SMS,Maan Group,N
+37640,5,,Premium SMS,Maan Group,N
+37641,5,,Premium SMS,Maan Group,N
+37642,5,,Premium SMS,Arab Media (Josat TV),N
+37643,5,,Premium SMS,Names of Allah,N
+37644,5,,Premium SMS,Quran Meaninigs,N
+37645,5,,Premium SMS,Maftee7 al Rizq,N
+37646,5,,Premium SMS,Radi Jafra,N
+37647,5,,Premium SMS,almanar,N
+37648,5,,Premium SMS,Seraj Radio,N
+37649,5,,Premium SMS,Radio Dream,N
+37650,5,,Premium SMS,Radio Yamama,N
+37651,5,,Premium SMS,Al hadaf Radio,N
+37652,5,,Premium SMS,Aden TV,N
+37653,5,,Premium SMS,Diwan TV,N
+37654,5,,Premium SMS,radio sama,N
+37655,5,,Premium SMS,MMS deduction for mother day campaign,N
+37657,5,,Premium SMS,Mosabaqit Irshed,N
+37658,5,,Premium SMS,Al Jazeera mubasher,N
+37659,5,,Premium SMS,Al noor TV,N
+37660,5,,Premium SMS,radio al fajer al jaded,N
+37661,5,,Premium SMS,Amwaj radio,N
+37662,5,,Premium SMS,Amwaj TV,N
+37663,5,,Premium SMS,Safa TV,N
+37664,5,,Premium SMS,Radio al Amal- Gaza,N
+37665,5,,Premium SMS,Radio Fann- Amman,N
+37666,5,,Premium SMS,Kol Innas,N
+37680,5,,Premium SMS,BeeCell Entertainment Services,N
+37681,5,,Premium SMS,Ringos,N
+37683,5,,Premium SMS,Maan services,N
+37684,5,,Premium SMS,Chat,N
+37685,5,,Premium SMS,Maan Complaints,N
+37686,5,,Premium SMS,mail2sms and sms2mail,N
+37687,5,,Premium SMS,Isalmic Services,N
+37688,5,,Premium SMS,Chat Service,N
+37689,5,,Premium SMS,Wafa News,N
+37690,5,,Premium SMS,1000 free sms,N
+37691,5,,Premium SMS,Rotana TV,N
+37692,5,,Premium SMS,Unknown,N
+37696,5,,Premium SMS,Unknown,N
+37699,5,,Premium SMS,yooyaland service,N
+37700,5,,Premium SMS,Arabia Cell Sports Service,N
+37701,5,,Premium SMS,Testing for hulul,N
+37703,5,,Premium SMS,Barchaloni services,N
+37704,5,,Premium SMS,3la ras- wap push,N
+37705,5,,Premium SMS,Yallah Koora,N
+37706,5,,Premium SMS,Unknown,N
+37707,5,,Premium SMS,Nawadi,N
+37708,5,,Premium SMS,Magi farah,N
+37709,5,,Premium SMS,Disney,N
+37710,5,,Premium SMS,STK_WAP_Settings,N
+37711,5,,Premium SMS,BeeCell,N
+37712,5,,Premium SMS,Hadara,N
+37713,5,,Premium SMS,Downloading application,N
+37714,5,,Premium SMS,Wafaa breaking news,N
+37715,5,,Premium SMS,AL-Quds News Agency QNN,N
+37716,5,,Premium SMS,Body language,N
+37717,5,,Premium SMS,MBC PUSH,N
+37718,5,,Premium SMS,Al afassy TV,N
+37719,5,,Premium SMS,Yuzoo arabia,N
+37720,5,,Premium SMS,Super wap,N
+37722,5,,Premium SMS,Horoscope matching,N
+37723,5,,Premium SMS,Diet,N
+37724,5,,Premium SMS,Sport services,N
+37725,5,,Premium SMS,Horoscopes,N
+37726,5,,Premium SMS,Tips & information services,N
+37727,5,,Premium SMS,End of World 2012,N
+37728,5,,Premium SMS,Islamic wap push,N
+37729,5,,Premium SMS,Sport wap push,N
+37730,5,,Premium SMS,Entertainment wap push,N
+37731,5,,Premium SMS,Tareek el hedaya,N
+37732,5,,Premium SMS,Unknown,N
+37733,5,,Premium SMS,El Madh TV,N
+37734,5,,Premium SMS,Sport services,N
+37735,5,,Premium SMS,Fazlakat and shamiyat,N
+37736,5,,Premium SMS,FIT GMS,N
+37737,5,,Premium SMS,soccer java game,N
+37738,5,,Premium SMS,Request Islamic applications,N
+37739,5,,Premium SMS,Request Islamic applications,N
+37740,5,,Premium SMS,Request Islamic applications,N
+37741,5,,Premium SMS,Getmo Java game,N
+37742,5,,Premium SMS,Weather service,N
+37743,5,,Premium SMS,Unknown,N
+37745,5,,Premium SMS,Liverpool FC,N
+37746,5,,Premium SMS,Unknown,N
+37747,5,,Premium SMS,Kalema min al qalb- MBC,N
+37748,5,,Premium SMS,Melody movies- wap push,N
+37749,5,,Premium SMS,Takarub- Java games,N
+37750,5,,Premium SMS,Mazadi,N
+37752,5,,Premium SMS,off peak BTL offer,N
+37753,5,,Premium SMS,Directors use,N
+37754,5,,Premium SMS,Cross selling visa card- arab bank,N
+37755,5,,Premium SMS,Morror,N
+37756,5,,Premium SMS,Hadara call center,N
+37757,5,,Premium SMS,SMS Bill,N
+37758,5,,Premium SMS,DU Project,N
+37759,5,,Premium SMS,Funny,N
+37760,5,,Premium SMS,World cup,N
+37761,5,,Premium SMS,Unknown,N
+37762,5,,Premium SMS,SMS to Tashbeek,N
+37763,5,,Premium SMS,Maan complaints,N
+37764,5,,Premium SMS,Maan Survey,N
+37765,5,,Premium SMS,Call center services,N
+37766,5,,Premium SMS,STK_MCB,N
+37767,5,,Premium SMS,Thawani Offer,N
+37768,5,,Premium SMS,STK_MCN,N
+37769,5,,Premium SMS,Manal Al Alem,N
+37770,5,,Premium SMS,x- Campaign,N
+37771,5,,Premium SMS,Al Asra,N
+37772,5,,Premium SMS,sms chat,N
+37773,5,,Premium SMS,FaceBook Notification,N
+37774,5,,Premium SMS,Thawany Offer,N
+37775,5,,Premium SMS,Thawany Offer,N
+37776,5,,Premium SMS,Fun Offer,N
+37777,5,,Premium SMS,Thawny Only,N
+37779,5,,Premium SMS,Facebook application,N
+37780,5,,Premium SMS,Discovery Science,N
+37781,5,,Premium SMS,AC Milan,N
+37782,5,,Premium SMS,Al resalah breaking news,N
+37783,5,,Premium SMS,Assafa breaking news,N
+37784,5,,Premium SMS,Thawany Offer,N
+37785,5,,Premium SMS,Unknown,N
+37786,5,,Premium SMS,Unknown,N
+37787,5,,Premium SMS,Unknown,N
+37788,5,,Premium SMS,Palestine Days,N
+37789,5,,Premium SMS,Wezaret al asra,N
+37790,5,,Premium SMS,Unknown,N
+37791,5,,Premium SMS,Unknown,N
+37792,5,,Premium SMS,mbc 3 disney,N
+37793,5,,Premium SMS,Call Back Now,N
+37794,5,,Premium SMS,Mabrook,N
+37795,5,,Premium SMS,Randa bebo Personality,N
+37796,5,,Premium SMS,Pull SMS,N
+37797,5,,Premium SMS,STK_Collect Call,N
+37798,5,,Premium SMS,love meter Randa bebo,N
+37799,5,,Premium SMS,Unknown,N
+37800,5,,Premium SMS,SIM application Service,N
+37801,5,,Premium SMS,Al Rahma TV,N
+37802,5,,Premium SMS,Qiethara TV,N
+37803,5,,Premium SMS,Al Ahly TV,N
+37804,5,,Premium SMS,Infinity TV- Dollarat w Seyarat,N
+37805,5,,Premium SMS,Infinity TV- Adeem w jaded,N
+37806,5,,Premium SMS,Fakerr w irba7,N
+37807,5,,Premium SMS,Mayar TV,N
+37809,5,,Premium SMS,Syria Baladna TV,N
+37810,5,,Premium SMS,Al muntada TV,N
+37811,5,,Premium SMS,Al muntada TV,N
+37812,5,,Premium SMS,Al Mihwar TV,N
+37813,5,,Premium SMS,Al Hayyat TV,N
+37814,5,,Premium SMS,Al Amal TV,N
+37815,5,,Premium SMS,7asak nasebak,N
+37816,5,,Premium SMS,so2al 3la 6ayer,N
+37817,5,,Premium SMS,Wish list- MBC,N
+37818,5,,Premium SMS,RBO3,N
+37819,5,,Premium SMS,Unknown,N
+37820,5,,Premium SMS,DU Project,N
+37821,5,,Premium SMS,Facebook Chat Bundle,N
+37822,5,,Premium SMS,Fatafeet TV,N
+37823,5,,Premium SMS,Daleel palestine,N
+37824,5,,Premium SMS,Unknown,N
+37825,5,,Premium SMS,Hot Sale,N
+37826,5,,Premium SMS,Tahrer TV,N
+37827,5,,Premium SMS,Noor Business TV,N
+37828,5,,Premium SMS,New star,N
+37829,5,,Premium SMS,ABC TV,N
+37830,5,,Premium SMS,Al Masdar Alreyade TV,N
+37831,5,,Premium SMS,Sawt Tunis TV,N
+37832,5,,Premium SMS,Qasem TV,N
+37833,5,,Premium SMS,Goerge Wafoos Competition,N
+37834,5,,Premium SMS,Awtar TV -,N
+37835,5,,Premium SMS,Balsam TV,N
+37836,5,,Premium SMS,Al Waha TV,N
+37837,5,,Premium SMS,info2cell,N
+37838,5,,Premium SMS,Unknown,N
+37839,5,,Premium SMS,Unknown,N
+37840,5,,Premium SMS,Safa TV,N
+37841,5,,Premium SMS,Unknown,N
+37842,5,,Premium SMS,Unknown,N
+37843,5,,Premium SMS,Unknown,N
+37844,5,,Premium SMS,Al Awdeh,N
+37845,5,,Premium SMS,3 D TV,N
+37846,5,,Premium SMS,Hebron youth club,N
+37847,5,,Premium SMS,Boy or Girl,N
+37848,5,,Premium SMS,Traffic Ticket,N
+37849,5,,Premium SMS,Ramadan Consultations,N
+37850,5,,Premium SMS,sawat al ghad competition,N
+37852,5,,Premium SMS,Unknown,N
+37853,5,,Premium SMS,Spliting Kartak,N
+37854,5,,Premium SMS,undertaker offer 1,N
+37855,5,,Premium SMS,undertaker offer 2,N
+37856,5,,Premium SMS,Ramadan and Eid MMS,N
+37857,5,,Premium SMS,Israeli Network,N
+37858,5,,Premium SMS,Al Birr,N
+37859,5,,Premium SMS,Nas FM,N
+37860,5,,Premium SMS,orfet eltaswq-2lan,N
+37864,5,,Premium SMS,Quds? press breaking news,N
+37865,5,,Premium SMS,On-Off,N
+37866,5,,Premium SMS,Unknown,N
+37867,5,,Premium SMS,Ahlan Ramadan,N
+37877,5,,Premium SMS,Classico,N
+37878,5,,Premium SMS,Unknown,N
+37881,5,,Premium SMS,Hotspot service,N
+37883,5,,Premium SMS,Unknown,N
+37884,5,,Premium SMS,Unknown,N
+37885,5,,Premium SMS,Unknown,N
+37886,5,,Premium SMS,MMS to FaceBook,N
+37887,5,,Premium SMS,ROB5,N
+37889,5,,Premium SMS,Unknown,N
+37890,5,,Premium SMS,Huroof 2012 SMS,N
+37891,5,,Premium SMS,Tariq o Hayoona 2012,N
+37892,5,,Premium SMS,Ya Halla Bshooji,N
+37893,5,,Premium SMS,Huroof online game 2012,N
+37894,5,,Premium SMS,Omar TV Show,N
+37896,5,,Premium SMS,Unknown,N
+37897,5,,Premium SMS,line sport TV,N
+37898,5,,Premium SMS,Unknown,N
+37899,5,,Premium SMS,London 2012 Olympic Games,N
+379,3,,Premium SMS,Unknown,N
+37900,5,,Premium SMS,Hadara,N
+37901,5,,Premium SMS,Real Madrid,N
+37902,5,,Premium SMS,Sport,N
+37903,5,,Premium SMS,Love,N
+37906,5,,Premium SMS,Songs,N
+37911,5,,Premium SMS,entertaiment,N
+37915,5,,Premium SMS,Scoop,N
+37918,5,,Premium SMS,moktatafat mn el7ya,N
+37919,5,,Premium SMS,Unknown,N
+37924,5,,Premium SMS,Chinese Horoscope,N
+37939,5,,Premium SMS,Islamic Services,N
+37951,5,,Premium SMS,Unknown,N
+37953,5,,Premium SMS,Jobs,N
+37980,5,,Premium SMS,Sada News,N
+37981,5,,Premium SMS,Horoscopes,N
+37988,5,,Premium SMS,Amwaj TV,N
+37998,5,,Premium SMS,RBO3,N
+1878,4,,Paltel_comp,Paltel Comp,N
+1879,4,,Paltel_comp,Paltel_comp,N
+B022,4,,Paltel VSMS,Paltel VSMS,N
+B042,4,,Paltel VSMS,Paltel VSMS,N
+B082,4,,Paltel VSMS,Paltel VSMS,N
+B092,4,,Paltel VSMS,Paltel VSMS,N
+970737,8,,Netvision Fixed,NetvisionFixed,N
+972737,8,,Netvision Fixed,NetvisionFixed,N
+737,4,,Netvision Fixed,Netvision Fixed,N
+9721,4,,National,Fixed,N
+9726,4,,National,Reserved for future use,N
+97220,5,,National,Fixed,N
+97221,5,,National,Fixed,N
+97223,5,,National,Fixed,N
+97224,5,,National,Fixed,N
+97240,5,,National,Fixed,N
+97241,5,,National,Fixed,N
+97243,5,,National,Fixed,N
+97244,5,,National,Fixed,N
+97245,5,,National,Fixed,N
+97246,5,,National,Fixed,N
+97247,5,,National,Fixed,N
+97248,5,,National,Fixed,N
+97249,5,,National,Fixed,N
+97251,5,,National,Reserved for Mob,N
+97272,5,,National,Fixed - 012 Smile Fixed,N
+97276,5,,National,Fixed - BIP Fixed,N
+97277,5,,National,Fixed - Hot Fixed,N
+97278,5,,National,Fixed - Xphone Local,N
+97280,5,,National,Fixed,N
+97281,5,,National,Fixed,N
+97283,5,,National,Fixed,N
+97284,5,,National,Fixed,N
+97285,5,,National,Fixed,N
+97286,5,,National,Fixed,N
+97287,5,,National,Fixed,N
+97288,5,,National,Fixed,N
+97289,5,,National,Fixed,N
+97290,5,,National,Fixed,N
+97291,5,,National,Fixed,N
+97293,5,,National,Fixed,N
+97294,5,,National,Fixed,N
+97295,5,,National,Fixed,N
+97296,5,,National,Fixed,N
+97297,5,,National,Fixed,N
+97298,5,,National,Fixed,N
+97299,5,,National,Fixed,N
+972151,6,,National,Mobile - Voice Mail,N
+972153,6,,National,Mobile - Fax Mail,N
+972558,6,,National,Mobile - Alon MVNO,N
+972733,6,,National,Fixed - Cellcom Fixed,N
+972747,6,,National,Fixed - Partner Fixed,N
+9721599,7,,National,Mobile - Voice Mail,N
+9702,6,,National,BAZEQ,N
+9703,6,,National,BAZEQ,N
+9704,6,,National,BAZEQ,N
+97050,7,,National,PELEPHONE,N
+97052,7,,National,Cellcom,N
+97053,7,,National,Mirs,N
+97054,7,,National,Orange,N
+97055,7,,National,Orange,N
+9705522,9,,National,Cellcom,N
+9705523,9,,National,Cellcom,N
+97057,7,,National,Mirs,N
+97066,7,,National,Orange,N
+97067,7,,National,Orange,N
+97073,7,,National,CellcomFixedLines,N
+97074,7,,National,Orange Fixed Lines,N
+970765,8,,National,Bazeq International,N
+9708,6,,National,BAZEQ,N
+9709,6,,National,BAZEQ,N
+9722,6,,National,BAZEQ,N
+9723,6,,National,BAZEQ,N
+9724,6,,National,BAZEQ,N
+97250,7,,National,PELEPHONE,N
+97252,7,,National,Cellcom,N
+97253,7,,National,Mirs,N
+97254,7,,National,Orange,N
+97255,7,,National,Orange,N
+9725522,9,,National,Cellcom,N
+9725523,9,,National,Cellcom,N
+97257,7,,National,Mirs,N
+97266,7,,National,Orange,N
+97267,7,,National,Orange,N
+97273,7,,National,CellcomFixedLine,N
+97274,7,,National,Orange Fixed Lines,N
+972765,8,,National,Bazeq International,N
+9728,6,,National,BAZEQ,N
+9729,6,,National,BAZEQ,N
+2,2,,National,BAZEQ,N
+3,2,,National,BAZEQ,N
+4,2,,National,BAZEQ,N
+50,3,,National,PELEPHONE,N
+52,3,,National,Cellcom,N
+53,3,,National,Mirs,N
+54,3,,National,Orange,N
+55,3,,National,Orange,N
+5522,5,,National,Cellcom,N
+5523,5,,National,Cellcom,N
+57,3,,National,Mirs,N
+58,3,,National,Golan,N
+66,3,,National,Orange,N
+67,3,,National,Orange,N
+72,3,,National,Smile Fixed Line,N
+73,3,,National,CellcomFixedLines,N
+74,3,,National,Orange Fixed Lines,N
+76,3,,National,Bazeq International,N
+8,2,,National,BAZEQ,N
+9,2,,National,BAZEQ,N
+B6364,5,,National,Peace line,N
+C1122052,9,,National,Cellcom,N
+131,3,,Ministry Complaints Line,Ministry Complaints Line,N
+139,3,,Ministry Complaints Line,Gaza ministry,N
+591204,7,,Free,MCN,N
+972591204,9,,Free,MCN,N
+C11,3,,Markup,Markup,N
+C12,3,,Markup,Markup,N
+C13,3,,Markup,Markup,N
+C14,3,,Markup,Markup,N
+C15,3,,Markup,Markup,N
+C16,3,,Markup,Markup,N
+C21,3,,Markup,Markup,N
+C22,3,,Markup,Markup,N
+C23,3,,Markup,Markup,N
+C24,3,,Markup,Markup,N
+C25,3,,Markup,Markup,N
+C26,3,,Markup,Markup,N
+97022,7,,Local,PALTEL,N
+97025,7,,Local,Jerusalem,N
+97026,7,,Local,Jerusalem,N
+97027,7,,Local,Jerusalem,N
+97028,7,,Local,Jerusalem,N
+97029,7,,Local,Jerusalem,N
+97042,7,,Local,Jenin,N
+97082,7,,Local,Gaza,N
+97092,7,,Local,PALTEL,N
+97222,7,,Local,PALTEL,N
+97225,7,,Local,Jerusalem,N
+97226,7,,Local,Jerusalem,N
+97227,7,,Local,Jerusalem,N
+97228,7,,Local,Jerusalem,N
+97229,7,,Local,Jerusalem,N
+97242,7,,Local,Jenin,N
+97282,7,,Local,Gaza,N
+97292,7,,Local,PALTEL,N
+22,3,,Local,PALTEL,N
+25,3,,Local,Jerusalem,N
+26,3,,Local,Jerusalem,N
+27,3,,Local,Jerusalem,N
+28,3,,Local,Jerusalem,N
+29,3,,Local,Jerusalem,N
+42,3,,Local,Jenin,N
+82,3,,Local,Gaza,N
+92,3,,Local,PALTEL,N
+107,3,,Local,PALTEL,N
+108,3,,Local,PALTEL,N
+126,3,,Local,PALTEL,N
+177,3,,Local,PALTEL,N
+15160,5,,Free,Kartak Free minutes,N
+97059,7,,Jawwal,Jawwal,N
+97259,7,,Jawwal,Jawwal,N
+59,3,,Jawwal,Jawwal,N
+1300,4,,Jawwal,Jawwal,N
+192,3,,Jawwal,Unknown,N
+193,3,,Jawwal,Unknown,N
+195,3,,Jawwal,Unknown,N
+196,3,,Jawwal,Unknown,N
+197,3,,Jawwal,Unknown,N
+5,1,,Jawwal,Jawwal,N
+59,2,,Jawwal,Jawwal CS3,N
+7,1,,Jawwal,Jawwal,N
+8,1,,Jawwal,Jawwal,N
+9,1,,Jawwal,Jawwal,N
+15150,5,,Unknown-T,Unknown,N
+15151,5,,Charged,Unknown,N
+15152,5,,Charged,Unknown,N
+15153,5,,Charged,Unknown,N
+15154,5,,Charged,Unknown,N
+15155,5,,Charged,Unknown,N
+15156,5,,Charged,Unknown,N
+15157,5,,Charged,Unknown,N
+15158,5,,Charged,Unknown,N
+15159,5,,Charged,Unknown,N
+1515,4,,Charged,Ring Back Tone,N
+15166,5,,Charged,MCB,N
+1335,4,,IVR,PC - G2,N
+1404,4,,IVR,Islamic Nasheed,N
+1405,4,,IVR,PC - G2,N
+1406,4,,IVR,PC - G2,N
+1407,4,,IVR,Chou bet2oul,N
+1408,4,,IVR,PC - G2,N
+1409,4,,IVR,ETV- tafseer a7lam program,N
+1410,4,,IVR,PC - G2,N
+1411,4,,IVR,PC - G2,N
+1412,4,,IVR,PC - G2,N
+1413,4,,IVR,PC - G2,N
+1414,4,,IVR,PC - G1,N
+1415,4,,IVR,PC - G1,N
+1416,4,,IVR,PC - G2,N
+1417,4,,IVR,PC - G2,N
+1418,4,,IVR,A1 TV services,N
+1419,4,,IVR,PC - G2,N
+142,3,,IVR,PC - G2,N
+1420,4,,IVR,PC - G2,N
+1421,4,,IVR,PC - G2,N
+1422,4,,IVR,PC - G2,N
+1423,4,,IVR,PC - G2,N
+1424,4,,IVR,Nadi Elforosya competition,N
+1425,4,,IVR,PC - G2,N
+1426,4,,IVR,Fawazeer Ramadan LBC,N
+1427,4,,IVR,PC - G2,N
+1428,4,,IVR,PC - G2,N
+1429,4,,IVR,PC - G2,N
+143,3,,IVR,PC - G2,N
+1430,4,,IVR,PC - G2,N
+1431,4,,IVR,PC - G2,N
+1432,4,,IVR,PC - G2,N
+1434,4,,IVR,PC - G2,N
+1435,4,,IVR,PC - G2,N
+1436,4,,IVR,PC - G2,N
+1437,4,,IVR,PC - G2,N
+1438,4,,IVR,Rkamak 7azzak,N
+1439,4,,IVR,PC - G2,N
+1450,4,,IVR,PC - G1,N
+1451,4,,IVR,PC - G2,N
+1452,4,,IVR,PC - G2,N
+1453,4,,IVR,PC - G2,N
+1454,4,,IVR,PC - G2,N
+1455,4,,IVR,PC - G2,N
+1456,4,,IVR,PC - G2,N
+1457,4,,IVR,PC - G2,N
+1458,4,,IVR,PC - G2,N
+1459,4,,IVR,PC - G2,N
+146,3,,IVR,PC - G2,N
+1460,4,,IVR,PC - G2,N
+1461,4,,IVR,PC - G2,N
+1462,4,,IVR,PC - G2,N
+1463,4,,IVR,PC - G2,N
+1464,4,,IVR,PC - G2,N
+1465,4,,IVR,PC - G2,N
+1466,4,,IVR,PC - G2,N
+1467,4,,IVR,PC - G2,N
+1468,4,,IVR,PC - G2,N
+1469,4,,IVR,PC - G2,N
+147,3,,IVR,PC - G2,N
+1470,4,,IVR,PC - G2,N
+1471,4,,IVR,Fawazeer Ramadan LBC,N
+1472,4,,IVR,PC - G2,N
+1473,4,,IVR,PC - G2,N
+1474,4,,IVR,PC - G2,N
+1475,4,,IVR,PC - G2,N
+1476,4,,IVR,PC - G2,N
+1477,4,,IVR,PC - G2,N
+1478,4,,IVR,PC - G2,N
+1479,4,,IVR,PC - G2,N
+1480,4,,IVR,PC - G2,N
+1481,4,,IVR,PC - G2,N
+1482,4,,IVR,PC - G2,N
+1483,4,,IVR,PC - G2,N
+1484,4,,IVR,PC - G2,N
+1485,4,,IVR,PC - G2,N
+1486,4,,IVR,PC - G2,N
+1487,4,,IVR,PC - G2,N
+1488,4,,IVR,PC - G2,N
+1489,4,,IVR,Secret Number competition,N
+1490,4,,IVR,PC - G2,N
+1491,4,,IVR,PC - G2,N
+1492,4,,IVR,all day winners competition,N
+1493,4,,IVR,PC - G2,N
+1494,4,,IVR,PC - G2,N
+1495,4,,IVR,PC - G2,N
+1496,4,,IVR,PC - G2,N
+1497,4,,IVR,PC - G2,N
+1498,4,,IVR,PC - G2,N
+1499,4,,IVR,PC - G2,N
+17808,5,,IVR,audio telecom,N
+17820,5,,IVR,Sandooq,N
+17822,5,,IVR,SKY Company,N
+17825,5,,IVR,Hadarah,N
+17826,5,,IVR,Hadarah,N
+17827,5,,IVR,Hadarah,N
+17828,5,,IVR,Hadarah,N
+17829,5,,IVR,Hadarah,N
+17830,5,,IVR,Star academy 7,N
+17840,5,,IVR,Hadara IVR,N
+17841,5,,IVR,IVR service,N
+17842,5,,IVR,7oroof w aloof,N
+17843,5,,IVR,Ahlan Ramadan,N
+17844,5,,IVR,Bejo Show,N
+17845,5,,IVR,3azzoz w Mazzoz,N
+17846,5,,IVR,Universe Company,N
+17847,5,,IVR,Universe Company,N
+17848,5,,IVR,Universe Company,N
+17849,5,,IVR,Universe Company,N
+17850,5,,IVR,men ishater,N
+17851,5,,IVR,Unknown,N
+17888,5,,IVR,audio telecom,N
+17890,5,,IVR,Unknown,N
+17898,5,,IVR,Unknown,N
+17899,5,,IVR,Unknown,N
+19001,5,,IVR,PC - G3 AudioText,N
+19002,5,,IVR,PC - G3 AudioText,N
+19003,5,,IVR,PC - G3 AudioText,N
+19004,5,,IVR,PC - G3 AudioText,N
+19005,5,,IVR,Al-3oloum al Tatbeqya,N
+19006,5,,IVR,PC - G3 AudioText,N
+19007,5,,IVR,PC - G3 AudioText,N
+19008,5,,IVR,Gulf_Radio One,N
+1901,4,,IVR,PC - G3 AudioText,N
+19010,5,,IVR,PC-G3 Audio text,N
+19011,5,,IVR,Unknown,N
+19012,5,,IVR,Unknown,N
+19013,5,,IVR,PC - G3 AudioText,N
+19014,5,,IVR,PC - G3 AudioText,N
+19015,5,,IVR,PC - G3 AudioText,N
+19016,5,,IVR,PC - G3 AudioText,N
+19017,5,,IVR,PC - G3 AudioText,N
+19018,5,,IVR,PC-G3 Audio text,N
+19019,5,,IVR,PC - G3 AudioText,N
+19020,5,,IVR,PC - G3 AudioText,N
+19021,5,,IVR,PC - G3 AudioText,N
+19023,5,,IVR,PC - G3 AudioText,N
+19024,5,,IVR,PC - G3 AudioText,N
+19025,5,,IVR,PC - G3 AudioText,N
+19026,5,,IVR,PC - G3 AudioText,N
+19027,5,,IVR,PC - G3 AudioText,N
+19028,5,,IVR,PC - G3 AudioText,N
+19029,5,,IVR,PC - G3 AudioText,N
+1903,4,,IVR,PC - G3 AudioText,N
+19030,5,,IVR,PC - G3 AudioText,N
+19031,5,,IVR,PC - G3 AudioText,N
+19032,5,,IVR,PC - G3 AudioText,N
+19033,5,,IVR,PC - G3 AudioText,N
+19034,5,,IVR,PC-G3 Audio text,N
+19035,5,,IVR,PC - G3 AudioText,N
+19036,5,,IVR,PC-G3 Audio text,N
+19037,5,,IVR,Artek-Radio Al Hayah,N
+19038,5,,IVR,Master Media,N
+19039,5,,IVR,PC - G3 AudioText,N
+19040,5,,IVR,Unknown,N
+19041,5,,IVR,Radio Amman,N
+19042,5,,IVR,PC - G3 AudioText,N
+19044,5,,IVR,PC - G3 AudioText,N
+19045,5,,IVR,PC - G3 AudioText,N
+19046,5,,IVR,PC - G3 AudioText,N
+19047,5,,IVR,PC - G3 AudioText,N
+19048,5,,IVR,PC - G3 AudioText,N
+19049,5,,IVR,PC - G3 AudioText,N
+1905,4,,IVR,PC - G3 AudioText,N
+19050,5,,IVR,PC - G3 AudioText,N
+19051,5,,IVR,PC - G3 AudioText,N
+19053,5,,IVR,PC - G3 AudioText,N
+19054,5,,IVR,Jafra Company,N
+19055,5,,IVR,PC - G3 AudioText,N
+19056,5,,IVR,PC - G3 AudioText,N
+19057,5,,IVR,A7la FM,N
+19058,5,,IVR,PC - G3 AudioText,N
+19059,5,,IVR,Etha3it Sawt ilwatan,N
+1906,4,,IVR,PC - G3 AudioText,N
+19060,5,,IVR,PC - G3 AudioText,N
+19061,5,,IVR,PC - G3 AudioText,N
+19062,5,,IVR,PC - G3 AudioText,N
+19063,5,,IVR,PC - G3 AudioText,N
+19064,5,,IVR,PC - G3 AudioText,N
+19065,5,,IVR,PC - G3 AudioText,N
+19066,5,,IVR,PC - G3 AudioText,N
+19067,5,,IVR,PC - G3 AudioText,N
+19069,5,,IVR,PC - G3 AudioText,N
+19070,5,,IVR,PC - G3 AudioText,N
+19071,5,,IVR,PC - G3 AudioText,N
+19073,5,,IVR,PC - G3 AudioText,N
+19075,5,,IVR,PC - G3 AudioText,N
+19076,5,,IVR,PC - G3 AudioText,N
+19077,5,,IVR,PC - G3 AudioText,N
+19078,5,,IVR,Audio text,N
+19079,5,,IVR,PC - G3 AudioText,N
+19080,5,,IVR,PC - G3 AudioText,N
+19081,5,,IVR,PC - G3 AudioText,N
+19084,5,,IVR,PC - G3 AudioText,N
+19085,5,,IVR,PC - G3 AudioText,N
+19087,5,,IVR,PC - G3 AudioText,N
+19088,5,,IVR,PC - G3 AudioText,N
+19089,5,,IVR,PC - G3 AudioText,N
+19090,5,,IVR,PC - G3 AudioText,N
+19091,5,,IVR,PC - G3 AudioText,N
+19092,5,,IVR,PC - G3 AudioText,N
+19093,5,,IVR,Unknown,N
+19094,5,,IVR,PC - G3 AudioText,N
+19095,5,,IVR,PC - G3 AudioText,N
+19098,5,,IVR,PC - G3 AudioText,N
+19099,5,,IVR,PC - G3 AudioText,N
+19100,5,,IVR,PC - G3 AudioText,N
+1911,4,,IVR,PC - G3 AudioText,N
+1912,4,,IVR,PC - G3 AudioText,N
+1913,4,,IVR,PC - G3 AudioText,N
+1914,4,,IVR,PC - G3 AudioText,N
+1915,4,,IVR,PC - G3 AudioText,N
+1917,4,,IVR,PC - G3 AudioText,N
+1918,4,,IVR,PC - G3 AudioText,N
+1919,4,,IVR,PC - G3 AudioText,N
+1922,4,,IVR,PC - G3 AudioText,N
+1923,4,,IVR,PC - G3 AudioText,N
+19232,5,,IVR,PC - G3 AudioText,N
+1924,4,,IVR,PC - G3 AudioText,N
+1926,4,,IVR,PC - G3 AudioText,N
+1927,4,,IVR,PC - G3 AudioText,N
+1928,4,,IVR,PC - G3 AudioText,N
+1929,4,,IVR,PC - G3 AudioText,N
+1932,4,,IVR,PC - G3 AudioText,N
+1933,4,,IVR,PC - G3 AudioText,N
+1934,4,,IVR,PC - G3 AudioText,N
+19345,5,,IVR,PC - G3 AudioText,N
+1935,4,,IVR,PC - G3 AudioText,N
+1936,4,,IVR,PC - G3 AudioText,N
+1937,4,,IVR,PC - G3 AudioText,N
+1938,4,,IVR,PC - G3 AudioText,N
+19401,5,,IVR,PC - G3 AudioText,N
+19402,5,,IVR,PC - G3 AudioText,N
+19403,5,,IVR,PC - G3 AudioText,N
+19404,5,,IVR,PC - G3 \ Adio Text,N
+19405,5,,IVR,PC - G3 AudioText,N
+19408,5,,IVR,PC - G3 AudioText,N
+19409,5,,IVR,Palestinian centre for Academic studies,N
+1941,4,,IVR,PC - G3 AudioText,N
+19410,5,,IVR,PC - G3 AudioText,N
+19414,5,,IVR,PC - G3 AudioText,N
+19416,5,,IVR,PC - G3 AudioText,N
+19419,5,,IVR,PC - G3 AudioText,N
+1942,4,,IVR,PC - G3 AudioText,N
+19422,5,,IVR,PC - G3 \ Audio Text,N
+19424,5,,IVR,Afkar Bank,N
+19425,5,,IVR,Unknown,N
+1943,4,,IVR,PC - G3 AudioText,N
+19432,5,,IVR,PC - G3 AudioText,N
+19434,5,,IVR,PC - G3 AudioText,N
+19437,5,,IVR,PC - G3 AudioText,N
+19438,5,,IVR,PC - G3 AudioText,N
+1944,4,,IVR,PC - G3 AudioText,N
+19440,5,,IVR,PC - G3 AudioText,N
+19442,5,,IVR,PC - G3 AudioText,N
+19443,5,,IVR,PC - G3 AudioText,N
+19444,5,,IVR,PC - G3 AudioText,N
+19446,5,,IVR,PC - G3 AudioText,N
+1945,4,,IVR,PC - G3 AudioText,N
+19450,5,,IVR,PC - G3 AudioText,N
+19451,5,,IVR,PC - G3/ Audio Text,N
+19452,5,,IVR,Unknown,N
+19454,5,,IVR,PC - G3 AudioText,N
+19455,5,,IVR,PC - G3 AudioText,N
+1946,4,,IVR,PC - G3 AudioText,N
+19464,5,,IVR,PC - G3 AudioText,N
+19465,5,,IVR,PC - G3 AudioText,N
+19468,5,,IVR,PC - G3 AudioText,N
+1947,4,,IVR,PC - G3 AudioText,N
+19471,5,,IVR,PC - G3 AudioText,N
+19474,5,,IVR,PC - G3 AudioText,N
+19491,5,,IVR,PC - G3 AudioText,N
+19494,5,,IVR,PC - G3 AudioText,N
+19499,5,,IVR,PC - G3 AudioText,N
+1950,4,,IVR,PC - G3 AudioText,N
+19501,5,,IVR,PC - G3/ Audio Text,N
+19504,5,,IVR,PC - G3 AudioText,N
+19505,5,,IVR,Al Qudwa Company,N
+1951,4,,IVR,PC - G3 AudioText,N
+19511,5,,IVR,PC - G3 AudioText,N
+19515,5,,IVR,PC - G3 AudioText,N
+19519,5,,IVR,PC - G3 AudioText,N
+1954,4,,IVR,PC - G3 AudioText,N
+19543,5,,IVR,PC - G3 AudioText,N
+1955,4,,IVR,PC - G3 AudioText,N
+19550,5,,IVR,PC - G3 AudioText,N
+19551,5,,IVR,PC - G3/ Audio Text,N
+19557,5,,IVR,PC - G3 AudioText,N
+19559,5,,IVR,PC - G3 AudioText,N
+1956,4,,IVR,PC - G3 AudioText,N
+1957,4,,IVR,PC - G3 AudioText,N
+19578,5,,IVR,PC - G3 AudioText,N
+1958,4,,IVR,PC - G3 AudioText,N
+19583,5,,IVR,PC - G3 AudioText,N
+1959,4,,IVR,PC - G3 AudioText,N
+19591,5,,IVR,PC - G3 AudioText,N
+19595,5,,IVR,PC - G3 AudioText,N
+19596,5,,IVR,PC - G3 AudioText,N
+1960,4,,IVR,PC - G3 AudioText,N
+19608,5,,IVR,PC - G3 AudioText,N
+1961,4,,IVR,PC - G3 AudioText,N
+1962,4,,IVR,PC - G3 AudioText,N
+1963,4,,IVR,PC - G3 AudioText,N
+1964,4,,IVR,PC - G3 AudioText,N
+19641,5,,IVR,PC - G3 AudioText,N
+1965,4,,IVR,PC - G3 AudioText,N
+1966,4,,IVR,PC - G3 AudioText,N
+1967,4,,IVR,PC - G3 AudioText,N
+1968,4,,IVR,PC - G3 AudioText,N
+1969,4,,IVR,PC - G3 AudioText,N
+1970,4,,IVR,PC - G3 AudioText,N
+19701,5,,IVR,PC - G3 AudioText,N
+19706,5,,IVR,PC - G3 AudioText,N
+19707,5,,IVR,Gulf-Radio One,N
+1971,4,,IVR,PC - G3 AudioText,N
+19711,5,,IVR,PC - G3 AudioText,N
+19713,5,,IVR,PC - G3 AudioText,N
+19736,5,,IVR,PC - G3 AudioText,N
+1974,4,,IVR,PC - G3 AudioText,N
+1976,4,,IVR,PC - G3 AudioText,N
+19775,5,,IVR,PC - G3 AudioText,N
+19777,5,,IVR,Reach,N
+1978,4,,IVR,PC - G3 AudioText,N
+19782,5,,IVR,PC - G3 AudioText,N
+1979,4,,IVR,PC - G3 AudioText,N
+19791,5,,IVR,PC - G3 AudioText,N
+1980,4,,IVR,PC - G3 AudioText,N
+1981,4,,IVR,PC - G3 AudioText,N
+1982,4,,IVR,PC - G3 AudioText,N
+1983,4,,IVR,PC - G3 AudioText,N
+1985,4,,IVR,PC - G3 AudioText,N
+1986,4,,IVR,PC - G3 AudioText,N
+1987,4,,IVR,PC - G3 AudioText,N
+1988,4,,IVR,PC - G3 AudioText,N
+1989,4,,IVR,PC - G3 AudioText,N
+0,2,,International,Unknown,N
+1,3,,International,USA and canada_Fixed,N
+1242,6,,International,Bahamas_Fixed,N
+1246260,9,,International,Barbados_Digicel(Barbados),N
+1264,6,,International,Anguilla_Fixed,N
+1268,6,,International,Antigua & Barbuda_Fixed,N
+12687,7,,International,Antigua & Barbuda_APUA,N
+1284,6,,International,British Virgin Islands_Fixed,N
+1340,6,,International,US Virgin Islands_Fixed,N
+1345,6,,International,Cayman Islands_Fixed,N
+1441,6,,International,Bermuda_Fixed,N
+144133,8,,International,Bermuda_Mobility,N
+14415,7,,International,Bermuda_Telecommunication Ltd,N
+14734,7,,International,Grenada_Digicel(Grenada),N
+1649,6,,International,Turks and Caicos Islands_Fixed,N
+1664,6,,International,Montserrat_Fixed,N
+1670483,9,,International,Saipan_Guamcell Saipan,N
+1670484,9,,International,Saipan_Saipan,N
+1671,6,,International,Guam_Fixed,N
+1684,6,,International,American Samoa_Fixed,N
+1758,6,,International,St Lucia_Fixed,N
+1758714,9,,International,St Lucia_Digicel(St Lucia),N
+17587154,10,,International,St Lucia_Digicel(St Lucia),N
+1767,6,,International,Dominica_Fixed,N
+178452,8,,International,St Vincent_Digicel(St Vincent),N
+1787590,9,,International,Puerto Rico_CCPR(Cingular),N
+1809,6,,International,Dominican Republic_Fixed,N
+1868686,9,,International,Trinidad&Tobago_Tr&To Telecom,N
+1869,6,,International,Nevis_Fixed,N
+1876,6,,International,Jamaica_Fixed,N
+20,4,,International,Egypt_Fixed_Proper,N
+2010,6,,International,Egypt_Vodafone,N
+2011,6,,International,Egypt_Etisalat,N
+2012,6,,International,Egypt_Mobinil,N
+2014,6,,International,Egypt_Etisalat,N
+2016,6,,International,Egypt_Vodafone,N
+2017,6,,International,Egypt_Mobinil,N
+2018,6,,International,Egypt_Mobinil,N
+2019,6,,International,Egypt_Vodafone,N
+202,5,,International,Egypt_Fixed_Cairo,N
+211,5,,International,South Sudan,N
+212,5,,International,MOROCCO_Fixed,N
+212520,8,,International,MOROCCO_Fixed,N
+212521,8,,International,MOROCCO_Fixed,N
+212522,8,,International,MOROCCO_Fixed,N
+212526,8,,International,MOROCCO_Fixed,N
+212527,8,,International,MOROCCO_Fixed,N
+212529,8,,International,MOROCCO_Fixed,N
+212530,8,,International,MOROCCO_Fixed,N
+212531,8,,International,MOROCCO_Fixed,N
+212533,8,,International,MOROCCO_Fixed,N
+212534,8,,International,MOROCCO_Fixed,N
+212537,8,,International,MOROCCO_Fixed,N
+212538,8,,International,MOROCCO_Fixed,N
+21260,7,,International,Morroco_Medi,N
+21261,7,,International,Morroco_IAM,N
+212610,8,,International,MOROCCO_MAROC TELECOM,N
+212611,8,,International,MOROCCO_MAROC TELECOM,N
+212612,8,,International,MOROCCO_MEDITEL,N
+212613,8,,International,MOROCCO_MAROC TELECOM,N
+212614,8,,International,MOROCCO_MEDITEL,N
+212615,8,,International,MOROCCO_MAROC TELECOM,N
+212616,8,,International,MOROCCO_MAROC TELECOM,N
+212617,8,,International,MOROCCO_MEDITEL,N
+212618,8,,International,MOROCCO_MAROC TELECOM,N
+212619,8,,International,MOROCCO_MEDITEL,N
+21262,7,,International,Morocco_IAM,N
+21263,7,,International,Morroco_Medi,N
+21264,7,,International,Morroco_Medi,N
+212640,8,,International,MOROCCO_WANA,N
+212641,8,,International,MOROCCO_MAROC TELECOM,N
+212642,8,,International,MOROCCO_MAROC TELECOM,N
+212644,8,,International,MOROCCO_MEDITEL,N
+212645,8,,International,MOROCCO_MEDITEL,N
+212646,8,,International,MOROCCO_WANA,N
+212647,8,,International,MOROCCO_WANA,N
+212648,8,,International,MOROCCO_MAROC TELECOM,N
+212649,8,,International,MOROCCO_MEDITEL,N
+21265,7,,International,Morroco_Medi,N
+212650,8,,International,MOROCCO_MAROC TELECOM,N
+212651,8,,International,MOROCCO_MAROC TELECOM,N
+212652,8,,International,MOROCCO_MAROC TELECOM,N
+212653,8,,International,MOROCCO_MAROC TELECOM,N
+212654,8,,International,MOROCCO_MAROC TELECOM,N
+212655,8,,International,MOROCCO_MAROC TELECOM,N
+212656,8,,International,MOROCCO_MEDITEL,N
+212658,8,,International,MOROCCO_MAROC TELECOM,N
+212659,8,,International,MOROCCO_MAROC TELECOM,N
+21266,7,,International,Morroco_IAM,N
+212660,8,,International,MOROCCO_MEDITEL,N
+212661,8,,International,MOROCCO_MAROC TELECOM,N
+212662,8,,International,MOROCCO_MAROC TELECOM,N
+212663,8,,International,MOROCCO_MEDITEL,N
+212664,8,,International,MOROCCO_MEDITEL,N
+212665,8,,International,MOROCCO_MEDITEL,N
+212666,8,,International,MOROCCO_MAROC TELECOM,N
+212667,8,,International,MOROCCO_MAROC TELECOM,N
+212668,8,,International,MOROCCO_MAROC TELECOM,N
+212669,8,,International,MOROCCO_MEDITEL,N
+21267,7,,International,Morroco_IAM,N
+212670,8,,International,MOROCCO_MAROC TELECOM,N
+212671,8,,International,MOROCCO_MAROC TELECOM,N
+212672,8,,International,MOROCCO_MAROC TELECOM,N
+212673,8,,International,MOROCCO_MAROC TELECOM,N
+212674,8,,International,MOROCCO_MEDITEL,N
+212675,8,,International,MOROCCO_MEDITEL,N
+212676,8,,International,MOROCCO_MAROC TELECOM,N
+212677,8,,International,MOROCCO_MAROC TELECOM,N
+212678,8,,International,MOROCCO_MAROC TELECOM,N
+212679,8,,International,MOROCCO_MEDITEL,N
+21269,7,,International,Morroco_Medi,N
+213,5,,International,Algeria_Fixed,N
+2135,6,,International,Algeria_Wataniya Telecom Algeria,N
+213550,8,,International,Algeria_WATANIYA,N
+213551,8,,International,Algeria_WATANIYA,N
+213552,8,,International,Algeria_WATANIYA,N
+213553,8,,International,Algeria_WATANIYA,N
+213554,8,,International,Algeria_WATANIYA,N
+213555,8,,International,Algeria_WATANIYA,N
+213556,8,,International,Algeria_WATANIYA,N
+2136,6,,International,Algeria_Ministere P&T,N
+21366,7,,International,Algeria_ATM (MOBILIS),N
+21369,7,,International,Algeria_ATM (MOBILIS),N
+2137,6,,International,Algeria_Orascom,N
+21377,7,,International,Algeria_ORASCOM,N
+21379,7,,International,Algeria_ORASCOM,N
+21396190,10,,International,Algeria_Algerie Telecom,N
+21396191,10,,International,Algeria_Orascom,N
+21396192,10,,International,Algeria_Divona,N
+213982,8,,International,Algeria_VOIP,N
+213983,8,,International,Algeria_VOIP,N
+216,5,,International,Tunisia_Fixed,N
+2162,6,,International,Tunisia_Orascom Telecom,N
+21620,7,,International,Tunisia_Orascom,N
+21621,7,,International,Tunisia_Orascom,N
+21622,7,,International,Tunisia_Orascom,N
+21623,7,,International,Tunisia_Orascom,N
+21624,7,,International,Tunisia_Orascom,N
+21625,7,,International,Tunisia_Orascom,N
+21626,7,,International,Tunisia_Orascom,N
+21627,7,,International,Tunisia_Orascom,N
+21640,7,,International,Tunisia_Tunisie Telecom,N
+2165,6,,International,Tunisia_Orange,N
+2169,6,,International,Tunisia_Tunisie Telecom,N
+21690,7,,International,Tunisia_TunTel,N
+21691,7,,International,Tunisia_TunTel,N
+21694,7,,International,Tunisia_TunTel,N
+21695,7,,International,Tunisia_TunTel,N
+21696,7,,International,Tunisia_TunTel,N
+21697,7,,International,Tunisia_TunTel,N
+21698,7,,International,Tunisia_Orascom,N
+21699,7,,International,Tunisia_TunTel,N
+218,5,,International,Libya_Fixed,N
+21891,7,,International,Libya_El Madar Telephone Co,N
+21892,7,,International,Libya_Libyana,N
+21894,7,,International,Libya_Mobile,N
+220,5,,International,Gambia_Fixed,N
+2207,6,,International,Gambia_Africell,N
+2209,6,,International,Gambia_Gamcell,N
+221,5,,International,Senegal Republic_Fixed,N
+22153,7,,International,Senegal_Sonatel,N
+22154,7,,International,Senegal_Sonatel,N
+22155,7,,International,Senegal_Sonatel,N
+22156,7,,International,Senegal_Sonatel,N
+22158,7,,International,Senegal_Sentel,N
+22159,7,,International,Senegal_Sentel,N
+22163,7,,International,Senegal_Sonatel,N
+22164,7,,International,Senegal_Sonatel,N
+22165,7,,International,Senegal_Sonatel,N
+22166,7,,International,Senegal_Sentel,N
+22167,7,,International,Senegal_Sentel,N
+22168,7,,International,Senegal_Sentel,N
+22169,7,,International,Senegal_Sentel,N
+222,5,,International,Mauritania_Fixed,N
+22263,7,,International,Mauritania_MATTEL,N
+22264,7,,International,Mauritania_MAURITEL,N
+223,5,,International,Mali_Fixed,N
+224,5,,International,Guinea_Fixed,N
+22411,7,,International,Guinea_Sotelgui SA,N
+22412,7,,International,Guinea_Spacetel Guinea,N
+225,5,,International,Ivory Coast_Fixed,N
+2253,6,,International,Ivory Coast_Comstar,N
+2255,6,,International,Ivory Coast_Loteny,N
+2257,6,,International,Ivory Coast_Orange Cte dIvoire,N
+226,5,,International,Burkina Faso_Fixed,N
+22670,7,,International,Burkina Faso_Onatel,N
+226788,8,,International,Burkina Faso_Telecel Faso,N
+227,5,,International,Niger_Fixed,N
+228,5,,International,Togo_Fixed,N
+229,5,,International,Benin_Fixed,N
+230,5,,International,Mauritius_Fixed,N
+23025,7,,International,Mauritius_CellPlus,N
+230421,8,,International,Mauritius_EMTEL LTD,N
+23049,7,,International,Mauritius_EMTEL LTD,N
+23072993,10,,International,Mauritius_R_NILCOMFREMr,N
+23072994,10,,International,Mauritius_EMTEL LTD,N
+23073,7,,International,Mauritius_EMTEL LTD,N
+23075,7,,International,Mauritius_CellPlus,N
+23076,7,,International,Mauritius_CellPlus,N
+23077,7,,International,Mauritius_CellPlus,N
+23078,7,,International,Mauritius_CellPlus,N
+23079,7,,International,Mauritius_CellPlus,N
+231,5,,International,Liberia_Fixed,N
+23165,7,,International,Liberia_Lonestar Cell,N
+23169,7,,International,Liberia_Omega Communications,N
+232,5,,International,Sierra Leone_Fixed,N
+23230,7,,International,Sierra Leone_Millicom Sierra Leone,N
+23276,7,,International,Sierra Leone_Celtel Sierra Leone,N
+233,5,,International,Ghana_Fixed,N
+234,5,,International,Nigeria_Fixed?,N
+234802,8,,International,Nigeria_Econet Wireless Nigeria,N
+234804,8,,International,Nigeria_Nitel,N
+234805,8,,International,Nigeria_Globacom,N
+235,5,,International,Chad_Fixed,N
+2352,6,,International,Chad_Celtel Tchad,N
+2358,6,,International,Chad_Libertis Tchad,N
+236,5,,International,Central Africa Republic_Fixed,N
+237,5,,International,Cameroon_Fixed,N
+2377,6,,International,Cameroon_MTN Cameroon,N
+2378,6,,International,Cameroon_Orange Cameroun,N
+2379,6,,International,Cameroon_Orange Cameroun,N
+238,5,,International,Cape Verde Islans_Fixed,N
+2389,6,,International,Cape Verde_Cabo Verde Telecom,N
+239,5,,International,Sao Tome and Principe_Fixed,N
+240,5,,International,Equatorial Guinea_Fixed,N
+241,5,,International,Gabon_Fixed,N
+242,5,,International,Congo_Fixed,N
+2425,6,,International,Congo_Celtel Congo,N
+243,5,,International,Congo Democratic Republic_Fixed,N
+24381,7,,International,Congo(Dem Rep)_Vodacom Congo RDC,N
+2439,6,,International,Congo(Dem Rep)_Celtel Congo(RDC),N
+244,5,,International,Angola_Fixed,N
+245,5,,International,Guinea-Bissau_Fixed,N
+246,5,,International,Diego Garcia_Fixed,N
+247,5,,International,Ascension_Fixed,N
+248,5,,International,Seychelles_Fixed,N
+2485,6,,International,Seychelles_Cable + Wireless,N
+2487,6,,International,Seychelles_Telecom (Seychelles Ltd),N
+249,5,,International,Sudan_Fixed,N
+249912,8,,International,Sudan_Mobile Telephone Company,N
+250,5,,International,Rwanda_Fixed,N
+2508,6,,International,Rwanda_MTN Rwandacell,N
+251,5,,International,Ethiopia_Fixed,N
+2519,6,,International,Ethiopia_Ethiopian Telecoms,N
+252,5,,International,Somalia_Fixed,N
+253,5,,International,Djibouti_Fixed,N
+254,5,,International,Kenya_Fixed,N
+25472,7,,International,Kenya_SAFARICOM,N
+25473,7,,International,Kenya_Celltel,N
+255,5,,International,Tanzania & Zanzibar_Fixed,N
+256,5,,International,Uganda_Fixed,N
+257,5,,International,Burundi_Fixed,N
+2576,6,,International,Burundi_Spacetel Burundi,N
+2578,6,,International,Burundi_Africell(SAFARIS),N
+2579,6,,International,Burundi_Telecel Burundi,N
+258,5,,International,Mozambique_Fixed,N
+25884,7,,International,Mozambique_Vodacom Mozambique,N
+260,5,,International,Zambia_Fixed,N
+26096,7,,International,Zambia_Telecel Zambia,N
+26097,7,,International,Zambia_Celtel Zambia,N
+261,5,,International,Madagascar_Fixed,N
+2613132,9,,International,Madagascar_Sacel,N
+26132,7,,International,Madagascar_SMM(Antaris),N
+26133,7,,International,Madagascar_Madacom,N
+262,5,,International,Reunion Islands_Fixed,N
+263,5,,International,Zimbabwe_Fixed,N
+26311,7,,International,Zimbabwe_Net One,N
+26323,7,,International,Zimbabwe_Telecel Zimbabwe,N
+26391,7,,International,Zimbabwe_Econet Wireless Zimbabwe,N
+264,5,,International,Namibia_Fixed,N
+26481,7,,International,Namibia_Mtc,N
+265,5,,International,Malawi_Fixed,N
+2659,6,,International,Malawi_CelTel Malawi,N
+266,5,,International,Lesotho_Fixed,N
+2666,6,,International,Lesotho_Econet Ezi-Cel,N
+2667,6,,International,Lesotho_VCL,N
+267,5,,International,Botswana_Fixed,N
+26771,7,,International,Botswana_Mascom Wireless,N
+26772,7,,International,Botswana_Vista Cellular(Gaborone),N
+268,5,,International,Swaziland_Fixed,N
+2686,6,,International,Swaziland_Swazi MTN Ltd,N
+269,5,,International,Comoros and Mayotte_Fixed,N
+2696,6,,International,Mayotte_SRR Mayotte,N
+27,4,,International,South Africa_Fixed?,N
+2772,6,,International,South Africa_Vodacom,N
+2773,6,,International,South Africa_Mtn,N
+2782,6,,International,South Africa_Vodacom,N
+27838894,10,,International,South Africa_Mtn,N
+290,5,,International,Saint Helena_Fixed,N
+291,5,,International,Eritrea_Fixed,N
+2919,6,,International,Eritrea_Eritrea,N
+297,5,,International,Aruba_Fixed,N
+2977,6,,International,Aruba_New Millenium,N
+298,5,,International,Faroe Islands_Fixed,N
+299,5,,International,Greenland_Fixed,N
+30,4,,International,Greece_Fixed,N
+30694,7,,International,Greece_Vodafone - Panafon,N
+30697,7,,International,Greece_Cosmote,N
+30699,7,,International,Greece_Q-TELECOM,N
+3092,6,,International,Greece_Telestet,N
+3093,6,,International,Greece_Telestet,N
+3094,6,,International,Greece_Vodafone - Panafon,N
+3097,6,,International,Greece_Cosmote,N
+31,4,,International,Netherlands_Fixed,N
+31611,7,,International,Netherlands_Libertel,N
+31612,7,,International,Netherlands_KPN,N
+31613,7,,International,Netherlands_KPN,N
+31614,7,,International,Netherlands_T-Mobile Netherlands BV,N
+31615,7,,International,Netherlands_Libertel,N
+31616,7,,International,Netherlands_Telfort,N
+31617,7,,International,Netherlands_Telfort,N
+31618,7,,International,Netherlands_Dutchtone,N
+31619,7,,International,Netherlands_Telfort,N
+31621,7,,International,Netherlands_Libertel,N
+31622,7,,International,Netherlands_KPN,N
+31623,7,,International,Netherlands_KPN,N
+31624,7,,International,Netherlands_T-Mobile Netherlands BV,N
+31625,7,,International,Netherlands_Libertel,N
+31627,7,,International,Netherlands_Libertel,N
+31628,7,,International,Netherlands_KPN,N
+31629,7,,International,Netherlands_Libertel,N
+3163,6,,International,Netherlands_KPN,N
+31638,7,,International,Netherlands_Dutchtone,N
+3164,6,,International,Netherlands_Tele2 NL,N
+31644,7,,International,Netherlands_Telfort,N
+31645,7,,International,Netherlands_Telfort,N
+31646,7,,International,Netherlands_Libertel,N
+31647,7,,International,Netherlands_Telfort,N
+31648,7,,International,Netherlands_Dutchtone,N
+31649,7,,International,Netherlands_Telfort,N
+3165,6,,International,Netherlands_Libertel,N
+31651,7,,International,Netherlands_KPN,N
+31652,7,,International,Netherlands_Libertel,N
+31655,7,,International,Netherlands_Libertel,N
+32,4,,International,Belgium_Fixed,N
+3247,6,,International,Belgium_Proximus Belgacom,N
+3249,6,,International,Belgium_Mobistar,N
+326,5,,International,Belgium_Proximus Belgacom,N
+3295,6,,International,Belgium_Mobistar,N
+3296,6,,International,Belgium_Mobistar,N
+3297,6,,International,Belgium_Mobistar,N
+3299709,9,,International,Belgium_R_NILCOMFB,N
+33,4,,International,France_Fixed,N
+33601,7,,International,France_SFR,N
+33603,7,,International,France_SFR,N
+336064,8,,International,France_Bouygues,N
+336065,8,,International,France_SFR,N
+336066,8,,International,France_SFR,N
+336067,8,,International,France_SFR,N
+336068,8,,International,France_SFR,N
+336069,8,,International,France_SFR,N
+33607,7,,International,France_Orange France,N
+33608,7,,International,France_Orange France,N
+33609,7,,International,France_SFR,N
+3361,6,,International,France_SFR,N
+3362,6,,International,France_SFR,N
+33630,7,,International,France_Orange France,N
+33631,7,,International,France_Orange France,N
+33632,7,,International,France_Orange France,N
+33633,7,,International,France_Orange France,N
+33634,7,,International,France_Orange France,N
+33635,7,,International,France_SFR,N
+33636,7,,International,France_SFR,N
+33637,7,,International,France_Orange France,N
+33638,7,,International,France_Orange France,N
+33639,7,,International,France_Orange France,N
+33650,7,,International,France_Bouygues,N
+33651,7,,International,France_Bouygues,N
+33653,7,,International,France_Bouygues,N
+33654,7,,International,France_Orange France,N
+33655,7,,International,France_SFR,N
+3366,6,,International,France_Bouygues,N
+3367,6,,International,France_Orange France,N
+3368,6,,International,France_Orange France,N
+3369,6,,International,France_Bouygues,N
+34,4,,International,Spain_Fixed,N
+3434695,9,,International,Spain?_Amena,N
+346,5,,International,Spain_Airtel,N
+34600,7,,International,Spain?_Vodafone,N
+34605,7,,International,Spain_Amena,N
+34606,7,,International,Spain_Telefonica Moviles,N
+34607,7,,International,Spain_Airtel,N
+34608,7,,International,Spain_Telefonica Moviles,N
+34609,7,,International,Spain_Telefonica Moviles,N
+3461,6,,International,Spain_Airtel,N
+34610,7,,International,Spain?_Vodafone,N
+34615,7,,International,Spain_Amena,N
+34616,7,,International,Spain_Telefonica Moviles,N
+34617,7,,International,Spain_Airtel,N
+34618,7,,International,Spain_Telefonica Moviles,N
+34619,7,,International,Spain_Telefonica Moviles,N
+3462,6,,International,Spain_Telefonica Moviles,N
+34620,7,,International,Spain?_Telefonica,N
+34622,7,,International,Spain_Xfera,N
+34625,7,,International,Spain_Amena,N
+34626,7,,International,Spain_Telefonica Moviles,N
+34627,7,,International,Spain_Airtel,N
+34628,7,,International,Spain_Telefonica Moviles,N
+34629,7,,International,Spain_Telefonica Moviles,N
+3463,6,,International,Spain_Telefonica Moviles,N
+34630,7,,International,Spain?_Telefonica,N
+34634,7,,International,Spain?_Vodafone,N
+34635,7,,International,Spain_Amena,N
+34636,7,,International,Spain_Telefonica Moviles,N
+34637,7,,International,Spain_Airtel,N
+34638,7,,International,Spain?_Telefonica,N
+34639,7,,International,Spain_Telefonica Moviles,N
+34645,7,,International,Spain_Amena,N
+34646,7,,International,Spain_Telefonica Moviles,N
+34647,7,,International,Spain_Airtel,N
+34648,7,,International,Spain?_Telefonica,N
+34649,7,,International,Spain_Telefonica Moviles,N
+3465,6,,International,Spain_Telefonica Moviles,N
+34650,7,,International,Spain?_Telefonica,N
+34651,7,,International,Spain?_Amena,N
+34652,7,,International,Spain?_Amena,N
+34653,7,,International,Spain?_Amena,N
+34654,7,,International,Spain?_Amena,N
+34655,7,,International,Spain?_Amena,N
+34656,7,,International,Spain?_Amena,N
+346567,8,,International,Spain_Euskatel,N
+346568,8,,International,Spain_Amena,N
+346569,8,,International,Spain_Amena,N
+34657,7,,International,Spain_Amena,N
+34658,7,,International,Spain_Amena,N
+34659,7,,International,Spain_Telefonica Moviles,N
+3466,6,,International,Spain_Telefonica Moviles,N
+34660,7,,International,Spain?_Telefonica,N
+34661,7,,International,Spain_Airtel,N
+34662,7,,International,Spain_Airtel,N
+34663,7,,International,Spain?_Vodafone,N
+34664,7,,International,Spain?_Vodafone,N
+34665,7,,International,Spain_Amena,N
+34666,7,,International,Spain_Airtel,N
+34667,7,,International,Spain_Airtel,N
+34669,7,,International,Spain_Telefonica Moviles,N
+3467,6,,International,Spain_Airtel,N
+34670,7,,International,Spain?_Vodafone,N
+34671,7,,International,Spain?_Vodafone,N
+34675,7,,International,Spain_Amena,N
+34676,7,,International,Spain_Telefonica Moviles,N
+34677,7,,International,Spain_Airtel,N
+34678,7,,International,Spain?_Vodafone,N
+34679,7,,International,Spain_Telefonica Moviles,N
+3468,6,,International,Spain_Telefonica Moviles,N
+34680,7,,International,Spain?_Telefonica,N
+34685,7,,International,Spain_Amena,N
+34686,7,,International,Spain_Telefonica Moviles,N
+34687,7,,International,Spain_Airtel,N
+34689,7,,International,Spain_Telefonica Moviles,N
+3469,6,,International,Spain_Telefonica Moviles,N
+34690,7,,International,Spain?_Telefonica,N
+34691,7,,International,Spain?_Amena,N
+34692,7,,International,Spain?_Amena,N
+34696,7,,International,Spain_Telefonica Moviles,N
+34697,7,,International,Spain?_Vodafone,N
+34699,7,,International,Spain?_Telefonica,N
+350,5,,International,Gibraltar_Fixed,N
+3505,6,,International,Gibraltar_Gibtel,N
+351,5,,International,Portugal_Fixed,N
+35191,7,,International,Portugal_TELECEL,N
+35193,7,,International,Portugal_Optimus,N
+35195,7,,International,Portugal_ONI WAY,N
+35196,7,,International,Portugal_TMN,N
+352,5,,International,Luxembourg_Fixed,N
+35221,7,,International,Luxemburg_P&T Luxemburg,N
+35261,7,,International,Luxemburg_VOX mobile,N
+35268,7,,International,Luxemburg_VOX mobile,N
+35291,7,,International,Luxemburg_Tango(Millicom),N
+353,5,,International,Ireland_Fixed,N
+35385,7,,International,Ireland_Meteor,N
+35386,7,,International,Ireland_O2,N
+35387,7,,International,Ireland_Vodafone - Eircell,N
+354,5,,International,Iceland_Fixed,N
+355,5,,International,Albania_Fixed,N
+35568,7,,International,Albania_Albania Mobile Comms,N
+35569,7,,International,Albania_Vodafone(Albania),N
+356,5,,International,Malta_Fixed,N
+35679,7,,International,Malta_Mobile Comms(Go Mobile),N
+35694,7,,International,Malta_Vodafone Malta,N
+35699,7,,International,Malta_Vodafone Malta,N
+357,5,,International,Cyprus_Fixed,N
+3579,6,,International,Cyprus_Cyta GSM,N
+358,5,,International,Finland_Fixed,N
+35840,7,,International,Finland_Sonera,N
+35842,7,,International,Finland_Sonera,N
+35843,7,,International,Finland_OY Radiolinja,N
+35844,7,,International,Finland_Suomen 2G,N
+358457,8,,International,Finland_Alands Mobiltelefon AB,N
+35846,7,,International,Finland_OY Radiolinja,N
+359,5,,International,Bulgaria_Fixed,N
+35987,7,,International,Bulgaria_Mobiltel AD,N
+35989,7,,International,Bulgaria_Globul,N
+3599,6,,International,Bulgaria_Globul,N
+36,4,,International,Hungary_Fixed,N
+362,5,,International,Hungary_Pannon,N
+363,5,,International,Hungary_Westel 9,N
+367,5,,International,Hungary_Hungary-Vodafone,N
+370,5,,International,Lithuania_Fixed,N
+371,5,,International,Latvia_Fixed,N
+371590,8,,International,Latvia_Baltcom,N
+37161,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37162,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37163,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37164,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37165,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37166,7,,International,Latvia_Baltcom,N
+37167,7,,International,Latvia_Baltcom,N
+37168,7,,International,Latvia_Baltcom,N
+37169,7,,International,Latvia_Baltcom,N
+37183,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37187,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37191,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37192,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37193,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37194,7,,International,Latvia_Latvian Mobile Tel(LMT),N
+37195,7,,International,Latvia_Baltcom,N
+37196,7,,International,Latvia_Baltcom,N
+37197,7,,International,Latvia_Baltcom,N
+37198,7,,International,Latvia_Baltcom,N
+372,5,,International,Estonia_Fixed,N
+373,5,,International,Moldova_Fixed,N
+373691,8,,International,Moldova_Voxtel,N
+37379,7,,International,Moldova_Moldcell,N
+37391,7,,International,Moldova_Voxtel,N
+374,5,,International,Armenia_Fixed,N
+3747,6,,International,Armenia_Karabakh Telecom,N
+3749,6,,International,Armenia_Armentel,N
+375,5,,International,Belarus_Fixed,N
+375293,8,,International,Belarus_MDC VELCOM,N
+375296,8,,International,Belarus_MDC VELCOM,N
+375297,8,,International,Belarus_JLCC Mobile Telesystems,N
+376,5,,International,Andorra_Fixed,N
+3763,6,,International,Andora_Sta,N
+377,5,,International,Monaco_Fixed,N
+3772451,9,,International,Monaco_USSD_Mednet,N
+377249,8,,International,Monaco_Mednet,N
+377607,8,,International,Monaco_MonaCell,N
+377680,8,,International,Monaco_MonaCell,N
+3777,6,,International,Monaco_Monaco Telecom,N
+378,5,,International,San Marino_Fixed,N
+379,5,,International,Vatican City_Fixed,N
+380,5,,International,Ukraine_Fixed,N
+381,5,,International,Serbia_Fixed,N
+38162,7,,International,Serbia_Mobtel(Serbia),N
+38167,7,,International,Serbia_Monet D.O.O.,N
+38169,7,,International,Serbia_Promonte(Montenegro),N
+382,5,,International,Montenegro_Fixed,N
+385,5,,International,Croatia_Fixed,N
+3859,6,,International,Croatia_CRONET-Hpt,N
+386,5,,International,Slovenia_Fixed,N
+38631,7,,International,Slovenia_Mobitel,N
+38641,7,,International,Slovenia_Mobitel,N
+3867,6,,International,Slovenia_Western Wireless(Vega),N
+387,5,,International,Bosnia and Herzegovina_Fixed,N
+38761,7,,International,Bosnia Herzegovina_PTT Bih,N
+38765,7,,International,Bosnia Herzegovina_Mobilna Srpske,N
+38766,7,,International,Bosnia Herzegovina_PTT Bih,N
+389,5,,International,Macedonia_Fixed,N
+3897,6,,International,Macedonia_Mobimak,N
+38975,7,,International,Macedonia_MTS (Cosmofon),N
+39,4,,International,Italy_Fixed,N
+3932,6,,International,Italy_Wind,N
+3933,6,,International,Italy_TIM,N
+3934,6,,International,Italy_Vodafone,N
+3936,6,,International,Italy_TIM,N
+17821,5,,IVR,SKY Company,N
+3937,6,,International,Italy_IPSE,N
+39380,7,,International,Italy_Wind,N
+39381,7,,International,Italy_Blu,N
+39382,7,,International,Italy_Blu,N
+39383,7,,International,Italy_Blu,N
+39384,7,,International,Italy_Blu,N
+39385,7,,International,Italy_Blu,N
+39386,7,,International,Italy_Blu,N
+39387,7,,International,Italy_Blu,N
+39388,7,,International,Italy_Blu,N
+39389,7,,International,Italy_Wind,N
+3939,6,,International,Italy_H3G SPA,N
+40,4,,International,Romania_Fixed,N
+41,4,,International,Switzerland_Fixed,N
+41763,7,,International,Switzerland_diAx Mobile AG,N
+41764,7,,International,Switzerland_diAx Mobile AG,N
+4178,6,,International,Switzerland_Orange Communications SA,N
+4179,6,,International,Switzerland_Swisscom,N
+420,5,,International,Czech Republic_Fixed,N
+421,5,,International,Slovak Republic_Fixed,N
+423,5,,International,Liechtenstin_Fixed,N
+4236979,9,,International,Liechtenstein_Mobilkom,N
+42376,7,,International,Liechtenstein_Tango,N
+42377,7,,International,Liechtenstein_Telecom FL,N
+42378,7,,International,Liechtenstein_Europlatform,N
+43,4,,International,Austria_Fixed,N
+44,4,,International,United Kingdom_Fixed,N
+44121276,10,,International,UK_Orange,N
+44151571,10,,International,UK_Orange,N
+4416138,9,,International,UK_Orange,N
+44171362,10,,International,UK_Orange,N
+44181264,10,,International,UK_Orange,N
+44207362,10,,International,UK_Orange,N
+44208264,10,,International,UK_Orange,N
+44345670,10,,International,UK_SMPP_NILCOM,N
+4437,6,,International,UK_Vodafone,N
+44385,7,,International,UK_Vodafone,N
+44401,7,,International,UK_O2,N
+44402,7,,International,UK_O2,N
+44403,7,,International,UK_O2,N
+4441,6,,International,UK_O2,N
+44421,7,,International,UK_Vodafone,N
+44441,7,,International,UK_Vodafone,N
+44467,7,,International,UK_Vodafone,N
+44468,7,,International,UK_Vodafone,N
+44498,7,,International,UK_Vodafone,N
+44585,7,,International,UK_O2,N
+44589,7,,International,UK_O2,N
+4470,6,,International,UK_Vodafone,N
+4472,6,,International,UK_Vodafone,N
+447501,8,,International,UK_Vodafone,N
+447502,8,,International,UK_Vodafone,N
+447504,8,,International,UK_T-Mobile,N
+447505,8,,International,UK_T-Mobile,N
+447506,8,,International,UK_T-Mobile,N
+447507,8,,International,UK_T-Mobile,N
+447508,8,,International,UK_T-Mobile,N
+447510,8,,International,UK_O2,N
+447511,8,,International,UK_O2,N
+447512,8,,International,UK_O2,N
+447514,8,,International,UK_O2,N
+447624,8,,International,UK_Manx Telecom,N
+44770,7,,International,UK_O2,N
+44771,7,,International,UK_O2,N
+44772,7,,International,UK_O2,N
+447721,8,,International,UK_Vodafone,N
+44773,7,,International,UK_O2,N
+447733,8,,International,UK_Vodafone,N
+44774,7,,International,UK_O2,N
+447741,8,,International,UK_Vodafone,N
+447747,8,,International,UK_Vodafone,N
+44775,7,,International,UK_O2,N
+447758,8,,International,UK_T-Mobile,N
+44776,7,,International,UK_Vodafone,N
+447761,8,,International,UK_O2,N
+447762,8,,International,UK_O2,N
+447763,8,,International,UK_O2,N
+447764,8,,International,UK_O2,N
+44777,7,,International,UK_Vodafone,N
+447772,8,,International,UK_Orange,N
+447773,8,,International,UK_Orange,N
+447779,8,,International,UK_Orange,N
+44778,7,,International,UK_Vodafone,N
+447782,8,,International,UK_Hutchison 3G,N
+447783,8,,International,UK_O2,N
+447784,8,,International,UK_O2,N
+44779,7,,International,UK_Orange,N
+447793,8,,International,UK_O2,N
+447795,8,,International,UK_Vodafone,N
+447796,8,,International,UK_Vodafone,N
+447797,8,,International,UK_Jersey Telecoms,N
+447798,8,,International,UK_Vodafone,N
+447799,8,,International,UK_Vodafone,N
+447800,8,,International,UK_Orange,N
+447801,8,,International,UK_O2,N
+447802,8,,International,UK_O2,N
+447803,8,,International,UK_O2,N
+447804,8,,International,UK_T-Mobile,N
+447805,8,,International,UK_Orange,N
+447806,8,,International,UK_T-Mobile,N
+447807,8,,International,UK_Orange,N
+447808,8,,International,UK_O2,N
+447809,8,,International,UK_O2,N
+447810,8,,International,UK_Vodafone,N
+447811,8,,International,UK_Orange,N
+447812,8,,International,UK_Orange,N
+447813,8,,International,UK_Orange,N
+447814,8,,International,UK_Orange,N
+447815,8,,International,UK_Orange,N
+447816,8,,International,UK_Orange,N
+447817,8,,International,UK_Orange,N
+447818,8,,International,UK_Vodafone,N
+447819,8,,International,UK_O2,N
+44782,7,,International,UK_O2,N
+447823,8,,International,UK_Vodafone,N
+447824,8,,International,UK_Vodafone,N
+447827,8,,International,UK_Vodafone,N
+44783,7,,International,UK_Vodafone,N
+447834,8,,International,UK_O2,N
+447835,8,,International,UK_O2,N
+447837,8,,International,UK_Orange,N
+44783810,10,,International,UK_Hutchison 3G,N
+447840,8,,International,UK_O2,N
+447841,8,,International,UK_O2,N
+447842,8,,International,UK_O2,N
+447843,8,,International,UK_O2,N
+447844,8,,International,UK_O2,N
+447845,8,,International,UK_O2,N
+447847,8,,International,UK_T-Mobile,N
+447849,8,,International,UK_O2,N
+44785,7,,International,UK_O2,N
+447854,8,,International,UK_Orange,N
+447855,8,,International,UK_Orange,N
+44786,7,,International,UK_O2,N
+447863,8,,International,UK_Hutchison 3G,N
+447866,8,,International,UK_Orange,N
+447867,8,,International,UK_Vodafone,N
+44787,7,,International,UK_Orange,N
+447871,8,,International,UK_O2,N
+4478720,9,,International,UK_O2,N
+4478721,9,,International,UK_O2,N
+4478723,9,,International,UK_O2,N
+4478724,9,,International,UK_O2,N
+4478725,9,,International,UK_O2,N
+4478726,9,,International,UK_O2,N
+4478728,9,,International,UK_O2,N
+4478729,9,,International,UK_O2,N
+447873,8,,International,UK_O2,N
+4478740,9,,International,UK_O2,N
+4478741,9,,International,UK_O2,N
+4478742,9,,International,UK_O2,N
+4478743,9,,International,UK_O2,N
+4478746,9,,International,UK_O2,N
+4478747,9,,International,UK_O2,N
+4478748,9,,International,UK_O2,N
+4478749,9,,International,UK_O2,N
+447876,8,,International,UK_Vodafone,N
+447879,8,,International,UK_Vodafone,N
+4478816,9,,International,UK_Vodafone,N
+4478817,9,,International,UK_Vodafone,N
+4478818,9,,International,UK_Vodafone,N
+4478819,9,,International,UK_Vodafone,N
+447884,8,,International,UK_Vodafone,N
+447885,8,,International,UK_O2,N
+447887,8,,International,UK_Vodafone,N
+447889,8,,International,UK_O2,N
+44789,7,,International,UK_Orange,N
+4478923,9,,International,UK_O2,N
+4478926,9,,International,UK_O2,N
+4478927,9,,International,UK_O2,N
+4478928,9,,International,UK_O2,N
+4478929,9,,International,UK_O2,N
+4478932,9,,International,UK_O2,N
+4478934,9,,International,UK_O2,N
+4478935,9,,International,UK_O2,N
+4478936,9,,International,UK_O2,N
+4478937,9,,International,UK_O2,N
+447894,8,,International,UK_O2,N
+447895,8,,International,UK_O2,N
+4478998,9,,International,UK_Vodafone,N
+4478999,9,,International,UK_Vodafone,N
+4479,6,,International,UK_Vodafone,N
+447902,8,,International,UK_O2,N
+447903,8,,International,UK_T-Mobile,N
+447904,8,,International,UK_T-Mobile,N
+447905,8,,International,UK_T-Mobile,N
+447906,8,,International,UK_T-Mobile,N
+447907,8,,International,UK_O2,N
+447911,8,,International,UK_Jersey Telecoms,N
+447912,8,,International,UK_O2,N
+447914,8,,International,UK_T-Mobile,N
+447921,8,,International,UK_O2,N
+447922,8,,International,UK_O2,N
+447923,8,,International,UK_O2,N
+447925,8,,International,UK_O2,N
+447926,8,,International,UK_O2,N
+447927,8,,International,UK_O2,N
+447928,8,,International,UK_O2,N
+447929,8,,International,UK_Orange,N
+44793,7,,International,UK_T-Mobile,N
+447933,8,,International,UK_O2,N
+447934,8,,International,UK_O2,N
+447935,8,,International,UK_O2,N
+447936,8,,International,UK_O2,N
+447938,8,,International,UK_O2,N
+44794,7,,International,UK_T-Mobile,N
+447941,8,,International,UK_Virgin Mobile,N
+44795,7,,International,UK_T-Mobile,N
+447955,8,,International,UK_O2,N
+44796,7,,International,UK_T-Mobile,N
+447963,8,,International,UK_Virgin Mobile,N
+447964,8,,International,UK_Orange,N
+447965,8,,International,UK_Orange,N
+447966,8,,International,UK_Orange,N
+447967,8,,International,UK_Orange,N
+447968,8,,International,UK_Orange,N
+447969,8,,International,UK_Orange,N
+44797,7,,International,UK_Orange,N
+447979,8,,International,UK_Vodafone,N
+44798,7,,International,UK_Orange,N
+447981,8,,International,UK_T-Mobile,N
+447983,8,,International,UK_T-Mobile,N
+447984,8,,International,UK_T-Mobile,N
+447986,8,,International,UK_T-Mobile,N
+44799,7,,International,UK_Vodafone,N
+447999,8,,International,UK_O2,N
+4480,6,,International,UK_O2,N
+44831,7,,International,UK_Vodafone,N
+44836,7,,International,UK_Vodafone,N
+4485,6,,International,UK_O2,N
+4486,6,,International,UK_O2,N
+4493,6,,International,UK_T-Mobile,N
+449561,8,,International,UK_T-Mobile,N
+449563,8,,International,UK_T-Mobile,N
+449583,8,,International,UK_T-Mobile,N
+44966,7,,International,UK_Orange,N
+44973,7,,International,UK_Orange,N
+44976,7,,International,UK_Orange,N
+449797,8,,International,UK_Jersey Telecoms,N
+45,4,,International,Denmark_Fixed,N
+45201,7,,International,Denmark_Tele Danmark Mobil,N
+45202,7,,International,Denmark_Tele Danmark Mobil,N
+45203,7,,International,Denmark_Tele Danmark Mobil,N
+45204,7,,International,Denmark_Tele Danmark Mobil,N
+45205,7,,International,Denmark_Tele Danmark Mobil,N
+45206,7,,International,Denmark_Sonofon,N
+45207,7,,International,Denmark_Sonofon,N
+45208,7,,International,Denmark_Sonofon,N
+45209,7,,International,Denmark_Sonofon,N
+4521,6,,International,Denmark_Tele Danmark Mobil,N
+4522,6,,International,Denmark_Sonofon,N
+4523,6,,International,Denmark_Tele Danmark Mobil,N
+4524,6,,International,Denmark_Tele Danmark Mobil,N
+45252,7,,International,Denmark_Sonofon,N
+45257,7,,International,Denmark_Tele2 DK,N
+45258,7,,International,Denmark_Tele2 DK,N
+4526,6,,International,Denmark_Mobilix,N
+4527,6,,International,Denmark_Mobilix,N
+4528,6,,International,Denmark_Telia Danmark,N
+4529,6,,International,Denmark_Tele Danmark Mobil,N
+453,5,,International,Denmark_Tele Danmark Mobil,N
+4531,6,,International,Denmark_Hi3G,N
+45401,7,,International,Denmark_Tele Danmark Mobil,N
+45406,7,,International,Denmark_Sonofon,N
+45407,7,,International,Denmark_Sonofon,N
+45408,7,,International,Denmark_Sonofon,N
+45409,7,,International,Denmark_Sonofon,N
+45505,7,,International,Denmark_Sonofon,N
+45509,7,,International,Denmark_Sonofon,N
+4551,6,,International,Denmark_Tele Danmark Mobil,N
+45602,7,,International,Denmark_Telia Danmark,N
+45606,7,,International,Denmark_Sonofon,N
+45607,7,,International,Denmark_Sonofon,N
+456091,8,,International,Denmark_Sonofon,N
+4561,6,,International,Denmark_Tele Danmark Mobil,N
+46,4,,International,Sweden_Fixed,N
+4610,6,,International,Sweden_Telia,N
+46252,7,,International,Sweden_COMVIQ(Tele 2),N
+4634,6,,International,Sweden_Telenor,N
+4635,6,,International,Sweden_COMVIQ(Tele 2),N
+46385,7,,International,Sweden_Telenor,N
+4651,6,,International,Sweden_Telia,N
+4666,6,,International,Sweden_Telenor,N
+46673,7,,International,Sweden_Telia,N
+46674,7,,International,Sweden_Telenor,N
+46676,7,,International,Sweden_Spring Mobil,N
+4668,6,,International,Sweden_Telenor,N
+46701,7,,International,Sweden_Telia,N
+467011,8,,International,Sweden_Europolitan,N
+467012,8,,International,Sweden_Telia,N
+467014,8,,International,Sweden_Europolitan,N
+467015,8,,International,Sweden_COMVIQ(Tele 2),N
+467016,8,,International,Sweden_COMVIQ(Tele 2),N
+467017,8,,International,Sweden_Telia,N
+467018,8,,International,Sweden_Telia,N
+46702,7,,International,Sweden_Telia,N
+46703,7,,International,Sweden_Telia,N
+46704,7,,International,Sweden_COMVIQ(Tele 2),N
+46705,7,,International,Sweden_Telia,N
+46706,7,,International,Sweden_Telia,N
+46707,7,,International,Sweden_COMVIQ(Tele 2),N
+46708,7,,International,Sweden_Europolitan,N
+46709,7,,International,Sweden_Europolitan,N
+4673,6,,International,Sweden_Telia,N
+46730,7,,International,Sweden_Telia,N
+46731,7,,International,Sweden_Europolitan,N
+467320,8,,International,Sweden_Telenor,N
+467321,8,,International,Sweden_COMVIQ(Tele 2),N
+467322,8,,International,Sweden_COMVIQ(Tele 2),N
+467323,8,,International,Sweden_Telenor,N
+467324,8,,International,Sweden_Telenor,N
+467325,8,,International,Sweden_Telenor,N
+467326,8,,International,Sweden_Telenor,N
+46733,7,,International,Sweden_Europolitan,N
+46734,7,,International,Sweden_Europolitan,N
+467350,8,,International,Sweden_Hi3G Access,N
+467351,8,,International,Sweden_Hi3G Access,N
+467352,8,,International,Sweden_Hi3G Access,N
+467353,8,,International,Sweden_Hi3G Access,N
+467354,8,,International,Sweden_Hi3G Access,N
+467355,8,,International,Sweden_COMVIQ(Tele 2),N
+467356,8,,International,Sweden_COMVIQ(Tele 2),N
+467357,8,,International,Sweden_COMVIQ(Tele 2),N
+467358,8,,International,Sweden_COMVIQ(Tele 2),N
+467359,8,,International,Sweden_COMVIQ(Tele 2),N
+46736,7,,International,Sweden_COMVIQ(Tele 2),N
+46737,7,,International,Sweden_COMVIQ(Tele 2),N
+46738,7,,International,Sweden_Telia,N
+46739,7,,International,Sweden_COMVIQ(Tele 2),N
+46761,7,,International,Sweden_Telia,N
+46762,7,,International,Sweden_COMVIQ(Tele 2),N
+467650,8,,International,Sweden_Spring Mobil,N
+467651,8,,International,Sweden_Spring Mobil,N
+467652,8,,International,Sweden_Spring Mobil,N
+467653,8,,International,Sweden_Spring Mobil,N
+467654,8,,International,Sweden_Spring Mobil,N
+467655,8,,International,Sweden_COMVIQ(Tele 2),N
+467656,8,,International,Sweden_COMVIQ(Tele 2),N
+467657,8,,International,Sweden_COMVIQ(Tele 2),N
+467658,8,,International,Sweden_COMVIQ(Tele 2),N
+467659,8,,International,Sweden_COMVIQ(Tele 2),N
+4676695,9,,International,Sweden_COMVIQ(Tele 2),N
+4676696,9,,International,Sweden_COMVIQ(Tele 2),N
+4676697,9,,International,Sweden_COMVIQ(Tele 2),N
+4676698,9,,International,Sweden_COMVIQ(Tele 2),N
+4676699,9,,International,Sweden_COMVIQ(Tele 2),N
+467672673,11,,International,Sweden_COMVIQ(Tele 2),N
+46767624,10,,International,Sweden_Telia,N
+46767625,10,,International,Sweden_Telia,N
+46767626,10,,International,Sweden_Telia,N
+467680,8,,International,Sweden_Telia,N
+467681,8,,International,Sweden_Telia,N
+467682,8,,International,Sweden_Telia,N
+467683,8,,International,Sweden_Telia,N
+467684,8,,International,Sweden_Telia,N
+46789,7,,International,Sweden_Telia,N
+47,4,,International,Norway_Fixed,N
+474,5,,International,Norway_Netcom,N
+4741,6,,International,Norway_Telenor,N
+4745,6,,International,Norway_Telenor,N
+4746,6,,International,Norway_Telenor,N
+4747,6,,International,Norway_Telenor,N
+474723,8,,International,Norway_Tele2 NO,N
+4748,6,,International,Norway_Telenor,N
+4759,6,,International,Norway_Telenor,N
+4781,6,,International,Norway_Telenor,N
+479,5,,International,Norway_Telenor,N
+4792,6,,International,Norway_NetCom,N
+4793,6,,International,Norway_Netcom,N
+4798,6,,International,Norway_Netcom,N
+479901,8,,International,Norway_NetSystem International,N
+479902,8,,International,Norway_NetSystem International,N
+479903,8,,International,Norway_NetSystem International,N
+479904,8,,International,Norway_NetSystem International,N
+48,4,,International,Poland_Fixed,N
+4850,6,,International,Poland_IDEA (Centertel),N
+486,5,,International,Poland_Era GSM(PTC),N
+48601,7,,International,Poland_Plus GSM(Polkomtel),N
+48602,7,,International,Poland_Era GSM(PTC),N
+48603,7,,International,Poland_Plus GSM(Polkomtel),N
+48605,7,,International,Poland_Plus GSM(Polkomtel),N
+48606,7,,International,Poland_Era GSM(PTC),N
+48607,7,,International,Poland_Plus GSM(Polkomtel),N
+48608,7,,International,Poland_Era GSM(PTC),N
+48609,7,,International,Poland_Plus GSM(Polkomtel),N
+48691,7,,International,Poland_Plus GSM(Polkomtel),N
+48692,7,,International,Poland_Era GSM(PTC),N
+48693,7,,International,Poland_Plus GSM(Polkomtel),N
+48696,7,,International,Poland_Plus GSM(Polkomtel),N
+48697,7,,International,Poland_Plus GSM(Polkomtel),N
+48698,7,,International,Poland_Era GSM(PTC),N
+488,5,,International,Poland_Era GSM(PTC),N
+49,4,,International,GERMANY_Fix_PROPER,N
+49150,7,,International,GERMANY_E1,N
+49151,7,,International,GERMANY_D1 (TMOBIL),N
+49152,7,,International,GERMANY_VODAFONE,N
+49155,7,,International,GERMANY_E1,N
+49156,7,,International,GERMANY_E1,N
+49157,7,,International,GERMANY_E1,N
+49159,7,,International,GERMANY_O2,N
+49160,7,,International,GERMANY_D1 (TMOBIL),N
+49162,7,,International,GERMANY_VODAFONE,N
+49163,7,,International,GERMANY_E1,N
+49170,7,,International,GERMANY_D1 (TMOBIL),N
+49171,7,,International,GERMANY_D1 (TMOBIL),N
+49172,7,,International,GERMANY_VODAFONE,N
+49173,7,,International,GERMANY_VODAFONE,N
+49174,7,,International,GERMANY_VODAFONE,N
+49175,7,,International,GERMANY_D1 (TMOBIL),N
+49176,7,,International,GERMANY_O2,N
+49177,7,,International,GERMANY_E1,N
+49178,7,,International,GERMANY_E1,N
+49179,7,,International,GERMANY_O2,N
+49201,7,,International,GERMANY_Fix_ESSEN,N
+49211,7,,International,GERMANY_Fix_DUSSELDORF,N
+49221,7,,International,GERMANY_Fix_COLOGNE,N
+4930,6,,International,GERMANY_Fix_BERLIN,N
+4940,6,,International,GERMANY_Fix_HAMBURG,N
+49511,7,,International,GERMANY_Fix_HANNOVER,N
+49611,7,,International,GERMANY_Fix_WIESBADEN,N
+49621,7,,International,GERMANY_Fix_MANNHEIM,N
+4969,6,,International,GERMANY_Fix_FRANKFURT,N
+49700,7,,International,GERMANY_PERSONAL NUMBERS,N
+49701,7,,International,GERMANY_PERSONAL NUMBERS,N
+49711,7,,International,GERMANY_Fix_STUTTGART,N
+4989,6,,International,GERMANY_Fix_MUNICH,N
+500,5,,International,Falkland Islands_Fixed,N
+501,5,,International,Belize_Fixed,N
+50161,7,,International,Belize_Belize Telecommunication,N
+502,5,,International,Guatemala_Fixed,N
+503,5,,International,El Salvador_Fixed,N
+504,5,,International,Honduras_Fixed,N
+505,5,,International,Nicaragua_Fixed,N
+506,5,,International,Costa Rica_Fixed,N
+507,5,,International,Panama_Fixed,N
+5076,6,,International,Panama_Cable&Wireless Panama,N
+508,5,,International,Saint Pierre and Miquelon_Fixed,N
+509,5,,International,Haiti_Fixed,N
+51,4,,International,Peru_Fixed,N
+52,4,,International,Mexico_Fixed,N
+53,4,,International,Cuba & Guantanamo Bay_Fixed,N
+5352,6,,International,Cuba_C_COM,N
+53726,7,,International,Cuba_C_COM,N
+54,4,,International,Argentina_Fixed,N
+55,4,,International,Brazil_Fixed,N
+56,4,,International,Chile & Easter Island_Fixed,N
+57,4,,International,Colombia_Fixed,N
+573103,8,,International,Colombia_Comcel SA,N
+58,4,,International,Venezuela_Fixed,N
+5838,6,,International,Colombia_Telecel Colombia,N
+58418,7,,International,Venezuela_Infonet,N
+590,5,,International,Guadeloupe_Fixed,N
+591,5,,Unknown-T,Bolivia_Fixed,N
+59172,7,,Unknown-T,Bolivia_Entel,N
+592,5,,International,Guyana_Fixed,N
+593,5,,International,Ecuador_Fixed,N
+594,5,,International,French Guiana_Fixed,N
+595,5,,International,Paraguay_Fixed,N
+5959616,9,,International,Paraguay_HOLA,N
+59599,7,,International,Paraguay_Hutchison Paraguay,N
+596,5,,International,Martinique_Fixed,N
+597,5,,International,Suriname_Fixed?,N
+598,5,,International,Uruguay_Fixed,N
+599,5,,International,Netherlands Antilles_Fixed,N
+60,4,,International,Malaysia_Fixed,N
+61,4,,International,Australia & Cocos-KeelingIslands_Fixed,N
+618,5,,International,Christmas Island_Fixed,N
+62,4,,International,Indonesia_Fixed,N
+62811,7,,International,Indonesia_Telkomsel,N
+62812,7,,International,Indonesia_Telkomsel,N
+62813,7,,International,Indonesia_Telkomsel,N
+62819,7,,International,Indonesia_Exelcomindo,N
+62831,7,,International,Indonesia_Lippo Telecom,N
+6285,6,,International,Indonesia_PT Indosat(IM3),N
+63,4,,International,Philippines_Fixed,N
+64,4,,International,New Zealand_Fixed,N
+65,4,,International,Singapore_Fixed,N
+66,4,,International,Thailand_Fixed,N
+67,4,,International,Antarctica_Fixed,N
+670,5,,International,East Timor_Fixed,N
+67072,7,,International,Timor_Timor Telecom,N
+672,5,,International,Norfolk Islands_Fixed,N
+673,5,,International,Brunei_Fixed,N
+6732,6,,International,Brunei_DST Com,N
+6738,6,,International,Brunei_DST Com,N
+674,5,,International,Nauru_Fixed,N
+675,5,,International,Papua New Guinea_Fixed,N
+676,5,,International,Tonga_Fixed,N
+677,5,,International,Solomon Islands_Fixed,N
+678,5,,International,Vanuatu_Fixed,N
+679,5,,International,Fiji_Fixed,N
+6799,6,,International,Fiji_Vodafone Fiji Ltd,N
+680,5,,International,Palau_Fixed,N
+681,5,,International,Wallis and Futuna Islands_Fixed,N
+682,5,,International,Cook Islands_Fixed,N
+683,5,,International,Niue_Fixed,N
+684,5,,International,Samoa American_Fixed,N
+685,5,,International,Samoa_Fixed,N
+686,5,,International,Kiribati_Fixed,N
+687,5,,International,New Caledonia_Fixed,N
+688,5,,International,Tuvalu_Fixed,N
+689,5,,International,French Polynesia_Fixed,N
+6897,6,,International,French Polynesia_Tikiphone,N
+690,5,,International,Tokelau_Fixed,N
+691,5,,International,Micronesia_Fixed,N
+692,5,,International,Marshall Islands_Fixed,N
+7,3,,International,Russia & Kazakhstan_Fixed,N
+732,5,,International,Kazakhstan_KCell,N
+733,5,,International,Kazakhstan_KCell,N
+7333,6,,International,Kazakhstan_K MOBILE,N
+734,5,,International,Kazakhstan_KCell,N
+735,5,,International,Kazakhstan_KCell,N
+736,5,,International,Kazakhstan_KCell,N
+737,5,,International,Kazakhstan_KCell,N
+739,5,,International,Kazakhstan_KCell,N
+808,5,,International,Wake Island_Fixed,N
+81,4,,International,Japan_Fixed,N
+82,4,,International,South Korea_Fixed,N
+821,5,,International,Korea_SK Telecom,N
+82103,7,,International,Korea_KT Freetel,N
+821039,8,,International,Korea_LG Telecom,N
+8216,6,,International,Korea_KT Freetel,N
+82180,7,,International,Korea_LG Telecom,N
+82181,7,,International,Korea_KT Freetel GSM,N
+82182,7,,International,Korea_KT Freetel GSM,N
+82183,7,,International,Korea_KT Freetel GSM,N
+82184,7,,International,Korea_KT Freetel GSM,N
+82185,7,,International,Korea_KT Freetel GSM,N
+82186,7,,International,Korea_KT Freetel GSM,N
+82187,7,,International,Korea_KT Freetel GSM,N
+82188,7,,International,Korea_KT Freetel GSM,N
+82189,7,,International,Korea_KT Freetel GSM,N
+84,4,,International,Vietnam_Fixed,N
+849041,8,,International,Vietnam_Mobifone Vietnam(P+T),N
+8491,6,,International,Vietnam_Vinaphone Vietnam,N
+850,5,,International,North Korea_Fixed,N
+852,5,,International,Hong Kong_Fixed,N
+853,5,,International,Macau_Fixed,N
+855,5,,International,Cambodia_Fixed,N
+85511,7,,International,Cambodia_Cambodia Shinawatra,N
+85512,7,,International,Cambodia_CamGSM,N
+856,5,,International,Laos_Fixed,N
+86,4,,International,China_Fixed,N
+8613,6,,International,China_China Mobile,N
+86133,7,,International,China_China Unicom,N
+86135,7,,International,China_China Mobile,N
+86136,7,,International,China_China Mobile,N
+86137,7,,International,China_China Mobile,N
+86138,7,,International,China_China Mobile,N
+86139,7,,International,China_China Mobile,N
+8615,6,,International,China_Unicom,N
+870,5,,International,Inmarsat,N
+871,5,,International,Inmarsat Atl East,N
+872,5,,International,Inmarsat,N
+873,5,,International,Inmarsat Indian,N
+874,5,,International,Inmarsat Atl West,N
+880,5,,International,Bangladesh_Fixed,N
+88018,7,,International,Bangladesh_AKTEL,N
+8816,6,,International,Inmarsat,N
+886,5,,International,Taiwan_Fixed,N
+90,4,,International,Turkey_Fixed,N
+9050,6,,International,Turkey_AVEA,N
+90532,7,,International,Turkey_Turkcell,N
+90533,7,,International,Turkey_Turkcell,N
+90534,7,,International,Turkey_Turkcell,N
+90535,7,,International,Turkey_Turkcell,N
+90536,7,,International,Turkey_Turkcell,N
+90537,7,,International,Turkey_Turkcell,N
+90538,7,,International,Turkey_Turkcell,N
+90539,7,,International,Turkey_Turkcell,N
+9054,6,,International,Turkey_Vodafone,N
+90542,7,,International,Turkey_Vodafone,N
+90543,7,,International,Turkey_Vodafone,N
+90544,7,,International,Turkey_Vodafone,N
+90545,7,,International,Turkey_Vodafone,N
+90546,7,,International,Turkey_Vodafone,N
+9055,6,,International,Turkey_AVEA,N
+9059,6,,International,Turkey_AVEA,N
+91,4,,International,India_Fixed,N
+92,4,,International,Pakistan_Fixed,N
+92303,7,,International,Pakistan_Instaphone(Pakcom Ltd),N
+92304,7,,International,Pakistan_Pakistan,N
+923042,8,,International,Pakistan_Paktel GSM,N
+9232,6,,International,Pakistan_Instaphone(Pakcom Ltd),N
+92333,7,,International,Pakistan_Ufone,N
+9241,6,,International,Pakistan_Instaphone(Pakcom Ltd),N
+93,4,,International,Afghanistan_Fixed,N
+94,4,,International,Sri Lanka_Fixed,N
+9472,6,,International,Sri Lanka_Celltel,N
+9477,6,,International,Sri Lanka_MTN Networks(PVT) Ltd,N
+95,4,,International,Myanmar (Burma)_Fixed,N
+960,5,,International,Maldives_Fixed,N
+96070,7,,International,Maldives_Dhiraagu,N
+96090,7,,International,Maldives_Dhiraagu,N
+961,5,,International,Lebanon_Fixed,N
+961308,8,,International,Lebanon_LibanCell,N
+96132,7,,International,Lebanon_Cellis(FTML),N
+96133,7,,International,Lebanon_Cellis(FTML),N
+96134,7,,International,Lebanon_Cellis(FTML),N
+96135,7,,International,Lebanon_Cellis(FTML),N
+96170,7,,International,Lebanon_LibanCell,N
+96171,7,,International,Lebanon_Cellis(FTML),N
+962,5,,International,JORDAN_Fix_PROPER,N
+9626,6,,International,JORDAN_Fix_AMMAN,N
+96274,7,,International,JORDAN_XPRESS,N
+962746,8,,International,JORDAN_MIRSAL,N
+962747,8,,International,JORDAN_MIRSAL,N
+9627555,9,,International,JORDAN_MVNO FRiENDi,N
+9627556,9,,International,JORDAN_MVNO FRiENDi,N
+9627557,9,,International,JORDAN_MVNO FRiENDi,N
+9627558,9,,International,JORDAN_MVNO FRiENDi,N
+96277,7,,International,JORDAN_MOBILCOM,N
+96278,7,,International,JORDAN_UMNIAH,N
+96279,7,,International,JORDAN_FASTLINK,N
+963000000000,14,,International,Jordan Madrasti Donation,N
+963000000000,14,,International,Jordan Madrasti Donation,N
+963,5,,International,Syria_Fixed,N
+96305,7,,International,Syria_NA,N
+96390,7,,International,Syria_NA,N
+96391,7,,International,Syria_NA,N
+96392,7,,International,Syria_NA,N
+96393,7,,International,Syria_SyriaTel,N
+96394,7,,International,Syria_MTN,N
+96395,7,,International,Syria_MTN,N
+96396,7,,International,Syria_MTN,N
+96397,7,,International,Syria_NA,N
+96398,7,,International,Syria_SYRIATEL,N
+96399,7,,International,Syria_SYRIATEL,N
+964,5,,International,Iraq_Fixed,N
+964770,8,,International,Iraq_Asiacell,N
+964780,8,,International,Iraq_Atheer,N
+964790,8,,International,Iraq_Orascom,N
+965,5,,International,KUWAIT_Fixed,N
+965500,8,,International,KUWAIT_VIVA,N
+965550,8,,International,KUWAIT_VIVA,N
+965551,8,,International,KUWAIT_VIVA,N
+965552,8,,International,KUWAIT_VIVA,N
+965553,8,,International,KUWAIT_VIVA,N
+965554,8,,International,KUWAIT_VIVA,N
+965555,8,,International,KUWAIT_VIVA,N
+965556,8,,International,KUWAIT_VIVA,N
+965557,8,,International,KUWAIT_VIVA,N
+965558,8,,International,KUWAIT_VIVA,N
+965559,8,,International,KUWAIT_VIVA,N
+9656,6,,International,Kuwait_Wataniya,N
+9656501,9,,International,KUWAIT_WATANIYA,N
+9656502,9,,International,KUWAIT_WATANIYA,N
+9656505,9,,International,KUWAIT_WATANIYA,N
+9656506,9,,International,KUWAIT_WATANIYA,N
+9656507,9,,International,KUWAIT_WATANIYA,N
+9656508,9,,International,KUWAIT_WATANIYA,N
+9656509,9,,International,KUWAIT_WATANIYA,N
+9656510,9,,International,KUWAIT_WATANIYA,N
+9656511,9,,International,KUWAIT_WATANIYA,N
+9656512,9,,International,KUWAIT_WATANIYA,N
+9656513,9,,International,KUWAIT_WATANIYA,N
+9656514,9,,International,KUWAIT_WATANIYA,N
+9656515,9,,International,KUWAIT_WATANIYA,N
+9656516,9,,International,KUWAIT_WATANIYA,N
+9656517,9,,International,KUWAIT_WATANIYA,N
+9656518,9,,International,KUWAIT_WATANIYA,N
+9656519,9,,International,KUWAIT_WATANIYA,N
+9656550,9,,International,KUWAIT_WATANIYA,N
+9656554,9,,International,KUWAIT_WATANIYA,N
+9656555,9,,International,KUWAIT_WATANIYA,N
+9656556,9,,International,KUWAIT_WATANIYA,N
+9656557,9,,International,KUWAIT_WATANIYA,N
+9656558,9,,International,KUWAIT_WATANIYA,N
+9656559,9,,International,KUWAIT_WATANIYA,N
+9656570,9,,International,KUWAIT_WATANIYA,N
+9656578,9,,International,KUWAIT_WATANIYA,N
+9656579,9,,International,KUWAIT_WATANIYA,N
+9656580,9,,International,KUWAIT_WATANIYA,N
+9656581,9,,International,KUWAIT_WATANIYA,N
+9656582,9,,International,KUWAIT_WATANIYA,N
+9656583,9,,International,KUWAIT_WATANIYA,N
+9656584,9,,International,KUWAIT_WATANIYA,N
+9656585,9,,International,KUWAIT_WATANIYA,N
+9656586,9,,International,KUWAIT_WATANIYA,N
+9656587,9,,International,KUWAIT_WATANIYA,N
+9656588,9,,International,KUWAIT_WATANIYA,N
+9656589,9,,International,KUWAIT_WATANIYA,N
+9656590,9,,International,KUWAIT_WATANIYA,N
+9656591,9,,International,KUWAIT_WATANIYA,N
+9656592,9,,International,KUWAIT_WATANIYA,N
+9656593,9,,International,KUWAIT_WATANIYA,N
+9656594,9,,International,KUWAIT_WATANIYA,N
+9656595,9,,International,KUWAIT_WATANIYA,N
+9656596,9,,International,KUWAIT_WATANIYA,N
+9656597,9,,International,KUWAIT_WATANIYA,N
+9656598,9,,International,KUWAIT_WATANIYA,N
+9656599,9,,International,KUWAIT_WATANIYA,N
+96566,7,,International,KUWAIT_WATANIYA,N
+9656700,9,,International,KUWAIT_WATANIYA,N
+9656701,9,,International,KUWAIT_WATANIYA,N
+9656703,9,,International,KUWAIT_WATANIYA,N
+9656704,9,,International,KUWAIT_WATANIYA,N
+9656705,9,,International,KUWAIT_WATANIYA,N
+9656706,9,,International,KUWAIT_WATANIYA,N
+9656707,9,,International,KUWAIT_WATANIYA,N
+9656708,9,,International,KUWAIT_WATANIYA,N
+9656709,9,,International,KUWAIT_WATANIYA,N
+9656770,9,,International,KUWAIT_WATANIYA,N
+9656771,9,,International,KUWAIT_WATANIYA,N
+9656772,9,,International,KUWAIT_WATANIYA,N
+9656773,9,,International,KUWAIT_WATANIYA,N
+9656774,9,,International,KUWAIT_WATANIYA,N
+9656775,9,,International,KUWAIT_WATANIYA,N
+9656776,9,,International,KUWAIT_WATANIYA,N
+9656778,9,,International,KUWAIT_WATANIYA,N
+9656779,9,,International,KUWAIT_WATANIYA,N
+96573,7,,International,Kuwait_Zain,N
+9659,6,,International,Kuwait_Wataniya,N
+9659400,9,,International,KUWAIT_ZAIN,N
+9659401,9,,International,KUWAIT_ZAIN,N
+9659402,9,,International,KUWAIT_ZAIN,N
+9659403,9,,International,KUWAIT_ZAIN,N
+9659404,9,,International,KUWAIT_ZAIN,N
+9659405,9,,International,KUWAIT_ZAIN,N
+9659406,9,,International,KUWAIT_ZAIN,N
+9659407,9,,International,KUWAIT_ZAIN,N
+9659408,9,,International,KUWAIT_ZAIN,N
+9659409,9,,International,KUWAIT_ZAIN,N
+9659440,9,,International,KUWAIT_ZAIN,N
+9659441,9,,International,KUWAIT_ZAIN,N
+9659442,9,,International,KUWAIT_ZAIN,N
+9659443,9,,International,KUWAIT_ZAIN,N
+9659444,9,,International,KUWAIT_ZAIN,N
+9659445,9,,International,KUWAIT_ZAIN,N
+9659446,9,,International,KUWAIT_ZAIN,N
+9659447,9,,International,KUWAIT_ZAIN,N
+9659448,9,,International,KUWAIT_ZAIN,N
+9659449,9,,International,KUWAIT_ZAIN,N
+9659702,9,,International,KUWAIT_ZAIN,N
+9659710,9,,International,KUWAIT_ZAIN,N
+9659711,9,,International,KUWAIT_ZAIN,N
+9659712,9,,International,KUWAIT_ZAIN,N
+9659713,9,,International,KUWAIT_ZAIN,N
+9659714,9,,International,KUWAIT_ZAIN,N
+9659715,9,,International,KUWAIT_ZAIN,N
+9659716,9,,International,KUWAIT_ZAIN,N
+9659717,9,,International,KUWAIT_ZAIN,N
+9659718,9,,International,KUWAIT_ZAIN,N
+9659719,9,,International,KUWAIT_ZAIN,N
+9659720,9,,International,KUWAIT_ZAIN,N
+9659721,9,,International,KUWAIT_ZAIN,N
+9659722,9,,International,KUWAIT_ZAIN,N
+9659723,9,,International,KUWAIT_ZAIN,N
+9659724,9,,International,KUWAIT_ZAIN,N
+9659725,9,,International,KUWAIT_ZAIN,N
+9659726,9,,International,KUWAIT_ZAIN,N
+9659727,9,,International,KUWAIT_ZAIN,N
+9659728,9,,International,KUWAIT_ZAIN,N
+9659729,9,,International,KUWAIT_ZAIN,N
+9659730,9,,International,KUWAIT_ZAIN,N
+9659731,9,,International,KUWAIT_ZAIN,N
+9659732,9,,International,KUWAIT_ZAIN,N
+9659733,9,,International,KUWAIT_ZAIN,N
+9659734,9,,International,KUWAIT_ZAIN,N
+9659735,9,,International,KUWAIT_ZAIN,N
+9659736,9,,International,KUWAIT_ZAIN,N
+9659737,9,,International,KUWAIT_ZAIN,N
+9659738,9,,International,KUWAIT_ZAIN,N
+9659739,9,,International,KUWAIT_ZAIN,N
+9659740,9,,International,KUWAIT_ZAIN,N
+9659741,9,,International,KUWAIT_ZAIN,N
+9659742,9,,International,KUWAIT_ZAIN,N
+9659743,9,,International,KUWAIT_ZAIN,N
+9659744,9,,International,KUWAIT_ZAIN,N
+9659745,9,,International,KUWAIT_ZAIN,N
+9659746,9,,International,KUWAIT_ZAIN,N
+9659747,9,,International,KUWAIT_ZAIN,N
+9659748,9,,International,KUWAIT_ZAIN,N
+9659749,9,,International,KUWAIT_ZAIN,N
+9659750,9,,International,KUWAIT_ZAIN,N
+9659751,9,,International,KUWAIT_ZAIN,N
+9659752,9,,International,KUWAIT_ZAIN,N
+9659753,9,,International,KUWAIT_ZAIN,N
+9659754,9,,International,KUWAIT_ZAIN,N
+9659755,9,,International,KUWAIT_ZAIN,N
+9659756,9,,International,KUWAIT_ZAIN,N
+9659757,9,,International,KUWAIT_ZAIN,N
+9659758,9,,International,KUWAIT_ZAIN,N
+9659759,9,,International,KUWAIT_ZAIN,N
+9659760,9,,International,KUWAIT_ZAIN,N
+9659761,9,,International,KUWAIT_ZAIN,N
+9659762,9,,International,KUWAIT_ZAIN,N
+9659763,9,,International,KUWAIT_ZAIN,N
+9659764,9,,International,KUWAIT_ZAIN,N
+9659765,9,,International,KUWAIT_ZAIN,N
+9659766,9,,International,KUWAIT_ZAIN,N
+9659767,9,,International,KUWAIT_ZAIN,N
+9659768,9,,International,KUWAIT_ZAIN,N
+9659769,9,,International,KUWAIT_ZAIN,N
+9659780,9,,International,KUWAIT_ZAIN,N
+9659781,9,,International,KUWAIT_ZAIN,N
+9659782,9,,International,KUWAIT_ZAIN,N
+9659783,9,,International,KUWAIT_ZAIN,N
+9659784,9,,International,KUWAIT_ZAIN,N
+9659785,9,,International,KUWAIT_ZAIN,N
+9659786,9,,International,KUWAIT_ZAIN,N
+9659787,9,,International,KUWAIT_ZAIN,N
+9659788,9,,International,KUWAIT_ZAIN,N
+9659789,9,,International,KUWAIT_ZAIN,N
+9659790,9,,International,KUWAIT_ZAIN,N
+9659791,9,,International,KUWAIT_ZAIN,N
+9659792,9,,International,KUWAIT_ZAIN,N
+9659793,9,,International,KUWAIT_ZAIN,N
+9659794,9,,International,KUWAIT_ZAIN,N
+9659795,9,,International,KUWAIT_ZAIN,N
+9659796,9,,International,KUWAIT_ZAIN,N
+9659797,9,,International,KUWAIT_ZAIN,N
+9659798,9,,International,KUWAIT_ZAIN,N
+9659799,9,,International,KUWAIT_ZAIN,N
+96599,7,,International,KUWAIT_ZAIN,N
+966,5,,International,Saudi Arabia_Fixed,N
+96612,7,,International,Saudi Arabia-Fixed,N
+96614,7,,International,Saudi Arabia_Fixed,N
+96622,7,,International,Saudi Arabia_Fixed,N
+96625,7,,International,Saudi Arabia_Fixed,N
+96626,7,,International,Saudi Arabia_Fixed,N
+966333,8,,International,Saudi Arabia_Fixed,N
+966366,8,,International,Saudi Arabia_Fixed,N
+966367,8,,International,Saudi Arabia_Fixed,N
+96638,7,,International,Saudi Arabia_Fixed,N
+96650,7,,International,Saudi Arabia_AL JAWWAL,N
+96651,7,,International,Saudi Arabia_BRAVO (iDEN),N
+96653,7,,International,Saudi Arabia_AL JAWWAL,N
+96654,7,,International,Saudi Arabia_Mobily,N
+96655,7,,International,Saudi Arabia_AL JAWWAL,N
+96656,7,,International,Saudi Arabia_Mobily,N
+96659,7,,International,Saudi Arabia_ZAIN,N
+967,5,,International,Yemen_Fixed,N
+96770,7,,International,Yemen_Mobile,N
+96771,7,,International,Yemen_Sabafon,N
+967711,8,,International,Yemen_Mobile Sabafon,N
+96773,7,,International,Yemen_MTN,N
+96777,7,,International,Yemen_Yemen Mobile,N
+967779,8,,International,Yemen_Spacetel,N
+968,5,,International,Oman_Fixed,N
+968720,8,,International,Oman_OmanTel,N
+9689,6,,International,Oman_OmanTel,N
+96895,7,,International,Oman_Nawras,N
+97058,7,,International,Golan,N
+971,5,,International,United Arab Emirates_Fixed,N
+97150,7,,International,United Arab Emirates_Etisalat,N
+97155,7,,International,United Arab Emirates_Du,N
+97189,7,,International,United Arab Emirates_Pager,N
+97258,7,,International,Golan,N
+973,5,,International,Bahrain_Fixed,N
+97336,7,,International,Bahrain_MTC Vodafone,N
+97339,7,,International,Bahrain_Batelco,N
+974,5,,International,Qatar_Fixed,N
+9742,6,,International,Qatar?_Q-Tel,N
+9745,6,,International,Qatar_Q-Tel,N
+9746,6,,International,Qatar?_Q-Tel,N
+975,5,,International,Bhutan_Fixed,N
+976,5,,International,Mongolia_Fixed,N
+97691,7,,International,Mongolia_Skytel Mongolia,N
+97696,7,,International,Mongolia_Skytel Mongolia,N
+97699,7,,International,Mongolia_MobiCom,N
+977,5,,International,Nepal_Fixed,N
+977981,8,,International,Nepal_NTC,N
+98,4,,International,Iran_Fixed,N
+992,5,,International,Tajikistan_Fixed,N
+992917,8,,International,Tajikistan_TT Mobile,N
+993,5,,International,Turkmenistan_Fixed,N
+993663,8,,International,Turkmenistan_BCTI,N
+994,5,,International,Azerbaijan_Fixed,N
+99450,7,,International,Azerbaijan_Azercell,N
+99455,7,,International,Azerbaijan_J.V.Bakcell,N
+995,5,,International,Georgia_Fixed,N
+99555,7,,International,Georgia_Geocell,N
+99577,7,,International,Georgia_Geocell,N
+99593,7,,International,Georgia_Geocell,N
+99599,7,,International,Georgia_Magticom,N
+996,5,,International,Kyrgyz Republic_Fixed,N
+9963121,9,,International,Kyrgyz Republic_Bitel Ltd,N
+9965021,9,,International,Kyrgyz Republic_Bitel Ltd,N
+998,5,,International,Uzbekistan_Fixed,N
+99871,7,,International,Uzbekistan_Uzmacom,N
+99892,7,,International,Uzbekistan_Uzmacom,N
+99893,7,,International,Uzbekistan_Coscom,N
+377607,6,,International,Monaco_MonaCell,N
+1122,4,,Free,Unknown,N
+15148,5,,Free,Unknown,N
+15149,5,,Free,Unknown,N
+15161,5,,Free,Unknown,N
+15170,5,,Unknown-T,Unknown,N
+97059105,10,,Free,Free,N
+97059106,10,,Free,Free,N
+97259100,10,,Unknown-T,Free,N
+97259101,10,,Unknown-T,Free,N
+97259102,10,,Unknown-T,Free,N
+97259105,10,,Unknown-T,Free,N
+97259106,10,,Unknown-T,Free,N
+97259111,10,,Unknown-T,Free,N
+97259112,10,,Unknown-T,Free,N
+97259122,10,,Unknown-T,Free,N
+97259123,10,,Unknown-T,Free,N
+97259124,10,,Unknown-T,Free,N
+59100,6,,Unknown-T,Free,N
+59101,6,,Unknown-T,Free,N
+59102,6,,Unknown-T,Free,N
+59105,6,,Unknown-T,Free,N
+59106,6,,Unknown-T,Free,N
+59111,6,,Unknown-T,Free,N
+59112,6,,Unknown-T,Free,N
+59122,6,,Unknown-T,Free,N
+59123,6,,Unknown-T,Free,N
+59124,6,,Unknown-T,Free,N
+100,3,,Free,Free,N
+101,3,,Free,Free,N
+102,3,,Free,Free,N
+106,3,,Unknown-T,Free,N
+110,3,,Unknowon-T,Jawwal,N
+111,3,,Free,Free,N
+112,3,,Free,Free,Y
+1133,4,,Free,Dealers CallCenter,N
+1144,4,,Unknown-T,Small Business Information,N
+1188,4,,Unknowon-T,Network Support Line,N
+121,3,,Free,Free,N
+122,3,,Free,Free,N
+123,3,,Free,Free,N
+124,3,,Unknown-T,Free,N
+133,3,,Charged,Gaza Electricity Company Line,N
+137,3,,Free,Free Lebanon,N
+138,3,,Free,Free Lebanon,N
+144,3,,Charged,PALTEL,N
+15100,5,,Free,Entertainment Services,N
+15101,5,,Free,MCN,N
+15102,5,,Free,Religious Services,N
+15103,5,,Free,Competition,N
+15104,5,,Free,Black list- SMS,N
+15105,5,,Free,Mother day campaign,N
+15106,5,,Unknown-T,VAS Bundle,N
+15107,5,,Free,Dardish Campaign,N
+15108,5,,Free,BBC and Al Arabia Information,N
+15109,5,,Free,Al Arabia & Al BBC information,N
+15110,5,,Free,Push Bundle,N
+15111,5,,Free,SIM Selection,N
+15112,5,,Free,Prepadi Pointing System,N
+15113,5,,Free,Pointing System info,N
+15114,5,,Free,Jawwal- USSD info,N
+15115,5,,Free,STK Information,N
+15116,5,,Free,voice SMS /Testing Sim,N
+15117,5,,Free,Jawwal Classification,N
+15118,5,,Free,SMS plan message phase 3,N
+15119,5,,Free,horoscope,N
+15120,5,,Free,Ramadan Services,N
+15121,5,,Free,Twin SIM,N
+15122,5,,Free,ArabiaCell Enertainment Services,N
+15123,5,,Free,Pointing System information,N
+15124,5,,Free,Streaming,N
+15125,5,,Free,call collect,N
+15126,5,,Free,Collection IVR,N
+15127,5,,Free,Testing Code,N
+15128,5,,Free,Special Subscribers Exceptions,N
+15129,5,,Free,Migration,N
+15130,5,,Free,Mazad info IVR,N
+15131,5,,Free,Confidential Campaign,N
+15132,5,,Free,voice SMS,N
+15133,5,,Unknown-T,Real Madrid,N
+15134,5,,Free,MMS Content Information,N
+15135,5,,Free,MMS Trial,N
+15136,5,,Free,Unified Plan Information,N
+15137,5,,Free,Dardesh weekend,N
+15138,5,,Free,Mazad-info,N
+15139,5,,Free,SIM Replacement plan,N
+15140,5,,Free,Currencies Offer,N
+15141,5,,Free,Tawjihi,N
+15142,5,,Free,Jawwal- Call me back SMS info,N
+15143,5,,Free,Civil Package,N
+15144,5,,Free,Twin sim- prepaid slave,N
+15145,5,,Free,Jawwal Thawani,N
+15146,5,,Free,Unified Package,N
+15147,5,,Free,Prepaid Voice Repricing,N
+15162,5,,Free,Turmous,N
+15163,5,,Free,Kartak 3arabi,N
+15164,5,,Free,Civil & Militay camp,N
+15165,5,,Free,Wap & internet bundle,N
+15167,5,,Free,WAP Push Promotions,N
+15168,5,,Free,MMS promotion campaign,N
+15169,5,,Free,Prepaid expired lines,N
+15172,5,,Free,Thawany Offer,N
+15173,5,,Free,Super Swap,N
+15174,5,,Free,Push SMS free trial,N
+15175,5,,Free,Handicapped IVR,N
+15176,5,,Free,New prepaid package,N
+15177,5,,Free,Ramdan Campaign,N
+15178,5,,Free,Dearest 2,N
+15179,5,,Free,Free entertainment bundles,N
+15180,5,,Free,calls to jordan,N
+15181,5,,Free,MCB,N
+15182,5,,Free,SMS box for prepaid,N
+15183,5,,Free,Zero face book,N
+15184,5,,Free,Villages Camp,N
+15185,5,,Free,SMS free trial,N
+15186,5,,Unknown-T,Valentine Campaign,N
+15187,5,,Free,Prophet birth campaign,N
+15188,5,,Unknown-T,IVR_info,N
+15189,5,,Free,Mother's Day Campaign,N
+15190,5,,Free,Gaza Bonus on Refill Campaign,N
+15191,5,,Free,Civil & Military Plans,N
+15192,5,,Free,Tawjihi handsets Campaign,N
+15193,5,,Free,Gaza offer,N
+15194,5,,Free,SK Thawany,N
+15195,5,,Free,1000 free kartak,N
+15196,5,,Free,Bonus on voucher,N
+15197,5,,Free,Eid campaign,N
+15198,5,,Free,New MIX,N
+15199,5,,Free,Info Arab Bank Visa,N
+15200,5,,Free,One Network,N
+15202,5,,Free,Temp Disconnection,N
+1555,4,,Free,JawwalFree,N
+161,3,,Free,Free,N
+166,3,,Charged,PALTEL,N
+167,3,,Charged,CustomerCare Testing,N
+1700,4,,Charged,PALTEL,N
+1700100600,10,,Charged,PIA,N
+1700150155,10,,Charged,Charged,N
+1700161616,10,,Charged,Charged,N
+1700200200,10,,Charged,Charged,N
+1700200500,10,,Charged,Charged,N
+1700202020,10,,Charged,Paltelxxx,N
+1700222444,10,,Charged,Unknown,N
+1700250050,10,,Charged,Unknown,N
+1700250140,10,,Charged,Unknown,N
+1700281281,10,,Charged,Unknown,N
+1700282828,10,,Charged,Unknown,N
+1700296296,10,,Charged,Charged,N
+1700300200,10,,Charged,Charged,N
+1700300300,10,,Charged,Charged,N
+1700300400,10,,Charged,Charged,N
+1700300500,10,,Charged,Charged,N
+1700300600,10,,Charged,Charged,N
+1700300700,10,,Charged,Charged,N
+1700300900,10,,Charged,Charged,N
+1700303030,10,,Charged,Charged,N
+1700304050,10,,Charged,Charged,N
+1700333335,10,,Charged,Charged,N
+1700333444,10,,Charged,Sbetani,N
+1700333567,10,,Charged,Charged,N
+1700400500,10,,Charged,Charged,N
+1700500900,10,,Charged,Charged,N
+1700600500,10,,Charged,Charged,N
+1700600600,10,,Charged,Charged,N
+1700600700,10,,Charged,Charged,N
+1700647726,10,,Charged,Unknown,N
+1700666555,10,,Charged,Charged,N
+1700700000,10,,Charged,Charged,N
+1700700100,10,,Charged,Unknown,N
+1700700700,10,,Charged,Charged,N
+1700708090,10,,Charged,Unknown,N
+1700777888,10,,Charged,Unknown,N
+1700800800,10,,Charged,Unknown,N
+1700870835,10,,Charged,Unknown,N
+1700900400,10,,Charged,Charged,N
+1700966966,10,,Charged,Unknown,N
+1800100111,10,,Free,Unknown,N
+1800101020,10,,Unknown-T,Unknown,N
+1800111000,10,,Free,Unknown,N
+1800111888,10,,Unknown-T,Unknown,N
+1800112233,10,,Unknown-T,Unknown,N
+1800115000,10,,Unknown-T,Paltel TollFree,N
+1800121212,10,,Unknown-T,Unknown,N
+1800122122,10,,Unknown-T,President office,N
+1800123000,10,,Unknown-T,Unknown,N
+1800123500,10,,Unknown-T,Unknown,N
+1800124124,10,,Free,Unknown,N
+1800147369,10,,Unknown-T,Unknown,N
+1800161616,10,,Charged,Unknown,N
+1800180180,10,,Free,Aman,N
+1800181818,10,,Unknown-T,Unknown,N
+1800199199,10,,Unknown-T,Charged,N
+1800200200,10,,Unknown-T,Unknown,N
+1800200700,10,,Unknown-T,Gaza Se7ah,N
+1800200800,10,,Unknown-T,Unknown,N
+1800201011,10,,Charged,Unknown,N
+1800203040,10,,Free,Care International Organization,N
+1800210210,10,,Unknown-T,Unknown,N
+1800222000,10,,Unknown-T,Ministry of Health,N
+1800222333,10,,Free,Paltel TollFree,N
+1800225588,10,,Unknown-T,Unknown,N
+1800231111,10,,Unknown-T,Yamama Code,N
+1800245576,10,,Unknown-T,Unknown,N
+1800246155,10,,Unknown-T,Fuad Taxi office,N
+1800250250,10,,Unknown-T,Unknown,N
+1800272727,10,,Unknown-T,Unknown,N
+1800287072,10,,Unknown-T,Toll,N
+1800300200,10,,Unknown-T,Unknown,N
+1800300300,10,,Unknown-T,Unknown,N
+1800300500,10,,Unknown-T,Unknown,N
+1800300900,10,,Unkown-T,Toll,N
+1800303030,10,,Unkown-T,Ramalla Gov,N
+1800304050,10,,Unkown-T,Charged,N
+1800310410,10,,Unknown-T,Unknown,N
+1800333000,10,,Unknown-T,Unknown,N
+1800350025,10,,Unknown-T,Al-Ghawth Agency,N
+1800380162,10,,Unknown-T,VSMS,N
+1800400100,10,,Unknown-T,Unknown,N
+1800400444,10,,Free,Uni Pal Company,N
+1800400600,10,,Unknown-T,Unknown-T,N
+1800400700,10,,Unknown-T,Gaza Se7ah,N
+1800432567,10,,Unknown-T,Unknown,N
+1800440440,10,,Unknown-T,Unknown,N
+1800440444,10,,Unkown-T,Toll,N
+1800456789,10,,Unknown-T,Unknown,N
+1800460444,10,,Free,Tolllllllll,N
+1800463120,10,,Unknown-T,Unknown,N
+1800500100,10,,Unknown-T,Unknown,N
+1800534880,10,,Unknown-T,Unknown,N
+1800535535,10,,Unknown-T,Beyalara Comp,N
+1800550550,10,,Unknown-T,Arab Company for shopping centers,N
+1800555313,10,,Unknown-T,Tollllllllll,N
+1800555666,10,,Unknown-T,Unknown,N
+1800572722,10,,Unknown-T,Unknown,N
+1800600500,10,,Free,alshareka al 7adetha,N
+1800600900,10,,Unknown-T,Unknown,N
+1800700400,10,,Unknown-T,Unknown,N
+1800733426,10,,Unknown-T,Ray7an,N
+1800777666,10,,Unknown-T,Charged,N
+1800777777,10,,Unknown-T,Unknown,N
+1800800400,10,,Unknown-T,Paltel Toll Free - Ramalla,N
+1800800600,10,,Unknown-T,Unknown,N
+1800800900,10,,Unknown-T,Tollllllll,N
+1800808808,10,,Unknown-T,Unknown,N
+1800882882,10,,Free,Unknown,N
+1800888000,10,,Free,Charged,N
+1800888700,10,,Unknown-T,Tollllllllll,N
+1800888888,10,,Unknown-T,Tolllllllll,N
+1800888999,10,,Unknown-T,Unknown,N
+1800896995,10,,Unknown-T,Unknown,N
+1800901222,10,,Unknown-T,Taxi,N
+1800959515,10,,Unknown-T,Nakabt Al 3ommal,N
+1800976536,10,,Unknown-T,Unknown,N
+1811,4,,Charged,PALTEL,N
+1812,4,,Charged,PALTEL,N
+199,3,,Charged,Free,N
+B0B,3,,Free,MOIP_Org,N
+12,2,,Unknown,Unknown,N
+105,3,,Unknown-T,Unknown,N
+109,3,,Unknown,Unknown,N
+118,3,,Free,Unknown,N
+555,3,,Unknown-T,Unknown,N
+1366,4,,Unknown-T,Unknown,N
+1369,4,,Unknown-T,Unknown,N
+1511,4,,Unknown-T,Unknown,N
+1810,4,,Unknown-T,Unknown,N
+1818,4,,Unknown-T,Unknown,N
+3333,4,,Unknown,Unknown,N
+17923,5,,Unknown-T,Unknown,N
+30016,5,,Unknown-T,Unknown,N
+151800,6,,Unknown-T,Unknown,N
+1800059059,10,,Unknown-T,Unknown,N
+1800112500,10,,Unknown-T,Unknown,N
+1800200000,10,,Unknown-T,Unknown,N
+1800222273,10,,Unknown-T,Unknown,N
+1800321654,10,,Unknown-T,Unknown,N
+1800405060,10,,Free,Unknown,N
+1800600800,10,,Unknown-T,Unknown,N
+1800622622,10,,Unknown-T,Unknown,N
+1800700200,10,,Unknown-T,Unknown,N
+1800700300,10,,Unknown-T,Unknown,N
+15171,5,,Free,Ramadan Campagin,N
+962797909090,12,,Unknown-T,Unknown,N
+962797990000,12,,Unknown-T,Unknown,N
+1199,4,,Free,Unknown,N
+15777,5,,Free,Unknown,N
+15999,5,,Unknown-T,Unknown,N
+15444,5,,Free,Jawwal,N
+15888,5,Free,Free,Ramadan,N
+15201,5,,Free,Unknown,N
+15203,5,,Free,Unknown,N
+15333,5,,Free,Unknown,N
+15204,5,,Free,Unknown,N
+15205,5,,Free,Unknown,N
+15206,5,,Free,Unknown,N
+15207,5,,Free,Unknown,N
+15209,5,,Free,Unknown,N
+15210,5,Land Day,Free,,N
+15212,5,Unknown,Free,,N
+15213,5,Unknown,Free,,N
+15222,5,Nescafe,Free,,N
+15211,5,Daily and Monthly Bundles,Free,,N
+15215,5,Labour Day,Free,,N
+15214,5,Unknown,Free,,N
+15255,5,Ramadan,Free,,N
+15216,5,Unknown,Free,,N
+15217,5,e5tar Ja2eztak,Unknown-T,,N
+15218,5,china mobile,Free,,N
+15223,5,,Free,,N
+15225,5,,Free,,N
+15342,5,,Free,,N
+15355,5,,Free,,N
+15357,5,,Free,,N
+15385,5,,Free,,N
+15401,5,,Free,,N
+15402,5,,Free,,N
+15398,5,,Free,,N
+15399,5,,Free,,N
+15391,5,,Free,,N
+15341,5,,Free,,N
+15344,5,,Free,,N
+15345,5,,Free,,N
+15348,5,,Free,,N
+15350,5,,Free,,N
+15351,5,,Free,,N
+15371,5,,Free,,N
+15373,5,,Free,,N
+15375,5,,Free,,N
+15383,5,,Free,,N
+15384,5,,Free,,N
+15386,5,,Free,,N
+15441,5,,Free,,N
+15443,5,,Free,,N
+15445,5,,Free,,N
+15343,5,,Free,,N
+15346,5,,Free,,N
+15356,5,,Free,,N
+15374,5,,Free,,N
+15380,5,,Free,,N
+15442,5,,Free,,N
+15451,5,,Free,,N
+15452,5,,Free,,N
+15352,5,,Free,,N
+15455,5,,Free,,N
+15454,5,,Free,,N
+15453,5,,Free,,N
+15353,5,,Free,,N
+15458,5,,Free,,N
+15347,5,,Free,,N
+15370,5,,Free,,N
+15376,5,,Free,,N
+15377,5,,Free,,N
+15378,5,,Free,,N
+15381,5,,Free,,N
+15382,5,,Free,,N
+15421,5,,Free,,N
+15459,5,,Free,,N
+15461,5,,Free,,N
+15463,5,,Free,,N
+132,3,Unknown,Free,Jawwal,N
+15208,5,Unknown,Free,Jawwal,N
+15219,5,Unknown,Free,Jawwal,N
+15220,5,Unknown,Free,Jawwal,N
+15340,5,Unknown,Free,Jawwal,N
+15349,5,Unknown,Free,Jawwal,N
+15354,5,Unknown,Free,Jawwal,N
+15358,5,Unknown,Free,Jawwal,N
+15372,5,Unknown,Free,Jawwal,N
+15379,5,Unknown,Free,Jawwal,N
+15390,5,Unknown,Free,Jawwal,N
+15392,5,Unknown,Free,Jawwal,N
+15393,5,Unknown,Free,Jawwal,N
+15394,5,Unknown,Free,Jawwal,N
+15395,5,Unknown,Free,Jawwal,N
+15396,5,Unknown,Free,Jawwal,N
+15397,5,Unknown,Free,Jawwal,N
+15403,5,Unknown,Free,Jawwal,N
+15404,5,Unknown,Free,Jawwal,N
+15422,5,Unknown,Free,Jawwal,N
+15446,5,Unknown,Free,Jawwal,N
+15447,5,Unknown,Free,Jawwal,N
+15462,5,Unknown,Free,Jawwal,N
+15464,5,Unknown,Free,Jawwal,N
+15465,5,Unknown,Free,Jawwal,N
+15466,5,Unknown,Free,Jawwal,N
+C059,4,Unknown,Free,Jawwal,N
+1800056056,10,Unknown,Free,Jawwal,N
+1800100100,10,Unknown,Free,Jawwal,N
+1800100200,10,Unknown,Free,Jawwal,N
+1800101101,10,Unknown,Free,Jawwal,N
+1800101102,10,Unknown,Free,Jawwal,N
+1800102030,10,Unknown,Free,Jawwal,N
+1800104104,10,Unknown,Free,Jawwal,N
+1800110110,10,Unknown,Free,Jawwal,N
+1800111234,10,Unknown,Free,Jawwal,N
+1800111333,10,Unknown,Free,Jawwal,N
+1800120120,10,Unknown,Free,Jawwal,N
+1800120130,10,Unknown,Free,Jawwal,N
+1800124125,10,Unknown,Free,Jawwal,N
+1800124126,10,Unknown,Free,Jawwal,N
+1800131313,10,Unknown,Free,Jawwal,N
+1800133144,10,Unknown,Free,Jawwal,N
+1800140140,10,Unknown,Free,Jawwal,N
+1800170170,10,Unknown,Free,Jawwal,N
+1800171717,10,Unknown,Free,Jawwal,N
+1800200300,10,Unknown,Free,Jawwal,N
+1800203204,10,Unknown,Free,Jawwal,N
+1800220220,10,Unknown,Free,Jawwal,N
+1800222111,10,Unknown,Free,Jawwal,N
+1800222222,10,Unknown,Free,Jawwal,N
+1800224422,10,Unknown,Free,Jawwal,N
+1800234234,10,Unknown,Free,Jawwal,N
+1800242242,10,Unknown,Free,Jawwal,N
+1800242424,10,Unknown,Free,Jawwal,N
+1800277277,10,Unknown,Free,Jawwal,N
+1800300400,10,Unknown,Free,Jawwal,N
+1800333111,10,Unknown,Free,Jawwal,N
+1800333333,10,Unknown,Free,Jawwal,N
+1800333555,10,Unknown,Free,Jawwal,N
+1800333999,10,Unknown,Free,Jawwal,N
+1800345345,10,Unknown,Free,Jawwal,N
+1800400000,10,Unknown,Free,Jawwal,N
+1800444333,10,Unknown,Free,Jawwal,N
+1800444444,10,Unknown,Free,Jawwal,N
+1800461555,10,Unknown,Free,Jawwal,N
+1800500555,10,Unknown,Free,Jawwal,N
+1800505050,10,Unknown,Free,Jawwal,N
+1800556677,10,Unknown,Free,Jawwal,N
+1800567567,10,Unknown,Free,Jawwal,N
+1800606060,10,Unknown,Free,Jawwal,N
+1800666222,10,Unknown,Free,Jawwal,N
+1800700500,10,Unknown,Free,Jawwal,N
+1800800700,10,Unknown,Free,Jawwal,N
+1800800801,10,Unknown,Free,Jawwal,N
+1800800850,10,Unknown,Free,Jawwal,N
+1800800888,10,Unknown,Free,Jawwal,N
+1800801802,10,Unknown,Free,Jawwal,N
+1800807060,10,Unknown,Free,Jawwal,N
+1800808080,10,Unknown,Free,Jawwal,N
+1800830888,10,Unknown,Free,Jawwal,N
+1800888333,10,Unknown,Free,Jawwal,N
+1800888444,10,Unknown,Free,Jawwal,N
+1800888800,10,Unknown,Free,Jawwal,N
+1800123123,10,Unknown,Free,,N
+1800800500,10,Unknown,Free,,N
+15470,5,Unknown,Free,,N
+15468,5,Unknown,Free,,N
+161441,6,International,International,,Y
+151999,6,,International,International,Y
+151998,6,,International,International,Y
+151996,6,,International,International,Y
+151993,6,,International,International,Y
+151925,6,,International,International,Y
+151347,6,,International,International,Y
+151071,6,,International,International,Y
+122660,6,,International,International,Y
+122561,6,,International,International,Y
+121923,6,,International,International,Y
+121686,6,,International,International,Y
+121527,6,,International,International,Y
+121273,6,,International,International,Y

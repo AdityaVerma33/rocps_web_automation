@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="2.3.0.0" version="43">
+    <Decoder name="ASCII_for_Sequence" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="CDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" allowEOFTerm="false" terminator="lf" root="false" name="CDR" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="Record_Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="1" generate="field" name="Caller_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="2" generate="field" name="Called_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="3" generate="field" name="Time_Stamp" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="dd/MM/yyyy HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="4" generate="field" name="Call_Duration" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="HHmmss" type="duration"/>
+            </Field>
+            <Field trimQuotes="true" id="5" generate="field" name="Sequence_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="6" generate="field" name="Amount" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="decimal"/>
+            </Field>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="110" xPos="145" name="CDR" width="50" type="Record" recordType="CDR" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="50" yPos="115" xPos="410" name="Spark Output" unicode="false" width="60" outputKey="1" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$FileRecords, '.dat')" type="SparkOutput" nodeKey="shape6">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="110" xPos="270" name="Mapping" width="60" type="Mapping" recordType="cdr_details" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="Time_Stamp" target="Time_Stamp"/>
+                    <Mapping expression="If(Equal(Record_Type,1), &quot;MOC&quot;, If(Equal(Record_Type,2), &quot;MTC&quot;, &quot;Unknown&quot;))" target="Record_Type"/>
+                    <Mapping expression="Amount" target="Amount"/>
+                    <Mapping expression="Gen_Id()" target="SUB_ID"/>
+                    <Mapping expression="ApplyStringRuleSet(&quot;B_Number&quot;, Called_Number, GetStringRuleSetId('SRS1'))" target="A_Number"/>
+                    <Mapping expression="ApplyStringRuleSet(&quot;A_Number&quot;, Caller_Number, GetStringRuleSetId('SRS1'))" target="B_Number"/>
+                    <Mapping expression="ToInteger(Call_Duration)" target="Duration"/>
+                    <Mapping expression="If(Equal(Record_Type,1), &quot;Outgoing&quot;, If(Equal(Record_Type,2), &quot;Incoming&quot;, &quot;Unknown&quot;))" target="Call_Type"/>
+                    <Mapping expression="IsActive_is_active(Caller_Number, Caller_Number)" target="Is_Active"/>
+                    <Mapping expression="Operator_operator(Time_Stamp, Caller_Number)" target="Operator"/>
+                    <Mapping expression="PlanName_plan_name(Time_Stamp, Caller_Number)" target="Plan_Name"/>
+                    <Mapping expression="Gen_Id()" target="CDR_ID"/>
+                </Mappings>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="1" name="Gen_Id" blockSize="20" type="GenerateId"/>
+            <DynamicFunction resultProperty="SrsId" name="GetStringRuleSetId" type="KeyCacheLookup" objectType="StringRuleSet">
+                <LookupKeys>
+                    <LookupKey key="SrsName"/>
+                </LookupKeys>
+            </DynamicFunction>
+            <DynamicFunction allowDuplicates="true" tableName="rate_plan" name="Operator" toDttmColumn="end_date" type="SQLDateCacheLookup" fromDttmColumn="start_date">
+                <LookupKeys>
+                    <LookupKey key="name"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="operator"/>
+                </ResultCols>
+            </DynamicFunction>
+            <DynamicFunction allowDuplicates="true" tableName="rate_plan" name="PlanName" type="SqlRangeCacheLookup">
+                <ResultCols>
+                    <ResultCol name="plan_name"/>
+                </ResultCols>
+                <LookupKeys>
+                    <LookupKey key="name"/>
+                </LookupKeys>
+                <Ranges>
+                    <Range start="start_date" end="end_date"/>
+                </Ranges>
+            </DynamicFunction>
+            <DynamicFunction allowDuplicates="true" tableName="rate_plan" name="IsActive" type="SQLInLookup">
+                <ResultCols>
+                    <ResultCol name="is_active"/>
+                </ResultCols>
+                <LookupKeys>
+                    <LookupKey key="name"/>
+                </LookupKeys>
+                <InCols>
+                    <InCol in="name"/>
+                </InCols>
+            </DynamicFunction>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="cdr_details">
+                <Field id="7" name="CDR_ID" nullable="true" type="integer"/>
+                <Field id="8" name="A_Number" nullable="true" type="string"/>
+                <Field id="9" name="B_Number" nullable="true" type="string"/>
+                <Field id="3" name="Time_Stamp" nullable="true" type="datetime"/>
+                <Field id="10" name="Duration" nullable="true" type="integer"/>
+                <Field id="0" name="Record_Type" nullable="true" type="string"/>
+                <Field id="11" name="Call_Type" nullable="true" type="string"/>
+                <Field id="6" name="Amount" nullable="true" type="decimal"/>
+                <Field id="12" name="Is_Active" nullable="true" type="boolean"/>
+                <Field id="13" name="Operator" nullable="true" type="string"/>
+                <Field id="14" name="Plan_Name" nullable="true" type="string"/>
+            </RecordType>
+            <RecordType name="rate_plan">
+                <Field id="15" name="ra_id" nullable="false" type="integer"/>
+                <Field id="16" name="name" nullable="true" type="string"/>
+                <Field id="17" name="plan_name" nullable="true" type="string"/>
+                <Field id="18" name="operator" nullable="true" type="string"/>
+                <Field id="19" name="start_date" nullable="true" type="datetime"/>
+                <Field id="20" name="end_date" nullable="true" type="datetime"/>
+                <Field id="21" name="is_active" nullable="true" type="boolean"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

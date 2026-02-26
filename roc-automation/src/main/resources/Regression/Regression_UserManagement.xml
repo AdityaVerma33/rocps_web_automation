@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="User Management Regression" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Users_OR.properties,CM_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="User Management Regression" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testRootRole" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testRootUser" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserCreation" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserEdit" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserDisableEnable" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserDelete" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testAdministratorRole" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testAdministratorUser" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testSetAllPrivileges" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testChangePassword" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserValidation" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testPasswordValidation" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testLogin" />
+		</classes>
+	</test>
+</suite>

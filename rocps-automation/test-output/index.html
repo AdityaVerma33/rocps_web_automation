@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-CTAF" class="navigator-link">
+              <span class="suite-name border-failed">CTAF</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-CTAF" class="navigator-link ">
+                    <span>C:\ROCPS_Automation\ROCPS_Automation\rocps-automation\src\main\resources\SystemTesting_RunScript.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-CTAF" class="navigator-link ">
+                    <span class="test-stats">2 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-CTAF" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-CTAF" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-CTAF" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-CTAF" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-CTAF" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-CTAF" class="hide-methods failed suite-CTAF"> (hide)</a> <!-- hide-methods failed suite-CTAF -->
+                      <a href="#" panel-name="suite-CTAF" class="show-methods failed suite-CTAF"> (show)</a> <!-- show-methods failed suite-CTAF -->
+                    </span>
+                    <div class="method-list-content failed suite-CTAF">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CTAF" title="com.subex.rocps.automation.testcases.systemtesting.TestCase19" class="method navigator-link" hash-for-method="reVersionBill">reVersionBill</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-CTAF -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-CTAF" class="panel CTAF">
+          <div class="suite-CTAF-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.subex.rocps.automation.testcases.systemtesting.TestCase19</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="reVersionBill">
+                  </a> <!-- reVersionBill -->
+                  <span class="method-name">reVersionBill</span>
+                  <div class="stack-trace">java.lang.AssertionError: Values are not matching  expected [2;125.2800;USD;Accepted;01/01/2025;01/31/2025] but found [3;0.0000;USD;Accepted;01/01/2025;01/31/2025]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at com.subex.rocps.automation.helpers.application.genericHelpers.DataVerificationHelper.validateRowData(DataVerificationHelper.java:207)
+	at com.subex.rocps.automation.helpers.application.genericHelpers.DataVerificationHelper.validateData(DataVerificationHelper.java:48)
+	at com.subex.rocps.automation.helpers.application.bills.Bills.hotBill(Bills.java:232)
+	at com.subex.rocps.automation.helpers.application.bills.Bills.billGeneration(Bills.java:189)
+	at com.subex.rocps.automation.helpers.application.bills.Bills.billAction(Bills.java:131)
+	at com.subex.rocps.automation.testcases.systemtesting.TestCase19.reVersionBill(TestCase19.java:209)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                  <em>
+(hot bill - Reversion)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CTAF-class-failed -->
+        </div> <!-- panel CTAF -->
+        <div panel-name="test-xml-CTAF" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\ROCPS_Automation\ROCPS_Automation\rocps-automation\src\main\resources\SystemTesting_RunScript.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;CTAF&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;2&quot;&gt;
+  &lt;parameter name=&quot;driverFile&quot; value=&quot;SmokeTestDriver.xlsx&quot;/&gt;
+  &lt;parameter name=&quot;orFiles&quot; value=&quot;PS_OR.properties,Tariff_OR.properties&quot;/&gt;
+  &lt;parameter name=&quot;config&quot; value=&quot;psconfig.properties&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.subex.automation.helpers.TestNG.CustomTestListenerAdapter&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;Testing&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.subex.rocps.automation.testcases.systemtesting.TestCase19&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Testing --&gt;
+  &lt;test name=&quot;Testing(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.subex.rocps.automation.testcases.systemtesting.TestCase19&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;startApp&quot;/&gt;
+          &lt;include name=&quot;startWebDriver&quot;/&gt;
+          &lt;include name=&quot;checkInstallation&quot;/&gt;
+          &lt;include name=&quot;initializeSuite&quot;/&gt;
+          &lt;include name=&quot;handleTestMethodName&quot;/&gt;
+          &lt;include name=&quot;resetParameters&quot;/&gt;
+          &lt;include name=&quot;stopWebDriver&quot;/&gt;
+          &lt;include name=&quot;endReport&quot;/&gt;
+          &lt;include name=&quot;closeBrowser&quot;/&gt;
+          &lt;include name=&quot;updateReport&quot;/&gt;
+          &lt;include name=&quot;stopDriver&quot;/&gt;
+          &lt;include name=&quot;getSuiteName&quot;/&gt;
+          &lt;include name=&quot;reVersionBill&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.subex.rocps.automation.testcases.systemtesting.TestCase19 --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Testing(failed) --&gt;
+&lt;/suite&gt; &lt;!-- CTAF --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-CTAF" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for CTAF</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Testing (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Testing(failed) (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-CTAF" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for CTAF</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-CTAF" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for CTAF</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_CTAF');
+function tableData_CTAF() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'reVersionBill')
+data.setCell(0, 2, 'com.subex.rocps.automation.testcases.systemtesting.TestCase19')
+data.setCell(0, 3, 58085);
+window.suiteTableData['CTAF']= { tableData: data, tableDiv: 'times-div-CTAF'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 58 seconds</span>
+              <div id="times-div-CTAF">
+              </div> <!-- times-div-CTAF -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-CTAF" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for CTAF</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-CTAF" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-CTAF" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.subex.rocps.automation.testcases.systemtesting.TestCase19</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">getSuiteName(org.testng.TestRunner@5b859845)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-suite before">
+                <span class="method-name">initializeSuite(psconfig.properties, PS_OR.properties,Tariff_OR.properties)</span>
+                <span class="method-start">8 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">checkInstallation</span>
+                <span class="method-start">484 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">startWebDriver</span>
+                <span class="method-start">488 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">startApp(psconfig.properties)</span>
+                <span class="method-start">6254 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">handleTestMethodName(public void com.subex.rocps.automation.testcases.systemtesting.TestCase19.reVersionBill() throws jav...)</span>
+                <span class="method-start">40555 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">reVersionBill</span>
+                <span class="method-start">40612 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">99093 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">endReport</span>
+                <span class="method-start">99093 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <span class="method-name">updateReport(public void com.subex.rocps.automation.testcases.systemtesting.TestCase19.reVersionBill() throws jav...)</span>
+                <span class="method-start">99093 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">resetParameters</span>
+                <span class="method-start">101265 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">stopDriver</span>
+                <span class="method-start">101297 ms</span>
+              </div> <!-- configuration-suite after -->
+              <div class="configuration-suite after">
+                <span class="method-name">stopWebDriver</span>
+                <span class="method-start">101317 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

@@ -1,0 +1,85 @@
+#!/bin/bash
+filename=$1
+type=$2
+suitename=$3
+
+if [ "$type" = "FederatedDataSource" ]
+then
+	if [ "$suitename" = "CICD" ]
+	then
+		dbtype=`grep FDSDbType src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+		host=`grep FDSMachine src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+		user=`grep -w FDSUserName src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+		passwd=`grep FDSPassword src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+		dbname=`grep FDSDatabase src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+		instance=`grep FDSInstance src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+	else
+		dbtype=`grep FDSDbType src/main/resources/config.properties | cut -f2 -d'='`
+		host=`grep FDSMachine src/main/resources/config.properties | cut -f2 -d'='`
+		user=`grep -w FDSUserName src/main/resources/config.properties | cut -f2 -d'='`
+		passwd=`grep FDSPassword src/main/resources/config.properties | cut -f2 -d'='`
+		dbname=`grep FDSDatabase src/main/resources/config.properties | cut -f2 -d'='`
+		instance=`grep FDSInstance src/main/resources/config.properties | cut -f2 -d'='`
+
+	fi
+else
+	if [ "$type" = "Usage" ]
+	then
+		if [ "$suitename" = "CICD" ]
+		then
+			dbtype=`grep usageDBType src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			host=`grep usageMachineName src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			user=`grep -w usageUsername src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			passwd=`grep usagePassword src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			dbname=`grep usageDatabase src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			instance=`grep usageInstance src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+		else
+			dbtype=`grep usageDBType src/main/resources/config.properties | cut -f2 -d'='`
+			host=`grep usageMachineName src/main/resources/config.properties | cut -f2 -d'='`
+			user=`grep -w usageUsername src/main/resources/config.properties | cut -f2 -d'='`
+			passwd=`grep usagePassword src/main/resources/config.properties | cut -f2 -d'='`
+			dbname=`grep usageDatabase src/main/resources/config.properties | cut -f2 -d'='`
+			instance=`grep usageInstance src/main/resources/config.properties | cut -f2 -d'='`
+		fi
+	else
+		if [ "$suitename" = "CICD" ]
+		then
+			dbtype=`grep dbType src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			host=`grep dbMachineName src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			user=`grep -w dbUserName src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			passwd=`grep dbPassword src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			dbname=`grep database src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+			instance=`grep dbInstance src/main/resources/ctaf-config.properties | cut -f2 -d'='`
+		else
+			dbtype=`grep dbType src/main/resources/config.properties | cut -f2 -d'='`
+			host=`grep dbMachineName src/main/resources/config.properties | cut -f2 -d'='`
+			user=`grep -w dbUserName src/main/resources/config.properties | cut -f2 -d'='`
+			passwd=`grep dbPassword src/main/resources/config.properties | cut -f2 -d'='`
+			dbname=`grep database src/main/resources/config.properties | cut -f2 -d'='`
+			instance=`grep dbInstance src/main/resources/config.properties | cut -f2 -d'='`
+		fi
+	fi
+fi
+
+function runScript
+{
+	echo "$dbtype"
+	echo "$host"
+	echo "$user"
+	echo "$passwd"
+	echo "$instance"
+	
+	if [ "$dbtype" = "sqlserver" ]
+	then
+		if [ "$instance" <> "" ]
+		then
+			sqlcmd -S$host\$instance -U$user -P$passwd -d$dbname -i$filename
+		else
+			sqlcmd -S$host -U$user -P$passwd -d$dbname -i$filename
+		fi
+	else
+		exit | sqlplus $user/$passwd@$instance @$filename
+	fi
+}
+
+runScript

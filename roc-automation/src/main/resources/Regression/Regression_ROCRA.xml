@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ROCRA Regression" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Measures_Audits_OR.properties,CM_OR.properties,Users_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<!-- <test name="Zen" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testPrerequisite" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testExactMatch" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testExactMatchAndOverMatch" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testExactMatchAndUnderMatch" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testMinimumUnderMatch" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testAccuracy" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testWithoutUnderMatch" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testWithoutExactMatch" />
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.zen.testOnlyCompareAndUnderMatch" />
+		</classes>
+	</test> -->
+	<test name="Revenue Pad" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.rocra.revenuepad.testPrerequisite" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="2.4.589.0" version="33">
+    <Decoder name="MSC" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="CDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" allowEOFTerm="false" terminator="lf" root="false" name="CDR" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="event_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="1" generate="field" name="rec_type_name" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="2" generate="field" name="call_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="3" generate="field" name="a_number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="4" generate="field" name="b_number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="5" generate="field" name="c_number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="6" generate="field" name="roaming_number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="7" generate="field" name="start_dttm" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="yyyy-MM-dd HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="8" generate="field" name="end_dttm" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="yyyy-MM-dd HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="9" generate="field" name="duration" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="10" generate="field" name="call_direction" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="11" generate="field" name="call_status" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="12" generate="field" name="subscriber_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="13" generate="field" name="imsi" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="14" generate="field" name="imei" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="15" generate="field" name="address" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="16" generate="field" name="record_sequence_no" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="17" generate="field" name="ldc_indicator" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="18" generate="field" name="ldc_sequence_no" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="19" generate="field" name="ldc_correlation_id" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="20" generate="field" name="bearer_service" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="21" generate="field" name="cell_id" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="22" generate="field" name="roaming_partner" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="23" generate="field" name="switch_name" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="24" generate="field" name="inc_route" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="25" generate="field" name="inc_operator_name" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="26" generate="field" name="out_route" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="27" generate="field" name="out_operator_name" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="28" generate="field" name="smsc_address" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="29" generate="field" name="lrn" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="70" yPos="155" xPos="15" name="Record" width="105" type="Record" recordType="CDR" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output"/>
+                </Outputs>
+            </Node>
+            <Node height="60" yPos="160" xPos="215" name="Basic Mapping" width="60" type="Mapping" recordType="msc_fingerprint" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="$$RecordAddress" target="msc_record_address"/>
+                    <Mapping expression="$$RecordLength" target="msc_record_length"/>
+                    <Mapping expression="$$RecordType" target="msc_record_type"/>
+                    <Mapping expression="event_type" target="msc_event_type"/>
+                    <Mapping expression="rec_type_name" target="msc_rec_type_name"/>
+                    <Mapping expression="call_type" target="msc_call_type"/>
+                    <Mapping expression="a_number" target="msc_a_number"/>
+                    <Mapping expression="b_number" target="msc_b_number"/>
+                    <Mapping expression="c_number" target="msc_c_number"/>
+                    <Mapping expression="roaming_number" target="msc_roaming_number"/>
+                    <Mapping expression="call_direction" target="msc_call_direction"/>
+                    <Mapping expression="call_status" target="msc_call_status"/>
+                    <Mapping expression="subscriber_type" target="msc_subscriber_type"/>
+                    <Mapping expression="imsi" target="msc_imsi"/>
+                    <Mapping expression="equipment_id" target="msc_equipment_id"/>
+                    <Mapping expression="address" target="msc_address"/>
+                    <Mapping expression="ldc_correlation_id" target="msc_ldc_correlation_id"/>
+                    <Mapping expression="bearer_service" target="msc_bearer_service"/>
+                    <Mapping expression="cell_id" target="msc_cell_id"/>
+                    <Mapping expression="roaming_partner" target="msc_roaming_partner"/>
+                    <Mapping expression="switch_name" target="msc_switch_name"/>
+                    <Mapping expression="inc_route" target="msc_inc_route"/>
+                    <Mapping expression="inc_operator_name" target="msc_inc_operator_name"/>
+                    <Mapping expression="out_route" target="msc_out_route"/>
+                    <Mapping expression="out_operator_name" target="msc_out_operator_name"/>
+                    <Mapping expression="smsc_address" target="msc_smsc_address"/>
+                    <Mapping expression="lrn" target="msc_lrn"/>
+                    <Mapping expression="GenerateLongID()" target="msc_id"/>
+                    <Mapping expression="$$RecordNumber" target="msc_record_no"/>
+                    <Mapping expression="$$Filename" target="msc_filename"/>
+                    <Mapping expression="Hash(a_number, start_dttm)" target="msc_duplicate_hashcode"/>
+                    <Mapping expression="false" target="msc_duplicate_fl"/>
+                    <Mapping expression="HourPart(start_dttm)" target="msc_part_key"/>
+                    <Mapping expression="start_dttm" target="msc_start_dttm"/>
+                    <Mapping expression="end_dttm" target="msc_end_dttm"/>
+                    <Mapping expression="duration" target="msc_duration"/>
+                    <Mapping expression="record_sequence_no" target="msc_record_sequence_no"/>
+                    <Mapping expression="ldc_indicator" target="msc_ldc_indicator"/>
+                    <Mapping expression="ldc_sequence_no" target="msc_ldc_sequence_no"/>
+                    <Mapping expression="a_number" target="msc_a_number_normalized"/>
+                    <Mapping expression="b_number" target="msc_b_number_normalized"/>
+                    <Mapping expression="c_number" target="msc_c_number_normalized"/>
+                    <Mapping expression="Equal(Substring(inc_route, 0, 3), 'INC')" target="msc_is_interconnect"/>
+                    <Mapping expression="Equal(address,'MSC3')" target="msc_is_roaming"/>
+                    <Mapping expression="imei" target="msc_imei"/>
+                    <Mapping target="msc_ldc_status"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="115" UsagePartitionId="GetUsagePartitionId('Issues Usage Group', msc_start_dttm, SecondPart(msc_start_dttm))" xPos="545" unicode="false" name="Spark Output_Retail" width="60" outputKey="msc" charset="windows-1252" filename="Concatenate( $$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat' )" type="SparkOutput" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Retail" nodeKey="shape4">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="160" xPos="370" name="Filter" width="60" type="Filter" recordType="msc_fingerprint" nodeKey="shape4">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output expression="Equal(msc_is_interconnect, true)" name="Interconnect">
+                        <Events/>
+                    </Output>
+                    <Output expression="Equal(msc_is_interconnect, false)" name="Retail">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="50" yPos="215" UsagePartitionId="GetUsagePartitionId('Issues Usage Group', msc_start_dttm, SecondPart(msc_start_dttm))" xPos="550" unicode="false" name="Spark Output_ict" width="60" outputKey="msc_ict" charset="windows-1252" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_ICT_', $$FileRecords, '.dat')" type="SparkOutput" nodeKey="shape5">
+                <Inputs>
+                    <Input nodeOutput="Interconnect" nodeKey="shape4">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="msc" description="Generates The Primary Key" name="GenerateLongID" blockSize="100000" type="GenerateLongId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="msc_fingerprint">
+                <Field id="30" name="msc_id" nullable="false" type="integer"/>
+                <Field id="31" name="sts_id" nullable="false" type="integer"/>
+                <Field id="32" name="sfl_id" nullable="false" type="integer"/>
+                <Field id="33" name="msc_record_no" nullable="false" type="integer"/>
+                <Field id="34" name="msc_record_address" nullable="false" type="integer"/>
+                <Field id="35" name="msc_record_length" nullable="false" type="integer"/>
+                <Field id="36" name="msc_record_type" nullable="false" type="string"/>
+                <Field id="37" name="msc_filename" nullable="false" type="string"/>
+                <Field id="38" name="msc_duplicate_hashcode" nullable="true" type="integer"/>
+                <Field id="39" name="msc_duplicate_fl" nullable="false" type="boolean"/>
+                <Field id="40" name="msc_event_type" nullable="true" type="string"/>
+                <Field id="41" name="msc_rec_type_name" nullable="true" type="string"/>
+                <Field id="42" name="msc_call_type" nullable="true" type="string"/>
+                <Field id="43" name="msc_a_number" nullable="true" type="string"/>
+                <Field id="44" name="msc_a_number_normalized" nullable="true" type="string"/>
+                <Field id="45" name="msc_b_number" nullable="true" type="string"/>
+                <Field id="46" name="msc_b_number_normalized" nullable="true" type="string"/>
+                <Field id="47" name="msc_c_number" nullable="true" type="string"/>
+                <Field id="48" name="msc_c_number_normalized" nullable="true" type="string"/>
+                <Field id="49" name="msc_roaming_number" nullable="true" type="string"/>
+                <Field id="50" name="msc_start_dttm" nullable="false" type="datetime"/>
+                <Field id="51" name="msc_end_dttm" nullable="true" type="datetime"/>
+                <Field id="52" name="msc_duration" nullable="true" type="integer"/>
+                <Field id="53" name="msc_call_direction" nullable="true" type="string"/>
+                <Field id="54" name="msc_call_status" nullable="true" type="string"/>
+                <Field id="55" name="msc_subscriber_type" nullable="true" type="string"/>
+                <Field id="56" name="msc_imsi" nullable="true" type="string"/>
+                <Field id="57" name="msc_imei" nullable="true" type="string"/>
+                <Field id="58" name="msc_address" nullable="true" type="string"/>
+                <Field id="59" name="msc_record_sequence_no" nullable="true" type="integer"/>
+                <Field id="60" name="msc_ldc_indicator" nullable="true" type="integer"/>
+                <Field id="61" name="msc_ldc_sequence_no" nullable="true" type="integer"/>
+                <Field id="62" name="msc_ldc_correlation_id" nullable="true" type="string"/>
+                <Field id="63" name="msc_ldc_status" nullable="true" type="integer"/>
+                <Field id="64" name="msc_ldc_tag" nullable="true" type="string"/>
+                <Field id="65" name="msc_bearer_service" nullable="true" type="string"/>
+                <Field id="66" name="msc_cell_id" nullable="true" type="string"/>
+                <Field id="67" name="msc_roaming_partner" nullable="true" type="string"/>
+                <Field id="68" name="msc_switch_name" nullable="true" type="string"/>
+                <Field id="69" name="msc_inc_route" nullable="true" type="string"/>
+                <Field id="70" name="msc_inc_operator_name" nullable="true" type="string"/>
+                <Field id="71" name="msc_out_route" nullable="true" type="string"/>
+                <Field id="72" name="msc_out_operator_name" nullable="true" type="string"/>
+                <Field id="73" name="msc_smsc_address" nullable="true" type="string"/>
+                <Field id="74" name="msc_lrn" nullable="true" type="string"/>
+                <Field id="75" name="msc_is_interconnect" nullable="true" type="boolean"/>
+                <Field id="76" name="msc_is_roaming" nullable="true" type="boolean"/>
+                <Field id="77" name="msc_part_key" nullable="true" type="integer"/>
+                <Field id="78" name="msc_extra1" nullable="true" type="string"/>
+                <Field id="79" name="msc_extra2" nullable="true" type="string"/>
+                <Field id="80" name="msc_extra3" nullable="true" type="string"/>
+                <Field id="81" name="msc_extra4" nullable="true" type="string"/>
+                <Field id="82" name="msc_extra5" nullable="true" type="string"/>
+                <Field id="83" name="msc_extra6" nullable="true" type="string"/>
+                <Field id="84" name="msc_extra7" nullable="true" type="string"/>
+                <Field id="85" name="msc_extra8" nullable="true" type="string"/>
+                <Field id="86" name="msc_extra9" nullable="true" type="string"/>
+                <Field id="87" name="msc_extra10" nullable="true" type="string"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

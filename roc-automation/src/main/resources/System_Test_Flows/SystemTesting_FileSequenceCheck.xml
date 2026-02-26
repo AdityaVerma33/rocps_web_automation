@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="File Sequence Check ST" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Measures_Audits_OR.properties,Users_OR.properties,CM_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="File Sequence Check ST" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testPrerequisite3" />
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testRun" />
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testVerifyCase" />
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testVerifyResult" /> 
+		</classes>
+	</test>
+</suite>

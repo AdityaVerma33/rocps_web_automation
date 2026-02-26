@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Offline LDC ST" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value=""></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="Offline LDC ST" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.systemtesting.offlineldc.testPrerequisite" />
+	    	<class name="com.subex.automation.testcases.systemtesting.offlineldc.testRun1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.offlineldc.testRun2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.offlineldc.testRun3" />
+		</classes>
+	</test>
+</suite>

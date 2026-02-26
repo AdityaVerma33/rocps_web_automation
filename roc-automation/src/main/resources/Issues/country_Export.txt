@@ -1,0 +1,247 @@
+﻿Object Id	ctr_iso_cd	ctr_name	system_generated_fl	ctr_delete_fl	ctr_dial_code	ctr_version_id	ptn_id
+1	AF	Afghanistan	false	false	93	1	1
+2	AL	Albania	false	false	355	1	1
+3	DZ	Algeria	false	false	213	1	1
+4	AS	American Samoa	false	false	684	1	1
+5	AD	Andorra	false	false	376	1	1
+6	AO	Angola	false	false	244	1	1
+7	AI	Anguilla	false	false	264	1	1
+8	AQ	Antarctica	false	false	672	1	1
+9	AG	Antigua and Barbuda	false	false	268	1	1
+10	AR	Argentina	false	false	54	1	1
+11	AM	Armenia	false	false	374	1	1
+12	AW	Aruba	false	false	297	1	1
+13	AU	Australia	false	false	61	1	1
+14	AT	Austria	false	false	43	1	1
+15	AZ	Azerbaidjan	false	false	994	1	1
+16	BS	Bahamas	false	false	242	1	1
+17	BH	Bahrain	false	false	973	1	1
+18	BD	Bangladesh	false	false	880	1	1
+19	BB	Barbados	false	false	246	1	1
+20	BY	Belarus	false	false	375	1	1
+21	BE	Belgium	false	false	32	1	1
+22	BZ	Belize	false	false	501	1	1
+23	BJ	Benin	false	false	229	1	1
+24	BM	Bermuda	false	false	1441	1	1
+25	BT	Bhutan	false	false	975	1	1
+26	BO	Bolivia	false	false	591	1	1
+27	BA	Bosnia-Herzegovina	false	false	387	1	1
+28	BW	Botswana	false	false	267	1	1
+29	BR	Brazil	false	false	55	1	1
+30	BN	Brunei Darussalam	false	false	673	1	1
+31	BG	Bulgaria	false	false	359	1	1
+32	BF	Burkina Faso	false	false	226	1	1
+33	BI	Burundi	false	false	257	1	1
+34	KH	Cambodia	false	false	855	1	1
+35	CM	Cameroon	false	false	237	1	1
+36	CA	Canada	false	false	1	1	1
+37	CV	Cape Verde	false	false	238	1	1
+38	KY	Cayman Islands	false	false	345	1	1
+39	CF	Central African Republic	false	false	236	1	1
+40	TD	Chad	false	false	235	1	1
+41	CL	Chile	false	false	56	1	1
+42	CN	China	false	false	86	1	1
+43	CO	Colombia	false	false	57	1	1
+44	KM	Comoros	false	false	269	1	1
+45	CG	Congo	false	false	242	1	1
+46	CK	Cook Islands	false	false	682	1	1
+47	CR	Costa Rica	false	false	506	1	1
+48	HR	Croatia	false	false	385	1	1
+49	CU	Cuba	false	false	53	1	1
+50	CY	Cyprus	false	false	357	1	1
+51	CZ	Czech Republic	false	false	420	1	1
+52	DK	Denmark	false	false	45	1	1
+53	A1	Diego Garcia Audiotext	false	false	246	1	1
+54	DJ	Djibouti	false	false	253	1	1
+55	DM	Dominica	false	false	767	1	1
+56	DO	Dominican Republic	false	false	809	1	1
+57	EC	Ecuador	false	false	593	1	1
+58	EG	Egypt	false	false	20	1	1
+59	SV	El Salvador	false	false	503	1	1
+60	GQ	Equatorial Guinea	false	false	240	1	1
+61	EE	Estonia	false	false	372	1	1
+62	ET	Ethiopia	false	false	251	1	1
+63	FK	Falkland Islands	false	false	500	1	1
+64	FO	Faroe Islands	false	false	298	1	1
+65	FJ	Fiji	false	false	679	1	1
+66	FI	Finland	false	false	358	1	1
+67	CS	Former Czechoslovakia	false	false	420	1	1
+68	SU	Former USSR	false	false	7	1	1
+69	FR	France	false	false	33	1	1
+70	GF	French Guyana	false	false	594	1	1
+71	TF	French Southern Territories	false	false	689	1	1
+72	GA	Gabon	false	false	241	1	1
+73	GM	Gambia	false	false	220	1	1
+74	GE	Georgia	false	false	995	1	1
+75	DE	Germany	false	false	49	1	1
+76	GH	Ghana	false	false	233	1	1
+77	GI	Gibraltar	false	false	350	1	1
+78	GB	Great Britain	false	false	44	1	1
+79	GR	Greece	false	false	30	1	1
+80	GL	Greenland	false	false	299	1	1
+81	GD	Grenada	false	false	473	1	1
+82	GP	Guadeloupe (French)	false	false	590	1	1
+83	GU	Guam (USA)	false	false	671	1	1
+84	GT	Guatemala	false	false	502	1	1
+85	GN	Guinea	false	false	224	1	1
+86	GW	Guinea Bissau	false	false	245	1	1
+87	GY	Guyana	false	false	592	1	1
+88	HT	Haiti	false	false	509	1	1
+89	HN	Honduras	false	false	504	1	1
+90	HK	Hong Kong	false	false	852	1	1
+91	HU	Hungary	false	false	36	1	1
+92	IS	Iceland	false	false	354	1	1
+93	IN	India	false	false	91	1	1
+94	ID	Indonesia	false	false	62	1	1
+95	IR	Iran	false	false	98	1	1
+96	IQ	Iraq	false	false	964	1	1
+97	IE	Ireland	false	false	353	1	1
+98	IL	Israel	false	false	972	1	1
+99	IT	Italy	false	false	39	1	1
+100	CI	Ivory Coast (Cote D'Ivoire)	false	false	225	1	1
+101	JM	Jamaica	false	false	876	1	1
+102	JP	Japan	false	false	81	1	1
+103	JO	Jordan	false	false	962	1	1
+104	KZ	Kazakhstan	false	false	7	1	1
+105	KE	Kenya	false	false	254	1	1
+106	KI	Kiribati	false	false	686	1	1
+107	KW	Kuwait	false	false	965	1	1
+108	LA	Laos	false	false	856	1	1
+109	LV	Latvia	false	false	371	1	1
+110	LB	Lebanon	false	false	961	1	1
+111	LS	Lesotho	false	false	266	1	1
+112	LR	Liberia	false	false	231	1	1
+113	LY	Libya	false	false	218	1	1
+114	LI	Liechtenstein	false	false	41	1	1
+115	LT	Lithuania	false	false	370	1	1
+116	LU	Luxembourg	false	false	351	1	1
+117	MO	Macau	false	false	853	1	1
+118	MK	Macedonia	false	false	389	1	1
+119	MG	Madagascar	false	false	261	1	1
+120	MW	Malawi	false	false	265	1	1
+121	MY	Malaysia	false	false	60	1	1
+122	MV	Maldives	false	false	960	1	1
+123	ML	Mali	false	false	223	1	1
+124	MT	Malta	false	false	356	1	1
+125	MH	Marshall Islands	false	false	692	1	1
+126	MQ	Martinique (French)	false	false	596	1	1
+127	MR	Mauritania	false	false	222	1	1
+128	MU	Mauritius	false	false	230	1	1
+129	YT	Mayotte	false	false	269	1	1
+130	MX	Mexico	false	false	52	1	1
+131	FM	Micronesia	false	false	691	1	1
+132	MD	Moldavia	false	false	976	1	1
+133	MN	Mongolia	false	false	976	1	1
+134	MS	Montserrat	false	false	664	1	1
+135	MA	Morocco	false	false	212	1	1
+136	MZ	Mozambique	false	false	258	1	1
+137	MM	Myanmar	false	false	95	1	1
+138	NA	Namibia	false	false	264	1	1
+139	NR	Nauru	false	false	674	1	1
+140	NP	Nepal	false	false	977	1	1
+141	NL	Netherlands	false	false	31	1	1
+142	AN	Netherlands Antilles	false	false	599	1	1
+143	NC	New Caledonia (French)	false	false	687	1	1
+144	NZ	New Zealand	false	false	64	1	1
+145	NI	Nicaragua	false	false	505	1	1
+146	NE	Niger	false	false	227	1	1
+147	NG	Nigeria	false	false	234	1	1
+148	NU	Niue	false	false	683	1	1
+149	NF	Norfolk Island	false	false	72	1	1
+150	KP	North Korea	false	false	850	1	1
+151	MP	Northern Mariana Islands	false	false	670	1	1
+152	NO	Norway	false	false	47	1	1
+153	OM	Oman	false	false	968	1	1
+154	PK	Pakistan	false	false	92	1	1
+155	PW	Palau	false	false	680	1	1
+156	PA	Panama	false	false	507	1	1
+157	PG	Papua New Guinea	false	false	675	1	1
+158	PY	Paraguay	false	false	595	1	1
+159	PE	Peru	false	false	51	1	1
+160	PH	Philippines	false	false	63	1	1
+161	PL	Poland	false	false	48	1	1
+162	PF	Polynesia (French)	false	false	689	1	1
+163	PT	Portugal	false	false	351	1	1
+164	PR	Puerto Rico	false	false	787	1	1
+165	QA	Qatar	false	false	974	1	1
+166	RE	Reunion (French)	false	false	262	1	1
+167	RO	Romania	false	false	40	1	1
+168	RU	Russian Federation	false	false	7	1	1
+169	RW	Rwanda	false	false	250	1	1
+170	SH	Saint Helena	false	false	290	1	1
+171	KN	Saint Kitts & Nevis Anguilla	false	false	869	1	1
+172	LC	Saint Lucia	false	false	758	1	1
+173	PM	Saint Pierre and Miquelon	false	false	508	1	1
+174	ST	Saint Tome (Sao Tome) and Prin	false	false	239	1	1
+175	VC	Saint Vincent & Grenadines	false	false	784	1	1
+176	WS	Samoa	false	false	685	1	1
+177	SM	San Marino	false	false	378	1	1
+178	SA	Saudi Arabia	false	false	966	1	1
+179	SN	Senegal	false	false	221	1	1
+180	SC	Seychelles	false	false	248	1	1
+181	SL	Sierra Leone	false	false	232	1	1
+182	SG	Singapore	false	false	65	1	1
+183	SK	Slovak Republic	false	false	421	1	1
+184	SI	Slovenia	false	false	386	1	1
+185	SB	Solomon Islands	false	false	677	1	1
+186	SO	Somalia	false	false	252	1	1
+187	ZA	South Africa	false	false	27	1	1
+188	KR	South Korea	false	false	82	1	1
+189	ES	Spain	false	false	34	1	1
+190	LK	Sri Lanka	false	false	94	1	1
+191	SD	Sudan	false	false	249	1	1
+192	SR	Suriname	false	false	597	1	1
+193	SZ	Swaziland	false	false	268	1	1
+194	SE	Sweden	false	false	46	1	1
+195	CH	Switzerland	false	false	41	1	1
+196	SY	Syria	false	false	963	1	1
+197	TJ	Tadjikistan	false	false	992	1	1
+198	TW	Taiwan	false	false	886	1	1
+199	TZ	Tanzania	false	false	255	1	1
+200	TH	Thailand	false	false	66	1	1
+201	TG	Togo	false	false	228	1	1
+202	TO	Tonga	false	false	676	1	1
+203	TT	Trinidad and Tobago	false	false	868	1	1
+204	TN	Tunisia	false	false	21	1	1
+205	TR	Turkey	false	false	90	1	1
+206	TM	Turkmenistan	false	false	993	1	1
+207	TC	Turks and Caicos Islands	false	false	649	1	1
+208	TV	Tuvalu	false	false	688	1	1
+209	UG	Uganda	false	false	256	1	1
+210	UA	Ukraine	false	false	380	1	1
+211	AE	United Arab Emirates	false	false	971	1	1
+212	US	United States	false	false	1	1	1
+213	ZZ	Unknown	false	false	00	1	1
+214	UY	Uruguay	false	false	598	1	1
+215	UZ	Uzbekistan	false	false	998	1	1
+216	VU	Vanuatu	false	false	678	1	1
+217	VA	Vatican City State	false	false	379	1	1
+218	VE	Venezuela	false	false	58	1	1
+219	VN	Vietnam	false	false	84	1	1
+220	VG	Virgin Islands (British)	false	false	284	1	1
+221	VI	Virgin Islands (USA)	false	false	340	1	1
+222	WF	Wallis and Futuna Islands	false	false	681	1	1
+223	YE	Yemen	false	false	967	1	1
+224	YU	Yugoslavia	false	false	381	1	1
+225	ZR	Zaire	false	false	243	1	1
+226	ZM	Zambia	false	false	260	1	1
+227	ZW	Zimbabwe	false	false	263	1	1
+
+
+Context Information
+Export Type: 	All Rows
+Exported by: 	Root ( System Root )
+Exported on: 	06/22/2020 14:50:28
+Search Screen Name: 	Sql Table Search
+Search Screen Caption: 	country
+Search Filters: 
+Include: 	Non Deleted Items
+Sql Query : select  ctr.ctr_id, 
+        ctr.ctr_iso_cd, 
+        ctr.ctr_name, 
+        ctr.system_generated_fl, 
+        ctr.ctr_delete_fl, 
+        ctr.ctr_dial_code, 
+        ctr.ctr_version_id, 
+        ctr.ptn_id
+from    country ctr

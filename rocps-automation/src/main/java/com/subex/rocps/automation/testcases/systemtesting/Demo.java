@@ -1,0 +1,119 @@
+package com.subex.rocps.automation.testcases.systemtesting;
+
+import org.testng.annotations.Test;
+
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.Account;
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.Agent;
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.BillProfile;
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.Franchise;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+import com.subex.automation.helpers.application.LoginHelper;
+import com.subex.automation.helpers.component.FileHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class Demo extends PSAcceptanceTest
+{
+
+	String path = System.getProperty( "user.dir" ) + "\\src\\main\\resources\\";
+	String workBookName = "Demo.xlsx";
+	String sheetName = "Demo";
+
+	@Test( priority = 1, description = "password change" )
+	public void changePassword() throws Exception
+	{
+		try
+		{
+			String newPassword = configProp.getApplicationPassword();
+			if ( newPassword.equals( "welcome" ) )
+			{
+				newPassword = "welcome1";
+				FileHelper.updatePropertyFile( configFile, "applicationPassword", newPassword );
+				Thread.sleep( 1000 );
+			}
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	@Test( priority = 1, description = "bank creation" )
+	public void createBank() throws Exception
+	{
+		try
+		{
+			Franchise bankObj = new Franchise( path, workBookName, sheetName, "Bank" );
+			bankObj.franchiseCreation();
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	@Test( priority = 2, description = "agent creation", dependsOnMethods =
+	{ "createBank" } )
+	public void createAgent() throws Exception
+	{
+		try
+		{
+			Agent agentObj = new Agent( path, workBookName, sheetName, "Agent" );
+			agentObj.agentCreation();
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	@Test( priority = 3, description = "account creation", dependsOnMethods =
+	{ "createAgent" } )
+	public void createAccount() throws Exception
+	{
+		try
+		{
+			Account accObj = new Account( path, workBookName, sheetName, "Account" );
+			accObj.accountCreation();
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	@Test( priority = 4, description = "Create a bill profile", dependsOnMethods =
+	{ "createAccount" } )
+	public void createBillProfile() throws Exception
+	{
+		try
+		{
+			BillProfile bipObj = new BillProfile( path, workBookName, sheetName, "BillProfile" );
+			bipObj.billProfileCreation();
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	@Test( priority = 6, description = "reset password in property file to welcome" )
+	public void resetPassword() throws Exception
+	{
+		try
+		{
+			FileHelper.updatePropertyFile( configFile, "applicationPassword", "welcome" );
+			Thread.sleep( 1000 );
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+}

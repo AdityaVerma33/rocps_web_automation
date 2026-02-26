@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ETL etl_issues" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value=""></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="ETL etl_issues" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testASCII" />
+			<!-- <class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testASN1" /> -->
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testBinary" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testDatabaseParse" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test153957" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test138166" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test160257" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test143012" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test156583" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test156765" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test137221" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test144488" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test159123" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test136899" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test137530" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test142483" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test162872" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test139540" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test139548" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test139658" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test154031" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test159398" />
+		</classes>
+	</test>
+</suite>
