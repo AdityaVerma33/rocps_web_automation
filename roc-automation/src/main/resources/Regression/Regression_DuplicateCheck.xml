@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Duplicate XDR Regression" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value=""></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="Duplicate XDR Regression" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testPrerequisite" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testNew" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testSearch" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testEdit" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testDelete" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testCopy" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testExport" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testWithoutTagStatus" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testMultipleTableInstances" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestExecution" verbose="2" annotations="JDK" configfailurepolicy="skip">
+    <!-- Web application fixture -->
+    <listeners>
+          <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      </listeners>
+      <parameter name="config" value="psconfig.properties"></parameter>
+      <parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties,PSSprint_OR.properties"></parameter>
+      <parameter name="driverFile" value="SmokeTestDriver.xlsx"></parameter>
+    <test name="Testing" preserve-order="true">
+    <groups>
+            <dependencies>
+                  <group name="Scripts" depends-on="Setup" />
+            </dependencies>
+         </groups>
+        <classes>
+            <!--  <class name="com.subex.rocps.automation.testcases.systemtesting.Demo" /> -->
+			<class name="com.subex.rocps.sprintTestCase.bklg44.Dealcaseexex" />
+			<class name="com.subex.rocps.sprintTestCase.bklg13.bulkExportRequest" />
+			<class name="com.subex.rocps.sprintTestCase.bklg171.Roamingexex" />
+			<class name="com.subex.rocps.sprintTestCase.bklg113.TestCaseExecNRTRDERoamConf" />
+			<class name="com.subex.rocps.sprintTestCase.bklg114.HurExecution" />
+			<class name="com.subex.rocps.sprintTestCase.bklg280.RapInTestExecution" />
+			 <!-- <class name="com.subex.rocps.sprintTestCase.bklg207.bklg207TestCase" />-->
+			 <!--<class name="com.subex.rocps.sprintTestCase.bklg207.TestExec" />-->
+			 <!-- <class name="com.subex.rocps.sprintTestCase.bklg207.BillReportTestExec" />-->
+        </classes>
+    </test>
+</suite>

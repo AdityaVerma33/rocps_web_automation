@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="1.0.14872.0" version="9">
+    <Decoder name="Database_Parse" type="database">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="itrSequenceOf">
+                <Logic recordType="CDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType generate="record" root="false" name="CDR" type="databaserecord">
+            <itrField trimQuotes="true" id="0" generate="field" name="Record_Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </itrField>
+            <itrField trimQuotes="true" id="1" generate="field" name="Caller_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="2" generate="field" name="Called_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="3" generate="field" name="Time_Stamp" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="dd/MM/yyyy HH:mm:ss" type="datetime"/>
+            </itrField>
+            <itrField trimQuotes="true" id="4" generate="field" name="Call_Duration" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="HHmmss" type="duration"/>
+            </itrField>
+            <itrField trimQuotes="true" id="5" generate="field" name="Sequence_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </itrField>
+            <itrField trimQuotes="true" id="6" generate="field" name="Amount" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="decimal"/>
+            </itrField>
+            <itrField trimQuotes="true" id="7" generate="field" name="In_Route" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="8" generate="field" name="Out_Route" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="9" generate="field" name="Extra1" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="10" generate="field" name="Extra2" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="11" generate="field" name="Extra3" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="12" generate="field" name="Extra4" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="13" generate="field" name="Extra5" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes/>
+        <DynamicFunctions/>
+        <RecordTypes>
+            <RecordType name="database_cdr_input">
+                <Field id="14" name="CDR_ID" nullable="true" type="integer"/>
+                <Field id="0" name="Record_Type" nullable="true" type="integer"/>
+                <Field id="1" name="Caller_Number" nullable="true" type="string"/>
+                <Field id="2" name="Called_Number" nullable="true" type="string"/>
+                <Field id="3" name="Time_Stamp" nullable="true" type="datetime"/>
+                <Field id="4" name="Call_Duration" nullable="true" type="integer"/>
+                <Field id="5" name="Sequence_Number" nullable="true" type="integer"/>
+                <Field name="Amount" nullable="true" type="decimal" id="6"/>
+                <Field id="7" name="In_Route" nullable="true" type="string"/>
+                <Field id="8" name="Out_Route" nullable="true" type="string"/>
+                <Field id="9" name="Extra1" nullable="true" type="string"/>
+                <Field id="10" name="Extra2" nullable="true" type="string"/>
+                <Field id="11" name="Extra3" nullable="true" type="string"/>
+                <Field id="12" name="Extra4" nullable="true" type="string"/>
+                <Field id="13" name="Extra5" nullable="true" type="string"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

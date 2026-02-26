@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diamond application="spark" softwareVersion="2.4.589.0" version="51">
+    <Decoder name="Tapin" type="ascii">
+        <RecordType name="Root" root="true" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="Record" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType allowEOFTerm="false" delimiter="comma" generate="record" name="Record" parseDoubleQuotes="false" parseQuotes="false" root="false" terminator="lf" type="delimitedascii">
+            <Field encoding="windows-1252" generate="field" id="0" name="Event_Type" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="1" name="Record_Type" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="2" name="Calling_Number" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="3" name="Called_Number" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="4" name="Datetime" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string">
+                <FieldConverter format="yyyy-MM-dd HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field encoding="windows-1252" generate="field" id="5" name="Duration" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="6" name="Volume" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="7" name="sender_gmt_offset_sign" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="8" name="sender_gmt_offset_sec" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="9" name="subscriber_type" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="10" name="imsi" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="11" name="country_name" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="12" name="operator_name" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="13" name="APN_ID" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" name="Record" nodeKey="shape1" recordType="Record" type="Record" width="50" xPos="110" yPos="105">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output"/>
+                </Outputs>
+            </Node>
+            <Node UsagePartitionId="GetUsagePartitionId('Measure Usage Group', tap_start_dttm_norm, SecondPart(tap_start_dttm_norm))" charset="windows-1252" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" height="50" name="Spark Output" nodeKey="shape3" outputKey="tapin" type="SparkOutput" unicode="false" width="60" xPos="370" yPos="105">
+                <Inputs>
+                    <Input nodeKey="shape2" nodeOutput="Output">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" name="Mapping" nodeKey="shape2" recordType="tapin_fingerprint" type="Mapping" width="60" xPos="230" yPos="95">
+                <Inputs>
+                    <Input nodeKey="shape1" nodeOutput="Output">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="Global_ID()" target="tap_id"/>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="$$RecordType" target="tap_record_type"/>
+                    <Mapping expression="$$RecordAddress" target="tap_record_address"/>
+                    <Mapping expression="$$RecordLength" target="tap_record_length"/>
+                    <Mapping expression="$$RecordNumber" target="tap_record_number"/>
+                    <Mapping expression="Hash(Calling_Number, Datetime)" target="tap_duplicate_hashcode"/>
+                    <Mapping expression="false" target="tap_duplicate_fl"/>
+                    <Mapping expression="$$Filename" target="tap_filename"/>
+                    <Mapping expression="Event_Type" target="tap_event_type_name"/>
+                    <Mapping expression="Record_Type" target="tap_rec_type_name"/>
+                    <Mapping expression="Calling_Number" target="tap_a_number"/>
+                    <Mapping expression="Calling_Number" target="tap_a_number_normalised"/>
+                    <Mapping expression="Called_Number" target="tap_b_number"/>
+                    <Mapping expression="Called_Number" target="tap_b_number_normalised"/>
+                    <Mapping expression="Datetime" target="tap_time_stamp"/>
+                    <Mapping expression="Datetime" target="tap_corrected_timestamp"/>
+                    <Mapping expression="ToInteger(Duration)" target="tap_duration"/>
+                    <Mapping expression="sender_gmt_offset_sign" target="tap_sender_gmt_offset_sign"/>
+                    <Mapping expression="ToInteger(sender_gmt_offset_sec)" target="tap_sender_gmt_offset_sec"/>
+                    <Mapping expression="subscriber_type" target="tap_subscriber_type"/>
+                    <Mapping expression="imsi" target="tap_imsi"/>
+                    <Mapping target="tap_in_volume"/>
+                    <Mapping expression="ToInteger(Volume)" target="tap_data_volume"/>
+                    <Mapping expression="country_name" target="tap_roamer_country_name"/>
+                    <Mapping expression="operator_name" target="tap_roamer_operator_name"/>
+                    <Mapping target="tap_tapfile_sender_code"/>
+                    <Mapping expression="HourPart(Datetime)" target="tap_part_key"/>
+                    <Mapping expression="APN_ID" target="tap_apn_network_id"/>
+                    <Mapping target="tap_call_type_name"/>
+                    <Mapping expression="Calling_Number" target="tap_anumber_normalized"/>
+                    <Mapping expression="Called_Number" target="tap_bnumber_normalized"/>
+                    <Mapping expression="Datetime" target="tap_start_dttm"/>
+                    <Mapping expression="Datetime" target="tap_start_dttm_norm"/>
+                    <Mapping target="tap_charging_id"/>
+                    <Mapping target="tap_volume_in"/>
+                    <Mapping expression="ToDecimal(Volume)" target="tap_total_volume"/>
+                    <Mapping expression="CountryCode_country_code(If(Equal(Substring(Calling_Number, 0, 1),'9'), 'India', 'China'))" target="tap_tapfile_from_code"/>
+                    <Mapping expression="country_name" target="tap_roam_plmn"/>
+                    <Mapping expression="operator_name" target="tap_roam_operator"/>
+                    <Mapping expression="APN_ID" target="tap_apn"/>
+                    <Mapping expression="If(Equal(Event_Type, 'DATA'), Multiply(ToInteger(Duration), 0.20), Multiply(ToInteger(Volume), 0.5))" target="tap_charge"/>
+                    <Mapping expression="CountryCode_country_code(If(Equal(Substring(Called_Number, 0, 1),'9'), 'India', 'China'))" target="tap_tapfile_to_code"/>
+                </Mappings>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction blockSize="1000000" description="Global_ID" name="Global_ID" objectKey="bill" type="GenerateId"/>
+            <DynamicFunction allowDuplicates="true" name="CountryCode" tableName="r_tapin_high_risk_dest" type="SQLKeyCacheLookup">
+                <LookupKeys>
+                    <LookupKey key="country_name"/>
+                </LookupKeys>
+                <ResultCols>
+                    <ResultCol duplicates="false" name="country_code"/>
+                </ResultCols>
+            </DynamicFunction>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="tapin_fingerprint">
+                <Field id="14" name="tap_id" nullable="false" type="integer"/>
+                <Field id="15" name="sts_id" nullable="false" type="integer"/>
+                <Field id="16" name="sfl_id" nullable="false" type="integer"/>
+                <Field id="17" name="tap_record_number" nullable="false" type="integer"/>
+                <Field id="18" name="tap_record_address" nullable="false" type="integer"/>
+                <Field id="19" name="tap_record_length" nullable="false" type="integer"/>
+                <Field id="20" name="tap_record_type" nullable="false" type="string"/>
+                <Field id="21" name="tap_filename" nullable="false" type="string"/>
+                <Field id="22" name="tap_duplicate_hashcode" nullable="true" type="integer"/>
+                <Field id="23" name="tap_duplicate_fl" nullable="false" type="boolean"/>
+                <Field id="24" name="tap_event_type_name" nullable="true" type="string"/>
+                <Field id="25" name="tap_rec_type_name" nullable="true" type="string"/>
+                <Field id="26" name="tap_call_type_name" nullable="true" type="string"/>
+                <Field id="27" name="tap_a_number" nullable="true" type="string"/>
+                <Field id="28" name="tap_anumber_normalized" nullable="true" type="string"/>
+                <Field id="29" name="tap_b_number" nullable="true" type="string"/>
+                <Field id="30" name="tap_bnumber_normalized" nullable="true" type="string"/>
+                <Field id="31" name="tap_subscriber_type" nullable="true" type="string"/>
+                <Field id="32" name="tap_start_dttm" nullable="true" type="datetime"/>
+                <Field id="33" name="tap_start_dttm_norm" nullable="false" type="datetime"/>
+                <Field id="34" name="tap_duration" nullable="true" type="integer"/>
+                <Field id="35" name="tap_charging_id" nullable="true" type="string"/>
+                <Field id="36" name="tap_call_status" nullable="true" type="string"/>
+                <Field id="37" name="tap_subscriber_id" nullable="true" type="string"/>
+                <Field id="38" name="tap_roam_region" nullable="true" type="string"/>
+                <Field id="39" name="tap_roam_operator" nullable="true" type="string"/>
+                <Field id="40" name="tap_home_plmn" nullable="true" type="string"/>
+                <Field id="41" name="tap_roam_plmn" nullable="true" type="string"/>
+                <Field id="42" name="tap_apn" nullable="true" type="string"/>
+                <Field id="43" name="tap_pdp_address" nullable="true" type="string"/>
+                <Field id="44" name="tap_imsi" nullable="true" type="string"/>
+                <Field id="45" name="tap_imei" nullable="true" type="string"/>
+                <Field id="46" name="tap_teleservice_code" nullable="true" type="string"/>
+                <Field id="47" name="tap_bearerservice_code" nullable="true" type="string"/>
+                <Field id="48" name="tap_volume_in" nullable="true" type="decimal"/>
+                <Field id="49" name="tap_volume_out" nullable="true" type="decimal"/>
+                <Field id="50" name="tap_total_volume" nullable="true" type="decimal"/>
+                <Field id="51" name="tap_tapfile_from_code" nullable="true" type="string"/>
+                <Field id="52" name="tap_tapfile_to_code" nullable="true" type="string"/>
+                <Field id="53" name="tap_cell_id" nullable="true" type="string"/>
+                <Field id="54" name="tap_currency" nullable="true" type="integer"/>
+                <Field id="55" name="tap_sdr" nullable="true" type="decimal"/>
+                <Field id="56" name="tap_decimal_places" nullable="true" type="string"/>
+                <Field id="57" name="tap_exchange_rate" nullable="true" type="string"/>
+                <Field id="58" name="tap_tax_value" nullable="true" type="decimal"/>
+                <Field id="59" name="tap_surcharge" nullable="true" type="decimal"/>
+                <Field id="60" name="tap_chargeable_units" nullable="true" type="decimal"/>
+                <Field id="61" name="tap_charge" nullable="true" type="decimal"/>
+                <Field id="62" name="tap_system" nullable="true" type="string"/>
+                <Field id="63" name="tap_part_key" nullable="true" type="integer"/>
+                <Field id="64" name="tap_high_risk_dest" nullable="true" type="string"/>
+                <Field id="65" name="tap_extra_01" nullable="true" type="string"/>
+                <Field id="66" name="tap_extra_02" nullable="true" type="string"/>
+                <Field id="67" name="tap_extra_03" nullable="true" type="string"/>
+                <Field id="68" name="tap_extra_04" nullable="true" type="string"/>
+                <Field id="69" name="tap_extra_05" nullable="true" type="string"/>
+                <Field id="70" name="tap_extra_06" nullable="true" type="string"/>
+                <Field id="71" name="tap_extra_07" nullable="true" type="string"/>
+                <Field id="72" name="tap_extra_08" nullable="true" type="string"/>
+                <Field id="73" name="tap_extra_09" nullable="true" type="string"/>
+                <Field id="74" name="tap_extra_10" nullable="true" type="string"/>
+            </RecordType>
+			<RecordType name="r_tapin_high_risk_dest">
+				<Field name="ctr_id" nullable="false" type="integer"/>
+				<Field name="country_name" nullable="false" type="string"/>
+				<Field name="country_code" nullable="false" type="string"/>
+			</RecordType>
+		</RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

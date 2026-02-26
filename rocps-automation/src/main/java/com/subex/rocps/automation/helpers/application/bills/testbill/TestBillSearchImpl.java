@@ -1,0 +1,50 @@
+package com.subex.rocps.automation.helpers.application.bills.testbill;
+
+import java.util.Map;
+
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CalendarHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.componentHelpers.SearchHelper;
+import com.subex.rocps.automation.helpers.application.filters.GridFilterSearchHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+public class TestBillSearchImpl extends PSAcceptanceTest {
+
+	protected String account;
+	protected String billProfile;
+	protected String billperiodFrom;
+	String billStatus;
+	public String clientPartition;
+
+	public PSGenericHelper genericHelperObj = new PSGenericHelper();
+
+	public Map<String, String> testBillMap = null;
+
+	public boolean filterOperations(String accName, String billProfileName, String billPeriodVal) throws Exception {
+		ButtonHelper.click("ClearButton");
+		GridFilterSearchHelper gridSearchObj = new GridFilterSearchHelper();
+		gridSearchObj.accountFilter("PS_SearchFilter_BillAction_accountEntityfilter",
+				"PS_SearchFilter_BillAction_account_txtID", accName, "Account");
+		gridSearchObj.testbillProfileAdvanceSearch("PS_SearchFilter_TestBill_billprofile_EntityFilter", "Bill Profile",
+				billProfileName);
+		GenericHelper.waitForLoadmask();
+		calender("PS_SearchFilter_TestBill_Calender_Entityfilter");
+		
+		return GridHelper.isValuePresent("searchGrid", accName, "Account");
+	}
+
+	public void calender(String filterIconID) throws Exception {
+		SearchHelper searchHelper = new SearchHelper();
+		searchHelper.clickFilterIcon("SearchGrid", "Created");
+		CalendarHelper.setToday("PS_SearchFilter_TestBill_Calender_TxtID");
+		ButtonHelper.click("SearchButton");
+		GenericHelper.waitForLoadmask();
+		GridHelper.sortGrid("searchGrid", "Created");
+		GridHelper.sortGrid("searchGrid", "Created");		
+	}
+
+}

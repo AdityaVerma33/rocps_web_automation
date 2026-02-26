@@ -1,0 +1,1206 @@
+package com.subex.rocps.automation.helpers.application.system;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.testng.Assert;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+
+public class Streams extends PSAcceptanceTest
+{
+	ExcelReader excelReader = new ExcelReader();
+	StreamImpl strImplObj = new StreamImpl();
+	StreamStagesImpl strStageImplObj = new StreamStagesImpl();
+	PSGenericHelper genericHelperObj = new PSGenericHelper();
+	String streamName = null;
+	String partition = null;
+
+	public void voiceStreamNewConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+
+			strImplObj.addStreamStageButton();
+			strStageImplObj.parseStreamStage( path, workbook, sheet, "parse", occurence );
+			//strImplObj.addStreamStageButton();
+			strStageImplObj.dataLoadStreamStage( path, workbook, sheet, "dataload", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.matchandRateStreamStage( path, workbook, sheet, "mnr", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.masterTaskStreamStage( path, workbook, sheet, "master", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.aggregationStreamStage( path, workbook, sheet, "aggregation", occurence );
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void contentStreamNewConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			//newStreamConfig(path, workbook, sheet, testCase, occurence);
+			strImplObj.addStreamStageButton();
+			strStageImplObj.parseStreamStage( path, workbook, sheet, "parse", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.masterTaskStreamStage( path, workbook, sheet, "master", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.matchandRateStreamStage( path, workbook, sheet, "mnr", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.dataLoadStreamStage( path, workbook, sheet, "dataload", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.aggregationStreamStage( path, workbook, sheet, "aggreagtion", occurence );
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void billingStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.creditBillingStreamStage( path, workbook, sheet, testCase, occurence );
+	}
+
+	public boolean newStreamConfig( String path, String workBookName, String sheetName, String testCase, int occurence ) throws Exception
+	{
+
+		HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, testCase );
+		streamName = map.get( "StreamName" ).get( 0 );
+		partition = map.get( "Partition" ).get( 0 );
+		NavigationHelper.navigateToScreen( "Streams" );
+		assertEquals( NavigationHelper.getScreenTitle(), "Stream Search" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		boolean flag = genericHelperObj.isGridTextValuePresent( "stmName", streamName, "Name" );
+		if ( !flag )
+		{
+			strImplObj.clickNewAction( streamName, partition );
+			strImplObj.validateScreenTitle();
+			TextBoxHelper.type( "Stream_Name", streamName );
+		}
+		else
+			Log4jHelper.logInfo( "Stream '" + streamName + "' is already present with name" + streamName );
+		return flag;
+	}
+
+	public boolean editStreamConfig( String path, String workBookName, String sheetName, String testCase, int occurence ) throws Exception
+	{
+		HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, testCase, occurence );
+		streamName = map.get( "StreamName" ).get( 0 );
+		partition = map.get( "Partition" ).get( 0 );
+		NavigationHelper.navigateToScreen( "Streams" );
+		assertEquals( NavigationHelper.getScreenTitle(), "Stream Search" );
+		boolean flag = genericHelperObj.isGridTextValuePresent( "stmName", streamName, "Name" );
+		if ( flag )
+		{
+			GridHelper.clickRow( "SearchGrid", streamName, "Name" );
+			strImplObj.clickEditAction( streamName );
+			assertEquals( NavigationHelper.getScreenTitle(), "Edit Stream" );
+		}
+		else
+			Log4jHelper.logInfo( "Stream '" + streamName + "' is not available with name" + streamName );
+		return flag;
+	}
+
+	public void rateSheetStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.rateSheetImportStreamStage( path, workbook, sheet, "RateSheetImportStreamStage", occurence );
+		strStageImplObj.autoRateSheetImportStreamStage( path, workbook, sheet, "AutoRateSheetImportStreamStage", occurence );
+		strStageImplObj.autoRateSheetPollImportStreamStage( path, workbook, sheet, "AutoRateSheetPollImportStreamStage", occurence );
+		strStageImplObj.generateReportRSStreamStage( path, workbook, sheet, "GenerateRSReport", occurence );
+		strStageImplObj.rateSheetAuthorizeStreamStage( path, workbook, sheet, "RateSheetAuthorizationTask", occurence );
+
+	}
+
+	public void reaggregationStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.reAggregationStreamStage( path, workbook, sheet, "ReAggregation", occurence );
+		strStageImplObj.reAggregationMasterTaskStreamStage( path, workbook, sheet, "ReAggregationMasterTask", occurence );
+	}
+
+	/*
+	 * This method is for prepayments stream config
+	 */
+	public void prepaymentsStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.prepaymentsStreamStage( path, workbook, sheet, "Prepayments", occurence );
+		strStageImplObj.prepaymentsMasterTaskStreamStage( path, workbook, sheet, "PrepaymentsMasterTask", occurence );
+	}
+
+	public void carrierInvoiceStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.carrierInvoiceStreamStage( path, workbook, sheet, "CarrierInvoiceImport", occurence );
+		strStageImplObj.reconStreamStage( path, workbook, sheet, "Reconciliation", occurence );
+	}
+
+	public void rerateStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.rerateStreamStage( path, workbook, sheet, "Rerate", occurence );
+		strStageImplObj.rerateMasterStreamStage( path, workbook, sheet, "RerateMaster", occurence );
+		strStageImplObj.rerateDataLoadStreamStage( path, workbook, sheet, "RerateDataLoad", occurence );
+	}
+
+	/*
+	 * This method is for dealstream config
+	 */
+	public void dealStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.dealValidateStreamStage( path, workbook, sheet, "DealValidate", occurence );
+		strStageImplObj.dealAuthorizationStreamStage( path, workbook, sheet, "DealAuthorization", occurence );
+		strStageImplObj.dealImportStreamStage( path, workbook, sheet, "DealImport", occurence );
+		strStageImplObj.dealCheckIn( path, workbook, sheet, "DealCheckIn", occurence );
+		strStageImplObj.dealCheckOut( path, workbook, sheet, "DealCheckOut", occurence );
+		strStageImplObj.dealAutoRenew( path, workbook, sheet, "DealAutoRenew", occurence );
+		strStageImplObj.bilteralMasterStreamStage( path, workbook, sheet, "DealBilateralMasterTask", occurence );
+		strStageImplObj.bilteralStreamStage( path, workbook, sheet, "DealBilaterals", occurence );
+		strStageImplObj.mergerStreamStage( path, workbook, sheet, "DealsMergerTask", occurence );
+		strStageImplObj.rocpsDataLoadTaskStreamStage( path, workbook, sheet, "DealsROCPSDataLoad", occurence );
+		strStageImplObj.shortFallandCapsStreamStage( path, workbook, sheet, "DealsShortFallandCaps", occurence );
+		strStageImplObj.rocpsDataLoadTaskStreamStage( path, workbook, sheet, "ROCPSDataLoad", occurence );
+
+	}
+
+	/*
+	 * This method is for accrual stream config
+	 */
+	public void accrualStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.accrualsOverview( path, workbook, sheet, "Accrual Overview", occurence );
+		strStageImplObj.accrualsOverviewDataLoad( path, workbook, sheet, "Accrual OverviewDL", occurence );
+		strStageImplObj.accrualShortFallandCapsStreamStage( path, workbook, sheet, "Accrual ShortfallandCaps", occurence );
+		strStageImplObj.accrualsOverviewDataLoad( path, workbook, sheet, "Accrual ShortFall And Caps Data Load - ROCPS", occurence );
+		strStageImplObj.accrualShortFallandCapsStreamStage( path, workbook, sheet, "Accruals", occurence );
+		strStageImplObj.accrualsOverviewDataLoad( path, workbook, sheet, "Accruals Data Load - ROCPS", occurence );
+		strStageImplObj.accrualMasterStreamStage( path, workbook, sheet, "Accruals Master Request", occurence );
+		strStageImplObj.accrualsOverviewDataLoad( path, workbook, sheet, "Accruals Merger Data Load - ROCPS", occurence );
+		strStageImplObj.accrualMasterStreamStage( path, workbook, sheet, "Accruals Master Request", occurence );
+		strStageImplObj.accrualMergerStreamStage( path, workbook, sheet, "Accruals Merger Task", occurence );
+		//strStageImplObj.accrualsOverviewDataLoad( path, workbook, sheet, "Estimation Data Load", occurence );
+		//	strStageImplObj.estimationTaskStreamStage( path, workbook, sheet, "DealsShortFallandCaps", occurence );	
+
+	}
+
+	/*
+	 * This method is to save stream
+	 */
+	public void saveStreamDetail() throws Exception
+	{
+		ButtonHelper.click( "streamDetail.save" );
+		GenericHelper.waitForLoadmask();
+		Assert.assertTrue( GridHelper.isValuePresent( "SearchGrid", streamName, "Name" ) );
+	}
+
+	/*
+	 * This method is to delete Stream
+	 */
+	public void streamDelete( String path, String workBookName, String sheetName, String testCase, int occurence ) throws Exception
+	{
+
+		HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, testCase );
+		streamName = map.get( "StreamName" ).get( 0 );
+		partition = map.get( "Partition" ).get( 0 );
+		NavigationHelper.navigateToScreen( "Streams" );
+		genericHelperObj.selectPartitionFilter( partition, "Non Deleted Items" );
+		boolean isStreamPresent = genericHelperObj.isGridTextValuePresent( "stmName", streamName, "Name" );
+		if ( isStreamPresent )
+		{
+			strImplObj.clickDeleteAction( streamName );
+			genericHelperObj.selectPartitionFilter( partition, "Deleted Items" );
+			assertTrue( GridHelper.isValuePresent( "SearchGrid", streamName, "Name" ), streamName );
+			Log4jHelper.logInfo( "Stream is deleted successfully : " + streamName );
+
+		}
+		else
+		{
+			Log4jHelper.logInfo( "Stream is not available : " + streamName );
+		}
+	}
+
+	/*
+	 * This method is to un delete Stream
+	 */
+	public void streamUnDelete( String path, String workBookName, String sheetName, String testCase, int occurence ) throws Exception
+	{
+
+		HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, testCase );
+		streamName = map.get( "StreamName" ).get( 0 );
+		partition = map.get( "Partition" ).get( 0 );
+		NavigationHelper.navigateToScreen( "Streams" );
+		genericHelperObj.selectPartitionFilter( partition, "Deleted Items" );
+
+		boolean isStreamPresent = genericHelperObj.isGridTextValuePresent( "stmName", streamName, "Name" );
+		if ( isStreamPresent )
+		{
+			strImplObj.clickUnDeleteAction( streamName );
+			genericHelperObj.selectPartitionFilter( partition, "Non Deleted Items" );
+			assertTrue( GridHelper.isValuePresent( "SearchGrid", streamName, "Name" ), streamName );
+			Log4jHelper.logInfo( "Stream is un deleted successfully : " + streamName );
+
+		}
+		else
+		{
+			Log4jHelper.logInfo( "Stream is not available : " + streamName );
+		}
+	}
+
+	//Method: Create BulkLoader stream
+
+	public void bulkLoaderStreamNewConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> bulkLoadStrmExcelMap = null;
+			Map<String, String> bulkLoadStrmMap = null;
+			ExcelHolder excelHolderObj = null;
+			bulkLoadStrmExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( bulkLoadStrmExcelMap );
+			int colSize = excelHolderObj.totalColumns();
+
+			for ( int index = 0; index < colSize; index++ )
+			{
+				bulkLoadStrmMap = excelHolderObj.dataMap( index );
+
+				strImplObj.addStreamStageButton();
+				strStageImplObj.bulkLoaderStreamStage( bulkLoadStrmMap );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	//Dispute stream config  in Billing stream
+	public void billingStreamEditConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> billStrmExcelMap = null;
+			Map<String, String> billtrmMap = null;
+			ExcelHolder excelHolderObj = null;
+			billStrmExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( billStrmExcelMap );
+			int colSize = excelHolderObj.totalColumns();
+
+			billtrmMap = excelHolderObj.dataMap( 0 );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.disputeClaimFormStreamStage( billtrmMap );
+			for ( int index = 1; index < colSize; index++ )
+			{
+				billtrmMap = excelHolderObj.dataMap( index );
+
+				strImplObj.addStreamStageButton();
+				strStageImplObj.disputeStreamStage( billtrmMap );
+
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create Xdr Extraction Template stream
+
+	public void xdrStreamNewConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> xdrStrmExcelMap = null;
+			Map<String, String> xdrStrmMap = null;
+			ExcelHolder excelHolderObj = null;
+			xdrStrmExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( xdrStrmExcelMap );
+			int colSize = excelHolderObj.totalColumns();
+
+			for ( int index = 0; index < colSize; index++ )
+			{
+				xdrStrmMap = excelHolderObj.dataMap( index );
+
+				strImplObj.addStreamStageButton();
+				strStageImplObj.xdrTemplStreamStage( xdrStrmMap );
+			}
+
+			voiceStreamNewConfig( path, workbook, sheet, testCaseName, occurence );
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+	// Method: Create 'XDR Aggregation Master Request'
+
+	public void xdrAggMasterCompStreamStgConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> xdrStrmExcelMap = null;
+			Map<String, String> xdrStrmMap = null;
+			ExcelHolder excelHolderObj = null;
+			xdrStrmExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( xdrStrmExcelMap );
+			int colSize = excelHolderObj.totalColumns();
+
+			for ( int index = 0; index < colSize; index++ )
+			{
+				xdrStrmMap = excelHolderObj.dataMap( index );
+
+				strStageImplObj.xdrAggMasterReqStreamStg( xdrStrmMap );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create settlement stream
+	public void settlementStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> settlementExcelMap = null;
+		Map<String, String> settlementStrmMap = null;
+		ExcelHolder excelHolderObj = null;
+		settlementExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( settlementExcelMap );
+		settlementStrmMap = excelHolderObj.dataMap( 0 );
+
+		strStageImplObj.settlementStreamStage( settlementStrmMap );
+
+	}
+
+	// Method: Create 'Generic Birt Report Stream' stream stage
+	public void genBirtReportStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> genBirtRepStreamExcelMap = null;
+		Map<String, String> genBirtRepStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		genBirtRepStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( genBirtRepStreamExcelMap );
+		genBirtRepStreamMap = excelHolderObj.dataMap( 0 );
+		strStageImplObj.genBirtRepStreamStage( genBirtRepStreamMap );
+
+	}
+
+	// Method: Create 'Audit' stream stage
+	public void auditStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> auditExcelMap = null;
+		Map<String, String> auditStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		auditExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( auditExcelMap );
+		auditStreamMap = excelHolderObj.dataMap( 0 );
+		strStageImplObj.auditStreamStage( auditStreamMap );
+
+	}
+
+	// Method: Create 'Manual Measures' stream stage
+	public void manualMeasuresStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> manMeasuresExcelMap = null;
+		Map<String, String> manMeasuresStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		manMeasuresExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( manMeasuresExcelMap );
+		manMeasuresStreamMap = excelHolderObj.dataMap( 0 );
+		strStageImplObj.manualMeasuresStreamStage( manMeasuresStreamMap );
+
+	}
+
+	// Method: Create 'Tap In Stream' stream stage
+	public void tapInStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> tapInStreamExcelMap = null;
+		Map<String, String> tapInStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		tapInStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( tapInStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			tapInStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.tapInStreamStage( tapInStreamMap );
+		}
+
+	}
+
+	// Method: Create 'TapOutStream' stream stage
+	public void tapOutStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> tapOutStreamExcelMap = null;
+		Map<String, String> tapOutStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		tapOutStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( tapOutStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			tapOutStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.tapOutStreamStage( tapOutStreamMap );
+		}
+
+	}
+
+	// Method: Create 'TapOut Master Task Stream' stream stage
+	public void tapOutMasterRequestStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> mapsExcelMap = null;
+		Map<String, String> map = null;
+		ExcelHolder excelHolderObj = null;
+		mapsExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( mapsExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			map = excelHolderObj.dataMap( index );
+			strStageImplObj.tapOutMasterRequestStreamStage( map );
+		}
+
+	}
+
+	// Method: Create 'TapNotificationStream' stream stage
+	public void tapNotificationStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> tapNotificationStreamExcelMap = null;
+		Map<String, String> tapNotificationStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		tapNotificationStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( tapNotificationStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			tapNotificationStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.tapNotificationStreamStage( tapNotificationStreamMap );
+		}
+
+	}
+
+	// Method: Create 'Roaming Rap In Parse' stream stage
+	public void roamingRapInParseStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+
+				strStageImplObj.parseStreamtage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'RapAcknowledgementTaskStream' stream stage
+	public void rapAcknowledgementTaskStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> rapAcknowledgementTaskStreamExcelMap = null;
+		Map<String, String> rapAcknowledgementTaskStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		rapAcknowledgementTaskStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( rapAcknowledgementTaskStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			rapAcknowledgementTaskStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.rapAcknowledgementTaskStreamStage( rapAcknowledgementTaskStreamMap );
+		}
+
+	}
+
+	// Method: Create 'RapInStream' stream stage
+	public void rapInStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> rapInStreamExcelMap = null;
+		Map<String, String> rapInStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		rapInStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( rapInStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			rapInStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.rapInStreamStage( rapInStreamMap );
+		}
+
+	}
+
+	// Method: Create 'RapOutStream' stream stage
+	public void rapOutStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> rapOutStreamExcelMap = null;
+		Map<String, String> rapOutStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		rapOutStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( rapOutStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			rapOutStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.rapOutStreamStreamStage( rapOutStreamMap );
+		}
+
+	}
+
+	// Method: Create 'NRTRDEErrorReportStream' stream stage
+	public void nRTRDEErrorReportStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> nRTRDEErrorReportStreamExcelMap = null;
+		Map<String, String> nRTRDEErrorReportStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		nRTRDEErrorReportStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( nRTRDEErrorReportStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			nRTRDEErrorReportStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.nrtrdeErrorReportStreamtage( nRTRDEErrorReportStreamMap );
+		}
+
+	}
+
+	// Method: Create 'NRTRDEFileDeliveryReportStream' stream stage
+	public void nRTRDEFileDeliveryReportStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> nRTRDEFileDeliveryReportStreamExcelMap = null;
+		Map<String, String> nRTRDEFileDeliveryReportStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		nRTRDEFileDeliveryReportStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( nRTRDEFileDeliveryReportStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			nRTRDEFileDeliveryReportStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.nRTRDEFileDeliveryReportStreamStage( nRTRDEFileDeliveryReportStreamMap );
+		}
+
+	}
+
+	// Method: Create 'NRTRDEFileGeneratorStream' stream stage
+	public void nRTRDEFileGeneratorStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> nRTRDEFileGeneratorStreamExcelMap = null;
+		Map<String, String> nRTRDEFileGeneratorStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		nRTRDEFileGeneratorStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( nRTRDEFileGeneratorStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			nRTRDEFileGeneratorStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.nRTRDEFileGeneratorStreamStage( nRTRDEFileGeneratorStreamMap );
+		}
+
+	}
+
+	// Method: Create 'NRTRDEMasterRequestStream' stream stage
+	public void nRTRDEMasterRequestStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> nRTRDEMasterRequestStreamExcelMap = null;
+		Map<String, String> nRTRDEMasterRequestStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		nRTRDEMasterRequestStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( nRTRDEMasterRequestStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			nRTRDEMasterRequestStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.nRTRDEMasterRequestStreamStage( nRTRDEMasterRequestStreamMap );
+		}
+
+	}
+
+	// Method: Create 'Hur File Generation' stream stage
+	public void hurFileGenerationStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> hurFileGenerationStreamExcelMap = null;
+		Map<String, String> hurFileGenerationStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		hurFileGenerationStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( hurFileGenerationStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			hurFileGenerationStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.hurFileGenerationStreamStage( hurFileGenerationStreamMap );
+		}
+
+	}
+
+	// Method: Create 'Hur Master Request' stream stage
+	public void hurMasterRequestStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> hurMasterRequestStreamExcelMap = null;
+		Map<String, String> hurMasterRequestStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		hurMasterRequestStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( hurMasterRequestStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			hurMasterRequestStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.hurMasterRequestStreamtage( hurMasterRequestStreamMap );
+		}
+
+	}
+
+	// Method: Create email stream stage
+	public void emailStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.emailStreamtage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'TapInParse' stream stage
+	public void tapInParseStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> tapInParseStreamExcelMap = null;
+		Map<String, String> tapInParseStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		tapInParseStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( tapInParseStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			tapInParseStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.parseStreamtage( tapInParseStreamMap );
+		}
+
+	}
+
+	// Method: Create 'TapIn Data Load' stream stage
+	public void tapInDataLoadStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		ExcelReader excelData = new ExcelReader();
+		Map<String, ArrayList<String>> tapInDataLoadStreamExcelMap = null;
+		Map<String, String> tapInDataLoadStreamMap = null;
+		ExcelHolder excelHolderObj = null;
+		tapInDataLoadStreamExcelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+		excelHolderObj = new ExcelHolder( tapInDataLoadStreamExcelMap );
+		int colSize = excelHolderObj.totalColumns();
+		for ( int index = 0; index < colSize; index++ )
+		{
+			tapInDataLoadStreamMap = excelHolderObj.dataMap( index );
+			strStageImplObj.dataLoadStreamStage( tapInDataLoadStreamMap );
+		}
+
+	}
+
+	// Method: Create parse stream stage
+	public void parseStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.parseStreamtage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'Roaming MNR' stream stage
+	public void roamingMNRStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+
+				strStageImplObj.matchandRateStreamStage( map );
+			}
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void roamingStreamNewConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			strStageImplObj.dataLoadStreamStage( path, workbook, sheet, "RoamingDataload", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.masterTaskStreamStage( path, workbook, sheet, "RoamingMasterTask", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.aggregationStreamStage( path, workbook, sheet, "RoamingAggregation", occurence );
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void voiceROStreamNewConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+
+			strImplObj.addStreamStageButton();
+			strStageImplObj.parseStreamStage( path, workbook, sheet, "parse", occurence );
+			//strImplObj.addStreamStageButton();
+			strStageImplObj.dataLoadStreamStage( path, workbook, sheet, "dataload", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.matchandRateStreamStage( path, workbook, sheet, "mnr", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.masterTaskStreamStage( path, workbook, sheet, "master", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.aggregationStreamStage( path, workbook, sheet, "aggregation", occurence );
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void voiceSurchargeStreamNewConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			strStageImplObj.dataLoadStreamStage( path, workbook, sheet, "VoiceSurchargeDataload", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.masterTaskStreamStage( path, workbook, sheet, "VoiceSurchargeMasterTask", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.aggregationStreamStage( path, workbook, sheet, "VoiceSurchargeAggregation", occurence );
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void createMasterTaskAggStreamStageHur( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			strImplObj.addStreamStageButton();
+			strStageImplObj.masterTaskStreamStage( path, workbook, sheet, "RoamingMasterTaskHUR", occurence );
+			strImplObj.addStreamStageButton();
+			strStageImplObj.aggregationStreamStage( path, workbook, sheet, "RoamingAggregationHUR", occurence );
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create IMF Exchange Rate File Download stream stage
+	public void imfExcRateFlDownloadStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.imfExcRateFlDownloadStreamStage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create IMF Exchange Rate Import stream stage
+	public void imfExchRateImportStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.imfExchRateImportStreamStage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'Bulk Entity Export' stream stage
+	public void bulkEntityExportStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.bulkEntityExportStreamStage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'ROCPS Export All Rows'stream stage
+	public void rocpsExpAllRowsStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.rocpsExportAllRowsStreamStage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'UsageBackout' Stream stage
+	public void usgBackoutStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.usgBackoutStreamStage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'UsageBackout Master Request'stream stage
+	public void usgBackoutMasterReqStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.usgBackoutMasterReqStreamStage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'Alert Task' stream stage
+	public void alertTaskStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.alertTaskStreamStage( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void dealImportExcelWriterStreamConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		strStageImplObj.dealImportExcelStreamStage( path, workbook, sheet, "DealImportExcelWriter", occurence );
+	}
+
+	// Method: Create ' MNR' stream stage
+	public void mnrStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+
+				strStageImplObj.matchandRateStreamStage( map );
+			}
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create 'Update Bill Profile Balance'stream stage
+	public void updateBillProfBalanceStreamStgConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+				strStageImplObj.updateBillProfBalanceStreamStg( map );
+			}
+
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	public void voiceROBCRGenRoutingRateCalcStream( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+
+			strStageImplObj.bcrComparisionTask( path, workbook, sheet, "BcrComparisionTask", occurence );
+			strStageImplObj.bcrDeltaTask( path, workbook, sheet, "BCRDeltaTask", occurence );
+			strStageImplObj.bCRGenerationRecurringTask( path, workbook, sheet, "BCRGenerationRecurringTask", occurence );
+			strStageImplObj.bCRGenerationTask( path, workbook, sheet, "BCRGenerationTask", occurence );
+			strStageImplObj.dealBillingRateCalculationTask( path, workbook, sheet, "DealBillingRateCalculationTask", occurence );
+			strStageImplObj.QualityMasterTask( path, workbook, sheet, "QualityMasterTask", occurence );
+			strStageImplObj.qualityResultsAggregationTask( path, workbook, sheet, "QualityResultsAggregationTask", occurence );
+			strStageImplObj.routingRateCalculationTask( path, workbook, sheet, "RoutingRateCalculationTask", occurence );
+			strStageImplObj.thresholdEvaluation( path, workbook, sheet, "ThresholdEvaluation", occurence );
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	// Method: Create ' EventandAgg' stream stage
+	public void eventAndAggStreamStageConfig( String path, String workbook, String sheet, String testCase, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelData = new ExcelReader();
+			Map<String, ArrayList<String>> excelMap = null;
+			Map<String, String> map = null;
+			ExcelHolder excelHolderObj = null;
+			excelMap = excelData.readDataByColumn( path, workbook, sheet, testCase, occurence );
+			excelHolderObj = new ExcelHolder( excelMap );
+			int colSize = excelHolderObj.totalColumns();
+			for ( int index = 0; index < colSize; index++ )
+			{
+				map = excelHolderObj.dataMap( index );
+
+				strStageImplObj.eventAndAggStreamStage( map );
+			}
+		}
+
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+}

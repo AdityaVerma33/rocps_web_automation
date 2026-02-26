@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Audit ST Flow 2">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Users_OR.properties,CM_OR.properties,Measures_Audits_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="Audit ST Flow 2" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.systemtesting.audits2.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits2.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits2.testRunOfParseAndDataLoad" />
+			<class name="com.subex.automation.testcases.systemtesting.audits2.testRunOfAuditRequest" />
+			<class name="com.subex.automation.testcases.systemtesting.audits2.testVerifyAuditRequest" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,41 @@
+package com.subex.rocps.automation.testcases.systemtesting;
+
+import com.subex.automation.helpers.application.ControllerHelper;
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSControllerHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+public class ControllerStartup extends PSAcceptanceTest {
+
+	@org.testng.annotations.Test(priority = 1, description = "start SC and TC ")
+	public void startSC() throws Exception {
+		try {
+
+			PSControllerHelper scObj = new PSControllerHelper();
+			scObj.startStreamController();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 2, description = "start SC and TC ")
+	public void startTC() throws Exception {
+		try {
+			String tcFileName = configProp.getProperty("taskControllerExeFile");
+
+			PSControllerHelper scObj = new PSControllerHelper();
+			if (ValidationHelper.isEmpty(tcFileName))
+				throw new NullPointerException("Tc file name is not specified");
+			scObj.startTaskController(tcFileName);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+}

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" version="28" softwareVersion="3.7.24576.0">
+    <Decoder name="Error_Report" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequence">
+                <Logic recordType="Header" type="recordReference"/>
+            </Logic>
+            <Logic type="sequenceOf">
+                <Logic type="choice">
+                    <Logic recordType="Footer" type="recordReference"/>
+                    <Logic recordType="CDR" type="recordReference"/>
+                </Logic>
+            </Logic>
+        </RecordType>
+        <RecordType allowEOFTerm="false" parseDoubleQuotes="false" delimiter="comma" root="false" name="Header" tokens="8" terminator="crlf" type="delimitedascii" generate="record" parseQuotes="false">
+            <Field name="ReportIdentification" trimQuotes="true" trimWhiteSpace="true" id="0" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="ReportVersion" trimQuotes="true" trimWhiteSpace="true" id="1" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="HPMN" trimQuotes="true" trimWhiteSpace="true" id="2" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="VPMN" trimQuotes="true" trimWhiteSpace="true" id="3" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="SequenceNumber" trimQuotes="true" trimWhiteSpace="true" id="4" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="ReportCreationTime" trimQuotes="true" trimWhiteSpace="true" id="5" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="ReportPeriodStartTime" trimQuotes="true" trimWhiteSpace="true" id="6" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="ReportPeriodEndTime" trimQuotes="true" trimWhiteSpace="true" id="7" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+        </RecordType>
+        <RecordType allowEOFTerm="true" parseDoubleQuotes="false" delimiter=";" root="false" name="CDR" terminator="crlf" type="delimitedascii" generate="record" parseQuotes="false">
+            <Field name="completeCdr" trimQuotes="true" trimWhiteSpace="true" id="8" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+        </RecordType>
+        <RecordType allowEOFTerm="false" parseDoubleQuotes="false" delimiter="comma" root="false" name="Footer" terminator="crlf" type="delimitedascii" generate="record" parseQuotes="false">
+            <Field name="EndOfFile" trimQuotes="true" trimWhiteSpace="true" id="9" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Field name="NumberOfRecords" trimQuotes="true" trimWhiteSpace="true" id="10" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252" generate="field"/>
+            <Identifier offset="0" length="3" trimQuotes="true" trimWhiteSpace="true" idValue="END" trimWhiteSpaceInsideQuotes="true" type="string" encoding="windows-1252"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node yPos="170" recordType="CDR" width="50" name="Record" nodeKey="shape1" xPos="175" type="Record" height="50">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="165" recordType="nrtrde_er_detail" width="60" name="Mapping" nodeKey="shape5" xPos="340" type="Mapping" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events>
+                            <Event expression="NullString()" name="FileName" type="assign" target="$file_name"/>
+                            <Event expression="NullString()" name="RecordNum" type="assign" target="$record_num"/>
+                            <Event expression="NullString()" name="RecodeType" type="assign" target="$record_type"/>
+                            <Event expression="Token(completeCdr, ',', 0)" name="AssigingFileName" type="assign" target="$file_name"/>
+                            <Event expression="Token(completeCdr, ',', 1)" name="AssigningRecordNum" type="assign" target="$record_num"/>
+                            <Event expression="Token(completeCdr, ',', 2)" name="AssigningRecordType" type="assign" target="$record_type"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="$file_name" target="fil_name"/>
+                    <Mapping expression="$record_type" target="record_type"/>
+                    <Mapping expression="ToInteger($record_num)" target="record_no"/>
+                    <Mapping expression="Substring(completeCdr, Add(If(Equal($file_name, NullString()), 0, Length($file_name)), If(Equal($record_num, NullString()), 0, Length($record_num)), If(Equal($record_type, NullString()), 0, Length($record_type)), 3))" target="error_code"/>
+                    <Mapping expression="$partition_date" target="report_creation_date"/>
+                    <Mapping expression="getId()" target="er_id"/>
+                    <Mapping expression="NullInteger()" target="pnrt_id"/>
+                </Mappings>
+            </Node>
+            <Node charset="windows-1252" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" yPos="170" outputKey="nrtrde_er" UsagePartitionId="GetUsagePartitionId($partition_date, SecondPart($partition_date))" width="60" name="ER Output" unicode="false" nodeKey="shape7" xPos="495" type="SparkOutput" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape5">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node yPos="265" recordType="Header" width="50" name="Header" nodeKey="shape2" xPos="175" type="Record" height="50">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="DateTime(ToInteger(Substring(ReportCreationTime, 0, 4)), ToInteger(Substring(ReportCreationTime, 4, 6)), ToInteger(Substring(ReportCreationTime, 6, 8)), ToInteger(Substring(ReportCreationTime, 8, 10)), ToInteger(Substring(ReportCreationTime, 10, 12)), ToInteger(Substring(ReportCreationTime, 12, 14)), ToInteger(Substring(ReportCreationTime, 15, 18)))" name="PartitionDate" type="assign" target="$partition_date"/>
+                            <Event expression="ReportIdentification" name="Report_Identification" type="assign" target="$report_identification"/>
+                            <Event expression="ReportVersion" name="ReportVersion" type="assign" target="$report_version"/>
+                            <Event expression="HPMN" name="HPMN" type="assign" target="$hpmn"/>
+                            <Event expression="VPMN" name="VPMN" type="assign" target="$vpmn"/>
+                            <Event expression="ToInteger(SequenceNumber)" name="SeqNumber" type="assign" target="$seq_num"/>
+                            <Event expression="DateTime(ToInteger(Substring(ReportPeriodStartTime, 0, 4)), ToInteger(Substring(ReportPeriodStartTime, 4, 6)), ToInteger(Substring(ReportPeriodStartTime, 6, 8)), ToInteger(Substring(ReportPeriodStartTime, 8, 10)), ToInteger(Substring(ReportPeriodStartTime, 10, 12)), ToInteger(Substring(ReportPeriodStartTime, 12, 14)), ToInteger(Substring(ReportPeriodStartTime, 15, 18)))" name="ReportStartDttm" type="assign" target="$report_start_date"/>
+                            <Event expression="DateTime(ToInteger(Substring(ReportPeriodEndTime, 0, 4)), ToInteger(Substring(ReportPeriodEndTime, 4, 6)), ToInteger(Substring(ReportPeriodEndTime, 6, 8)), ToInteger(Substring(ReportPeriodEndTime, 8, 10)), ToInteger(Substring(ReportPeriodEndTime, 10, 12)), ToInteger(Substring(ReportPeriodEndTime, 12, 14)), ToInteger(Substring(ReportPeriodEndTime, 15, 18)))" name="ReportEndDttm" type="assign" target="$report_end_date"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="360" recordType="Footer" width="50" name="Footer" nodeKey="shape8" xPos="170" type="Record" height="50">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node yPos="360" recordType="footer_layout" width="60" name="Mapping" nodeKey="shape9" xPos="345" type="Mapping" height="60">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape8">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="EndOfFile" target="end_of_file"/>
+                    <Mapping expression="ToInteger(NumberOfRecords)" target="number_of_records"/>
+                    <Mapping expression="$report_identification" target="report_identification"/>
+                    <Mapping expression="$report_version" target="report_version"/>
+                    <Mapping expression="$hpmn" target="hpmn"/>
+                    <Mapping expression="$vpmn" target="vpmn"/>
+                    <Mapping expression="$seq_num" target="seq_number"/>
+                    <Mapping expression="$partition_date" target="report_creation_dttm"/>
+                    <Mapping expression="$report_start_date" target="report_start_dttm"/>
+                    <Mapping expression="$report_end_date" target="report_end_dttm"/>
+                </Mappings>
+            </Node>
+            <Node charset="windows-1252" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '.dat')" yPos="370" outputKey="er_footer" width="60" name="Footer Output" unicode="false" nodeKey="shape10" xPos="505" type="SparkOutput" height="50">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape9">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="nrtrde_er" name="getId" type="GenerateId" blockSize="10000"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="nrtrde_er_detail">
+                <Field nullable="false" name="er_id" type="integer" id="11"/>
+                <Field nullable="false" name="report_creation_date" id="12" type="datetime"/>
+                <Field nullable="true" name="pnrt_id" type="integer" id="13"/>
+                <Field nullable="false" name="fil_name" id="14" type="string"/>
+                <Field nullable="true" name="record_no" id="15" type="integer"/>
+                <Field nullable="true" name="record_type" id="16" type="string"/>
+                <Field nullable="true" name="error_code" id="17" type="string"/>
+            </RecordType>
+            <RecordType name="header_layout">
+                <Field nullable="false" name="report_identification" id="18" type="string"/>
+                <Field nullable="false" name="report_version" id="19" type="string"/>
+                <Field nullable="false" name="hpmn" id="20" type="string"/>
+                <Field nullable="false" name="vpmn" id="21" type="string"/>
+                <Field nullable="false" name="seq_number" id="22" type="integer"/>
+                <Field nullable="false" name="report_creation_time" id="23" type="datetime"/>
+                <Field nullable="false" name="report_start_time" id="24" type="datetime"/>
+                <Field nullable="false" name="report_end_time" id="25" type="datetime"/>
+            </RecordType>
+            <RecordType name="footer_layout">
+                <Field nullable="false" name="report_identification" id="18" type="string"/>
+                <Field nullable="false" name="report_version" id="19" type="string"/>
+                <Field nullable="false" name="hpmn" id="20" type="string"/>
+                <Field nullable="false" name="vpmn" id="21" type="string"/>
+                <Field nullable="false" name="seq_number" id="22" type="integer"/>
+                <Field nullable="false" name="report_creation_dttm" id="26" type="datetime"/>
+                <Field nullable="false" name="report_start_dttm" id="27" type="datetime"/>
+                <Field nullable="false" name="report_end_dttm" id="28" type="datetime"/>
+                <Field nullable="false" name="number_of_records" id="29" type="integer"/>
+                <Field nullable="false" name="end_of_file" id="30" type="string"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global name="file_name" id="0" type="string" serializable="false"/>
+            <Global name="record_num" id="1" type="string" serializable="false"/>
+            <Global name="record_type" id="2" type="string" serializable="false"/>
+            <Global name="partition_date" id="3" type="datetime" serializable="false"/>
+            <Global name="report_identification" id="4" type="string" serializable="false"/>
+            <Global name="report_version" id="5" type="string" serializable="false"/>
+            <Global name="hpmn" id="6" type="string" serializable="false"/>
+            <Global name="vpmn" id="7" type="string" serializable="false"/>
+            <Global name="seq_num" id="8" type="integer" serializable="false"/>
+            <Global name="report_start_date" id="9" type="datetime" serializable="false"/>
+            <Global name="report_end_date" id="10" type="datetime" serializable="false"/>
+        </Globals>
+    </Mappings>
+</Diamond>

@@ -1,0 +1,770 @@
+package com.subex.rocps.automation.helpers.application.aggregation;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import com.subex.rocps.automation.helpers.application.aggregation.aggregationconfiguration.AggregationActionsImpl;
+import com.subex.rocps.automation.helpers.application.aggregation.aggregationresult.AddNewLineImpl;
+import com.subex.rocps.automation.helpers.application.aggregation.aggregationresult.AggregationResultImpl;
+import com.subex.rocps.automation.helpers.application.aggregation.aggregationresult.ConfigureGridColumnsImpl;
+import com.subex.rocps.automation.helpers.application.filters.AdvanceSearchFiltersHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.DataVerificationHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+import com.subex.rocps.automation.utils.FileExport;
+import com.subex.rocps.automation.utils.PSStringUtils;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.PopupHelper;
+import com.subex.automation.helpers.component.TextAreaHelper;
+import com.subex.automation.helpers.data.DateHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class AggregationResult extends PSAcceptanceTest
+{
+
+	protected ExcelReader excelData;
+	protected ExcelHolder excelHolderObj;
+	protected Map<String, ArrayList<String>> agcConfigExcelReaderMap;
+	protected Map<String, String> agcConfigMap;
+
+	protected String path;
+	protected String workBookName;
+	protected String sheetName;
+	protected String testCaseName;
+	protected int paramVal;
+	protected int colSize;
+	protected int occurence;
+	protected String sortVal;
+	protected String configGridHeader;
+
+	protected PSGenericHelper genericHelperObj = new PSGenericHelper();
+	protected AdvanceSearchFiltersHelper advanceFilterObj = new AdvanceSearchFiltersHelper();
+	protected String aggregationName;
+	AdvanceSearchFiltersHelper advFilterObj = new AdvanceSearchFiltersHelper();
+
+	/*
+	 * Constructor for initializing excel Identifying the column size from the
+	 * map passed
+	 */
+	public AggregationResult( String path, String workBookName, String sheetName, String testCaseName ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		agcConfigExcelReaderMap = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName );
+		excelHolderObj = new ExcelHolder( agcConfigExcelReaderMap );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Overloaded constructor for reading data from excel if test case name
+	 * appears more than once
+	 * 
+	 * @Param occurance : Test case instance in excel sheet Constructor for
+	 * initializing excel Identifying the column size from the map
+	 */
+	public AggregationResult( String path, String workBookName, String sheetName, String testCaseName, int occurence ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		this.occurence = occurence;
+		excelData = new ExcelReader();
+		agcConfigExcelReaderMap = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName );
+		excelHolderObj = new ExcelHolder( agcConfigExcelReaderMap );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Method for navigating to aggregation result screen and validating the
+	 * data
+	 */
+	public void viewAggregationResult() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+			GenericHelper.waitForLoadmask();
+
+			agcConfigMap = excelHolderObj.dataMap( 0 );
+			aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			ButtonHelper.click( "ClearButton" );
+			GenericHelper.waitForLoadmask( );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+				validateResults();
+				Log4jHelper.logInfo( "aggregation result is validated successfully" );
+			}
+			else			
+				Log4jHelper.logInfo( "aggregation configuration " + aggregationName + " does not exist" );		
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+	/*
+	 * Method for navigating to aggregation result screen and validating the
+	 *empty data
+	 */
+	public void validateEmptyAggregationResult() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+			GenericHelper.waitForLoadmask();
+
+			agcConfigMap = excelHolderObj.dataMap( 0 );
+			aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			ButtonHelper.click( "ClearButton" );
+			GenericHelper.waitForLoadmask( searchScreenWaitSec );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+				validateEmptyResults();
+				Log4jHelper.logInfo( "aggregation result is validated successfully" );
+			}
+			else			
+				Log4jHelper.logInfo( "aggregation configuration " + aggregationName + " does not exist" );		
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	/*
+	 * Method for performing aggregation search and validating the results
+	 */
+	private void validateResults() throws Exception
+	{
+
+		DataVerificationHelper dataVerifyObj = new DataVerificationHelper();
+		PSGenericHelper genHelperObj = new PSGenericHelper();
+		for ( int index = 0; index < colSize; index++ )
+		{
+
+			agcConfigMap = excelHolderObj.dataMap( index );
+			String billProfile = ExcelHolder.getKey( agcConfigMap, "BillProfile" );
+			AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+			if ( index == 0 ) {
+				genHelperObj.collapsableXpath();
+			};
+			advFilterObj.billProfileAdvanceSearch( "Bill Profile", billProfile );
+			GenericHelper.waitForLoadmask();
+			aggrResultImplObj.aggregationFilterSearch();
+			ButtonHelper.click( "SearchButton" );
+			GenericHelper.waitForLoadmask(detailScreenWaitSec);
+			String columnHeaders = ExcelHolder.getKey( agcConfigMap, "ColumnHeaders" );
+			String mapKeys = ExcelHolder.getKey( agcConfigMap, "MapRowKeys" );
+			//dataVerifyObj.validateDataInResultScreen( "grid_column_header_searchGrid_", agcConfigMap, columnHeaders, mapKeys, true );
+			dataVerifyObj.validateDataWithoutSorting( "grid_column_header_searchGrid_", agcConfigMap, columnHeaders, mapKeys, true );
+
+			if ( colSize > 1 )
+			{
+				ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask();
+			}
+		}
+
+	}
+	/*
+	 * Method for performing aggregation search and validating the  empty results
+	 */
+	private void validateEmptyResults() throws Exception
+	{
+
+		DataVerificationHelper dataVerifyObj = new DataVerificationHelper();
+		PSGenericHelper genHelperObj = new PSGenericHelper();
+		for ( int index = 0; index < colSize; index++ )
+		{
+
+			agcConfigMap = excelHolderObj.dataMap( index );
+			String billProfile = ExcelHolder.getKey( agcConfigMap, "BillProfile" );
+			AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+			if ( index == 0 )
+				genHelperObj.collapsableXpath();
+			advFilterObj.billProfileAdvanceSearch( "Bill Profile", billProfile );
+			aggrResultImplObj.aggregationFilterSearch();
+			ButtonHelper.click( "SearchButton" );
+			GenericHelper.waitForLoadmask();
+			String columnHeaders = ExcelHolder.getKey( agcConfigMap, "ColumnHeaders" );
+			String mapKeys = ExcelHolder.getKey( agcConfigMap, "MapRowKeys" );
+			dataVerifyObj.validateDataInResultScreen( "grid_column_header_searchGrid_", agcConfigMap, columnHeaders, mapKeys, false );
+
+			if ( colSize > 1 )
+			{
+				ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask();
+			}
+		}
+
+	}
+
+	/*
+	 * Method for performing aggregation search and validating the results from account screen .
+	 */
+	public void accountViewAggregationResults() throws Exception
+	{
+
+		DataVerificationHelper dataVerifyObj = new DataVerificationHelper();
+		PSGenericHelper genHelperObj = new PSGenericHelper();
+		for ( int index = 0; index < colSize; index++ )
+		{
+
+			agcConfigMap = excelHolderObj.dataMap( index );
+			AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+			if ( index == 0 )
+				genHelperObj.collapsableXpath();
+
+			aggrResultImplObj.aggregationFilterSearchAccountView();
+			ButtonHelper.click( "SearchButton" );
+			GenericHelper.waitForLoadmask();
+			String columnHeaders = ExcelHolder.getKey( agcConfigMap, "ColumnHeaders" );
+			String mapKeys = ExcelHolder.getKey( agcConfigMap, "MapRowKeys" );
+			if ( ValidationHelper.isNotEmpty( mapKeys ) )
+				dataVerifyObj.validateDataInResultScreen( "grid_column_header_searchGrid_", agcConfigMap, columnHeaders, mapKeys, true );
+
+			if ( colSize > 1 )
+			{
+				ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask();
+			}
+		}
+
+	}
+
+	/*
+	 * This method is to verify if the aggregation result is present or not
+	 */
+
+	public void isAggregationPresent() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+			GenericHelper.waitForLoadmask();
+
+			agcConfigMap = excelHolderObj.dataMap( 0 );
+			aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+					ArrayList<String> value = GridHelper.getColumnValues( "SearchGrid", 1 );
+					int row = GridHelper.getRowCount( "SearchGrid" );
+					if ( value.isEmpty() || row <= 1 )
+						Log4jHelper.logInfo( "There are no aggregation results for this bill profile " );
+					else
+						Log4jHelper.logInfo( "aggregation results are presnet for this bill profile" );
+				}
+			}
+			else
+				Log4jHelper.logInfo( "aggregation configuration " + aggregationName + " does not exist" );
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+	
+	/*
+	 * This method is to verify if the aggregation result is present or not
+	 */
+
+	public void isAggregationResultPresent() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+			GenericHelper.waitForLoadmask();
+
+			agcConfigMap = excelHolderObj.dataMap( 0 );
+			aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+					ArrayList<String> value = GridHelper.getColumnValues( "SearchGrid", 1 );
+					int row = GridHelper.getRowCount( "SearchGrid" );
+					if ( !value.isEmpty() || row > 1 )
+						Log4jHelper.logInfo( "Aggregation results are present for this bill profile " );
+					else
+						FailureHelper.failTest( "aggregation results are not  presnet for this bill profile" );
+				}
+			}
+			else
+				Log4jHelper.logInfo( "aggregation configuration " + aggregationName + " does not exist" );
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+		}
+
+	}
+
+	/*
+	 * This method is to configure Grid columns
+	 */
+
+	public void ConfigureGridColumns() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask();
+
+		agcConfigMap = excelHolderObj.dataMap( 0 );
+		aggregationName = ExcelHolder.getKey( agcConfigMap, "Name" );
+		sortVal = ExcelHolder.getKey( agcConfigMap, "SortVal" );
+		configGridHeader = ExcelHolder.getKey( agcConfigMap, "ConfigGridHeader" );
+		boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+		if ( isAggregationConfig )
+		{
+			GridHelper.clickRow( "SearchGrid", aggregationName, "Name" );
+			GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+			ConfigureGridColumnsImpl gridImplObj = new ConfigureGridColumnsImpl();
+			gridImplObj.configureGrid( sortVal, configGridHeader );			
+		}
+		else
+			Log4jHelper.logInfo( "Aggregation configuration is not configured for :" + aggregationName );
+	}
+
+	/*
+	 * This method is to validate search screen columns
+	 */
+	public void searchScreenColumnsValidation() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			String searchScreenColumns = ExcelHolder.getKey( agcConfigMap, "SearchScreenColumns" );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+				ArrayList<String> excelColumnNames = new ArrayList<String>();
+				PSStringUtils strObj = new PSStringUtils();
+				String[] searchGridColumnsArr = strObj.stringSplitFirstLevel( searchScreenColumns );
+				for ( int col = 0; col < searchGridColumnsArr.length; col++ )
+				{
+					excelColumnNames.add( searchGridColumnsArr[col] );
+				}
+				genericHelperObj.totalColumns( excelColumnNames );
+			}
+			else
+				Log4jHelper.logInfo( "Aggregation configuration is not configured for :" + aggregationName );
+		}
+
+	}
+
+	/*
+	 * This method is to add newLine Action
+	 */
+	public void addNewLineItemAction() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			String eventDate = ExcelHolder.getKey( agcConfigMap, "Event Date" );
+			String band = ExcelHolder.getKey(agcConfigMap, "Band");
+
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.newlineFilter();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask(searchScreenWaitSec);
+					aggrResultImplObj.newlineActionConfig( eventDate );
+					
+				}
+			}
+			else
+				Log4jHelper.logInfo( "Aggregation configuration is not configured for :" + aggregationName );
+		}
+
+	}
+
+	/*
+	 * This method is to add adjustements
+	 */
+	public void addAdjustments() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			/*String eventDate = ExcelHolder.getKey( agcConfigMap, "Event Date" );
+			String band = ExcelHolder.getKey(agcConfigMap, "Band");*/
+			ButtonHelper.click( "ClearButton" );
+			GenericHelper.waitForLoadmask( searchScreenWaitSec );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+					aggrResultImplObj.addadjustments();
+				}
+			}
+			else
+				Log4jHelper.logInfo( "Aggregation configuration is not configured for :" + aggregationName );
+		}
+
+	}
+
+	/*
+	 * This method is to view comments
+	 */
+	public void viewComments() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			String eventDate = ExcelHolder.getKey( agcConfigMap, "Event Date" );
+			String internalComments  = ExcelHolder.getKey( agcConfigMap, "Internal Comments" );
+			String externalComments  = ExcelHolder.getKey( agcConfigMap, "External Comments" );
+			String band = ExcelHolder.getKey(agcConfigMap, "Band");
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+					int row = GridHelper.getRowNumber( "SearchGrid", band, "Band" );
+					
+					ButtonHelper.click( "//*[@id='caseGridContainer']//table/tbody/tr["+row+"]/td[1]//img");
+					
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					GridHelper.clickRow( "SearchGrid", eventDate, "Event Date" );
+					NavigationHelper.navigateToAction( "View", "Comments" );
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					assertEquals( NavigationHelper.getScreenTitle(), "View/Edit Comments..." );
+					assertEquals( TextAreaHelper.getValue( "InternalCommentTextArea" ), internalComments );
+					assertEquals( TextAreaHelper.getValue( "ExternalCommentTextArea" ), externalComments );
+					ButtonHelper.click( "CancelButton" );
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				}
+			}
+			else
+				Log4jHelper.logInfo( "Aggregation configuration is not configured for :" + aggregationName );
+		}
+
+	}
+	
+	/*
+	 * This method is to view comments
+	 */
+	public void deleteSummaryItems() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			String eventDate = ExcelHolder.getKey( agcConfigMap, "Event Date" );
+			
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+					int row = GridHelper.getRowCount( "SearcchGrid", "Event Date" );
+					for (int i=2;i<row;i++)
+					{
+					ButtonHelper.click( "//*[@id='caseGridContainer']//table/tbody/tr[i]/td[1]//img" );
+					}
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					GridHelper.clickRow( "SearchGrid", eventDate, "Event Date" );
+					aggrResultImplObj.deleteSummaryRowsInterserted();
+				}
+			}
+			else
+				Log4jHelper.logInfo( "Aggregation configuration is not configured for :" + aggregationName );
+		}
+
+	}
+
+	/*
+	 * This method is to view totals
+	 */
+
+	public void viewTotals() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			String colHeader = ExcelHolder.getKey( agcConfigMap, "ColHeader" );
+			String results = ExcelHolder.getKey( agcConfigMap, "Results" );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+
+					GridHelper.clickRow( "SearchGrid", 1, "Band" );
+					NavigationHelper.navigateToAction( "View", "Totals" );
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					assertEquals( NavigationHelper.getScreenTitle(), "View Totals" );
+					DataVerificationHelper verifyObj = new DataVerificationHelper();
+					verifyObj.validateData( "grid_column_header_totalsGrid_", agcConfigMap, "totalsGrid", colHeader, results );
+					Log4jHelper.logInfo( "Aggregation Result view table is validated successfuly :" + aggregationName );
+				}
+			}
+			else
+				Log4jHelper.logInfo( "Aggregation configuration is not configured for :" + aggregationName );
+		}
+	}
+
+	/*
+	 * This method is to perform reverse traffic
+	 */
+	public void reverseTraffic() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			
+			String band = ExcelHolder.getKey(agcConfigMap, "Band");
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+					int row = GridHelper.getRowNumber( "SearchGrid", band, "Band" );
+					GridHelper.clickRow( "SearchGrid", band, "Band" );
+					NavigationHelper.navigateToAction( "Reverse Traffic", "ReverseTraffic" );
+					GenericHelper.waitForLoadmask( detailScreenWaitSec );
+					assertTrue(PopupHelper.isTextPresent( "window-scroll-panel", "Are you sure you want to Reverse the Traffic" ));
+					ButtonHelper.click( "YesButton" );
+					assertTrue(PopupHelper.isTextPresent( "window-scroll-panel", "1 Item(s) successfully reversed" ));
+					ButtonHelper.click( "OKButton" );
+					String date = DateHelper.getCurrentDate();
+					ButtonHelper.click( "//*[@id='caseGridContainer']//table/tbody/tr["+row+"]/td[1]//img" );
+					String actualDate = GridHelper.getCellValue( "SearchGrid", row+1, "Created Date" );
+					if(actualDate.contains( date ))
+						Log4jHelper.logInfo( "Tariff has been reversed." );
+					else
+						FailureHelper.failTest( "Reverse Traffic actions has notbeen performed" );
+				}
+			}
+		}
+	}
+
+	/*
+	 * This method is to view Events 
+	 */
+
+	public void viewEvents() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			String colHeader = ExcelHolder.getKey( agcConfigMap, "ColHeader" );
+			String results = ExcelHolder.getKey( agcConfigMap, "Results" );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+
+				for ( int index = 0; index < colSize; index++ )
+				{
+					agcConfigMap = excelHolderObj.dataMap( index );
+					AggregationResultImpl aggrResultImplObj = new AggregationResultImpl( agcConfigMap );
+					if ( index == 0 )
+						genericHelperObj.collapsableXpath();
+
+					aggrResultImplObj.aggregationFilterSearch();
+					ButtonHelper.click( "SearchButton" );
+					GenericHelper.waitForLoadmask();
+
+					GridHelper.clickRow( "SearchGrid", 2, "Band" );
+					NavigationHelper.navigateToAction( "View Events", "Voice" );
+					GenericHelper.waitForLoadmask( detailScreenWaitSec );
+					assertTrue( PopupHelper.isTextPresent( "window-scroll-panel", "Loading will be slow as it contains more data. Do you want to continue?" ) );
+					ButtonHelper.click( "yes" );
+					Thread.sleep( 5000 );
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					DataVerificationHelper verifyObj = new DataVerificationHelper();
+					verifyObj.validateData( "grid_column_header_searchGrid_", colHeader, "search-filter-grid-container", results );
+				}
+			}
+		}
+	}
+	
+	/*
+	 * Method for operator creation from account screen
+	 */
+	public void exportAllRows() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Aggregation Configuration" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			agcConfigMap = excelHolderObj.dataMap( paramVal );
+			String aggregationName = ExcelHolder.getKey( agcConfigMap, "AggregationName" );
+			String exportContentHeader = ExcelHolder.getKey( agcConfigMap, "ExportContentHeader" );
+			String exportContentRow = ExcelHolder.getKey( agcConfigMap, "ExportContentRow" );
+			boolean isAggregationConfig = genericHelperObj.isGridTextValuePresent( "PSDetail_agcName_txtid", aggregationName, "Name" );
+
+			if ( isAggregationConfig )
+			{
+				AggregationActionsImpl aggrActionObj = new AggregationActionsImpl();
+				aggrActionObj.viewResult( aggregationName );
+
+				agcConfigMap = excelHolderObj.dataMap( 0 );
+			
+				FileExport fileExpObj  = new FileExport();
+				fileExpObj.readData(exportContentHeader, exportContentRow, agcConfigMap);
+			}
+			else
+				Log4jHelper.logInfo( "Aggregation Configuration is not presnet" + aggregationName );
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Restore DB Backup">
+	<!-- Web application fixture -->
+	<listeners>
+      <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      <listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value=""></parameter>
+	<test name="Restore DB Backup">
+		<classes>
+			<class name="com.subex.automation.helpers.db.RestoreDBBackup" />
+		</classes>
+	</test>
+</suite>

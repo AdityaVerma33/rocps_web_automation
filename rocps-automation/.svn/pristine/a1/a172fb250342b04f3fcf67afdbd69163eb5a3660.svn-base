@@ -1,0 +1,216 @@
+package com.subex.rocps.automation.testcases.systemtesting;
+
+import com.subex.rocps.automation.helpers.application.bills.BillBreakDownInput;
+import com.subex.rocps.automation.helpers.application.bills.BillBreakdownConfiguration;
+import com.subex.rocps.automation.helpers.application.bills.BillBreakdownExtraField;
+import com.subex.rocps.automation.helpers.application.bills.BillBreakdownInputGroup;
+import com.subex.rocps.automation.helpers.application.bills.BillBreakdownOutput;
+import com.subex.rocps.automation.helpers.application.bills.BillBreakdownOutputGroup;
+import com.subex.rocps.automation.helpers.application.bills.BillPackage;
+import com.subex.rocps.automation.helpers.application.bills.SalesTaxGroup;
+import com.subex.rocps.automation.helpers.application.bills.SalesTaxRate;
+import com.subex.rocps.automation.helpers.application.matchandrate.CrossFXRate;
+import com.subex.rocps.automation.helpers.application.referenceTable.CrossFXRateGroup;
+import com.subex.rocps.automation.helpers.application.referenceTable.SalesTax;
+import com.subex.rocps.automation.helpers.application.system.Streams;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+import com.subex.automation.helpers.application.ControllerHelper;
+import com.subex.automation.helpers.application.screens.TaskControllerHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class BillPreRequisites extends PSAcceptanceTest {
+
+	String path = System.getProperty("user.dir") + "\\src\\main\\resources\\";
+	String workBookName = "SystemTestCases.xlsx";
+	String sheetName = "BillPreRequisites";
+
+	@org.testng.annotations.Test(priority = 1, description = "edit billing stream", dependsOnGroups = {
+			"Prerequisites1", "Prerequisites2", "Prerequisites3" }, groups = { "Prerequisites4" })
+	public void editBillingstream() throws Exception {
+		try {
+			String partition = null;
+			Streams streamObj = new Streams();
+			streamObj.editStreamConfig(path, workBookName, sheetName, "Streams", 1);
+			streamObj.billingStreamConfig(path, workBookName, sheetName, "Credit", 1);
+			streamObj.saveStreamDetail();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 2, description = "bill breakdown extra field creation", dependsOnMethods = {
+			"editBillingstream" }, groups = { "Prerequisites4" })
+	public void createBillBreakdownExtraField() throws Exception {
+		try {
+
+			BillBreakdownExtraField billextrafieldObj = new BillBreakdownExtraField(path, workBookName, sheetName,
+					"BillBreakdownExtraField");
+			billextrafieldObj.billExtraFieldCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 3, description = "bill breakdown Configuration creation", dependsOnMethods = {
+			"createBillBreakdownExtraField" }, groups = { "Prerequisites4" })
+	public void createBillBreakdownConfig() throws Exception {
+		try {
+
+			BillBreakdownConfiguration billconfigObj = new BillBreakdownConfiguration(path, workBookName, sheetName,
+					"BillBreakdownConfig");
+			billconfigObj.billConfigCreation();
+			billconfigObj.billbreakdownChangeStatus();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 4, description = "bill breakdown Input creation", dependsOnMethods = {
+			"createBillBreakdownConfig" }, groups = { "Prerequisites4" })
+	public void createBillBreakdownInput() throws Exception {
+		try {
+
+			BillBreakDownInput billInputObj = new BillBreakDownInput(path, workBookName, sheetName, "BillInput");
+			billInputObj.billInputCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 5, description = "bill breakdown Input Group creation", dependsOnMethods = {
+			"createBillBreakdownInput" }, groups = { "Prerequisites4" })
+	public void createBillBreakdownInputGrp() throws Exception {
+		try {
+
+			BillBreakdownInputGroup billInputGrpObj = new BillBreakdownInputGroup(path, workBookName, sheetName,
+					"BillInputGrp");
+			billInputGrpObj.billInputGrpCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 6, description = "bill breakdown Output creation", dependsOnMethods = {
+			"createBillBreakdownInputGrp" }, groups = { "Prerequisites4" })
+	public void createBillBreakdownOutput() throws Exception {
+		try {
+
+			BillBreakdownOutput billOutputObj = new BillBreakdownOutput(path, workBookName, sheetName,
+					"BillBreakdownOutput");
+			billOutputObj.billOutputCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 7, description = "bill breakdown Output Group creation", dependsOnMethods = {
+			"createBillBreakdownOutput" }, groups = { "Prerequisites4" })
+	public void createBillBreakdownOutputGrp() throws Exception {
+		try {
+
+			BillBreakdownOutputGroup billOutputGrpObj = new BillBreakdownOutputGroup(path, workBookName, sheetName,
+					"BillOutputGrp");
+			billOutputGrpObj.billOutputGrpCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 8, description = "bill package creation", dependsOnMethods = {
+			"createBillBreakdownOutputGrp" }, groups = { "Prerequisites4" })
+	public void createBillPackage() throws Exception {
+		try {
+
+			BillPackage billpackageObj = new BillPackage(path, workBookName, sheetName, "BillPackage");
+			billpackageObj.billPackageCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 9, description = "cross FX Rate Group creation", dependsOnMethods = {
+			"createBillPackage" }, groups = { "Prerequisites4" })
+	public void createCrossFXRateGroup() throws Exception {
+		try {
+
+			CrossFXRateGroup crossFXRateGrpObj = new CrossFXRateGroup(path, workBookName, sheetName, "CrossFxRateGrp");
+			crossFXRateGrpObj.crossFXRateGrpCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 10, description = "cross FX Rate Group creation", dependsOnMethods = {
+			"createCrossFXRateGroup" }, groups = { "Prerequisites4" })
+	public void createCrossFXRate() throws Exception {
+		try {
+
+			CrossFXRate crossFXRateObj = new CrossFXRate(path, workBookName, sheetName, "CrossFXRate");
+			crossFXRateObj.crossFXRatesCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 11, description = "Sales Tax creation", dependsOnMethods = {
+			"createCrossFXRate" }, groups = { "Prerequisites4" })
+	public void createSalesTax() throws Exception {
+		try {
+
+			SalesTax salesTaxObj = new SalesTax(path, workBookName, sheetName, "Sales Tax");
+			salesTaxObj.salesTaxCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 12, description = "Sales Tax rate creation", dependsOnMethods = {
+			"createSalesTax" }, groups = { "Prerequisites4" })
+	public void createSalesTaxRate() throws Exception {
+		try {
+
+			SalesTaxRate salesTaxRateObj = new SalesTaxRate(path, workBookName, sheetName, "Sales Tax Rate");
+			salesTaxRateObj.salesTaxRateCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 13, description = "Sales Tax rate group creation", dependsOnMethods = {
+			"createSalesTax" }, groups = { "Prerequisites4" })
+	public void createSalesTaxRateGroup() throws Exception {
+		try {
+
+			SalesTaxGroup salesTaxgrpObj = new SalesTaxGroup(path, workBookName, sheetName, "Sales Tax Group");
+			salesTaxgrpObj.salesTaxGroupCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+}

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diamond application="spark" softwareVersion="2.2.0.0" version="5">
+    <Decoder name="ASCII_for_Sequence" type="ascii">
+        <RecordType name="Root" root="true" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="CDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType allowEOFTerm="false" delimiter="comma" generate="record" name="CDR" parseDoubleQuotes="false" parseQuotes="false" root="false" terminator="lf" type="delimitedascii">
+            <Field encoding="windows-1252" generate="field" id="0" name="Caller_Number" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string"/>
+            <Field encoding="windows-1252" generate="field" id="1" name="Time_Stamp" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string">
+                <FieldConverter format="dd/MM/yyyy HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field encoding="windows-1252" generate="field" id="2" name="Sequence_Number" trimQuotes="true" trimWhiteSpace="true" trimWhiteSpaceInsideQuotes="true" type="string">
+                <FieldConverter type="integer"/>
+            </Field>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" name="CDR" nodeKey="shape1" recordType="CDR" type="Record" width="50" xPos="160" yPos="155">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="60" name="Mapping" nodeKey="shape2" recordType="Output_Fields" type="Mapping" width="65" xPos="275" yPos="150">
+                <Inputs>
+                    <Input nodeKey="shape1" nodeOutput="Output">
+                        <Events>
+                            <Event expression="GetUsagePartitionId('Default Usage Group', Time_Stamp, SecondPart(Time_Stamp))" name="Usg_Partition_ID" target="$zero" type="assign"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="Caller_Number" target="A_Number"/>
+                    <Mapping expression="Sequence_Number" target="Sequence_Number"/>
+                    <Mapping expression="Time_Stamp" target="Time_Stamp"/>
+                    <Mapping target="Gap"/>
+                    <Mapping expression="Sequence_Number" target="Seq_Number"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="ID()" target="cdr_id"/>
+                </Mappings>
+            </Node>
+            <Node UsagePartitionId="$zero" charset="windows-1252" filename="Concatenate( $$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat' )" height="50" name="Spark Output" nodeKey="shape5" outputKey="1" type="SparkOutput" unicode="false" width="60" xPos="400" yPos="160">
+                <Inputs>
+                    <Input nodeKey="shape2" nodeOutput="Output">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction blockSize="10" name="ID" objectKey="2" type="GenerateId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="Output_Fields">
+                <Field id="3" name="cdr_id" nullable="true" type="integer"/>
+                <Field id="4" name="A_Number" nullable="true" type="string"/>
+                <Field id="1" name="Time_Stamp" nullable="true" type="datetime"/>
+                <Field id="5" name="Seq_Number" nullable="true" type="integer"/>
+                <Field id="6" name="Gap" nullable="true" type="integer"/>
+                <Field id="7" name="sfl_id" nullable="true" type="integer"/>
+            </RecordType>
+            <RecordType name="subscriber">
+                <Field id="8" name="sub_id" nullable="true" type="integer"/>
+                <Field id="9" name="account_no" nullable="true" type="integer"/>
+                <Field id="10" name="subscriber_name" nullable="true" type="string"/>
+                <Field id="11" name="subscriber_dob" nullable="true" type="datetime"/>
+                <Field id="12" name="activation_amount" nullable="true" type="decimal"/>
+                <Field id="13" name="billing_cycle" nullable="true" type="integer"/>
+                <Field id="14" name="is_active" nullable="true" type="boolean"/>
+            </RecordType>
+			<RecordType name="fm_report_kpi">
+				<Field name="fmr_id" nullable="false" type="long"/>
+				<Field name="week_start_date" nullable="false" type="datetime"/>
+				<Field name="week_end_date" nullable="false" type="datetime"/>
+				<Field name="reporting_month" nullable="false" type="datetime"/>
+				<Field name="kpi_case_creation_rate" nullable="false" type="decimal"/>
+				<Field name="kpi_case_gen_accuracy" nullable="false" type="decimal"/>
+				<Field name="kpi_ooredoofm_workrate" nullable="false" type="decimal"/>
+				<Field name="kpi_subexms_workrate" nullable="false" type="decimal"/>
+				<Field name="kpi_fraud_run_time" nullable="false" type="decimal"/>
+				<Field name="kpi_timely_assessment" nullable="false" type="decimal"/>
+				<Field name="kpi_rule_recommendations" nullable="false" type="decimal"/>
+				<Field name="kpi_internal_clarifications" nullable="false" type="decimal"/>
+			</RecordType>
+			<RecordType name="r_etopup">
+				<Field name="etp_id" nullable="true" type="integer"/>
+				<Field name="etp_subscriber_number" nullable="true" type="string"/>
+				<Field name="etp_agent_number" nullable="true" type="string"/>
+				<Field name="etp_agent_name" nullable="true" type="string"/>
+				<Field name="etp_agent_code" nullable="true" type="string"/>
+				<Field name="etp_agent_type" nullable="true" type="string"/>
+				<Field name="etp_supplier" nullable="true" type="string"/>
+				<Field name="etp_product_name" nullable="true" type="string"/>
+				<Field name="etp_value" nullable="true" type="decimal"/>
+				<Field name="etp_margin" nullable="true" type="decimal"/>
+				<Field name="etp_service_tax" nullable="true" type="decimal"/>
+				<Field name="etp_transaction_id" nullable="true" type="string"/>
+				<Field name="etp_trans_time" nullable="true" type="datetime"/>
+				<Field name="etp_type" nullable="true" type="string"/>
+				<Field name="etp_trans_desc" nullable="true" type="string"/>
+				<Field name="etp_other_agent" nullable="true" type="string"/>
+				<Field name="etp_service" nullable="true" type="string"/>
+				<Field name="etp_remittance" nullable="true" type="decimal"/>
+				<Field name="etp_closing_bal" nullable="true" type="decimal"/>
+				<Field name="etp_talktime" nullable="true" type="decimal"/>
+				<Field name="etp_is_valid" nullable="true" type="string"/>
+			</RecordType>
+		</RecordTypes>
+        <Globals>
+            <Global id="0" initialValue="0" name="zero" type="integer"/>
+        </Globals>
+    </Mappings>
+</Diamond>

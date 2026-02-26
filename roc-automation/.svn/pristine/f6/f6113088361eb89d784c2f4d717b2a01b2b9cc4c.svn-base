@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CTAF" verbose="2" annotations="JDK" configfailurepolicy="skip">
+	<!-- Web application fixture -->
+	<listeners>
+		  <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+		  <listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+  	<parameter name="config" value="ctaf-config.properties"></parameter>
+  	<parameter name="orFiles" value=""></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="Testing" preserve-order="true">
+		<groups>
+	    	<dependencies>
+	      		<group name="Scripts" depends-on="Setup" />
+	    	</dependencies>
+	 	</groups>
+		<classes>
+			<class name="com.subex.automation.helpers.setup.CreateNewSetup" />
+		</classes>
+	</test>
+</suite>

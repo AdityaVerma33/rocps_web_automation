@@ -1,0 +1,1143 @@
+# Login Screen
+#--------------
+LoginScreen=login_data
+Login_Application_ComboBox=appNameInner
+Login_Error_Message=errorMessage
+LoginButton=btn
+
+Login_Username_TextBox=//input[@id='username-input-area' or @id='username']
+Login_Password_TextBox=//input[@id='password-input-area' or @id='password']
+Successfull_Login_Dialog=//div[contains(text(),'Last Successful Login:')]
+License_Expired_Dialog1=//div[contains(text(),'The license key has expired. Please contact Subex Ltd support.')]
+License_Expired_Dialog_OKButton1=//div[contains(text(),'The license key has expired')]//ancestor::div[contains(@class,'dialogMiddleCenter')]//button[text()='OK']
+License_Expired_Dialog2=//div[contains(text(), 'License Expired. Please contact Subex Ltd Support')]
+License_Expired_Dialog_OKButton2=//div[contains(text(), 'License Expired')]//ancestor::div[contains(@class,'dialogMiddleCenter')]//button[text()='OK']
+
+# Generic properties of ROC
+#----------------------------
+LoggedIn_User=id-welcome-name
+GXT_Loading_Mask=loading
+SparkToolBar=sparkToolbar
+Security_Partition_Dropdown=parititionCombo_gwt_uid_
+SecurityPartition_Popup=partitions
+
+Application_Screen=//iframe
+Loading_Mask=//div[@class='phoenix-loading-image']/img[contains(@src,'loading.gif')]
+Angular_Loading_Mask=//div[contains(@class,'loading-text')]
+ExpandSearchFiler=//div[@id='collapse']/img[contains(@src,'collapse.png')]
+CollapseSearchFilter=//div[@id='collapse']/img[contains(@src,'expand.png')]
+
+DataDir_Popup=chooserWindow
+DataDir_Token_Dropdown=tokenTbl_gwt_uid_
+DataDir_RelativePath_TextBox=filePath
+DataDir_Dialog_Filename_TextBox=fileName
+DataDir_Dialog_OK_Button=chooserWindow.save
+EntityCombo_Icon=//div[@class='roc-trigger roc-search-trigger']
+
+CommonTasks=//div[text()='Common Tasks']
+Export=//table[@id='menuBar']//div[text()='Export']
+ClearButton=//button[text()='Clear']
+
+Pagination_TotalRecordsFetched=//table[@class='roc-datagrid-toolbar-bottom']/tbody/tr/td[3]//span[@class='retrieved-items-text']
+Tooltip=//div[contains(@class,'roc-tooltip-content')]/span/i
+
+# Change Password
+#----------------
+ChangePassword_CurrentPassword=currentPassword
+ChangePassword_NewPassword=usrPassword
+ChangePassword_ConfirmPassword=confirmPassword
+ChangePassword_OK=changePasswordDetail.OK
+
+# Screen Titles
+----------------
+HomePage_Title=grouptTitle
+SearchScreen_Title=filterpanel-header-label
+DetailScreen_Title=titlePanel
+DetailScreen_ActionTitle=undefinedactionTypeLabel
+DetailScreen_FormTitle=formTitle
+
+Popup_Title=//div[contains(@class,'gwt-HTML roc-window-title')]
+
+# Options Menu
+#--------------
+Options_Menu=OptionsMenu
+AboutScreen_VersionNo=version
+
+Options_Icon=//div[@id='options']/img[contains(@src,'info-icon_toolbar.png')]
+Options_Options=//div[@id='OptionsMenu']//div[text()='screenName']
+
+# Navigation Menu
+#-----------------
+NavigationMenu_Frame=pop-up
+NavigationMenu_Wrapper=mega-menu-container
+QuickLinks_ById=quick-link-msg-holder
+
+MegaMenu_Wrapper=//div[@id='pop-up']//table[@id='item-menu-try']
+MegaMenu_QuickLinks_Panel=//div[@id='mega-menu-container-quick']//div[starts-with(@id,'id')]
+MegaMenu_GroupNames=//div[@id='mega-menu-container-quick']//div[@class='gwt-HTML ag-gwt-megamenu-label']/b1[text()='groupName']
+
+NavigationMenu=//div[@id='navigationLabel' or text()='Navigation Menu']
+NavigationMenu_Scroll=//div[@id='mega-menu-container']//div[@class='ps-scrollbar-y']
+NavigationMenu_EmptySpace=//table[@id='Navigation-panel']/tbody/tr/td
+NavigationMenu_Items=//table[@id='Navigation-panel']//div[contains(@id,'verticalPanel')]//div[contains(@id,'grp-container') or contains(@id,'menu-items-grouping-container')]//table//tr
+NavigationMenu_Screen=//table[@id='item-menu-try-redraw']//table[@id='item-menu']//div[@class='gwt-HTML' and text()='screenName']
+NavigationMenu_Screen_Star=//table[@id='item-menu-try-redraw']//table[@id='item-menu']//div[@class='gwt-HTML' and text()='screenName']//ancestor::table[starts-with(@id,'item-star-menu-id-')]//tr/td[2]/div
+ScreenSelect_Textbox=//table[@id='-searchBox1']//input[@type='text']
+ScreenSelect_Xpath=//div[@id='navigationSearch']//table//div[@id='id-ScreenName' or @id='id- ScreenName' or @id='ScreenName']
+ScreenSelect_Wrapper=//div[@id='navigationSearch']//div[@id='-mainPanel']//div[@id='-menuItemsPanel']//table//tr//div[starts-with(@id,'id-')]
+OptionsMenu_Items=//div[@id='OptionsMenu']//div[contains(@class,'roc-context-menu-item')]//div[@class='gwt-HTML']
+ActionMenu_Groups=//table[@id='menuBar']//div[@class='roc-menu-item']//div[@class='gwt-HTML']
+ActionMenu_SubMenu_Items=//div[@id='subMenu']//div[contains(@class,'roc-context-menu-item')]//div[@class='gwt-HTML']
+ActionMenu_SubSubMenu_Items=//div[@id='subSubMenu']//div[contains(@class,'roc-context-menu-item')]//div[@class='gwt-HTML']
+NavigationMenu_Group_Screens=//table[@id='item-menu-try-redraw']//table[@id='item-menu']//div[@class='gwt-HTML']
+
+# Search Screen
+#---------------
+Search_Panel=searchPanelContainer
+RevPad_LVR_Config=lvr
+ContextMenu=contextMenu
+
+GroupActionName=//table[@id='menuBar']//div[text()='actionName']
+SubMenuActionName=//div[@id='subMenu']//div[text()='actionName']
+SubSubMenuActionName=//div[@id='subSubMenu']//div[text()='actionName']
+Detail_ParentToolbar=//div[@class='roc-toolbar']//div[text()='actionName']
+Detail_ChildToolbar=//div[@class='roc-context-menu']//div[text()='actionName']
+ContextMenu_GroupAction=//div[@id='contextMenu']//div[text()='actionName']
+SearchScreen_Panel=//div[@id='bottomPanel']//div[@id='searchPanel' or @class='gwt-SplitLayoutPanel' or @class='roc-fs-panel']
+Search_FilterPanel=//div[@id='filterpanel-header-centerpanel']
+Search_Collapse=//div[@id='collapse' or @id='additionalFilterIcon']/img[contains(@src,'collapse.png')]
+Filter_Info=//div[@id='filterpanel-header-info']/img
+
+# Popup
+#-------
+Popup_Panel=window-scroll-panel
+Popup_Wrapper=//div[contains(@class,'roc-WindowBox') or contains(@class,'roc-file-upload-dialog')]
+ConfirmationPopup=//div[@class='gwt-DialogBox roc-WindowBox']//div[@id='popupId']
+Dialog_Wrapper=//div[@id='FORM' or @id='window-scroll-panel']
+
+# Common
+#---------
+Wrapper_Locator=//*[contains(@id,'wrapperId')]
+
+Entity_Search_Icon_Div_ById=//*[@id='entityId']
+Div_ByText=//div[text()='divText']
+Dialog_Close_Icon=//a[@class='roc-dialog-close']
+Detail_Panel=//table[@class='roc-detail-page-table']
+
+# Button
+#--------
+OK_Button_ByID=ok
+
+SearchButton=//button[@id='search-button' or text()='Search' or @id='search']
+CancelButton=//button[text()='Cancel' or text()=' Cancel' or text()='Cancel ']
+SaveButton=//button[text()='Save' or text()=' Save']
+OK_TRT_Button=//button[@id='ok']
+OKButton=//button[text()='O K' or text()='OK' or text()='Ok']
+YesButton=//button[text()='Yes']
+NoButton=//button[text()='No']
+DiscardButton=//button[text()='Discard' or @id='discard' or text()=' Discard' or text()='Discard ']
+Button_ById=//button[@id='idOrText']
+Button_ByText=//button[text()='idOrText' or text()=' idOrText' or text()='idOrText ']
+CloseButton=//button[text()='Close' or text()=' Close' or text()='Close ']
+Dialog_CancelButton=//div[@id='window-scroll-panel']//button[text()='Cancel' or text()=' Cancel' or text()='Cancel ']
+Button_ByDivId=//div[@id='idOrText']
+Button_ByDivText=//div[text()='idOrText']
+Toolbar=//div[@class='roc-toolbar']
+SearchScreen_Buttons=//button[contains(@class,'roc-primary-button') and not(contains(@class,'-disabled'))]
+Toolbar_Button=//div[@class='roc-toolbar-button' and not(contains(@class,'disabled'))]
+EntitySearch_Button=//div[contains(@class,'roc-search-trigger') or contains(@class,'roc-textfield-trigger')]
+ButtonPanel_Button=//div[@id='ButtonPanel']//div[contains(@class,'gwt-HTML') and not(contains(@class,'roc-label-disable'))]
+DNA_Button=//div[@id='contextD3Menu']//li[text()='idOrText']
+
+# Text Box
+#----------
+TextBox_ById=//input[@id='idOrName']
+TextBox_ByName=//input[@name='idOrName']
+TextBox_DatePicker=//table[@id='idOrName']//input[contains(@class,'gwt-DateBox')]
+TextBox_SearchBox=//div[@id='idOrName']//input[contains(@class,'searchBox')]
+TextBox_With_DivWrapper=//div[@id='idOrName']//input
+TextBox_With_TableWrapper=//table[@id='idOrName']//input
+Grid_TextBox_Wrapper=//ancestor::div[@id='grid_cell_popuppanel']
+
+# Label
+#--------
+Label_ById=//div[@id='labelIdOrValue']
+Label_ByText=//div[contains(@class, 'x-form-label') and text()='labelIdOrValue']
+Common_Label=//*[text()='labelIdOrValue' or contains(text(),'labelIdOrValue')]
+Common_Label_DoubleQuoted=//div[text()="labelIdOrValue"]
+Common_Label_BySpan=//span[text()='labelIdOrValue']
+Label_InTree=//div[@id='hierarchyTree-1' and text()='labelIdOrValue']
+
+# Combo Box
+#-----------
+Pagination_Combo=pagersearchGrid_gwt_uid_
+Include_Combo=deleteFl_gwt_uid_
+
+Common_Select_Combo=//select[contains(@id,'id_gwt-uid-')]
+ComboBox_ById=//div[starts-with(@id,'comboId')]
+ComboBox_ById_Wrapper=//div[starts-with(@id,'comboId')]/a
+ComboBox_Value=//span
+ComboBox_Arrow=//div/b
+ComboBox_Dropdown=//div[starts-with(@id,'floater_comboId')]
+ComboBox_Dropdown_List=//div[starts-with(@id,'floater_comboId')]//li
+ComboBox_Dropdown_ByTitle=//li[@title='value' or @title='value ' or @title=' value' or @title=' value ']
+ComboBox_Dropdown_ByText=//li[text()='value' or text()='value ' or text()=' value' or text()=' value ']
+ComboBox_SearchBox_ById=//div[starts-with(@id,'floater_comboId')]//input[@type='text']
+ComboBox_BySelect=//select[starts-with(@id,'idOrXpath') and @class='gwt-ListBox']
+ComboBox_Sibling=//preceding-sibling::select
+ComboBox_Dropdown_Value=//option[@value='dropDownValue' or @value=' dropDownValue' or @value='dropDownValue ' or @value=' dropDownValue ']
+ComboBox_Dropdown_Text=//option[text()='dropDownValue' or text()=' dropDownValue' or text()='dropDownValue ' or text()=' dropDownValue ']
+ComboBox_Expanded=//div[starts-with(@id,'floater_') and contains(@class,'NJ')]
+ComboBox_Dropdown_Open=//div[starts-with(@id,'floater_')]//li[contains(@class,'AL')]
+
+# CheckBox
+#----------
+CheckBox_ById=//input[@id='checkBoxId']
+CheckBox_Img_ById=//img[@id='checkBoxId']
+
+# Radio Button
+#--------------
+RadioButton_ById=//input[@id='radioId']
+
+# Calendar
+#----------
+Calendar_From_TextBox=-fromDateLabel
+Calendar_To_TextBox=-toDateLabel
+Calendar_ByImg=//img
+Calendar_ByDiv=//div[contains(@class,'roc-date-trigger')]
+Calendar_Now=//table[@class='datePickerMonthSelector']//img[contains(@src,'now.png')]
+
+# Tab
+#------
+Tab_Panel=gwt-TabLayoutPanelTabs
+Tab_ById=//div[@id='tabIdOrName']
+Tab_Div_ByText=//div[text()='tabIdOrName']
+Tab_Span_ByText=//span[text()='tabIdOrName']
+UserProperties_Tab=//div[@class='gwt-tabLabel' and contains(text(), 'User Properties')]
+ClientProperties_Tab=//div[@class='gwt-tabLabel' and contains(text(), 'Client Properties')]
+ServerProperties_Tab=//div[@class='gwt-tabLabel' and contains(text(), 'Server Properties')]
+SystemProperties_Tab=//div[@class='gwt-tabLabel' and contains(text(), 'System Properties')]
+DiceProperties_Tab=//div[@class='gwt-tabLabel' and contains(text(), 'Dice Properties')]
+RAProperties_Tab=//div[@class='gwt-tabLabel' and contains(text(), 'RA Properties')]
+Tab_Elements=//table[@id='Spark Application']//div[@class='gwt-TabLayoutPanelTabs']//div[contains(@class, 'gwt-tabLabel')]
+Tab_Elements1=//table[@id='Spark Application']//div[contains(@class, 'gwt-tabLabel')]
+Workflow_Elements=//table[@id='wrokflowTopPanel']//div[@class='gwt-HTML roc-wrokflow-action-desctiption']
+Active_Tab_Parent=//ancestor::table[contains(@class,'label-active')]
+
+# Grid
+#------
+SearchGrid=searchGrid
+Editable_Grid_Component=grid_cell_popuppanel
+Advance_Search_Panel=mainVerticalPanel
+Grid_Filer_Calendar=options
+Grid_Filter_Panel=_grid_header_filter
+Grid_Arrow_Panel=_grid_header_context_menu
+Grid_HeaderArrow=roc-grid-header-menu-anchor
+Grid_SortAscending=_grid_header_context_menu_sort_ascending_item
+Grid_SortDescending=_grid_header_context_menu_sort_descending_item
+
+Grid_Container=//div[contains(@class,'roc-datagrid-container')]
+Grid_Error_Icon=//*[@class='roc-datagrid-error-icon' or @class='roc-toolbar']//img[contains(@src,'error.png')]/parent::div
+Empty_SearchGrid=//div[@id='gridId']//div[text()='No Results Found.']
+Grid_Div_ById=//div[@id='gridId']
+Grid_Table_ById=//table[@id='gridId']
+Grid_Empty_Div_ById=//div[@id='gridId']//div[@class='MH' or @class='GNHAT4HCMH']
+Grid_Empty_Table_ById=//table[@id='gridId']//div[@class='MH' or @class='GNHAT4HCMH']
+Grid_Filter_Icon=/parent::div[contains(@class,'roc-grid-column-header')]//div[contains(@id,'grid_column_header_filter')]
+Grid_Arrow_Icon=//following-sibling::div[contains(@class,'roc-grid-column-header')]//div[contains(@id,'grid_column_header_anchor')]
+Grid_SearchIcon=//div[@id='_grid_header_filter']//img
+Grid_SearchButton=//div[@id='_grid_header_filter']//div[text()='Search']
+Editable_Grid=//div[@id='gridId']//th[colNum]//div[contains(@class,'roc-grid-header')]
+Editable_Grid_Click=//div[@id='gridId']//th[contains(@role,'button')]
+AdvancedSearch=//div[text()='Advanced Search']
+FilterPanel_Expand_Arrow=//div[@id='collapse']/img[contains(@src,'collapse.png')]
+FilterPanel_Expanded=//table[@id='col-filter' and contains(@class,'gwt-DisclosurePanel-open')]
+FilterPanel_Collapse_Arrow=//div[@id='collapse']/img[contains(@src,'expand.png')]
+FilterPanel_Collapsed=//table[@id='col-filter' and contains(@class,'gwt-DisclosurePanel-open')]
+ContextSearch_Icon=//div[@id='-container']//img[@class='gwt-Image']
+ContextSearch_Icon_WithWrapper=//div[@id='_grid_header_filter'][2]//div[@id='-container']//img[@class='gwt-Image']
+ContextSearch_WithWrapper=//div[@id='_grid_header_filter'][2]//div[@id='-container']//div[text()='Search']
+AllRows=//div[text()='All Rows']
+Grid_Main_SubAction=//div[@id='mainActionId']//div[@id='subActionId']
+Grid_SubAction=//div[@id='subActionId']
+Grid_Row_ByDiv=//div[@class='MH' or @class='GNHAT4HCMH' or @class='HI' or @class='GNHAT4HCHI' or @class='GEHN5TNHI']//table//tr[rowNo]
+Grid_Row_ByTable=//table//tr[rowNo]
+Grid_HeaderValue=//th//div[contains(text(),'headerValue')]
+Grid_Column_ByDiv=/td[colNo]//div
+Grid_Column_ByInput=/td[colNo]//input
+Grid_Column_ByTriggerDiv=/td[colNo]//div[@id='trigger-id']
+Grid_Column_BySpanInput=/td[colNo]//span/input
+New_GridFilter_CheckBox_Panel=//table[@id='mainVerticalPanel']
+New_GridFilter_Search=//div[contains(@class,'roc-header-filter-panel')]//div[text()='Search']
+New_GridFilter_ScrollPanel=//div[@id='-container']
+New_GridFilter_Label=//label[text()='value']
+New_GridFilter_CheckBox=/preceding-sibling::input
+New_GridFilter_TextBox=//div[@class='roc-filter-panel-container']//input
+Grid_Header=//th//div[contains(@class,'roc-grid-column-header-label')][1]
+Grid_Boolean_CheckBox=/div/img[contains(@src,'no _new.png')]
+Grid_Row=//tr[rowNo]
+Grid_Column=/td[colNo]
+Search_Grid_ContextSearch_Icon=//div[contains(@class,'roc-grid-column-header-label') and contains(text(),'heaverValue')]//following-sibling::div/div[contains(@class,'roc-grid-header-menu-filter')]
+Search_Grid_SearchFilterTextBox=//div[@id='_grid_header_filter']//input[@class='gwt-TextBox']
+Search_Grid_SearchFilter_ComboBox=//div[@id='_grid_header_filter']//div[contains(@id,'_gwt_uid_')]//div/b
+Search_Grid_SearchFilter_ComboBox_Textbox=//div[@id='_grid_header_filter']//div[contains(@id,'_gwt_uid_')][2]//input[@type='text']
+Search_Grid_SearchFilter_ComboBox_Wrapper=//div[@id='_grid_header_filter']//div[contains(@id,'_gwt_uid_')][2]
+Copy_SelectedCells=//div[text()='Selected Cell(s)']
+Copy_SelectedColumn=//div[text()='Selected Column']
+Copy_SelectedRows=//div[text()='Selected Row(s)']
+Copy_AllRows=//div[text()='All Rows']
+Search_Grid_Sort_Icon=//div[contains(@class,'roc-grid-column-header-label') and contains(text(),'heaverValue')]/parent::div/parent::div//preceding-sibling::div//img
+AdvancedSearch_Dropdown=//div[@class='gwt-SuggestBoxPopup']//td[@role='menuitem']
+
+# Property Grid
+#---------------
+PropertyGrid_Grid=property
+PropertyGrid_Components=//tr[@class='roc-property-grid-col-header']/following-sibling::tr
+PropertyGrid_Property=//div[text()='property']
+PropertyGrid_TextBox=//div[text()='property']/parent::td/parent::tr//input[contains(@class,'TextBox')]
+PropertyGrid_Dropdown_1=//div[text()='property']/parent::td/parent::tr//div[starts-with(@id,'gwt_uid_')]
+PropertyGrid_Dropdown_2=//div[text()='property']/parent::td/parent::tr//div[starts-with(@id,'id_gwt_uid_')]
+PropertyGrid_CheckBox=//div[text()='property']/parent::td/parent::tr//input[@type='checkbox']
+PropertyGrid_Date=//div[text()='property']/parent::td/parent::tr//input[contains(@class,'DateBox')]
+PropertyGrid_DataDir=//div[text()='property']/parent::td/parent::tr//input
+PropertyGrid_DataDir_Icon=//div[text()='property']/parent::td/parent::tr//div[@id='trigger-id']
+
+PropertyGrid_TextBox1=//div[text()='property']/parent::td//following-sibling::td[2]//input[contains(@class,'gwt-TextBox') or contains(@class, 'gwt-PasswordTextBox')]
+PropertyGrid_TextBox2=//div[text()='property']/parent::td//following-sibling::td[4]//input[contains(@class,'gwt-TextBox') or contains(@class, 'gwt-PasswordTextBox')]
+PropertyGrid_Dropdown1=//div[text()='property']//parent::td//parent::tr//td[3]
+PropertyGrid_Dropdown2=//div[text()='property']//parent::td//parent::tr//td[5]
+PropertyGrid_CheckBox1=//div[text()='property']/parent::td//following-sibling::td[2]//input[@id='id_InputElement']
+PropertyGrid_CheckBox2=//div[text()='property']/parent::td//following-sibling::td[4]//input[@id='id_InputElement']
+PropertyGrid_Date1=//div[text()='property']/parent::td//following-sibling::td[2]//input[contains(@class,'gwt-DateBox')]
+PropertyGrid_Date2=//div[text()='property']/parent::td//following-sibling::td[4]//input[contains(@class,'gwt-DateBox')]
+PropertyGrid_DataDir_Icon1=//div[text()='property']/parent::td//following-sibling::td[2]//div[@id='trigger-id']
+PropertyGrid_DataDir_Icon2=//div[text()='property']/parent::td//following-sibling::td[4]//div[@id='trigger-id']
+Settings_Tab_Properties=//div[@id='property']//tr/td//div[contains(@class,'roc-property-label')]
+PropertyGrid_RowCol_ByTable=//table[@id='gridId']/table//div[contains(@class,'roc-property-label')][row]
+PropertyGrid_RowCol_ByDiv=//div[@id='gridId']/table//div[contains(@class,'roc-property-label')][row]
+PropertyGrid_ByWrapperID=//div[@id='FORM' or @id='window-scroll-panel']//div[@id='property']
+
+# Configure Grid
+#-----------------
+ConfigureGrid_Icon=configureGridIcon
+ConfigureGrid_Add=configureGridTBModel.add
+ConfigureGrid_Delete=configureGridTBModel.delete
+ConfigureGrid_MoveUp=configureGridTBModel.moveUp
+ConfigureGrid_MoveDown=configureGridTBModel.moveDown
+
+ConfigureGrid_Grid=configureGridColumn
+ConfigureGrid_Caption=grcLabel
+ConfigureGrid_Type=grcType_gwt_uid_
+ConfigureGrid_Visible=grid_check_editor
+ConfigureGrid_ThousandSeparator=grcSeparator_checked_column_field_image
+ConfigureGrid_Alignment=grcTextAlign_gwt_uid_
+ConfigureGrid_Sort=grcSort_gwt_uid_
+ConfigureGrid_NullDisplay=grcNullDisplay
+ConfigureGrid_DataProperty=grcDataProperty
+
+ConfigureGrid_Color_Grid=configureGridColorColumn
+ConfigureGrid_Color_AddColorFilter=configureGridColorTBModel.addColorFilter
+ConfigureGrid_Color_EditColorFilter=configureGridColorTBModel.editColorFilter
+ConfigureGrid_Color_DeleteColorFilter=configureGridColorTBModel.deleteColorRule
+ConfigureGrid_Color_AttachColorFilter=configureGridColorTBModel.attachColorFilter
+ConfigureGrid_Color_ApplyAll=configureGridColorTBModel.applyAll
+ConfigureGrid_Color_DisableAll=configureGridColorTBModel.disableAll
+
+ConfigureGrid_Color_ColorCheck=colorCheck_checked_column_field_image
+ConfigureGrid_Color_RuleFilter=queryFilterModel
+ConfigureGrid_Color_PrioritySequence=sequenceNoEditor
+ConfigureGrid_Color_RuleColor=ruleColorEditor
+
+ConfigureGrid_Reset=configureGrid.reset
+ConfigureGrid_OK=configureGrid.OK
+ConfigureGrid_Cancel=configureGrid.cancel
+
+# File Upload
+#-------------
+FileUpload_Browse=//div[@class='roc-trigger roc-fileupload-trigger']
+FileUpload_Browse_ById=//*[@id='uploadId']//div[@class='roc-trigger roc-fileupload-trigger']
+
+# Image
+#-------
+Image_ById=//img[@id='imageId']
+Image_BySrc=//img[contains(@src,'imageId')]
+Image_ByDivId=//div[@id='imageId']//img
+Image_ByTableId=//table[@id='imageId']//img
+
+# Link
+#-------
+Link_ByDiv=//div[text()='linkIdOrText']
+Link_ById=//a[@id='linkIdOrText']
+Link_ByText=//a[text()='linkIdOrText']
+
+# Tree
+#-------
+Tree_ByDiv=//div[@id='treeId']
+Tree_ByText=//*[text()=' treeText' or text()='treeText' or text()='treeText ']
+Tree_ByStartsWithText=//*[starts-with(text(),'treeText')]
+Tree_ByContainsText=//*[contains(text(),'treeText')]
+Tree_Child_ByText=//ancestor::div[4]//div[text()=' child' or text()='child' or text()='child ']
+Tree_Child_ByStartsWithText=//ancestor::div[4]//div[starts-with(text(),'child') or starts-with(text(),' child')]
+Tree_Child_ByContainsText=//ancestor::div[4]//div[contains(text(),' child')]
+Tree_Expand_ByImg1=/parent::div//preceding-sibling::div/img
+Tree_Expand_ByImg2=/img
+Tree_ExpandCollapse_Status=/ancestor::div[contains(@class,'FF')]/parent::div[@role='treeitem']
+EditableTree_ExpandCollapse_Status=/ancestor::div[@class='AG']/parent::div[@role='treeitem']
+EditableTree_CheckBox_Checked=/ancestor::div[@role='treeitem']//td[1]//img[contains(@src,'cellchecked')]
+EditableTree_CheckBox_Unchecked=/ancestor::div[@role='treeitem']//td[1]//img[contains(@src,'cellunchecked')]
+Tree_Item=//*[@role='treeitem']
+
+# TextArea
+#-----------
+TextArea_ById=//textarea[@id='textAreaIdOrName']
+TextArea_ByName=//textarea[@name='textAreaIdOrName']
+
+# Copy Popup
+#------------
+Copy_Textarea=copy
+Copy_Close=close
+
+# Services
+#----------
+ShutDown_Controller=Shutdown Controller
+SC_Status_Icon=scStatus
+
+SC_NotRunningStatus_TopPanel=//table[@id='rightSparkToolbar']//div[@id='scStatus']/img
+SC_RunningStatus_TopPanel=//div[@id='scStatus' and @style='display: none;']
+SC_StoppedStatus_TopPanel=//div[@id='scStatus' and @style='']
+SS_RunningStatus_TopPanel=//div[@id='ServerService']/img[contains(@src,'server-service-running_toolbar.png')]
+SS_Shutdown_Confirmation=//div[@id='window-scroll-panel']//div[text()='Are you sure you want to stop Server Service?']
+TaskSearch_StreamController=//div[@id='hierarchyTree1' and text()=' Stream Controller']
+TaskSearch_Shutdown_SC_Confirmation=//div[@id='window-scroll-panel']//div[text()='Are you sure you want to shutdown the Stream Controller?']
+TaskSearch_Shutdown_TC_Confirmation=//div[@id='window-scroll-panel']//div[text()='Are you sure you want to shutdown the taskControllerName?' or text()='Are you sure you want to shutdown the Task Controller?']
+
+# Hierarchy Grid
+#----------------
+HGrid_DataTable=//table[contains(@class,'inbox_card_cell')]
+HGrid_Row_ByDiv=//div[@class='MH' or @class='GNHAT4HCMH']//table//tr[@__gwt_row='rowNo']
+HGrid_Row_ByTable=//table//tr[@__gwt_row='rowNo']
+HGrid_ImageCell1=//td[col]//tr[1]//img
+HGrid_ImageCell2=//td[col]//tr[2]//img
+HGrid_DataCell1=//td[col]//tr[1]//div
+HGrid_DataCell2=//td[col]//tr[2]//div
+
+# Settings
+#----------
+Settings_OK=settingsDetail.OK
+Settings_Cancel=settingsDetail.cancel
+
+# Day Group Grid
+#----------------
+Scheduling_FrequencyMultiplier=frequencyRshFrequencyMultiplier
+Scheduling_Frequency=frequencyFrequencyComponent_gwt_uid_
+Scheduling_NextScheduled=rshNextDttm
+
+DayGroup_Grid=dayGroupGrid
+DayGroup_Add=recurringScheduleMenu.add
+DayGroup_YesButton=recurringScheduleMenu.yes
+DayGroup_NoButton=recurringScheduleMenu.no
+DayGroup_YesButton2=dayGroupMenu.yes
+DayGroup_NoButton2=dayGroupMenu.no
+
+# ROC View
+#----------
+ROCView_Visualizer=rocViewDetail
+ROCView_Iframe=iframeAngular3
+
+# D3JS Canvas
+#-------------
+Canvas_ByDivID=//div[@id='canvasId']
+Canvas_ByTableID=//table[@id='canvasId']
+Node_Resize_Icon=//*[name()='svg']//*[contains(@style,' e-resize')]/*[name()='rect']
+Node_Size=//*[name()='svg']/*[name()='g']//*[name()='g']
+
+Canvas_Shape=shape-vertex_NUM
+Canvas_Label=label-vertex_NUM
+Node_ByText=//*[name()='svg']//*[starts-with(@id,'label-vertex_')]//*[contains(text(),'nodeText')]
+Node_ByPosition=//*[name()='svg']//*[starts-with(@id,'label-vertex_')][positionIndex]//*[contains(text(),'nodeText')]
+Node_ByPosition1=//*[name()='svg']//*[starts-with(@id,'label-vertex_')][positionIndex]
+Canvas_RightBottom_Corner=//*[name()='svg']//*[name()='g'][9]//*[name()='rect']
+Canvas_Measure_Status=//*[name()='svg']//*[name()='g'][3]//*[name()='g'][NUM]//*[name()='image']
+
+# DNA Canvas
+#------------
+DNA_CanvasID=vizBusnesHrchy
+DNA_RightClick_Panel=contextD3Menu
+
+DNA_Node_ByText=//*[contains(@class,'bhy-node')]/*[contains(@class,'bhy-nodeText') and contains(text(),'nodeText')]
+DNA_Node_ByPosition=//*[name()='svg']//*[name()='g' and contains(@class,'bhy-node')][positionIndex]/*[name()='text' and contains(text(),'nodeText')]
+DNA_Nodes=//*[name()='svg']//*[name()='g' and contains(@class,'bhy-node')]
+DNA_Path=//*[name()='svg']/*[name()='g']//*[name()='path']
+DNA_Node_Text=//*[name()='svg']//*[name()='g' and contains(@class,'bhy-node')][positionIndex]/*[name()='text']
+DNA_ChildNode=/parent::*/preceding-sibling::*/*[contains(@class,'bhy-nodeText') and contains(text(),'childTreeText')]
+DNA_FinalNode=/parent::*/following-sibling::*/*[contains(@class,'bhy-nodeText') and contains(text(),'childTreeText')]
+
+# Entities
+#----------
+Entities_Entity=entEntity
+Entities_AllowNotes=entAllowNotesFl_InputElement
+Entities_GloballyCached=entCacheFl_InputElement
+Entities_IDReset=entAllowIdReuse_InputElement
+
+Entities_ExtraArgument_Grid=extraArgsDfns
+Entities_ExtraArgument_Add=extraArgstoolbar.add
+Entities_ExtraArgument_Name=descText
+Entities_ExtraArgument_Type=paramDfn_gwt_uid_
+Entities_ExtraArgument_Mandatory=allowFieldEditor_checked_column_field_image
+
+Entities_ExtraControl=extraControlId_gwt_uid_
+
+# Controller
+#-------------------
+StreamController_Name=stcName
+TaskController_Name=tcrName
+TC_TCCapability_Button=taskControllerDetail.taskControllerCapabilities
+TC_TCCapability_Grid=taskControllerCapabilitiesGridModel
+TC_TCCapability_Stream_Icon=grid_column_header_filterundefined_streamStage.stream.stmName
+TC_TCCapability_Stream=1
+TC_TCCapability_StreamStage_Icon=grid_column_header_filterundefined_streamStage.stsName
+TC_TCCapability_StreamStage=2
+TC_TCCapability_SetCapability=capabilitiesToolbar.setCapability
+TC_TCCapability_Static=staticCheck_InputElement
+TC_TCCapability_Capability=bckcapability
+TC_TCCapability_WeightagePerTask=bckwtgPerTask
+TC_TCCapability_Distribution=bckdistribution
+TC_TCCapability_Capability_OK=capabilitiesDetail.OK
+TC_TCCapability_OK=taskControllerCapabilitiesDetail.OK
+
+# Task Search
+#-------------
+TaskSearch_SearchButton=search
+MonitoringTab=taskmonitoring
+SearchTab=tasksearch
+SummaryTab=tasksummary
+TaskSearch_LeftTree=cell-list-panel
+TaskSearch_LeftTree_FilterTextBox=newHorizontalPanel
+TaskSearch_LeftTree_FilterCross=gwt-Image crossIcon
+TaskSearch_Administrator_Refresh=refreshSystremHierarchyTree
+TaskSearch_ShowTasksIn=tasksInLast_gwt_uid_
+TaskSearch_AddNewTask=addNewTasks_InputElement
+TaskSearch_LeftTree_ContextMenu=systemHierarchyContextMenu
+
+TaskSearch_Stream=//div[starts-with(@id,'hierarchyTree') and text()=' streamName']//ancestor::div[@role='treeitem']
+TaskSearch_TaskController=//div[@id='hierarchyTree1' and text()=' taskControllerName']
+TaskSearch_TaskControllers=//div[@id='hierarchyTree-3' and text()=' Task Controllers']//ancestor::div[contains(@class,'FF')]//following-sibling::div//div[@role='treeitem']
+TaskSearch_TaskController_Names=//div[@id='hierarchyTree-3' and text()=' Task Controllers']//ancestor::div[contains(@class,'FF')]//following-sibling::div//div[@role='treeitem'][row]//div[contains(@id,'hierarchyTree')]
+TaskSearch_TC_Status=//div[@id='hierarchyTree1']//img[contains(@src,'trafficlight_green.png')]
+EditTC_LinkToCurrentTask=//div[text()='Stream Name']//ancestor::tr[1]//div[text()='Stream Stage Name']//ancestor::tr[1]//img
+
+# Alerts
+#--------
+Alerts_AlertGroup=alertGroup_gwt_uid_
+Alerts_Raised=aliRaisedDttm
+Alerts_AlertDefinition=alertDfn_gwt_uid_
+
+# Reference Table
+#------------------
+ReferenceTable_DropDownArrow=displayString_gwt_uid_
+Detail_Popup=SparkEntitySearch.window
+
+# Data Source Location
+#----------------------
+DSL_Name=dslName
+DSL_DataSourceType=dataSourceType_dsyName_gwt_uid_
+DSL_Instance=Instance *
+DSL_MachineName=Machine Name *
+DSL_SecondaryMachines=Secondary Machine(s)
+
+# Data Source Connection
+#------------------------
+DSC_Name=dscName
+DSC_DSL_Name=dataSourceLocation_dslName_gwt_uid_
+DSC_MaxActiveConnection=Connection Pool Maximum Active Connections *
+DSC_MaxIdleConnection=Connection Pool Maximum Idle Connections *
+DSC_MinIdleConnection=Connection Pool Minimum Idle Connections *
+DCS_ExhaustedAction=Connection Pool When Exhausted Action *
+DSC_Database=Database
+DSC_LinkToRefDB=Link to Reference DB
+DSC_LinkToStagingDB=Link to Staging DB
+DSC_LinkToUsageServer=Link to Usage Server
+DSC_ONSConfig=ONS Config(Oracle RAC)
+DSC_Password=Password *
+DSC_Unicode=Unicode
+DSC_Username=Username *
+
+# Usage Server
+#--------------
+US_Name=usvName
+US_MachineName=machineTbl_macName_gwt_uid_
+US_DSL=dataSourceLocation_dslName_gwt_uid_
+US_DSC=dataSourceConnection_dscName_gwt_uid_
+US_DataLocation=usvDataLocation
+US_IndexLocation=usvIndexLocation
+
+# Schema
+#--------
+Schema_Name=schName
+Schema_Schema_Type=schemaType_sctName_gwt_uid_
+Schema_Usage_Group=usageGroup_usgName_gwt_uid_
+
+# Schema Type
+#-------------
+SchemaType_Name=sctName
+SchemaType_Component=component_cmpName_gwt_uid_
+
+# Token
+#--------
+Token_Name=tokToken
+Token_MachineFlag=tokMachineFl
+
+# Usage Group
+#-------------
+UsageGroup_Name=usgName
+UsageGroup_Type_Dropdown=component_gwt_uid_
+UsageGroup_Automatic_Radio=automatic_InputElement
+UsageGroup_Manual_Radio=manual_InputElement
+UsageGroup_RollOver_CheckBox=usgAutorolloverEnable_InputElement
+UsageGroup_ShowOffline_CheckBox=showOfflinePartitions_InputElement
+UsageGroup_EnableHybrid=usgHybridFl_InputElement
+UsageGroup_ActivePeriod=usgActivePeriod
+UsageGroup_UsagePartition_Grid=usagePartitions
+UsageGroup_UsagePartition_Add=usagePartitionToolbar.add
+UsageGroup_UsagePartition_Edit=usagePartitionToolbar.edit
+
+UsageGroup_ManualPartition_Name=upnName
+UsageGroup_ManualPartition_TableSuffix=upnSuffix
+UsageGroup_ManualPartition_From=usagePartitionFrom
+UsageGroup_ManualPartition_To=usagePartitionTo
+UsageGroup_ManualPartition_ApplyIndex=upnIndexFl_InputElement
+UsageGroup_ManualPartition_OK=usagePartitionDetail.OK
+UsageGroup_UsagePartition_TakeOffline=usagePartitionToolbar.takeOffline
+UsageGroup_TakeOffline_Warning_Yes=yes
+
+UsageGroup_AutomaticPartition_Name=usagePartitionModel.upnName
+UsageGroup_AutomaticPartition_TableSuffix=usagePartitionModel.upnSuffix
+UsageGroup_AutomaticPartition_From=usagePartitionModel.usagePartitionFrom
+UsageGroup_AutomaticPartition_NoPartitions=partitionCount
+UsageGroup_AutomaticPartition_ApplyIndex=usagePartitionModel.upnIndexFl_InputElement
+UsageGroup_AutomaticPartition_TypeMultiplier=partitionTypeUsageGroup.usgPartitionMultiplier
+UsageGroup_AutomaticPartition_Type=partitionTypeUsgPartitionPeriod_gwt_uid_
+UsageGroup_AutomaticPartition_Increment=usageGroup.usgExpectedFreePartnCnt
+UsageGroup_AutomaticPartition_OK=autoUsagePartitionDetail.OK
+
+UsageGroup_Subpartition_Type=subpartitionComponent_gwt_uid_
+UsageGroup_Subpartition_Function=subpartitionTypeComponent_gwt_uid_
+UsageGroup_Subpartition_Grid=usageSubpartitions
+UsageGroup_Subpartition_Add=usageSubpartitionToolbar.add
+UsageGroup_Subpartition_Name=uspNameText
+UsageGroup_Subpartition_TableSuffix=uspSuffixText
+UsageGroup_Subpartition_From=uspFrom
+UsageGroup_Subpartition_To=uspTo
+
+RefreshUsagePartitions_Msg=//div[contains(text(),'The Usage Partitions have been successfully refreshed.')]
+
+# Import from Diamond
+#---------------------
+TableDfn_ImportFromDiamond_FileUpload=FileUpload-upload
+TableDfn_ImportFromDiamond_Panel=importedTbdsPanel
+TableDfn_ImportFromDiamond_Partition=partitionTbl_gwt_uid_
+TableDfn_ImportFromDiamond_RecordType=diamondRecordTypes_gwt_uid_
+TableDfn_ImportFromDiamond_OK=importFromDiamondDetail.OK
+
+# Table Definition
+#------------------
+TableDfn_Name=tbdName
+TableDfn_Prefix=tbdPrefix
+TableDfn_SchemaType=schemaType_gwt_uid_
+TableDfn_EnableHybrid=tbdHybridFl_InputElement
+
+TableDfn_Column_Grid=columnGrid
+TableDfn_Column_Add=tableColToolbar.add
+TableDfn_Column_Edit=tableColToolbar.edit
+TableDfn_Column_Delete=tableColToolbar.delete
+TableDfn_Column_Primary_Key=tclPrimaryKeyFl_InputElement
+TableDfn_Column_Name=tclName
+TableDfn_Column_DisplayName=tclDisplay
+TableDfn_Column_DataType=tclType_gwt_uid_
+TableDfn_Column_Nullable=nullableFl_InputElement
+TableDfn_Column_HourlyPartKey=partKeyFl_InputElement
+TableDfn_Column_LookupColumn=lookupFl_InputElement
+TableDfn_Column_EntityRef=entityTbl
+TableDfn_Column_Entity_TextBox=entEntity
+TableDfn_Column_Save=tableColumnDetail.save
+
+TableDfn_Index_Grid=indexGrid
+TableDfn_Index_Add=indexToolbar.add
+TableDfn_Index_Name=tixSuffix
+TableDfn_Index_Unique=tixUniqueFl_InputElement
+TableDfn_Index_Clustered=tixClusteredFl_InputElement
+TableDfn_Index_ActivePeriod=tixRecentDataFl_InputElement
+TableDfn_Index_InactivePeriod=tixOlderDataFl_InputElement
+TableDfn_Index_AvailableColumns_Grid=availableGrid
+TableDfn_Index_Selected_Columns_Grid=selectedGrid
+TableDfn_Index_Save=tableIndexDetail.save
+
+# Table Instance
+#----------------
+TableInst_IncludeSystem_Filter=tableDfn_tbdSystemFl_gwt_uid_
+TableInst_TableDefinition=tableDfn_gwt_uid_
+TableInst_Load_Button=load
+TableInst_Schema=schemaTbl_gwt_uid_
+TableInst_TableName=tinTableName
+TableInst_DisplayName=tinDisplayName
+TableInst_Alias=tinAlias
+TableInst_PartitionColumn=partitionTableColumn_gwt_uid_
+TableInst_SubpartitionColumn=subPartitionTableColumn_gwt_uid_
+TableInst_DataSourceConnection=dataSourceConnection_gwt_uid_
+TableInst_SearchColumns_Tab=Search Columns
+TableInst_AvailableColumns_Grid=searchAvailableColumns
+TableInst_SearchColumns_Grid=searchColumns
+TableInst_SearchFilters_Tab=Search Filters
+TableInst_Filter_AvailableColumns_Grid=filterAvailableColumns
+TableInst_FilterColumns_Grid=filterColumns
+
+# Jump to Search
+#----------------
+J2S_FromDate=fromDttm
+J2S_ToDate=toDttm
+J2S_RecordCount=recordCount
+J2S_RecordCount_PleaseWait=//button[text()='Analyzing please wait...']
+
+J2S_Edit_File=fileName
+J2S_Edit_RecordNumber=recordNo
+J2S_Edit_Record_Grid=recordGrid
+J2S_Edit_Integer_TextBox=//*[@id='integer']
+J2S_Edit_String_TextBox=//*[@id='text']
+J2S_Edit_Boolean_ComboBox=check_gwt_uid_
+J2S_Edit_DateTime_TextBox=//*[@id='date']
+J2S_Edit_Decimal_TextBox=//*[@id='decimal']
+J2S_Edit_Save=sqlTableDetail.save
+J2S_Edit_Cancel=sqlTableDetail.cancel
+
+J2S_ManualDataLoad_FileName=fileUpload
+J2S_ManualDataLoad_Import=FileUpload-Import
+J2S_ManualDataLoad_FieldDelimiter=delimiter_gwt_uid_
+J2S_ManualDataLoad_CustomDelimiter=customDelimiter
+J2S_ManualDataLoad_DateFormat=dateTimeFormat_gwt_uid_
+J2S_ManualDataLoad_CustomDateFormat=customDateFormat
+J2S_ManualDataLoad_TruncatAndLoad=truncate_InputElement
+J2S_ManualDataLoad_TrimQuotes=trimQuotes_InputElement
+J2S_ManualDataLoad_ConvertDecimal=convertDecimal_InputElement
+J2S_ManualDataLoad_SkipHeader=skipHeader_InputElement
+
+J2S_ViewRawRecord_RecordTree=recordTree
+J2S_ViewRawRecord_Field_Grid=fieldGrid
+J2S_ViewRawRecord_Close=decodeRecordDetail.Close
+
+# Streams
+#---------
+Stream_Name=stmName
+Stream_StreamStage_Grid=StreamStage
+Stream_StreamStage_Add=streamStageTBModel.add
+Stream_StreamStage_Edit=streamStageTBModel.edit
+Stream_StreamStage_Type=streamStageType_gwt_uid_
+Stream_StreamStage_Name=stsName
+Stream_StreamStage_RestartTask=stsRetryFlag_InputElement
+Stream_StreamStage_RestartAttempts=stsRetryAttempts
+Stream_StreamStage_RestartInterval=stsInterval
+Stream_StreamStage_RestartLookback=stsLookback
+Stream_StreamStage_OK=streamStageDetail.OK
+
+Stream_ParseOutput_Grid=parseOutputMapGrid
+Stream_ParseOutput_Add=parseOutputMapTBModel.add
+Stream_ParseOutput_OutputKey=pomOutputKey1
+Stream_ParseOutput_TableInstance=grid_cell_popuppanel
+Stream_ParseOutput_DataLoad=pomDataLoadFl1_checked_column_field_image
+Stream_ParseOutput_OK=ok
+Stream_ParseOutput_Cancel=cancel
+
+# File Source
+#-------------
+FileSource_Name=flsName
+FileSource_Type=component_gwt_uid_
+FileSource_MaxCocurrent=flsMaximumConcurrent
+FileSource_StabilitySecs=flsStabilitySecs
+
+# File Collection
+#-----------------
+FileCollection_Name=fcnName
+FileCollection_ManualFileTransfer=fcnPendingFl_InputElement
+FileCollection_FileSource=fileSource
+FileCollection_RelativePath=fcnPath
+FileCollection_FilelistMask=fcnFilelistMask
+FileCollection_ValidationMask=fcnValidationMask
+FileCollection_CompressionType=compressionComponent_gwt_uid_
+FileCollection_OutputPath=fcnOutputPath
+FileCollection_MaxRetries_CheckBox=maximumRetriesFlMaxRetriesFl_InputElement
+FileCollection_MaxRetries_TextBox=maximumRetriesFlFcnMaximumRetries
+FileCollection_RetrySeconds=maximumRetriesFlFcnRetrySecs
+FileCollection_DuplicateFile_Detect=fcnDuplicateFileFlagsGroupFcnDetectDuplicateFileFl_InputElement
+FileCollection_DuplicateFile_Process=fcnDuplicateFileFlagsGroupFcnProcessDuplicateFileFl_InputElement
+FileCollection_OldestFileFirst=fcnCollectionOrderOld_InputElement
+FileCollection_LatestFileFirst=fcnCollectionOrderLatest_InputElement
+FileCollection_SequenceBased=fcnCollectionOrderSequence_InputElement
+FileCollection_IdleAlertInterval=fcnIdleAlertInterval
+
+FileCollection_Stream=stream_gwt_uid_
+FileCollection_StreamStage=targetStreamStage_gwt_uid_
+FileCollection_CollectionAction=fcnCollectedAction_gwt_uid_
+FileCollection_RelativeMovePath=fcnMovePath
+FileCollection_RenamePrefix=fcnRenamePrefix
+FileCollection_RenameSuffix=fcnRenameSuffix
+FileCollection_ZipCollectedFiles=fcnExtra1_InputElement
+
+FileCollection_RecordIntegrityCheck=fileIntegrityCheck.sficRecordCountCheckFl_InputElement
+FileCollection_RecordIntegrityCheck_Automatic=autoManualRadioRecordIntegrityAutomatic_InputElement
+FileCollection_RecordIntegrityCheck_Manual=autoManualRadioRecordIntegrityManual_InputElement
+FileCollection_MinimumRecordCount=fileIntegrityCheck.sficMinRecordCount
+FileCollection_MaximumRecordCount=fileIntegrityCheck.sficMaxRecordCount
+
+FileCollection_FileIntegrityCheck=fileIntegrityCheck.sficFileSizeCheckFl_InputElement
+FileCollection_FileIntegrityCheck_Automatic=autoManualRadioFileSizeGroupAutomatic_InputElement
+FileCollection_FileIntegrityCheck_Manual=autoManualRadioFileSizeGroupManual_InputElement
+FileCollection_MinimumFileSize=fileIntegrityCheck.sficMinFileSize
+FileCollection_MaximumFileSize=fileIntegrityCheck.sficMaxFileSize
+
+# Recurring Task
+#----------------
+RecurringTask_Name=srtName
+RecurringTask_Stream=stream_gwt_uid_
+RecurringTask_StreamStage=streamStage_gwt_uid_
+RecurringTask_Priority=srtPriorityStr_gwt_uid_
+RecurringTask_ReuseExistingTask=srtReuseTaskFl_InputElement
+RecurringTask_RunTaskIgnoringFailure=srtRunAfterFailFl_InputElement
+
+# Trigger
+#---------
+Trigger_Name=trgName
+Trigger_Type=triggerType_gwt_uid_
+Trigger_Stream=stream_gwt_uid_
+
+Trigger_Action_Grid=actionsGrid
+Trigger_Action_Add=actionsToolbar.add
+Trigger_Action_Name=acnName
+Trigger_Action_Type=actionType_gwt_uid_
+Trigger_InputPins_Grid=inputActionPinConnections
+Trigger_InputPins_Source=sourcePinOwnerCombo_gwt_uid_
+Trigger_InputPins_SourcePin=sourcePinCombo_gwt_uid_
+Trigger_Action_OK=actionDetail.OK
+
+# Standard Expression
+#---------------------
+StandardExp_FunctionName=ssteName
+StandardExp_Description=ssteDesc
+StandardExp_Expression=ssteExpr
+StandardExp_ReturnType=ssteReturnType_gwt_uid_
+StandardExp_Parameters_Grid=paramGrid
+StandardExp_Parameters_Add=paramTB.add
+StandardExp_Parameter_Label=labelEditor
+StandardExp_Parameter_DataType=typeEditor_gwt_uid_
+
+# Query Filter
+#--------------
+QueryFilter_Name=qfrName
+QueryFilter_TableDfn_EntityCombo=tableDfn
+QueryFilter_Expression_Grid=queryFilterGrid
+QueryFilter_HavingClause_Grid=sqlQueryHavingpanel
+
+QueryFilter_Expression_GridWrapper=sqlQuerypanel
+QueryFilter_Expression_Add=queryFilterComponentToolbar.add
+QueryFilter_Expression_Add_Condition=queryFilterAddSubMenu.condition
+QueryFilter_Expression_Add_Filter=queryFilterAddSubMenu.filter
+QueryFilter_Expression_Clause=condition_gwt_uid_
+QueryFilter_Expression_LeftIndent=leftIndentOptions
+QueryFilter_Expression_Expression_Combo=id_gwt_uid_
+QueryFilter_Expression_Expression_Text=grid_cell_popuppanel
+QueryFilter_Expression_Operator=operator_gwt_uid_
+QueryFilter_Expression_RightIndent=rightIndentOptions
+QueryFilter_Expression_ExpressionAction=queryFilterComponentToolbar.expression
+
+QueryFilter_Expression_StandardExpression=queryFilterExpressionSubMenu.addEditStandardExpression
+QueryFilter_Expression_StdExp_Grid=.window
+QueryFilter_Expression_StdExp_Function=functionName_gwt_uid_
+QueryFilter_Expression_StdExp_Overload=overloadName_gwt_uid_
+QueryFilter_Expression_StdExp_OK=expressionEditor.save
+
+QueryFilter_Expression_Function=queryFilterExpressionSubMenu.addEditFunction
+QueryFilter_Expression_Constant=queryFilterExpressionSubMenu.addEditConstant
+QueryFilter_Expression_Function_Grid=SqlExpressionDetail.window
+QueryFilter_Expression_Function_DataType=sparkTypes_gwt_uid_
+QueryFilter_Expression_Function_Value=datatypeEditor
+QueryFilter_Expression_Function_Combo=booleanBox_gwt_uid_
+QueryFilter_Expression_Function_OK=sqlExpressionDetail.ok
+
+QueryFilter_Expression_Aggregate1=aggregate1Options_gwt_uid_
+QueryFilter_Expression_Aggregate2=aggregate2Options_gwt_uid_
+
+# Duplicate XDR Check
+#---------------------
+DuplicateXDR_Name=dcfName
+DuplicateXDR_XDRTable=tableDfn_gwt_uid_
+DuplicateXDR_HashCodeField=hashcodeTableColumn_gwt_uid_
+DuplicateXDR_FlagField=flagTableColumn_gwt_uid_
+DuplicateXDR_IdField=idTableColumn_gwt_uid_
+DuplicateXDR_TagStatusField=tagstatusTableColumn_gwt_uid_
+DuplicateXDR_HourPartKey=dcfHourPartKeyFl_InputElement
+DuplicateXDR_PartKeyField=HourPartTableColumn_gwt_uid_
+DuplicateXDR_GenerateAlert=dcfGeneratealertFl_InputElement
+DuplicateXDR_MatchDuplicates_Grid=matchFieldGrid
+DuplicateXDR_Match_CheckBox=allowFieldEditor_checked_column_field_image
+DuplicateXDR_TableInstance_Grid=tableInstGrid
+DuplicateXDR_TableInstance_CheckBox=allowTableEditor_checked_column_field_image
+
+# Sync Reference Tables
+#------------------------
+SyncRefTable_Name=synrName
+SyncRefTable_Grid=tableSelectionGrid
+SyncRefTable_Add_Button=tableSelectionGridToolBar.add
+SyncRefTable_SourceDSC=srcDataConnectionCombo_gwt_uid_
+SyncRefTable_DestinationDSC=destDataConnectionCombo_gwt_uid_
+SyncRefTable_DeltaColumn=tableColumnCombo_gwt_uid_
+SyncRefTable_UniqueColumn=uniqueTableColumnCombo_gwt_uid_
+SyncRefTable_TrunateAndLoad_Multiplier=freqMul
+SyncRefTable_TrunateAndLoad_Frequency=freqComponent_gwt_uid_
+SyncRefTable_PreviouslyTruncatedTime=synrPrevTrunc
+SyncRefTable_ReuseTask=synrReuseTskFl_InputElement
+
+# BOP
+#-----
+BOP_Panel=ra-case-management-main-div-id
+
+# Entity Export
+#---------------
+EntityExport_Name=expName
+EntityExport_FileName=filFilename
+EntityExport_ExportType=exportType_gwt_uid_
+EntityExport_AddExportType=addExportType
+EntityExport_ExportTree=exportTree
+
+# Entity Import
+#----------------
+EntityImport_Name_FilterIcon=grid_column_header_filtersearchGrid_expName
+EntityImport_FileUpload=Import
+EntityImport_UploadButton=FileUpload-upload
+EntityImport_Name=expName
+EntityImport_ImportAll=importSelectionImportAll_InputElement
+EntityImport_ImportSelected=importSelectionManualImport_InputElement
+EntityImport_Tree=gwt-Tree
+
+# Team Notification
+#-------------------
+TeamNotification_Add=teamToolBar.add
+TeamNotification_Grid=teamNotificationGrid
+TeamNotification_Team=teamCombo_gwt_uid_
+TeamNotification_EmailOnNew=teamEmail_checked_column_field_image
+TeamNotification_SMSOnNew=teamEmail_checked_column_field_image
+
+# User Notification
+#-------------------
+UserNotification_Add=userToolBar.add
+UserNotification_Grid=userNotificationGrid
+UserNotification_User=userCombo_gwt_uid_
+UserNotification_EmailOnNew=userEmail_checked_column_field_image
+UserNotification_SMSOnNew=userSMS_checked_column_field_image
+
+# Case Template Linking
+#-----------------------
+LinkCaseTemplate_CaseTemplate=caseTemplate
+LinkCaseTemplate_CreateSingleCase=singleCaseFl_InputElement
+LinkCaseTemplate_Notify=notifyFl_InputElement
+LinkCaseTemplate_PropertyMapping_Grid=casePropertyMappingGrid
+LinkCaseTemplate_PropertyMapping=caseMappingEditor_gwt_uid_
+LinkCaseTemplate_ExpiresIn=ctmpExpiresDttmExpr
+LinkCaseTemplate_Cost=ctmpCostField
+LinkCaseTemplate_Severity=ctmpSeverityField
+LinkCaseTemplate_Save=manualCaseInstDetail.ok
+
+# Collected Files
+#-----------------
+CollectedFiles_PolledDate=clfPolledDttm
+CollectedFiles_FileName=fileTbl$filFilename
+CollectedFiles_Status=clfStatus_gwt_uid_
+CollectedFiles_FileCollection=fileCollection_gwt_uid_
+CollectedFiles_FileSource=fileCollection_fileSource_gwt_uid_
+CollectedFiles_Token=fileCollection_tokenTbl_gwt_uid_
+CollectedFiles_FileCollection=fileCollection_gwt_uid_
+CollectedFiles_Duplicate=fileTbl_filDuplicateFl_gwt_uid_
+
+CF_ParseStatistics_Filename=filename
+CF_ParseStatistics_InputRecords=fpsTotalInputRecords
+CF_ParseStatistics_OutputRecords=fpsTotalOutputRecords
+CF_ParseStatistics_InputUsage=fpsTotalInputUsage
+CF_ParseStatistics_OutputUsage=fpsTotalOutputUsage
+CF_ParseStatistics_FirstRecordDate=fpsFirstRecordDttm
+CF_ParseStatistics_LastRecordDate=fpsLastRecordDttm
+CF_ParseStatistics_EarliestRecordDate=fpsEarliestRecordDttm
+CF_ParseStatistics_LatestRecordDate=fpsLatestRecordDttm
+CF_ParseStatistics_FirstRecordSeqNo=fpsFirstRecordSeqNum
+CF_ParseStatistics_LastRecordSeqNo=fpsLastRecordSeqNum
+CF_ParseStatistics_FirstBlockSeqNo=fpsFirstBlockSeqNum
+CF_ParseStatistics_LastBlockSeqNo=fpsLastBlockSeqNum
+CF_ParseStatistics_Records_Tree=fileParseStatisticGridModel
+CF_ParseStatistics_RecordsTypes=//div[starts-with(@id,'fileParseStatisticGridModel-')]
+CF_ParseStatistics_Close=fileParseStatisticsDetail.cancel
+
+CF_CompressedEntries_Grid=fileArchiveTblsGrid
+CF_CompressedEntries_Close=fileArchiveTblDetail.close
+
+# Table Instance Groups
+#-----------------------
+TIG_AddTableInstance=tableInstGridToolbar.add
+
+# Measures
+#----------
+QM_AddTableInstance=sourceSelectionGridToolBar.addTableInstance
+
+# String Rule Set
+#------------------
+SRS_Name=srsName
+
+SRS_StringRules_Grid=stringRulesGrid
+SRS_StringRules_Add=stringRulesToolbar.add
+
+SRS_StringRule_Name=srlName
+SRS_StringRule_RuleSteps_Grid=ruleStepGrid
+SRS_StringRule_RuleSteps_Add=ruleStepsToolbar.add
+SRS_StringRule_RuleSteps_Edit=ruleStepsToolbar.edit
+SRS_StringRule_RuleStep_MatchString=srpMatchString
+SRS_StringRule_RuleStep_OutputString=srpOutputString
+SRS_StringRule_RuleStep_MatchNextStep=matchedStringRuleStep_gwt_uid_
+SRS_StringRule_RuleStep_NonmatchNextStep=nonMatchedStringRuleStep_gwt_uid_
+SRS_StringRule_RuleStep_FieldString=srpFieldString
+SRS_StringRule_RuleStep_Save=stringRuleStepDetail.save
+SRS_StringRule_Save=stringRuleDetail.save
+
+SRS_RuleMatches_Grid=stringMatchesGrid
+SRS_RuleMatches_Add=stringMatchesToolbar.add
+SRS_RuleMatches_MatchString=matchString
+SRS_RuleMatches_StringRule=stringRuleCombo_gwt_uid_
+
+# File Sequence Check
+#----------------------
+FSC_Name=sfscName
+
+FSC_GroupInfo_Grid=groupInfoGrid
+FSC_GroupInfo_TextBox=expression1
+
+FSC_SequenceInfo_Grid=sequenceInfoGrid
+FSC_SequenceInfo_TextBox=seqInfoValue
+
+FSC_VariableLengthSequence=sfscVariableLenSeqFl_InputElement
+FSC_InitialRunLookback=sfscInitialRunLookback
+FSC_SettlingTime=sfscSettlingTime
+FSC_TimeTolerance=sfscToleranceTime
+
+FSC_GenerateAlert=sfscGenAlertFl_InputElement
+FSC_GenerateExpiredFileAlert=sfscGenExpiredFileAlertFl_InputElement
+FSC_RetainSequenceNumber=sfscRetainSeqNoFormatFl_InputElement
+FSC_GenerateDuplicateFile=sfscGenDupFileAlertFl_InputElement
+FSC_CancellationLookback=sfscCancellationLookback
+FSC_RangeAlertThreshold=sfscRangeAlertThreshold
+FSC_RunCheckTolerance=sfscRunCheckTolerance
+
+FSC_FileCollections_Grid=fileSeqFileCollectionGrid
+FSC_FileCollections_Add=fileSeqFileCollectionToolBar.add
+FSC_FileCollections_FilelistMask=sfsfFilelistMaskEditor
+FSC_FileCollections_Enable=sfsfEnabledFlEditor_checked_column_field_image
+
+FSC_RunTaskAfterFailure=sfscRunFailedTaskFl_InputElement
+
+# Cache Strategies
+#-------------------
+CacheStrategy_Panel=form-wrapper
+CacheStrategy_ObjectClass=cstObjectClass
+CacheStrategy_CacheClass=cstCacheClass
+CacheStrategy_Strategy=component_gwt_uid_
+CacheStrategy_Timeout=cstTimeoutMins
+
+CacheStrategy_QueryBuilder=QueryBuilder
+CacheStrategy_QueryBuilder_Sources_Grid=sourceSelectionGrid
+CacheStrategy_QueryBuilder_AddTI=sourceSelectionGridToolBar.addTableInstance
+CacheStrategy_QueryBuilder_JoinType=sqfJoinTypeCombo_gwt_uid_
+CacheStrategy_QueryBuilder_TableAlias=sqfTableAliasTxt
+CacheStrategy_QueryBuilder_Column1=sqfTblColumn1Combo_gwt_uid_
+CacheStrategy_QueryBuilder_EditColumn1=sqfColumn1Txt
+CacheStrategy_QueryBuilder_Column2=sqfTblColumn2Combo_gwt_uid_
+CacheStrategy_QueryBuilder_EditColumn2=sqfColumn2Txt
+
+CacheStrategy_QueryBuilder_Tab=topPanelContainer
+CacheStrategy_QueryBuilder_Save=queryBuilderDetail.save
+
+# Federated Data Source
+#------------------------
+FedDataSource_Name=rdlcName
+FedDataSource_Prefix=rdlcPrefix
+FedDataSource_DataSourceType=dataSourceType_gwt_uid_
+
+# Federated View
+#----------------
+FedView_Name_Filter=tableDfn$tbdName
+FedView_SourceTable_SearchFilter=rdlvSourceTableName
+FedView_DataSource=dbLinkConfig_gwt_uid_
+FedView_SourceTable=sourceTableName
+FedView_SourceTable_Filter=rdvsName
+FedView_Name=tableDfn.tbdName
+
+FedView_Columns_Grid=dbLinkViewColumns
+FedView_Columns_Select=selectFl_checked_column_field_image
+FedView_Columns_TargetColumnName=viewColumnName
+FedView_Columns_TargetDataType=typeEditor_gwt_uid_
+FedView_Columns_Unique=hashParamFl_checked_column_field_image
+
+# ROC Flows
+#------------
+ROCFlows_Name=swftWorkflowName
+
+ROCFlows_Toolbar_Grid=WorkFlowToolbarGrid
+ROCFlows_Toolbar_Add=toolbar-button-label-FlowToolbar.Add
+ROCFlows_Toolbar_Delete=toolbar-button-label-FlowToolbar.Delete
+ROCFlows_Toolbar_MoveUp=toolbar-button-label-FlowToolbar.moveUp
+ROCFlows_Toolbar_MoveDown=toolbar-button-label-FlowToolbar.moveDown
+ROCFlows_Toolbar_Name=workflowtoolbareditor
+
+ROCFlows_ToolbarItems_Grid=WorkFlowToolbarItemGrid
+ROCFlows_ToolbarItems_AddScreens=toolbar-button-label-FlowToolbarItem.Add
+ROCFlows_ToolbarItems_AddReferenceTables=toolbar-button-label-FlowToolbarItem.AddReferenceTable
+ROCFlows_ToolbarItems_Delete=toolbar-button-label-FlowToolbarItem.Delete
+ROCFlows_ToolbarItems_MoveUp=toolbar-button-label-FlowToolbarItem.moveUp
+ROCFlows_ToolbarItems_MoveDown=toolbar-button-label-FlowToolbarItem.moveDown
+
+Screens_Name=screenTbl$scrDisplayName
+
+ROCFlowsPanel_Flow=//div[@id='workFlowCon']//div[starts-with(@id,'id-') and text()='flowName']
+ROCFlowsPanel_Toolbar=//div[@id='searchDetaiLCon']/div[2]//div[starts-with(@id,'id-') and text()='toolbarName']
+ROCFlowsPanel_ToolbarItem=//div[@id='searchDetaiLCon']/div[3]//div[starts-with(@id,'id-') and text()='toolbarItemName']
+
+# Notes
+#-------
+Note_Name=notName
+Note_Description=description
+
+Note_Attachments_Grid=noteAttachments
+Note_Attachments_Add=noteAttachmentToolbar.add
+
+Note_Attachments_FileUpload=FileUpload-upload
+
+Note_Attachments_Hyperlink_Label=label
+Note_Attachments_Hyperlink_Hyperlink=hyperlink
+Note_Attachments_Hyperlink_Save=hyperLinkAttachment.save
+
+Note_Save=noteDetail.save
+
+# Masking Configuration
+#-----------------------
+Masking_Name_FilterIcon=grid_column_header_filtersearchGrid_masName
+Masking_TableDefinition_FilterIcon=grid_column_header_filtersearchGrid_tableDfn$tbdName
+Masking_TableDefinition_Filter=tableDfn$tbdName
+Masking_Name=masName
+Masking_TableDefinition=tableDfn
+
+Masking_Columns_Grid=columnGrid
+Masking_Columns_Masking=tclMaskingEditor
+
+# Day Group
+#-----------
+DayGroup_Name=dgpName
+DayGroup_Type=component_gwt_uid_
+
+DayGroup_Date_Add=toolbar-button-label-gridToolbar.add
+DayGroup_Date_Grid=dateDayGroupGrid
+DayGroup_Date_Date=dateEditor
+DayGroup_Date_Name=nameEditor
+
+DayGroup_DayString_Grid=dayGroupGrid

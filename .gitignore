@@ -1,0 +1,68 @@
+############################
+# Maven
+############################
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+dependency-reduced-pom.xml
+
+############################
+# Eclipse / IDE
+############################
+.project
+.classpath
+.settings/
+bin/
+.tmp/
+*.launch
+
+############################
+# IntelliJ (if someone uses it)
+############################
+.idea/
+*.iml
+out/
+
+############################
+# OS-specific
+############################
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+############################
+# Logs / Reports
+############################
+logs/
+*.log
+log/
+test-output/          # TestNG default report folder
+surefire-reports/
+extent-reports/
+allure-results/
+allure-report/
+reports/
+screenshots/
+output/
+
+############################
+# Selenium / Playwright Artifacts
+############################
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.har
+
+############################
+# Environment / Config Files
+############################
+*.properties.local
+*.env
+.env.local
+
+############################

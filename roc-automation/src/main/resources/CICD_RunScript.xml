@@ -1,0 +1,264 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CICD" verbose="2" annotations="JDK" configfailurepolicy="skip">
+	<!-- Web application fixture -->
+	<listeners>
+		  <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+		  <listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+  	<parameter name="config" value="ctaf-config.properties"></parameter>
+  	<parameter name="orFiles" value="CM_OR.properties,Measures_Audits_OR.properties,Tariff_OR.properties,Users_OR.properties,LDC_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="CICD" preserve-order="true">
+		<groups>
+	    	<dependencies>
+	      		<group name="prerequisite1" depends-on="Setup" />
+	      		<group name="prerequisite" depends-on="Setup" />
+	    	</dependencies>
+	 	</groups>
+		<classes>
+			<class name="com.subex.automation.helpers.setup.CreateNewSetup" />
+			
+			<class name="com.subex.automation.testcases.systemtesting.etl.testPrerequisite" />
+			<class name="com.subex.automation.testcases.systemtesting.etl.testRun" />
+			<class name="com.subex.automation.testcases.systemtesting.etl.testVerifyResult" />
+		</classes>
+	</test>
+	<test name="Duplicate Check ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.duplicatecheck.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.duplicatecheck.testPrerequisite2" />
+			<class name="com.subex.automation.testcases.systemtesting.duplicatecheck.testRun" />
+			<class name="com.subex.automation.testcases.systemtesting.duplicatecheck.testVerifyResult" />
+		</classes>
+	</test>
+	<test name="Audit1 ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.audits1.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits1.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits1.testPrerequisite3" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits1.testPrerequisite4" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits1.testRunOfParseAndDataLoad" />
+			<class name="com.subex.automation.testcases.systemtesting.audits1.testRunOfAuditRequestAndCase" />
+			<class name="com.subex.automation.testcases.systemtesting.audits1.testVerifyAuditRequest" />
+			<class name="com.subex.automation.testcases.systemtesting.audits1.testVerifyKPIAndCases" />
+		</classes>
+	</test>
+	<test name="Audit2 ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.audits2.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits2.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.audits2.testRunOfParseAndDataLoad" />
+			<class name="com.subex.automation.testcases.systemtesting.audits2.testRunOfAuditRequest" />
+			<class name="com.subex.automation.testcases.systemtesting.audits2.testVerifyAuditRequest" />
+		</classes>
+	</test>
+	<test name="File Sequence Check ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testPrerequisite3" />
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testRun" />
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testVerifyCase" />
+			<class name="com.subex.automation.testcases.systemtesting.filesequencecheck.testVerifyResult" /> 
+		</classes>
+	</test>
+	<test name="Data Federation ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.datafederation.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.datafederation.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.datafederation.testPrerequisite3" />
+			<class name="com.subex.automation.testcases.systemtesting.datafederation.testRun" />
+			<class name="com.subex.automation.testcases.systemtesting.datafederation.testVerify" />
+		</classes>
+	</test>
+	<test name="ROC Flows ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.rocflows.testROCFlows" />
+		</classes>
+	</test>
+	<test name="Offline LDC ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.offlineldc.testPrerequisite" />
+	    	<class name="com.subex.automation.testcases.systemtesting.offlineldc.testRun1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.offlineldc.testRun2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.offlineldc.testRun3" />
+		</classes>
+	</test>
+	<test name="Online LDC ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.onlineldc.testPrerequisite" />
+	    	<class name="com.subex.automation.testcases.systemtesting.onlineldc.testRun" />
+	    	<class name="com.subex.automation.testcases.systemtesting.onlineldc.testVerify" />
+		</classes>
+	</test>
+	<test name="ETL Issues" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testASCII" />
+			<!-- <class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testASN1" /> -->
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testBinary" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.testDatabaseParse" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test153957" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test138166" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test160257" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test143012" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test156583" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test156765" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test137221" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test144488" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test159123" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test136899" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test137530" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test142483" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test162872" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test139540" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test139548" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test139658" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test154031" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.etl_issues.test159398" />
+		</classes>
+	</test>
+	<test name="Audit Issues" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.testPrerequisite" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test150933" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test164698" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test164597" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163040" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163039" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163037" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162864" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test157943" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162964" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162501" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test151878" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test151877" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test150062" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test157943" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test145029" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141903" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test140186" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test139644" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test150933" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test164358" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163014" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162503" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test152213" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test152212" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test152121" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test145485" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test143018" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141918" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141902" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141862" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test140021" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test138308" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test151102" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test140033" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test153664" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test149503" />
+		</classes>
+	</test>
+	<test name="ETL Regression" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testPrerequisite" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testSkipRecordOnError" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testTruncateBeforeLoad" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithDetectDuplicate" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithZipCollectedFiles" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCForCompressedFiles" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithAutomaticRIC" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithManualRIC" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithAutomaticFileSizeCheck" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithManualFileSizeCheck" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testTriggerWithActions" />
+		</classes>
+	</test>
+	<test name="Duplicate XDR Regression" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testPrerequisite" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testNew" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testSearch" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testEdit" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testDelete" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testCopy" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testExport" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testWithoutTagStatus" />
+			<class name="com.subex.automation.testcases.regressiontesting.duplicatecheck.testMultipleTableInstances" />
+		</classes>
+	</test>
+	<test name="Data Federation Regression" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.datafederation.testFDSSearch" />
+			<class name="com.subex.automation.testcases.regressiontesting.datafederation.testFDSView" />
+			<class name="com.subex.automation.testcases.regressiontesting.datafederation.testFDSConnection" />
+			<class name="com.subex.automation.testcases.regressiontesting.datafederation.testFVSearch" />
+			<class name="com.subex.automation.testcases.regressiontesting.datafederation.testCreateView" />
+			<class name="com.subex.automation.testcases.regressiontesting.datafederation.testEditView" />
+			<class name="com.subex.automation.testcases.regressiontesting.datafederation.testRemoteDataSource" />
+		</classes>
+	</test>
+	<test name="Masking Regression" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testEnableGDPR" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testSearch" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testValidations" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserCreation" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserEdit" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserSearch" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserExport" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserCopy" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserDelete" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserEnableDisableMasking" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUserMaskingDelete" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testEdit" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testMaskingAll" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testReferenceMasking" />
+			<class name="com.subex.automation.testcases.regressiontesting.masking.testUsageMasking" />
+		</classes>
+	</test>
+	<test name="Security ST" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.systemtesting.security.testPrerequisite" />
+			<class name="com.subex.automation.testcases.systemtesting.security.testRootUser" />
+			<class name="com.subex.automation.testcases.systemtesting.security.testUser1" />
+			<class name="com.subex.automation.testcases.systemtesting.security.testUser2" />
+			<class name="com.subex.automation.testcases.systemtesting.security.testUser3" />
+			<class name="com.subex.automation.testcases.systemtesting.security.testAdministrator" />
+		</classes>
+	</test>
+	<test name="Security Issues" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test140388" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test145550" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test145551" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test147534" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test147926" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test148344" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test149428" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test150466" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test154071" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test155453" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test161864" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test163128" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test163254" />
+		</classes>
+	</test>
+	<test name="Security Regression" preserve-order="true">
+		<classes>
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testRootRole" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testRootUser" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserCreation" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserEdit" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserDisableEnable" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserDelete" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testAdministratorRole" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testAdministratorUser" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testSetAllPrivileges" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testChangePassword" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testUserValidation" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testPasswordValidation" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.testLogin" />
+		</classes>
+	</test>
+</suite>

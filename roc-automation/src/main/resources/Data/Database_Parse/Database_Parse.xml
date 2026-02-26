@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="1.0.14872.0" version="14">
+    <Decoder name="Database_Parse" type="database">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="itrSequenceOf">
+                <Logic recordType="CDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType generate="record" root="false" name="CDR" type="databaserecord">
+            <itrField trimQuotes="false" id="0" generate="field" name="CDR_ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="false" type="integer" trimWhiteSpace="false"/>
+            <itrField trimQuotes="true" id="1" generate="field" name="Record_Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="integer" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="2" generate="field" name="Caller_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="3" generate="field" name="Called_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="4" generate="field" name="Time_Stamp" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="datetime" trimWhiteSpace="true">
+                <FieldConverter format="dd/MM/yyyy HH:mm:ss" type="datetime"/>
+            </itrField>
+            <itrField trimQuotes="true" id="5" generate="field" name="Call_Duration" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="integer" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="6" generate="field" name="Sequence_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="integer" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="7" generate="field" name="Amount" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="integer" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="8" generate="field" name="In_Route" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="9" generate="field" name="Out_Route" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="10" generate="field" name="Extra1" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="11" generate="field" name="Extra2" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="12" generate="field" name="Extra3" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="13" generate="field" name="Extra4" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <itrField trimQuotes="true" id="14" generate="field" name="Extra5" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="155" xPos="170" name="CDR" width="50" type="Record" recordType="CDR" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="60" yPos="150" xPos="275" name="Mapping" width="60" type="Mapping" recordType="database_cdr" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="ID()" target="SUB_ID"/>
+                    <Mapping expression="Caller_Number" target="A_Number"/>
+                    <Mapping expression="Called_Number" target="B_Number"/>
+                    <Mapping expression="Time_Stamp" target="Time_Stamp"/>
+                    <Mapping expression="Call_Duration" target="Duration"/>
+                    <Mapping expression="If(Equal(Record_Type,1), &quot;MOC&quot;, If(Equal(Record_Type,2), &quot;MTC&quot;, &quot;Unknown&quot;))" target="Rec_Type"/>
+                    <Mapping expression="If(Equal(Record_Type,1), &quot;Outgoing&quot;, If(Equal(Record_Type,2), &quot;Incoming&quot;, &quot;Unknown&quot;))" target="Call_Type"/>
+                    <Mapping expression="ToDecimal(Amount)" target="Amount"/>
+                    <Mapping expression="true" target="Is_Active"/>
+                    <Mapping expression="Sequence_Number" target="Sequence_Number"/>
+                    <Mapping expression="In_Route" target="In_Route"/>
+                    <Mapping expression="Out_Route" target="Out_Route"/>
+                    <Mapping expression="Extra1" target="Extra1"/>
+                    <Mapping expression="Extra2" target="Extra2"/>
+                    <Mapping expression="Extra3" target="Extra3"/>
+                    <Mapping expression="Extra4" target="Extra4"/>
+                    <Mapping expression="Extra5" target="Extra5"/>
+                    <Mapping expression="$$StreamFileId" target="SFL_ID"/>
+                    <Mapping expression="$$StreamStageId" target="STS_ID"/>
+                    <Mapping expression="$$StreamId" target="STM_ID"/>
+                    <Mapping expression="$$TaskId" target="TSK_ID"/>
+                    <Mapping expression="$$ErrorRecordCount" target="Error_Record_Count"/>
+                    <Mapping expression="$$RecordType" target="Record_Type"/>
+                    <Mapping expression="$$RecordNumber" target="Record_Number"/>
+                    <Mapping expression="ID()" target="CDR_ID"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="155" UsagePartitionId="GetUsagePartitionId('Issues Usage Group', Time_Stamp, SecondPart(Time_Stamp))" xPos="405" unicode="false" name="Spark Output" width="60" outputKey="1" charset="windows-1252" filename="Concatenate($$TaskId, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" type="SparkOutput" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="1" name="ID" blockSize="20" type="GenerateId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="database_cdr">
+                <Field id="0" name="CDR_ID" nullable="true" type="integer"/>
+                <Field id="15" name="A_Number" nullable="true" type="string"/>
+                <Field id="16" name="B_Number" nullable="true" type="string"/>
+                <Field id="4" name="Time_Stamp" nullable="true" type="datetime"/>
+                <Field id="17" name="Duration" nullable="true" type="integer"/>
+                <Field id="18" name="Rec_Type" nullable="true" type="string"/>
+                <Field id="19" name="Call_Type" nullable="true" type="string"/>
+                <Field id="7" name="Amount" nullable="true" type="decimal"/>
+                <Field id="20" name="Is_Active" nullable="true" type="boolean"/>
+                <Field id="6" name="Sequence_Number" nullable="true" type="integer"/>
+                <Field id="8" name="In_Route" nullable="true" type="string"/>
+                <Field id="9" name="Out_Route" nullable="true" type="string"/>
+                <Field id="10" name="Extra1" nullable="true" type="string"/>
+                <Field id="11" name="Extra2" nullable="true" type="string"/>
+                <Field id="12" name="Extra3" nullable="true" type="string"/>
+                <Field id="13" name="Extra4" nullable="true" type="string"/>
+                <Field id="14" name="Extra5" nullable="true" type="string"/>
+                <Field id="21" name="SFL_ID" nullable="true" type="integer"/>
+                <Field id="22" name="STS_ID" nullable="true" type="integer"/>
+                <Field id="23" name="STM_ID" nullable="true" type="integer"/>
+                <Field id="24" name="TSK_ID" nullable="true" type="integer"/>
+                <Field id="25" name="Error_Record_Count" nullable="true" type="integer"/>
+                <Field id="1" name="Record_Type" nullable="true" type="string"/>
+                <Field id="26" name="Record_Number" nullable="true" type="integer"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

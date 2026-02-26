@@ -1,0 +1,81 @@
+package com.subex.rocps.automation.helpers.application.partnerConfiguration.account;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.ElementHelper;
+import com.subex.automation.helpers.component.EntityComboHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.db.DBHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+public class AccountSearchImpl extends PSAcceptanceTest {
+PSGenericHelper genericObj = new PSGenericHelper();
+	/*
+	 * configuring parent account Entity Search
+	 */
+	public void parentAccountEntitySearch(String parentAccount) throws Exception {
+
+		EntityComboHelper.selectUsingGridFilterTextBox("Detail_popUpWindowId", "Detail_parentAccountEntityId",
+				"Account Search", "accountName_Detail", parentAccount, "Account Name");
+	}
+
+	/*
+	 * This method is for agent Entity Search
+	 */
+	public void agentEntitySearch(String agent) throws Exception {
+		ButtonHelper.click("Detail_popUp_ManagingAgent");
+		ElementHelper.waitForElement( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath"), searchScreenWaitSec );
+		GenericHelper.waitForLoadmask();
+	//	assertEquals(NavigationHelper.getScreenTitle(), "Agent Search");
+		assertTrue( genericObj.waitforPopupHeaderElement( "Agent Code" ), "Agent Search Screen did not appear" );
+		TextBoxHelper.type("Detail_popUpWindowId", "Detail_popUp_companyName", agent);
+		ButtonHelper.click("Detail_popUpWindowId", "SearchButton");
+		GenericHelper.waitForLoadmask();
+		GridHelper.clickRow("Detail_popUpWindowId", "SearchGrid", 1, 2);
+		ButtonHelper.click("Detail_popUpWindowId", "OKButton");
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+		GenericHelper.waitForLoadmask();
+	}
+	
+	public String retriveBillProfileValue( String billProfile, String account ) throws Exception
+	{
+		DBHelper dbHelper = null;		
+		String currencyActual = null;
+		try
+		{
+			dbHelper = DBHelper.connectToReferenceDB( false );
+			if ( dbHelper != null )
+			{
+				String query = "select PBIP_DISPLAY from BILL_PROFILE where PBIP_NAME= ? AND PACC_ID IN (select PACC_ID from ACCOUNT where PACC_NAME = ?)";
+				PreparedStatement stmt = dbHelper.dbConnection.prepareStatement( query );
+				stmt.setString( 1, billProfile );
+				stmt.setString( 2, account );
+				ResultSet rs = stmt.executeQuery();
+				while ( rs.next() )
+				{
+					currencyActual = rs.getString( 1 );
+				}
+			}
+			return currencyActual;
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+		finally
+		{
+			if ( dbHelper != null )
+				dbHelper.closeConnection();
+		}
+	}
+}

@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>TestNG:  Testing</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Testing</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>16/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Nov 18 12:15:35 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>705 seconds (705457 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createAccount()'><b>createAccount</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: account creation</td>
+<td></td>
+<td>32</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createBand()'><b>createBand</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: bands creation</td>
+<td></td>
+<td>30</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createBillProfile()'><b>createBillProfile</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: Create a bill profile</td>
+<td></td>
+<td>99</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createElement()'><b>createElement</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: elements creation</td>
+<td></td>
+<td>43</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createEventIdentifierDefn()'><b>createEventIdentifierDefn</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: event identifier defn creation</td>
+<td></td>
+<td>6</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createEventMatchRule()'><b>createEventMatchRule</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: event match rule creation</td>
+<td></td>
+<td>74</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createEventMatchRuleGroup()'><b>createEventMatchRuleGroup</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: event match rule group creation</td>
+<td></td>
+<td>25</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createOperator()'><b>createOperator</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: operator creation</td>
+<td></td>
+<td>26</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createRoute()'><b>createRoute</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: route creation</td>
+<td></td>
+<td>75</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createRouteGroup()'><b>createRouteGroup</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: route group creation</td>
+<td></td>
+<td>15</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createSwitch()'><b>createSwitch</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: switch creation</td>
+<td></td>
+<td>15</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createTariff()'><b>createTariff</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: tariff creation</td>
+<td></td>
+<td>41</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.createTariffClass()'><b>createTariffClass</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: tariffClassCreation creation</td>
+<td></td>
+<td>6</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.recurringtasks()'><b>recurringtasks</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: run aggregation master task and verifying task status</td>
+<td></td>
+<td>44</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.scheduleFileCollection()'><b>scheduleFileCollection</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: scheduling file collection and verify task status</td>
+<td></td>
+<td>48</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+<tr>
+<td title='com.subex.rocps.automation.testcases.systemtesting.TestCase09.verifyAggregationResult()'><b>verifyAggregationResult</b><br>Test class: com.subex.rocps.automation.testcases.systemtesting.TestCase09<br>Test method: verifying aggregation result</td>
+<td></td>
+<td>59</td>
+<td>com.subex.rocps.automation.testcases.systemtesting.TestCase09@2fd953a6</td></tr>
+</table><p>
+</body>
+</html>

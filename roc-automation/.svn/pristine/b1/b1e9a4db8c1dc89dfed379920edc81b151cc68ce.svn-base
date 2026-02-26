@@ -1,0 +1,130 @@
+# Environment Details
+utilPath=D:\\Selenium\\Automation\\Latest\\roc-web-util
+downloadDirectory=D:\\Selenium\\Automation\\Latest\\Downloads\\
+browser=firefox
+recordExecution=No
+embedImageInReport=Yes
+product=ROC
+
+# Deployment Details
+clientUrl=http://10.113.113.82:6088/ROC
+deployPath=/home/automation/Automation_ROC/deploy
+tomcatPath=/home/automation/apache-tomcat-7.0.94
+dataDir=/home/automation/DataDir
+machineName=10.113.113.82
+dateFormat=MM/dd/yyyy
+timeFormat=HH:mm:ss
+taskControllerExeFile=tc.sh
+os=Linux
+
+# Linux Details
+remoteHostname=
+remoteUsername=
+remotePassword=
+remotePortNumber=22
+
+# Application Details
+applicationName=Spark Client
+applicationUsername=Root
+applicationPassword=welcome1
+
+# Reference Database Details
+dbType=Oracle
+dbMachineName=
+dbInstance=
+database=
+dbUserName=
+dbPassword=
+dbPortNumber=1521
+dbUnicode=N
+dbLinkToReferenceDB=
+dbLinkToStagingDB=
+dbLinkToUsageServer=
+dbMaxActiveConnections=
+dbMaxIdleConnections=
+dbMinIdleConnections=
+dbExhaustedAction=
+dbONSConfig=
+
+# Performance Properties
+calculatePerformance=No
+
+# Usage Database Details
+usageDBType=Oracle
+usageMachineName=
+usageInstance=
+usageDatabase=
+usageUsername=
+usagePassword=
+usagePortNumber=1521
+usageUnicode=N
+usageSecondaryMachines=
+usageLinkToReferenceDB=
+usageLinkToStagingDB=
+usageLinkToUsageServer=
+usageMaxActiveConnections=
+usageMaxIdleConnections=
+usageMinIdleConnections=
+usageExhaustedAction=
+usageONSConfig=
+
+# PostgreSQL Properties (Required if database is PostgreSQL)
+postgreSQLRestoreExeFile=
+
+# Data Generation Properties
+dataDateFormat=ddMMyyyy_HHmm
+
+# Now Date Related Properties
+dateTimeFormat=ddMMyyyy_HHmmss
+currentNowDateTime=
+previousNowDateTime=
+
+# Mail Details (Required if Mail Notification has to be sent)
+sendMail=No
+mailSendingUserName=Madhu
+mailToAddress=madhu.duraisamy@subex.com
+mailCCAddress=
+
+# Performance Properties
+searchScreenWaitSec=120
+detailScreenWaitSec=60
+customScreenWaitSec=300
+searchTryCount=3
+expectedTries=3
+
+# Browser Properties (File should be present in automation/plugins folder)
+seleniumDriver=geckodriver0.28.0.exe
+chromeDriver=chromedriver_87.0.4280.20.exe
+ieDriver=IEDriverServer.exe
+
+# Automation Properties
+firstLevelDelimiter=|
+secondLevelDelimiter=;
+thirdLevelDelimiter=!
+startTomcat=No
+clientStartWaitTimeMins=60
+clientPreviousBuildNo=
+serverPreviousBuildNo=
+lastReportDate=
+automationSVNPath=svn://10.113.32.127/Spark/trunk/automation/2.0/roc-automation
+baselinedTestCases=1441
+automatedTestCases=471
+
+EntityExportVersion=Analytics:3.7.0.10;Case Management:3.7.0.10;ROC Revenue Assurance:5.7.0.10;Reconciliation:3.7.0.10;Spark:3.7.0.10;Spark Framework:3.7.0.10
+Analytics:3.7.0.12;Case Management:3.7.0.12;Reconciliation:3.7.0.12;Spark:3.7.0.12;Spark Framework:3.7.0.12;Tariff:3.7.0.12
+
+# Federated Data Source Flow
+FDSDataSourceType=Oracle
+FDSDbType=oracle
+FDSDatabase=
+FDSInstance=
+FDSMachine=
+FDSPassword=
+FDSUserName=
+FDSPort=1521
+
+# Script Properties (User created properties)
+WaitSecs=2
+UsageGroupWaitTimeInSecs=300
+EntityImportWaitInSecs=300
+collectedFilesTryCount=5

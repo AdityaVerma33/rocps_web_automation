@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="2.2.0.0" version="3">
+    <Decoder name="Schema" type="ascii">
+        <RecordType root="true" name="ROOT" type="none"/>
+    </Decoder>
+    <Mappings>
+        <Nodes/>
+        <DynamicFunctions/>
+        <RecordTypes>
+            <RecordType name="subscriber">
+                <Field id="0" name="sub_id" nullable="true" type="integer"/>
+                <Field id="1" name="name" nullable="true" type="string"/>
+                <Field id="2" name="id" nullable="true" type="integer"/>
+                <Field id="3" name="numbers" nullable="true" type="integer"/>
+                <Field id="4" name="rate_plan" nullable="true" type="string"/>
+                <Field id="5" name="start_date" nullable="true" type="datetime"/>
+                <Field id="6" name="end_date" nullable="true" type="datetime"/>
+                <Field id="7" name="is_active" nullable="true" type="boolean"/>
+                <Field id="8" name="status_fl" nullable="true" type="boolean"/>
+                <Field id="9" name="amount_before_discount" nullable="true" type="decimal"/>
+                <Field id="10" name="amount_after_discount" nullable="true" type="decimal"/>
+                <Field id="11" name="seq_number1" nullable="true" type="integer"/>
+                <Field id="12" name="seq_number2" nullable="true" type="integer"/>
+                <Field name="time_stamp" nullable="true" type="datetime" id="13"/>
+            </RecordType>
+            <RecordType name="rate_plan">
+                <Field id="14" name="ra_id" nullable="true" type="integer"/>
+                <Field id="4" name="rate_plan" nullable="true" type="string"/>
+                <Field id="15" name="sdr_rate" nullable="true" type="decimal"/>
+                <Field id="16" name="sdr_date" nullable="true" type="datetime"/>
+            </RecordType>
+			<RecordType name="free_numbers">
+                <Field id="0" name="frn_id" nullable="true" type="integer"/>
+                <Field id="1" name="frn_number" nullable="true" type="string"/>
+                <Field id="2" name="frn_country" nullable="true" type="string"/>
+                <Field id="3" name="frn_country_code" nullable="true" type="string"/>
+                <Field id="4" name="frn_extra1" nullable="true" type="string"/>
+				<Field id="5" name="frn_extra2" nullable="true" type="string"/>
+				<Field id="6" name="frn_extra3" nullable="true" type="string"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

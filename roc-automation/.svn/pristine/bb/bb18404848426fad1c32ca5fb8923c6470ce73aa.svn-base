@@ -1,0 +1,875 @@
+package com.subex.automation.helpers.application.screens;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.subex.automation.helpers.application.ControllerHelper;
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.ElementHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.ImageHelper;
+import com.subex.automation.helpers.component.LinkHelper;
+import com.subex.automation.helpers.component.MouseHelper;
+import com.subex.automation.helpers.component.TabHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.component.TreeHelper;
+import com.subex.automation.helpers.componentHelpers.TreeElementHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.scripts.TestDataHelper;
+import com.subex.automation.helpers.selenium.ROCAcceptanceTest;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class TaskSearchHelper extends ROCAcceptanceTest {
+	
+	static ControllerHelper controller = null;
+	
+	public void reinitializeTaskController(String path, String WorkbookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, WorkbookName, workSheetName, testCaseName, occurence );
+	
+			for(int i = 0; i < excelData.get("Task Controller Name").size(); i++)
+			{
+				String tcName = excelData.get("Task Controller Name").get(i);
+				
+				reinitializeTaskController(tcName);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void reinitializeTaskController(String tcName) throws Exception {
+		try {
+			navigateToTaskSearch(true);
+			
+			String tcLocator = or.getProperty("TaskSearch_TaskController").replace("taskControllerName", tcName);
+			MouseHelper.click(tcLocator);
+			MouseHelper.rightClick(tcLocator);
+			
+			if (ButtonHelper.isPresent("Reinitialise Controller")) {
+				NavigationHelper.navigateToAction("Reinitialise Controller");
+				GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				
+				if (ButtonHelper.isPresent("YesButton")) {
+					ButtonHelper.click("YesButton");
+					GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				}
+			}
+			else {
+				ElementHelper.pressEscape();
+				FailureHelper.failTest("Reinitialise action is not found for Task Controller '" + tcName + "'");
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void pauseStreamStage(String path, String WorkbookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			TestDataHelper testData = new TestDataHelper();
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, WorkbookName, workSheetName, testCaseName, occurence );
+	
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String[] streamName = testData.getStringValue(excelData.get("Stream").get(i), firstLevelDelimiter);
+				String[][] streamStageName = testData.getStringValue(excelData.get("Stream Stage").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				pauseStreamStage(streamName, streamStageName);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void pauseStreamStage(String[] streamName, String[][] streamStageName) throws Exception {
+		try {
+			for (int i = 0; i < streamName.length; i++) {
+				for (int j = 0; j < streamStageName[i].length; j++) {
+					pauseStreamStage(streamName[i], streamStageName[i][j]);
+				}
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void pauseStreamStage(String stream, String streamStage) throws Exception {
+		try {
+			boolean paused = updateStreamStage(stream, streamStage, "Pause Stage", "pause");
+			
+			if (paused)
+				Log4jHelper.logInfo("Stream Stage '" + streamStage + "' of Stream '" + stream + "' is paused.");
+			else
+				FailureHelper.failTest("Stream Stage '" + streamStage + "' of Stream '" + stream + "' is not paused.");
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void resumeStreamStage(String path, String WorkbookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			TestDataHelper testData = new TestDataHelper();
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, WorkbookName, workSheetName, testCaseName, occurence );
+	
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String[] streamName = testData.getStringValue(excelData.get("Stream").get(i), firstLevelDelimiter);
+				String[][] streamStageName = testData.getStringValue(excelData.get("Stream Stage").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				resumeStreamStage(streamName, streamStageName);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void resumeStreamStage(String[] streamName, String[][] streamStageName) throws Exception {
+		try {
+			for (int i = 0; i < streamName.length; i++) {
+				for (int j = 0; j < streamStageName[i].length; j++) {
+					resumeStreamStage(streamName[i], streamStageName[i][j]);
+				}
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void resumeStreamStage(String stream, String streamStage) throws Exception {
+		try {
+			boolean resumed = updateStreamStage(stream, streamStage, "Resume Stage", "run");
+			
+			if (resumed)
+				Log4jHelper.logInfo("Stream Stage '" + streamStage + "' of Stream '" + stream + "' is resumed.");
+			else
+				FailureHelper.failTest("Stream Stage '" + streamStage + "' of Stream '" + stream + "' is not resumed.");
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void cancelTask(String path, String WorkbookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			TestDataHelper testData = new TestDataHelper();
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, WorkbookName, workSheetName, testCaseName, occurence );
+			ArrayList<String> tSortColumn = excelData.get("Sort Column");
+			
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String[] streamName = testData.getStringValue(excelData.get("Stream").get(i), firstLevelDelimiter);
+				String[][] streamStageName = testData.getStringValue(excelData.get("Stream Stage").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] showTasksIn = testData.getStringValue(excelData.get("Show Tasks In").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] currentStatus = testData.getStringValue(excelData.get("Current Status").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				int[][] waitTimeInSecs = testData.getIntegerValue(excelData.get("Task Wait Time In Secs").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				String[][] sortColumn = null;
+				if (tSortColumn != null && tSortColumn.size() > i)
+					sortColumn = testData.getStringValue(tSortColumn.get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				cancelTask(streamName, streamStageName, showTasksIn, currentStatus, waitTimeInSecs, sortColumn);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void cancelTask(String[] streamName, String[][] streamStageName, String[][] showTasksIn, String[][] currentStatus, int[][] waitTimeInSecs,
+			String[][] sortColumn) throws Exception {
+		try {
+			for (int i = 0; i < streamName.length; i++) {
+				for (int j = 0; j < streamStageName[i].length; j++) {
+					String tempShowTasksIn = null;
+					if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]) && ValidationHelper.isNotEmpty(showTasksIn[i][j]))
+						tempShowTasksIn = showTasksIn[i][j];
+					
+					String tempCurrentStatus = null;
+					if (ValidationHelper.isNotEmpty(currentStatus) && ValidationHelper.isNotEmpty(currentStatus[i]) && ValidationHelper.isNotEmpty(currentStatus[i][j]))
+						tempCurrentStatus = currentStatus[i][j];
+					
+					String tempSortColumn = null;
+					if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]) && ValidationHelper.isNotEmpty(showTasksIn[i][j]))
+						tempSortColumn = sortColumn[i][j];
+					
+					cancelTask(streamName[i], streamStageName[i][j], tempShowTasksIn, tempCurrentStatus, waitTimeInSecs[i][j], tempSortColumn);
+				}
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void cancelTask(String stream, String streamStage, String showTasksIn, String currentStatus, int waitTimeInSeconds,
+			String sortColumn) throws Exception {
+		try {
+			updateTask(stream, streamStage, showTasksIn, currentStatus, "Task Actions", "Cancel Task", "Cancelled", waitTimeInSeconds, sortColumn);
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void restartTask(String path, String WorkbookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			TestDataHelper testData = new TestDataHelper();
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, WorkbookName, workSheetName, testCaseName, occurence );
+			ArrayList<String> tSortColumn = excelData.get("Sort Column");
+			
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String[] streamName = testData.getStringValue(excelData.get("Stream").get(i), firstLevelDelimiter);
+				String[][] streamStageName = testData.getStringValue(excelData.get("Stream Stage").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] showTasksIn = testData.getStringValue(excelData.get("Show Tasks In").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] currentStatus = testData.getStringValue(excelData.get("Current Status").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] expectedStatus = testData.getStringValue(excelData.get("Expected Status").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] waitTimeInSecs = testData.getStringValue(excelData.get("Task Wait Time In Secs").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				String[][] sortColumn = null;
+				if (tSortColumn != null && tSortColumn.size() > i)
+					sortColumn = testData.getStringValue(tSortColumn.get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				restartTask(streamName, streamStageName, showTasksIn, currentStatus, expectedStatus, waitTimeInSecs, sortColumn);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void restartTask(String[] streamName, String[][] streamStageName, String[][] showTasksIn, String[][] currentStatus, String[][] expectedStatus,
+			String[][] waitTimeInSecs, String[][] sortColumn) throws Exception {
+		try {
+			for (int i = 0; i < streamName.length; i++) {
+				for (int j = 0; j < streamStageName[i].length; j++) {
+					String showTasks = null;
+					if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]) && ValidationHelper.isNotEmpty(showTasksIn[i][j]))
+						showTasks = showTasksIn[i][j];
+					
+					String cStatus = null;
+					if (ValidationHelper.isNotEmpty(currentStatus) && ValidationHelper.isNotEmpty(currentStatus[i]) && ValidationHelper.isNotEmpty(currentStatus[i][j]))
+						cStatus = currentStatus[i][j];
+					
+					String eStatus = null;
+					if (ValidationHelper.isNotEmpty(expectedStatus) && ValidationHelper.isNotEmpty(expectedStatus[i]) && ValidationHelper.isNotEmpty(expectedStatus[i][j]))
+						eStatus = expectedStatus[i][j];
+					
+					int waitTime = 60;
+					if (ValidationHelper.isNotEmpty(waitTimeInSecs) && ValidationHelper.isNotEmpty(waitTimeInSecs[i]) && ValidationHelper.isNotEmpty(waitTimeInSecs[i][j]))
+						waitTime = Integer.parseInt(waitTimeInSecs[i][j]);
+					
+					String tempSortColumn = null;
+					if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]) && ValidationHelper.isNotEmpty(showTasksIn[i][j]))
+						tempSortColumn = sortColumn[i][j];
+					
+					restartTask(streamName[i], streamStageName[i][j], showTasks, cStatus, eStatus, waitTime, tempSortColumn);
+				}
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void restartTask(String stream, String streamStage, String showTasksIn, String currentStatus, String expectedStatus,
+			int waitTimeInSeconds, String sortColumn) throws Exception {
+		try {
+			
+			updateTask(stream, streamStage, showTasksIn, currentStatus, "Task Actions", "Restart Task", expectedStatus, waitTimeInSeconds, sortColumn);
+			
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void scheduleTask(String path, String workBookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			TestDataHelper testData = new TestDataHelper();
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, workBookName, workSheetName, testCaseName, occurence );
+			ArrayList<String> tSortColumn = excelData.get("Sort Column");
+			
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String[] streamName = testData.getStringValue(excelData.get("Stream").get(i), firstLevelDelimiter);
+				String[][] streamStageName = testData.getStringValue(excelData.get("Stream Stage").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] showTasksIn = testData.getStringValue(excelData.get("Show Tasks In").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] currentStatus = testData.getStringValue(excelData.get("Current Status").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] expectedStatus = testData.getStringValue(excelData.get("Expected Status").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				String[][] waitTimeInSecs = testData.getStringValue(excelData.get("Task Wait Time In Secs").get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				String[][] sortColumn = null;
+				if (tSortColumn != null && tSortColumn.size() > i)
+					sortColumn = testData.getStringValue(tSortColumn.get(i), firstLevelDelimiter, secondLevelDelimiter);
+				
+				scheduleTask(streamName, streamStageName, showTasksIn, currentStatus, expectedStatus, waitTimeInSecs, sortColumn);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void scheduleTask(String[] streamName, String[][] streamStageName, String[][] showTasksIn, String[][] currentStatus, String[][] expectedStatus,
+			String[][] waitTimeInSecs, String[][] sortColumn) throws Exception {
+		try {
+			for (int i = 0; i < streamName.length; i++) {
+				for (int j = 0; j < streamStageName[i].length; j++) {
+					String showTasks = null;
+					if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]) && ValidationHelper.isNotEmpty(showTasksIn[i][j]))
+						showTasks = showTasksIn[i][j];
+					
+					String cStatus = null;
+					if (ValidationHelper.isNotEmpty(currentStatus) && ValidationHelper.isNotEmpty(currentStatus[i]) && ValidationHelper.isNotEmpty(currentStatus[i][j]))
+						cStatus = currentStatus[i][j];
+					
+					String eStatus = null;
+					if (ValidationHelper.isNotEmpty(expectedStatus) && ValidationHelper.isNotEmpty(expectedStatus[i]) && ValidationHelper.isNotEmpty(expectedStatus[i][j]))
+						eStatus = expectedStatus[i][j];
+					
+					int waitTime = 60;
+					if (ValidationHelper.isNotEmpty(waitTimeInSecs) && ValidationHelper.isNotEmpty(waitTimeInSecs[i]) && ValidationHelper.isNotEmpty(waitTimeInSecs[i][j]))
+						waitTime = Integer.parseInt(waitTimeInSecs[i][j]);
+					
+					String tempSortColumn = null;
+					if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]) && ValidationHelper.isNotEmpty(showTasksIn[i][j]))
+						tempSortColumn = sortColumn[i][j];
+					
+					scheduleTask(streamName[i], streamStageName[i][j], showTasks, cStatus, eStatus, waitTime, tempSortColumn);
+				}
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void scheduleTask(String stream, String streamStage, String showTasksIn, String currentStatus, String expectedStatus,
+			int waitTimeInSeconds, String sortColumn) throws Exception {
+		try {
+			int row = getTask(stream, streamStage, showTasksIn, currentStatus, sortColumn);
+			
+			if (row > 0) {
+				GridHelper.clickRow("SearchGrid", row, 2);
+				NavigationHelper.navigateToAction("Recurring Task", "Schedule Now");
+				GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				ButtonHelper.click("YesButton");
+				GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				row = getTask(stream, streamStage, "Last hour", null, sortColumn);
+				
+				boolean isStatusUpdated = isStatusUpdated(stream, streamStage, row, expectedStatus, waitTimeInSeconds);
+				
+				if (isStatusUpdated)
+					Log4jHelper.logInfo("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' is '" + expectedStatus + "'.");
+				else
+					FailureHelper.failTest("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' is not '" + expectedStatus + "'.");
+			}
+			else {
+				FailureHelper.failTest("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' with Status '" + currentStatus + "' is not found.");
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void verifyTaskStatus(String path, String workBookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			TestDataHelper testData = new TestDataHelper();
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, workBookName, workSheetName, testCaseName, occurence );
+			ArrayList<String> tSortColumn = excelData.get("Sort Column");
+			
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String[] stream = testData.getStringValue(excelData.get("Stream").get(i), firstLevelDelimiter);
+				String[] streamStage = testData.getStringValue(excelData.get("Stream Stage").get(i), firstLevelDelimiter);
+				String[] showTasksIn = testData.getStringValue(excelData.get("Show Tasks In").get(i), firstLevelDelimiter);
+				String[] expectedStatus = testData.getStringValue(excelData.get("Expected Status").get(i), firstLevelDelimiter);
+				int[] waitTimeInSecs = testData.getIntegerValue(excelData.get("Task Wait Time In Secs").get(i), firstLevelDelimiter);
+				
+				String[] sortColumn = null;
+				if (tSortColumn != null && tSortColumn.size() > i)
+					sortColumn = testData.getStringValue(tSortColumn.get(i), firstLevelDelimiter);
+				
+				verifyTaskStatus(stream, streamStage, showTasksIn, expectedStatus, waitTimeInSecs, sortColumn);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void verifyTaskStatus(String[] stream, String[] streamStage, String[] showTasksIn, String[] expectedStatus, int[] waitTimeInSecs,
+			String[] sortColumn) throws Exception {
+		try {
+			for (int i = 0; i < stream.length; i++) {
+				String showTasks = null;
+				if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]))
+					showTasks = showTasksIn[i];
+				
+				String tempSortColumn = null;
+				if (ValidationHelper.isNotEmpty(sortColumn) && ValidationHelper.isNotEmpty(sortColumn[i]))
+					tempSortColumn = sortColumn[i];
+				
+				int row = getTask(stream[i], streamStage[i], showTasks, tempSortColumn);
+				
+				if (row > 0) {
+					boolean isStatusUpdated = isStatusUpdated(stream[i], streamStage[i], row, expectedStatus[i], waitTimeInSecs[i]);
+					String actualStatus = GridHelper.getCellValue("SearchGrid", row, "Status").trim();
+					
+					if (isStatusUpdated)
+						Log4jHelper.logInfo("Task of Stream Stage '" + streamStage[i] + "' of Stream '" + stream[i] + "' is in '" + expectedStatus[i] + "' status.");
+					else
+						FailureHelper.failTest("Task of Stream Stage '" + streamStage[i] + "' of Stream '" + stream[i] + "' is in '" + actualStatus + "' status. Expected status is '" + expectedStatus[i] + "'");
+				}
+				else {
+					FailureHelper.failTest("Task of Stream Stage '" + streamStage[i] + "' of Stream '" + stream[i] + "' is not found.");
+				}
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void verifyTaskCount(String path, String workBookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			TestDataHelper testData = new TestDataHelper();
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, workBookName, workSheetName, testCaseName, occurence );
+			ArrayList<String> tSortColumn = excelData.get("Sort Column");
+			
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String[] stream = testData.getStringValue(excelData.get("Stream").get(i), firstLevelDelimiter);
+				String[] streamStage = testData.getStringValue(excelData.get("Stream Stage").get(i), firstLevelDelimiter);
+				String[] showTasksIn = testData.getStringValue(excelData.get("Show Tasks In").get(i), firstLevelDelimiter);
+				String[] status = testData.getStringValue(excelData.get("Expected Status").get(i), firstLevelDelimiter);
+				int[] resultCount = testData.getIntegerValue(excelData.get("Result Count").get(i), firstLevelDelimiter);
+				
+				String[] sortColumn = null;
+				if (tSortColumn != null && tSortColumn.size() > i)
+					sortColumn = testData.getStringValue(tSortColumn.get(i), firstLevelDelimiter);
+				
+				verifyTaskCount(stream, streamStage, showTasksIn, status, resultCount, sortColumn);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void verifyTaskCount(String[] stream, String[] streamStage, String[] showTasksIn, String[] status, int[] resultCount, String[] sortColumn) throws Exception {
+		try {
+			for (int i = 0; i < stream.length; i++) {
+				int row = 0;
+				String tShowTasksIn = null;
+				if (ValidationHelper.isNotEmpty(showTasksIn) && ValidationHelper.isNotEmpty(showTasksIn[i]))
+					tShowTasksIn = showTasksIn[i];
+				
+				String tSortColumn = null;
+				if (ValidationHelper.isNotEmpty(sortColumn) && ValidationHelper.isNotEmpty(sortColumn[i]))
+					tSortColumn = sortColumn[i];
+				
+				row = getTask(stream[i], streamStage[i], tShowTasksIn, status[i], tSortColumn);
+				
+				int rows = GridHelper.getRowCount("SearchGrid");
+				if (rows > 0) {
+					if (rows >= resultCount[i])
+						Log4jHelper.logInfo(row + " tasks of Stream Stage '" + streamStage[i] + "' of Stream '" + stream [i]+ "' with '" + status[i] + "' status are found in Task Search.");
+					else
+						FailureHelper.failTest(row + " tasks of Stream Stage '" + streamStage[i] + "' of Stream '" + stream[i] + "' with '" + status[i] + "' status are found in Task Search. Expected count is '" + resultCount[i] + "'");
+				}
+				else {
+					FailureHelper.failTest("Task of Stream Stage '" + streamStage[i] + "' of Stream '" + stream[i] + "' with Status '" + status[i] + "' is not found.");
+				}
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void reinitializeStreamStage(String path, String WorkbookName, String workSheetName, String testCaseName, int occurence) throws Exception {
+		try {
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> excelData = excelReader.readDataByColumn( path, WorkbookName, workSheetName, testCaseName, occurence );
+	
+			for(int i = 0; i < excelData.get("Stream").size(); i++)
+			{
+				String stream = excelData.get("Stream").get(i);
+				String streamStage = excelData.get("Stream Stage").get(i);
+				
+				reinitializeStreamStage(stream, streamStage);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void reinitializeStreamStage(String stream, String streamStage) throws Exception {
+		try {
+			boolean reinitialised = updateStreamStage(stream, streamStage, "Reinitialise Stage", "run");
+			
+			if (reinitialised)
+				Log4jHelper.logInfo("Stream Stage '" + streamStage + "' of Stream '" + stream + "' is reinitialised.");
+			else
+				FailureHelper.failTest("Stream Stage '" + streamStage + "' of Stream '" + stream + "' is not reinitialised.");
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void refreshLeftTree() throws Exception {
+		try {
+			TreeHelper.rightClick("TaskSearch_LeftTree", "Administrator");
+			ButtonHelper.click("TaskSearch_Administrator_Refresh");
+			Thread.sleep(500);
+			GenericHelper.waitForLoadmask(searchScreenWaitSec);
+			
+			LinkHelper.click("Expand All");
+			GenericHelper.waitForLoadmask(searchScreenWaitSec);
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void navigateToTaskSearch(boolean navigateToMonitor) throws Exception {
+		try {
+			controller = new ControllerHelper();
+			boolean isSCRunning = controller.isSCRunning();
+			
+			NavigationHelper.navigateToScreen("Task Search", "Task Search");
+			GenericHelper.waitForLoadmask(searchScreenWaitSec);
+			
+			if (navigateToMonitor && isSCRunning) {
+				if (ButtonHelper.isDisabled("MonitoringTab"))
+					FailureHelper.failTest("Task Search Monitor tab is disabled.");
+				TabHelper.gotoTab("MonitoringTab");
+			}
+			else
+				TabHelper.gotoTab("SearchTab");
+			
+			Thread.sleep(500);
+			GenericHelper.waitForLoadmask(configProp.getCustomScreenWaitSec());
+			refreshLeftTree();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void navigateToTaskSummary() throws Exception {
+		try {
+			NavigationHelper.navigateToScreen("Task Search", "Task Search");
+			GenericHelper.waitForLoadmask(searchScreenWaitSec);
+			
+			TabHelper.gotoTab("SummaryTab");
+			Thread.sleep(500);
+			GenericHelper.waitForLoadmask(configProp.getCustomScreenWaitSec());
+			refreshLeftTree();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public boolean isTaskPresent(String stream, String streamStage, String showTasksIn, String currentStatus) throws Exception {
+		try {
+			int row = getTask(stream, streamStage, showTasksIn, currentStatus);
+			
+			if (row == 0)
+				return false;
+			else
+				return true;
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public int getTask(String stream, String streamStage, String showTasksIn, String sortColumn) throws Exception {
+		try {
+			int row = getTask(stream, streamStage, showTasksIn, null, sortColumn);
+			
+			return row;
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public int getTask(String stream, String streamStage, String showTasksIn, String currentStatus, String sortColumn) throws Exception {
+		try {
+			int waitTime = configProp.getCustomScreenWaitSec();
+			navigateToTaskSearch(true);
+			
+			applyFilterInTree(streamStage);
+			String streamXpath = or.getProperty("TaskSearch_Stream").replace("streamName", stream);
+			streamXpath = "//div[starts-with(@id,'hierarchyTree') and text()=' streamName']//ancestor::div[@role='treeitem']".replace("streamName", stream);
+			TreeHelper.clickChild("TaskSearch_LeftTree", streamXpath, streamStage);
+			if (ValidationHelper.isNotEmpty(showTasksIn) && controller.isSCRunning()) {
+				GenericHelper.expandSearchFilterPanel();
+				ComboBoxHelper.select("TaskSearch_ShowTasksIn", showTasksIn);
+			}
+			
+			ButtonHelper.click("TaskSearch_SearchButton");
+			GenericHelper.waitForLoadmask(waitTime);
+			Thread.sleep(200);
+			GenericHelper.waitForLoadmask(waitTime);
+			GenericHelper.waitForAJAXReady(waitTime);
+			
+			if (ValidationHelper.isNotEmpty(sortColumn))
+				GridHelper.sortGrid("SearchGrid", sortColumn);
+			
+			int row = GridHelper.getRowNumber("SearchGrid", streamStage, "Stream Stage");
+			GenericHelper.waitForAJAXReady(waitTime);
+			if (ValidationHelper.isNotEmpty(currentStatus))
+				row = GridHelper.getRowNumber("SearchGrid", currentStatus, "Status");
+			
+			ImageHelper.click("TaskSearch_LeftTree_FilterCross");
+			return row;
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public int getSummaryTask(String stream, String streamStage) throws Exception {
+		try {
+			navigateToTaskSummary();
+			
+			applyFilterInTree(streamStage);
+			String streamXpath = or.getProperty("TaskSearch_Stream").replace("streamName", stream);
+			TreeHelper.clickChild("TaskSearch_LeftTree", streamXpath, streamStage);
+			
+			ButtonHelper.click("TaskSearch_SearchButton");
+			GenericHelper.waitForLoadmask(configProp.getCustomScreenWaitSec());
+			TreeHelper.expandTreeGrid("SearchGrid", stream);
+			Thread.sleep(500);
+			assertTrue(GridHelper.isValuePresent("SearchGrid", streamStage, "Stream Stage"), "Value '" + streamStage + "' is not found in grid.");
+			
+			int row = GridHelper.getRowNumber("SearchGrid", streamStage, "Stream Stage");
+			ImageHelper.click("TaskSearch_LeftTree_FilterCross");
+			return row;
+		} catch (AssertionError e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void verifyTaskSummary(String stream, String streamStage, String status, int resultCount) throws Exception {
+		try {
+			int row = getSummaryTask(stream, streamStage);
+				
+				if (row == 0) {
+					FailureHelper.failTest("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' is not found.");
+				}
+				else {
+					int column = GridHelper.getColumnNumber("SearchGrid", status);
+					
+					if (column == 0) {
+						FailureHelper.failTest("Column '" + status + "' is not found in Task Search Summary.");
+					}
+					else {
+						String count = GridHelper.getCellValue("SearchGrid", row, column);
+						
+						if (ValidationHelper.isNotEmpty(count)) {
+							int actualCount = Integer.parseInt(count);
+							if (actualCount >= resultCount)
+								Log4jHelper.logInfo(actualCount + " tasks of Stream Stage '" + streamStage + "' of Stream '" + stream + "' with '" + status + "' status are found in Task Search.");
+							else
+								FailureHelper.failTest(actualCount + " tasks of Stream Stage '" + streamStage + "' of Stream '" + stream + "' with '" + status + "' status are found in Task Search. Expected count is '" + resultCount + "'");
+						}
+						else {
+							FailureHelper.failTest("Value is empty for  Stream Stage '" + streamStage + "' of Stream '" + stream + "' in Task Summary");
+						}
+					}
+				}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void verifyTaskSummary(String[] stream, String[] streamStage, String[] status, int[] resultCount) throws Exception {
+		try {
+			for (int i = 0; i < stream.length; i++) {
+				verifyTaskSummary(stream[i], streamStage[i], status[i], resultCount[i]);
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void filterOnTree(String stream, String streamStage) throws Exception {
+		try {
+			applyFilterInTree(streamStage);
+			String streamXpath = or.getProperty("TaskSearch_Stream").replace("streamName", stream);
+			TreeHelper.click("TaskSearch_LeftTree", streamXpath, streamStage);
+			
+			ButtonHelper.click("TaskSearch_SearchButton");
+			GenericHelper.waitForLoadmask(configProp.getCustomScreenWaitSec());
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private void applyFilterInTree(String filterValue) throws Exception {
+		try {
+			TextBoxHelper.type("TaskSearch_LeftTree_FilterTextBox", filterValue);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public void clearFilterOnTree() throws Exception {
+		try {
+			if (ImageHelper.isPresent("TaskSearch_LeftTree_FilterCross"))
+				ImageHelper.click("TaskSearch_LeftTree_FilterCross");
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private boolean isStatusUpdated(String stream, String streamStage, int row, String expectedStatus, int waitTimeInSecs) throws Exception {
+		try {
+			String actualStatus = null;
+			int tryCount = 0;
+			boolean isStatusUpdated = false;
+			Thread.sleep(500);
+			int colNo = GridHelper.getColumnNumber("SearchGrid", "Status");
+			
+			while (true) {
+				actualStatus = GridHelper.getCellValue("SearchGrid", row, colNo);
+				
+				if (actualStatus != null && actualStatus.trim().equals(expectedStatus)) {
+					isStatusUpdated = true;
+					break;
+				}
+				else if (tryCount > waitTimeInSecs) {
+					FailureHelper.failTest("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' is supposed to be of Status '"
+							+ expectedStatus + "'. But current Status is  '" + actualStatus + "'");
+				}
+				else {
+					Thread.sleep(1000);
+					tryCount++;
+					ButtonHelper.click("TaskSearch_SearchButton");
+					GenericHelper.waitForLoadmask(configProp.getCustomScreenWaitSec());
+				}
+			}
+			
+			return isStatusUpdated;
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private boolean updateStreamStage(String stream, String streamStage, String action, String iconKey) throws Exception {
+		try {
+			navigateToTaskSearch(true);
+			
+			refreshLeftTree();
+			LinkHelper.click("Expand All");
+			GenericHelper.waitForLoadmask(searchScreenWaitSec);
+			
+			applyFilterInTree(streamStage);
+			String streamXpath = or.getProperty("TaskSearch_Stream").replace("streamName", stream);
+			TreeHelper.rightClick("TaskSearch_LeftTree", streamXpath, streamStage);
+			
+			if (ButtonHelper.isPresent(action)) {
+				NavigationHelper.navigateToAction(action);
+				Thread.sleep(1000);
+				
+				if (ButtonHelper.isPresent("YesButton")) {
+					ButtonHelper.click("YesButton");
+					GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				}
+				
+				if (ButtonHelper.isPresent("OKButton")) {
+					ButtonHelper.click("OKButton");
+					GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				}
+			}
+			else {
+				ElementHelper.pressEscape();
+			}
+			
+			refreshLeftTree();
+			
+			String locator = TreeElementHelper.getLocator(or.getProperty("TaskSearch_LeftTree"), stream, streamStage);
+			ImageHelper.click("TaskSearch_LeftTree_FilterCross");
+			if (ImageHelper.isIconPresent(locator, iconKey))
+				return true;
+			else
+				return false;
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private void updateTask(String stream, String streamStage, String showTasksIn, String currentStatus, String parentAction, String action,
+			String expectedStatus, int waitTimeInSecs, String sortColumn) throws Exception {
+		try {
+			int row = getTask(stream, streamStage, showTasksIn, currentStatus, sortColumn);
+			
+			if (row > 0) {
+				GridHelper.rightClick("SearchGrid", row, 2);
+				Thread.sleep(2000);
+				if (ValidationHelper.isNotEmpty(parentAction))
+					NavigationHelper.navigateToAction(parentAction, action);
+				else
+					NavigationHelper.navigateToAction(action);
+				GenericHelper.waitForLoadmask(configProp.getCustomScreenWaitSec());
+				
+				if (ValidationHelper.isNotEmpty(expectedStatus)) {
+					boolean isStatusUpdated = isStatusUpdated(stream, streamStage, row, expectedStatus, waitTimeInSecs);
+					
+					if (isStatusUpdated)
+						Log4jHelper.logInfo("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' is '" + expectedStatus + "'.");
+					else
+						FailureHelper.failTest("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' is not '" + expectedStatus + "'.");
+				}
+			}
+			else {
+				FailureHelper.failTest("Task of Stream Stage '" + streamStage + "' of Stream '" + stream + "' with Status '" + currentStatus + "' is not found.");
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+}

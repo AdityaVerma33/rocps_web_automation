@@ -1,0 +1,672 @@
+package com.subex.rocps.automation.helpers.application.filters;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CalendarHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.ElementHelper;
+import com.subex.automation.helpers.component.EntityComboHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.componentHelpers.GridElementHelper;
+import com.subex.automation.helpers.componentHelpers.SearchHelper;
+import com.subex.automation.helpers.data.DateHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.List;
+import java.util.Map;
+
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSDataComponentHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+public class DataSelectionHelper extends PSAcceptanceTest
+{
+	GridFilterSearchHelper gridHelperObj = new GridFilterSearchHelper();
+	PSGenericHelper genericHelperObj = new PSGenericHelper();
+	PSDataComponentHelper psDataComponentHelper = new PSDataComponentHelper();
+
+	/*
+	 * Method: selecting account in account search screen
+	 */
+	public void accountSelection( String accountName ) throws Exception
+	{
+
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.scrollforHeaderElement( "Account Name" );
+		genericHelperObj.waitforPopupHeaderElement( "Account Name" );
+		PSSearchGridHelper.gridFilterSearchWithTextBox( "accountName_Detail", accountName, "Account Name" );
+		boolean isAccountPresent = GridHelper.isValuePresent( "Detail_popUpWindowId", "SearchGrid", accountName, "Account Name" );
+		assertTrue( isAccountPresent, "Account  with name :'" + accountName + "'  is not found in 'Account' popupScreen " );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", accountName, "Account Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask();
+
+	}
+
+	/*
+	 * Method: selecting agent
+	 */
+	public void agentSelection( String companyName ) throws Exception
+	{
+		GenericHelper.waitForLoadmask();
+		TextBoxHelper.type( "Detail_popUpWindowId", "Detail_popUp_companyName", companyName );
+		ButtonHelper.click( "Detail_popUpWindowId", "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", 1, 2 );
+		ButtonHelper.click( "Detail_popUpWindowId", "OKButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+	/*
+	 * Method: selecting event type in event type search screen
+	 */
+	public void eventTypeSelection( String eventTypeName ) throws Exception
+	{
+		/*		if ( !ElementHelper.isElementPresent( "//div[text()='Event Type Search']" ) )
+					ElementHelper.waitForElement( "//div[text()='Event Type Search']", searchScreenWaitSec );
+		*/
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Name" );
+		dataFilterSearchGridColTxt( "SearchGrid", "PSDetail_popUpEventType_gridColTxtId", eventTypeName, "Name" );
+	}
+
+	/*
+	 * Method: selecting route group in route group search screen
+	 */
+	public void routeGrpSelection( String routeGroupName ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		//genericHelperObj.waitforPopupHeaderElement( "Operator" );
+		dataFilterSearchGridColTxt( "SearchGrid", "Search_routeName_gridColTxtId", routeGroupName, "Name" );
+	}
+
+	/*
+	 * Method: selecting value group in event identifier value group search
+	 * screen
+	 */
+	public void valueGrpSelection( String valueGroupName ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Event Identifier Definition" );
+		dataFilterSearchGridColTxt( "SearchGrid", "Search_valueGroup_gridColTxtId", valueGroupName, "Name" );
+	}
+
+	/*
+	 * Method: selecting dial string set in dial string set search screen
+	 */
+	public void dialStringSelection( String dialStringName ) throws Exception
+	{
+		if ( !ElementHelper.isElementPresent( "//div[text()='Dialstring Set Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Dialstring Set Search']", searchScreenWaitSec );
+		TextBoxHelper.type( "Search_dstName_txtId", dialStringName );
+		GenericHelper.waitForLoadmask();
+		GridHelper.clickRow( "SearchGrid", dialStringName, "Name" );
+		ButtonHelper.click( "OK_Button_ByID" );
+	}
+
+	/*
+	 * Method: selecting event identifier value in event identifier value screen
+	 */
+	public void stringSelection( String stringName ) throws Exception
+	{
+		if ( !ElementHelper.isElementPresent( "//div[text()='Event Identifier Value Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Event Identifier Value Search']", searchScreenWaitSec );
+		dataFilterSearchGridColTxt( "SearchGrid", "Search_eidValName_gridColTxtId", stringName, "Name" );
+	}
+
+	/*
+	 * Method: selecting route group in route search screen
+	 */
+	public void routeSelection( String routeName ) throws Exception
+	{
+
+		genericHelperObj.waitforPopupHeaderElement( "Switch" );
+		dataFilterSearchGridColTxt( "SearchGrid", "rutName", routeName, "Name" );
+	}
+
+	/*
+	 * Method: selecting stream in Stream search screen
+	 */
+	public void streamSelection( String streamName ) throws Exception
+	{
+		/*if ( !ElementHelper.isElementPresent( "//div[text()='Stream Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Stream Search']", searchScreenWaitSec );*/
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Name" );
+		GridHelper.clickRow( "SearchGrid", streamName, "Name" );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+	}
+
+	/*
+	 * Method: selecting currency in Reference search screen
+	 */
+	public void currencySelection( String currencyName ) throws Exception
+	{
+
+		String actualVal = ComboBoxHelper.getValue( "displayString_gwt_uid_" );
+		genericHelperObj.selectPageSearchRecordsFilter( "1000 per page", "Name" );
+		if ( actualVal.contains( "Currency" ) )
+		{
+			GridHelper.clickRow( "SearchGrid", currencyName, "ISO Code" );
+			ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+			GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		}
+
+	}
+
+	/*
+	 * Method: selecting aggregation processor  in aggregation processor search screen
+	 */
+	public void aggregationProcessorSelection( String aggregationProcessor ) throws Exception
+	{
+		/*if ( !ElementHelper.isElementPresent( "//div[text()='Aggregation Processor Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Aggregation Processor Search']", searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Aggregation Processor Search", "Aggregation Processor Search screen is not opened" );*/
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Name" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		dataFilterSearchGridColTxt( "SearchGrid", "paorName", aggregationProcessor, "Name" );
+	}
+
+	/*
+	 * Method: selecting service  in service search screen
+	 */
+	public void serviceSelection( String name ) throws Exception
+	{
+		/*if ( !ElementHelper.isElementPresent( "//div[text()='Service Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Service Search']", searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Service Search", "Service Search screen is not opened" );*/
+		genericHelperObj.waitforPopupHeaderElement( "Event Match Rule" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		dataFilterSearchGridColTxt( "SearchGrid", "psvcName", name, "Name" );
+	}
+
+	/*
+	 * Method: selecting element  in Element search screen
+	 */
+	public void elementSelection( String name ) throws Exception
+	{
+		/*if ( !ElementHelper.isElementPresent( "//div[text()='Elements Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Elements Search']", searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Elements Search", "Element Search screen is not opened" );*/
+		genericHelperObj.scrollforHeaderElement( "Parent Element" );
+		genericHelperObj.waitforPopupHeaderElement( "Parent Element" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		dataFilterSearchGridColTxt( "SearchGrid", "eltName", name, "Name" );
+	}
+
+	/*
+	 * Method: selecting Tariff  in tariff search screen
+	 */
+	public void tariffSelection( String tariffName ) throws Exception
+	{
+		/*if ( !ElementHelper.isElementPresent( "//div[text()='Tariff Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Tariff Search']", searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Tariff Search", "Tariff Search screen is not opened" );*/
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Tariff Name" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	//	PSSearchGridHelper.gridFilterSearchWithTextBox( "tffName", tariffName, "Tariff Name" );
+		TextBoxHelper.type( "tffName", tariffName );
+		GenericHelper.waitForLoadmask();
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "SearchGrid", tariffName, "Tariff Name" );
+		ButtonHelper.click( "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+	/*
+	 * Method: selecting band  in band search screen
+	 */
+	public void bandSelection( String bandName ) throws Exception
+	{
+		/*if ( !ElementHelper.isElementPresent( "//div[text()='Band Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Band Search']", searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Band Search", "Band Search screen is not opened" );*/
+		genericHelperObj.waitforPopupHeaderElement( "Point to Point" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		dataFilterSearchGridColTxt( "SearchGrid", "bndName", bandName, "Name" );
+	}
+
+	/*
+	 * Method: selecting band  in band search screen
+	 */
+	public void trnSelection( String trnName ) throws Exception
+	{
+		/*if ( !ElementHelper.isElementPresent( "//div[text()='Reference Table Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Reference Table Search']", searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Reference Table Search", "Tariff Rate Name screen is not opened" );*/
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Name" );
+		String actualVal = ComboBoxHelper.getValue( "displayString_gwt_uid_" );
+		if ( actualVal.contains( "TariffRateName" ) )
+		{
+			GridHelper.clickRow( "SearchGrid", trnName, "Name" );
+			ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+			GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		}
+	}
+
+	/*
+	 * Method: selecting bill profile  in bil profile search screen
+	 */
+	public void billProfileSelection( String billProfile ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Bill Profile Name" );
+		//ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		dataFilterSearchGridColTxt( "SearchGrid", "pbipName", billProfile, "Bill Profile Name" );
+	}
+
+	/*
+	 * This method is for bill period search
+	 */
+	public void billPeriodSearch( String account, String billProfileVal, String billPeriodVal ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Status" );
+		//ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		if ( !account.isEmpty() )
+			gridHelperObj.accountFilter( "grid_column_header_filtersearchGrid_billProfile$account$paccName", "billProfile$account", account, "Account" );
+		gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfileVal );
+		genericHelperObj.setDate( "dummyValidOnDataProperty", billPeriodVal );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "SearchGrid", 1, "Account" );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+	}
+
+	/*
+	 * Method: search operation using grid column text box
+	 */
+	public void dataFilterSearchGridColTxt( String gridId, String gridColTxtId, String name, String colHeader ) throws Exception
+	{
+		SearchGridHelper.gridFilterSearchWithTextBox( gridColTxtId, name, colHeader );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( gridId, name, colHeader );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+	/*
+	* Method: search operation using Bill search with Account, Bill profile, Bill periodFromDt, Bill periodToDt
+	*/
+	public void billsearch( String account, String billProfile, String billPeriodFromDt, String billPeriodToDt ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Disputed" );
+		gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfile );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "billProfile$account", account, "Account" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		PSGenericHelper.setBetweenDate( GenericHelper.getORProperty( "PS_Detail_BillPeriod_tableId" ), billPeriodFromDt, billPeriodToDt );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", account, "Account" );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+
+	}
+
+	public Map<String, String> billsearch( String account, String billProfile, String billPeriodFromDt, String billPeriodToDt, String gridId, String columnHeaderId, List<String> listColumn ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Disputed" );
+		WebElement headerElement = GridElementHelper.getHeaderElement( GenericHelper.getORProperty( gridId ), "Bill Profile" );
+		String filterLocator = or.getProperty( "Grid_Filter_Icon" );
+		WebElement filterElement = ElementHelper.getElement( headerElement, filterLocator );
+		if ( filterElement != null && ElementHelper.isClickable( filterElement ) )
+		{
+			gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfile );
+		}
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "billProfile$account", account, "Account" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		PSGenericHelper.setBetweenDate( GenericHelper.getORProperty( "PS_Detail_BillPeriod_tableId" ), billPeriodFromDt, billPeriodToDt );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", account, "Account" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		Map<String, String> hmap = genericHelperObj.getGridColumnValues( gridId, columnHeaderId, listColumn );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+		return hmap;
+
+	}
+
+	/*
+	 * Method: search operation using Bill search with Account, Bill profile, Bill periodFromDt, Bill periodToDt, Version, status
+	 */
+	public void billsearch( String account, String billProfile, String billPeriodFromDt, String billPeriodToDt, String status, String version ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Disputed" );
+		gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfile );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "billProfile$account", account, "Account" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		PSGenericHelper.setBetweenDate( GenericHelper.getORProperty( "PS_Detail_BillPeriod_tableId" ), billPeriodFromDt, billPeriodToDt );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "pbilVersionNo", version, "Version" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "pbilStatusCd", status, "Bill Status" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", account, "Account" );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+
+	}
+
+	/*
+	 * Method: search operation using Credit note search with Bill profile
+	 */
+
+	public void creditNoteSearch( String billProfile, String amount ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Currency" );
+		gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfile );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		TextBoxHelper.type( "amountPanel", "dummyCrdTxnAmt", amount );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", billProfile, " Bill Profile" );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+	}
+
+	/*
+	 * Method: search operation using Credit note search with Bill profile
+	 */
+
+	public Map<String, String> creditNoteSearch( String billProfile, String amount, String iconId, String sortMenuId, String gridId, String columnHeaderId, List<String> listColumn ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Currency" );
+		gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfile );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		TextBoxHelper.type( "amountPanel", "dummyCrdTxnAmt", amount );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "SearchButton" );
+		sortColumnHeaderGrid( iconId, sortMenuId, "Reference" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "SearchGrid", 1, "Reference" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		Map<String, String> hmap = genericHelperObj.getGridColumnValues( gridId, columnHeaderId, listColumn );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+		return hmap;
+	}
+
+	/*
+	 * Method: search operation using Carrier Invoice search with Bill profile
+	 */
+
+	public void carrierInvoiceSearch( String account, String billProfile, String fromDt, String toDt ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Carrier Invoice Ref No" );
+		gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfile );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "billProfile$account", account, "Account Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		PSGenericHelper.setBetweenDate( GenericHelper.getORProperty( "PS_Detail_BillPeriod_tableId" ), fromDt, toDt );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", billProfile, "Bill Profile" );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+	/*
+	 * Method: search operation using Carrier Invoice search with Bill profile
+	 */
+
+	public Map<String, String> carrierInvoiceSearch( String account, String billProfile, String fromDt, String toDt, String gridId, String columnHeaderId, List<String> listColumn ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Version" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Version" );
+		WebElement headerElement = GridElementHelper.getHeaderElement( GenericHelper.getORProperty( gridId ), "Bill Profile" );
+		String filterLocator = or.getProperty( "Grid_Filter_Icon" );
+		WebElement filterElement = ElementHelper.getElement( headerElement, filterLocator );
+		if ( filterElement != null && ElementHelper.isClickable( filterElement ) )
+		{
+			gridHelperObj.billProfileAdvanceFilter( "searchGrid", "Bill Profile", billProfile );
+		}
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "billProfile$account", account, "Account Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		PSGenericHelper.setBetweenDate( GenericHelper.getORProperty( "PS_Detail_BillPeriod_tableId" ), fromDt, toDt );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		fromDt = fromDt.replace( " 00:00:00", "" );
+		toDt = toDt.replace( " 23:59:59", "" );
+		int rowNum = psDataComponentHelper.getRowNumOfGridWithMultCellValue( gridId, fromDt + ", " + toDt );
+		GridHelper.clickRow( gridId, rowNum, "Bill Profile" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		Map<String, String> hmap = genericHelperObj.getGridColumnValues( gridId, columnHeaderId, listColumn );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+		return hmap;
+	}
+
+	/*
+	 * Method: for sorting the column header 
+	 */
+	public void sortColumnHeaderGrid( String iconId, String sortMenuId, String columnHeader ) throws Exception
+	{
+		SearchHelper searchHelper = new SearchHelper();
+		searchHelper.clickFilterIcon( GenericHelper.getORProperty( iconId ) );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForClickableElement( GenericHelper.getORProperty( sortMenuId ), searchScreenWaitSec );
+		Actions action = new Actions( driver );
+		action.moveToElement( ElementHelper.getElement( GenericHelper.getORProperty( sortMenuId ) ) ).click().perform();
+
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		String arrowxpath = GenericHelper.getORProperty( "ps_detail_columnHeader_SortArrowXpath" );
+		arrowxpath = arrowxpath.replace( "ColumnName", columnHeader );
+		assertTrue( ElementHelper.isElementPresent( arrowxpath ), "Sorting arrow didn't appear for this column " + columnHeader );
+
+	}
+
+	/*This method is Table Instance Search entity search*/
+	public void tableInstanceEntitySearch( String value ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforEntityElement();
+		GenericHelper.waitForLoadmask();
+		EntityComboHelper.clickEntityIcon( GenericHelper.getORProperty( "PS_Detail_tableInst_entityId" ) );
+		genericHelperObj.waitforPopupHeaderElement( "Schema" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Schema" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.scrollforHeaderElement( "SearchGrid", "Definition Name" );
+		genericHelperObj.scrollforHeaderElement( "SearchGrid", "Table Name" );
+		int row = PSSearchGridHelper.gridFilterSearchWithTextBox( "TableInst_TableName", value, "Table Name" );
+		boolean isValue = GridHelper.isValuePresent( "Detail_popUpWindowId", "SearchGrid", value, "Table Name" );
+		assertTrue( isValue, "Table Instance Search with  table name :'" + value + "'  is not found in 'Table Instance Search' popupScreen " );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", row, "Table Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OKButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElementToDisappear( "Schema" );
+	}
+
+	/*
+	 * Method: search operation using grid column combo box
+	 */
+	public void dataFilterSearchGridComboBox( String gridId, String comboBoxId, String name, String colHeader ) throws Exception
+	{
+		SearchGridHelper.gridFilterSearchWithComboBox( comboBoxId, name, colHeader );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( gridId, name, colHeader );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+	}
+
+	/*
+	 * Method: selecting event identifier defn search screen
+	 */
+	public void identifierDefinitionSelection( String dfnName ) throws Exception
+	{
+		if ( !ElementHelper.isElementPresent( "//div[text()='Event Identifier Definition Search']" ) )
+			ElementHelper.waitForElement( "//div[text()='Event Identifier Definition Search']", searchScreenWaitSec );
+		dataFilterSearchGridColTxt( "SearchGrid", "Search_identifierDfn_gridColTxtId", dfnName, "Name" );
+	}
+
+	/*
+	 * Method: selecting match rule group in event type search screen
+	 */
+	public void matchRuleGroupSelection( String grpName ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Name" );
+		dataFilterSearchGridColTxt( "SearchGrid", "Search_ruleGrp_gridColTxtId", grpName, "Name" );
+	}
+
+	/*
+	 * Method: selecting route search screen
+	 */
+	public void routeSelection( String gridWrapper, String gridId, String routeName ) throws Exception
+	{
+		genericHelperObj.waitforPopupHeaderElement( "Switch" );
+		dataFilterSearchGridColTxt( "popupWindow", "SearchGrid", "rutName", routeName, "Name" );
+	}
+
+	/*
+	 * Method: search operation using grid column text box
+	 */
+	private void dataFilterSearchGridColTxt( String gridWrapper, String gridId, String gridColTxtId, String name, String colHeader ) throws Exception
+	{
+		PSSearchGridHelper.gridFilterSearchWithTextBox( gridColTxtId, name, colHeader );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( gridWrapper, gridId, name, colHeader );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+	/*
+	 * Method: search operation using Collected File search with fileSource, token, polledPeriodFromDt, polledPeriodToDt, fileName
+	 */
+	public void collectedFilesearch( String fileSource, String token, String fileName ) throws Exception
+	{
+		String currDate = DateHelper.getCurrentDate();
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Polled" );
+		if ( ValidationHelper.isNotEmpty( fileSource ) )
+			ComboBoxHelper.select( "fileCollection_fileSource_gwt_uid_", fileSource );
+		if ( ValidationHelper.isNotEmpty( token ) )
+			ComboBoxHelper.select( "fileCollection_tokenTbl_gwt_uid_", token );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		CalendarHelper.setBeforeDate( "Detail_popUpWindowId", "clfPolledDttm", currDate + " 23:59:59" );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.scrollforHeaderElement( "SearchGrid", "File Name" );
+		PSSearchGridHelper.gridFilterSearchWithTextBox( "fileTbl$filFilename", fileName, "File Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", fileName, "File Name" );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElementToDisappear( GenericHelper.getORProperty( "ps_Detail_entityPopupS_Xpath" ), searchScreenWaitSec );
+
+	}
+
+	/*This method is Table Instance Search */
+	public void tableInstanceSearch( String value ) throws Exception
+	{
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Schema" );
+		ButtonHelper.click( "ClearButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElement( "Schema" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.scrollforHeaderElement( "SearchGrid", "Definition Name" );
+		genericHelperObj.scrollforHeaderElement( "SearchGrid", "Table Name" );
+		int row = PSSearchGridHelper.gridFilterSearchWithTextBox( "TableInst_TableName", value, "Table Name" );
+		boolean isValue = GridHelper.isValuePresent( "Detail_popUpWindowId", "SearchGrid", value, "Table Name" );
+		assertTrue( isValue, "Table Instance Search with table name :'" + value + "' is not found in 'Table Instance Search' popupScreen " );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", row, "Table Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OKButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		genericHelperObj.waitforPopupHeaderElementToDisappear( "Schema" );
+	}
+	
+	/*This method is Deal Search */
+	
+public void dealSearch(String account,String contractNo,String dealPeriod) throws Exception
+{
+	GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	genericHelperObj.waitforPopupHeaderElement( "Account" );
+	gridHelperObj.accountFilter( "grid_column_header_filtersearchGrid_account$paccName", "account", account, "Account"  );
+	//SearchGridHelper.gridFilterAdvancedSearch( "PS_Detail_Deal_account_filter_txtBxID", account, "Account" );
+	PSSearchGridHelper.gridFilterSearchWithTextBox( "PS_Detail_Deal_deal_txtbxID", account, "Deal Name" );
+	GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	genericHelperObj.scrollforHeaderElement( "Contract No" );
+	PSSearchGridHelper.gridFilterSearchWithTextBox( "PS_Detail_Deal_contractNo_txtbxID", contractNo, "Contract No" );
+	if(!dealPeriod.isEmpty())			
+		//CalendarHelper.setOnDate(  "PS_Detail_Deal_dealPeriod_calenderID", dealPeriod );
+	genericHelperObj.setDate(GenericHelper.getORProperty(  "PS_Detail_Deal_dealPeriod_calenderID"), dealPeriod );
+	GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	//SearchGridHelper.gridFilterSearchWithTextBox( "Detail_popUpWindowId", "billProfile$account", account, "Account" );
+	GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	ButtonHelper.click( "SearchButton" );
+	GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	GridHelper.clickRow( "Detail_popUpWindowId", "SearchGrid", contractNo, "Contract No" );
+	
+	ButtonHelper.clickIfEnabled( "Detail_popUpWindowId", "OKButton" );
+	GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	genericHelperObj.waitforPopupHeaderElementToDisappear( "Account" );
+}
+}

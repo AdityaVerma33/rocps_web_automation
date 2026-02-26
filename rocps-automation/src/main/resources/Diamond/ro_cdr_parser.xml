@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="1.0.2048.481" version="148">
+    <Decoder name="RO CDR Parser" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="ROCDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" allowEOFTerm="false" terminator="crlf" root="false" name="ROCDR" tokens="22" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="EvtDttm" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="dd/MM/yyyy HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="1" generate="field" name="EvtCount" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="2" generate="field" name="EvtUsage" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="3" generate="field" name="VroRevenueAmount" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="decimal"/>
+            </Field>
+            <Field trimQuotes="true" id="4" generate="field" name="VroRevenueCurrency" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="5" generate="field" name="VroInSwitch" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="6" generate="field" name="VroOutSwitch" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="7" generate="field" name="VroANoNOA" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="8" generate="field" name="VroANo" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="9" generate="field" name="VroANoExtra" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="10" generate="field" name="VroBNoNOA" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="11" generate="field" name="VroBNo" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="12" generate="field" name="VroBNoExtra" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="13" generate="field" name="VroCNoNOA" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="14" generate="field" name="VroCNo" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="15" generate="field" name="VroCNoExtra" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="16" generate="field" name="VroInRoute" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="17" generate="field" name="VroOutRoute" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+			<Field trimQuotes="true" id="18" generate="field" name="VroPddSecs" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+			 <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="19" generate="field" name="VroBearerService" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="20" generate="field" name="VroGroupKey" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="21" generate="field" name="VroCompletionCode" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="140" xPos="15" name="ROCDR" width="90" type="Record" recordType="ROCDR" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output"/>
+                </Outputs>
+            </Node>
+            <Node yPos="110" unicode="false" width="60" outputKey="vro_event" type="SparkOutput" EventUsage="evt_usage" height="50" UsagePartitionId="GetUsagePartitionId('NewSubPartitionGroup', evt_dttm, HourOfDay(evt_dttm), Mod(SecondOfMinute(evt_dttm), 2))" EventCount="evt_count" xPos="275" EventDatetime="evt_dttm" name="Rocps Output" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="85" xPos="185" name="Mapping" width="60" type="Mapping" recordType="vro_event" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="StatisticDateTime(evt_dttm)" name="Datetime Stats" type="execute"/>
+                            <Event expression="StatisticUsage(evt_usage)" name="Usage Stats" type="execute"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="GetEventId()" target="evt_id"/>
+                    <Mapping expression="EvtDttm" target="evt_dttm"/>
+                    <Mapping expression="EvtCount" target="evt_count"/>
+                    <Mapping expression="EvtUsage" target="evt_usage"/>
+                    <Mapping expression="$$StreamId" target="stm_id"/>
+                    <Mapping expression="$$TaskId" target="tsk_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="VroRevenueAmount" target="vro_revenue_amount"/>
+                    <Mapping expression="VroRevenueCurrency" target="vro_revenue_currency"/>
+                    <Mapping expression="$$RecordAddress" target="record_address"/>
+                    <Mapping expression="$$RecordLength" target="record_length"/>
+                    <Mapping expression="VroInSwitch" target="vro_in_switch"/>
+                    <Mapping expression="VroOutSwitch" target="vro_out_switch"/>
+                    <Mapping expression="VroANoNOA" target="vro_a_no_noa"/>
+                    <Mapping expression="VroANo" target="vro_a_no"/>
+                    <Mapping expression="VroANoExtra" target="vro_a_no_extra"/>
+                    <Mapping expression="VroBNoNOA" target="vro_b_no_noa"/>
+                    <Mapping expression="VroBNo" target="vro_b_no"/>
+                    <Mapping expression="VroBNoExtra" target="vro_b_no_extra"/>
+                    <Mapping expression="VroCNoNOA" target="vro_c_no_noa"/>
+                    <Mapping expression="VroCNo" target="vro_c_no"/>
+                    <Mapping expression="VroCNoExtra" target="vro_c_no_extra"/>
+                    <Mapping expression="VroInRoute" target="vro_in_route"/>
+                    <Mapping expression="VroOutRoute" target="vro_out_route"/>
+                    <Mapping expression="VroPddSecs" target="vro_pdd_secs"/>
+                    <Mapping expression="VroBearerService" target="vro_bearer_service"/>
+                    <Mapping expression="VroGroupKey" target="vro_group_key"/>
+					<Mapping expression="VroCompletionCode" target="vro_completion_code"/>
+                </Mappings>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="VroEvent" name="GetEventId" blockSize="10000" type="GenerateLongId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="vro_event">
+                <Field id="22" name="evt_id" nullable="false" type="integer"/>
+                <Field id="23" name="evt_dttm" nullable="false" type="datetime"/>
+                <Field id="24" name="evt_count" nullable="false" type="integer"/>
+                <Field id="25" name="evt_usage" nullable="false" type="integer"/>
+                <Field id="26" name="stm_id" nullable="false" type="integer"/>
+                <Field id="27" name="tsk_id" nullable="false" type="integer"/>
+                <Field id="28" name="sfl_id" nullable="false" type="integer"/>
+                <Field id="29" name="vro_revenue_amount" nullable="true" type="decimal"/>
+                <Field id="30" name="vro_revenue_currency" nullable="true" type="string"/>
+                <Field id="31" name="vro_record_address" nullable="true" type="integer"/>
+                <Field id="32" name="vro_record_length" nullable="true" type="integer"/>
+                <Field id="33" name="vro_in_switch" nullable="true" type="string"/>
+                <Field id="34" name="vro_out_switch" nullable="true" type="string"/>
+                <Field id="35" name="vro_a_no_noa" nullable="true" type="string"/>
+                <Field id="36" name="vro_a_no" nullable="true" type="string"/>
+                <Field id="37" name="vro_a_no_extra" nullable="true" type="string"/>
+                <Field id="38" name="vro_b_no_noa" nullable="true" type="string"/>
+                <Field id="39" name="vro_b_no" nullable="true" type="string"/>
+                <Field id="40" name="vro_b_no_extra" nullable="true" type="string"/>
+                <Field id="41" name="vro_c_no_noa" nullable="true" type="string"/>
+                <Field id="42" name="vro_c_no" nullable="true" type="string"/>
+                <Field id="43" name="vro_c_no_extra" nullable="true" type="string"/>
+                <Field id="44" name="vro_in_route" nullable="true" type="string"/>
+                <Field id="45" name="vro_out_route" nullable="true" type="string"/>
+                <Field id="46" name="vro_pdd_secs" nullable="true" type="integer"/>
+                <Field id="47" name="vro_bearer_service" nullable="true" type="string"/>
+                <Field id="48" name="vro_group_key" nullable="true" type="string"/>
+                <Field id="49" name="vro_completion_code" nullable="true" type="string"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

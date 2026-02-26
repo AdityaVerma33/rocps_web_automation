@@ -1,0 +1,2797 @@
+# Common Id and Xpath
+#---------------------------------------------------
+Detail_popUpWindowId = popupWindow
+Detail_screenTitleXpath = //div[@id='formTitle']
+childTextXpath = //div[@id='subMenu']//*//div[contains(text(),'partialText')]
+PS_dualListSelectButtonXpath = //div[text()='filterHeaderText']/ancestor::div[@id='dualList']//button[@id='select']
+PS_dualListAvailableFilterItem = //div[text()='filterHeaderText']/ancestor::div[@id='dualList']//div[text()='selectValue']
+PS_popUpWindowId = popupWindow
+PS_searchBtnId = search
+
+#EntitySearch
+#------------------------------------------------------------------------
+Search_routeName_gridColTxtId = pergName
+Search_eidValName_gridColTxtId = peivName
+Search_dstName_txtId = pdstName
+Search_valueGroup_gridColTxtId = peigName
+PS_propertyValColXpath = //div[text()='propertyName']/parent::td/following-sibling::td[1]
+
+#Filters
+#------------------------------------------------------------------------
+PS_SearchAdvanceFilterXpath = //div[contains(text(),'labelName')]/ancestor::tbody[1]//div[text()='Advanced Search']
+PS_searchBillProfile_gridColFilterTxtId = pbipName
+PS_searchTariffTxtId = tffName
+PS_bandSearchGridFilterColTxtId = bndName
+PS_streamSearchGridFilterColTxtId = stmName
+PS_serviceSearchGridFilterTxtId = psvcName
+PS_searchPanelId = searchPanel
+PS_calendarButtonId = options
+PS_collapsableXpath = //*[@id='collapse']/img
+PS_suggestionFilterAdvanceTextXpath = //input[contains(@id,'filterTxtId')]/ancestor::div[@id='-container']//*//div[text() ='Advanced Search']
+PS_suggestionFilterSearchBtnXpath = //input[contains(@id,'filterTxtId')]/ancestor::div[@id='-container']//*//div[text() ='Search']
+PS_bipPopUpSaveBtnXpath = //div[@id='grid_column_header_filtersearchGrid_pbipName']/ancestor::div[@id='popupWindow']//button[@id='ok']
+
+PS_Detail_BillPeriod_tableId=dummyValidOnDataProperty
+PS_DateFilter_xpath=//table[@id='tableId']//div[@id='options']/img
+PS_DateFilter_FromDt_xpath=//input[@id='-fromDateLabel']
+PS_DateFilter_ToDt_xpath=//input[@id='-toDateLabel']
+
+
+#Timeline
+#--------------------------------------------------------
+detail_bip_timeLineDisplayed_xpath = //div[contains(@class,'roc-timeline') and @id='Label']
+detail_bip_timeLineId = //div[@id='Label']
+detail_bip_timlineId = rightButton
+detail_bip_timeLineEdit_actionXpath = //div[text()='Edit']
+detail_bip_timeLineNew_actionXpath = //div[text()='New']
+PSdetail_timeLineId = //*[text()='TimeLineName']/parent::td/parent::tr/following-sibling::tr[2]//div[@id='Label']
+
+
+# Account
+#----------------------------------------------------
+accountName_ColHeader = grid_column_header_filtersearchGrid_paccName
+accountType_Detail = paccCustomerType_gwt_uid_
+accountName_Detail_popID = //div[@id='_grid_header_filter']//input[@id='paccName']
+accountName_Detail = paccName
+Detail_accountType = accountType_gwt_uid_
+Detail_accountFranchise = franchise_gwt_uid_
+Detail_accountRef = paccAcctRefNo
+Detail_accountStatus = entityStatus_gwt_uid_
+Detail_parentAccountEntityId = account
+Detail_popUp_ManagingAgent = trigger-agent
+Detail_popUp_companyName = pageCompanyName
+Detail_classification = customerClassification_gwt_uid_
+Detail_account_salesRegion = salesRegion_gwt_uid_
+Detail_paymentType = customerPrice_gwt_uid_
+Detail_analyst = userTbl_gwt_uid_
+Detail_creditRating = paccAcctCreditScore_gwt_uid_
+Detail_bankDetailsAdd = bankToolbar.Add
+Detail_bankDetailsPopUpId = bankAccountDetail.window
+Detail_bankNamePopUpId = bank_gwt_uid_
+Detail_bankAccNoPopUpId = pbacExtra1
+Detail_bankAccName = pbacExtra2
+Detail_bankAccPopUpSaveId = bankAccountDetail.ok
+Detail_contactInfoTabXpath = //div[text()='Contact Information']
+Detail_addressAddToolBarBtnId = addressToolbar.Add
+Detail_accountCmpNameTxtId = paccCompanyName
+Detail_accountAddressTypeTxtId = accountAddressType_gwt_uid_
+Detail_accountAddressToTxtId = pacdAddresseeEnvelope
+Detail_accountSalutationTxtId = pacdSalutation
+Detail_buildingOrFloorTxtId = pacdBuilding
+Detail_streetTxtId = pacdStreet
+Detail_stateTxtId = pacdState
+Detail_countyTxtId = pacdCounty
+Detail_townOrCountyTxtId = pacdTown
+Detail_postalCodeTxtId = pacdPostcode
+Detail_countryComboId = country_gwt_uid_
+Detail_companyRegNoTxtId = pacdCompanyRegNo
+Detail_registrationCityTxtId = pacdCompanyRegCity
+Detail_registrationTypeTxtId = pacdCompanyRegType
+Detail_yearsTradingTxtId = pacdCompanyTradeYrs
+Detail_accountAddressTxtId = pacdAddress
+Detail_mainAccAddrFlId = pacdDefaultFl_InputElement
+Detail_accountAddressSaveId = accountAddressDetail.ok
+Detail_contactAddBtnId = contactsToolbar.Add
+Detail_contactNameTxtId = paciName
+Detail_contactEmailTxtId = paciEmail
+Detail_mobileNumTxtId = paciMobileNo
+Detail_officeNumTxtId = paciOfficeNo
+Detail_homeNumTxtId = paciHomeNo
+Detail_faxTxtId = paciFax
+Detail_mainContactFl = paciDefaultFl_InputElement
+Detail_accContactSaveBtnId = accountContactInfoDetail.ok
+Detail_accountDetailSaveId = accountDetail.save
+Detail_accountCountryNameId = country_gwt_uid_
+
+
+#BillProfile
+#------------------------------------------------------------------------------
+
+detail_bip_profileType_ComboId = billProfileType_gwt_uid_
+detail_bip_account_entitySearchId = account
+detail_bip_detail_tabXpath = //div[text()='Details']
+detail_bip_detail_language_comboId = language_gwt_uid_
+detail_bip_detail_extRef_txtId = pbipExternalReference
+detail_bip_detail_profileName_txtId = pbipName
+detail_bip_detail_compVatNo_txtId = pbipCompanyVatNo
+detail_bip_detail_paymentTerm_comboId = paymentTerm_gwt_uid_
+detail_bip_detail_paymentThreshold_comboId = paymentMethod_gwt_uid_
+detail_bip_billingCycle_comboId = billingCycle_gwt_uid_
+detail_bip_firstPeriodDate_txtXpath = //div[@id='trigger-pbipBpdStartDttm']/parent::td/preceding-sibling::td/input
+detail_bip_consFirstBillPeriod_checkId = pbipBpdConsolidateFl_InputElement
+detail_bip_exemptFromSalesTax_checkId = pbipStxExemptFl_InputElement
+detail_bip_prePaid_checkId = pbipPrepayFl_InputElement
+detail_bip_prePayment_comboId = amountThreshold_gwt_uid_
+detail_bip_prePaymentThreshold_comboId = amountThreshold_gwt_uid_
+
+detail_bip_validFromDate_txtXpath = //div[@id='trigger-pbpcFromDttm']/parent::td/preceding-sibling::td/input
+detail_bip_currecnyTimeLine_comboId = billCurrency_gwt_uid_
+detail_bip_billCurrDetail_popUpId = billProfileCurrencyPeriodDetail.window
+detail_bip_billCurrBillDp_comboId = pbpcBillCurDp_gwt_uid_
+detail_bip_billFxGroup_comboId = billCrossFxRateGroup_gwt_uid_
+detail_bip_billFxRule_comboId = billApplyFxrComponent_gwt_uid_
+detail_bip_creditLimit_txtId = pbpcBillAuthCdtAmt
+detail_bip_minAmount_txtId = pbpcBillMinAmt
+detail_bip_timeLineSave_btnId= billProfileCurrencyPeriodDetail.ok
+detail_bip_addressName_comboId = accountAddress_gwt_uid_
+detail_bip_address_txtId = //div[@id='addressDetails']//*[@id='address']
+
+detail_bip_billPackage_comboId = billPackage_gwt_uid_
+detail_bip_billProduction_comboId = billProductionPath_gwt_uid_
+detail_bip_consolidateBills_comboId = pbipConsolidateBills_gwt_uid_
+detail_bip_suppressBillProduction_radioId = suppressBillRadioGroupPbipBilSuppressFl_InputElement
+detail_bip_suppressBillDate_calXpath =//div[@id='trigger-pbipBilSuppressDttm']/parent::td/preceding-sibling::td/input
+detail_bip_produceBill_radioId = trigger-pbipBilSuppressDttm
+detail_bip_billGeneration_comboId = BillProduceMethod_gwt_uid_
+detail_bip_defaultMarketingMsgFlag_checkId = pbipUseDefaultMarketMsgFl_InputElement
+detail_bip_marketingMeg_entitySrchId = trigger-marketMessage
+detail_bip_includeXdrBillFlag_checkId=pbipIncludeXdrBillFl_InputElement
+
+detail_bip_marketingMsgName_gridFilterId = pmmgName
+detail_bip_configProvisionAmt_checkId = provisionAmtFlag_InputElement
+detail_bip_provisionAmtType_comboId = provisionAmtType_gwt_uid_
+detail_bip_provisionAmtInput_TxtId = provisionAmtPbipProvisionValue
+detail_bip_provisionPercentage_comboId = provisionAmtProvisionCurrency_gwt_uid_
+
+detail_bip_balanceThreshold_txtId = pbipThresholdAmt
+detail_bip_amountThreshold_comboId = amountThreshold_gwt_uid_
+detail_bip_balanceCurrency_comboId = balanceCurrency_gwt_uid_
+detail_bip_crossFxGroup_comboId = crossFxRateGroup_gwt_uid_
+detail_bip_allocationStrategy_comboId = allocationStrategy_gwt_uid_
+
+detail_bip_billProfileSave_btnId = billProfileDetail.save
+
+detail_bip_settlementTabXpath=//*[@id=\"tabbedPanel\"]/div[2]//div[text()='Settlements']
+detail_bip_settlementTab_lableXpath=//div[@id='lblSettlement']
+detail_bip_settlement_comboId=billProfile_gwt_uid_
+detail_bip_automaticSettlement_chckbxId=pbipStlmtAutomatic_InputElement
+detail_bip_settlement_addMenu_xpath=//div[@id='settlementGrid']//div[contains(@class,'roc-datagrid')]/div[3]/div
+detail_bip_settlement_bipAdd_xpath=//div[@id='settlementGridMenu.Add']
+detail_bip_settlement_bip_entityId=trigger-billProfile
+detail_bip_settlement_bipName_textId=pbipName
+detail_bip_settlement_inclBill_ChckbxId=psbpAutoIncludeFl_InputElement
+detail_bip_settlement_isCi_ChckbxId=psbpCaiExpectedFl_InputElement
+
+detail_bip_ApprWflwTab_xpath=//*[@id=\"tabbedPanel\"]/div[2]//div[text()='Approval Workflows']
+detail_bip_ApprWflwTab_labelxpath=//*[@id=\"billApprWorkFlows\"]
+detail_bip_billApprWflw_comboId=approvalWorkflow_gwt_uid_
+detail_bip_creditApprWflw_comboId=crdApprovalWorkflow_gwt_uid_
+detail_bip_disputeApprWflw_comboId=disputeApprovalWorkflow_gwt_uid_
+
+detail_bip_emailTabXpath=//*[@id=\"tabbedPanel\"]/div[2]//div[text()='Email']
+detail_bip_email_autoEmailBill_ChckbxId=pbecAutoBill_InputElement
+detail_bip_email_autoEmailXDRExtract_ChckbxId=pbecAutoXdr_InputElement
+detail_bip_email_autoEmailCreditNote_ChckbxId=pbecAutoCredit_InputElement
+detail_bip_email_autoEmailSettlement_ChckbxId=pbecAutoSettlement_InputElement
+detail_bip_email_autoEmailDispute_ChckbxId=pbecAutoDispute_InputElement
+detail_bip_email_selectEmailGridId=emailGrid
+detail_bip_email_selectEmailGridInclude_ChckbxId=pbemIsIncludeEditor_checked_column_field_image
+detail_bip_email_selectEmailGrid_Bill_ComboId=pbemBillRecepientTypeEditor_gwt_uid_
+detail_bip_email_selectEmailGrid_XDRExtract_ComboId=pbemXdrRecepientTypeEditor_gwt_uid_
+detail_bip_email_selectEmailGrid_CreditNote_ComboId=pbemCreditRecepientTypeEditor_gwt_uid_
+detail_bip_email_selectEmailGrid_Settlement_ComboId=pbemSettlementRecepientTypeEditor_gwt_uid_
+detail_bip_email_selectEmailGrid_Dispute_ComboId=pbemDisputeRecepientTypeEditor_gwt_uid_
+detail_bip_email_emailSubject_Bill=pbesBill
+detail_bip_email_emailSubject_CreditNote=pbesCreditNote
+
+#Event Identifier Definition
+#-------------------------------------------------------------------------------
+eventName_colHeader = grid_column_header_searchGrid_peidName
+Detail_eventDefn_eventName_txtId = peidName
+Detail_eventDefn_eventType_comboId = eventType_gwt_uid_
+Detail_eventDefn_field_comboId = tableColumn_gwt_uid_
+Detail_eventDefn_definitionType_comboId = eventIdentifierType_gwt_uid_
+Detail_eventDefn_component_comboId = component_gwt_uid_
+Detail_eventDefn_WrapperID = eventIdentifierDfnDetail.window
+Detail_eventDefn_matchType_comboId = gwt_uid_
+Detail_eventDefn_Save_btnId = eventIdentifierDfnDetail.save
+Detail_propertyWrapperID = property
+Detail_eventDefn_Criteria_comboId = evtIdfCritTyp_gwt_uid_
+Detail_eventDefn_gridID = searchGrid
+
+#Event Identifier Value
+#-------------------------------------------------------------------------------
+Detail_wrapperID = eventIdentifierValueDetail.window
+Detail_eventValue_name_txtId = peivName
+Detail_eventValue_definition_popId = trigger-eventIdentifierDfn
+Detail_eventValue_fromDate_txtId = //table[@id='peivFromDttm']/tbody/tr/td[1]/input
+Detail_eventValue_toDate_txtId = peivToDttm
+Detail_eventValue_value_txtId = peivValue
+Detail_eventValueSave_btnID = eventIdentifierValueDetail.save
+GridID_searchpanel = searchPanel
+
+#Operator
+#----------------------------------------------------------------------------------
+Detail_operator_wrapperID = operatorDetail.window
+Detail_operator_name_txtId = poprName
+Detail_operator_code_txtId = poprCode
+Detail_operator_description_txtId = globalExclusion.pgleDescription
+Detail_operator_priority_txtId = poprPriority
+Detail_operator_globalFlag_radiobtn = globalExclusion.pgleExclusionFl_InputElement
+Detail_operator_account_popupId = account
+Detail_operator_save_btn_Id = operatorDetail.save
+
+#Dial String Set
+#-----------------------------------------------------------------------------------
+Detail_dialString_wrapperID = dialstringSetDetail.window
+Detail_dialString_name_txtID = pdstName
+Detail_dialString_nameDetail_txtId = dsdNameEditor
+Detail_dialString_digit_txtID = dsdDigitsEditor
+Detail_dialString_save_btnID = dialstringSetDetail.save
+Detail_dialString_add_btnID = dialstringSetToolbar.add
+Grid_search_btnID = search
+Detail_custompanel = grid_cell_popuppanel
+Detail_nameDetail_wrapperID = dialstringsetGrid
+Detail_try = //*[contains(@class,'GNHAT4HCBG')]
+#Detail_try = //[@class='GNHAT4HCIH roc-datagrid']
+Detail_try1 = //*[contains(@__gwt_cell,'cell-gwt-uid-')]
+nextSibling = //*[contains(@__gwt_cell,'cell-gwt-uid-')]/parent::td//following-sibling::td[1]
+nextSibling2 = //*[contains(@__gwt_cell,'cell-gwt-uid-')]/parent::td//following-sibling::td[2]
+nextsibling3 = //*[contains(@__gwt_cell,'cell-gwt-uid-')]/parent::td//following-sibling::td[3]
+Details_digits_wrapperID = grid_cell_popuppanel
+#try1 = //div[@id='dialstringsetGrid']//*[@class='GNHAT4HCIH roc-datagrid']
+Detail_dialString_FromDate_txtID = //table[@id='dsdFromDttmEditor']/tbody/tr/td[1]/input
+Detail_dialString_toDate_txtID =	//table[@id='dsdToDttmEditor']/tbody/tr/td[1]/input	
+
+
+#Agent
+#-----------------------------------------------------------------------------------------------
+Detail_companyName_txtID = pageCompanyName
+Detail_Franchise_comboID = franchise_gwt_uid_
+Detail_Currency_comboID = currency_gwt_uid_
+Detail_type_comboID = pageTypeCd_gwt_uid_
+Detail_AgentCode_TextID = //input[contains(@id,'pageCode')]
+Detail_Title_comboID = title_gwt_uid_
+Detail_Forename_txtID = //input[contains(@id,'pageContactForename')]
+Detail_Surname_txtID = //input[contains(@id,'pageContactSurname')]
+Detail_Company_txtID = //input[contains(@id,'pageCompanyName')]
+Detail_wrapperID = basicDetailWrapperPanel
+Detail_agentBasicDetail_wrapperID = agentDetails
+Detail_agent_hierarchy_wrapperID = hierarchyDetails
+Detail_RootAgent_radioBtn = rootAgentRadio_InputElement
+Detail_ParentAgent_radioBtn = parentAgentRadio_InputElement
+Detail_parentEntity = trigger-parentAgent
+Detail_addressAdd_btn = addressToolbar.Add
+Detail_agentAddress_wrapperID = agentAddressDetail.window
+Detail_agentAddress_txtID = pagdName
+Detail_agent_AddressType_comboID = address_addressType_gwt_uid_
+Detail_agent_salutation_txtID = address.padrAddresseeLetter 
+Detail_agent_addressedTo_txt = address.padrAddresseeEnvelope
+Detail_agent_company_txtID = address.padrCompanyName
+Detail_agent_Street1_txtID = address.padrStreet1
+Detail_agent_Street2_txtID = address.padrStreet2
+Detail_agent_Street3_txtID = address.padrStreet3
+Detail_agent_Street4_txtID = address.padrStreet4
+Detail_agent_Town_txtID = address.padrTown
+Detail_agent_County_txtID = address.padrCounty
+Detail_agent_Postcode_txtID = address.padrPostcode
+Detail_agent_Country_txtID = address_country_gwt_uid_
+Detail_mainagentaddressFlag_radiobtn = pagdDefaultFl_InputElement
+popup_agent_ok_btn = agentAddressDetail.ok
+
+Detail_contactTab_wrapperID = contactWrapperPanel
+popup_contactInfo_Add_btn = internetToolbar.Add
+popup_contactTab_Internet_wrapperID = agentInternetAddrDetail.window
+popup_InternetContactName_TxtID = pagiName
+popup_InternetType_comboID = internetAddressType_gwt_uid_
+popup_InternetAddress_TxtID = pagiAddress
+popup_DefaultAddress_checkbx = pagiDefaultFl_InputElement
+popup_InternetDetails_ok_button = agentInternetAddrDetail.ok
+
+Detail_contactInfoTab_contactdetails_add_btn = phonesToolbar.Add
+popup_contactdetails_wrapperID = agentPhoneDetail.window
+popup_contactNameDetail_TxtID = pagpName
+popup_contactType_comboID = phoneType_gwt_uid_
+popup_contactNumber_txtID = pagpNumber
+popup_contact_defaultNumber_chk_bx = pagpDefaultFl_InputElement
+popup_contactDetail_ok_btn = agentPhoneDetail.ok
+Detail_agent_save_btn = agentDetail.save
+
+#Switch
+#----------------------------------------------------------------------------------------
+
+SearchGrid_swtNameCol_txtId = swtName
+Detail_switchType_comboId = switchType_gwt_uid_
+Detail_name_txtId = swtName
+Detail_matchString_txtId = swtMatchStr
+Detail_save_btnId = switchConfigDetail.save
+
+#EventMatchRuleGroup
+#----------------------------------------------------------------------------------------
+PSDetail_emrName_txtId = pmrgName
+PSDetail_fromDate_xpath = //table[@id='pmrgFromDate']/tbody/tr/td[1]/input
+PSDetail_toDate_xpath = //table[@id='pmrgToDate']/tbody/tr/td[1]/input
+PSDetail_eventType_entBtnId = trigger-eventType
+PSDetail_popUpEventType_gridColTxtId = petyName
+PSDetail_valueGroup_gridColTxtId = peigName
+PSDetail_preRating_checkBoxId = pmrgPreRatingFl_InputElement
+PSDetail_legCodes_inputDualListXpath = //div[@id='Left Widget Container']//*//div[text()='inputValues']
+PSDetail_dualComp_selectBtnId = select
+PSDetail_dualComp_removeBtnId = remove
+PSDetail_dualComp_selectAllBtnId = selectAll
+PSDetail_dualComp_removeAllBtnId = removeAll
+PSDetail_criteriaAdd_btnXpath = //div[@id='criteriaGridToolbar.Add']//div[text()='Add']
+PSDetail_criteriaGridId = eventGrpMatchCriteriaGrid
+PSDetail_identifierDfn_comboId = eventIdentifierDfnEditor_
+PSDetail_identifierVal_entId = trigger-identifierValueEditor
+PSDetail_emrgDetail_saveBtnId = eventMatchRuleGroupDetail.save
+
+#EventIdentifierValueGroup
+#--------------------------------------------------------------------------------------
+Detail_eventIdentifierValueGrp_txtID = peigName
+Detail_routeGrpAdd_btn = groupGridToolbar.Add
+popup_routeGrpName_txtID = pergName
+Detail_save_btnID = eventIdentifierValueGroupDetail.save
+popup_eventDefn_component_comboID = //div[contains(@id,'component_gwt_uid_')]/a
+Detail_eventDefn_entityID = trigger-eventIdentifierDfn
+Detail_routegrp_wrapper = groupGrid
+Detail_route_name = //*[@class ='GNHAT4HCH']
+
+#RouteGroup
+#------------------------------------------------------------------------------------
+PS_Detail_routeGroup_name_txtId = pergName
+PS_Detail_routeGroup_operator_entitybtn = operator
+PS_Detail_routeGroup_savebtn = routeGroupDetail.save
+
+#Route
+#-------------------------------------------------------------------------------------
+PS_Detail_Route_Name_txtID = route$rutName
+PS_Detail_Route_NameDetail_txtID = route.rutName
+PS_Detail_Route_RouteGrp_comboID = routeGroup_gwt_uid_
+PS_Detail_Route_Switch_comboID = switchTbl_gwt_uid_
+PS_Detail_Route_MatchString_comboID = route.rutMatchStr
+PS_Detail_Route_RouteType_comboID = routeType_gwt_uid_
+PS_Detail_Route_RouteClass_comboID = routeClass_gwt_uid_
+PS_Detail_Route_Direction_comboID = route_rutDirectionCd_gwt_uid_
+PS_Detail_Route_FromDate_txtID =  //table[@id='route.rutFromDttm']/tbody/tr/td[1]/input
+PS_Detail_Route_ToDate_txtID = //table[@id='route.rutToDttm']/tbody/tr/td[1]/input
+PS_Detail_Route_InternalRoute_chkBX = rutTransitFl_InputElement
+PS_Detail_RoutingDetails_Tab = //div[text()='Routing Details']
+PS_Detail_Route_signallingType_comboID = signallingType_gwt_uid_
+PS_Detail_Route_TermCode_txtID =  presTermCode
+PS_Detail_Route_TotalCircuits_txtID =  presTotalCircuits
+PS_Detail_Route_UsedCircuits_txtID =  presUsedCircuits
+PS_Detail_Route_Priority_txtID =  presPriority
+PS_Detail_Route_Remarks_txtID =  presRemarks
+PS_Detail_Route_Active_chkbx = presActiveFl_InputElement
+PS_Detail_Route_Save_btn = pSRouteDetail.save
+PS_Detail_Route_TrafficType_Detail = availableValuesList1
+PS_Detail_select_btn = select
+PS_Detail_wrapperID = basicDetailWrapperPanel
+PS_Detail_Route_active_chkbx = presActiveFl_InputElement
+
+#EventType
+#-----------------------------------------------------------------------------------------
+PS_Detail_EventType_Name_txtID = petyName
+PS_Detail_eventModelling_comboID = eventModellingInst_gwt_uid_
+PS_Detail_eventLegGrp_comboID = eventLegCodeGroup_gwt_uid_
+PS_Detail_tariffType_comboID = tariffTypeTableColumn_gwt_uid_
+PS_Detail_eventProcessor_comboId = component_gwt_uid_
+PS_Detail_multipleServiceLeg_chkbx = petyMultipleLegFl_InputElement
+PS_Detail_revenueAmount_comboID = revenueAmtTableColumn_gwt_uid_
+PS_Detail_revenueCurrency_comboID = revenueCurTableColumn_gwt_uid_
+PS_Detail_ratingFrom_ComboID = fromRatingTableColumn_gwt_uid_
+PS_Detail_ratingTo_comboID = toRatingTableColumn_gwt_uid_
+PS_Detail_serviceTypeGrp = dualListAvailableList1
+PS_Detail_EventType_saveBtn = eventTypeDetail.save
+PS_Detail_rating_wrapperID = rating
+
+#EventModellingDefinition
+#--------------------------------------------------------------------------------------------
+PS_Detail_modelingDefn_name_txtID =  pemdName
+PS_Detail_edit_save_btn = eventModellingDfnDetail.save
+PS_Detail_mapping_save_btn = eventMappingDetail.save
+PS_Detail_EveModDefn_name_txtID =  pemdName
+PS_Detail_EveModDefn_outputPrfx_txtID = pemdOutputPrefix
+PS_Detail_EveModDefn_errorPrfx_txtID = pemdErrorPrefix
+PS_Detail_EveModDefn_surchargeRatng_ChckBox = pemdSurFl_InputElement
+PS_Detail_EveModDefn_eventmoddefnDetail_GridId = typeGrid
+PS_Detail_EveModDefn_tableDefnentsearch_BtnId = trigger-tableDfnEditor
+PS_Detail_EveModDefn_tabDefnSearch_GridWrapper = popupWindow
+PS_Detail_EveModDefn_tabDefnSearch_GridId = searchGrid
+PS_Detail_EveModDefn_tabDefnSearch_tableNm_txtID =  tbdName
+PS_Detail_EveModDefn_tabDefnSearch_SAVE_BtnID = Search
+PS_Detail_EveModDefn_tabDefnSearch_OK_BtnID = ok
+PS_Detail_EveModDefn_Save_BtnID = eventModellingDfnDetail.save
+PS_Detail_EveModDefn_SearchPanelID = searchPanel
+PS_Detail_EveModDefn_GridId = searchGrid
+PS_Detail_EveModDefn_confgsearchGrid_GridWrapper = evtErrConfigDetail.window
+PS_Detail_EveModDefn_confgsearchGrid_GridId = evtErrConfigItemGrid
+PS_Detail_EveModDefn_confgsearchGrid_tableType_ComboId = dynamicScrTbl_gwt_uid_
+PS_Detail_EveModDefn_confgsearchGrid_visible_ChckBox = pectIsVisibleEditor_checked_column_field_image
+PS_Detail_EveModDefn_confgsearchGrid_searchable_ChckBox = pectIsSearchableEditor_checked_column_field_image
+PS_Detail_EveModDefn_confgsearchGrid_valueToCount_ChckBox = pectIsValueColEditor_checked_column_field_image
+PS_Detail_EveModDefn_confgsearchGrid_inform_OkBtnId= ok
+PS_Detail_EveModDefn_confgsearchGrid_Save_BtnId =evtErrConfigDetail.save
+PS_Detail_EveModDefn_confgsearchGrid_Cancel_BtnId =evtErrConfigDetail.cancel
+PS_Detail_EveModDefn_confgsearchGrid_discard_BtnId = discard
+PS_Detail_EveModDefn_Mapping_save__BtnId= eventMappingDetail.save
+
+#EventNormalization
+#--------------------------------------------------------------------------------------------
+PS_Detail_eventNormalization_name_txtID = pnrmName
+PS_Detail_eventNormalization_componet_comboID = component_gwt_uid_
+PS_Detail_eventNormalization_eventType_comboID = eventType_gwt_uid_
+PS_Detail_properties_digitCheckrule_comboID = tclEditor_gwt_uid_
+PS_Detail_properties_wrapperID = //*[@id='eventNormalizationPropertyGrid']//table/tbody/tr[1]/td[2]
+PS_Detail_properties_GridID = eventNormalizationPropertyGrid
+PS_Detail_wrapperID = eventNormalizationDetail.window
+PS_Detail_ok_buttonID = eventNormalizationDetail.OK
+PS_propertyValColXpath = //div[text()='propertyName']/parent::td/following-sibling::td[1]
+
+#ServiceTariffType
+#---------------------------------------------------------------------------------------------------
+PS_Detail_serviceTariffType_tableName_comboID = displayString_gwt_uid_
+PS_Detail_serviceTariffType_name_txtID = psttName
+PS_Detail_serviceTariffType_value_txtID = psttValue
+PS_Detail_serviceTariftype_eventType_comboID = eventType_petyName_gwt_uid_
+#PS_Detail_serviceTariffType_saveBtn = 
+PS_Detail_wrapperID = SparkEntitySearch.window
+
+#TariffType
+#-------------------------------------------------------------------------------------------------
+PS_Detail_tariffType_name_txtID = tftName
+PS_Detail_tariffType_code_txtID = tftCode
+PS_Detail_tariftype_enabletarifftype_comboID = tftEnableTrafficType_gwt_uid_
+PS_Detail_wrapperID = SparkEntitySearch.window
+
+#AggregationConfiguration
+#-----------------------------------------------------------------------------------------
+PSDetail_agcName_txtid = pagcConfigName
+PSDetail_agctablePrefix_txtId = pagcTablePrefix
+PSDetail_agcfilterComponent_comboId = filterComponent_gwt_uid_
+PSDetail_agcratingComponent_comboid = ratingComponent_gwt_uid_
+PSDetail_agcschema_comboId = schemaTbl_gwt_uid_
+PSDetail_agcConsiderForMargin_checkBoxId = pagcAcrossRatedEventsFl_InputElement
+PSDetail_agcNewVersion_chekBoxId = pagcNewVersionRequiredFl_InputElement
+PSDetail_agcFrequency_comboId = frequencyComponent_gwt_uid_
+PSDetail_agcKeyValue_gridId = keyValueGrid
+PSDetail_agcEventType_gridId = eventTypeGrid
+PSDetail_agcEventValMap_gridId = tclDisplayEditor_gwt_uid_
+PSDetail_agcentityOrFunction_entId = trigger-entityOrFunctionInstEditor
+PSPopUp_agcFunctionInst_gridColTxtId = pafiName
+PSDetail_agcUsageView_ComboId = usageViewComponentEditor_gwt_uid_
+PSDetail_agcskipAtParent_imgId = pacvSkipAtParentEditor_checked_column_field_image
+PSDetail_agcsearchableFl_imgId = grid_column_header_undefined_searchableFl
+PSDetail_agcmandatoryFl_imgId = mandatoryFlEditor_checked_column_field_image
+PSDetail_agcpartition_imgId = partitionFlEditor_checked_column_field_image
+PSDetail_agcdisplayName_txtId = displayNameEditor
+PSDetail_agctype_comboId = typeEditor_gwt_uid_
+PSDetail_agcSaveBtnId = aggregationConfigDetail.save
+
+#Aggregation Component Mapping
+#------------------------------------------------------------------------------------------------
+PS_Detail_masterTask_comboID = cmpStreamStage_stsName_gwt_uid_
+PS_Detail_aggregationTask_comboId = aggrStreamStage_stsName_gwt_uid_
+
+#Aggregation Processor
+#------------------------------------------------------------------------------------------------
+PS_Detail_AggrProcessor_name_txtID = paorName
+PS_Detail_AggrProcessor_type_ComboID = component_gwt_uid_
+PS_Detail_AggrProcessor_reratingComp_comboID = reratingComponent_gwt_uid_
+PS_Detail_AggrProcessor_statisticsComp_ComboID = statisticsComponent_gwt_uid_
+PS_Detail_AggrProcessor_rerateAuto_chkBx = paorAutorerateFl_InputElement
+PS_Detail_AggrProcessor_save_btn = aggregationProcessorDetail.save
+PS_Detail_AggrProcessor_wrapperID = aggregationProcessorDetail.window
+PS_Detail_AggrProcessor_partialFNmDt_arrow_xpath=//div[text()='Partial File Name Date Format *']/parent::td/parent::tr//div[starts-with(@id,'gwt_uid_')]//div/b
+PS_Detail_AggrProcessor_partialFNmDt_dtSelection_xpath=//div[text()='Partial File Name Date Format *']/parent::td/parent::tr//div[starts-with(@id,'gwt_uid_')]/parent::td//li[text()='date']
+
+
+#Event Match Rule
+#-----------------------------------------------------------------------------------------
+PS_EvtMatchRuleName_TxtId = pemrName
+PSDetail_emrFromDateId = pemrFromDate
+PSDetail_emtToDateId = pemrToDate
+PSDetail_emrgEntityId = eventMatchRuleGroup
+PSDetail_emrExternalRefernce = pemrExternalReference
+PSDetail_emrOverrideRev_checkBoxId = pemrRevenueColumnFl_InputElement
+PSDetail_emrAmount_txtId = revenueAmtPemrInputRevenue
+PSDetail_emrCurrency_comboId = revenueAmtCurrency_gwt_uid_
+PSDetail_emrCriteriaGridId = eventRuleMatchCriteriaGrid
+PSDetail_emrAddServiceMenuXpath = //div[@id='serviceGrid']//div[contains(@class,'roc-datagrid')]/div[3]/div 
+PSDetail_emrServiceId = serviceGridContextMenu.AddService
+PSDetail_emrRevServiceId = serviceGridContextMenu.AddRevenueShareService
+PSDetail_emrServiceXpath = //div[@id='direction Service']
+PSDetail_emrServiceNameTxtId = psvcName
+PSDetail_emrServiceFromDateId = psvcFromDttm
+PSDetail_emrServiceToDateId = psvcToDttm
+PSDetail_emrServiceLegCodeTxtId = eventLegCode.pelcName
+PSDetail_emrServiceBipEntSrchId = BillProfile
+PSPopUp_billProfileGridColTxtId = pbipName
+PSDetail_emrServiceSalesTaxComboId = SalesTaxGroup_gwt_uid_
+PSDetail_emrServiceTrafficTypeComboId = TrafficType_gwt_uid_
+PSDetail_emrServiceChargeTypeComboId = psvcChargeType_gwt_uid_
+PSDetail_emrServiceBillingGroupComboId = BillingGroupCode_gwt_uid_
+PSDetail_emrServiceRatingFromComboId = fromRatingColumn_gwt_uid_
+PSDetail_emrServiceRatingToComboId = toRatingColumn_gwt_uid_
+PSDetail_emrSvcDefaultFromDigitsCheckBoxId = psvcFromDigitsFl_InputElement
+PSDetail_emrSvcDefaultToDigitsCheckBoxId = psvcToDigitsFl_InputElement
+PSDetail_emrSvcRatingFromDigitsTxtId = psvcRatingFromDigits
+PSDetail_emrSvcRatingToDigitsTxtId = psvcRatingToDigits
+PSDetail_emrSvcTariffTypeComboId = serviceTariffType_gwt_uid_
+PSPopUp_emrSvcId = serviceDetail.window
+PSPopUp_emrSvcTffDttmTxtId = psvtFromDttm
+PSPopUp_emrSvcTffEntSrchId = trigger-tariff
+PSPopUp_emrSvcTffNameTxtId = tffName
+PSPopUp_emrSvcTffPopupSaveId = serviceTariffDetail.ok
+PSPopUp_emrSvcPopupSaveId = serviceDetail.ok
+PSDetail_emrSvcRevenueFieldCheckBoxId = psvcRevenueColumnFl_InputElement
+PSDetail_emrSvcRevAmtTextId = amountGroupPsvcInputRevenue
+PSDetail_emrSvcCurrComboId = amountGroupInputRevenueCurrency_gwt_uid_
+PSDetail_emrSvcRevFieldColComboId = revenueAmtTableColumn_gwt_uid_
+PSDetail_emrSvcRevCurrColComboId = reveneueCurTableColumn_gwt_uid_
+PSDetail_emrSaveBtnId = eventMatchRuleDetail.save
+PSdetail_emr_Tariff_timeLineId = //*[text()='TimeLineName']/parent::td/parent::tr/following-sibling::tr[2]//div[@id='Label']
+PSdetail_emr_surchargeRule_gridId=servSurchargeRuleGrid
+PSdetail_emr_surchargeRule_add_BtnId=toolbar-button-label-servSurchargeGridToolbar.Add
+PSdetail_emr_surchargeRule_name_triggerId=trigger-surchargeRuleEditor
+PSdetail_emr_surchargeRule_ratingFrom_comboId=fromRatingTableColumnEditor_gwt_uid_
+PSdetail_emr_surchargeRule_ratingTo_comboId=toRatingTableColumnEditor_gwt_uid_
+PSdetail_emr_surchargeRule_fromDt_txtId=pssrFromDttmEditor
+PSdetail_emr_surchargeRule_ToDt_txtId=pssrToDttmEditor
+PSdetail_emr_surchargeRule_tariff_txtId=psrtFromDttm
+PSdetail_emr_surchargeRule_tariffpopup_BtnId=surchargeTariffDetail.ok
+
+#Bill Breakdown Input
+#------------------------------------------------------------------------------------------------
+PS_Detail_billInput_name_txtID = pbbdName
+PS_Detail_billInput_savebtn = billBrkdwnDfnDetail.save
+PS_detail_billInput_nonusgae_panelID = //div[text()='Nonusage Bill Breakdown Inp...']
+PS_Detail_billbreakdownInput_wrapperID = propertyInstGroup
+
+#Bill Breakdown Input Group
+#-------------------------------------------------------------------------------------------------
+PS_Detail_billInputGrp_Name_txtID = pbbgName
+PS_Detail_billInput_Add_btnID = billBreakdownInputGroupToolbar.add
+PS_Detail_billInputGrp_Save_btnID = billBrkdwnGrpDetail.save
+
+#Bill Breakdown Output
+#-------------------------------------------------------------------------------------------------
+PS_Detail_billOutput_name_txtID = pbboName
+PS_Detail_billOutput_Save_BtnID = billBrkdwnOutputDetail.save
+PS_Detail_billOutput_generationBasedOn_comboId=pbboGenerationBasedOn_gwt_uid_
+
+#Bill Breakdown Output Group
+#-------------------------------------------------------------------------------------------------
+PS_Detail_billOutputGrp_name_txtID = pbopName
+PS_Detail_billOutputGrp_save_btnID = billBrkdwnOutputGrpDetail.save
+PS_Detail_billOutputGrp_add_btnID = billBreakdownOutputGroupToolbar.add
+
+#Billing Cycle
+#------------------------------------------------------------------------------------------------
+PS_Detail_billingCycle_name_txtID = pbcyName
+PS_Detail_billingCycle_franchise_txtID = franchise_gwt_uid_
+PS_Detail_billingCycle_frequency_comboID = freqComponent_gwt_uid_
+PS_Detail_billingCycle_anniversayalign_chckbx = frequencyRadioGroupPivotOption1_InputElement
+PS_Detail_billingCycle_alignUsingthe_chckbx = frequencyRadioGroupPivotOption2_InputElement
+PS_Detail_billingCycle_dayOfMonthWeek_comboId = dayOfMonth_gwt_uid_
+PS_Detail_billingCycle_alignmentDate_chckbx = alignmentDate_gwt_uid_
+PS_Detail_billingCycle_openPeriodDays_txtID = pbcyOpenPrdPriorDays
+PS_Detail_billingCycle_closePeriodDays_txtID = pbcyClosePrdPostDays
+PS_Detail_billingCycle_asSoonaspossible_chkbx = prodDateRadioGroupOption1_InputElement
+PS_Detail_billingCycle_specificDayofWeek_chkbx = prodDateRadioGroupOption2_InputElement
+PS_Detail_billingCycle_dayOfWeek_comboID = dayOfWeek_gwt_uid_
+PS_Detail_billingCycle_issueDate_txtID = pbcyBilIssueLagDays
+PS_Detail_billingCycle_lateTrafficOpenperiod_chkbx = trafficMatchingRadioGroupOpenDateMatch_InputElement
+PS_Detail_billingCycle_lateTrafficCloseperiod_chkbx = trafficMatchingRadioGroupCloseDateMatch_InputElement
+PS_Detail_billingCycle_save_btnID = billingCycleDetail.save
+
+#Bill Breakdown Configuration
+#---------------------------------------------------------------------------------------------------------
+PS_Detail_billConfig_name_txtID = pbbcBbnTblname
+PS_Detail_billConfig_displayName_txtID = pbbcBbnDisplay
+Ps_Detail_billConfig_useJoins_chkbx = pbbcJoinFl_InputElement
+PS_Detail_billConfig_billusgaeQueryConfig_comboID = billUsageConf_gwt_uid_
+PS_Detail_billConfig_tableInstance_Entity = trigger-tableInst
+PS_Detail_billConfig_tableInstance_comboID = tableDfn_tbdSystemFl_gwt_uid_
+PS_Detail_billConfig_breakdownPrefix_txtID = pbbcBbnTblPrefix
+PS_Detail_billConfig_breakdownsummaryPrefix_txtID = pbbcSumPrefix
+PS_Detail_billConfig_usedataRange_chckbx = pbbcUseDateRangeFl_InputElement
+PS_Detail_billConfig_Key_GridID = billBreakdownKeyGrid
+PS_Detail_billConfig_Value_GridID = billBreakdownValueGrid
+PS_Detail_billConfig_locatorID = //*[@id='billBreakdownKeyGrid']//*[@class='GEHN5TNHI']//table/tbody/tr[row]/td
+PS_Detail_billConfig_Keys_combobx = columnEditor_gwt_uid_
+PS_Detail_billConfig_lineItemKey_chckbx = bbkBliKeyFlEditor_checked_column_field_image
+PS_Detail_billConfig_visible_chckbx = bbkVisibleFlEditor_checked_column_field_image
+PS_Detail_billConfig_filter_chckbx = bbkFilterCmpFlEditor_checked_column_field_image
+PS_Detail_billConfig_disputed_chckbx = bbkDisputeFlEditor_checked_column_field_image
+PS_Detail_billConfig_displayDP_combobx = columnEdk_gwt_uid_
+PS_Detail_billConfig_computedKey_txtbx = compComponentDisplayEditor
+PS_Detail_billConfig_keyComputation_EntityID = 
+PS_Detail_billConfig_save_btnID = billBreakdownConfigDetail.save
+PS_Detail_billConfig_billbreakdownKey_addBtn = billBreakdownKeyGridToolbar.Add
+PS_Detail_billConfig_billbreakdownValue_addBtn = billBreakdownValueGridToolbar
+PS_Detail_billconfig_tableInstance_gridID = tinDisplayName
+PS_Detail_billConfig_value_addbtn = billBreakdownValueGridToolbar.Add
+PS_Detail_billConfig_Value_ComboID = valueColumnEditor_gwt_uid_
+PS_Detail_billConfig_Valuefunction_comboID = funcComponentEditor_gwt_uid_
+Ps_Detail_billConfig_billbreakdwon_displayDP_comboID = columnEdv_gwt_uid_
+PS_Detail_billConfig_billbreakdown_computedvalue_txtID = valuecompComponentDisplayEditor
+PS_Detail_billConfig_ratingcomponent_Save_btnID = ratingComponentPropertiesDetail.save
+PS_Detail_billConfig_ratingcomponent_add_btnID = addRatingComponent
+PS_Detail_billConfig_ratingcomponent_wrapperID = ratingComponentPropertiesDetail.window
+PS_Detail_billConfig_ratingcomponent_comboID = ratingCmp_gwt_uid_
+PS_Detail_billConfig_ratingcomponent_propertyID = propertyValuesEditor_gwt_uid_
+PS_Detail_billConfig_details_Chckbxpath=//*[@id='gridId']//div[contains(text(),'Field name')]//parent::td//parent::tr//td[columnNo]//div[@id='grid_check_editor']/img
+
+#Billbreakdown Extra Field
+#-----------------------------------------------------------------------------------------------
+PS_Detail_billbreakdownExtraField_displayname_txtID = pbefDisplayName
+PS_Detail_billBreakdownExtraField_wrapperID = billBreakdownExtFieldDetail.window
+PS_Detail_billBreakdownExtraFiled_savebtn = billBreakdownExtFieldDetail.save
+
+#CrossFXRates
+#----------------------------------------------------------------------------------------------
+PS_Detail_crossFXRate_rateGroup_comboID = crossFxRateGroup_gwt_uid_
+PS_Detail_crossFXRate_sourcecurrency_comboID = sourceCurrency_gwt_uid_
+PS_Detail_crossFXRate_targetCurrency_comboID = targetCurrency_gwt_uid_
+PS_Detail_crossFXRate_validFrom_comboID = //table[@id='pcfxFromDttm']/tbody/tr/td[1]/input
+PS_Detail_crossFXRate_rate_txtID = pcfxRate
+PS_Detail_crossFXRate_createreverseRate_chkbx = chkReverseRate_InputElement
+PS_Detail_crossFXRate_reverseRate_txtID = reverseRate
+PS_Detail_crossFXRate_save_btnID = crossFxRateDetail.save
+
+#CrossFXRateGroup
+#---------------------------------------------------------------------------------------------
+PS_Detail_crossFXRateGrp_code_txtID = pcfgCode
+PS_Detail_crossFXRateGrp_name_txtID = pcfgName
+
+#Bill Packages
+#------------------------------------------------------------------------------------------------
+PS_Detail_BillPackage_name_txtID = pbpkName
+PS_Detail_BillPackage_franchise_comboID = franchise_gwt_uid_
+PS_Detail_BillPackage_salesTaxComp_comboID = salesTaxComponent_gwt_uid_
+PS_Detail_BillPackage_numberComp_ComboID = sngComponent_gwt_uid_
+PS_Detail_BillPackage_roundingMode_comboID = pbpkRoundingMode_gwt_uid_
+PS_Detail_BillPackage_applyLineItem_chkbx = pbpkApplyStxLineItemFl_InputElement
+PS_Detail_BillPackage_billComponent_comboID = controlComponent_gwt_uid_
+PS_Detail_BillPackage_billNumberGrp_comboID = sequentialNumberGroup_gwt_uid_
+PS_Detail_BillPackage_isDeltaBill_chkbx = pbpkDeltaBillFl_InputElement
+PS_Detail_BillPackage_multiCurrency_chkbx = pbpkMultiCurrencyFl_InputElement
+PS_Detail_BillPackage_carrierInvoiceseq_txtID =  digitsInSeq
+PS_Detail_BillPackage_creditComp_comboID = creditCtrlComponent_gwt_uid_
+PS_Detail_BillPackage_creditNumberGrp_comboID = crdSequentialNumberGroup_gwt_uid_
+PS_Detail_BillPackage_save_btnID = billPackageDetail.save
+PS_Detail_BillPackage_creditTabID = //div[text()='Credit Control']
+
+#Sales Tax Group
+----------------------------------------------------------------------------
+PS_Detail_salesTaxGroup_name_txtID = psgrName
+Detail_salesTaxgroup_gridID = searchGrid
+PS_details_taxGroup_name = psgrName
+PS_details_taxGroup_country = country_gwt_uid_
+PS_details_taxGroup_add = salesTaxGroupToolbar.add
+PS_details_taxGroup_salesGroupGrid = popupWindow
+PS_details_taxGroup_delete = salesTaxGroupToolbar.delete
+PS_details_taxGroup_ok = ok
+PS_details_taxGroup_save = salesTaxGroupDetail.save
+PS_Details_taxGroup_checkBox =  sgtTaxOnTaxF1Editor_checked_column_field_image
+
+#Sales Tax Rate
+------------------------------------------------------------------------------
+Detail_salesTaxRate_gridID = searchGrid
+PS_Details_taxRate_salesTaxGroup = salesTax_gwt_uid_
+PS_details_taxRate_fromDate = //table[@id="pstrFromDttm"]//input
+PS_details_taxRate_rate = pstrPercentageRate
+PS_details_taxRate_save =salesTaxRateDetail.save
+
+
+#SalesTax
+-------------------------------------------------------------------------------
+Detail_salesTax_gridID = searchGrid
+PS_details_tax_code = pstxCode
+PS_Details_tax_salesTax = pstxName
+PS_details_tax_country = country_ctrName_gwt_uid_
+PS_details_tax_save = ok
+
+#BillAction
+#---------------------------------------------------------------------------------------
+PS_Detail_BillAction_billInfo_closeBtn = billInformationDetail.Close
+PS_Detail_BillAction_billCurrency_closeBtn = billCurrencyBreakdownDetail.Close
+PS_Detail_BillAction_billSalesTax_closeBtn = billSalesTaxBreakdownDetail.Close
+Ps_Detail_BillAction_currency_GridID = currencyBreakdownGrid
+PS_Detail_BillAction_salestax_gridID = salesTaxBreakdownGrid
+PS_Detail_BillAction_usageBreakdown_gridID = drillDownGrid
+PS_Detail_BillAction_usage_colHeaderID = grid_column_header_drillDownGrid_
+PS_Detail_BillAction_credit_ColHeaderID = grid_column_header_searchGrid_										  
+PS_Detail_BillAction_Regenrate_radioBtn = regenerateBillGroupRegenerate_InputElement
+PS_popup_BillAction_IDorXpath = //*[@id='window-scroll-panel']
+PS_popup_billAction_InformationID = window-scroll-panel												   
+
+#GridFilterAdvanceSearch
+#----------------------------------------------------------------------------
+PS_SearchFilter_BillAction_chkBx_Xpath = //label[text()='value']/preceding-sibling::input
+#PS_SearchFilter_BillAction_accountEntityfilter = grid_column_header_filtersearchGrid_billProfile$account$paccName							
+PS_SearchFilter_BillAction_billProfile_TxtID = billProfile
+PS_SearchFilter_BillAction_account_txtID = billProfile$account
+PS_SearchFilter_BillAction_status_txtID = pbilStatusCd
+PS_SearchFilter_BillAction_date_calenderID = dummyValidOnDataProperty
+PS_SearchFilter_BillAction_accountEntityfilter = grid_column_header_filtersearchGrid_billProfile$account$paccName
+PS_SearchFilter_TestBill_Calender_Entityfilter = grid_column_header_filtersearchGrid_ptblCreateDttm
+PS_SearchFilter_TestBill_Calender_TxtID = ptblCreateDttm
+#PS_SearchFilter_TestBill_account_entityID = grid_column_header_filtersearchGrid_billProfile$account$paccName
+PS_SearchFilter_TestBill_billprofile_EntityFilter = grid_column_header_filtersearchGrid_billProfile$pbipDisplay
+
+
+#Test Bill 
+#-------------------------------------------------------------------------------
+PS_Details_testBill_billPrf_popUp = trigger-billProfile
+PS_Details_testBill_bilPrfSearch = pbipName
+PS_Details_testBill_billPrd = billPeriod_gwt_uid_
+PS_Details_testBill_tbCheckBox = pbrqTestFl_InputElement
+PS_Details_testBill_profCheckBox = pbrqProformaFl_InputElement
+PS_Details_testBill_numOfRows = //div[text()='Total records fetched: ']/span
+PS_Details_testBill_BillPrfFilter = billPeriod$billProfile
+PS_Details_testBill_Save = billRequestDetail.OK
+PS_Details_testBill_CalendarID= billRequest$pbrqCreatedDttm
+PS_Details_testBill_Search=search
+PS_Detail_BillAction_chkBx_Xpath = //label[text()='value']/preceding-sibling::input
+PS_Detail_testBill_accountEntityfilter = grid_column_header_filtersearchGrid_billPeriod$billProfile$account$paccName
+PS_Detail_testBill_account_txtID= billPeriod$billProfile$account
+PS_Detail_testBill_grid=SearchGrid
+PS_Details_testBill_PopUp=ok
+PS_Details_timeLimit = 10
+PS_Details_testBill_ScheduledDate= grid_column_header_searchGrid_billRequest$pbrqScheduledDttm
+PS_Details_testBill_PrdPath=billRequest_billProductionPath_gwt_uid_
+PS_Details_testBill_CreatedBy= billRequest_createdUserTbl_gwt_uid_
+PS_SearchFilter_TestBill_Created= grid_column_header_searchGrid_ptblCreateDttm																			  
+
+#BillRequest
+#-----------------------------------------------------------------------------------------------------------
+PS_Details_billRequest_billPrf_popUp = trigger-billProfile
+PS_Details_billRequest_bilPrfSearch = pbipName
+PS_Details_billRequest_billPrd = billPeriod_gwt_uid_
+PS_Details_billRequest_tbCheckBox = pbrqTestFl_InputElement
+PS_Details_billRequest_profCheckBox = pbrqProformaFl_InputElement
+PS_Details_billRequest_numOfRows = //div[text()='Total records fetched: ']/span
+PS_Details_billRequest_BillPrfFilter = billPeriod$billProfile
+PS_Details_billRequest_Save = billRequestDetail.OK
+PS_Details_billRequest_CalendarID= billRequest$pbrqCreatedDttm
+PS_Details_billRequest_Search=search
+PS_Details_billRequest_accountEntityfilter =  grid_column_header_filtersearchGrid_billPeriod$billProfile$account$paccName
+PS_Details_billRequest_account_txtID= billPeriod$billProfile$account
+PS_Details_billRequest_grid=searchGrid
+PS_Details_billRequest_PopUp=ok
+PS_Details_timeLimit = 10
+PS_Details_billRequest_ScheduledDate= grid_column_header_searchGrid_billRequest$pbrqScheduledDttm
+PS_Details_billRequest_PrdPath=billRequest_billProductionPath_gwt_uid_
+PS_Details_billRequest_CreatedBy= billRequest_createdUserTbl_gwt_uid_
+PS_Details_billRequest_TestBillComboBox=billRequest_pbrqTestFl_gwt_uid_
+PS_Details_billRequest_ScheduledDate_Filter= grid_column_header_filtersearchGrid_billRequest$pbrqScheduledDttm
+PS_Details_billRequest_ScheduledDate_Calendar = billRequest$pbrqScheduledDttm
+
+#BillPeriod
+#-----------------------------------------------------------------------------------------
+PS_Details_billPeriod_Ok = ok
+PS_Details_billPeriod_InformationPopUp=window-scroll-panel
+PS_Details_billPeriod_AccountIcon=grid_column_header_filtersearchGrid_billProfile$account$paccName
+PS_Details_billPeriod_AccountTextBox=billProfile$account
+PS_Details_billPeriod_grid=searchGrid
+PS_Details_billPeriod_Calendar=dummyValidOnDataProperty
+PS_Details_billPeriod_Search=search
+PS_Details_billPeriod_Clear=clear
+
+#ReferenceTable
+#-----------------------------------------------------------------------------------------------
+PS_Detail_RefTable_Signallingtype_name_TextID = psigName
+PS_Detail_RefTable_Bank_name_textID = pbnkName
+PS_Detail_RefTable_Bank_Branch_txtID = pbnkBranch
+PS_Detail_RefTable_Bank_Component_txtID = component_cmpName_gwt_uid_
+PS_Detail_RefTable_Bank_Field1_txtID = pbnkExtra1
+PS_Detail_RefTable_Bank_Field2_txtID = pbnkExtra2
+PS_Detail_RefTable_Bank_Field3_txtID = pbnkExtra3
+PS_Detail_RefTable_Bank_Field4_txtID = pbnkExtra4
+PS_Detail_RefTable_Bank_Field5_txtID = pbnkExtra5
+PS_Detail_RefTable_ElementSet_name_txtID = estName
+PS_Detail_RefTable_TariffMetric_name_txtID = tfmName
+PS_Detail_RefTable_TariffMetric_usageName_txtID = tfmUsageName
+PS_Detail_RefTable_TariffMetric_usageDivisorName_txtID = tfmUsageDivisorName
+PS_Detail_RefTable_TariffMetric_usageDivisor_txtID = tfmUsageDivisor
+PS_Detail_RefTable_TariffRateName_name_txtID = trnName
+
+#EventModellingInstance
+#---------------------------------------------------------------------------------------------
+PS_Detail_eventModellingInstance_TxtID = //div[contains(@id,'errUsageGroup_gwt_uid')]/a/span
+PS_Detail_eventModellingInstance_name_txtID = pemiName
+PS_Detail_EveModInst_name_txtID = pemiName
+PS_Detail_EveModInst_outputPrefix_txtID = pemiOutputPrefix
+PS_Detail_EveModInst_errorPrefix_txtID = pemiErrorPrefix
+PS_Detail_EveModInst_definition_comboID = eventModellingDfn_gwt_uid_
+PS_Detail_EveModInst_partSubUsgGpPanel1_comboID = usageGroupPartition_gwt_uid_
+PS_Detail_EveModInst_errorUsgGp_comboID  = errUsageGroup_gwt_uid_
+PS_Detail_EveModInst_partSubUsgGpPanel2_comboID = usageGroupSubpartition_gwt_uid_
+PS_Detail_EveModInst_panel1 = partitionedPanel
+PS_Detail_EveModInst_panel2 = namePanel2
+PS_Detail_EveModInst_panel1_GridID = typeGrid
+PS_Detail_EveModInst_panel2_GridID =subPartitionedTypeGrid
+PS_Detail_EveModInst_panel1_CrtNwInst = typeGridToolbar.CreateNewInstance
+PS_Detail_EveModInst_panel2_CrtNwInst = subPartitionedTypeGridToolbar.CreateNewInstance
+PS_Detail_EveModInst_Save =  eventModellingInstDetail.save
+PS_Detail_EveModInst_SearchPanelID = searchPanel
+PS_Detail_EveModInst_SearchGrid = searchGrid
+PS_Detail_EveModInst_TableInst_GridWrapper = tableInstDetail.window
+PS_Detail_EveModInst_TableInst_tableDefn_ComboXpath = //div[@id='tableInstDetail.window']//div[contains(@id,'tableDfn_gwt_uid_')]
+PS_Detail_EveModInst_TableInst_schemea_ComboID = schemaTbl_gwt_uid_
+PS_Detail_EveModInst_TableInst_tableNm_txtID = tinTableName
+PS_Detail_EveModInst_TableInst_displNm_txtID = tinDisplayName
+PS_Detail_EveModInst_TableInst_alias_txtID = tinAlias
+PS_Detail_EveModInst_TableInst_partColmn_ComboID = partitionTableColumn_gwt_uid_
+PS_Detail_EveModInst_TableInst_subpartColmn_ComboID = subPartitionTableColumn_gwt_uid_
+PS_Detail_EveModInst_TableInst_Save = tableInstDetail.save
+PS_Detail_eventModInst_mapAddFields_gridId=additionalFieldsMappingGrid
+PS_Detail_eventModInst_mapAddFields_pageLoadxpath=//*[@id='additionalFieldsMappingGrid']
+PS_Detail_eventModInst_mapAddFields_add_btnId=toolbar-button-label-additionalFieldsMappingToolbar.add
+PS_Detail_eventModInst_mapAddFields_maComp_combId=componentEditor_gwt_uid_
+PS_Detail_eventModInst_mapAddFields_saveBtnId=additionalFieldsMappingDetail.save
+#EventError
+#---------------------------------------------------------------------------------------------
+PS_Detail_EveErr_frmDt_ID = fromDttm
+PS_Detail_EveErr_toDt_ID = toDttm
+PS_Detail_EveErr_streamStg_ComboID = StreamStage_stsName_gwt_uid_
+PS_Detail_EveErr_status_ComboID = errorStatus_gwt_uid_
+PS_Detail_EveErr_errorType_ComboID = errorType_gwt_uid_
+PS_Detail_EveErr_assignedTo_ComboID = UserTbl_gwt_uid_
+PS_Detail_EveErr_grpBy_ComboID = groupBy_gwt_uid_
+PS_Detail_EveErr_errorCd_ComboID = EventErrorMessage_eemErrorNo_gwt_uid_
+PS_Detail_EveErr_errorCd_IconID=grid_column_header_anchorsearchGrid_EventErrorMessage$eemErrorNo
+PS_Detail_EveErr_errorCdSort_menuID=_grid_header_context_menu_sort_ascending_item
+PS_Detail_EveErr_search_BtnID = search
+PS_Detail_EveErr_GridID = searchGrid
+PS_Detail_EveErr_ColumnHeaderID= grid_column_header_searchGrid_
+PS_Detail_EveErr_expecInfo_Msz=window-scroll-panel
+PS_Detail_EveErr_expecInfo_ReprSusErr= Selected Event/Events have been scheduled for reprocessing with Task Id
+PS_Detail_EveErr_expecInfo_ReprSusErInDiagMd =Selected Event Error has been scheduled for reprocessing in diagnostic mode with Task Id
+PS_Detail_EveErr_expecInfo_ReprRateErr=Selected Event/Events have been scheduled
+PS_Detail_EveErr_expecInfo_BtnId=ok
+
+
+
+#Stream
+#---------------------------------------------------------------------------------------------
+PS_Detail_BulkLoadStream_name_textID = stmName
+PS_Detail_BulkLoadStream_add_BtnID = toolbar-button-label-streamStageTBModel.add
+PS_Detail_BulkLoadStream_streamStages_wrapperID=streamStageDetail
+PS_Detail_BulkLoadStream_streamStagesType_comboID=streamStageType_gwt_uid_
+PS_Detail_BulkLoadStream_stsNm_textID=stsName
+PS_Detail_BulkLoadStream_stsRetryFlg_chckBxID=stsRetryFlag_InputElement
+PS_Detail_BulkLoadStream_stsRetryAttempts_textID=stsRetryAttempts
+PS_Detail_BulkLoadStream_stsInterval_textID=stsInterval
+PS_Detail_BulkLoadStream_stsLookback_textID=stsLookback
+
+#Bulk Entity Export
+#------------------------------------------------------------------------------------------------------------
+PS_Details_bulkrequest_name = pberName
+PS_Details_bulkrequest_addEntity = exportGridToolbar.Add
+PS_Details_bulkEntity = entityEditor_gwt_uid_
+PS_Details_bulkEntityAdd = exportGrid
+PS_Details_chedkEditor=grid_check_editor
+PS_Details_checkbox = expotAllEditor_checked_column_field_image
+PS_Details_selectItem = selectedItemGridToolbar.selectItem
+PS_Details_dependentEntities = //div[@id='dependentGrid']//*//div[contains(@class,'roc-datagrid')]/div/div//table/tbody/tr
+
+
+#Deal
+-------------------------------------------------------------------------------
+Deal_Nameid = pdelName
+Deal_Contractno = pdelContractNo
+Copy_Deal = CopyDealActionComponent
+Copy_Deal_ValidFrom = pdelFromDttm
+Copy_Deal_ValidTo = pdelToDttm
+Copy_DealRates_Flag = copyRateFl_InputElement
+Copy_DealValidate_Flag = validateDealFl_InputElement
+Copy_Deal_Save = copyDealDetail.OK
+Copied_popup = ok
+Deal_tariffPeriod = //div[@class='roc-timeline-odd']
+Deal_tierRate = View/Edit Tier Rate
+Deal_cancel = tierRatesDetail.cancel
+Copy_msg = window-scroll-panel
+Band_Group = dealBandGroup_gwt_uid_
+Tier_Rates_Search = search
+Band_Name = bandSerach
+
+#PreRatingMatchRule
+-------------------------------------------------------------------------------
+PS_Details_pmrNameTxtId = pmrName
+PS_Details_pmrFromDateTxtId = pmrFromDttm
+PS_Details_pmrToDateTxtId = pmrToDttm
+PS_Details_pmrRatingFromComboId = fromRatingColumn_gwt_uid_
+PS_Details_pmrRatingToComboId = toRatingColumn_gwt_uid_
+PS_PopUp_pemrTariffFromDttm = ptfFromDttm
+PS_Details_pmrSaveBtnId = preratingMatchRuleDetail.save
+PS_PopUp_pmrTariffSave=preratingTariffDetail.save
+
+#Roaming
+#------------------------------------------------------------------------------------------------------------
+PS_FileNameid =  grid_column_header_filtersearchGrid_prfsFileName
+PS_Details_view = View
+PS_Details_error = ViewErrorActionComponent
+PS_FileName_Textbox = prfsFileName
+PS_FileName_Search = //div[@id="_grid_header_filter"]//div[text()='Search']
+PS_Details_RoamingRec = ViewDetailsActionComponent
+PS_search_roamingRecords = search
+
+#CreditNotes
+#------------------------------------------------------------------------------------
+PS_Detail_creditNote_creditlineitem_wrapperID = creditLineItemDetail.window
+PS_Detail_creditNote_creditLineItem_okButton = creditLineItemDetail.ok
+PS_Detail_creditNote_currency_comboId = currency_gwt_uid_
+PS_Detail_creditNote_salesTax_checkbxID = pcrdApplyStxLineItemFl_InputElement
+PS_Detail_creditNote_status_gridFilterID = grid_column_header_filtersearchGrid_pcrdStatus
+PS_Detail_creditNote_status_txtbxID = pcrdStatus
+PS_Detail_creditNote_calender_gridFilterID = grid_column_header_filtersearchGrid_pcrdTxnDttm
+PS_Detail_creditNote_version_comboID = pbilTxnDeleteFl_gwt_uid_
+PS_Detail_creditNote_calenderID = pcrdTxnDttm
+PS_Detail_creditNote_creditReasonTxtID = creditReason_gwt_uid_
+PS_Detail_creditNote_remarks_txtID = pcrdRemarks
+PS_Detail_creditNote_includeBill_chkbx = pcrdIncludeInNextBilFl_InputElement
+PS_Detail_creditNote_creditDue_txtbxID = pcrdDueDays
+PS_Detail_creditNote_creditDesc_txtID = pcliDesc
+PS_Detail_creditNote_creditNetAmt_txtID = pcliAmt
+PS_Detail_creditNote_salesTaxGrp_comboID = salesTaxGroup_gwt_uid_
+PS_Detail_creditNote_totalAmt_txtID = pcrdTxnAmt
+PS_Detail_creditNote_overrideSalesTax_chckbox = pcliOverrideStxFl_InputElement
+PS_Detail_creditNote_salesTaxAmt_txtID = pcliStxAmt
+PS_Detail_creditNote_billInfoColHeaderID = grid_column_header_searchGrid_
+PS_Detail_creditNote_billCreditColHeaderID = grid_column_header_undefined_
+PS_Detail_creditNote_billref_comboID = bill_gwt_uid_
+PS_Detail_creditNote_billbreakdownConfig_comboID = billBreakDownConfig_gwt_uid_
+PS_Detail_creditNote_billLineItem_GridID = billLineItemGrid
+PS_Detail_creditNote_billLineItem_OkbuttonID = billLineItemDetail.ok
+PS_Detail_creditNote_billLineItem_desc_txtID = desc
+PS_Detail_creditNote_desc_OkButton = descriptionDetail.ok
+
+#ReAggregationRequest
+#---------------------------------------------------------------------------------------
+PS_Detail_reaggregation_calender_TxtBx = prarCreatedDttm
+PS_Detail_reaggregation_fromDate_TxtID = //table[@id='prarFromDttm']/tbody/tr/td[1]/input
+PS_Detail_reaggregation_toDate_TxtID = //table[@id='prarToDttm']/tbody/tr/td[1]/input
+PS_Detail_reaggregation_description_TxtID = prarDesc
+PS_Detail_reaggregation_aggregationprocessor_gridID = aggregationProcessorGrid
+PS_Detail_reaggregation_eventtype_gridID = eventTypeGrid
+PS_Detail_reaggregation_eventInclude_CheckBx = //*[@id='eventTypeGrid']//div[@id='grid_check_editor']//img
+PS_Detail_reaggregation_billProfile_gridID = billProfileGrid
+PS_Detail_reaggregation_billProfile_addBtnID = billProfileGridToolbar.Add
+PS_Detail_reaggregation_billPeriod_addBtnID = billPeriodGridToolbar.Add
+
+
+#AmountThreshold
+#-------------------------------------------------------------------------------------
+PS_Detail_Amtthreshold_name_txtId = pamtName
+PS_Detail_Amtthreshold_currency_gridID = thresholdCurrencyGrid
+PS_Detail_Amtthreshold_addCurrency_comboID = addCurrency_gwt_uid_
+PS_Detail_Amtthreshold_effectiveDate_txtID = //table[@id='effectiveDate']/tbody/tr/td[1]/input
+PS_Detail_Amtthreshold_copycurrency_comboID = copyCurrency_gwt_uid_
+PS_Detail_Amtthreshold_copycurrency_btnID = copyNewCurrency
+PS_Detail_Amtthreshold_leftButton_LabelId = labelsLeftButtonLabel
+PS_Detail_Amtthreshold_email_okBtnID = amtThresNotificationDetail.ok
+PS_Detail_Amtthreshold_thresholdname_txtId = ptclNameEditor
+PS_Detail_Amtthreshold_operator1_txtId = ptclOpr1Editor_gwt_uid_
+PS_Detail_Amtthreshold_value1_txtId = value1Editor
+PS_Detail_Amtthreshold_operator2_txtId = ptclOpr2Editor_gwt_uid_
+PS_Detail_Amtthreshold_value2_txtId = value2Editor
+PS_Detail_Amtthreshold_team_txtId = teamEditor_gwt_uid_
+PS_Detail_Amtthreshold_notification_EntityID = trigger-amtThresNotificationEditor
+PS_Detail_Amtthreshold_email_add_BtnID = emailGridToolBar.add
+PS_Detail_Amtthreshold_email_gridID = amtThresEmailInfoDetail
+PS_Detail_Amtthreshold_emailID_add_BtnID = emailIdGridToolBar.add
+PS_Detail_Amtthreshold_emailtype_txtID = patiType
+PS_Detail_Amtthreshold_emailsubject_txtID = patiSubject
+PS_Detail_Amtthreshold_emailID_txtID = emailEditor
+PS_Detail_Amtthreshold_save_btnID = amountThresholdDetail.save
+PS_Detail_Amtthreshold_notification_okBtnID = amtThresNotificationDetail.ok
+PS_Detail_Amtthreshold_thresholdCurrency_delete_BtnID = thresholdCurrencyToolbar.delete
+
+#Prepayments
+#-----------------------------------------------------------------------------------------------------
+PS_Detail_prepayments_transactionRef_txtID = pprmTxnRef
+PS_Detail_prepayments_transactiondate_txtID = //table[@id='pprmTxnDate']/tbody/tr/td[1]/input
+PS_Detail_prepayments_billProfile_txtID = pbipName
+PS_Detail_prepayments_amount_txtID = pprmAmt
+PS_Detail_prepayments_paymentMethod_txtID = paymentMethod_gwt_uid_
+PS_Detail_prepayments_comments_txtID = cmtSubString
+PS_Detail_prepayments_save_btnID = prePaymentsDetail.save
+PS_Detail_prepayments_account_GridTxtID = //*[@id='filterpanel-header']//table//tbody/tr[2]/td[1]/table
+PS_Detail_prepayments_createdBy_GridTxtID = userTbl_gwt_uid_
+
+#prepaidBalance
+#----------------------------------------------------------------------------------------------------
+PS_Search_prepaidBalance_calender_filterID = grid_column_header_filtersearchGrid_prePayComputationDate
+PS_Search_prepaidBalance_account_txtID = //*[@id='filterpanel-header']//table//tbody/tr[2]/td[1]/table
+PS_Search_prepaidBalance_billProfile_comboID = billProfile_gwt_uid_
+PS_Search_prepaidBalance_calenderID = prePayComputationDate
+
+#RateSheetImportRequest
+#----------------------------------------------------------------------------------------------------------
+PS_Detail_RateSheetRequest_rateEffectiveDate_txtID = //table[@id='prirEffectiveDttm']/tbody/tr/td[1]/input
+PS_Detail_RateSheetRequest_completeExpireDateDate_txtID = //table[@id='prirExpireDttm']/tbody/tr/td[1]/input
+PS_Detail_RateSheetRequest_complete_chkbx = prirCompleteSheet_InputElement
+PS_Detail_RateSheetRequest_originrateEffectiveDate_txtID = //table[@id='prirOrgEffectiveDttm']/tbody/tr/td[1]/input
+PS_Detail_RateSheetRequest_origincompleteExpireDate_txtID = //table[@id='prirOrgExpireDttm']/tbody/tr/td[1]/input
+PS_Detail_RateSheetRequest_authorize_chkbx = prirAutoAuthoriseFl_InputElement
+PS_Detail_RateSheetRequest_dataLocation_GridID = dataLocationInfoGrid
+PS_Detail_RateSheetRequest_startRwoNo_txtBx = prriStartRowNumEditor
+PS_Detail_RateSheetRequest_endRowNo_txtBx = prriEndRowNumEditor
+PS_Detail_RateSheetRequest_destination_GridID = destCurrDttmGrid
+PS_Detail_RateSheetRequest_origin_GridID = currDttmGrid
+PS_Detail_RateSheetRequest_sheet_comboID = destSheetEditor_gwt_uid_
+PS_Detail_RateSheetRequest_columnIndex_txtID = destColIdxEditor
+PS_Detail_RateSheetRequest_rowNo_txtID = destRowNumEditor
+
+#AutoRatesheetConfig
+#--------------------------------------------------------------------------------------------------------
+PS_Detail_autoRateSheet_name_txtID = prscName
+PS_Detail_autoRateSheet_email_addBtn = emailConfigGridToolbar.Add
+PS_Detail_autoRateSheet_emailInfo_gridID = emailConfigInfoGrid
+PS_Detail_autoRateSheet_emailID_txtID = emailIdEditor
+PS_Detail_autoRateSheet_emailSubject_txtID = emailSubjectEditor
+PS_Detail_autoRateSheet_maxsize_txtID = attSizeEditor
+PS_Detail_autoRateSheet_attachment_txtID = attNameEditor
+PS_Detail_autoRateSheet_outputdir_txtID = outPutDirEditor
+PS_Detail_autoRateSheet_configRule_XPath = //*[text()='Config rule']
+PS_Detail_autoRateSheet_pollDir_addbtn =toolbar-button-label-expressionToolbar.Add
+PS_Detail_autoRateSheet_pollDir_expName_txtID = prspExpName
+PS_Detail_autoRateSheet_pollDir_exp_txtID = prspExp
+PS_Detail_autoRateSheet_pollDir_matchString_txtID = matchStringEditor
+PS_Detail_autoRateSheet_pollDir_matchCond_txtID = expCondEditor
+PS_Detail_autoRateSheet_save_btnID = autoRateSheetConfigDetail.save
+PS_Detail_autoRateSheet_destination_TabXpath = //*[text()='Tab Destination Details']
+PS_Detail_autoRateSheet_configrule_save_btnID = tariffPopUpDetail.save
+
+#Ratesheet
+#------------------------------------------------------------------------------------------------------------
+PS_RSDetailTemplateNameTxtId = psitName
+PS_RSDetailTemplateCodeTxtId = psitCode
+PS_RSDetailTemplateRateFileBtnId = trigger-scucFilePath
+PS_RSDetailDescriptionTxtId = psitDescription
+PS_RSDetailRatesheetComboId = rateSheetType_gwt_uid_
+PS_RSDetailDateFormatComboId = invDateFormat_gwt_uid_
+PS_RSDetailfileUploadBtnXpath = //*[@id='File Upload']//div
+PS_RSDestinationDetailGridId = fieldsGridPanel
+PS_RSDestDetailTypeGridComboId = typeEditor_gwt_uid_
+PS_RSDestDetailSheetNameGridComboId = sheetNameEditor_gwt_uid_
+PS_RSDestDetailColumnGridTextId = columnNameEditor
+PS_RSDestDetailDefaultGridComboId= defaultEditor_gwt_uid_
+PS_RSDestRateChangeKeysTxtId = prifRateChgKeys
+PS_RSDestRateDecimalSeperatorComboId  = prifRateDecSeparator_gwt_uid_
+PS_RSDestInclDayGrpCheckBoxId = checkbox
+PS_RSDetailDayGrpGridId = dayGrpGrid
+PS_RSDayGrpDetailInclFlagId = dgpInclude_InputElement
+PS_RSDayGrpDetailColIndexTxtId = prdlIndex
+PS_RSDayGrpDetailWorkSheetComboId = prdlWorkSheet_gwt_uid_
+PS_RSAdvRatingFlatRateMatchingTxtId = pracFlatStr
+PS_RSAdvRatingDupRateAComboId = pracRejectAction_gwt_uid_
+PS_RSAdvRatingDupEffectiveDateComboId = pracRejectDttm_gwt_uid_
+PS_RSRuleDefnAddBtnXpath = //div[@id='ruleDfnGrid']//*//div[text()='Add']
+PS_RSAdvRulDfnRuleTypeComboId = rtDisplayEditor_gwt_uid_
+PS_RSAdvRulDfnSrchStringTxtId = descText
+PS_RSAdvRulDfnWrkSheetComboId = sheetNameEditor_gwt_uid_
+PS_RSAdvRulDfnColNameTxtId = noEditor
+PS_RSAdvRulDfnCliRuleComboId = cliRuleEditor_gwt_uid_
+PS_RSAdvRulDfnGridId = ruleDfnGrid
+PS_RSSpecialCharDfnGridId = splCharDfnGrid
+PS_RSSpecialCharDfnCharComboId = charEditor_gwt_uid_
+PS_RSMappingDstTypeLookUpAddBtnId = destTypeGridToolbar.Add
+PS_RSMappingDstTypeGridId = destTypeGrid
+PS_RSMappingDstTypeTxtId= dstTypeEditor
+PS_RSMappingDstTypeComboId = ratebandTypeCombo_gwt_uid_
+PS_RSMappingDstGridId = destColumnGrid
+PS_RSMappingDstColGridTxtId = colEditor
+PS_RSMappingDstColAddBtnId = destColumnGridToolbar.Add
+PS_RSMappingCurGridId = curGrid
+PS_RSMappingGridAddBtnXpath = //div[@id='curGrid']//div[text()='Add']
+PS_RSMappingCurrLookUpTxtId = curNameEditor
+PS_RSMappingCurrGridComboId = curEditor_gwt_uid_
+PS_RSMappingTrnGridId = trnGrid
+PS_RSTRNMappingRightClickEditBtnId = trnGridContextMenu.Edit
+PS_RSTRNMappingInclCheckBoxId = status_InputElement
+PS_RSTRNMappingDetailRateNameKeyTxtId = pttkKey
+PS_RSTariffAddBtnId = tariffGridToolbar.Add
+PS_RSMappingSheetAddBtnId = mappingGridToolbar.Add
+PS_RSMappingSheet1ComboId = prsmSheet1Editor_gwt_uid_
+PS_RSMappingSheet1TxtId = prsmColumn1Editor
+PS_RSMappingSheet2ComboId = prsmSheet2Editor_gwt_uid_
+PS_RSMappingSheet2TxtId = prsmColumn2Editor
+PS_RSMappingTabGridId = mappingGrid
+PS_RSConfigureSheetNameBtnID = configureSheetNames
+PS_RsConfigureSheetNamesTxtID = psitSheetNames
+PS_RSConfigureSheetNameOkBtnID = configureSheetNamesDetail.oK
+
+#SystemFieldList
+#------------------------------------------------------------------------------------------------------------
+PS_systemFieldList_Name_txtID = psyfName
+PS_systemFieldList_invoiceSelction_comboID = invoiceContent_gwt_uid_
+PS_systemFieldList_tableInst_IconID = tableInst
+PS_systemFieldList_tableInstDisplayName_txtID = tinDisplayName
+PS_systemFieldList_stdStructure_ChkBxID = psyfStdStructFl_InputElement
+PS_systemFieldList_outputPrefix_txtID = psyfOutPrefix
+PS_systemFieldList_OutPutTableComp_comboID = component_gwt_uid_
+PS_systemFieldList_mapping_Grid_addBtnID = gridToolbar.Add
+PS_systemFieldList_mapping_gridID = sfmGrid
+PS_systemFieldList_tableColumn_ComboID = tclDisplayEditor_gwt_uid_
+PS_systemFieldList_destinationEntity_comboID = entityTblEditor
+PS_systemFieldList_entity_txtID = entEntity
+PS_systemFieldList_entityColumn_comboID = entTclDisplayEditor_gwt_uid_
+PS_systemFieldList_entityMatch_comboID = entMatchTclDisplayEditor_gwt_uid_
+PS_systemFieldList_systemName_comboID = systemNameEditor
+PS_systemFieldList_partnerName_comboID = invoiceNameEditor
+PS_systemFieldList_configType_comboID = configTypeEditor_gwt_uid_
+
+#CarrierInvoiceTemplate
+#--------------------------------------------------------------------------------------------------------------
+PS_CITemplate_Name_txtID = pintName
+PS_CITemplate_dateFormat_comboID = InvDateFormat_gwt_uid_
+PS_CITemplate_thousandSeperator_txtID = pintThousandSeparator
+PS_CITemplate_decimalSeperator_txtID = pintDecimalSeparator
+PS_CITemplate_expression_txtID = identifierExprDisplay
+PS_CITemplate_matchString_addBtnID = basicDetailToolbar.add
+PS_CITemplate_matchString_GridID = basicDetailGrid
+PS_CITemplate_matchString_txtID = matchStringEditor
+PS_CITemplate_matchString_cell_txtID = cellEditor
+PS_CITemplate_matchString_alias_txtID = aliasEditor
+PS_CITemplate_sheetName_txtID = invSummaryDfn.invTableSheet.pitsSheetName
+PS_CITemplate_directBillProfile_chckBx_id = billProfileMapDirectMap_InputElement
+PS_CITemplate_derivedbillProfile_chckbx_id = billProfileMapDerivedMap_InputElement
+PS_CITemplate_extractBillProfile = invSummaryDfn.checkFileName_InputElement
+PS_CITemplate_summary_GridID = summaryGrid
+PS_CITemplate_summaryInvoiceField_txtID = cvFieldEditor
+PS_CITemplate_summaryCell_txtID = summaryCellEditor
+PS_CITemplate_summarySystemField_txtID = invFieldMapping.displayString
+PS_CITemplate_summaryDataType_comboID = invSummaryDfn_invSummaryFields_pisfType_gwt_uid_
+PS_CITemplate_summary_advanceOptions_okbtn = showSystemFieldsDetail.ok
+PS_CITemplate_usageTab_sheetName_txtId = sheetNameSpecifierName
+PS_CITemplate_usgaeTab_start_txtID = sheetNameSpecifierStart
+PS_CITemplate_usageTab_end_txtID = sheetNameSpecifierEnd
+PS_CITemplate_usageTab_startsFrom_txtID = ptdpStartsFrom
+PS_CITemplate_usgaeTab_column_txtID = cellSpecifierCell
+PS_CITemplate_usgae_VeritalOffSet_txtID = cellSpecifierVStratOffsetOffset
+PS_CITemplate_usgae_horizontalOFfset_txtID = cellSpecifierHStratOffsetOffset
+PS_CITemplate_usage_verticalOffsetVal_comboID = cellSpecifierVStratOffsetOrientation_gwt_uid_
+PS_CITemplate_usage_horizontalOffsetVal_comboID = cellSpecifierHStratOffsetOrientation_gwt_uid_
+PS_CITemplate_usage_skiplines_txtID = pislSkip
+PS_CITemplate_usage_inlineCompute_comboID = component_gwt_uid_
+PS_CITemplate_usgae_subtotal_checkbx = ptdpIsSubTotalAvailable_InputElement
+PS_CITemplate_subtotalstart_txtID = ptdpSubTotal
+PS_CITemplate_columnsubtotal_txtID = cellSubtotalSpecifierCell
+PS_CITemplate_veriticalOffset_subtotal_txtID = cellSubtotalSpecifierVStratOffsetOffset
+PS_CITemplate_horizontalOffset_subtotal_txtID = cellSubtotalSpecifierHStratOffsetOffset
+PS_CITemplate_verticalOffset_subtotalal_comboID = cellSubtotalSpecifierVStratOffsetOrientation_gwt_uid_
+PS_CITemplate_horizontalOffset_subtotal_comboID = cellSubtotalSpecifierHStratOffsetOrientation_gwt_uid_
+PS_CITemplate_systemFieldList_comboID = systemFieldList_gwt_uid_
+PS_CITemplate_includeinTotal_chckbx = ptdpIncludeInTotal_InputElement
+PS_CITemplate_crossFXRate_chckbox = ptdpIsMiltiCurrency_InputElement
+PS_CITemplate_blanklines_chckbx = ptdpContinueBlankCase_InputElement
+PS_CITemplate_noOfBalnkLine_txtID = ptdpNoOfBlankLine
+PS_CITemplate_mappingGrid_addbtnID = toolbar-button-label-usageToolbar.add
+PS_CITemplate_usg_invoiceFiled_txtID = uFieldEditor
+PS_CITemplate_usg_cell_txtID = uCellEditor
+PS_CITemplate_usg_fieldType_comboID = fieldColumnCombo_gwt_uid_
+PS_CITemplate_advanceOption_btnID = usageToolbar.advanceOption
+PS_CITemplate_advanceOption_okBtnID = advanceOptionDetail.ok
+PS_CITemplate_advanceOptionTargetField_txtID = pifmFieldName
+PS_CITemplate_advanceOtptionDataType_comboID = piecType_gwt_uid_
+PS_CITemplate_defaultVal_btnID = usageToolbar.defaultValue
+PS_CITemplate_defaultal_okBtnID = advanceOptionDetail.ok
+
+#Dispute
+#---------------------------------------------------------------------------------------------
+PS_Detail_disputeType_wrapperID=SparkEntitySearch.window
+PS_Detail_disputeType_name_textID=pdptName
+PS_Detail_disputeType_code_textID=pdptCode
+PS_Detail_disputeType_component_ComboID=component_cmpName_gwt_uid_
+PS_Detail_disputeSearchScr_disputeType_ComboID=disputeType_component_gwt_uid_
+PS_Detail_disputeType_manualCreFlg_ChckBxID=pdptManualFl_InputElement
+PS_Detail_dispute_account_gridColID=account
+PS_Detail_dispute_billProfile_gridColID=billPeriod$billProfile
+PS_Detail_dispute_bill_gridColID=bill$pbilRefNo
+PS_Detail_dispute_bill_gridEnttyColID=pbilRefNo
+PS_Detail_dispute_disputeId_textID=pdisId
+PS_Detail_dispute_disputeSource_ComboID=pdisDisputeSource_gwt_uid_
+PS_Detail_dispute_disputeType_ComboID=disputeType_gwt_uid_
+PS_Detail_dispute_carrierInvoice_popupId=trigger-carrierInvoice
+PS_Detail_dispute_bill_popupId=trigger-bill
+PS_Detail_dispute_account_popupId=trigger-account
+PS_Detail_dispute_billProfile_popupId=trigger-billProfile
+PS_Detail_dispute_billProfile_billSrch_textId=grid_column_header_filtersearchGrid_billProfile$pbipDisplay
+PS_Detail_dispute_account_billProfileSrch_textId=grid_column_header_filtersearchGrid_account$paccName
+PS_Detail_dispute_billPeriod_popupId=trigger-billPeriod
+PS_Detail_dispute_statusCd_ComboID=statusCode_gwt_uid_
+PS_Detail_dispute_statusCd_xpath=//*[contains(@id,'statusCode_gwt_uid_')]
+PS_Detail_dispute_fromDt_textID=pdisFromDttm
+PS_Detail_dispute_toDt_textID=pdisToDttm
+PS_Detail_dispute_createdUser_ComboID=raisedBy_gwt_uid_
+PS_Detail_dispute_createdUser_xpath=//*[contains(@id,'raisedBy_gwt_uid_')]
+PS_Detail_dispute_raisedDt_textID=pdisRaisedDttm
+PS_Detail_dispute_disApprWrkFlow_ComboID=approvalWorkflow_gwt_uid_
+PS_Detail_dispute_linkRecordtype_ComboID=pdisLinkedRecordType_gwt_uid_
+PS_Detail_dispute_linkRecord_textID=linkedRecord
+PS_Detail_dispute_dispOwner_popupId=trigger-disputedUserTbl
+PS_Detail_dispute_reasonCd_ComboID=disputeAdjustmentReasonCode_gwt_uid_
+PS_Detail_dispute_reviewByDt_textID=pdisReviewedDttm
+PS_Detail_dispute_dispRootCause_ComboID=disputeRootCause_gwt_uid_
+PS_Detail_dispute_amt-Curr_amt_textID=revenueAmtPdisDisputeAmt
+PS_Detail_dispute_amt-Curr_curr_ComboID=revenueAmtCurrency_gwt_uid_
+PS_Detail_dispute_amt-HomeCurr_amt_textID=homeCurrencyAmtPdisAmountHomeCur
+PS_Detail_dispute_amt-HomeCurr_curr_comboID=homeCurrencyAmtHomeCurrency_gwt_uid_
+PS_Detail_dispute_amt-FavPartn_amt_textID=favRevenueAmtPdisResolvedAmtFavOthrOpr
+PS_Detail_dispute_amt-FavPartn_curr_combotID=favRevenueAmtCurrency_gwt_uid_
+PS_Detail_dispute_amt-FavHomeOper_amt_textID=favHomeCurrencyAmtPdisResolvedAmtFavCarrier
+PS_Detail_dispute_amt-FavHomeOper_curr_ComboID=favHomeCurrencyAmtHomeCurrency_gwt_uid_
+PS_Detail_dispute_shortPay_ChckBoxID= pdisShortPay_InputElement
+PS_Detail_dispute_audit_comments_textID=pdisComment
+PS_Detail_dispute_audit_ClosCmnt_textID=pdisClosureComment
+PS_Detail_dispute_Save_btnID=disputeTblDetail.save
+PS_Detail_dispute_rejectMsz_textID=lblCancelConfirm
+PS_Detail_dispute_rejectMsz_text=Are you sure you wish to reject the selected dispute?
+
+PS_Detail_dispute_rejectResn_texAreatId=rejectReason
+PS_Detail_dispute_rejectDisp_btnID=rejectDisputeDetail.ok
+
+PS_Detail_disputeHistory_gridWrapper=disputeApprWrkHistoryInfoDetail.window
+PS_Detail_disputeHistory_statusCd_ComboId=disputeTbl_statusCode_gwt_uid_
+PS_Detail_disputeHistory_columnHdrs_Id=grid_column_header_undefined_
+PS_Detail_disputeHistory_close_BtnId=disputeApprWrkHistoryInfoDetail.close
+
+PS_Detail_dispute_Validate_msz_textId=window-scroll-panel
+PS_Detail_dispute_Validate_msz=Validated disputes can not be rejected. Do you want to proceed
+PS_Detail_dispute_Validate_ok_BtnId=yes
+PS_Detail_dispute_Resolve_GridWrapper=moveToResolveDetail.window
+PS_Detail_dispute_resolveRootCaus_comboId=disputeRootCause_gwt_uid_
+PS_Detail_disp_resolve_amt-FavHomeOper_amt_textID=homeCurrencyAmtPdisResolvedAmtFavCarrier
+PS_Detail_disp_resolve_amt-FavPartn_amt_textID=revenueAmtPdisResolvedAmtFavOthrOpr
+PS_Detail_resolve_dispAmnt_amt_textID=disputedAmtPdisDisputeAmt
+PS_Detail_dispute_Resolve_ClosCmnt_textID=pdisClosureComment
+PS_Detail_dispute_Resolve_BtnID=moveToResolveDetail.Resolve
+
+
+PS_Detail_BillProfileAction_chkBx_Xpath=//label[contains(text(),'value')]/preceding-sibling::input
+
+#Rerate Request
+#-------------------------------------------------------------------------------------------------
+PS_Detail_rerate_name_txtID = prrqName
+PS_Detail_rerate_schedulingname_comboID = prrqCode_gwt_uid_
+PS_Detail_rerate_comboArrowElement = //div[starts-with(@id,'comboid')]/a//div/b
+PS_Detail_rerate_valueSelectXpath = //div[starts-with(@id,'floater_comboid')]//li[text()='value']
+PS_Detail_rerate_rerateType_comboID = rrqType_gwt_uid_
+PS_Detail_rerate_summaryChkbx = rerateSummaryFl_InputElement
+PS_Detail_rerate_stream_comboID = stream_gwt_uid_
+PS_Detail_rerate_adjustmentFl_chckbx = rerateAdjustmentFl_InputElement
+PS_Detail_rerate_sameBillPeriod_chckbx = prrqKeepBpdFl_InputElement
+PS_Detail_rerate_eventType_addbtn = eventTypeGridToolbar.Add
+PS_Detail_rerate_eventLeg_addbtn = eventLegGridToolbar.Add
+PS_Detail_rerate_aggrprocessor_GRidID = aggrProcessorGrid
+PS_Detail_rerate_aggrProcessor_addbtn = aggrProcessorGridToolbar.Add
+PS_Detail_rerate_trafficPeriodFrom_txtID = //table[@id='prrqEvtFromDttm']/tbody/tr/td[1]/input
+PS_Detail_rerate_trafficPeriodTo_txtID = //table[@id='prrqEvtToDttm']/tbody/tr/td[1]/input
+PS_Detail_rerate_OpenBillPeriods_chckbx = prrqOpenBpdFl_InputElement
+PS_Detail_rerate_billPeriod_addbtn = billPeriodGridToolbar.Add
+PS_Detail_rerate_billProfile_addbtn = billProfileGridToolbar.Add
+PS_Detail_rerate_billperiod_GridID = billPeriodGrid
+PS_Detail_rerate_tariffGrid_addbtn = tariffGridToolbar.Add
+PS_Detail_rerate_bandGrid_addbtn = bandGridToolbar.Add
+PS_Detail_rerate_entity_comboID = rerateReqEntEditor_gwt_uid_
+PS_Detail_rerate_entity_GridID = rerateReqEntitiesGrid
+PS_Detail_rerate_entity_addbtn = rerateReqEntitiesGridToolbar.Add
+PS_Detail_rerate_values_gridID = rerateReqValuesGrid
+PS_Detail_rerate_values_addbtn = rerateReqValuesGridToolbar.Add
+
+PS_Detail_rerate_entity_txtbxID = reReqEntityStringComponent
+PS_Detail_rerate_entity_xptah = //*[@id='rerateReqEntitySearchComponent']
+PS_Detail_rerate_dateComp_xpath = //table[@id='reReqEntityDateComponent']
+PS_Detail_rerate_date_txtID = //table[@id='reReqEntityDateComponent']/tbody/tr/td[1]/input
+PS_Detail_rerate_entity_IconID = rerateReqEntitySearchComponent
+PS_Detail_referencetable_comboID= displayString_gwt_uid_
+PS_Detail_BandSearch_Xpath = //div[text()='Band Search']
+PS_Detail_tariffSearch_xpath = //div[text()='Tariff Search']
+PS_Detail_routeSearch_xpath = //div[text()='Route Search']
+PS_Detail_streamSearch_xpath = //div[text()='Stream Search']
+PS_Detail_referenceTableSearch_Xapth = //div[text()='Reference Table Search']
+PS_Detail_elementSearch_xapth = //div[text()='Element Search']
+PS_Deatil_serviceSearch_xpath = //div[text()='Service Search']
+
+
+#XDR Extraction Template
+#---------------------------------------------------------------------------------------------								 
+PS_Detail_xdrExtTemp_name_textID=pxecName
+PS_Detail_xdrExtTemp_ValidFromDt_textID=pxecFromDttm
+PS_Detail_xdrExtTemp_ValidToDt_textID=pxecToDttm
+PS_Detail_xdrExtTemp_eventType_comboID=eventType_gwt_uid_
+PS_Detail_xdrExtTemp_filterComp_comboID=filterComponent_gwt_uid_
+PS_Detail_xdrExtTemp_extWithBill_ChkBxID=pxecIncludeXdrBillFl_InputElement
+PS_Detail_xdrExtTemp_inputTable_GridID=inputTableGrid
+PS_Detail_xdrExtTemp_tableColm_GridID=fieldsTableGrid
+PS_Detail_xdrExtTemp_entities_GridID=fieldsEntityGrid
+PS_Detail_xdrExtTemp_fieldChckbx_xpath=//*[@id='gridId']//div[text()='Field name']//parent::td//parent::tr//td[2]//div[@id='grid_check_editor']/img
+PS_Detail_xdrExtTemp_save_BtnID=xdrExtractConfigDetail.save
+PS_Detail_xdrExtTemp_errorTxt_txtID=errorText
+PS_Detail_xdrExtTemp_popUP_Xpath=//div[@id='window-scroll-panel']
+ps_Detail_entityPopupS_Xpath=//div[@id='popupWindow']
+ps_Detail_newScreen_FormtitleXpath=//div[@id='titlePanel']//div[text()='screenName']
+ps_Detail_newScreen_windowtitleXpath=//div[@class='roc-window-titlebar']//div[text()='screenName']
+PS_Detail_xdrExtTemp_extFilterTabXpath=//*[@id="tabbedPanel"]/div[2]//div[text()='Extract Filter']
+PS_Detail_xdrExtTemp_selectedExtFilterXpath=//*[@id="tabbedPanel"]/div[2]//div[text()='Extract Filter']//ancestor::table[contains(@class,'roc-workflow-action-label-active')]
+PS_Detail_xdrExtTemp_entities_editor_comboId=xdrExtractConfigEntEditor_gwt_uid_
+PS_Detail_xdrExtTemp_entities_gridId=xdrExtConEntitiesGrid
+PS_Detail_xdrExtTemp_entities_add_btnId=toolbar-button-label-xdrEntsToolbar.Add
+PS_Detail_xdrExtTemp_value_gridId=xdrExtConValuesGrid
+PS_Detail_xdrExtTemp_value_add_btnId=toolbar-button-label-xdrEntValsToolbar.Add
+PS_Detail_xdrExtTemp_latestRatedEvent_ChkBxID=pxecInclRatedEvtFl_InputElement
+PS_Detail_xdrExtTemp_showHeaderFlag_ChkBxID=pxecIncludeHeaderFl_InputElement
+
+#Event Usage Request
+#---------------------------------------------------------------------------------------------
+PS_Detail_eventUsgReq_billSearch_ChkBxID=includeBillNumFl_InputElement
+PS_Detail_eventUsgReq_reqType_comboId=requestType_gwt_uid_
+PS_Detail_eventUsgReq_autoScheFlg_chckBoxId=peurIsAutoschedule_InputElement
+PS_Detail_eventUsgReq_billSearch_triggerID=trigger-bill
+PS_Detail_eventUsgReq_description_textID=peurDesc
+PS_Detail_eventUsgReq_streamStg_ComboID=streamStage_gwt_uid_
+PS_Detail_eventUsgReq_eventType_ComboID=eventType_gwt_uid_
+PS_Detail_eventUsgReq_eventFromDt_textID=peurEvtFromDttm
+PS_Detail_eventUsgReq_eventToDt_textID=peurEvtToDttm
+PS_Detail_eventUsgReq_xdrExtTemp_triggerID=trigger-xdrExtractConfig
+PS_Detail_eventUsgReq_xdrExtTemp_entityID=xdrExtractConfig
+PS_Detail_eventUsgReq_lateTraffic_ChkBxID=peurLateTrafficFl_InputElement
+PS_Detail_eventUsgReq_ent_ADD_BtnID=toolbar-button-label-evtUsgReqEntsToolbar.Add
+PS_Detail_eventUsgReq_entVal_ADD_BtnID=toolbar-button-label-evtUsgReqEntValsToolbar.Add
+PS_Detail_eventUsgReq_entities_GridID=evtUsgReqEntitiesGrid
+PS_Detail_eventUsgReq_values_GridID=evtUsgReqValuesGrid
+PS_Detail_eventUsgReq_entities_editor_ComboID=evtUsgReqEntEditor_gwt_uid_
+PS_Detail_eventUsgReq_save_BtnID=eventUsageRequestDetail.save
+PS_Detail_EventUsageReq_popupXpath=//*[@id='window-scroll-panel']
+
+#Event Usage 
+#---------------------------------------------------------------------------------------------
+PS_Detail_eventUsg_fromDt_textID=fromDttm
+PS_Detail_eventUsg_toDt_textID=toDttm
+PS_Detail_eventUsg_streamStg_ComboID=streamStage_gwt_uid_
+PS_Detail_eventUsg_eventType_ComboID=eventType_gwt_uid_
+PS_Detail_eventUsg_billSearh_textID=pbipName
+PS_Detail_eventUsg_trend_ComboID=trendProperty_gwt_uid_
+PS_Detail_eventUsg_fromHour_ComboID=fromhourProperty_gwt_uid_
+PS_Detail_eventUsg_toHour_ComboID=tohourProperty_gwt_uid_
+PS_Detail_eventUsg_Amount_IconID=grid_column_header_anchorsearchGrid_resAmount
+PS_Detail_eventUsg_Amount_DescmenuID=_grid_header_context_menu_sort_descending_item
+PS_Detail_eventUsg_viewTotal_action_BtnId=totalCount
+PS_Detail_eventUsg_viewTotal_popupWindowId=window-scroll-panel
+PS_Detail_eventUsg_viewTotal_gridId=totalsGrid
+
+#Collected File
+#---------------------------------------------------------------------------------------------
+PS_Detail_collectedFl_fileSrc_comboID=fileCollection_fileSource_gwt_uid_
+PS_Detail_collectedFl_token_comboID=fileCollection_tokenTbl_gwt_uid_
+PS_Detail_collectedFl_polledDt_tableID=clfPolledDttm
+PS_Detail_collectedFl_fileCollection_comboID=fileCollection_gwt_uid_
+PS_Detail_collectedFl_status_comboID=clfStatus_gwt_uid_
+PS_Detail_collectedFl_fileName_textID=fileTbl$filFilename
+
+#Settlements
+#---------------------------------------------------------------------------------------------
+PS_Detail_settlements_settlType_comboID=pstlAutomaticFl_gwt_uid_
+PS_Detail_settlements_latestVersion_comboID=dummayVersion_gwt_uid_
+PS_Detail_settlements_account_textID=billProfile$account
+PS_Detail_settlements_fromDt_iconID=grid_column_header_filtersearchGrid_pstlFromDttm
+PS_Detail_settlements_toDtDt_iconID=grid_column_header_filtersearchGrid_pstlToDttm
+PS_Detail_settlements_fromDt_tableID=pstlFromDttm
+PS_Detail_settlements_toDtDt_tableID=pstlToDttm
+PS_Detail_settlements_status_comboID=pstlStatus_gwt_uid_
+PS_Detail_settlements_name_textID=pstlName
+PS_Detail_settlements_profile_entityID=trigger-billProfile
+PS_Detail_settlements_name_xpath=//input[@id='pstlName']
+PS_Detail_settlements_name_textID=pstlName
+PS_Detail_settlements_reference_textID=pstlReference
+PS_Detail_settlements_enableAutoVersion_chckbxID=pstlAutoVersionFl_InputElement
+PS_Detail_settlements_refreshAmnt_btnID=toolbar-button-label-settlementGridToolbar.RefreshAmount
+PS_Detail_settlements_addMenuxpath=//*[@id="settlementsGrid"]/div[2]/div/div[2]/div/div[3]/div/div[3]
+#//div[@id='settlementsGrid']//div[contains(@class,'roc-datagrid')]/div[3]/div
+PS_Detail_settlements_addXpath=//div[@id='settlementGridMenu.Add']
+PS_Detail_settlements_addMenu_option_xpath=//*[@id="Bill"]//div[@id='options']
+PS_Detail_settlements_save_BtndId=settlementDetail.save
+PS_Detail_Settlements_HistoryColumnHeaderID=grid_column_header_undefined_
+PS_Detail_settlements_Historyclose_BtndId=settlementHistoryDetail.close
+PS_Detail_settlements_CurrenBrkdownclose_BtndId=settlementCurrencyBreakdownDetail.Close
+ps_detail_settlements_creditNoteReference_iconId=grid_column_header_anchorsearchGrid_pcrdRefNo
+ps_detail_settlements_creditNoteReference_descSortMenuId=_grid_header_context_menu_sort_descending_item
+ps_detail_columnHeader_entitySearchXpath=//div[@id='searchGrid']//div[contains(@id,'grid_column_header_searchGrid') and contains(text(),'ColumnName')]
+ps_detail_columnHeader_SortArrowXpath=//div[@id='searchGrid']//div[contains(@id,'grid_column_header_searchGrid') and contains(text(),'ColumnName')]//ancestor::th//img
+PS_Detail_settlements_settLementCurr_textID=amountInBipCurPstlAmountBipCur
+PS_Detail_settlements_HomeCurr_textID=amountInHomeCurPstlAmountHomeCur
+
+
+#Billing Group Code
+#---------------------------------------------------------------------------------------------
+PS_Detail_billingGrpCode_name_textID=pbgcName
+PS_Detail_billingGrpCode_code_textID=pbgcCode
+PS_Detail_billingGrpCode_account_textID=account
+PS_Detail_billingGrpCode_externalRefer_textID=pbgcExternalReference
+PS_Detail_billingGrpCode_save_btnID=billingGroupCodeDetail.save
+PS_Detail_billingGrpCode_popUp_code_xpath=//div[@id='window-scroll-panel']//div[text()='Code']
+
+
+#Product Bundles
+#---------------------------------------------------------------------------------------------
+PS_Detail_bundle_nameFilter_textID=productDfn$ppdfName
+PS_Detail_bundle_codeFilter_textID=productDfn$ppdfCode
+PS_Detail_bundle_popUp_xpath=//div[@id='window-scroll-panel']
+PS_Detail_bundle_treeName=productBundleTree
+PS_Detail_bundle_deatails_basicDetailXpath=//*[@id='bundlePropertiesLabel' ]
+PS_Detail_bundle_name_textID=productDfn.ppdfName
+PS_Detail_bundle_code_textID=productDfn.ppdfCode
+PS_Detail_bundle_productType_comboID=productDfn_productType_gwt_uid_
+PS_Detail_bundle_franchise_comboID=productDfn_franchise_gwt_uid_
+PS_Detail_bundle_externalRefer_textID=productDfn.ppdfExternalReference
+PS_Detail_bundle_description_textAreaID=productDfn.ppdfDesc
+PS_Detail_bundleVersion_name_textID=ppdvName
+PS_Detail_bundleVersion_status_comboID=ppdvStatus_gwt_uid_
+PS_Detail_bundleVersion_from_textID=ppdvFromDttm
+PS_Detail_bundleVersion_to_textID=ppdvToDttm
+PS_Detail_bundleVersion_externalRef_textID=ppdvExternalReference
+PS_Detail_bundleVersion_extraArg_comboID=instProductArgumentType_gwt_uid_
+PS_Detail_bundleVersion_descrip_textareaID=ppdvDesc
+PS_Detail_bundle_currencyName_comboID=currency_gwt_uid_
+PS_Detail_bundle_currencyName_xpath=//div[@id='window-scroll-panel']//div[text()='Currency']
+PS_Detail_bundle_currencyValue_textID=ppdyDefaultVal
+PS_Detail_bundle_countryName_xpath=//div[@id='window-scroll-panel']//div[text()='Country']
+PS_Detail_bundle_countryName_comboID=country_gwt_uid_
+PS_Detail_bundle_country_salesTaxGrp_comboId=salesTaxGroup_gwt_uid_
+PS_Detail_bundle_billingGrpName_xpath=//div[@id='window-scroll-panel']//div[text()='Billing  Group']
+PS_Detail_bundle_billingGrp_comboId=billingGroupCode_gwt_uid_
+PS_Detail_bundleProduct_deatails_basicDetailXpath=//*[@id='productitemlabel' ]
+PS_Detail_bundleProduct_name_textId=ppdiName
+PS_Detail_bundleProduct_code_textId=ppdiCode
+PS_Detail_bundleProduct_category_comboId=serviceCategory_gwt_uid_
+PS_Detail_bundleProduct_extraArgu_comboId=instProductArgumentType_gwt_uid_
+PS_Detail_bundleProduct_externalRef_textId=ppdiExternalReference
+PS_Detail_bundleProduct_descr_textAreaId=ppdiDesc
+PS_Detail_bundleProduct_optional_radioBtnId=prodDfnItemRadioGroupOptional_InputElement
+PS_Detail_bundleProduct_mandatory_radioBtnId=prodDfnItemRadioGroupMandatory_InputElement
+PS_Detail_bundleProduct_specify_radioBtnId=prodDfnItemRadioGroupSpecify_InputElement
+PS_Detail_bundleProduct_optionsMinNo_xpath=//input[contains(@id,'ppdmMinNo') or  contains(@id,'ppdiMinNo') ]
+PS_Detail_bundleProduct_optionsMaxNo_xpath=//input[contains(@id,'ppdmMaxNo') or  contains(@id,'ppdiMaxNo') ]
+PS_Detail_productItem_OneOff_reasonXpath=//div[@id='mainPanel']//div[text()='Reason']
+PS_Detail_productItem_OneOff_Name_txtId=poidName
+PS_Detail_productItem_OneOff_Type_comboId=oneOffItemType_gwt_uid_
+PS_Detail_productItem_OneOff_Reason_comboId=oneOffItemReason_gwt_uid_
+PS_Detail_productItem_OneOff_StatusGrp_comboId=productDfnItemMember_provisionStatusGroup_gwt_uid_
+PS_Detail_productItem_OneOff_ExtraArg_comboId=productDfnItemMember_instProductArgumentType_gwt_uid_
+PS_Detail_productItem_OneOff_ExternalRef_txtId=productDfnItemMember.ppdmExternalReference
+PS_Detail_productItem_OneOff_allowOverRideAmnt=productDfnItemMember.ppdmAllowOverrideFl_InputElement
+PS_Detail_productItem_amountsLabel_xpath=//div[@id='oneoffamounts' or @id='amounts']
+PS_Detail_productItem_OneOff_amountsGridId=oneOffItemValueGrid
+PS_Detail_productItem_Recurring_amountsGridId=recurringItemValueGrid
+PS_Detail_productItem_amountsGridXpath=//*[@id='oneOffItemValueGrid' or @id='recurringItemValueGrid']
+PS_Detail_productItem_amtAdd_btnXpath=//*[@id='toolbar-button-label-oneOffItemValueGridToolBar.add' or @id='recurringItemValueGridToolBar.add']
+PS_Detail_productItem_amt_From_txtXpath=//*[@id='poivFromDttmEditor' or @id='privFromDttmEditor']
+PS_Detail_productItem_amt_Currency_ComboId=currencyEditor_gwt_uid_
+PS_Detail_productItem_amt_Amount_txtXpath=//*[@id='poivTxnNetAmtEditor' or @id='privTxnNetAmtEditor']
+PS_Detail_productItem_amt_MinAmount_txtXpath=//*[@id='poivTxnMinAmtEditor' or @id='privTxnMinAmtEditor']
+PS_Detail_productItem_amt_MaxAmount_txtXpath=//*[@id='poivTxnMaxAmtEditor' or @id='privTxnMaxAmtEditor']
+PS_Detail_productItem_BillGrpLabel_xpath=//div[@id='billingGroupsLbl']
+PS_Detail_productItem_BillGrp_GridId=billingGrpGrid
+PS_Detail_productItem_BillGrp_Add_btnId=toolbar-button-label-billingGroupToolBar.add
+PS_Detail_productItem_BillGrp_code_comboId=billingGroupCodeEditor_gwt_uid_
+PS_Detail_productItem_BillGrp_default_chckboxId=ppmbDefaultFlEditor_checked_column_field_image
+PS_Detail_productItem_SalesTaxLabel_xpath=//div[@id='salesTaxesLbl']
+PS_Detail_productItem_SalesTax_GridId=salesTaxGrid
+PS_Detail_productItem_SalesTax_Add_BtnId=toolbar-button-label-salesTaxGridToolBar.add
+PS_Detail_productItem_SalesTax_Country_ComboId=ctrEditor_gwt_uid_
+PS_Detail_productItem_SalesTax_Group_ComboId=salesTaxGroupEditor_gwt_uid_
+PS_Detail_productItem_SalesTax_Default_ChckBoxId=ppdsDefaultFlEditor_checked_column_field_image
+PS_Detail_productItem_Recurring_FrequencyLabel_xpath=//div[@id='frequencyLbl']
+PS_Detail_productItem_Recurring_name_txtId=pridName
+PS_Detail_productItem_Recurring_type_comboId=recurringItemType_gwt_uid_
+PS_Detail_productItem_Recurring_applied_comboId=pridApplyChargeCd_gwt_uid_
+PS_Detail_productItem_Recurring_statusGrp_comboId=productDfnItemMember_provisionStatusGroup_gwt_uid_
+PS_Detail_productItem_Recurring_farInAdvance_txtId=pridCyclesInAdvance
+PS_Detail_productItem_Recurring_extraArg_comboId=productDfnItemMember_instProductArgumentType_gwt_uid_
+PS_Detail_productItem_Recurring_externalRefer_txtId=productDfnItemMember.ppdmExternalReference
+PS_Detail_productItem_Recurring_prorateChgTerm_chckBxId=pridProrataFl_InputElement
+PS_Detail_productItem_Recurring_alignWithFreq_chckBxId=pridAlignBillingCycleFl_InputElement
+PS_Detail_productItem_Recurring_Frequency_comboId=freqComponent_gwt_uid_
+PS_Detail_productItem_Recurring_anivAlignBased_radioBtnId=frequencyRadioGroupPivotOption1_InputElement
+PS_Detail_productItem_Recurring_alignUsingThe_radioBtnId=frequencyRadioGroupPivotOption2_InputElement
+PS_Detail_productItem_Recurring_dayOfMonth_comboId=dayOfMonth_gwt_uid_
+PS_Detail_productItem_Recurring_alignmentDate_comboId=alignmentDate_gwt_uid_
+PS_Detail_bundle_save_BtnId=productDfnVersionDetail.save
+
+#Product Argument Type
+#---------------------------------------------------------------------------------------------
+PS_Detail_prodArgType_name_textID=ppatName
+PS_Detail_prodArgType_basicDetails_xpath=//*[@id="topPanel"]//div[text()='Type']
+PS_Detail_prodArgType_type_comboID=ppatTypeCd_gwt_uid_
+PS_Detail_prodArgType_productField_gridID=productArgumentField
+PS_Detail_prodArgType_add_btnID=toolbar-button-label-fieldsGridToolBar.add
+PS_Detail_prodArgType_ArgField_param_textID=paramEditor
+PS_Detail_prodArgType_ArgField_type_comboID=fieldTypeEditor_gwt_uid_
+PS_Detail_prodArgType_ArgField_Mandatory_chckBxID=mandatoryFlEditor_checked_column_field_image
+PS_Detail_prodArgType_save_btnID=productArgumentTypeDetail.save
+
+#Product Instance
+#---------------------------------------------------------------------------------------------
+PS_Detail_prodInst_Instance_gridWrapperID=productInstControllerDetail.window
+PS_Detail_instance_treeName=tree
+PS_Detail_prodInst_pageName_xpath=//div[@id='formTitle' and text()='PageName']
+PS_Detail_prodInst_instance_GridWrapperId=productInstDetail
+PS_Detail_prodInst_Instancename_textID=ppinName
+PS_Detail_prodInst_BundleName_textID=productDfn$ppdfName
+PS_Detail_prodInst_InstBillText_textID=ppinBillTxt
+PS_Detail_prodInst_InstBillingGrp_comboID=billingGroupCode_gwt_uid_
+PS_Detail_prodInst_InstCountry_comboID=country_gwt_uid_
+PS_Detail_prodInst_InstContractNo_textID=ppinContractNo
+PS_Detail_prodInst_InstCurrency_comboID=currency_gwt_uid_
+PS_Detail_prodInst_Instfrom_textID=ppinFromDttm
+PS_Detail_prodInst_InstTo_textID=ppinToDttm
+PS_Detail_prodInst_InstOrderDate_textID=ppinOrderDttm
+PS_Detail_prodInst_InstExternalRef_textID=ppinExternalReference
+PS_Detail_prodInst_Next_btnID=productInstControllerDetail.next
+PS_Detail_prodInst_errorText_xpath=//div[@id='errorText']
+PS_Detail_prodInst_instItem_GridWrapperId=productInstItemDetail
+PS_Detail_prodInst_InstItemName_textID=ppiiName
+PS_Detail_prodInst_InstItem_ProductDfn_textID=productDfnItem
+PS_Detail_prodInst_InstItem_ProductDfn_arrowXpath=//div[text()='Product Definition Item: ']/parent::td/parent::tr//div[starts-with(@id,'productDfnITem_gwt_uid_')]//div/b
+PS_Detail_prodInst_InstItem_ProductDfn_selecterXpath=//div[text()='Product Definition Item: ']/parent::td/parent::tr//div[starts-with(@id,'productDfnITem_gwt_uid_')]/parent::td//li[contains(text(),'Value')]
+PS_Detail_prodInst_InstItemBillText_textID=ppiiBillTxt
+PS_Detail_prodInst_InstItemOrderDate_textID=ppiiOrderDttm
+PS_Detail_prodInst_InstItemExterRef_textID=ppiiExternalReference
+PS_Detail_prodInst_InstItemMemberNameFilter_textID=ppimName
+PS_Detail_prodInst_InstItemMember_DfnMember_comboID=productInstItemMemberModel_gwt_uid_
+PS_Detail_prodInst_InstItemMemberName_textID=productInstItemMember.ppimName
+PS_Detail_prodInst_InstItemMemberBillText_textID=productInstItemMember.ppimBillTxt
+PS_Detail_prodInst_InstItemMemberBillingGrp_comboID=productInstItemMember_billingGroupCode_gwt_uid_
+PS_Detail_prodInst_InstItemMemberSalesTaxGrp_comboID=productInstItemMember_salesTaxGroup_gwt_uid_
+PS_Detail_prodInst_InstItemMemberAgent_comboID=productInstItemMember_agent_gwt_uid_
+PS_Detail_prodInst_InstItemMemberExterRef_textID=productInstItemMember.ppimExternalReference
+PS_Detail_prodInst_InstRecurring_GridWrapperId=recurringItemInstDetail
+PS_Detail_prodInst_InstRecurringfrom_textID=priiFromDttm
+PS_Detail_prodInst_InstRecurringTo_textID=priiToDttm
+PS_Detail_prodInst_InstRecurringCycle_textID=priiCyclesInAdvance
+PS_Detail_prodInst_InstRecurringQuant_textID=priiQuantity
+PS_Detail_prodInst_InstItemMemberUnitOfM_comboID=ppbuUnitOfMeasure_gwt_uid_
+PS_Detail_prodInst_InstRecurringAdd_btnID=toolbar-button-label-recurringInstPeriodToolBar.add
+PS_Detail_prodInst_InstRecurringAmt_GridId=recurringInstPeriodGrid
+PS_Detail_prodInst_InstRecurringAmt_From_txtId=pripFromDttmEditor
+PS_Detail_prodInst_InstRecurringAmt_amount_txtId=pripAmtEditor
+PS_Detail_prodInst_InstRecurringAmt_TotalAmnt_txtId=TotalAmtEditor
+PS_Detail_prodInst_InstRecurringAmt_errorMszXpath=//*[@id="recurringInstPeriodGrid"]//div[not(@aria-hidden='true')]/img[contains(@src,'application_error')]
+PS_Detail_prodInst_InstOneOff_GridWrapperId=oneOffItemInstDetail
+PS_Detail_prodInst_InstOneOff_ChargeDt_txtId=poiiTxnDttm
+PS_Detail_prodInst_InstOneOff_reason_comboId=oneOffItemReason_gwt_uid_
+PS_Detail_prodInst_InstOneOff_amount_txtId=poiiUnitAmt
+PS_Detail_prodInst_InstOneOff_quant_txtId=poiiQuantity
+PS_Detail_prodInst_InstOneOff_totalAmnt_txtId=poiiTxnNetAmt
+PS_Detail_prodInst_InstOneOff_currency_comboId=currency_gwt_uid_
+PS_Detail_prodInst_OK_btnID=productInstControllerDetail.Ok
+PS_Detail_prodInst_OK_btnXpath=//*[@id='productInstControllerDetail.window']//button[@id='productInstControllerDetail.Ok' and  not(@aria-hidden='true')]
+
+#Product Bundle Drill-Down
+#---------------------------------------------------------------------------------------------
+PS_Detail_PBundleDrillDown_productScreen_comboId=productScreen_gwt_uid_
+PS_Detail_PBundleDrillDown_bundle_name_textXpath=//input[starts-with(@id,'ppdfName') or starts-with(@id,'productDfn.ppdfName')]
+PS_Detail_PBundleDrillDown_bundle_code_textXpath=//input[starts-with(@id,'ppdfCode') or starts-with(@id,'productDfn.ppdfCode')]
+PS_Detail_PBundleDrillDown_bundle_productType_comboXpath=//div[starts-with(@id,'productType_gwt_uid_') or starts-with(@id,'productDfn_productType_gwt_uid_')]
+PS_Detail_PBundleDrillDown_bundle_franchise_comboXpath=//div[starts-with(@id,'franchise_gwt_uid_') or starts-with(@id,'productDfn_franchise_gwt_uid_')]
+PS_Detail_PBundleDrillDown_bundle_externalRefer_textXpath=//input[starts-with(@id,'ppdfExternalReference') or starts-with(@id,'productDfn.ppdfExternalReference')]
+PS_Detail_PBundleDrillDown_bundle_description_textAreaXath=//textarea[starts-with(@id,'ppdfDesc') or starts-with(@id,'productDfn.ppdfDesc')]
+PS_Detail_PBundleDrillDown_bundleVersion_name_textXpath=//input[starts-with(@id,'productDfnVersion.ppdvName') or starts-with(@id,'ppdvName')]
+PS_Detail_PBundleDrillDown_bundleVersion_status_comboXpath=//div[starts-with(@id,'productDfnVersion_ppdvStatus_gwt_uid_') or starts-with(@id,'ppdvStatus_gwt_uid_')]
+PS_Detail_PBundleDrillDown_bundleVersion_from_textXpath=//table[starts-with(@id,'productDfnVersion.ppdvFromDttm') or starts-with(@id,'ppdvFromDttm')]//input
+PS_Detail_PBundleDrillDown_bundleVersion_to_textXpath=//table[starts-with(@id,'productDfnVersion.ppdvToDttm') or starts-with(@id,'ppdvToDttm')]//input
+PS_Detail_PBundleDrillDown_bundleVersion_externalRef_textXpath=//input[starts-with(@id,'productDfnVersion.ppdvExternalReference') or starts-with(@id,'ppdvExternalReference')]
+PS_Detail_PBundleDrillDown_bundleVersion_extraArg_comboXpath=//div[starts-with(@id,'productDfnVersion_instProductArgumentType_gwt_uid_') or starts-with(@id,'instProductArgumentType_gwt_uid_')]
+PS_Detail_PBundleDrillDown_bundleVersion_descrip_textareaXpath=//textarea[starts-with(@id,'ppdvDesc') or starts-with(@id,'productDfnVersion.ppdvDesc')]
+PS_Detail_PBundleDrillDown_prodInst_Instfrom_textXpath=//table[starts-with(@id,'ppinFromDttm')]//input
+PS_Detail_PBundleDrillDown_prodInst_InstTo_textXpath=//table[starts-with(@id,'ppinToDttm')]//input
+PS_Detail_PBundleDrillDown_prodInst_InstOrderDate_textXpath=//table[starts-with(@id,'ppinOrderDttm')]//input
+PS_Detail_PBundleDrillDown_prodItemInstMember_name_textId=//input[@id='poiiName' or @id='priiName' or @id='ppimName']
+
+#Deal
+#-----------------------------------------------------------------------------------------------------------------------------------
+PS_Detail_Deal_account_filter_txtBxID = account
+PS_Detail_Deal_deal_txtbxID = pdelName
+PS_Detail_Deal_contractNo_txtbxID = pdelContractNo
+PS_Detail_Deal_dealPeriod_calenderID = dummyDealValidOn
+PS_Detail_Deal_currency_ComboID = currency_gwt_uid_
+PS_Detail_Deal_fromdate_txtID = //table[@id='pdelFromDttm']/tbody/tr/td[1]/input
+PS_Detail_Deal_toDate_txtID = //table[@id='pdelToDttm']/tbody/tr/td[1]/input
+PS_Detail_Deal_bandType_comboID = bandType_gwt_uid_
+PS_Detail_Deal_dealType_ComboID = dealType_gwt_uid_
+PS_Detail_Deal_inRatio_txtID = inOutRatioPdbdRatioIn
+PS_Detail_Deal_outRatio_txtID = inOutRatioPdbdRatioOut
+PS_Detail_Deal_renewAfter_chcbx = pdelRenewAfterExpiryFl_InputElement
+PS_Detail_Deal_applyRebate_chcbx = pdelApplyMonthlyRebateFl_InputElement
+PS_Detail_Deal_cashflowin_chckbx = commitmentIn_InputElement
+PS_Detail_Deal_cashflowout_chckbx = commitmentOut_InputElement
+PS_Detail_Deal_applyshortfall_chckbx = delApplyShortfallPenaltyFl_InputElement
+PS_Detail_Deal_shortfallin_chckbx = shortFallIn_InputElement
+PS_Detail_Deal_shortfallout_chckbx = shortFallOut_InputElement
+PS_Detail_Deal_graceperiod_txtbxID = delGracePeriodDays
+PS_Detail_Deal_advProperty_okBtnID = advancedPropertiesDetail.oK
+PS_Detail_Deal_save_btnID = dealDetail.save
+PS_Detail_Deal_Cap_nametxtID = pdlcName
+PS_Detail_Deal_CapBG_comboID = dealBandGroup_gwt_uid_
+PS_Detail_Deal_CapTierVolume_chckBx = capTypeRadioGroupTierVolume_InputElement
+PS_Detail_Deal_CapTotal_chckbx = capTypeRadioGroupTotalVolume_InputElement
+PS_Detail_Deal_CapTier_comboID = dealTier_gwt_uid_
+PS_Detail_Deal_CapCondition_comboID = pdlcCapCd_gwt_uid_
+PS_Detail_Deal_CapRateType_comboID = rateTypeCd_gwt_uid_
+PS_Detail_Deal_CapApplyTo_comboID = dlcApplyTo_gwt_uid_
+PS_Detail_Deal_CapPercentage_txtID = pdlcPercent
+PS_Detail_Deal_CapRatePercen_txtID = pdlcRate
+PS_Detail_Deal_CapOn_comboID = dlcCapOn_gwt_uid_
+PS_Detail_Deal_CapPenalize_chckbx = penalizeTotalTraffic_InputElement
+PS_Detail_Deal_CapIn_GridID = inCapConfiguration
+PS_Detail_Deal_CapOut_GridID = outCapConfiguration
+PS_Detail_Deal_Cap_CloseBtn = //*[@class='roc-dialog-close']
+PS_Detail_Deal_inXpath = //div[@id='timeLineFormContainer']//table/tbody/tr[2]/td[2]//div[contains(@class,'roc-timeline') and @id='Label']
+PS_Detail_Deal_outXpath = //div[@id='timeLineFormContainer']//table/tbody/tr[2]/td[4]//div[contains(@class,'roc-timeline') and @id='Label']
+PS_Detail_Deal_newInDealXpath = //*[@id='timeLineFormContainer']//table/tbody/tr[2]/td[2]//div[@id='Label']
+PS_Detail_Deal_newOutDealXpath = //*[@id='timeLineFormContainer']//table/tbody/tr[2]/td[4]//div[@id='Label']
+PS_Detail_Deal_timeLineSubMenu_Xpath = //div[@class='roc-scroll-context-menu']
+PS_Detail_Deal_changeRatesCurr_Xpath = //div[text()='Change Rates/Currency']
+PS_Detail_Deal_changeRatesCurr_BtnXpath = //*[@id='col-filter']//*[text()='Change Rates/Currency']
+PS_Detail_Deal_rateTrafficType_cmboID = trafficType_gwt_uid_
+PS_Detail_DealRate_bandGrp_comboID = dealBandGroup_gwt_uid_
+PS_Detail_DealRate_bandName_txtID =bandSerach
+PS_Detail_Deal_showBlankRates_chckbxID = showBlankRate_InputElement
+PS_Detail_DealRate_rateChange_txtId = rateChange_gwt_uid_
+PS_Detail_DealRate_Currency_txtID = currency_gwt_uid_
+PS_Detail_DealRate_rateType_comboID = rateType_gwt_uid_
+PS_Detail_DealRate_dealTier_comboID = dealTier_gwt_uid_
+PS_Detail_DealRate_apply_BtnXapth = //button[text()='Apply']
+PS_Detail_DealRate_dealPeriod_txtID = //table[@id='splitDttm']/tbody/tr/td[1]/input
+
+#Report and Extract Definition
+#---------------------------------------------------------------------------------------------
+PS_Detail_reportAndExtDefn_RepExtDetails_xpath=//*[@id='basicDetailWrapperPanel']//div[text()='Name']
+PS_Detail_reportAndExtDefn_RepExtDefname_textID=pifeName
+PS_Detail_reportAndExtDefn_RepExtDefnGroup_comboID=rocpsInterfaceGroup_gwt_uid_
+PS_Detail_reportAndExtDefn_RepExtDefnType_comboID=rocpsInterfaceType_gwt_uid_
+PS_Detail_reportAndExtDefn_RepExtDefnComponent_comboID=component_gwt_uid_
+PS_Detail_reportAndExtDefn_RepExtDefnValidationComp_comboID=valComponent_gwt_uid_
+PS_Detail_reportAndExtDefn_AllowDownload_chckBxID=pifeAllowDownloadFl_InputElement
+PS_Detail_reportAndExtDefn_birtReport_DocType_comboID=Document_Type_gwt_uid_
+PS_Detail_reportAndExtDefn_birtReport_browse_btnID=load
+PS_Detail_reportAndExtDefn_dataWareExtReport_audit_entityID=Audit
+PS_Detail__auditNm_textID=audName
+PS_Detail_reportAndExtDefn_dataWareExtReport_fileDelimiter_comboID=File_Delimiter_gwt_uid_
+PS_Detail_reportAndExtDefn_dataWareExtReport_NoRecPerFl_textID=No Of Records Per File
+PS_Detail_reportAndExtDefn_dataWareExtReport_FlComComp_comboID=File_Compression_Component_gwt_uid_
+PS_Detail_reportAndExtDefn_dataWareExtReport_FlNmComp_comboID=File_Name_Component_gwt_uid_
+PS_Detail_reportAndExtDefn_dataWareExtReport_SeqNmGrpComp_comboID=Sequential_Number_Group_Component_gwt_uid_
+PS_Detail_reportAndExtDefn_dataWareExtReport_MetaFlGenCom_comboID=Meta_File_Generation_Component_gwt_uid_
+PS_Detail_reportAndExtDefn_dataWareExtReport_DataFlLoc_comboID=Data_File_Location_gwt_uid_
+PS_Detail_reportAndExtDefn_dataWareExtReport_MetaFlLoc_comboID=Meta_File_Location_gwt_uid_
+PS_Detail_reportAndExtDefn_parameters_gridID=extraArgsDfnGrid
+PS_Detail_reportAndExtDefn_parameters_add_btnID=toolbar-button-label-extraArgstoolbar.add
+PS_Detail_reportAndExtDefn_parameters_name_txtID=descText
+PS_Detail_reportAndExtDefn_parameters_type_comboId=paramDfn_gwt_uid_
+PS_Detail_reportAndExtDefn_parameters_mandatory_chckBxId=allowFieldEditor_checked_column_field_image
+PS_Detail_reportAndExtDefn_save_btnID=rocpsInterfaceTblDetail.save
+PS_Detail_reportAndExtDefn_genUsgReport_maxRepRange_txtId=Maximum Report Range (in days)
+PS_Detail_reportAndExtDefn_genUsgReport_maxRepLookback_txtId=Maximum Report Lookback (in days)
+PS_Detail_reportAndExtDefn_genUsgReport_dtTimeFormat_combId=Date_Time_Format_gwt_uid_
+PS_Detail_reportAndExtDefn_genUsgReport_reportDP_combId=Report_DP_gwt_uid_
+PS_Detail_reportAndExtDefn_genUsgReport_roundingMd_combId=Rounding_Mode_gwt_uid_
+PS_Detail_reportAndExtDefn_AllowEmail_chckBxID=pifeAllowEmailFl_InputElement
+PS_Detail_reportAndExtDefn_email_emailTabXpath=//*[@id="ReportDefinitionDetail"]/div[2]//div[text()='Email']
+PS_Detail_reportAndExtDefn_email_selectEmailGridId=emailGrid
+PS_Detail_reportAndExtDefn_email_add_btnId=toolbar-button-label-emailToolbar.Add
+PS_Detail_reportAndExtDefn_email_contactName_txtId=contactNameEditor
+PS_Detail_reportAndExtDefn_email_emailAddress_txtId=emailAddressEditor
+PS_Detail_reportAndExtDefn_email_emailType_comboId=prxmRecepientTypeEditor_gwt_uid
+
+
+#Extract File Location
+#---------------------------------------------------------------------------------------------
+PS_Detail_extFlLocation_name_textID=peflName
+PS_Detail_extFlLocation_detail_xpath=//*[@id='SparkEntitySearch']//div[text()='Name']
+PS_Detail_extFlLocation_save_btnId=ok
+
+#Report Column Mapping
+#---------------------------------------------------------------------------------------------
+PS_Detail_repColMapping_basicDetails_xpath=//*[@id='reportColMappingDetail']
+PS_Detail_repColMapping_configNm_textID=pcmpName
+PS_Detail_repColMapping_repCompMapDfn_comboId=reportCmpMappingDfn_gwt_uid_
+PS_Detail_repColMapping_tableInst_gridId=tableInstancesGrid
+PS_Detail_repColMapping_tableInst_add_btnId=toolbar-button-label-reportColumnMappingToolBar.add
+PS_Detail_tableInst_entityId=trigger-tableInst
+PS_Detail_tableInst_entityXpath=//*[@id='trigger-tableInst']
+PS_Detail_repColMapping_tableInst_tableInstCol_combId=TableInstEditor_gwt_uid_
+PS_Detail_repColMapping_tableInstColMap_gridId=reportInstColMapGrid
+PS_Detail_repColMapping_tableInst_ok_BtnId=reportColumnMappingInstanceDetail.ok
+PS_Detail_valueType_txtBx_SelectXpath = //div[starts-with(@id,'floater_comboid')]//input
+PS_Detail_repColMapping_save_BtnId=reportColumnMappingDetail.save
+#Reports and Extracts
+#---------------------------------------------------------------------------------------------
+PS_Detail_reportAndExt_Details_xpath=//div[@id='staticPanel']
+PS_Detail_reportAndExt_repExtDfn_entityId=trigger-rocpsInterfaceTbl
+PS_Detail_reportAndExt_parameterLabel_xpath=//div[@id='parameterLabel']
+PS_Detail_reportAndExt_parameter_FromDt_txtId=From Date
+PS_Detail_reportAndExt_parameter_ToDt_txtId=To Date
+PS_Detail_reportAndExt_save_btnId=adhocRequestDetail.save
+PS_Detail_reportAndExt_account_entityId=trigger-Account
+PS_Detail_reportAndExt_reportType_combId=Report_Type_gwt_uid_
+PS_Detail_reportAndExt_eventType_combId=Event_Type_gwt_uid_
+PS_Detail_reportAndExt_billProfileType_combId=Bill_Profile_Type_gwt_uid_
+PS_Detail_repAndExt_createdDt_IconID=grid_column_header_anchorsearchGrid_pbreCreatedDttm
+PS_Detail_repAndExt_createdDt_menuID=_grid_header_context_menu_sort_descending_item
+
+#Report and Extract Scheduler
+#---------------------------------------------------------------------------------------------
+PS_Detail_reportAndExtSch_Details_xpath=//div[@id='basicLabel']
+PS_Detail_reportAndExtSch_name_txtId=prpcName
+PS_Detail_reportAndExtSch_type_comboId=reportScheduleType_gwt_uid_
+PS_Detail_reportAndExtSch_restartAttemp_txtId=prpcRestartAttempts
+PS_Detail_reportAndExtSch_ftpLoc_comboId=ftpLocation_gwt_uid_
+PS_Detail_reportAndExtSch_chckMissTaks_chckBxId=prpcChkmissingtskFl_InputElement
+PS_Detail_repAndExtSch_InstAdd_btnId=toolbar-button-label-reportDefinationToolBar.Add
+PS_Detail_reportAndExtSch_repExtDefn_entityId=trigger-rocpsInterfaceTblEditor
+PS_Detail_reportAndExtSch_repExtLookBack_textId=reportLookBackEditor
+PS_Detail_repAndExtSch_Instance_gridId=reportDefinationGrid
+PS_Detail_repAndExtSch_Instance_gridmenu_clickXpath=//div[@id='reportDefinationGrid']/div[2]/div/div[2]/div/div[3]/div/div[3]
+PS_Detail_repAndExtSch_parameter_labelXpath=//div[@id='lblReportParam' and text()='Parameters:']
+PS_Detail_repAndExtSch_parameter_FromDt_ComboId=FromDate_gwt_uid_
+PS_Detail_repAndExtSch_parameter_ToDt_ComboId=ToDate_gwt_uid_
+PS_Detail_repAndExtSch_schTime_panelXpath=//div[@id='recurringScheduleTitle']
+PS_Detail_repAndExtSch_schTime_freqEvery_txtId=frequencyRshFrequencyMultiplier
+PS_Detail_repAndExtSch_schTime_freqSelect_comboId=frequencyFrequencyComponent_gwt_uid_
+PS_Detail_repAndExtSch_schTime_freqNextSch_txtId=rshNextDttm
+PS_Detail_repAndExtSch_schTime_Addmenu_btnId=recurringScheduleMenu.add
+PS_Detail_repAndExtSch_schTime_WeekdaysubMenu_btnId=Weekday
+PS_Detail_repAndExtSch_schTime_WeekendsubMenu_btnId=Weekend
+PS_Detail_reportAndExtSch_save_btnId=reportSchedulerConfigDetail.save
+
+#GL Code Definition
+#---------------------------------------------------------------------------------------------
+PS_Detail_glCodeDefn_Details_xpath=//*[@id='glCodeDfnEntityGrid' ]
+PS_Detail_glCodeDefn_name_textId=pgcdName
+PS_Detail_glCodeDefn_entity_GridId=glCodeDfnEntityGrid
+PS_Detail_glCodeDefn_entity_add_BtnId=toolbar-button-label-glCodeDefintionEntityToolBar.Add
+PS_Detail_glCodeDefn_save_BtnId=glCodeDfnDetail.save
+PS_Detail_entitySrch_entityNm_textId=entEntity
+
+
+#GL Code Instance
+#---------------------------------------------------------------------------------------------
+PS_Detail_glCodeInst_Details_xpath=//*[@id='glCodeDfnEntitiesLabel' ]
+PS_Detail_glCodeInst_glCdDfn_entityId=glCodeDfn
+PS_Detail_glCodeInst_glCode_txtId=pgciCode
+PS_Detail_glCodeInst_glCdDfn_comboId=glCodeDfn_gwt_uid_
+PS_Detail_glCodeInst_fromDt_txtId=pgciFromDttm
+PS_Detail_glCodeInst_toDt_txtId=pgciToDttm
+PS_Detail_glCodeInst_entityGridId=glCodeDfnEntitiesGrid
+PS_Detail_glCodeInst_entityValueGridId=glCodeInstEntitiesGrid
+PS_Detail_glCodeInst_entityValue_add_BtnId=toolbar-button-label-glCodeInstEntitiesGridToolbar.Add
+PS_Detail_glCodeInst_save_BtnId=glCodeInstDetail.save
+PS_Detail_glCodeInst_entityValue_iconXpath=//*[@id='trigger-rerateReqEntitySearchComponent']
+
+#Tadig Codes
+#---------------------------------------------------------------------------------------------
+PS_Detail_tadigCodes_code_textID=ptdgCode
+PS_Detail_tadigCodes_detail_xpath=//div[@id='window-scroll-panel']//div[text()='Code']
+PS_Detail_tadigCodes_code_save_btnId=ok
+
+#Roaming Definition
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamingDfn_detail_xpath=//*[@id='firstPanel']//div[text()='Type  Of  Agreement']
+PS_Detail_roamingDfn_typeOfAgg_comboId=prdfAgreementType_gwt_uid_
+PS_Detail_roamingDfn_tadig_comboId=tadigCode_gwt_uid_
+PS_Detail_roamingDfn_secondaryTadig_comboId=secondarytadigCode_gwt_uid_
+PS_Detail_roamingDfn_status_comboId=prdfStatus_gwt_uid_
+PS_Detail_roamingDfn_operator_txtId=prdfOperator
+PS_Detail_roamingDfn_network_txtId=prdfNetwork
+PS_Detail_roamingDfn_MCC_txtId=prdfMcc
+PS_Detail_roamingDfn_MNC_txtId=prdfMnc
+PS_Detail_roamingDfn_considerseconTadig_chckBxId=prdfSecondaryTadigFl_InputElement
+PS_Detail_roamingDfn_cdStartDate_txtId=prdfCdStartDttm
+PS_Detail_roamingDfn_cdEndDate_txtId=prdfCdEndDttm
+PS_Detail_roamingDfn_tdStartDate_txtId=prdfTdStartDttm
+PS_Detail_roamingDfn_tdEndDate_txtId=prdfTdEndDttm
+PS_Detail_roamingDfn_cd_labelXpath=//div[@id='lblCd']
+PS_Detail_roamingDfn_td_labelXpath=//div[@id='lblTd']
+PS_Detail_roamingDfn_save_btnId=roamingDefinitionDetail.save
+
+
+#Roaming Agreement Configuration
+#---------------------------------------------------------------------------------------------
+PSDetail_leftWidgetText_inputDualListXpath=//div[@id='Left Widget Container']//input[@type='text']
+PSDetail_LeftWidgetListAvailable_valueXpath=//div[@id='Left Widget Container']//div[@id='dualList' and text()='dualListValue']
+PSDetail_RightWidgetListAvailable_valueXpath=//div[@id='Right Widget Container']//div[@id='dualList' and text()='dualListValue']
+PS_Detail_roamingAgreemConfig_detail_xpath=//*[@id='lblValidationFields']
+PS_Detail_roamingAgreemConfig_roamDfn_entityId=roamingDefinition
+PS_Detail_roamingAgreemConfig_technology_comboId=praoTechnology_gwt_uid_
+PS_Detail_roamAgCon_fieldMaping_gridId=roamingAgrConfFields
+PS_Detail_roamAgCon_fieldMaping_add_btnId=toolbar-button-label-mappingGridToolbar.Add
+PS_Detail_roamAgCon_fieldMaping_roamingField_comboId=selectedRoamingFields_gwt_uid_
+PS_Detail_roamAgCon_fieldMaping_field_arrowXpath=//div[starts-with(@id,'selectedRoamingFields_gwt_uid_')]//div/b
+PS_Detail_roamAgCon_fieldMaping_field_selecterXpath=//div[starts-with(@id,'selectedRoamingFields_gwt_uid_')]/parent::div//li[contains(text(),'Value')]
+PS_Detail_roamAgCon_fieldMaping_confContexType_btnId=mappingGridToolbar.configContextTypes
+PS_Detail_roamAgCon_confContCallType_detailxpath=//*[@id='window-scroll-panel']//div[text()='Available Call Types']
+PS_Detail_roamAgCon_confContCallType_save_btnId=okButton
+PS_Detail_roamAgCon_fieldPropType_xpath=//div[@id='property']//div[contains(text(),'fieldType')]
+PS_Detail_roamAgCon_fieldProp_MSISDN_expected_chckBx=id_InputElement
+PS_Detail_roamingAgreemConfig_save_btnId=roamingAgreementConfigDetail.save
+
+#Roaming  Configuration
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamingConfig_basicDetailTab_xpath=//*[@id="TabbedPanel"]/div[2]//div[text()='Basic Details']
+PS_Detail_roamingConfig_serviceManagTab_xpath=//*[@id="TabbedPanel"]/div[2]//div[text()='Service Management']
+PS_Detail_roamingConfig_camelSericeTab_xpath=//*[@id="TabbedPanel"]/div[2]//div[text()='CAMEL Service']
+PS_Detail_roamingConfig_BD_conigType_comboId=procConfigType_gwt_uid_
+PS_Detail_roamingConfig_BD_roamDefn_entityId=roamingDefinition
+PS_Detail_roamingConfig_BD_billProfile_entityId=billProfile
+PS_Detail_roamingConfig_BD_version_comboId=roamingFileVersions_gwt_uid_
+PS_Detail_roamingConfig_BD_currency_comboId=currency_gwt_uid_
+PS_Detail_roamingConfig_BD_tapDecPlace_comboId=procDecimalPlaces_gwt_uid_
+PS_Detail_roamConfig_BD_TAPIN_cdStartSeq_txtId=procFilesequenceStartNo
+PS_Detail_roamConfig_BD_TAPIN_tdStartSeq_txtId=procTdStartSequence
+PS_Detail_roamConfig_BD_TAPIN_endNum_txtId=procFilesequenceEndNo
+PS_Detail_roamConfig_BD_TAPIN_restartNum_txtId=procRestartNo
+PS_Detail_roamConfig_BD_TAPIN_missSeq_txtId=procSeqMissingHours
+PS_Detail_roamConfig_BD_TAPIN_histLoad_txtId=procHistoricalLoadDays
+PS_Detail_roamConfig_BD_TAPOUT_ftpLoc_comboId=ftpLocation_gwt_uid_
+PS_Detail_roamConfig_BD_TAPOUT_fileSize_txtId=procFileSize
+PS_Detail_roamConfig_BD_TAPOUT_notifiCutOff_txtId=procNotificationCutoffTime
+PS_Detail_roamConfig_BD_TAPOUT_disabNot_chckBxId=procDisableNotificationFl_InputElement
+PS_Detail_roamConfig_BD_TAPOUT_inclZero_chckBxId=procZeroRatedFl_InputElement
+PS_Detail_roamConfig_BD_RAPOUT_ftpLoc_comboId=ftpLocationRap_gwt_uid_
+PS_Detail_roamConfig_BD_RAPOUT_fileSize_txtId=procFileSizeRap
+PS_Detail_roamConfig_BD_NRTRDEOUT_StartSeq_txtId=filesequenceStartNo
+PS_Detail_roamConfig_BD_NRTRDEOUT_endNum_txtId=filesequenceEndNo
+PS_Detail_roamConfig_BD_NRTRDEOUT_restartNum_txtId=restartNo
+PS_Detail_roamConfig_BD_NRTRDEOUT_eventPerFl_txtId=procEventsPerFile
+PS_Detail_roamConfig_BD_NRTRDEOUT_FlSize_txtId=procFileSizeNrtrde
+PS_Detail_roamConfig_BD_NRTRDEOUT_dailyFlLim_txtId=procDailyFileLimit
+PS_Detail_roamConfig_BD_NRTRDEOUT_ftpLoc_comboId=ftpLocationNrtrde_gwt_uid_
+PS_Detail_roamConfig_BD_NRTRDEOUT_callAgeTm_txtId=procCallAgeTimeFrame
+PS_Detail_roamConfig_BD_NRTRDEOUT_exclSMS_chkBXId=procSmsMtRecordsFl_InputElement
+PS_Detail_roamConfig_BD_NRTRDEOUT_exclGPRS_chkBXId=procGprsRecordsFl_InputElement
+PS_Detail_roamConfig_BD_HUROUT_disabHurGen_chckBxId=procDisableHurGeneration_InputElement
+PS_Detail_roamConfig_BD_HUROUT_thresAmt_txtId=procThresholdAmount
+PS_Detail_roamConfig_BD_HUROUT_thresPeriod_txtId=procThresholdPeriod
+PS_Detail_roamConfig_BD_HUROUT_sendMethod_comboId=procSendMethod_gwt_uid_
+PS_Detail_roamConfig_BD_HUROUT_emailConf_gridId=emailGrid
+PS_Detail_roamConfig_BD_HUROUT_emailConf_add_btnId=toolbar-button-label-emailToolbar.Add
+PS_Detail_roamConfig_BD_HUROUT_emailConf_email_txtId=emailEditor
+PS_Detail_roamConfig_BD_HUROUT_faxConf_gridId=faxGrid
+PS_Detail_roamConfig_BD_HUROUT_faxConf_add_btnId=toolbar-button-label-faxToolbar.Add
+PS_Detail_roamConfig_BD_HUROUT_faxConf_fax_txtId=faxEditor
+PS_Detail_roamConfig_servManag_TapOut_gridId=configserviceGrid
+PS_Detail_roamConfig_servManag_TapOut_add_btnId=toolbar-button-label-serviceToolbar.Add
+PS_Detail_roamConfig_servMan_TapOut_roamSer_combId=roamingServiceEditor_gwt_uid_
+PS_Detail_roamConfig_servMan_TapOut_tdStartDt_txtId=tdStartDateEditor
+PS_Detail_roamConfig_servMan_TapOut_tdEndDt_txtId=tdEndDateEditor
+PS_Detail_roamConfig_servMan_TapOut_cdStartDt_txtId=cdStartDateEditor
+PS_Detail_roamConfig_servMan_TapOut_cdEndDt_txtId=cdEndDateEditor
+PS_Detail_roamConfig_servMan_TapOut_defaultServ_chckBxId=isTapOutDefaultServiceEditor_checked_column_field_image
+PS_Detail_roamConfig_servMan_TapOut_exclContext_btnId=toolbar-button-label-serviceToolbar.exclusionContexts
+PS_Detail_roamConfig_servMan_TapOut_exclContext_detailxpath=//*[@id='window-scroll-panel']//div[text()='Available Call Types']
+PS_Detail_roamConfig_servMan_TapOut_exclContext_save_btnId=okButton
+PS_Detail_roamConfig_servManag_TapOut_discount_combId=roamingDiscountEditor_gwt_uid_
+PS_Detail_roamConfig_servManag_TapIn_gridId=serviceSecondGrid
+PS_Detail_roamConfig_servManag_TapIn_add_btnId=toolbar-button-label-serviceSecondToolbar.Add
+PS_Detail_roamConfig_servMan_TapIn_roamSer_combId=tapInServiceEditor_gwt_uid_
+PS_Detail_roamConfig_servMan_TapIn_tdStartDt_txtId=tapInTdStartDateEditor
+PS_Detail_roamConfig_servMan_TapIn_tdEndDt_txtId=tapInTdEndDateEditor
+PS_Detail_roamConfig_servMan_TapIn_cdStartDt_txtId=tapInCdStartDateEditor
+PS_Detail_roamConfig_servMan_TapIn_cdEndDt_txtId=tapInCdEndDateEditor
+PS_Detail_roamConfig_servMan_TapIn_defaultServ_chckBxId=isTapInDefaultServiceEditor_checked_column_field_image
+PS_Detail_roamingConfig_BD_save_btnId=roamingConfigurationDetail.save
+PS_Detail_roamConfig_servManag_TapIn_tariffEntityXpath=//*[@id='trigger-tapInTariffEditor']
+PS_Detail_roamConfig_servManag_TapIn_discount_combId=tapInDiscountEditor_gwt_uid_
+PS_Detail_roamConfig_servManag_TapIn_salesTaxGrp_combId=tapInSalesTaxGroupEditor_gwt_uid_
+PS_Detail_roamingConfig_camelSericeTab_isCamelSupp_checkbx=procCamelSupported_InputElement
+PS_Detail_roamingConfig_camelSericeTab_camelServiceLevel_comboId=camelServiceLevel_gwt_uid_
+PS_Detail_roamConfig_hur_cdStartDt=procHurCdStartDttm
+PS_Detail_roamConfig_hur_cdEndDt=procHurCdEndDttm
+PS_Detail_roamConfig_nrtrde_cdStartDt=procCdStartDttm
+PS_Detail_roamConfig_nrtrde_cdEndDt=procCdEndDttm
+#IMSI Management
+#---------------------------------------------------------------------------------------------
+PS_Detail_IMSIManag_detail_xpath=//*[@id='lblbasicDetails']
+PS_Detail_IMSIManag_roamingDfn_entityId=roamingdefinition
+PS_Detail_IMSIManag_MCC_txtId=prdfMcc
+PS_Detail_IMSIManag_MNC_txtId=prdfMnc
+PS_Detail_IMSIManag_MSIN_gridId=msinGrid
+PS_Detail_IMSIManag_MSIN_add_btnId=toolbar-button-label-msinToolbar.Add
+PS_Detail_IMSIManag_MSIN_type_comboId=TypeEditor_gwt_uid_
+PS_Detail_IMSIManag_MSIN_value_txtId=msinEditor
+PS_Detail_IMSIManag_save_btnId=imsiManagementDetail.save
+
+#Test SIM Management
+#---------------------------------------------------------------------------------------------
+PS_Detail_TestSIMManag_detail_xpath=//*[@id='firstPanel']//div[text()='Direction']
+PS_Detail_TestSIMManag_Direction_comboId=ptsmDirection_gwt_uid_
+PS_Detail_TestSIMManag_RoamingDfn_entityId=tadig
+PS_Detail_TestSIMManag_PartnerMCC_txtId=ptsmMccIn
+PS_Detail_TestSIMManag_PartnerMNC_txtId=ptsmMncIn
+PS_Detail_TestSIMManag_HomeOp_txtId=operator
+PS_Detail_TestSIMManag_HomeMCC_txtId=ptsmMcc
+PS_Detail_TestSIMManag_HomeMNC_txtId=ptsmMnc
+PS_Detail_TestSIMManag_IMSI_txtId=ptsmImsi
+PS_Detail_TestSIMManag_MSISDN_txtId=ptsmMsisdn
+PS_Detail_TestSIMManag_validFrom_txtId=ptsmValidFromDttm
+PS_Detail_TestSIMManag_validTo_txtId=ptsmValidToDttm
+PS_Detail_TestSIMManag_save_btnId=testSimManagementDetail.save
+
+#NRTRDE Report
+#---------------------------------------------------------------------------------------------
+PS_Detail_SearchScreen_ColumnHeaderID= grid_column_header_searchGrid_
+PS_Detail_PopupScreen_ColumnHeaderID= grid_column_header_undefined_
+PS_Detail_NrtrdeReport_direc_comboId=pnrtDirection_gwt_uid_
+PS_Detail_NrtrdeReport_fileNm_txtId=pnrtFileName
+PS_Detail_NrtrdeReport_fileNm_RepScreenXpath=//*[@id="filterpanel-header-centerpanel"]//div[text()='File Name']
+
+#NRTRDE File Status
+#---------------------------------------------------------------------------------------------
+PS_Detail_NrtrdeFlStatus_direc_comboId=pnfsDirection_gwt_uid_
+PS_Detail_NrtrdeFlStatus_fileNm_txtId=pnfsFileName
+PS_Detail_NrtrdeFlStatus_sender_txtId=pnfsSender
+PS_Detail_NrtrdeFlStatus_recipient_txtId=pnfsReceiver
+PS_Detail_NrtrdeFlStatus_Record_context_comboId=pnctCallType_gwt_uid_
+PS_Detail_NrtrdeRecordScreen_contextHeader_xpath=//*[@id="filterpanel-header-centerpanel"]//div[text()='Context']
+
+#HUR Files
+#---------------------------------------------------------------------------------------------
+PS_Detail_HurFiles_fileNm_txtId=phfsFileName
+PS_Detail_HurFiles_isNotificFl_comboId=phfsIsNotificationFile_gwt_uid_
+PS_Detail_HurFiles_sender_txtId=phfsSender
+PS_Detail_HurFiles_recipient_txtId=phfsRecepient
+PS_Detail_HurFiles_popupXpath=//*[@id='window-scroll-panel']
+
+#Roaming File Status
+#-----------------------------------------------
+PS_Detail_RoamingFlStatus_fileType_comboId=prfConfigType_gwt_uid_
+PS_Detail_RoamingFlStatus_sender_txtId=prfsSender
+PS_Detail_RoamingFlStatus_recepient_txtId=prfsRecepient
+PS_Detail_RoamingFlStatus_fileNm_txtId=prfsFileName
+PS_Detail_RoamingFlStatus_isNotifcFl_comboId=prfsIsNotificationFile_gwt_uid_
+PS_Detail_RoamingFlStatus_failureReason_comboId=prfsFailureReason_gwt_uid_
+PS_Detail_RoamingFlStatus_NotifcSent_comboId=prfsIsNotificationSent_gwt_uid_
+PS_Detail_RoamingFlStatus_linkedTapFile_txtId=linkedTapRoamingFileStatus$prfsFileName
+PS_Detail_RoamFlStatus_RoamRec_callType_comboId=ptctCallType_gwt_uid_
+PS_Detail_RoamingRecordScreen_fileNmHeader_xpath=//*[@id="filterpanel-header-centerpanel"]//div[contains(text(),'File Name')]
+PS_Detail_RoamingFlStatus_popupXpath=//*[@id='window-scroll-panel']
+PS_Detail_RoamFlStatus_TapErr_context_comboId=RoamingErrorMessage_premContext_gwt_uid_
+PS_Detail_RoamFlStatus_TapErr_eventDt_textId=terDttm
+PS_Detail_RoamFlStatus_TapErr_severity_comboId=RoamingErrorMessage_premSeverity_gwt_uid_
+PS_Detail_TapError_ContextHeader_xpath=//*[@id="filterpanel-header-centerpanel"]//div[text()='Context']
+PS_Detail_MissingStop_fileNmHeader_xpath=//*[@id="window-scroll-panel"]//div[text()='File  Name']
+PS_Detail_RoamFlStatus_RoamFlTaskStat_strmStg_comboId=task_streamStage_gwt_uid_
+PS_Detail_RoamFlStatus_SeveRec_TapfileNm_txtId=prfsLinkedFileName
+PS_Detail_RoamFlStatus_RoamFlTaskStat_flNm_textId=#fileName
+PS_Detail_RoamFlStatus_chargeInfo_chargedItem_comboId=prciCode_gwt_uid_
+PS_Detail_RoamFlStatus_chargeAndTaxDetail_xpath=//*[@id="lblChargeDetail"]
+PS_Detail_RoamFlStatus_recordingEntities_xpath=//*[@id='recordEntityGrid']
+PS_Detail_RoamFlStatus_chargeAndTaxDetail_chgDet_gridId=chargeDetailGrid
+PS_Detail_RoamFlStatus_chargeAndTaxDetail_taxInfo_gridId=taxinfoGrid
+PS_Detail_RoamFlStatus_chargeAndTaxDetail_closeBtnId=chargeAndTaxDetail.Close
+PS_Detail_RoamFlStatus_recordEntities_closeBtnId=gprsRecordEntityDetail.Close
+
+
+#AccrualModelling
+PS_Detail_accrualMod_name_txtID = pamdName
+PS_Detail_accrualMod_prefix_txtID = pamdPrefix
+PS_Detail_accrualMod_accrualModComp_comboID = ardComponent_gwt_uid_
+PS_Detail_accrualMod_provisionComo_comboID = provisionComponent_gwt_uid_
+PS_Detail_accrualMod_glCodeComp_comboID = glComponent_gwt_uid_
+PS_Detail_accrualMod_bilateralMod_comboid = brdModelling_gwt_uid_
+PS_Detail_accrualMod_schema_comboID = schemaTbl_gwt_uid_
+PS_Detail_accrualMod_tableInstance_gridID = tinGrid
+PS_Detail_accrualMod_tableInstance_textID = tinDisplayName
+PS_Detail_accrualMod_tableInstance_comboID = tableInstanceEditor
+PS_Detail_accrualMod_columnDetail_addBtnID = ardModlingColGridToolbar.add
+PS_Detail_accrualMod_columnDetail_gridID = ardModlingColGrid
+PS_Detail_accrualMod_fieldName_txtID = fieldNameEditor
+PS_Detail_accrualMod_displayName_txtID = displayNameEditor
+PS_Detail_accrualMod_datatype_txtID = dataTypeEditor
+PS_Detail_accrualMod_tableColMap_gridID = ardModelingColMapGrid
+PS_Detail_accrualMod_save_btnID = ardModelingDetail.save
+
+#AccrualOverviewModelling
+PS_Detail_accrualOvMod_name_txtID = paovName
+PS_Detail_accrualOvMod_tablePrefix_txtID = paovTblPrefix
+PS_Detail_accrualOvMod_schema_comboID = schemaTbl_gwt_uid_
+PS_Detail_accrualOvMod_filterComp_comboID = filterComponent_gwt_uid_
+PS_Detail_accrualOvMod_fxrule_comboID = fxRuleComponent_gwt_uid_
+PS_Detail_accrualOvMod_graceDays_txtID = paovNumDays
+PS_Detail_accrualOvMod_ardtable_comboID = tableInst_gwt_uid_
+PS_Detail_accrualOvMod_amtColumn_comboID = amtTableColumn_gwt_uid_
+PS_Detail_accrualOvMod_billbreakdown_gridID = billBreakdownGrid
+PS_Detail_accrualOvMod_billbreakdown_addbtnID = billBreakdownGridToolbar.Add
+PS_Detail_accrualOvMod_billConfig_comboID = billBreakdownConfig_gwt_
+PS_Detail_accrualOvMod_billAmt_comboID = amtTableColumn_gwt_uid_
+PS_Detail_accrualOvMod_bill_okBtn = ovrModelingBilBreakdownDetail.Ok
+PS_Detail_accrualOvMod_mesuredEstimate_chkBx = paovIsMesAccDiffFl_InputElement
+PS_Detail_accrualOvMod_showacceptedDraft_chkbx = paovIsDraftAccDiffFL_InputElement
+PS_Detail_accrualOvMod_adj_chkID = paovIsTlaAmtDiffFl_InputElement
+PS_Detail_accrualOvMod_crossfx_chckbx = paovShowCrossFxFl_InputElement
+PS_Detail_accrualOvMod_carryforward_chkBx = paovCarryFwdAdjFl_InputElement
+PS_Detail_accrualOvMod_computed_gridID = computedColumnGrid
+PS_Detail_accrualOvMod_fieldName_txtID = paocFieldNameEditor
+PS_Detail_accrualOvMod_displayName_txtID = paocFieldDisplayEditor
+PS_Detail_accrualOvMod_type_txtID = paocDataTypeEditor_gwt_uid_
+PS_Detail_accrualOvMod_saveBtnID = accrOverviewModellingDetail.save
+
+#Roaming Taxation
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamingTaxation_detailXpath=//*[@id='window-scroll-panel']//div[text()='Tax']
+PS_Detail_roamingTaxation_taxCode_txtId=prtxTaxCode
+PS_Detail_roamingTaxation_taxType_ComboId=roamingTaxType_ptxtType_gwt_uid_
+PS_Detail_roamingTaxation_tax_ComboId=salesTax_pstxName_gwt_uid_
+PS_Detail_roamingTaxation_chargeType_ComboId=chargeType_pchtDescription_gwt_uid_
+PS_Detail_roamingTaxation_taxIndicator_ComboId=roamingTaxIndicator_prtiDescription_gwt_uid_
+PS_Detail_roamingTaxation_saveBtnId=ok
+
+#CallType Level1
+#---------------------------------------------------------------------------------------------
+PS_Detail_callTypeLevel1_detailXpath=//*[@id='window-scroll-panel']//div[text()='Value']
+PS_Detail_callTypeLevel1_value_txtId=pct1Value
+PS_Detail_callTypeLevel1_description_txtId=pct1Description
+PS_Detail_callTypeLevel1_save_btnId=ok
+
+#CallType Level2
+#---------------------------------------------------------------------------------------------
+PS_Detail_callTypeLevel2_detailXpath=//*[@id='window-scroll-panel']//div[text()='Value']
+PS_Detail_callTypeLevel2_value_txtId=pct2Value
+PS_Detail_callTypeLevel2_description_txtId=pct2Description
+PS_Detail_callTypeLevel2_save_btnId=ok
+
+#CallType Group
+#---------------------------------------------------------------------------------------------
+PS_Detail_callTypeGrp_detailXpath=//*[@id='window-scroll-panel']//div[text()='Group Name']
+PS_Detail_callTypeGrp_groupNm_txtId=pctgName
+PS_Detail_callTypeGrp_callTypeL1_comboId=callTypeLevel1_pct1Description_gwt_uid_
+PS_Detail_callTypeGrp_callTypeL2_comboId=callTypeLevel2_pct2Description_gwt_uid_
+PS_Detail_callTypeGrp_callTypeL3_txtId=pctgCallTypeLevel3
+PS_Detail_callTypeGrp_save_btnId=ok
+
+#Band Type To Call Type Grp Mapping
+#---------------------------------------------------------------------------------------------
+PS_Detail_bandTyCalTyGrpMap_detailXpath=//*[@id='window-scroll-panel']//div[text()='Band Type']
+PS_Detail_bandTyCalTyGrpMap_bandType_comboId=bandType_bdtName_gwt_uid_
+PS_Detail_bandTyCalTyGrpMap_callTypeGrp_comboId=callTypeGroup_pctgName_gwt_uid_
+PS_Detail_bandTyCalTyGrpMap_save_btnId=ok
+
+#Tariff Type To Call Type Grp Mapping
+#---------------------------------------------------------------------------------------------
+PS_Detail_tarTyCalTyGrpMap_detailXpath=//*[@id='window-scroll-panel']//div[text()='Tariff Type']
+PS_Detail_tarTyCalTyGrpMap_tariffType_comboId=tariffType_tftName_gwt_uid_
+PS_Detail_tarTyCalTyGrpMapp_callTypeGrp_comboId=callTypeGroup_pctgName_gwt_uid_
+PS_Detail_tarTyCalTyGrpMap_save_btnId=ok
+
+#Charge Type
+#---------------------------------------------------------------------------------------------
+PS_Detail_chargeType_detailXpath=//*[@id='window-scroll-panel']//div[text()='Value']
+PS_Detail_chargeType_value_txtId=pchtValue
+PS_Detail_chargeType_description_txtId=pchtDescription
+PS_Detail_chargeType_save_btnId=ok
+
+#Roaming Tax Type
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamTaxType_detailXpath=//*[@id='window-scroll-panel']//div[text()='Value']
+PS_Detail_roamTaxType_value_txtId=ptxtValue
+PS_Detail_roamTaxType_type_txtId=ptxtType
+PS_Detail_roamTaxType_description_txtId=ptxtDescription
+PS_Detail_roamTaxType_save_btnId=ok
+
+#Roaming Tax Indiactor
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamTaxIndic_detailXpath=//*[@id='window-scroll-panel']//div[text()='Value']
+PS_Detail_roamTaxIndic_value_txtId=prtiValue
+PS_Detail_roamTaxIndic_description_txtId=prtiDescription
+PS_Detail_roamTaxIndic_save_btnId=ok
+
+#Roaming Service
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamService_detailXpath=//*[@id='window-scroll-panel']//div[text()='Name']
+PS_Detail_roamService_name_txtId=prsvName
+PS_Detail_roamService_code_txtId=prsvCode
+PS_Detail_roamService_save_btnId=ok
+
+#Roaming Expression Group
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamExpGrp_detailXpath=//*[@id='window-scroll-panel']//div[text()='Group Name']
+PS_Detail_roamExpGrp_name_txtId=pregGrpName
+PS_Detail_roamExpGrp_save_btnId=ok
+
+#Roaming Service Match Expression 
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamServMatchExp_detailXpath=//*[@id='window-scroll-panel']//div[text()='Field']
+PS_Detail_roamServMatchExp_ExpGrpFilter_comboId=roamingExpGrp_gwt_uid_
+PS_Detail_roamServMatchExp_ExpGrp_comboId=roamingExpGrp_pregGrpName_gwt_uid_
+PS_Detail_roamServMatchExp_field_comboId=roamingField_prfdName_gwt_uid_
+PS_Detail_roamServMatchExp_matchExp_txtId=prseExpression
+PS_Detail_roamServMatchExp_orderNo_txtId=prseOrderNo
+PS_Detail_roamServMatchExp_joinType_comboId=prseJoinType_gwt_uid_
+PS_Detail_roamServMatchExp_btnId=ok
+
+#Roaming Service Context Mapping
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamServContMap_detailXpath=//*[@id='window-scroll-panel']//div[text()='Context']
+PS_Detail_roamServContMap_ContextFilter_comboId=roamingContext_gwt_uid_
+PS_Detail_roamServContMap_Context_comboId=roamingContext_prcxName_gwt_uid_
+PS_Detail_roamServContMap_Service_comboId=roamingService_prsvName_gwt_uid_
+PS_Detail_roamServContMap_matchExpGrp_comboId=roamingExpGrp_pregGrpName_gwt_uid_
+PS_Detail_roamServContMap_orderNo_txtId=prvmOrderNo
+PS_Detail_roamServContMap_btnId=ok
+
+#Roaming Discounting
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamDiscount_detailXpath=//*[@id='window-scroll-panel']//div[text()='Discount Type']
+PS_Detail_roamDiscount_discountName_txtId=prdsName
+PS_Detail_roamDiscount_discountCode_txtId=prdsDiscountCode
+PS_Detail_roamDiscount_discountType_comboId=prdsDiscountType_gwt_uid_
+PS_Detail_roamDiscount_fixedDiscVal_txtId=prdsFixedDiscountValue
+PS_Detail_roamDiscount_discRate_txtId=prdsDiscountRate
+PS_Detail_roamDiscount_applFor_comboId=prdsApplicableFor_gwt_uid_
+PS_Detail_roamDiscount_save_btnId=ok
+
+
+#Roaming Charge Item
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamChgItem_detailXpath=//*[@id='window-scroll-panel']//div[text()='Code']
+PS_Detail_roamChgItem_code_txtId=prciCode
+PS_Detail_roamChgItem_value_txtId=prciValue
+PS_Detail_roamChgItem_save_btnId=ok
+
+#Roaming Charge Item Metric Type Map
+#---------------------------------------------------------------------------------------------
+PS_Detail_roamChgItemMetTypeMap_detailXpath=//*[@id='window-scroll-panel']//div[text()='Charged Item']
+PS_Detail_roamChgItemMetTypeMap_tarifMetType_combId=tariffMetricType_tfmName_gwt_uid_
+PS_Detail_roamChgItemMetTypeMap_chgItem_comboId=roamingChargedItem_prciCode_gwt_uid_
+PS_Detail_roamChgItemMetTypeMap_save_btnId=ok
+
+#IMF Currency
+#---------------------------------------------------------------------------------------------
+PS_Detail_imfCurrency_detailXpath=//*[@id='window-scroll-panel']//div[text()='Currency']
+PS_Detail_imfCurrency_imfCurrencyName_txtId=pmfcCurName
+PS_Detail_imfCurrency_currency_comboId=currency_curName_gwt_uid_
+PS_Detail_imfCurrency_save_btnId=ok
+
+#Currency
+#---------------------------------------------------------------------------------------------
+PS_Detail_currency_detailXpath=//*[@id='window-scroll-panel']//div[text()='Name']
+PS_Detail_Currency_isoCode_txtId=curIsoCd
+PS_Detail_Currency_name_txtId=curName
+PS_Detail_Currency_culture_txtId=curCulture
+PS_Detail_Currency_symbol_txtId=curSymbol
+PS_Detail_Currency_save_btnId=ok
+
+#IMF Exchange Rate Import
+#---------------------------------------------------------------------------------------------
+PS_Detail_imfExchRateImp_exchRateAction_detailXpath=//*[@id='imfExchangeRateDetailDetail']//div[contains(text(),'From Currency ISO Code')]
+PS_Detail_imfExchRateImp_impFlName_textId=taskOutputFile$fileTbl$filFilename
+PS_Detail_imfExchRateImp_exchRateAction_gridId=imfExchangeRateDetailDetail
+PS_Detail_imfExchRateImp_exchRateAction_cancel_BtnId=imfExchangeRateDetailDetail.cancel
+PS_Detail_CrossFxRate_sourceCurr_IconID=grid_column_header_anchorsearchGrid_sourceCurrency$curIsoCd
+PS_Detail_CrossFxRate_sourceCurrSort_menuID=_grid_header_context_menu_sort_ascending_item
+
+#TAP Out Errored & Excluded Records
+#---------------------------------------------------------------------------------------------
+PS_Detail_tapOutErrExclRec_viewAction_detailXpath=//*[@id='window-scroll-panel']//div[contains(text(),'Event ID')]
+PS_Detail_tapOutErrExclRec_recipientTadig_comboId=tadigCode_gwt_uid_
+PS_Detail_tapOutErrExclRec_taskDtTime_IconID=grid_column_header_anchorsearchGrid_task$tskStartDttm
+PS_Detail_tapOutErrExclRec_taskDtTime_menuID=_grid_header_context_menu_sort_descending_item
+PS_Detail_tapOutErrExclRec_viewAction_close_Xpath=//*[@id="ExcludedEvent" or @id='ErroredEvent']//a[@class='roc-dialog-close']
+
+#BulkEntityExport
+#----------------------------------------------------------------------------------------------
+PS_Detail_bulkExport_name=pberName
+PS_Detail_bulkExport_entityGrid=exportGrid
+PS_Detail_bulkExport_entityComboBox=entityEditor_gwt_uid_
+PS_Detail_bulkExport_dependentClick=grid_column_header_undefined_entityDisplay
+PS_Detail_bulkExport_itemSelect=toolbar-button-label-selectedItemGridToolbar.selectItem
+PS_Detail_bulkExport_save=bulkExportRequestDetail.save
+PS_Detail_bulkExport_saveAndExport=bulkExportRequestDetail.saveAndExport
+PS_Detail_bulkExport_schedule=Schedule
+PS_Detail_bulkExport_scheduleTask=ScheduleBulkDataExportTaskComponent
+PS_Detail_bulkExport_ok=//*[@id='ok']
+PS_Detail_bulkExport_dependentGrid=dependentGrid
+Search_identifierDfn_gridColTxtId = peidName
+Search_ruleGrp_gridColTxtId = pmrgName
+
+#Report Modelling
+#---------------------------------------------------------------------------------------------
+PS_Detail_repModelling_detailXpath=//*[@class='gwt-field-label' and text()='Name']
+PS_Detail_repModelling_name_txtId=prmlName
+PS_Detail_repModelling_prefix_txtId=prmlPrefix
+PS_Detail_repModelling_summaryType_comboId=prmlSummary_gwt_uid_
+PS_Detail_repModelling_summaryName_comboId=prmlSummaryList_gwt_uid_
+PS_Detail_repModelling_schema_comboId=schemaTbl_gwt_uid_
+PS_Detail_repModellingColGrid_gridId=rptModellingColGrid
+PS_Detail_repModellingColGrid_summField_comboId=BrdTclEditor_gwt_uid_
+PS_Detail_repModelling_save_btnId=reportModellingDetail.save
+
+#Provision Status Group
+#---------------------------------------------------------------------------------------------
+PS_Detail_provStatusGrp_detailXpath=//*[@class='gwt-field-label' and text()='Name']
+PS_Detail_provStatusGrp_name_txtId=ppsgName
+PS_Detail_provStatusGrp_status_gridId=statusesGrid
+PS_Detail_provStatusGrp_status_add_btnId=toolbar-button-label-statusToolbar.add
+PS_Detail_provStatusGrp_status_popUpDetailXpath=//*[@id='window-scroll-panel']//div[contains(text(),'Name')]
+PS_Detail_provStatusGrp_status_name_txtId=ppstName
+PS_Detail_provStatusGrp_status_initial_chckBxId=ppstInitialFl_InputElement
+PS_Detail_provStatusGrp_status_ok_BtnId=provisionStatusDetail.ok
+PS_Detail_provStatusGrp_transitions_gridId=statusTransitsGrid
+PS_Detail_provStatusGrp_transitions_add_BtnId=toolbar-button-label-statusTransitToolbar.add
+PS_Detail_provStatusGrp_transitions_popUpDetailXpath=//*[@id='window-scroll-panel']//div[contains(text(),'From')]
+PS_Detail_provStatusGrp_transitions_from_combId=fromProvisionStatus_gwt_uid_
+PS_Detail_provStatusGrp_transitions_to_combId=toProvisionStatus_gwt_uid_
+PS_Detail_provStatusGrp_transitions_ok_btnId=provisionStatusTransitDetail.ok
+PS_Detail_provStatusGrp_save_btnId=provisionStatusGroupDetail.save
+
+#Usage Backout Request
+#---------------------------------------------------------------------------------------------
+PS_Detail_usgBackoutReq_detailXpath=//*[@class='gwt-field-label' and text()='File  Collection']
+PS_Detail_usgBackoutReq_fileCollection_comboId=fileCollection_gwt_uid_
+PS_Detail_usgBackoutReq_desc_txtId=pubrDesc
+PS_Detail_usgBackoutReq_collFile_gridId=backoutFilesGrid
+PS_Detail_usgBackoutReq_collFile_add_btnId=toolbar-button-label-backoutFilesGridToolbar.Add
+PS_Detail_usgBackoutReq_saveBtnId=usageBackoutReqDetail.save
+PS_Detail_usgBackoutReq_closeBtnId=usageBackoutReqDetail.cancel
+
+#Event Usage Request Scheduler
+#---------------------------------------------------------------------------------------------
+PS_Detail_eventUsgReqSch_detailXpath=//*[@class='gwt-field-label' and text()='Description']
+PS_Detail_eventUsgReqSch_name_txtId=peusName
+PS_Detail_eventUsgReqSch_description_txtareaId=peusDesc
+PS_Detail_eventUsgReqSch_eventLookback_txtId=peusLookbackDays
+PS_Detail_eventUsgReqSch_entities_gridId=evtUsgRshEntitiesGrid
+PS_Detail_eventUsgReqSch_entities_add_btnId=toolbar-button-label-evtUsgRshEntsToolbar.Add
+PS_Detail_eventUsgReqSch_entities_editor_comboId=evtUsgRshEntEditor_gwt_uid_
+PS_Detail_eventUsgReqSch_value_gridId=evtUsgRshValuesGrid
+PS_Detail_eventUsgReqSch_value_add_btnId=toolbar-button-label-evtUsgRshEntValuesToolbar.Add
+PS_Detail_eventUsgReqSch_save_btnId=evtUsageReqSchedulerDetail.save
+
+#File Upload Category
+#---------------------------------------------------------------------------------------------
+PS_Detail_fileUploadCategory_detailXpath=//*[@id='window-scroll-panel']//div[text()='Category']
+PS_Detail_fileUploadCategory_name_txtId=pfucName
+PS_Detail_fileUploadCategory_save_BtnId=ok
+	
+#Upload File Type
+#---------------------------------------------------------------------------------------------
+PS_Detail_UploadFileType_detailXpath=//*[@id='window-scroll-panel']//div[text()='File Extension']
+PS_Detail_UploadFileType_name_txtId=puftName
+PS_Detail_UploadFileType_save_BtnId=ok
+
+#Category File Collection Mapping
+#---------------------------------------------------------------------------------------------
+PS_Detail_CategFlCollecMapping_detailXpath=//*[@id='window-scroll-panel']//div[text()='Category']
+PS_Detail_CategFlCollecMapping_category_comboId=fileUploadCategory_pfucName_gwt_uid_
+PS_Detail_CategFlCollecMapping_fileCollection_comboId=fileCollection_fcnName_gwt_uid_
+PS_Detail_CategFlCollecMapping_save_BtnId=ok
+
+#FileUpload
+#----------------------------------------------------------------------------------------------
+PS_Detail_fileUpload_categoryCombo=fileUploadCategory_gwt_uid_
+PS_Detail_fileUpload_fileCollection=fileCollection_gwt_uid_
+PS_Detail_fileUpload_file=//div[@id='trigger-scucFilePath']
+PS_Detail_fileUpload_uploadTrigger=//div[@class='roc-trigger roc-fileupload-trigger']
+PS_Detail_fileUpload_uploadButton=FileUpload-upload
+PS_Detail_fileUpload_commentBox=pfupComment
+PS_Detail_fileUpload_save=fileUploadDetail.save
+
+#IP Measurement Configuration
+#---------------------------------------------------------------------------------------------
+PS_Detail_ipMeasuConfig_detailXpath=//*[@class='gwt-field-label' and text()='Name']
+PS_Detail_ipMeasuConfig_name_txtId=pistName
+PS_Detail_ipMeasuConfig_eventType_comboId=eventType_gwt_uid_
+PS_Detail_ipMeasuConfig_component_comboId=component_gwt_uid_
+PS_Detail_ipMeasuConfig_disableCalcComp=pistDisableCalcFl_InputElement
+PS_Detail_ipMeasuConfig_properties_gridId=ipMeasurementPropertyGrid
+PS_Detail_ipMeasuConfig_properties_value_comboId=tclEditor_gwt_uid_
+PS_Detail_ipMeasuConfig_save_btnId=ipMeasurementConfigDetail.save
+
+#Tariff Type To Charge Type Map
+#---------------------------------------------------------------------------------------------
+PS_Detail_TariffTyTOChgTyMap_detailXpath=//*[@id='window-scroll-panel']//div[text()='Tariff Type']
+PS_Detail_TariffType_detailXpath=//*[@id='window-scroll-panel']//div[text()='Name']
+PS_Detail_TariffTyTOChgTyMap_tariffType_combId=tariffType_tftName_gwt_uid_
+PS_Detail_TariffTyTOChgTyMap_chargeType_combId=chargeType_pchtDescription_gwt_uid_
+PS_Detail_TariffTyTOChgTyMap_save_BtnId=ok
+
+#PDF to Excel template
+#---------------------------------------------------------------------------------------------
+PS_Detail_pdfExlTemp_name=ppxtName
+PS_Detail_pdfExlTemp_summaryStart=ppxtStartPageNo
+PS_Detail_pdfExlTemp_summaryEnd=ppxtEndPageNo
+PS_Detail_pdfExlTemp_footerLines=ppxtFooterLineNo
+PS_Detail_pdfExlTemp_skipPages=ppxtIgnorePages
+PS_Detail_pdfExlTemp_outputPath=ppxtExcelOutputPath
+PS_Detail_pdfExlTemp_pdfFilename=trigger-pdfFileName
+PS_Detail_pdfExlTemp_excelExtension=ppxtExtension_gwt_uid_
+PS_Detail_pdfExlTemp_convertButton=btnConvert
+PS_Detail_pdfExlTemp_sheet=pdfToExcelMapping_gwt_uid_
+PS_Detail_pdfExlTemp_grid=genericGrid
+PS_Detail_pdfExlTemp_uploadTrigger=//div[@class="roc-trigger roc-fileupload-trigger"]
+PS_Detail_pdfExlTemp_addButton=commonGridToolbar.Add
+PS_Detail_pdfExlTemp_uploadButton=FileUpload-upload
+PS_Detail_pdfExlTemp_saveButton=pdfExcelTemplateDetail.save
+
+#PDF to Excel Conversion
+#---------------------------------------------------------------------------------------------
+
+PS_Detail_pdfExlConv_name=ppecName
+PS_Detail_pdfExlConv_template=ppecTemplateName_gwt_uid_
+PS_Detail_pdfExlConv_pdfFilename=trigger-ppecPdfFileName
+PS_Detail_pdfExlConv_uploadTrigger=//div[@class="roc-trigger roc-fileupload-trigger"]
+PS_Detail_pdfExlConv_uploadButton=FileUpload-upload
+PS_Detail_pdfExlConv_convertButton=btnConvert
+PS_Detail_pdfExlConv_saveButton=pdfExcelConversionDetail.save
+
+#Alert Event
+#----------------------------------------------------------------------------------------------
+PS_Detail_AlertEvent_AlertEventName=alertEvent.paevName
+PS_Detail_AlertEvent_AlertGroup=alertEvent_alertEventGroup_gwt_uid_
+PS_Detail_AlertEvent_Entity=alertEvent.entityTbl
+PS_Detail_AlertEvent_Dfn=alertEvent_alertDfn_gwt_uid_
+PS_Detail_AlertEvent_PriorityHigh=priorityGroupHigh_InputElement
+PS_Detail_AlertEvent_PriorityMedium=priorityGroupMedium_InputElement
+PS_Detail_AlertEvent_PriorityLow=priorityGroupLow_InputElement
+PS_Detail_AlertEvent_ActiveFlag=alertEvent.paevActiveFl_InputElement
+PS_Detail_AlertEvent_SendMobile=alertEvent.paevSendToMobileFl_InputElement
+PS_Detail_AlertEvent_alertEmail=alertEvent.paevIsGrpEmailFl_LabelElement
+PS_Detail_AlertEvent_emailSystem=alertEvent.paevIsGrpInstFl_InputElement
+PS_Detail_AlertEvent_repeat=pqaeRepeatFl_InputElement
+PS_Detail_AlertEvent_trendReq=pqaeTrendFl_InputElement
+PS_Detail_AlertEvent_trendVal=pqaeTrendValue
+PS_Detail_AlertEvent_stream=alertEvent_alertEventStream_gwt_uid_
+PS_Detail_AlertEvent_order=alertEvent.paevStreamOrderNo
+PS_Detail_AlertEvent_scheduleFreq=alertEvent_frequencyModel_gwt_uid_
+PS_Detail_AlertEvent_dayOf=dayOfMonth_gwt_uid_
+PS_Detail_AlertEvent_alignmentDate=alignmentDate_gwt_uid_
+PS_Detail_entityAlert_entityAdded=conditionGroupEntityAdded_InputElement
+PS_Detail_entityAlert_entityDeleted=conditionGroupEntityDeleted_InputElement
+PS_Detail_entityAlert_save=entAddDelAlertEvtDetail.save
+PS_Detail_fieldChange_column=tableColumn_gwt_uid_
+PS_Detail_fieldChange_value=pfcaTclTriggerValue
+PS_Detail_fieldChange_save=fieldChangeAlertEvtDetail.save
+PS_Detail_query_save=queryBasedAlertEventDetail.save
+
+#Alert Event Other Details
+#----------------------------------------------------------------------------------------------
+
+PS_Detail_AlertOtherDetails_ActionsTab=//div[@class='gwt-TabLayoutPanelTabs']//div[text()='Actions']
+PS_Detail_AlertOtherDetails_submitSql_Add=//div[@id='toolbar-button-label-submitSqlGridToolBar.Add']
+PS_Detail_AlertOtherDetails_submitSql_Grid=submitSqlGrid
+PS_Detail_AlertOtherDetails_submitSql_Editor=//input[@id='sqlLongStringEditor']
+PS_Detail_AlertOtherDetails_runProg_Tab=//div[@class='gwt-TabLayoutPanelTabs']//div[text()='Run Program']
+PS_Detail_AlertOtherDetails_runProg_Add=//div[@id='toolbar-button-label-programGridToolBar.Add']
+PS_Detail_AlertOtherDetails_runProg_Grid=programActionGrid
+PS_Detail_AlertOtherDetails_runProg_Value=//input[@id='pathStringEditor']
+PS_Detail_AlertOtherDetails_component_Tab=//div[@class='gwt-TabLayoutPanelTabs']//div[text()='Components']
+PS_Detail_AlertOtherDetails_component_Add=//div[@id='toolbar-button-label-componentsGridToolBar.Add']
+PS_Detail_AlertOtherDetails_component_grid=componentActionGrid
+PS_Detail_AlertOtherDetails_component_comboBox=componentEditor_gwt_uid_
+PS_Detail_AlertOtherDetails_alerttxt_Tab=//div[@class='gwt-TabLayoutPanelTabs']//div[text()='Alert Text']
+PS_Detail_AlertOtherDetails_alerttxt_Grid=alertTextGrid
+PS_Detail_AlertOtherDetails_alerttxt_Column=tableColumnEditor_gwt_uid_
+PS_Detail_AlertOtherDetails_alerttxt_JoiningColumn=alertTextjoiningColumnEditor_gwt_uid
+PS_Detail_AlertOtherDetails_alerttxt_JoiningTable=trigger-alertTextjoiningTableEditor
+PS_Detail_AlertOtherDetails_alerttxt_DisplayColumn=alertTextdisplayColumnEditor_gwt_uid_
+PS_Detail_AlertOtherDetails_email_Add=toolbar-button-label-emailGridToolBar.Add
+PS_Detail_AlertOtherDetails_email_Grid=emailGrid
+PS_Detail_AlertOtherDetails_email_Column=columnEditor_gwt_uid_
+PS_Detail_AlertOtherDetails_email_JoiningColumn=joiningColumnEditor_gwt_uid_
+PS_Detail_AlertOtherDetails_email_JoiningTable=trigger-joiningTableEditor
+PS_Detail_AlertOtherDetails_email_DisplayColumn=displayColumnEditor_gwt_uid_
+PS_Detail_AlertOtherDetails_email_colHeaders=columnHeaderEditor
+PS_Detail_AlertOtherDetails_email_subject=alertEvent.alertEmailInfo.emailSubString
+PS_Detail_AlertOtherDetails_email_header=alertEvent.alertEmailInfo.emailHeaderString
+PS_Detail_AlertOtherDetails_email_footer=alertEvent.alertEmailInfo.emailFooterString
+
+
+#AlertGroup
+#----------------------------------------------------------------------------------------------
+PS_Detail_AlertGroup_name=algName
+PS_Detail_AlertGroup_guidedEnt=//*[@id='trigger-guideEntityTbl']
+PS_Detail_AlertGroup_resultEnt=//*[@id='trigger-resultEntityTbl']
+PS_Detail_AlertGroup_resultComp=resultComponent_gwt_uid_
+PS_Detail_AlertGroup_add=toolbar-button-label-alertDefinitionsToolBar.add
+PS_Detail_AlertGroup_alertNo=aldAlertNo
+PS_Detail_AlertGroup_severity=alertSeverity_gwt_uid_
+PS_Detail_AlertGroup_text=aldAlertText
+PS_Detail_AlertGroup_dfnSave=alertDfnDetail.save
+PS_Detail_AlertGroup_save=alertGroupDetail.save
+
+
+#AlertEventGroup
+#----------------------------------------------------------------------------------------------
+PS_Detail_AlertEvtGroup_name=paegName
+PS_Detail_AlertEvtGroup_isactive=paegActiveFl_InputElement
+
+#AlertEventStream
+#----------------------------------------------------------------------------------------------
+PS_Detail_AlertEvtStream_name=paesName
+PS_Detail_AlertEvtStream_code=paesCode
+
+#Surcharge Rule
+#---------------------------------------------------------------------------------------------
+PS_Detail_surchargeRule_detailXpath=//*[@class='gwt-field-label' and text()='Name']
+PS_Detail_surchargeRule_name_txtId=psurName
+PS_Detail_surchargeRule_eventType_comboId=eventType_gwt_uid_
+PS_Detail_surchargeRule_description_txtId=psurDescription
+PS_Detail_surchargeRule_exp_gridId=surchargeExpressionsGrid
+PS_Detail_surchargeRule_exp_add_btnId=toolbar-button-label-surchargeToolbar.add
+PS_Detail_surchargeRule_exp_clause_comboId=psxpConditionEditor_gwt_uid_
+PS_Detail_surchargeRule_exp_leftBracket_textId=leftEditor
+PS_Detail_surchargeRule_exp_identDefn_comboId=eventIdentifierDfnEditor_gwt_uid_
+PS_Detail_surchargeRule_exp_operator_comboId=psxpOperatorEditor_gwt_uid_
+PS_Detail_surchargeRule_exp_identValue_triggerId=identifierValueEditor
+PS_Detail_surchargeRule_exp_rightBracket_textId=rightEditor
+PS_Detail_surchargeRule_exp_viewExp_btnId=surchargeToolbar.viewExpression
+PS_Detail_surchargeRule_exp_viewExp_xpath=//*[@id='QueryLabel']
+PS_Detail_surchargeRule_exp_viewExp_query_testAreaId=viewQueryLabel
+PS_Detail_surchargeRule_exp_viewExp_cancel_btnId=queryViewDetail.cancel
+PS_Detail_surchargeRule_save_btnId=surchargeRuleDetail.save
+
+#Deal Import Template
+#---------------------------------------------------------------------------------------------
+PS_Detail_dealImportTemplate_account=trigger-account
+PS_Detail_dealImportTemplate_fromDate=pdiwFromDttm
+PS_Detail_dealImportTemplate_toDate=pdiwToDttm
+PS_Detail_dealImportTemplate_trafficType=//div[@id='availableValuesList']//*//div[text()='inputValues']
+PS_Detail_dealImportTemplate_elementSet=//div[@id='availableElementSetList']//*//div[text()='inputValues']
+PS_Detail_dealImportTemplate_band=//div[@id='availableBandList']//*//div[text()='inputValues']
+PS_Detail_dealImportTemplate_save=dealImportWriterDetail.save
+PS_Detail_dealImportTemplate_trafficTypeSelect=//div[@id="dualPanel"]//button[@id='select']
+PS_Detail_dealImportTemplate_elementSetSelect=//div[@id="dualConfig"]//button[@id='select']
+PS_Detail_dealImportTemplate_bandsSelect=//div[@id="dualConfigList"]//button[@id='select']
+
+#Deal Import 
+#---------------------------------------------------------------------------------------------
+PS_Detail_dealImport_account=trigger-account
+PS_Detail_dealImport_fileTrigger=fileChooserGroupLoad
+PS_Detail_dealImport_uploadButton=FileUpload-upload
+PS_Detail_dealImport_templateCombo=importTemplate_gwt_uid_
+PS_Detail_dealImport_save=dealImportDetail.save
+
+#Payments and Collections
+#---------------------------------------------------------------------------------------------
+PS_Detail_paymAndCollect_detailXpath=//*[@class='gwt-field-label' and contains(text(),'Bill  Profile')]
+PS_Detail_paymAndCollect_transactRef_txtId=pmtTxnRef
+PS_Detail_paymAndCollect_transactDt_txtId=pmtDate
+PS_Detail_paymAndCollect_currency_comboId=currency_gwt_uid_
+PS_Detail_paymAndCollect_amount_txtId=pmtAmt
+PS_Detail_paymAndCollect_effectAmount_txtId=pmtEffectiveAmt
+PS_Detail_paymAndCollect_autoAuth_chckBxId=isAutoAuthorize_InputElement
+PS_Detail_paymAndCollect_billProfile_triggerId=trigger-billProfile
+PS_Detail_paymAndCollect_currentBal_txtId=currentBalance
+PS_Detail_paymAndCollect_projectBal_txtId=projectedBalance
+PS_Detail_paymAndCollect_paymeAgainst_comboId=pmtPaymentAgainst_gwt_uid_
+PS_Detail_paymAndCollect_payment_gridId=paymentGrid
+PS_Detail_paymAndCollect_paymentGrid_addBtnId=toolbar-button-label-paymentGridToolbar.Add
+PS_Detail_paymAndCollect_paymentGri_allocationAmt_txtId=allocationAmtEditor
+PS_Detail_paymAndCollect_save_BtnId=paymentTblDetail.save
+
+#Deal Simulation
+#---------------------------------------------------------------------------------------------
+PS_Detail_DealSimulation_detailXpath=//*[@class='gwt-field-label' and contains(text(),'Name')]
+PS_Detail_DealSimulation_name_txtId=pdssName
+PS_Detail_DealSimulation_bilatModelling_comboId=brdModelling_gwt_uid_
+PS_Detail_DealSimulation_estimProcessor_comboId=estimationProcessor_gwt_uid_
+PS_Detail_DealSimulation_new_radioId=simulateRadioGroupPivotOption1_InputElement
+PS_Detail_DealSimulation_copy_radioId=simulateRadioGroupPivotOption2_InputElement
+PS_Detail_DealSimulation_dealType_comboId=dealtype_gwt_uid_
+PS_Detail_DealSimulation_descripton_txtareaId=pdssDescription
+PS_Detail_DealSimulation_deal_triggerId=trigger-deal
+PS_Detail_DealSimulation_dealFromDt_txtId=pdssFromDate
+PS_Detail_DealSimulation_dealToDt_txtId=pdssToDate
+PS_Detail_DealSimulation_save_btnId=dealSimulationDetail.save
+
+#Bill Parameter
+------------------------------------------------------------------------------
+PSDetail_Bill_Parameter_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Parameter  Name']
+PSDetail_Bill_Parameter_BillParameterName_textId =pbpaName
+PSDetail_Bill_Parameter_SourceType_comboId =pbpaType_gwt_uid_
+PSDetail_Bill_Parameter_Source_addtableInstance_ID =toolbar-button-label-sourceSelectionGridToolBar.addTableInstance
+PSDetail_Bill_Parameter_clear =clear
+PSDetail_Bill_Parameter_Displayname_TableInstance =grid_column_header_filtersearchGrid_tinDisplayName
+PSDetail_Bill_Parameter_Sourceselection_GridId=sourceSelectionGrid
+PSDetail_Bill_Parameter_JoinType_ComboId =sqfJoinTypeCombo_gwt_uid_
+PSDetail_Bill_Parameter_Column1_ComboId=sqfTblColumn1Combo_gwt_uid_
+PSDetail_Bill_Parameter_Column2_ComboId=sqfTblColumn2Combo_gwt_uid_
+PSDetail_Bill_Parameter_Column_TabId =//*[@id='topPanelContainer']//div[text()='Columns']
+PSDetail_Bill_Parameter_Filter_TabId=//*[@id='topPanelContainer']//div[text()='Filters']
+PSDetail_Bill_Parameter_Filter_addButton=toolbar-button-label-queryFilterComponentToolbar.add
+PSDetail_Bill_Parameter_Condition_select=queryFilterAddSubMenu.condition
+PSDetail_Bill_Parameter_Filter_GridId=queryFilterGrid
+PSDetail_Bill_Parameter_Filter_Left_ComboId=leftIndentOptions
+PSDetail_Bill_Parameter_Filter_Expression1_ComboId=id_gwt_uid_
+PSDetail_Bill_Parameter_operator_ComboId=operator_gwt_uid_
+PSDetail_Bill_Parameter_expression2_TextId=grid_cell_popuppanel
+PSDetail_Bill_Parameter_Right_ComboId=rightIndentOptions
+PSDetail_Bill_Parameter_add_ButtonID=addButton
+PSDetail_Bill_Parameter_Column_GridID=selectedColumnsGrid
+PSDetail_Bill_Parameter_Aggregate_ComboID=sqsAggregateComboEditor_gwt_uid_
+PSDetail_Bill_Parameter_Statement_textID=grid_cell_popuppanel
+PSDetail_Bill_Parameter_ColumnName_textID=tclNameEditor
+PSDetail_Bill_Parameter_DisplayName_textID=tclDisplayEditor
+PSDetail_Bill_Parameter_Type_ComboID=tclTypeEditor_gwt_uid_164_chzn
+PSDetail_Bill_Parameter_Sort_ComboID=grid_cell_popuppanel
+PSDetail_Bill_Parameter_popUp_GridId=window-scroll-panel
+PSDetail_Bill_Parameter_popUp_Yes_ButtonId=yes
+PSDetail_Bill_Parameter_Constant_DataType_comboId=pbpaConstantDatatype_gwt_uid_
+PSDetail_Bill_Parameter_Context_Directory_ButtonId=trigger-pbpaConstantValue
+PSDetail_Bill_Parameter_Context_directory_popup_GridId=chooserWindow.window
+PSDetail_Bill_Parameter_ContextDirectory_token_ComboId=tokenTbl_gwt_uid_
+PSDetail_Bill_Parameter_ContextDirectory_filepath_textId=filePath
+PSDetail_Bill_Parameter_ContextDirectory_Save_ButtonId=chooserWindow.save
+PSDetail_Bill_Parameter_ConstandValue_textId=pbpaConstantValue
+PSDetail_Bill_Parameter_save_Xpath=billParameterDetail.save
+
+#Bill Dataset
+------------------------------------------------------------------------------
+PSBillDataset_Detail_BillDatasetNameID =pbdsName
+PSBillDataset_Detail_FileName =pbdsOutputfilename
+PSBillDataset_Detail_DatasetFilterID = grid_column_header_filtersearchGrid_pbdsName
+PSBillDataset_Detail_Source_addtableInstance =toolbar-button-label-sourceSelectionGridToolBar.addTableInstance
+PSBillDataset_Search_ClearButtonID =clear
+DisplaynameTableInstance =grid_column_header_filtersearchGrid_tinDisplayName
+PSBillDataset_Detail_Source_SourceselectionGridId =sourceSelectionGrid
+PSBillDataset_Detail_Source_JoinTypeComboId =sqfJoinTypeCombo_gwt_uid_
+PSBillDataset_Detail_Source_Column1ComboId=sqfTblColumn1Combo_gwt_uid_
+PSBillDataset_Detail_Source_Column2ComboId=sqfTblColumn2Combo_gwt_uid_
+PSBillDataset_Detail_Column_ColumnTab =//*[@id='topPanelContainer']//div[text()='Columns']
+PSBillDataset_Detail_Filter_FilterTab=//*[@id='topPanelContainer']//div[text()='Filters']
+PSBillDataset_Detail_Column_addID=addButton
+PSBillDataset_Detail_FilterTab_FilterAddID=toolbar-button-label-queryFilterComponentToolbar.add
+PSBillDataset_Detail_Filter_ConditionID=queryFilterAddSubMenu.condition
+PSBillDataset_Detail_Filter_FilterGridId=queryFilterGrid
+PSBillDataset_Detail_Filter_LeftComboId=leftIndentOptions
+PSBillDataset_Detail_Filter_Expression1ComboId=id_gwt_uid_
+PSBillDataset_Detail_Filter_operatorComboId=operator_gwt_uid_
+PSBillDataset_Detail_Filter_expression2ID=grid_cell_popuppanel
+PSBillDataset_Detail_Filter_RightComboId=rightIndentOptions
+PSDetail_Bill_Dataset_Column_GridID=selectedColumnsGrid
+PSDetail_Bill_Dataset_Aggregate_ComboID=sqsAggregateComboEditor_gwt_uid_
+PSDetail_Bill_Dataset_Statement_textID=grid_cell_popuppanel
+PSDetail_Bill_Dataset_ColumnName_textID=tclNameEditor
+PSDetail_Bill_Dataset_DisplayName_textID=tclDisplayEditor
+PSDetail_Bill_Dataset_Type_ComboID=tclTypeEditor_gwt_uid_164_chzn
+
+#Bill Report Configuration
+------------------------------------------------------------------------------
+PSDetail_Bill_Report_Conf_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_Bill_Report_Conf_Name_TextId=pbrcName
+PSDetail_Bill_Report_Conf_Component_comboid=component_gwt_uid_
+PSDetail_Bill_Report_Conf_Sytem_parameter_gridId=systemParametersGrid
+PSDetail_Bill_Report_Conf_CheckBoxId=searchableFlEditor_checked_column_field_image
+PSDetail_Bill_Report_Conf_CustomBillPar_AddButtonId=toolbar-button-label-customBillParameterGridToolbar.Add
+PSDetail_Bill_Report_Conf_Cust_Bill_Name_TextId=pbpaName
+PSDetail_Bill_Report_Conf_File_delimiter_comboid=pbrcFileDelimiter_gwt_uid_
+PSDetail_Bill_Report_Conf_Write_file_reader_checkBoxId=pbrcWriteFileHeaderFl_InputElement
+PSDetail_Bill_Report_Conf_DataSetAddButtonId=toolbar-button-label-billDatasetGridToolbar.Add
+PSDetail_Bill_Report_Conf_DataSetId=pbdsName
+PSDetail_Bill_Report_Conf_save_btnId=billReportConfigurationDetail.save
+
+#Markup Rule
+------------------------------------------------------------------------------
+PSDetail_MarkupRule_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_MarkupRule_name_txtId=pmurName
+PSDetail_MarkupRule_evaluationOrder_comboId=pmurType_gwt_uid_
+PSDetail_MarkupRule_margin_GridId=markupRuleConfigGrid
+PSDetail_MarkupRule_margin_to_txtId=toEditor
+PSDetail_MarkupRule_margin_percentage_txtId=percentageEditor
+PSDetail_MarkupRule_margin_fixed_txtId=fixedEditor
+PSDetail_MarkupRule_save_btnId=markupRuleDetail.Save
+
+
+# Proposal Rule
+------------------------------------------------------------------------------
+PSDetail_ProposalRule_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_ProposalRule_name_txtId=pprlName
+PSDetail_ProposalRule_bcrProduxt_combId=bcrProduct_gwt_uid_
+PSDetail_ProposalRule_fromDt_txtId=pprlFromDttm
+PSDetail_ProposalRule_toDt_txtId=pprlToDttm
+PSDetail_ProposalRule_BandGrp_gridId=proposalRuleBandGrpGrid
+PSDetail_ProposalRule_BandGrp_addBandGrp_btnId=toolbar-button-label-proposalRuleBandGrpGridToolbar.AddBandGroup
+PSDetail_ProposalRule_BandGrp_addBand_btnId=toolbar-button-label-proposalRuleBandGrpGridToolbar.AddBand
+PSDetail_ProposalRule_BandGrp_addAll_btnId=toolbar-button-label-proposalRuleBandGrpGridToolbar.AddAll
+PSDetail_ProposalRule_BandGrp_configBlend_btnId=toolbar-button-label-proposalRuleBandGrpGridToolbar.ConfigureBlend
+PSDetail_ProposalRule_BandGrp_name_txtId=
+PSDetail_ProposalRule_BandGrp_tariff_combId=
+PSDetail_ProposalRule_BandGrp_bandType_CombId=
+PSDetail_ProposalRule_BandGrp_costOption_comboId=
+PSDetail_ProposalRule_BandGrp_importedDtTxtId=
+PSDetail_ProposalRule_BandGrp_markupRuleCombId=
+PSDetail_ProposalRule_Band_gridId=proposalRuleGrpBandGrid
+PSDetail_ProposalRule_Band_columnHeaderId=grid_column_header_undefined_
+	
+
+
+#Sales Proposal
+------------------------------------------------------------------------------
+PSDetail_SalesProposal_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_SalesProposal_name_txtId=psplName
+PSDetail_SalesProposal_BCR_Produxt_entityId=trigger-bcrProduct
+PSDetail_SalesProposal_proposalDt_txtId=psplDttm
+PSDetail_SalesProposal_proposalRule_entityId=trigger-proposalRule
+PSDetail_SalesProposal_BCR_dt_txtId=psplBcrDttm
+PSDetail_SalesProposal_trafficDt_txtId=psplTrafficDttm
+PSDetail_SalesProposal_latestAvailableBcr_chckBxId=psplLatestAvailFl_InputElement
+PSDetail_SalesProposal_generSalesProposal_btnId=salesProposalDetail.GenerateSalesProposal
+
+#Sales Offer
+------------------------------------------------------------------------------
+PSDetail_SalesOffer_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_SalesOffer_name_txtId=psofName
+PSDetail_SalesOffer_salesProposal_entityId=trigger-salesProposal
+PSDetail_SalesOffer_effectiveDt_txtId=psofDttm
+PSDetail_SalesOffer_increaseDt_txtId=psofIncDttm
+PSDetail_SalesOffer_decreaseDt_txtId=psofDecDttm
+PSDetail_SalesOffer_generateSalesOffer_btnId=salesOfferDetail.GenerateSalesOffer
+
+# Offer Rule
+------------------------------------------------------------------------------
+PSDetail_OfferRule_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_OfferRule_name_txtId=pofrName
+PSDetail_OfferRule_bcrProduxt_combId=bcrProduct_gwt_uid_
+PSDetail_OfferRule_fromDt_txtId=pofrFromDttm
+PSDetail_OfferRule_toDt_txtId=pofrToDttm
+PSDetail_OfferRule_BandGrp_gridId=bandGrpGrid
+PSDetail_OfferRule_BandGrp_addBandGrp_btnId=toolbar-button-label-bandGrpGridToolbar.AddBandGroup
+PSDetail_OfferRule_BandGrp_addBand_btnId=toolbar-button-label-bandGrpGridToolbar.AddBand
+PSDetail_OfferRule_BandGrp_addAll_btnId=toolbar-button-label-bandGrpGridToolbar.AddAll
+PSDetail_OfferRule_BandGrp_name_txtId=
+PSDetail_OfferRule_BandGrp_tariff_combId=
+PSDetail_OfferRule_BandGrp_bandType_CombId=
+PSDetail_OfferRule_BandGrp_markupRuleCombId=
+PSDetail_OfferRule_Band_gridId=bandGrid
+PSDetail_OfferRule_Band_columnHeaderId=grid_column_header_undefined_
+
+
+#System Tariff Mapping
+#---------------------------------------------------------------------------------------------
+PS_Detail_systemTariffMapping_detailXpath=//*[@id='window-scroll-panel']//div[text()='Element Set']
+PS_Detail_systemTariffMapping_elementSet_combId=elementSet_estName_gwt_uid_
+PS_Detail_systemTariffMapping_tariffType_combId=tariffType_tftName_gwt_uid_
+PS_Detail_systemTariffMapping_save_btnId=ok
+
+#Routing Rate Report
+#---------------------------------------------------------------------------------------------
+PS_Detail_routingRateReport_operator_comboId=routingRate_operator_gwt_uid_
+PS_Detail_routingRateReport_opratorTariff_combId=routingRate_operatorTariff_gwt_uid_
+PS_Detail_routingRateReport_validOn_CalandarTxtId=dummyValidOn
+PS_Detail_routingRateReport_reCalculate_BtnId=recompute
+PS_Detail_routingRateReport_opportunityCost_BtnId=oplb
+PS_Detail_routingRateReport_penaltyCost_BtnId=pelb
+PS_Detail_routingRateReport_committedDeal_BtnId=cdeal
+PS_Detail_routingRateReport_nonCommittedDeal_BtnId=ndeal
+PS_Detail_routingRateReport_noOpBreakout_BtnId=ncar
+PS_Detail_routingRateReport_noSysBreakout_BtnId=ncod
+PS_Detail_routingRateReport_noOrigOpBreakout_BtnId=nanumcar
+PS_Detail_routingRateReport_noOrigSysBreakout_BtnId=nanumcod
+PS_Detail_routingRateReport_penaltyRemoved_BtnId=pere
+PS_Detail_routingRateReport_colmnHdrId=grid_column_header_searchGrid_
+PS_Detail_routingRateReport_waitForElementDetaisPagelXpath=//*[@id='task-tab-panel']//button[contains(text(),'No Operator Breakout')]
+
+#BCR Product
+------------------------------------------------------------------------------
+PSDetail_BCRProduct_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_BCRProduct_name_txtId=pbcpName
+PSDetail_BCRProduct_noOfBestOp_txtId=pbcpMaxPositions
+PSDetail_BCRProduct_savingThreshold=pbcpSavingThreshold
+PSDetail_BCRProduct_handleIntraNetwork_chckBxId=pbcpIntraNetworkFl_InputElement
+PSDetail_BCRProduct_intraProdName_txtId=intBcrProduct.pbcpName
+PSDetail_BCRProduct_description_txtId=pbcpDescription
+PSDetail_BCRProduct_applyModifiers_chckBxId=modifierSelectEditor_checked_column_field_image
+PSDetail_BCRProduct_setPriority_moveUpBtnId=toolbar-button-label-ruleToolbar.moveUp
+
+
+#Event And Aggregation Configuration
+------------------------------------------------------------------------------------------------------------------
+PSDetail_Event_Aggregation_Conf_detail_Page_XPath=//*[@id='generalDetailsLabel']
+PSDetail_Event_Aggregation_Conf_filter_Text_ID=pescName
+PSDetail_Event_Aggregation_InputFeedName_Text_ID=pescName
+PSDetail_Event_Aggregation_EventTableSchema_Combo_ID=consSchemaTbl_gwt
+PSDetail_Event_Aggregation_EventErrorTableSchema_Combo_ID=errSchemaTbl_gwt
+PSDetail_Event_Aggregation_AggregationSchema_Combo_ID=aggSchemaTbl_gwt
+PSDetail_Event_Aggregation_DuplicateCheckRequired_Check_ID=pescHasXdrDuplicateCheck_InputElement
+PSDetail_Event_Aggregation_NormalisationRequired_Check_ID=pescHasNormalisation_InputElement
+PSDetail_Event_Aggregation_BilateralsRequired_Check_ID=pescHasDeal_InputElement
+PSDetail_Event_Aggregation_AgreementRequired_Check_ID=pescHasAgreement_InputElement
+PSDetail_Event_Aggregation_EventLegGroup_Combo_ID=eventLegCodeGroup_gwt
+PSDetail_Event_Aggregation_InputFeed_Grid_ID=dataPreviewGrid
+PSDetail_Event_Aggregation_InputFeed_Add_Button_ID=dataPreviewGridToolbar.Add
+PSDetail_Event_Aggregation_InputFeed_FieldName_Text_ID=peafFieldNameEditor
+PSDetail_Event_Aggregation_InputFeed_DisplayName_Text_ID=peafDisplayNameEditor
+PSDetail_Event_Aggregation_InputFeed_Mandatory_Check_ID=peafMandatoryFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_InputFeed_Datatype_Combo_ID=dataTypesEditor_gwt
+PSDetail_Event_Aggregation_InputFeed_EventDate_Check_ID=peafDateFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_InputFeed_RatingFrom_Check_ID=peafRatingFromFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_InputFeed_RatingTo_Check_ID=peafRatingToFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_InputFeed_DefaultAggregation_Combo_ID=peafUseInDefaultAggEditor_gwt
+PSDetail_Event_Aggregation_InputFeed_NextButton_ID=nextButton
+PSDetail_Event_Aggregation_NormGrid_Add_Button_ID=normalisationPreviewGridToolbar.add
+PSDetail_Event_Aggregation_NormGrid_Grid_ID=normalisationPreviewGrid
+PSDetail_Event_Aggregation_NormGrid_FieldName_Text_ID=penfFieldNameEditor
+PSDetail_Event_Aggregation_NormGrid_DisplayName_Text_ID=penfDisplayNameEditor
+PSDetail_Event_Aggregation_NormGrid_Mandatory_Check_ID=penfMandatoryFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_NormGrid_Datatype_Combo_ID=normalisationDataTypesEditor_gwt
+PSDetail_Event_Aggregation_NormGrid_EventDate_Check_ID=penfDateFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_NormGrid_RatingFrom_Check_ID=penfRatingFromFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_NormGrid_RatingTo_Check_ID=penfRatingToFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_NormGrid_DefaultAggregation_Combo_ID=penfUseInDefaultAggEditor_gwt
+PSDetail_Event_Aggregation_RevGrid_Add_Button_ID=ratedEventPreviewGridToolbar.add
+PSDetail_Event_Aggregation_RevGrid_Grid_ID=ratedEventPreviewGrid
+PSDetail_Event_Aggregation_RevGrid_FieldName_Text_ID=prafFieldNameEditor
+PSDetail_Event_Aggregation_RevGrid_DisplayName_Text_ID=prafDisplayNameEditor
+PSDetail_Event_Aggregation_RevGrid_Mandatory_Check_ID=prafMandatoryFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_RevGrid_Datatype_Combo_ID=ratedEventDataTypesEditor_gwt
+PSDetail_Event_Aggregation_RevGrid_DefaultAggregation_Combo_ID=prafUseInDefaultAggEditor_gwt
+PSDetail_Event_Aggregation_Normalisation_Tab_Name=Normal
+PSDetail_Event_Aggregation_Configuration_Tab_Name=Configuration
+PSDetail_Event_Aggregation_RevGrid_PanelName=Rated Event
+PSDetail_Event_Aggregation_NormGrid_PanelName=Normalisation
+PSDetail_Event_Aggregation_EventModellingDefn_PanelName=Event Modelling Definition
+PSDetail_Event_Aggregation_EventModellingDefn_Text_ID=pmodName
+PSDetail_Event_Aggregation_EventModellingInst_PanelName=Event Modelling Instances(s)
+PSDetail_Event_Aggregation_EventModellingInstGrid_ID=eventModellingInstGrid
+PSDetail_Event_Aggregation_EventModellingInstGrid_Add_Button_ID=eventModellingInstToolBar.add
+PSDetail_Event_Aggregation_EventModellingInstName_Text_ID=pmoiNameEditor
+PSDetail_Event_Aggregation_EventModellingInstConsTblPrefix_Text_ID=pmoiConsTblPrefixEditor
+PSDetail_Event_Aggregation_EventModellingInstErrorTblPrefix_Text_ID=pmoiErrTblPrefixEditor
+PSDetail_Event_Aggregation_EventTypeGrid_ID=eventTypeGrid
+PSDetail_Event_Aggregation_EventTypeGrid_Add_Button_ID=eventTypeToolBar.add
+PSDetail_Event_Aggregation_EventTypeName_Text_ID=peatNameEditor
+PSDetail_Event_Aggregation_EventType_EvtInst_Combo_ID=EvtModellingInsEditor_gwt
+PSDetail_Event_Aggregation_EventType_EvtProcComp_Combo_ID=peatEvtProcComponentEditor_gwt
+PSDetail_Event_Aggregation_EventType_MultServLegs_Check_ID=peatMultipleLegFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_EventType_RatingTo_Combo_ID=toEvtDefaultAggrFieldsEditor_gwt
+PSDetail_Event_Aggregation_EventType_RatingFrom_Combo_ID=fromEvtDefaultAggrFieldsEditor_gwt
+PSDetail_Event_Aggregation_EventType_RatingToNorm_Combo_ID=toEvtNormExtraFieldsEditor_gwt
+PSDetail_Event_Aggregation_EventType_RatingFromNorm_Combo_ID=fromEvtNormExtraFieldsEditor_gwt
+PSDetail_Event_Aggregation_EventType_EvtLegGroup_Combo_ID=peatEventLegCodeGrpEditor_gwt
+PSDetail_Event_Aggregation_AggregationGrid_Add_Button_ID=eventAggConfigToolBar.add
+PSDetail_Event_Aggregation_AggregationGrid_ConfigureAggFields_Button_ID=eventAggConfigToolBar.ConfigureAggregationFields
+PSDetail_Event_Aggregation_AggregationGrid_ConfigureAggFields_Save_Button_ID=evtAggColumnInfoDetail.save
+PSDetail_Event_Aggregation_AggregationGrid_Grid_ID=eventAggConfigGrid
+PSDetail_Event_Aggregation_AggregationConfigName_Text_ID=pecoAggConfigNameEditor
+PSDetail_Event_Aggregation_AggregationConfig_EvtType_Combo_ID=EvtAggTypeEditor_gwt
+PSDetail_Event_Aggregation_AggregationConfig_RatingComp_Combo_ID=ratingComponentEditor_gwt
+PSDetail_Event_Aggregation_AggregationConfig_Frequency_Combo_ID=freqComponentEditor_gwt
+PSDetail_Event_Aggregation_AggregationConfig_FilterComp_Combo_ID=filterComponentEditor_gwt
+PSDetail_Event_Aggregation_AggregationConfig_Estimation_Check_ID=pecoEstFlEditor_checked_column_field_image
+PSDetail_Event_Aggregation_BRDGrid_Grid_ID=eventBrdModellingGrid
+PSDetail_Event_Aggregation_BRDGrid_Add_Button_ID=eventBrdModellingToolBar.add
+PSDetail_Event_Aggregation_BRDName_Text_ID=pebmNameEditor
+PSDetail_Event_Aggregation_BRDGrid_AggConfig_Combo_ID=EvtAggConfigBrdEditor_gwt
+PSDetail_Event_Aggregation_BRDGrid_BilledUsage_Combo_ID=EvtAggColumnInfoBusageEditor_gwt
+PSDetail_Event_Aggregation_AgreementGrid_Grid_ID=eventAgmModellingGrid
+PSDetail_Event_Aggregation_AgreementGrid_Add_Button_ID=eventAgmModellingToolBar.add
+PSDetail_Event_Aggregation_AgreementName_Text_ID=peagNameNameEditor
+PSDetail_Event_Aggregation_AgreementConfigType_Combo_ID=peagTypeEditor_gwt
+PSDetail_Event_Aggregation_AgreementConfigTypeName_Combo_ID=peAggBrdEditor_gwt
+PSDetail_Event_Aggregation_Save_Button_ID=evtAggConfigDetail.save
+PSDetail_Event_Aggregation_Save_Confirm_Yes_Button_ID=yes
+PSDetail_Event_Aggregation_Save_Confirm_No_Button_ID=no
+PSDetail_Event_Aggregation_AggGrid_ColumnInfo_PopupWindow_ID=evtAggColumnInfoDetail.window
+PSDetail_Event_Aggregation_AggGrid_ColumnInfo_PopupGrid_ID=evtAggColumnInfoGrid
+PSDetail_Event_Aggregation_Cofirm_Task_Run_Dialog=//div[contains(@class, 'gwt-DialogBox roc-WindowBox')]
+PSDetail_Event_Aggregation_Search_Grid_ID=searchGrid
+PSDetail_Event_Aggregation_Search_Grid_HeaderName_ID=grid_column_header_searchGrid_pescName
+
+
+

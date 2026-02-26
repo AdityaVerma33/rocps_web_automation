@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="2.2.0.0" version="2">
+    <Decoder name="mytariffcdr" type="ascii">
+        <RecordType root="true" name="root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="cdr" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" allowEOFTerm="false" terminator="crlf" root="false" name="cdr" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="cdr_id" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="1" generate="field" name="ANumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="2" generate="field" name="BNumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="3" generate="field" name="Duration" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="decimal"/>
+            </Field>
+            <Field trimQuotes="true" id="4" generate="field" name="TimeStamp" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="dd/MM/yyyy HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="5" generate="field" name="Type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="6" generate="field" name="testcase" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="55" xPos="55" name="Record" width="50" type="Record" recordType="cdr" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="60" yPos="50" xPos="190" name="Mapping" width="70" type="Mapping" recordType="myOutputRec" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events>
+                            <Event expression="Rate(ANumber, BNumber, TimeStamp, ToInteger(Duration), If(Equal(Substring(ANumber, 0, 1), 9), TariffID('Multiple Time Period'), TariffID('Singapore and Malaysia')))" name="FinalRate" target="$FinalRate" type="assign"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="ANumber" target="anumber"/>
+                    <Mapping expression="BNumber" target="bnumber"/>
+                    <Mapping expression="Duration" target="duration"/>
+                    <Mapping expression="TimeStamp" target="timestamp"/>
+                    <Mapping expression="Type" target="ratetype"/>
+                    <Mapping expression="Rate(ANumber, BNumber, TimeStamp, ToInteger(Duration), If(Equal(Substring(ANumber, 0, 1), 9), TariffID('Multiple Time Period'), TariffID('Singapore and Malaysia')))" target="rate"/>
+                    <Mapping expression="TariffType('Default Type')" target="tariffType"/>
+                    <Mapping expression="testcase" target="testcase"/>
+                    <Mapping expression="cdr_id" target="cdr_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="TimeStamp" target="time_stamp"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="55" UsagePartitionId="GetUsagePartitionId('System Flow Usage Group', time_stamp, SecondPart(time_stamp))" xPos="345" name="Spark Output" unicode="false" width="60" outputKey="1" charset="windows-1252" filename="Concatenate( $$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat' )" type="SparkOutput" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction resultProperty="TftId" name="TariffType" type="KeyCacheLookup" objectType="TariffType">
+                <LookupKeys>
+                    <LookupKey key="TftName"/>
+                </LookupKeys>
+            </DynamicFunction>
+            <DynamicFunction resultProperty="TffId" name="TariffID" type="KeyCacheLookup" objectType="Tariff">
+                <LookupKeys>
+                    <LookupKey key="TffName"/>
+                </LookupKeys>
+            </DynamicFunction>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="myOutputRec">
+                <Field id="0" name="cdr_id" nullable="true" type="integer"/>
+                <Field id="7" name="anumber" nullable="true" type="string"/>
+                <Field id="8" name="bnumber" nullable="true" type="string"/>
+                <Field id="9" name="duration" nullable="true" type="decimal"/>
+                <Field id="10" name="time_stamp" nullable="true" type="datetime"/>
+                <Field id="11" name="rate" nullable="true" type="decimal"/>
+                <Field id="12" name="ratetype" nullable="true" type="string"/>
+                <Field id="13" name="tariffType" nullable="true" type="integer"/>
+                <Field id="6" name="testcase" nullable="true" type="string"/>
+                <Field id="14" name="sfl_id" nullable="true" type="integer"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global id="0" initialValue="1" name="TffId" type="integer"/>
+            <Global id="1" name="FromEltId" type="integer"/>
+            <Global id="2" name="TabId" type="integer"/>
+            <Global id="3" name="ToEltId" type="integer"/>
+            <Global id="4" name="Test" type="integer"/>
+            <Global id="5" initialValue="0.0" name="FinalRate" serializable="false" type="decimal"/>
+        </Globals>
+    </Mappings>
+</Diamond>

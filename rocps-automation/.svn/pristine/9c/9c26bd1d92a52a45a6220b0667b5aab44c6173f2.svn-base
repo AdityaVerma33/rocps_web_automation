@@ -1,0 +1,296 @@
+package com.subex.rocps.automation.helpers.application.referenceTable;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.testng.annotations.Test;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+import com.subex.rocps.automation.utils.PSStringUtils;
+
+public class ServiceTariffType extends PSAcceptanceTest
+{
+
+	protected ExcelReader excelData = null;
+	protected Map<String, ArrayList<String>> serviceTariffExcel = null;
+	protected Map<String, String> serviceTariffMap = null;
+	protected ExcelHolder excelHolderObj = null;
+	protected String path;
+	protected String workBookName;
+	protected String sheetName;
+	protected String testCaseName;
+	protected int paramVal;
+	protected int colSize;
+	protected String clientPartition;
+	protected PSGenericHelper genericHelperObj = new PSGenericHelper();
+	protected String name;
+	protected String value;
+	protected String eventType;
+	protected String tableName;
+
+	/*
+	 * Constructor for initializing excel Identifying the column size from the map
+	 * passed
+	 */
+	@Test
+	public ServiceTariffType( String path, String workBookName, String sheetName, String testCaseName ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		serviceTariffExcel = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName );
+		excelHolderObj = new ExcelHolder( serviceTariffExcel );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Overloaded constructor for reading data from excel if test case name appears
+	 * more than once
+	 * 
+	 * @Param occurance : Test case instance in excel sheet Constructor for
+	 * initializing excel Identifying the column size from the map
+	 */
+	public ServiceTariffType( String path, String workBookName, String sheetName, String testCaseName, int occurance ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		serviceTariffExcel = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName, occurance );
+		excelHolderObj = new ExcelHolder( serviceTariffExcel );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Configuring the ServiceTariffType
+	 * 
+	 */
+	public void serviceTariffTypeCreation() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToReferenceTable( "Service Tariff Type" );
+			for ( paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+
+				serviceTariffMap = excelHolderObj.dataMap( paramVal );
+
+				initializeVariables( serviceTariffMap );
+				//ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				boolean isServiceTariffPresent = GridHelper.isValuePresent( "SearchGrid", name, "Name" );
+				if ( !isServiceTariffPresent )
+				{
+					genericHelperObj.clickNewAction( clientPartition );
+					GenericHelper.waitForLoadmask();
+					newServiceTariffType();
+
+					ButtonHelper.click( "OK_Button_ByID" );
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					Thread.sleep( 1000 );
+					assertTrue( GridHelper.isValuePresent( "Detail_eventDefn_gridID", name, "Name" ), "Service Tariff type is not configured" );
+					Log4jHelper.logInfo( "Service Tariff type is created successfully with name " + name );
+
+				}
+				else
+				{
+					Log4jHelper.logInfo( "Service Tariff type is available with name " + name );
+				}
+			}
+
+		}
+		catch ( Exception e )
+		{
+
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * Edit the ServiceTariffType
+	 * 
+	 */
+	public void serviceTariffTypeEdit() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToReferenceTable( "Service Tariff Type" );
+			for ( paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+
+				serviceTariffMap = excelHolderObj.dataMap( paramVal );
+
+				initializeVariables( serviceTariffMap );
+				//ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				boolean isServiceTariffPresent = GridHelper.isValuePresent( "SearchGrid", name, "Name" );
+				if ( isServiceTariffPresent )
+				{
+					int row = GridHelper.getRowNumber( "SearchGrid", name, "Name" );
+					NavigationHelper.navigateToEdit( "SearchGrid", row );
+					editServiceTariffType();
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					genericHelperObj.detailSave( "OK_Button_ByID", name, "Name" );
+					Log4jHelper.logInfo( "Service Tariff type is updated successfully with name " + name );
+
+				}
+				else
+				{
+					Log4jHelper.logInfo( "Service Tariff type is not available with name " + name );
+				}
+			}
+
+		}
+		catch ( Exception e )
+		{
+
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * This method is to create new service tariff type
+	 */
+	protected void newServiceTariffType() throws Exception
+	{
+
+		TextBoxHelper.type( "PS_Detail_serviceTariffType_name_txtID", name );
+		TextBoxHelper.type( "PS_Detail_serviceTariffType_value_txtID", value );
+		ComboBoxHelper.select( "PS_Detail_serviceTariftype_eventType_comboID", eventType );
+
+	}
+
+	/*
+	 * This method is to edit  service tariff type
+	 */
+	protected void editServiceTariffType() throws Exception
+	{
+
+		assertEquals( TextBoxHelper.getValue( "PS_Detail_serviceTariffType_name_txtID" ), name, "Service tariff type is not matched" );
+		if ( ValidationHelper.isNotEmpty( value ) )
+			TextBoxHelper.type( "PS_Detail_serviceTariffType_value_txtID", value );
+		if ( ValidationHelper.isNotEmpty( eventType ) )
+			ComboBoxHelper.select( "PS_Detail_serviceTariftype_eventType_comboID", eventType );
+
+	}
+
+	/*
+	 * This method is to initialize instance variables
+	 */
+	protected void initializeVariables( Map<String, String> map ) throws Exception
+	{
+
+		clientPartition = ExcelHolder.getKey( map, "Partition" );
+		tableName = ExcelHolder.getKey( map, "TableName" );
+		name = ExcelHolder.getKey( map, "Name" );
+		value = ExcelHolder.getKey( map, "Value" );
+		eventType = ExcelHolder.getKey( map, "EventType" );
+	}
+
+	/*
+	 * This method is to validate search screen columns
+	 */
+	public void searchScreenColumnsValidation() throws Exception
+	{
+		NavigationHelper.navigateToReferenceTable( "Service Tariff Type" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			serviceTariffMap = excelHolderObj.dataMap( paramVal );
+			String searchScreenColumns = ExcelHolder.getKey( serviceTariffMap, "SearchScreenColumns" );
+			ArrayList<String> excelColumnNames = new ArrayList<String>();
+			PSStringUtils strObj = new PSStringUtils();
+			String[] searchGridColumnsArr = strObj.stringSplitFirstLevel( searchScreenColumns );
+			for ( int col = 0; col < searchGridColumnsArr.length; col++ )
+			{
+				excelColumnNames.add( searchGridColumnsArr[col] );
+			}
+			genericHelperObj.totalColumns( excelColumnNames );
+		}
+
+	}
+
+	/*
+	 * This method is to delete service Tariff type
+	 */
+	public void serviceTariffTypeDelete() throws Exception
+	{
+
+		NavigationHelper.navigateToReferenceTable( "Service Tariff Type" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+
+			serviceTariffMap = excelHolderObj.dataMap( paramVal );
+
+			clientPartition = ExcelHolder.getKey( serviceTariffMap, "Partition" );
+			name = ExcelHolder.getKey( serviceTariffMap, "Name" );
+			genericHelperObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+			boolean isServiceTariffPresent = GridHelper.isValuePresent( "SearchGrid", name, "Name" );
+			if ( isServiceTariffPresent )
+			{
+				genericHelperObj.clickDeleteOrUnDeleteAction( name, "Name", "Delete" );
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "service Tariff type is deleted successfully : " + name );
+
+			}
+			else
+			{
+				Log4jHelper.logInfo( "service Tariff type is not available : " + name );
+			}
+
+		}
+	}
+
+	/*
+	 * This method is to un delete service Tariff type
+	 */
+	public void serviceTariffTypeUnDelete() throws Exception
+	{
+
+		NavigationHelper.navigateToReferenceTable( "Service Tariff Type" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+
+			serviceTariffMap = excelHolderObj.dataMap( paramVal );
+			clientPartition = ExcelHolder.getKey( serviceTariffMap, "Partition" );
+			name = ExcelHolder.getKey( serviceTariffMap, "Name" );
+			genericHelperObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+
+			boolean isServiceTariffPresent = GridHelper.isValuePresent( "SearchGrid", name, "Name" );
+			if ( isServiceTariffPresent )
+			{
+				genericHelperObj.clickDeleteOrUnDeleteAction( name, "Name", "Undelete" );
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "service Tariff type is un deleted successfully : " + name );
+
+			}
+			else
+			{
+				Log4jHelper.logInfo( "service Tariff type is not available : " + name );
+			}
+
+		}
+	}
+}

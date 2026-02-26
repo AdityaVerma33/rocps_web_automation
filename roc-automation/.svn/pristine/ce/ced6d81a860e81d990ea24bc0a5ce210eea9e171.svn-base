@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tariff ST Flow">
+	<!-- Web application fixture -->
+	<listeners>
+     	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Tariff_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="Tariff ST Flow" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.systemtesting.tariff.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.tariff.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.tariff.testRun" />
+		</classes>
+	</test>
+</suite>

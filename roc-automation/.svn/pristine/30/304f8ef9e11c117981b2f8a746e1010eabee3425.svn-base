@@ -1,0 +1,391 @@
+package com.subex.automation.helpers.selenium;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.lang.reflect.Method;
+
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
+import com.subex.automation.helpers.application.LoginHelper;
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.application.ROCHelper;
+import com.subex.automation.helpers.component.FileHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.config.OR_Reader;
+import com.subex.automation.helpers.config.PropertyReader;
+import com.subex.automation.helpers.data.DateHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.report.ReportHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+import com.subex.automation.helpers.util.RemoteMachineHelper;
+import com.subex.automation.helpers.util.VideoHelper;
+
+public class ROCAcceptanceTest extends AcceptanceTest {
+	
+	public static boolean recordExecution = false;
+	public static VideoHelper vh = null;
+	
+	public static String firstLevelDelimiter = null;
+	public static String secondLevelDelimiter = null;
+	private static boolean attachScreenShot = true;
+	
+	public ROCAcceptanceTest() {
+		try {
+			automationPath = System.getProperty("user.dir");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@BeforeSuite( alwaysRun = true )
+	@Parameters({ "config","orFiles" } )
+	public static void initializeSuite( String configFile, String orFiles ) throws Exception
+	{
+		try {
+			Log4jHelper.setInitializationFlag(false);
+			automationOS = "Windows";
+			if (automationPath.startsWith("/"))
+				automationOS = "Linux";
+			
+			readConfig( configFile );
+			
+			initializeReport(true);
+			errorMsg = null;
+			result = null;
+			recordExecution = ValidationHelper.isTrue(configProp.getRecordExecution());
+			detailScreenWaitSec = configProp.getDetailScreenWaitSec();
+			searchScreenWaitSec = configProp.getSearchScreenWaitSec();
+			applicationOS = configProp.getOS();
+			firstLevelDelimiter = configProp.getFirstLevelDelimiter();
+			secondLevelDelimiter = configProp.getSecondLevelDelimiter();
+			FileHelper.updatePropertyFile(ROCAcceptanceTest.configFile, "currentNowDateTime", "");
+			
+			if (!applicationOS.equalsIgnoreCase("Windows"))
+				initializeRemoteConnections();
+			
+			initializeOR(orFiles);
+		}
+		catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+	}
+	
+	@AfterSuite( alwaysRun = true )
+	public static void stopDriver() throws Exception {
+		try {
+			if (recordExecution && vh != null)
+				vh.stopRecording();
+			
+			AcceptanceTest.increaseCounter();
+		}
+		catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+		finally {
+			closeRemoteConnections();
+		}
+	}
+	
+	@BeforeClass( alwaysRun = true )
+	@Parameters({ "config" } )
+	public void startApp( String fileName ) throws Exception {
+		try {
+			ROCHelper rocHelper = new ROCHelper();
+			versionNo = rocHelper.readProductVersion();
+			deployPath = rocHelper.getDeployPath(configProp.getDeployPath());
+			updateReportProperties();
+			errorMsg = null;
+			result = null;
+			
+			if (recordExecution) {
+				vh = new VideoHelper();
+				String videoFilename = suiteName + "_" + DateHelper.getCurrentDateTime("ddMMyyyy_HHmm");
+				vh.startRecording(reportLocation + "\\VideoRecordings", videoFilename);
+			}
+			
+			if (suiteName != null && !suiteName.equalsIgnoreCase("Restore Db Backup")) {
+				LoginHelper login = new LoginHelper();
+				login.loginWithConfigPropertyDetails();
+			}
+			
+			if (suiteName != null && suiteName.equals("CICD")) {
+				String packageName = this.getClass().getPackage().getName();
+				int index = packageName.lastIndexOf(".");
+				packageName = packageName.substring(index+1);
+				flow = packageName.toUpperCase();
+				testCaseName = flow + "_" + this.getClass().getSimpleName();
+			}
+			else
+				testCaseName = this.getClass().getSimpleName();
+			testReport = ReportHelper.startReport(report, testCaseName);
+		}
+		catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+	}
+	
+	@AfterClass (alwaysRun = true )
+	public static void endReport() throws Exception {
+		try {
+			if (testReport != null)
+				testReport = ReportHelper.endReport(report, testReport);
+		} catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+	}
+	
+	@BeforeTest ( alwaysRun = true )
+    public static void checkInstallation() throws Exception {
+		try {
+			if (suiteName.equals("CICD")) {
+				attachScreenShot = false;
+				
+				if (!isInstallationDone) {
+					result = "skip";
+					throw new SkipException("Installation failed. So skipping dependent test case.");
+				}
+			}
+		} catch (SkipException e) {
+//			e.printStackTrace();
+		} catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+    }
+	
+	@AfterTest ( alwaysRun = true )
+    public static void resetParameters() throws Exception {
+		try {
+			NavigationHelper.setScreenName(null);
+		} catch (SkipException e) {
+//			e.printStackTrace();
+		} catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+    }
+	
+	@BeforeMethod ( alwaysRun = true )
+    public static void handleTestMethodName(Method method) throws Exception {
+		try {
+			stepName = method.getName();
+			errorMsg = null;
+			result = null;
+			
+	        if (!suiteName.equals("Create DB Backup") && !suiteName.equals("Restore DB Backup")) {
+		        ROCHelper rocHelper = new ROCHelper();
+				rocHelper.handleSessionTimeout();
+	        }
+		} catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+    }
+	
+	@AfterMethod( alwaysRun = true )
+	public static void updateReport(Method method) throws Exception {
+		try {
+			LogStatus testStatus = testReport.getRunStatus();
+			
+			if (testStatus.equals(LogStatus.UNKNOWN) && errorMsg != null) {
+				ReportHelper.reportFailure();
+			}
+			else if (testStatus.equals(LogStatus.FAIL) && result.equals("fail")) {
+				ReportHelper.reportFailure();
+			}
+			else if (testStatus.equals(LogStatus.WARNING)) {
+				if (!stepName.equals("Create Setup"))
+					ReportHelper.reportWarning("Test case succeeded", attachScreenShot, testCaseName);
+			}
+			else if (!result.equals("skip")) {
+				if (!stepName.equals("Create Setup"))
+					ReportHelper.reportSuccess("Test case succeeded", attachScreenShot, testCaseName);
+			}
+		} catch (Exception e) {
+			FailureHelper.reportFailure(e);
+		}
+	}
+	
+	private static void initializeOR(String orFiles) throws Exception {
+		InputStream ipStream = null;
+		
+		try {
+			ipStream = ROCAcceptanceTest.class.getResourceAsStream("/OR.properties");
+			OR_Reader orReader = new OR_Reader();
+			or = orReader.getOR(ipStream, "OR.properties");
+			
+			if (ValidationHelper.isNotEmpty(orFiles)) {
+				String[] files = orFiles.split(",");
+				
+				for (int i = 0; i < files.length; i++) {
+					ipStream = ROCAcceptanceTest.class.getResourceAsStream("/" + files[i]);
+					
+					if (ipStream == null) {
+						try {
+							ipStream = new FileInputStream(automationPath + "\\src\\main\\resources\\" + files[i]);
+							or = orReader.getOR(ipStream, files[i]);
+						} catch (FileNotFoundException fe) {
+							Log4jHelper.logWarning("Property file '" + files[i] + "' is not found");
+						}
+					}
+					else
+						or = orReader.getOR(ipStream, files[i]);
+				}
+			}
+		} catch(Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+		finally {
+			if (ipStream != null)
+				ipStream.close();
+		}
+	}
+	
+	private static void readConfig(String fileName) throws Exception {
+		try {
+			String path = automationPath + "\\src\\main\\resources\\";
+			configFile = GenericHelper.getPath(automationOS, path + fileName);
+			configProp = new PropertyReader( configFile );
+		}
+		catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void initializeReport(boolean isNewRun) throws Exception {
+		try {
+			reportLocation = GenericHelper.getPath(automationOS, automationPath + "/Report");
+			int runCount = ReportHelper.getRunNumber(automationOS, reportLocation);
+			
+			if (isNewRun)
+				reportLocation = reportLocation + "/Run" + runCount;
+			
+			else
+				reportLocation = reportLocation + "/Run" + (runCount - 1);
+			
+			String currentDatetime = DateHelper.getCurrentDateTime("ddMMyyyy_HHmm");
+			String fileName = null;
+			if (suiteName != null)
+				fileName = suiteName + "_" + currentDatetime;
+			else
+				fileName = currentDatetime;
+			
+			fileName = fileName.replace(" ", "_");
+			String fileNameWithoutExt = GenericHelper.getPath(automationOS, reportLocation + "/" + fileName);
+			report = ReportHelper.createReport(report, fileNameWithoutExt);
+			
+			String logFileName = null;
+			if (isNewRun)
+				logFileName = fileNameWithoutExt + ".log";
+			else
+				logFileName = FileHelper.getLastModifiedFile(reportLocation, ".log");
+			
+			Log4jHelper.getLogger(logFileName);
+		}
+		catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static ExtentReports initializeReport(String reportDir, boolean isNewRun) throws Exception {
+		String reportLocation = null;	
+		ExtentReports report = null;
+		try {
+			reportLocation = GenericHelper.getPath(automationOS, automationPath + "/Report");
+			int runCount = ReportHelper.getRunNumber(automationOS, reportLocation);
+			
+			if (isNewRun)
+				reportLocation = reportLocation + "/Run" + runCount;
+			
+			else
+				reportLocation = reportLocation + "/Run" + (runCount - 1);
+			
+			
+			String fileName = null;
+			if (suiteName != null)
+				fileName = suiteName + "_" + reportDir;
+			else
+				fileName = reportDir;
+			
+			String fileNameWithoutExt = GenericHelper.getPath(automationOS, reportLocation + "/" + fileName);
+			report = ReportHelper.createReport(report, fileNameWithoutExt);
+			
+			String logFileName = null;
+			if (isNewRun)
+				logFileName = fileNameWithoutExt + ".log";
+			else
+				logFileName = FileHelper.getLastModifiedFile(reportLocation, ".log");
+			
+			Log4jHelper.getLogger(logFileName);
+		}
+		catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+		return report;
+	}
+	
+	private static void updateReportProperties() throws Exception {
+		try {
+			ReportHelper.updateDocumentTitle(configProp.getProduct());
+			if (versionNo != null)
+				ReportHelper.updateReportName(configProp.getProduct(), versionNo);
+		}
+		catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private static void initializeRemoteConnections() throws Exception {
+		try {
+			if (!applicationOS.equalsIgnoreCase("Windows") && !configProp.getRemoteHostname().equals("")) {
+				RemoteMachineHelper remoteMachine = new RemoteMachineHelper();
+				
+				if (execChannel == null)
+					remoteMachine.createExecConnection();
+				
+				if (sftpChannel == null)
+					remoteMachine.createSFTPConnection();
+			}
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private static void closeRemoteConnections() throws Exception {
+		try {
+			if (execChannel != null) {
+				execChannel.disconnect();
+				execSession.disconnect();
+				execChannel = null;
+				execSession = null;
+			}
+			
+			if (sftpChannel != null) {
+				sftpChannel.exit();
+				sftpSession.disconnect();
+				sftpChannel = null;
+				sftpSession = null;
+			}
+			
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+Regression,01/14/2020,1
+Regression,01/22/2020,1
+Create Db Backup,01/28/2020,1
+Duplicate Check System Testing Flow,01/29/2020,1
+Regression,01/30/2020,1
+Duplicate Check System Testing Flow,01/30/2020,1
+Duplicate Check ST,01/30/2020,1
+Restore Db Backup,02/03/2020,1
+Create Db Backup,02/03/2020,1
+Duplicate Check ST,02/11/2020,1
+Regression,02/11/2020,1
+Duplicate Check ST,02/12/2020,3
+Duplicate Check ST,02/13/2020,1
+Regression,02/13/2020,4
+Duplicate Check ST,02/14/2020,1
+Duplicate Check ST,02/15/2020,1
+Regression,02/18/2020,7
+Duplicate Check ST,02/18/2020,2
+Duplicate Check ST,02/19/2020,5
+Duplicate Check ST,02/20/2020,5
+Duplicate Check ST,02/21/2020,5
+Restore DB Backup,02/21/2020,1
+Duplicate Check ST,02/24/2020,14
+Duplicate Check ST,02/26/2020,8
+Duplicate Check ST,02/27/2020,3
+Duplicate Check ST,02/28/2020,12
+Duplicate Check ST,03/02/2020,2
+Duplicate Check ST,03/03/2020,8
+Duplicate Check ST,03/06/2020,4
+Duplicate Check ST,03/09/2020,6
+CTAF,03/18/2020,5
+CTAF,03/19/2020,1
+CTAF,03/20/2020,7
+CTAF,03/23/2020,8
+CTAF,03/24/2020,1
+Duplicate Check ST,03/24/2020,1
+Duplicate Check ST,03/25/2020,1
+Duplicate Check ST,03/26/2020,4
+Tariff ST Flow,03/29/2020,6
+Tariff ST Flow,03/30/2020,1
+Tariff ST Flow,03/31/2020,4
+Tariff ST Flow,04/01/2020,2
+Audit ST Flow 1,04/05/2020,4
+Audit ST Flow 1,04/06/2020,5
+Tariff ST Flow,04/06/2020,13
+Audit ST Flow 1,04/07/2020,8
+Audit ST Flow 1,04/08/2020,19
+Audit ST Flow 1,04/09/2020,11
+Audit ST Flow 1,04/10/2020,4

@@ -1,0 +1,55 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Audits Issues" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Measures_Audits_OR.properties,Users_OR.properties,CM_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome4"></parameter>
+	<test name="Audits Issues" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.testPrerequisite" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test150933" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test164698" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test164597" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163040" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163039" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163037" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162864" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test157943" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162964" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162501" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test151878" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test151877" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test150062" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test157943" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test145029" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141903" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test140186" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test139644" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test150933" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test164358" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test163014" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test162503" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test152213" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test152212" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test152121" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test145485" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test143018" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141918" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141902" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test141862" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test140021" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test138308" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test151102" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test140033" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test153664" />
+			<class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test149503" />
+			<!-- <class name="com.subex.automation.testcases.regressiontesting.measures_audits.audit_issues.test158033" /> -->
+		</classes>
+	</test>
+</suite>

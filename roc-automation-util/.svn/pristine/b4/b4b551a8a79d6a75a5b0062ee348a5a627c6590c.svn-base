@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="spark-test-utils-java"/>
+	<classpathentry kind="src" path="spark-test-utils-resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/gwt/gwt-dev-1.5.3-windows.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/gwt/gwt-incubator-1.5-Dec_28.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/gwt/gwt-servlet-1.5.3.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/gwt/gwt-user-1.5.3.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/hibernate/ejb3-persistence-1.0.2.GA.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/hibernate/hibernate-annotations-3.4.0.GA.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/hibernate/hibernate-commons-annotations-3.1.0.GA.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/hibernate/hibernate-core-3.3.1.GA.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/hibernate/hibernate-entitymanager-3.4.0.GA.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/hibernate/hibernate-validator-3.1.0.GA.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/jmockit/jmockit-0.9.9.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/joda/joda-time-1.2.1.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/jtds/jtds-1.2.2.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/junit_4.1/junit-dep-4.10.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/mail/activation.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/mail/javax.mail.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/mail/mail.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/mockito1.7/mockito-all-1.7.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/selenium/selenium-java-2.16.1.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/selenium/selenium-server-2.16.1.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/spark/spark-common-1.1-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/testng/testng-6.3.1.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/dbunit2.4.4/dbunit-2.4.4.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/opencsv/opencsv-2.1.jar"/>
+	<classpathentry kind="var" path="AUTOMATION_HOME/spark-test-utils-lib/lib/jtds/ojdbc14_g.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

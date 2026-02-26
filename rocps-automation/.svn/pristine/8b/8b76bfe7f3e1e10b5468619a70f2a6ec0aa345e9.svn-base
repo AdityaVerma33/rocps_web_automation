@@ -1,0 +1,162 @@
+# Environment Details
+utilPath=D:\\NewFramework\\ROC-Util
+downloadDirectory=E:\\Automation\\Downloads\\
+browser=firefox
+recordExecution=No
+embedImageInReport=Yes
+product=ROCPS
+
+
+# Deployment Details
+clientUrl=http://172.31.30.248:8080/Client_10534_B5/sparkLogin.jsp
+http://10.113.59.182:8080/ControlPanel-3.7.3.2
+deployPath=/data/ps_roadmap/10.5.29/server_10529-B47
+tomcatPath=/home/subexuser/CI_CD_Automation/tomcat/apache-tomcat-9.0.37
+dateFormat=MM/dd/yyyy
+timeFormat=HH:mm:ss
+os=Linux
+taskControllerExeFile=tc.sh
+taskControllerName=TC
+machineName=172.31.30.248
+baselinedTestCases=886
+automatedTestCases=754
+
+#Path Details
+dataDir=/data/ps_roadmap/Datadir/
+bulkLoadStreamPath=\\src\\main\\resources\\Data\\FunctionalTesting\\BulkLoadStream\\
+cdrPath=\\src\\main\\resources\\Data\\FunctionalTesting\\CDRS\\
+ratesheetPath=\\src\\main\\resources\\Data\\FunctionalTesting\\RateSheet\\
+xdrExtFullPath=XDRExtraction/XDRExtractionFull/
+xdrExtFullPath2=XDRExtraction/XDRExtractionFullWithBill/
+#Reports and Extracts Path Details
+repExtFlLocAdhocPath=ExtractFlLocation/adhoc/
+repExtFlLocAdhocPath=ExtractFlLocation/adhoc/
+repExtFlLocSchedulePath=ExtractFlLocation/scheduled/
+repExtFlLocSchedulePath=ExtractFlLocation/scheduled/
+roamingFilePath=\\src\\main\\resources\\Data\\FunctionalTesting\\RoamingFilePath\\
+roamingRapOutFilePath=Roaming/RapOut/
+roamingTapOutFilePath=Roaming/TapOut/
+repExtGenBirtRepTargetPath=GenBirtReport/Target/
+
+#Event Usage Request Path Details
+rocpsExpAllRowsPath=ROCPSExportAllRows/
+
+#File Upload Path Details
+fileUploadFiles=\\src\\main\\resources\\Data\\FunctionalTesting\\FileUpload\\
+
+#PDF Excle Template Path Details
+pdfToExcelFiles=\\src\\main\\resources\\Data\\FunctionalTesting\\PdfToExcel\\
+pdfConversionFolder=PdfToExcel
+
+#Deal Import Path Details
+dealImport=\\src\\main\\resources\\Data\\FunctionalTesting\\DealImport\\
+dealImportTemplateFolder=DealImportExcelWriter/
+dealImportTempalteBackup=DealImportBackup/
+
+#Sikulli Image Name xpath
+
+fileTypeUploadImageName=fileTypeFU1.png
+openButtoneUploadImageName=openButtonFU1.png
+
+
+
+# Linux Details
+remoteHostname=172.31.30.248
+remoteUsername=ps_roadmap
+remotePassword=mar2019
+remotePortNumber=22
+
+# Application Details
+applicationName=ROC Partner Settlement
+applicationUsername=Root
+applicationPassword=welcome4
+clientPartitionFlag=true
+partition=true
+
+# Reference Database Details
+dbType=PostgreSQL
+dbMachineName=172.31.30.248
+dbInstance=
+database=ref_10526
+dbUserName=postgres
+dbPassword=postgres
+dbPortNumber=5432
+dbUnicode=N
+dbLinkToReferenceDB=
+dbLinkToStagingDB=
+dbLinkToUsageServer=
+dbMaxActiveConnections=
+dbMaxIdleConnections=
+dbMinIdleConnections=
+dbExhaustedAction=
+dbONSConfig=
+
+# Performance Properties
+calculatePerformance=No
+
+# Usage Database Details
+usageDBType=PostgreSQL
+usageMachineName=172.31.30.248
+usageInstance=
+usageDatabase=usg_10526
+usageUsername=postgres
+usagePassword=postgres
+usagePortNumber=5432
+usageUnicode=N
+usageSecondaryMachines=
+usageLinkToReferenceDB=
+usageLinkToStagingDB=
+usageLinkToUsageServer=
+usageMaxActiveConnections=
+usageMaxIdleConnections=
+usageMinIdleConnections=
+usageExhaustedAction=
+usageONSConfig=
+
+# PostgreSQL Properties (Required if database is PostgreSQL)
+postgreSQLRestoreExeFile=
+
+# Data Generation Properties
+dataDateFormat=ddMMyyyy_HHmm
+
+# Now Date Related Properties
+dateTimeFormat=ddMMyyyy_HHmmss
+currentNowDateTime=
+previousNowDateTime=
+
+# Mail Details (Required if Mail Notification has to be sent)
+sendMail=No
+mailHostname=smtp.office365.com
+mailSendingUserName=shivam.maurya
+mailUsername=shivam.maurya
+mailPassword=Welcome@Subex1422
+mailToAddress=shivam.maurya@subex.com
+mailCCAddress=
+
+# Performance Properties
+searchScreenWaitSec=60
+detailScreenWaitSec=60
+searchTryCount=3
+expectedTries=3
+
+# Automation Properties
+firstLevelDelimiter=|
+secondLevelDelimiter=;
+thirdLevelDelimiter=!
+
+startTomcat=No
+clientStartWaitTimeMins=60
+clientPreviousBuildNo=76
+serverPreviousBuildNo=37
+lastReportDate=06/14/2017 14:43:04
+automationSVNPath=svn://10.113.32.127/Spark/trunk/automation/2.0/roc-automation
+
+# Script Properties (User created properties)
+WaitSecs=2
+UsageGroupWaitTimeInSecs=300
+EntityImportWaitInSecs=300
+DataPath=/home/subexuser/CI_CD_Automation/DataDir
+
+#Partner Settlement  Properties
+SearchLoopTimeLimitInSecs =10
+partitionerrorusagegroup=NewUsageGroup

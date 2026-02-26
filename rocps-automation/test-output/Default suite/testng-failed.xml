@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test" verbose="2">
+    <classes>
+      <class name="com.subex.rocps.automation.testcases.systemtesting.TestCase02"/>
+    </classes>
+  </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="com.subex.rocps.automation.testcases.systemtesting.TestCase02">
+        <methods>
+          <include name="startWebDriver"/>
+          <include name="scheduleFileCollection"/>
+          <include name="checkInstallation"/>
+          <include name="createTariff"/>
+          <include name="handleTestMethodName"/>
+          <include name="resetParameters"/>
+          <include name="stopWebDriver"/>
+          <include name="verifyAggregationResult"/>
+          <include name="endReport"/>
+          <include name="createEventIdentifierDefn"/>
+          <include name="createEventIdentifierVal"/>
+          <include name="createEventMatchRule"/>
+          <include name="closeBrowser"/>
+          <include name="createBand"/>
+          <include name="createEventMatchRuleGroup"/>
+          <include name="updateReport"/>
+          <include name="stopDriver"/>
+          <include name="getSuiteName"/>
+          <include name="createTariffClass"/>
+          <include name="createAccount"/>
+          <include name="createBillProfile"/>
+          <include name="createElement"/>
+          <include name="recurringtasks"/>
+        </methods>
+      </class> <!-- com.subex.rocps.automation.testcases.systemtesting.TestCase02 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

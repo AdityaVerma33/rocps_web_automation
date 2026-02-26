@@ -1,0 +1,241 @@
+#NRTRDEFileStatus
+#------------------------------------------------------------------------
+PSDetail_FileFilterXpath =grid_column_header_filtersearchGrid_pnfsFileName
+PSDetail_FileNameTextBox =pnfsFileName
+PSDetail_FileNameSearch =search
+PSDetail_View =View
+PSDetail_ViewRecords =ViewDetailsActionComponent
+
+#NRTRDE/RAPIN-RoamingConfiguration
+#-------------------------------------------------------------------------
+PSDetail_ConfigurationType =procConfigType_gwt_uid_
+PSDetail_SelectRoamingDefinition =trigger-roamingdefinition
+PSDetail_SelectBillProfile =trigger-billProfile
+PSDetail_SelectVersion =roamingFileVersions_gwt_uid_
+PSDetail_FileSequenceStartNumber =procFilesequenceStartNo
+PSDetail_FileSequenceEndNumber =procFilesequenceEndNo
+PSDetail_TdStartSequenceNo =procTdStartSequence
+PSDetail_RestartNo =procRestartNo
+PSDetail_EventsPerFile =procEventsPerFile
+PSDetail_FileSize =procFileSizeNrtrde
+PSDetail_DailyFileLimit =procDailyFileLimit
+PSDetail_CallAgeTimeFrame =procCallAgeTimeFrame
+PSDetail_FTPLocation =ftpLocationRap_gwt_uid_
+PSDetail_ExcludeSMSFlag =procSmsMtRecordsFl_InputElement
+PSDetail_ExcludeGPRSFlag =procGprsRecordsFl_InputElement
+PSDetail_RoamingConfigurationSave =roamingConfigurationDetail.save
+PSDetail_ClickFilterRoamingDefinition =grid_column_header_filtersearchGrid_roamingDefinition$tadigCode$ptdgCode
+PSDetail_SelectTadigRoamingDefinition =roamingDefinition_tadigCode_gwt_uid_
+PSDetail_ClickFilterConfiguration =grid_column_header_filtersearchGrid_procConfigType
+PSDetail_SelectConfigurationType =procConfigType_gwt_uid_
+PSDetail_TapDecimalPlaces =procDecimalPlaces_gwt_uid_
+
+
+#ViewRapFile
+#-------------------------------------------------------------------------
+PSSearch_roamingFileStatusGridWrapperId = bottomSplitPanel
+PSNavigateToViewID = View
+PSConfigTypeSearchFilterID = //div[@id='grid_column_header_filtersearchGrid_prfConfigType']
+PSConfigTypeSelectionFilterID = prfConfigType_gwt_uid_
+PSFailureReasonSearchFilterID = //div[@id='grid_column_header_filtersearchGrid_prfsFailureReason']
+PSFailureReasonSelectionFilterID = prfsFailureReason_gwt_uid_
+PSRoamingErrorMessageContextSelectionID = RoamingErrorMessage_premContext_gwt_uid_
+PARoamingErrorMessageCallTypeSelectionID = prctCallType_gwt_uid_
+
+#ImfCurrency Reference Table
+#-----------------------------------------------------------------------------------------------
+ImfCurrency_ImfCurrencyGrid=searchGrid
+ImfCurrency_SelectCurrency_comboId=currency_curName_gwt
+ImfCurrency_ImfCurrencyName_textId=pmfcCurName
+ImfCurrency_save_button=ok
+
+#ImfExchangeRate Import Screen
+#--------------------------------------------------------------------------------------------------
+ImfImportScreen_filterText=taskOutputFile$fileTbl$filFilename
+ImfImportScreen_Grid=searchGrid
+ImfImportScreen_ViewAction=View
+ImfImportScreen_ExchangeRateAction=ViewExchangeRatesActionComponent
+ImfImportScreen_PopUpColumnHeaderId=grid_column_header_undefined_
+ImfImportScreen_PopUpGridId=imfExchangeRateDetailDetail
+#HUROUTRoamingConfigurations
+#-------------------------------------------------------------------------
+PSHUROUTRoamingConfiguration_ThresholdAmountID = procThresholdAmount
+PSHUROUTRoamingConfiguration_ThresholdPeriodID = procThresholdPeriod
+PSHUROUTRoamingConfiguration_SendMethodID = procSendMethod_gwt_uid_
+PSHUROUTRoamingConfiguration_EnterEmailID = emailEditor
+PSHUROUTRoamingConfiguration_AddEmailID = toolbar-button-label-emailToolbar.Add
+
+#HUR Files
+#-------------------------------------------------------------------------
+PS_FileName =phfsFileName
+PS_SendEmail =SendHurActionComponent
+PS_SelectEmail = Email HUR
+PS_CopyMsg = window-scroll-panel
+PS_CopiedPopup = ok
+
+#HUROUTRoamingConfigurations
+#-------------------------------------------------------------------------
+PSHUROUTRoamingConfiguration_ThresholdAmountID = procThresholdAmount
+PSHUROUTRoamingConfiguration_ThresholdPeriodID = procThresholdPeriod
+PSHUROUTRoamingConfiguration_SendMethodID = procSendMethod_gwt_uid_
+PSHUROUTRoamingConfiguration_EmailGridID = emailGrid
+PSHUROUTRoamingConfiguration_EnterEmailID = emailEditor
+PSHUROUTRoamingConfiguration_EmailAddressID =  Email  Address
+PSHUROUTRoamingConfiguration_AddEmailID = emailToolbar.Add
+PSHUROUTRoamingConfiguration_BillProfileFilterID = grid_column_header_filtersearchGrid_pbipName
+PSHUROUTRoamingConfiguration_BillProfileNameID = pbipName
+PSHUROUTRoamingConfiguration_TadigCodeFilterID = grid_column_header_filtersearchGrid_tadigCode$ptdgCode
+PSHUROUTRoamingConfiguration_TadigCodeID = tadigCode_gwt_uid_
+
+#RecordingEntityInformation Reference Table
+#-----------------------------------------------------------------------------------
+PS_ReferenceTableRecEntityInformation_EntityTypeID = recEntityType_prtyType_gwt_uid_
+PS_ReferenceTableRecEntityInformation_EntityIdentifierID = preiEntityIdentifier
+PS_ReferenceTableRecEntityInformation_SaveID = //button[@id='ok']
+PS_ReferenceTableRecEntityInformation_IdentifierID = grid_column_header_searchGrid_preiEntityIdentifier
+
+#Reference table - Roaming Tax Indicator
+#-----------------------------------------------------------------------------------------------
+Roaming_tax_indicator_value=prtiValue
+Roaming_tax_indicator_desc=prtiDescription
+Roaming_tax_indicator_save=ok
+
+
+#Reference table - Roaming Tax Type
+#-----------------------------------------------------------------------------------------------
+Roaming_Tax_type_value=ptxtValue
+Roaming_Tax_type=ptxtType
+Roaming_Tax_type_Desc=ptxtDescription
+Roaming_Tax_type_save=ok
+
+#Reference table - Roaming Taxation
+#-----------------------------------------------------------------------------------------------
+Roaming_taxation_Taxtype=roamingTaxType_ptxtType_gwt_uid_
+Roaming_taxation_tax=salesTax_pstxName_gwt_uid_
+Roaming_charge_type=chargeType_pchtDescription_gwt_uid_
+Roaming_taxation_tax_Indicator=roamingTaxIndicator_prtiDescription_gwt_uid_
+Roaming_taxation_save=ok
+
+
+
+#Call Type Group
+#---------------------------------------------------------------------------
+PS_GroupName =pctgName
+PS_CallTypeLevel1 =callTypeLevel1_pct1Description_gwt_uid_
+PS_CallTypeLevel2 =callTypeLevel2_pct2Description_gwt_uid_
+PS_CallTypeLevel3 =pctgCallTypeLevel3
+
+#TAPErroredAndExcludedRecords 
+#--------------------------------------------------------------------------------------------------
+TAPErrorRecordsSearchGridID = searchGrid
+TAPStreamStageID = task_streamStage_gwt_uid_
+RecipientTadigGridFilterID = grid_column_header_filtersearchGrid_tadigCode$ptdgCode
+RecipientTadigSelectionID = tadigCode_gwt_uid_
+TAPSearchID = search
+
+#RoamingDefinition
+#-------------------------------------------------------------------------
+PSRoamingDefinition_TadiCodeID =tadigCode_gwt_uid_
+PSRoamingDefinition_SelectCommonPartition =parititionCombo_gwt
+PSRoamingDefinition_SavePartition =//button[@id='ok']
+PSRoamingDefinition_TypeofAgreement =prdfAgreementType_gwt_uid_
+PSRoamingDefinition_MCC =prdfMcc
+PSRoamingDefinition_MNC =prdfMnc
+PSRoamingDefinition_SecondaryTadigID =secondarytadigCode_gwt_uid
+PSRoamingDefinition_Network =prdfNetwork
+PSRoamingDefinition_Operator =prdfOperator
+PSRoamingDefinition_Status =prdfStatus_gwt_uid_
+PSRoamingDefinition_CDStartDate =prdfCdStartDttm
+PSRoamingDefinition_CDEndDate =prdfCdEndDttm
+PSRoamingDefinition_TadigCodeFilterSearch =//div[@id='-container']//div[text()='Search']
+PSRoamingDefinition_RoamingDefinitionSave =roamingDefinitionDetail.save
+
+#Bill Parameter
+------------------------------------------------------------------------------
+PSDetail_Bill_Parameter_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Parameter  Name']
+PSDetail_Bill_Parameter_BillParameterName_textId =pbpaName
+PSDetail_Bill_Parameter_SourceType_comboId =pbpaType_gwt_uid_
+PSDetail_Bill_Parameter_Source_addtableInstance_ID =toolbar-button-label-sourceSelectionGridToolBar.addTableInstance
+PSDetail_Bill_Parameter_clear =clear
+PSDetail_Bill_Parameter_Displayname_TableInstance =grid_column_header_filtersearchGrid_tinDisplayName
+PSDetail_Bill_Parameter_Sourceselection_GridId=sourceSelectionGrid
+PSDetail_Bill_Parameter_JoinType_ComboId =sqfJoinTypeCombo_gwt_uid_
+PSDetail_Bill_Parameter_Column1_ComboId=sqfTblColumn1Combo_gwt_uid_
+PSDetail_Bill_Parameter_Column2_ComboId=sqfTblColumn2Combo_gwt_uid_
+PSDetail_Bill_Parameter_Column_TabId =//*[@id='topPanelContainer']//div[text()='Columns']
+PSDetail_Bill_Parameter_Filter_TabId=//*[@id='topPanelContainer']//div[text()='Filters']
+PSDetail_Bill_Parameter_Filter_addButton=toolbar-button-label-queryFilterComponentToolbar.add
+PSDetail_Bill_Parameter_Condition_select=queryFilterAddSubMenu.condition
+PSDetail_Bill_Parameter_Filter_GridId=queryFilterGrid
+PSDetail_Bill_Parameter_Filter_Left_ComboId=leftIndentOptions
+PSDetail_Bill_Parameter_Filter_Expression1_ComboId=id_gwt_uid_
+PSDetail_Bill_Parameter_operator_ComboId=operator_gwt_uid_
+PSDetail_Bill_Parameter_expression2_TextId=grid_cell_popuppanel
+PSDetail_Bill_Parameter_Right_ComboId=rightIndentOptions
+PSDetail_Bill_Parameter_add_ButtonID=addButton
+PSDetail_Bill_Parameter_Column_GridID=selectedColumnsGrid
+PSDetail_Bill_Parameter_Aggregate_ComboID=sqsAggregateComboEditor_gwt_uid_
+PSDetail_Bill_Parameter_Statement_textID=grid_cell_popuppanel
+PSDetail_Bill_Parameter_ColumnName_textID=tclNameEditor
+PSDetail_Bill_Parameter_DisplayName_textID=tclDisplayEditor
+PSDetail_Bill_Parameter_Type_ComboID=tclTypeEditor_gwt_uid_164_chzn
+PSDetail_Bill_Parameter_Sort_ComboID=grid_cell_popuppanel
+PSDetail_Bill_Parameter_popUp_GridId=window-scroll-panel
+PSDetail_Bill_Parameter_popUp_Yes_ButtonId=yes
+PSDetail_Bill_Parameter_Constant_DataType_comboId=pbpaConstantDatatype_gwt_uid_
+PSDetail_Bill_Parameter_Context_Directory_ButtonId=trigger-pbpaConstantValue
+PSDetail_Bill_Parameter_Context_directory_popup_GridId=chooserWindow.window
+PSDetail_Bill_Parameter_ContextDirectory_token_ComboId=tokenTbl_gwt_uid_
+PSDetail_Bill_Parameter_ContextDirectory_filepath_textId=filePath
+PSDetail_Bill_Parameter_ContextDirectory_Save_ButtonId=chooserWindow.save
+PSDetail_Bill_Parameter_ConstandValue_textId=pbpaConstantValue
+PSDetail_Bill_Parameter_save_Xpath=billParameterDetail.save
+
+#Bill Dataset
+------------------------------------------------------------------------------
+PSBillDataset_Detail_BillDatasetNameID =pbdsName
+PSBillDataset_Detail_FileName =pbdsOutputfilename
+PSBillDataset_Detail_DatasetFilterID = grid_column_header_filtersearchGrid_pbdsName
+PSBillDataset_Detail_Source_addtableInstance =toolbar-button-label-sourceSelectionGridToolBar.addTableInstance
+PSBillDataset_Search_ClearButtonID =clear
+DisplaynameTableInstance =grid_column_header_filtersearchGrid_tinDisplayName
+PSBillDataset_Detail_Source_SourceselectionGridId =sourceSelectionGrid
+PSBillDataset_Detail_Source_JoinTypeComboId =sqfJoinTypeCombo_gwt_uid_
+PSBillDataset_Detail_Source_Column1ComboId=sqfTblColumn1Combo_gwt_uid_
+PSBillDataset_Detail_Source_Column2ComboId=sqfTblColumn2Combo_gwt_uid_
+PSBillDataset_Detail_Column_ColumnTab =//*[@id='topPanelContainer']//div[text()='Columns']
+PSBillDataset_Detail_Filter_FilterTab=//*[@id='topPanelContainer']//div[text()='Filters']
+PSBillDataset_Detail_Column_addID=addButton
+PSBillDataset_Detail_FilterTab_FilterAddID=toolbar-button-label-queryFilterComponentToolbar.add
+PSBillDataset_Detail_Filter_ConditionID=queryFilterAddSubMenu.condition
+PSBillDataset_Detail_Filter_FilterGridId=queryFilterGrid
+PSBillDataset_Detail_Filter_LeftComboId=leftIndentOptions
+PSBillDataset_Detail_Filter_Expression1ComboId=id_gwt_uid_
+PSBillDataset_Detail_Filter_operatorComboId=operator_gwt_uid_
+PSBillDataset_Detail_Filter_expression2ID=grid_cell_popuppanel
+PSBillDataset_Detail_Filter_RightComboId=rightIndentOptions
+PSDetail_Bill_Dataset_Column_GridID=selectedColumnsGrid
+PSDetail_Bill_Dataset_Aggregate_ComboID=sqsAggregateComboEditor_gwt_uid_
+PSDetail_Bill_Dataset_Statement_textID=grid_cell_popuppanel
+PSDetail_Bill_Dataset_ColumnName_textID=tclNameEditor
+PSDetail_Bill_Dataset_DisplayName_textID=tclDisplayEditor
+PSDetail_Bill_Dataset_Type_ComboID=tclTypeEditor_gwt_uid_164_chzn
+
+
+#BillRefortConfiguration
+#----------------------------------------------------------------------------------------------------
+PSDetail_Bill_Report_Conf_Name_TextId=pbrcName
+PSDetail_Bill_Report_Conf_Component_comboid=component_gwt_uid_
+PSDetail_Bill_Report_Conf_CustomBillPar_AddButtonId=toolbar-button-label-customBillParameterGridToolbar.Add
+PSDetail_Bill_Report_Conf_DataSetAddButtonId=toolbar-button-label-billDatasetGridToolbar.Add
+PSDetail_Bill_Report_Conf_File_delimiter_comboid=pbrcFileDelimiter_gwt_uid_
+PSDetail_Bill_Report_Conf_Write_file_reader_checkBoxId=pbrcWriteFileHeaderFl_InputElement
+PSDetail_Bill_Report_Conf_detail_Page_XPath=//*[@class='gwt-field-label' and text()='Name']
+PSDetail_Bill_Report_Conf_save_Xpath=billReportConfigurationDetail.save
+PSDeatil_SearchButtonId=search
+PSDetail_clearButtonId=clear
+PSDetail_Bill_Report_Conf_DatasetFilterID=grid_column_header_filtersearchGrid_pbdsName
+PSDetail_Bill_Report_Conf_DataSetId=pbdsName
+PSDetail_Bill_Report_Conf_Cust_Bill_Name_TextId=pbpaName
+PSDetail_Bill_Report_Conf_CheckBoxId=searchableFlEditor_checked_column_field_image
+PSDetail_Bill_Report_Conf_Sytem_parameter_gridId=systemParametersGrid

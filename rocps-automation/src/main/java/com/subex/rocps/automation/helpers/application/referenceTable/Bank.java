@@ -1,0 +1,291 @@
+package com.subex.rocps.automation.helpers.application.referenceTable;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.testng.annotations.Test;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+import com.subex.rocps.automation.utils.PSStringUtils;
+
+public class Bank extends PSAcceptanceTest {
+	protected ExcelReader excelData = null;
+	protected Map<String, ArrayList<String>> bankExcel = null;
+	protected Map<String, String> bankMap = null;
+	protected ExcelHolder excelHolderObj = null;
+	protected String path;
+	protected String workBookName;
+	protected String sheetName;
+	protected String testCaseName;
+	protected int paramVal;
+	protected int colSize;
+	protected String clientPartition;
+	protected String name;
+	protected String branch;
+	protected String component;
+	protected String tableName;
+	protected String field1;
+	protected String field2;
+	protected String field3;
+	protected String field4;
+	protected String field5;
+	protected PSGenericHelper genericHelperObj = new PSGenericHelper();
+
+	/*
+	 * Constructor for initializing excel Identifying the column size from the map
+	 * passed
+	 */
+	@Test
+	public Bank(String path, String workBookName, String sheetName, String testCaseName) throws Exception {
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		bankExcel = excelData.readDataByColumn(this.path, this.workBookName, this.sheetName, this.testCaseName);
+		excelHolderObj = new ExcelHolder(bankExcel);
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Overloaded constructor for reading data from excel if test case name appears
+	 * more than once
+	 * 
+	 * @Param occurance : Test case instance in excel sheet Constructor for
+	 * initializing excel Identifying the column size from the map
+	 */
+
+	public Bank(String path, String workBookName, String sheetName, String testCaseName, int occurance)
+			throws Exception {
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		bankExcel = excelData.readDataByColumn(this.path, this.workBookName, this.sheetName, this.testCaseName,
+				occurance);
+		excelHolderObj = new ExcelHolder(bankExcel);
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Configuring the new bank
+	 * 
+	 */
+	public void bankCreation() throws Exception {
+		try {
+			NavigationHelper.navigateToReferenceTable("Bank");
+			for (paramVal = 0; paramVal < colSize; paramVal++) {
+
+				bankMap = excelHolderObj.dataMap(paramVal);
+				initializeVariables(bankMap);
+				//ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				boolean isBankPresent = GridHelper.isValuePresent("searchGrid", name, "Name");
+
+				if (!isBankPresent) {
+					genericHelperObj.clickNewAction(clientPartition);
+					GenericHelper.waitForLoadmask();
+					newbank();
+					saveBank();
+
+					Log4jHelper.logInfo("Bank is created successfully with name " + name);
+				} else {
+					Log4jHelper.logInfo("Bank is already available with name " + name);
+				}
+			}
+		} catch (Exception e) {
+
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	/*
+	 * this method is to create new Bank
+	 */
+	public void newbank() throws Exception {
+		NavigationHelper.selectPartition(clientPartition);
+		assertEquals(NavigationHelper.getScreenTitle(), "New Bank");
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_name_textID", name);
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Branch_txtID", branch);
+		ComboBoxHelper.select("PS_Detail_RefTable_Bank_Component_txtID", component);
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field1_txtID", field1);
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field2_txtID", field2);
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field3_txtID", field3);
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field4_txtID", field4);
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field5_txtID", field5);
+	}
+
+	public void saveBank() throws Exception {
+		ButtonHelper.click("SaveButton");
+		GenericHelper.waitForSave();
+		assertEquals(NavigationHelper.getScreenTitle(), "Reference Table Search");
+		assertTrue(GridHelper.isValuePresent("Detail_eventDefn_gridID", name, "Name"), "Bank is not configured");
+	}
+
+	/*
+	 * this method is to edit  Bank
+	 */
+	public void editBankDetail() throws Exception {
+		assertEquals(NavigationHelper.getScreenTitle(), "Edit Bank");
+		TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_name_textID", name);
+		if(ValidationHelper.isNotEmpty( branch ))
+			TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Branch_txtID", branch);
+		if(ValidationHelper.isNotEmpty( component ))
+			ComboBoxHelper.select("PS_Detail_RefTable_Bank_Component_txtID", component);
+		if(ValidationHelper.isNotEmpty( field1 ))
+			TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field1_txtID", field1);
+		if(ValidationHelper.isNotEmpty( field2 ))
+			TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field2_txtID", field2);
+		if(ValidationHelper.isNotEmpty( field3 ))
+			TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field3_txtID", field3);
+		if(ValidationHelper.isNotEmpty( field4 ))
+			TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field4_txtID", field4);
+		if(ValidationHelper.isNotEmpty( field5 ))
+			TextBoxHelper.type("PS_Detail_wrapperID", "PS_Detail_RefTable_Bank_Field5_txtID", field5);
+	}
+	/*
+	 * This method is to initializeVariables
+	 */
+	public void initializeVariables(Map<String, String> map) throws Exception {
+		clientPartition = ExcelHolder.getKey(map, "Partition");
+		name = ExcelHolder.getKey(map, "Name");
+		branch = ExcelHolder.getKey(map, "Branch");
+		component = ExcelHolder.getKey(map, "Component");
+		field1 = ExcelHolder.getKey(map, "Field1");
+		field2 = ExcelHolder.getKey(map, "Field2");
+		field3 = ExcelHolder.getKey(map, "Field3");
+		field4 = ExcelHolder.getKey(map, "Field4");
+		field5 = ExcelHolder.getKey(map, "Field5");
+		tableName = ExcelHolder.getKey(map, "TableName");
+	}
+
+	/*
+	 * This method is to validate search screen columns
+	 */
+	public void searchScreenColumnsValidation() throws Exception
+	{		
+		NavigationHelper.navigateToReferenceTable("Bank");
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			bankMap = excelHolderObj.dataMap( paramVal );
+			String searchScreenColumns = ExcelHolder.getKey( bankMap, "SearchScreenColumns" );
+			ArrayList<String> excelColumnNames = new ArrayList<String>();
+			PSStringUtils strObj = new PSStringUtils();
+			String[] searchGridColumnsArr = strObj.stringSplitFirstLevel( searchScreenColumns );
+			for ( int col = 0; col < searchGridColumnsArr.length; col++ )
+			{
+				excelColumnNames.add( searchGridColumnsArr[col] );
+			}
+			genericHelperObj.totalColumns( excelColumnNames );
+		}
+	}
+	
+	public void editBank() throws Exception {
+		try {
+			NavigationHelper.navigateToReferenceTable("Bank");
+			for (paramVal = 0; paramVal < colSize; paramVal++) {
+
+				bankMap = excelHolderObj.dataMap(paramVal);
+				initializeVariables(bankMap);
+				//ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask(searchScreenWaitSec);
+				boolean isBankPresent = GridHelper.isValuePresent("searchGrid", name, "Name");
+
+				if (isBankPresent) {
+					int row = GridHelper.getRowNumber( "searchGrid", name, "Name" );
+					NavigationHelper.navigateToEdit( "SearchGrid", row );
+					GenericHelper.waitForLoadmask();
+					newbank();
+					saveBank();
+
+					Log4jHelper.logInfo("Bank is created successfully with name " + name);
+				} else {
+					Log4jHelper.logInfo("Bank is already available with name " + name);
+				}
+			}
+		} catch (Exception e) {
+
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	/*
+	 * This method is to delete bank
+	 */
+	public void bankDelete() throws Exception {
+
+		NavigationHelper.navigateToReferenceTable("Bank");
+		for (paramVal = 0; paramVal < colSize; paramVal++) {
+
+			bankMap = excelHolderObj.dataMap(paramVal);
+
+			clientPartition = ExcelHolder.getKey(bankMap, "Partition");
+			name = ExcelHolder.getKey(bankMap, "Name");
+
+			genericHelperObj.selectPartitionFilter(clientPartition, "Non Deleted Items");
+			boolean isBankPresent = GridHelper.isValuePresent("searchGrid", name, "Name");
+			if (isBankPresent) {
+				genericHelperObj.clickDeleteOrUnDeleteAction(name, "Name", "Delete");
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter(clientPartition, "Deleted Items");
+				assertTrue(GridHelper.isValuePresent("SearchGrid", name, "Name"), name);
+				Log4jHelper.logInfo("Bank is deleted successfully :" + name);
+
+			} else {
+				Log4jHelper.logInfo("Bank is not available with name " + name);
+			}
+
+		}
+	}
+
+	/*
+	 * This method is un delete bank
+	 */
+	public void bankUnDelete() throws Exception {
+
+		NavigationHelper.navigateToReferenceTable("Bank");
+		for (paramVal = 0; paramVal < colSize; paramVal++) {
+
+			bankMap = excelHolderObj.dataMap(paramVal);
+
+			clientPartition = ExcelHolder.getKey(bankMap, "Partition");
+			name = ExcelHolder.getKey(bankMap, "Name");
+
+			genericHelperObj.selectPartitionFilter(clientPartition, "Deleted Items");
+			boolean isBankPresent = GridHelper.isValuePresent("searchGrid", name, "Name");
+			if (isBankPresent) {
+				genericHelperObj.clickDeleteOrUnDeleteAction(name, "Name", "Undelete");
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter(clientPartition, "Non Deleted Items");
+				assertTrue(GridHelper.isValuePresent("SearchGrid", name, "Name"), name);
+				Log4jHelper.logInfo("Bank is un deleted successfully :" + name);
+
+			} else {
+				Log4jHelper.logInfo("Bank is not available with name " + name);
+			}
+
+		}
+	}
+	
+	public void clickNewAction(String clientPartition) throws Exception {
+		genericHelperObj.clickNewAction(clientPartition);
+		GenericHelper.waitForLoadmask(detailScreenWaitSec);
+	}
+
+}

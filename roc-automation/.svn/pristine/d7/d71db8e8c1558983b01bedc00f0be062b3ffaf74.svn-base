@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="1.0.14872.0" version="2">
+    <Decoder name="Sample Binary Parser" type="binary">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="CDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType generate="record" root="false" name="CDR" length="13" type="fixedlengthbinary">
+            <Field postByteSwap="false" generate="field" nibbleSwap="false" type="bcd" id="0" trimQuotes="true" name="Caller_Number" decodeMap="0123456789ABCDEF" encoding="windows-1252" length="6.0" trimWhiteSpaceInsideQuotes="true" termMask="C" byteReversed="false" offset="0" preByteSwap="false" trimWhiteSpace="true"/>
+            <Field postByteSwap="false" generate="field" nibbleSwap="false" type="bcd" id="1" trimQuotes="true" name="Time_Stamp" decodeMap="0123456789ABCDEF" encoding="windows-1252" length="6.0" trimWhiteSpaceInsideQuotes="true" byteReversed="false" offset="6.0" preByteSwap="false" trimWhiteSpace="true">
+                <FieldConverter format="ddMMyyHHmmss" type="datetime"/>
+            </Field>
+            <Field id="2" postByteSwap="false" nibbleSwap="false" generate="field" nullMask="C" name="Duration" length="1.0" byteReversed="false" offset="12.0" preByteSwap="false" type="integer"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="60" yPos="110" xPos="215" name="Mapping" width="60" type="Mapping" recordType="binary_cdr" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape4">
+                        <Events>
+                            <Event expression="GetUsagePartitionId('Issues1 Usage Group', Now(), SecondPart(Now()))" name="usg_par_id" target="$usg_par_id" type="assign"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="Caller_Number" target="A_Number"/>
+                    <Mapping expression="Time_Stamp" target="Time_Stamp"/>
+                    <Mapping expression="Duration" target="Sequence_Number"/>
+                    <Mapping expression="$$Filename" target="File_Name"/>
+                    <Mapping expression="Duration" target="Duration"/>
+                    <Mapping expression="ID()" target="CDR_ID"/>
+                    <Mapping expression="$$StreamFileId" target="SFL_ID"/>
+                    <Mapping expression="$$StreamStageId" target="STS_ID"/>
+                    <Mapping expression="$$RecordNumber" target="Record_Number"/>
+                    <Mapping expression="$$RecordType" target="Record_Type"/>
+                    <Mapping expression="$$RecordLength" target="Record_Length"/>
+                    <Mapping expression="$$RecordAddress" target="Record_Address"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="115" xPos="110" name="CDR" width="50" type="Record" recordType="CDR" nodeKey="shape4">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="50" yPos="115" UsagePartitionId="$usg_par_id" xPos="365" name="Spark Output" unicode="false" width="60" outputKey="1" charset="windows-1252" filename="Concatenate( $$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat' )" type="SparkOutput" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="1" name="ID" blockSize="100" type="GenerateId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="binary_cdr">
+                <Field id="3" name="CDR_ID" nullable="true" type="integer"/>
+                <Field id="4" name="A_Number" nullable="true" type="string"/>
+                <Field id="1" name="Time_Stamp" nullable="true" type="datetime"/>
+                <Field id="2" name="Duration" nullable="true" type="integer"/>
+                <Field id="5" name="SFL_ID" nullable="true" type="integer"/>
+                <Field id="6" name="STS_ID" nullable="true" type="integer"/>
+                <Field id="7" name="Record_Number" nullable="true" type="integer"/>
+                <Field id="8" name="Record_Type" nullable="true" type="string"/>
+                <Field id="9" name="Record_Address" nullable="true" type="integer"/>
+                <Field id="10" name="Record_Length" nullable="true" type="integer"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global id="0" initialValue="0" name="usg_par_id" type="integer"/>
+        </Globals>
+    </Mappings>
+</Diamond>

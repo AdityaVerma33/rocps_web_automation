@@ -1,0 +1,230 @@
+package com.subex.rocps.automation.helpers.application.system;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.PSFileHelper;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.application.screens.FileCollectionHelper;
+import com.subex.automation.helpers.application.screens.TaskSearchHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CalendarHelper;
+import com.subex.automation.helpers.component.ElementHelper;
+import com.subex.automation.helpers.component.FileHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.LabelHelper;
+import com.subex.automation.helpers.component.PopupHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class TaskSchedule extends PSAcceptanceTest
+{
+
+	/*
+	 * this method is to copy file to dataDir
+	 */
+	public void copyFileHelper( String fileName, String fileDestPath, String fileSrcPath ) throws Exception
+	{
+
+		if ( ( automationOS.equalsIgnoreCase( "Windows" ) && applicationOS.equalsIgnoreCase( "Linux" ) ) || applicationOS.equalsIgnoreCase( "Unix" ) )
+		{
+			String hostname = configProp.getRemoteHostname();
+			String username = configProp.getRemoteUsername();
+			String password = configProp.getRemotePassword();
+			int portNumber = configProp.getRemotePortNumber();
+			PSFileHelper filObj = new PSFileHelper();
+
+			String fileNameLinux = fileSrcPath + fileName;
+
+			filObj.copyFileWindowsToLinux( hostname, username, password, portNumber, fileNameLinux, fileDestPath );
+		}
+		else
+		{
+			FileHelper.copyFile( fileSrcPath, fileDestPath, fileName, fileName, true );
+		}
+	}
+
+	/*
+	 * This method is to schedule file collection with copy file name from src dir to dest dir
+	 */
+	public void fileCollection( String path, String workBookName, String sheetName, String tcName, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, tcName, occurence );
+			int size = map.get( "FileCollectionName" ).size();
+			for ( int i = 0; i < size; i++ )
+			{
+				String fcName = map.get( "FileCollectionName" ).get( i );
+				String fileName = map.get( "FileName" ).get( i );
+				String fileDestDir = map.get( "FileSourceDir" ).get( i );
+				String fileSrcPath = null;
+				String filePath = map.get( "FilePath" ).get( i );
+
+				String fileDestPath = configProp.getDataDirPath() + fileDestDir;
+				if ( !filePath.isEmpty() && filePath.contains( "\\" ) || filePath.contains( "//" ) )
+					fileSrcPath = filePath;
+				else
+					fileSrcPath = automationPath + configProp.getProperty( filePath );
+				System.out.println("SOurce File is "+fileSrcPath);
+				System.out.println("Dest  File is "+fileSrcPath);
+				copyFileHelper( fileName, fileDestPath, fileSrcPath );
+				FileCollectionHelper obj = new FileCollectionHelper();
+				obj.scheduleFileCollection( fcName );
+			}
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+
+		}
+	}
+
+	/*
+	 * This method is to schedule file collection
+	 */
+	public void scheduleFileCollection( String path, String workBookName, String sheetName, String tcName, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, tcName, occurence );
+			int size = map.get( "FileCollectionName" ).size();
+			for ( int i = 0; i < size; i++ )
+			{
+				String fcName = map.get( "FileCollectionName" ).get( i );
+				FileCollectionHelper obj = new FileCollectionHelper();
+				obj.scheduleFileCollection( fcName );
+			}
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+
+		}
+	}
+	/*
+	 * This method is to schedule recurring task
+	 */
+
+	public void scheduleRecurringTask( String path, String workBookName, String sheetName, String tcName, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelReader = new ExcelReader();
+			PSTaskSearchHelper taskSearch = new PSTaskSearchHelper();
+			HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, tcName, occurence );
+			String recurringtaskname = map.get( "RecurringTaskName" ).get( 0 );
+			String streamStageName = map.get( "StreamStage" ).get( 0 );
+			String sortColumn = map.get( "SortColumn" ).get( 0 );
+			String streamName = map.get( "Stream" ).get( 0 );
+			int masterTaskrow = taskSearch.getTask( streamName, streamStageName, "Last day", "Completed", sortColumn );
+			if ( masterTaskrow > 0 )
+				scheduleRecurringFromTaskSearch();
+			else
+				runFromRecurringTaskScreen( recurringtaskname );
+		}
+		catch ( Exception e )
+		{
+
+			throw new Exception( "failed to schedule recurring task" );
+		}
+	}
+
+	/*
+	 * This method is to schedule recurring task from task search
+	 */
+	private void scheduleRecurringFromTaskSearch() throws Exception
+	{
+
+		GridHelper.clickRow( "SearchGrid", 1, 2 );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		PSGenericHelper.waitForParentActionElementTOBeclickable( "Recurring Task" );
+		NavigationHelper.navigateToAction( "Recurring Task", "Schedule Now" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElement( "//*[@id='window-scroll-panel']", searchScreenWaitSec );
+		ButtonHelper.click( "YesButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+	}
+
+	/*
+	 * This method is to schedule recurring task from navigation menu
+	 */
+	public void runRecurringTask( String path, String workBookName, String sheetName, String tcName, int occurence ) throws Exception
+	{
+		try
+		{
+			ExcelReader excelReader = new ExcelReader();
+			HashMap<String, ArrayList<String>> map = excelReader.readDataByColumn( path, workBookName, sheetName, tcName, occurence );
+			String recurringtaskname = map.get( "RecurringTaskName" ).get( 0 );
+			NavigationHelper.navigateToScreen( "Recurring Tasks", "Recurring Task Search" );
+			int row = SearchGridHelper.gridFilterSearchWithTextBox( "srtName", recurringtaskname, "Name" );
+			if ( row > 0 )
+			{
+				GridHelper.clickRow( "SearchGrid", recurringtaskname, "Name" );
+				NavigationHelper.navigateToAction( "Common Tasks", "Edit" );
+				GenericHelper.waitForLoadmask( detailScreenWaitSec );
+				String detailScreenTitle = NavigationHelper.getScreenTitle();
+
+				CalendarHelper.setNow( "trigger-rshNextDttm" );
+
+				ButtonHelper.click( "SaveButton" );
+				GenericHelper.waitForLoadmask( detailScreenWaitSec );
+
+				assertTrue( LabelHelper.isTitleNotPresent( detailScreenTitle ), "File Collection save did not happen." );
+				ButtonHelper.click( "SearchButton" );
+				GenericHelper.waitForLoadmask();
+			}
+			else
+			{
+				FailureHelper.failTest( "File Collection '" + recurringtaskname + "' is not found." );
+			}
+		}
+		catch ( Exception e )
+		{
+
+			throw new Exception( "failed to schedule recurring task" );
+		}
+	}
+
+	/*
+	 * This method is to schedule recurring task from navigation menu
+	 */
+	private void runFromRecurringTaskScreen( String recurringtaskname ) throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Recurring Tasks", "Recurring Task Search" );
+		int row = SearchGridHelper.gridFilterSearchWithTextBox( "srtName", recurringtaskname, "Name" );
+		if ( row > 0 )
+		{
+			GridHelper.clickRow( "SearchGrid", recurringtaskname, "Name" );
+			NavigationHelper.navigateToAction( "Common Tasks", "Edit" );
+			GenericHelper.waitForLoadmask( detailScreenWaitSec );
+			String detailScreenTitle = NavigationHelper.getScreenTitle();
+
+			CalendarHelper.setNow( "trigger-rshNextDttm" );
+
+			ButtonHelper.click( "SaveButton" );
+			GenericHelper.waitForLoadmask( detailScreenWaitSec );
+
+			assertTrue( LabelHelper.isTitleNotPresent( detailScreenTitle ), "File Collection save did not happen." );
+			ButtonHelper.click( "SearchButton" );
+			GenericHelper.waitForLoadmask();
+		}
+		else
+		{
+			FailureHelper.failTest( "File Collection '" + recurringtaskname + "' is not found." );
+		}
+	}
+
+}

@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="1.0.14336.0" version="3">
+    <Decoder name="LDC" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="Record" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" allowEOFTerm="false" terminator="crlf" root="false" name="Record" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="fng_record_number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="1" generate="field" name="fng_record_length" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="2" generate="field" name="fng_record_address" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="3" generate="field" name="fng_filename" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="4" generate="field" name="fng_recordtype" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="5" generate="field" name="fng_record_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="6" generate="field" name="fng_cdr_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="7" generate="field" name="fng_anumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="8" generate="field" name="fng_bnumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="9" generate="field" name="fng_cnumber" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="10" generate="field" name="fng_start_date" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="yyyy-MM-dd HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="11" generate="field" name="fng_end_date" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter format="yyyy-MM-dd HH:mm:ss" type="datetime"/>
+            </Field>
+            <Field trimQuotes="true" id="12" generate="field" name="fng_duration" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="13" generate="field" name="fng_equipment_id" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="14" generate="field" name="fnd_exchange_id" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="15" generate="field" name="fng_originating_cellid" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="16" generate="field" name="fng_imsi" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="17" generate="field" name="fng_trunk_in" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="18" generate="field" name="fng_trunk_out" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="19" generate="field" name="fng_call_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="20" generate="field" name="fng_cause_for_termination" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="21" generate="field" name="fng_pcdr_record_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="22" generate="field" name="fng_intermediate_seq_no" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+            <Field trimQuotes="true" id="23" generate="field" name="fng_partial_record_type" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="24" generate="field" name="fng_partial_record_corrID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" id="25" generate="field" name="fng_partial_cdr_status" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true">
+                <FieldConverter type="integer"/>
+            </Field>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="110" xPos="585" name="Record" width="50" type="Record" recordType="Record" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="60" yPos="105" xPos="720" name="Mapping" width="60" type="Mapping" recordType="ldc" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="genID()" target="fng_id"/>
+                    <Mapping expression="$$StreamFileId" target="sfl_id"/>
+                    <Mapping expression="$$StreamStageId" target="sts_id"/>
+                    <Mapping expression="fng_record_number" target="fng_record_number"/>
+                    <Mapping expression="fng_record_length" target="fng_record_length"/>
+                    <Mapping expression="fng_record_address" target="fng_record_address"/>
+                    <Mapping expression="fng_filename" target="fng_filename"/>
+                    <Mapping expression="fng_recordtype" target="fng_recordtype"/>
+                    <Mapping expression="fng_record_type" target="fng_record_type"/>
+                    <Mapping expression="fng_cdr_type" target="fng_cdr_type"/>
+                    <Mapping expression="fng_anumber" target="fng_anumber"/>
+                    <Mapping expression="fng_bnumber" target="fng_bnumber"/>
+                    <Mapping expression="fng_cnumber" target="fng_cnumber"/>
+                    <Mapping expression="fng_start_date" target="fng_start_date"/>
+                    <Mapping expression="fng_end_date" target="fng_end_date"/>
+                    <Mapping expression="fng_duration" target="fng_duration"/>
+                    <Mapping expression="fng_equipment_id" target="fng_equipment_id"/>
+                    <Mapping expression="fnd_exchange_id" target="fng_exchange_id"/>
+                    <Mapping expression="fng_originating_cellid" target="fng_originating_cellid"/>
+                    <Mapping expression="fng_imsi" target="fng_imsi"/>
+                    <Mapping expression="fng_trunk_in" target="fng_trunk_in"/>
+                    <Mapping expression="fng_trunk_out" target="fng_trunk_out"/>
+                    <Mapping expression="fng_call_type" target="fng_call_type"/>
+                    <Mapping expression="fng_cause_for_termination" target="fng_cause_for_termination"/>
+                    <Mapping expression="fng_pcdr_record_type" target="fng_pcdr_record_type"/>
+                    <Mapping expression="fng_intermediate_seq_no" target="fng_intermediate_seq_no"/>
+                    <Mapping expression="fng_partial_record_type" target="fng_partial_record_type"/>
+                    <Mapping expression="fng_partial_record_corrID" target="fng_partial_record_corrID"/>
+                    <Mapping expression="fng_partial_cdr_status" target="fng_partial_cdr_status"/>
+                    <Mapping target="fng_tagging"/>
+                    <Mapping expression="1" target="fng_increment"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="90" UsagePartitionId="GetUsagePartitionId('Offline LDC - Partial', fng_end_date, Abs(Hash(fng_anumber, fng_bnumber, fng_partial_record_corrID)))" xPos="1035" name="Spark Output-partial record table" unicode="false" width="60" outputKey="ldc_partial" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), $$UsagePartitionId, '_', '_', $$FileRecords, '.dat')" type="SparkOutput" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="reference" nodeKey="shape4">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="110" xPos="850" name="Filter" width="60" type="Filter" recordType="ldc" nodeKey="shape4">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output expression="NotEqual(fng_pcdr_record_type, 0)" name="reference">
+                        <Events/>
+                    </Output>
+                    <Output expression="Equal(fng_pcdr_record_type, 0)" name="usage">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="50" yPos="170" UsagePartitionId="GetUsagePartitionId('Offline LDC - Stitched', fng_end_date, SecondPart(fng_end_date))" xPos="1040" name="Spark Output-Usage" unicode="false" width="60" outputKey="ldc_stitched" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" type="SparkOutput" nodeKey="shape5">
+                <Inputs>
+                    <Input nodeOutput="usage" nodeKey="shape4">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="key" name="genID" blockSize="100" type="GenerateId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="ldc">
+                <Field id="26" name="fng_id" nullable="true" type="integer"/>
+                <Field id="27" name="sfl_id" nullable="true" type="integer"/>
+                <Field id="28" name="sts_id" nullable="true" type="integer"/>
+                <Field id="29" name="fng_duration2" nullable="true" type="integer"/>
+                <Field id="30" name="fng_count2" nullable="true" type="integer"/>
+                <Field id="31" name="fng_count" nullable="true" type="integer"/>
+                <Field id="3" name="fng_filename" nullable="true" type="string"/>
+                <Field id="4" name="fng_recordtype" nullable="true" type="string"/>
+                <Field id="5" name="fng_record_type" nullable="true" type="string"/>
+                <Field id="6" name="fng_cdr_type" nullable="true" type="string"/>
+                <Field id="7" name="fng_anumber" nullable="true" type="string"/>
+                <Field id="8" name="fng_bnumber" nullable="true" type="string"/>
+                <Field id="9" name="fng_cnumber" nullable="true" type="string"/>
+                <Field id="10" name="fng_start_date" nullable="true" type="datetime"/>
+                <Field id="11" name="fng_end_date" nullable="true" type="datetime"/>
+                <Field id="12" name="fng_duration" nullable="true" type="integer"/>
+                <Field id="32" name="fng_link_id" nullable="true" type="integer"/>
+                <Field id="33" name="fng_group_id" nullable="true" type="integer"/>
+                <Field id="15" name="fng_originating_cellid" nullable="true" type="string"/>
+                <Field id="16" name="fng_imsi" nullable="true" type="string"/>
+                <Field id="34" name="fng_tagging" nullable="true" type="string"/>
+                <Field id="35" name="fng_increment" nullable="true" type="integer"/>
+                <Field id="19" name="fng_call_type" nullable="true" type="string"/>
+                <Field id="20" name="fng_cause_for_termination" nullable="true" type="string"/>
+                <Field id="21" name="fng_pcdr_record_type" nullable="true" type="integer"/>
+                <Field id="22" name="fng_intermediate_seq_no" nullable="true" type="integer"/>
+                <Field id="23" name="fng_partial_record_type" nullable="true" type="string"/>
+                <Field id="24" name="fng_partial_record_corrID" nullable="true" type="string"/>
+                <Field id="25" name="fng_partial_cdr_status" nullable="true" type="integer"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

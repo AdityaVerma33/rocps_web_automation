@@ -1,0 +1,358 @@
+package com.subex.rocps.automation.helpers.application.matchandrate;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CheckBoxHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.EntityComboHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSActionImpl;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSEntityComboHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.application.matchandrate.operator.OperatorActImpl;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+import com.subex.rocps.automation.utils.PSStringUtils;
+
+public class Operator extends PSAcceptanceTest
+{
+
+	protected ExcelReader excelData = null;
+	protected ExcelHolder excelHolderObj = null;
+	protected Map<String, ArrayList<String>> opeMapExcel = null;
+	protected Map<String, String> opeMap = null;
+	protected String path;
+	protected String workBookName;
+	protected String sheetName;
+	protected String testCaseName;
+	protected int paramVal;
+	protected int colSize;
+	protected String clientPartition;
+	protected String name;
+	protected String code;
+	protected String account;
+	protected String description;
+	protected String priority;
+	protected String globalExclusionFlag;
+	PSGenericHelper genericHelperObj = new PSGenericHelper();
+	PSStringUtils strObj = new PSStringUtils();
+	PSActionImpl psActionImpl=new PSActionImpl();
+
+	/*
+	 * Constructor: for initializing excel Identifying the column size from the map
+	 * passed
+	 * 
+	 */
+	public Operator( String path, String workBookName, String sheetName, String testCaseName ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		opeMapExcel = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName );
+		excelHolderObj = new ExcelHolder( opeMapExcel );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Overloaded constructor for reading data from excel if test case name appears
+	 * more than once
+	 * 
+	 * @Param occurance : Test case instance in excel sheet Constructor for
+	 * initializing excel Identifying the column size from the map
+	 */
+	public Operator( String path, String workBookName, String sheetName, String testCaseName, int occurance ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		opeMapExcel = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName, occurance );
+		excelHolderObj = new ExcelHolder( opeMapExcel );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Configuring the Operator
+	 * 
+	 * @method : isOperatorPresent returns false then Operator is configured
+	 * isOperatorPresent returns true then Operator is not configured
+	 */
+	public void operatorCreation() throws Exception
+	{
+		try
+		{
+			for ( paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+				opeMap = excelHolderObj.dataMap( paramVal );
+
+				NavigationHelper.navigateToScreen( "operator" );
+
+				initializeVariables( opeMap );
+				ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				boolean isOperatorPresent = genericHelperObj.isGridTextValuePresent( "Detail_operator_name_txtId", name, "Name" );
+
+				if ( !isOperatorPresent )
+				{
+					genericHelperObj.clickNewAction( clientPartition );
+					GenericHelper.waitForLoadmask();
+					newOperator();
+					saveOperator();
+					//assertTrue( GridHelper.isValuePresent( "Detail_eventDefn_gridID", name, "Name" ), "Operator is not configured" );
+					Log4jHelper.logInfo( "Operator is created successfully with name " + name );
+
+				}
+				else
+					Log4jHelper.logInfo( "Operator is available with name " + name );
+
+			}
+		}
+		catch ( Exception e )
+		{
+
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * This method is to create new operator
+	 */
+
+	public void newOperator() throws Exception
+	{
+
+		if ( ValidationHelper.isTrue( globalExclusionFlag ) )
+		{
+			CheckBoxHelper.check( "Detail_operator_globalFlag_radiobtn" );
+		}
+		TextBoxHelper.type( "Detail_operator_name_txtId", name );
+		TextBoxHelper.type( "Detail_operator_code_txtId", code );
+		genericHelperObj.waitforEntityElement();
+		PSEntityComboHelper.selectUsingGridFilterTextBox( "Detail_operator_account_popupId", "Account", "accountName_Detail", account, "Account Name" );
+		TextBoxHelper.type( "Detail_operator_description_txtId", description );
+
+		TextBoxHelper.type( "Detail_operator_priority_txtId", priority );
+
+	}
+
+	public void saveOperator() throws Exception
+	{
+		/*ButtonHelper.clickIfEnabled( "Detail_operator_save_btn_Id" );
+		GenericHelper.waitForSave(searchScreenWaitSec);*/
+		Thread.sleep( 1000 );
+		genericHelperObj.detailSave( "Detail_operator_save_btn_Id", name, "Name" );
+	}
+	/*
+	 * This method is to create edit operator
+	 */
+
+	public void editOperator() throws Exception
+	{
+		try
+		{
+			for ( paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+				opeMap = excelHolderObj.dataMap( paramVal );
+				NavigationHelper.navigateToScreen( "Operator" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				initializeVariables( opeMap );
+				ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				boolean isOperatorPresent = genericHelperObj.isGridTextValuePresent( "Detail_operator_name_txtId", name, "Name" );
+				if ( isOperatorPresent )
+				{
+					int row = GridHelper.getRowNumber( "SearchGrid", name, "Name" );
+					NavigationHelper.navigateToEdit( "SearchGrid", row );
+					GenericHelper.waitForLoadmask();
+					assertEquals( NavigationHelper.getScreenTitle(), "Edit Operator" );
+					editOperatorDetail();
+					saveOperator();
+					Log4jHelper.logInfo( "Operator is Edited successfully with name " + name );
+				}
+				else
+					Log4jHelper.logInfo( "Operator is not available with name " + name );
+
+			}
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * This method is to edit operator detail
+	 */
+	public void editOperatorDetail() throws Exception
+	{
+
+		if ( ValidationHelper.isTrue( globalExclusionFlag ) )
+		{
+			CheckBoxHelper.check( "Detail_operator_globalFlag_radiobtn" );
+		}
+		assertEquals( EntityComboHelper.getValue( "Detail_operator_account_popupId" ), account );
+		TextBoxHelper.type( "Detail_operator_name_txtId", name );
+		TextBoxHelper.type( "Detail_operator_code_txtId", code );
+		TextBoxHelper.type( "Detail_operator_description_txtId", description );
+		TextBoxHelper.type( "Detail_operator_priority_txtId", priority );
+	}
+
+	/*
+	 * This method is to initialize instance variables
+	 */
+	public void initializeVariables( Map<String, String> map ) throws Exception
+	{
+
+		clientPartition = ExcelHolder.getKey( map, "Partition" );
+		name = ExcelHolder.getKey( map, "Name" );
+		code = ExcelHolder.getKey( map, "Code" );
+		account = ExcelHolder.getKey( map, "Account Name" );
+		description = ExcelHolder.getKey( map, "Description" );
+		priority = ExcelHolder.getKey( map, "Priority" );
+		globalExclusionFlag = ExcelHolder.getKey( map, "GlobalExclusionFlag" );
+	}
+
+	/*
+	 * This method is to validate search screen columns
+	 */
+	public void searchScreenColumnsValidation() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Operator" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			opeMap = excelHolderObj.dataMap( paramVal );
+			String searchScreenColumns = ExcelHolder.getKey( opeMap, "SearchScreenColumns" );
+			ArrayList<String> excelColumnNames = new ArrayList<String>();
+			String[] searchGridColumnsArr = strObj.stringSplitFirstLevel( searchScreenColumns );
+			for ( int col = 0; col < searchGridColumnsArr.length; col++ )
+			{
+				excelColumnNames.add( searchGridColumnsArr[col] );
+			}
+			genericHelperObj.totalColumns( excelColumnNames );
+		}
+
+	}
+
+	public void operatorElementSetMapping() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Operator" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			opeMap = excelHolderObj.dataMap( paramVal );
+			name = ExcelHolder.getKey( opeMap, "Name" );
+			String elementSet = ExcelHolder.getKey( opeMap, "ElementSet" );
+			boolean isOperatorPresent = genericHelperObj.isGridTextValuePresent( "Detail_operator_name_txtId", name, "Name" );
+
+			if ( isOperatorPresent )
+			{
+				GridHelper.clickRow( "SearchGrid", name, "Name" );
+				NavigationHelper.navigateToAction( "Actions", "Operator ElementSet Mapping" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				assertEquals( NavigationHelper.getScreenTitle(), "Operator ElementSet Mapping" );
+				ComboBoxHelper.select( "escombo_gwt_uid_", elementSet );
+				ButtonHelper.click( "okButton" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				Log4jHelper.logInfo( "Operatiror element set mapping is successfull for : " + name );
+			}
+			else
+				Log4jHelper.logInfo( "Operator is not available : " + name );
+		}
+
+	}
+	public void operatorTariffMapping() throws Exception
+	{
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			NavigationHelper.navigateToScreen( "Operator" );
+			opeMap = excelHolderObj.dataMap( paramVal );
+			genericHelperObj.waitforHeaderElement( "Name" );
+			name = ExcelHolder.getKey( opeMap, "Name" );
+			boolean isOperatorPresent = genericHelperObj.isGridTextValuePresent( "Detail_operator_name_txtId", name, "Name" );
+
+			if ( isOperatorPresent )
+			{
+				GridHelper.clickRow( "SearchGrid", name, "Name" );
+				OperatorActImpl opActImpl=new OperatorActImpl( path, workBookName, sheetName, opeMap );
+				opActImpl.operatorTariffMapping();
+
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				Log4jHelper.logInfo( "Operatiror  Tariff mapping is successfull for : " + name );
+			}
+			else
+				Log4jHelper.logInfo( "Operator is not available : " + name );
+		}
+
+	}
+
+	/*
+	 * This method is for Operator deletion
+	 */
+	public void operatorDelete() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "operator" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			opeMap = excelHolderObj.dataMap( paramVal );
+
+			clientPartition = ExcelHolder.getKey( opeMap, "Partition" );
+			name = ExcelHolder.getKey( opeMap, "Name" );
+
+			genericHelperObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+			GenericHelper.waitForLoadmask();
+			boolean isOperatorPresent = genericHelperObj.isGridTextValuePresent( "Detail_operator_name_txtId", name, "Name" );
+
+			if ( isOperatorPresent )
+			{
+				genericHelperObj.clickDeleteOrUnDeleteAction( name, "Name", "Delete" );
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "Operator is deleted successfully : " + name );
+			}
+			else
+				Log4jHelper.logInfo( "Operator is not available : " + name );
+		}
+	}
+
+	/*
+	 * This method is for Operator un delete
+	 */
+	public void operatorUnDelete() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "operator" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			opeMap = excelHolderObj.dataMap( paramVal );
+			clientPartition = ExcelHolder.getKey( opeMap, "Partition" );
+			name = ExcelHolder.getKey( opeMap, "Name" );
+
+			genericHelperObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+			boolean isOperatorPresent = genericHelperObj.isGridTextValuePresent( "Detail_operator_name_txtId", name, "Name" );
+			if ( isOperatorPresent )
+			{
+				genericHelperObj.clickDeleteOrUnDeleteAction( name, "Name", "Undelete" );
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "Operator is un deleted successfully : " + name );
+			}
+			else
+				Log4jHelper.logInfo( "Operator is not available : " + name );
+		}
+	}
+
+}

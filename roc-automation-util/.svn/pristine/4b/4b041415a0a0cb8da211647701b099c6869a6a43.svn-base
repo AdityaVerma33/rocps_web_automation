@@ -1,0 +1,339 @@
+package com.subex.automation.helpers.component;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import com.subex.automation.helpers.selenium.AcceptanceTest;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class MouseHelper extends AcceptanceTest {
+
+	private static void handleException(WebElement element, boolean firstTimeClick, Exception e) throws Exception {
+		try {
+			String eMsg = e.getMessage();
+			
+			if (eMsg.contains("not clickable")) {
+				if (!firstTimeClick) {
+					// Skipping not click-able exception
+				}
+				else {
+					FailureHelper.setError("Element '" + element.getText() + "' is not clickable");
+					FailureHelper.setErrorMessage(e);
+					throw e;
+				}
+			}
+			else {
+				FailureHelper.handleClickException(element);
+			}
+		} catch (Exception ex) {
+			FailureHelper.setErrorMessage(ex);
+			throw ex;
+		}
+	}
+	
+	public static void click( String xpath ) throws Exception {
+		WebElement element = null;
+		try {
+			xpath = GenericHelper.getORProperty(xpath);
+			element = ElementHelper.getElement( xpath );
+			
+			if (element == null) {
+				GenericHelper.waitForElement( xpath, searchScreenWaitSec );
+				element = ElementHelper.getElement( xpath );
+			}
+			
+			click(element);
+		}
+		catch (WebDriverException e) {
+			FailureHelper.handleClickException(xpath, element);
+		}
+		catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void click( String xpath, boolean skipNotClickableException ) throws Exception {
+		WebElement element = null;
+		try {
+			xpath = GenericHelper.getORProperty(xpath);
+			element = ElementHelper.getElement( xpath );
+			
+			if (element == null) {
+				GenericHelper.waitForElement( xpath, searchScreenWaitSec );
+				element = ElementHelper.getElement( xpath );
+			}
+			
+			click(element);
+		}
+		catch (WebDriverException e) {
+			handleException(element, skipNotClickableException, e);
+		}
+		catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void scrollAndClick( WebElement element ) throws Exception {
+		try {
+			ElementHelper.scrollToView(element, true);
+			ElementHelper.click(element);
+		}
+		catch (WebDriverException e) {
+			FailureHelper.handleClickException(element);
+		}
+		catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void scrollAndClick( WebElement element, boolean skipNotClickableException ) throws Exception {
+		try {
+			ElementHelper.scrollToView(element, true);
+			ElementHelper.click(element);
+		}
+		catch (WebDriverException e) {
+			handleException(element, skipNotClickableException, e);
+		}
+		catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void click( WebElement element ) throws Exception {
+		try {
+			ElementHelper.click(element);
+		} catch (WebDriverException e) {
+			FailureHelper.handleClickException(element);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void click( WebElement element, boolean firstTimeClick ) throws Exception {
+		try {
+			ElementHelper.click(element);
+		} catch (WebDriverException e) {
+			handleException(element, firstTimeClick, e);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	public static void rightClick(String xpath) throws Exception {
+		WebElement element = null;
+		try {
+			xpath = GenericHelper.getORProperty(xpath);
+			element = ElementHelper.getElement( xpath );
+			
+			if (element == null) {
+				GenericHelper.waitForElement( xpath, searchScreenWaitSec );
+				element = ElementHelper.getElement( xpath );
+			}
+			
+			rightClick(element);
+		} catch (WebDriverException e) {
+			FailureHelper.handleClickException(xpath, element);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void rightClick(WebElement element) throws Exception {
+		try {
+			Actions action = new Actions(driver);
+			action.contextClick(element).build().perform();
+		} catch (WebDriverException e) {
+			try {
+				FailureHelper.handleClickException(element);
+				Actions action = new Actions(driver);
+				action.contextClick(element).build().perform();
+			} catch (Exception e1) {
+				FailureHelper.setErrorMessage(e1);
+				throw e1;
+			}
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void actionRightClick(String xpath) throws Exception {
+		try {
+			xpath = GenericHelper.getORProperty(xpath);
+			Actions action = new Actions(driver);
+			WebElement element = ElementHelper.getElement( xpath );
+			action.moveToElement(element);
+			action.contextClick(element);
+			action.build().perform();
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void mouseDown(String xpath) throws Exception {
+		try {
+			xpath = GenericHelper.getORProperty(xpath);
+			WebElement element = ElementHelper.getElement(xpath);
+			mouseDown(element);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void mouseDown(WebElement element) throws Exception {
+		try {
+			Actions acn = new Actions(driver);
+			acn.clickAndHold(element);
+			acn.build().perform();
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	public static void mouseUp(String xpath) throws Exception {
+		try {
+			xpath = GenericHelper.getORProperty(xpath);
+			WebElement element = ElementHelper.getElement(xpath);
+			mouseUp(element);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void mouseUp(WebElement element) throws Exception {
+		try {
+			Actions acn = new Actions(driver);
+			acn.release(element);
+			acn.build().perform();
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void mouseOver(String id) throws Exception {
+		try {
+			id = GenericHelper.getORProperty(id);
+			WebElement element;
+			if (driver.findElements(By.id(id)).size() > 0)
+				element = driver.findElement(By.id(id));
+			else if (driver.findElements(By.linkText(id)).size() > 0)
+				element = driver.findElement(By.linkText(id));
+			else
+				element = ElementHelper.getElement(id);
+			
+			if (element != null)
+				mouseOver(element);
+			else
+				FailureHelper.failTest("Element '" + id + "' is not found.");
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void mouseOver(WebElement element) throws Exception {
+		try {
+			Actions action = new Actions(driver);
+			action.moveToElement(element).perform();
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	/*
+	 * method for left click action
+	 * @param xpath
+	 */
+	public static void leftClick(String xpath) throws Exception {
+		try {
+			xpath = GenericHelper.getORProperty(xpath);
+			WebElement element = ElementHelper.getElement(xpath);
+			Actions action = new Actions(driver);
+			action.click(element).build().perform();
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void doubleClick( WebElement element ) throws Exception {
+		try {
+			ElementHelper.doubleClick(element);
+		} catch (WebDriverException e) {
+			FailureHelper.handleDoubleClickException(element);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private static String getDragAndDropJS() throws Exception {
+		try {
+			String dndFile = configProp.getUtilPath() + "\\plugins\\drag_and_drop_helper.js";
+		    String dndJavaScript = FileHelper.readFileContent(dndFile);
+		    
+		    return dndJavaScript;
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	private static String getDragAndDropScript() throws Exception {
+		try {
+			return "jQuery(arguments[0]).simulate('drag', { dropTarget: arguments[1] });";
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void dragAndDrop(String sourceCSSSelector, String targetCSSSelector) throws Exception {
+		try {
+			sourceCSSSelector = GenericHelper.getORProperty(sourceCSSSelector);
+			targetCSSSelector = GenericHelper.getORProperty(targetCSSSelector);
+			String dndJavaScript = getDragAndDropJS();
+		    String dragAndDropScript = getDragAndDropScript();
+		    
+		    WebElement sourceElement = ElementHelper.getElement(sourceCSSSelector);
+			WebElement targetElement = ElementHelper.getElement(targetCSSSelector);
+		    
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript(dndJavaScript);
+		    js.executeScript(dragAndDropScript, sourceElement, targetElement);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+	
+	public static void dragAndDrop(WebElement sourceCSSElement, WebElement targetCSSElement) throws Exception {
+		try {
+		    String dndJavaScript = getDragAndDropJS();
+		    String dragAndDropScript = getDragAndDropScript();
+		    
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript(dndJavaScript);
+		    js.executeScript(dragAndDropScript, sourceCSSElement, targetCSSElement);
+		} catch ( Exception e ) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+}

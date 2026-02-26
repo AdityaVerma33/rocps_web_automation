@@ -1,0 +1,2023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.0.v201405191524 Build &lt;4.4.0.v20140606-1451></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">HOME</property>
+            <property name="id">7</property>
+            <expression name="value">params["tempFileDirectory"].value</expression>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="tempFileDirectory" id="4484">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="salesTax" id="4634">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="usageTotal" id="4674">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="chargeTotal" id="4675">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="creditTotal" id="4676">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="total" id="4677">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="multiCurrency" id="4692">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="isMarketingMsgAvailable" id="4744">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="isMarketingMsgImage" id="4745">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="dueDate" id="4785">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="salesTaxTotal" id="4810">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="isBillProfileExemptFromTax" id="4812">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="bilReferenceNoParam" id="4813">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="Data Source" id="7">
+            <property name="HOME">D:\10.0Build\10.0DataDir\Bill\testbill_10</property>
+            <property name="DELIMTYPE">TAB</property>
+            <property name="CHARSET">UTF-8</property>
+            <property name="INCLCOLUMNNAME">YES</property>
+            <property name="INCLTYPELINE">NO</property>
+            <property name="TRAILNULLCOLS">NO</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Breakdown Data Set" id="8">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Currency</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Currency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Band</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Band</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Event Date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Event Date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Transaction Amount</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Transaction Amount</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bill Profile Cur Id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Bill Profile Cur Id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bill Profile Amt</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Bill Profile Amt</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Cross Fx Rate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Cross Fx Rate</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Band</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Event Date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Transaction Amount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Bill Profile Cur Id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Bill Profile Amt</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Cross Fx Rate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Band</property>
+                    <property name="nativeName">Band</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Event Date</property>
+                    <property name="nativeName">Event Date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Transaction Amount</property>
+                    <property name="nativeName">Transaction Amount</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Bill Profile Cur Id</property>
+                    <property name="nativeName">Bill Profile Cur Id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Bill Profile Amt</property>
+                    <property name="nativeName">Bill Profile Amt</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Cross Fx Rate</property>
+                    <property name="nativeName">Cross Fx Rate</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Currency", "Band", "Event Date", "Transaction Amount", "Bill Profile Cur Id", "Bill Profile Amt", "Cross Fx Rate" from "BBC1.tsv" : {"Currency","Currency",STRING;"Band","Band",STRING;"Event Date","Event Date",STRING;"Transaction Amount","Transaction Amount",STRING;"Bill Profile Cur Id","Bill Profile Cur Id",STRING;"Bill Profile Amt","Bill Profile Amt",STRING;"Cross Fx Rate","Cross Fx Rate",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>From</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>From</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>To</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>To</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Band</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Band</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff Rate Name</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff Rate Name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Setup Amount</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Setup Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Bill Period</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Bill Period</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Count</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Count</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Billed Usage</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Billed Usage</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SetupAmt</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SetupAmt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Amount</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>UsageAmt</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>UsageAmt</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Revenue Amount</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Revenue Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Line Item Data Set" id="4516">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Band</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Band</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Event Date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Event Date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Currency</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Currency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bli Amt</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Bli Amt</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Bli Stx Amt</property>
+                    <property name="analysis">attribute</property>
+                    <text-property name="heading">Bli Stx Amt</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Band</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Event Date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Bli Amt</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Bli Stx Amt</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Band</property>
+                    <property name="nativeName">Band</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Event Date</property>
+                    <property name="nativeName">Event Date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Bli Amt</property>
+                    <property name="nativeName">Bli Amt</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Bli Stx Amt</property>
+                    <property name="nativeName">Bli Stx Amt</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Band", "Event Date", "Currency", "Bli Amt", "Bli Stx Amt" from "summ_BBC1.tsv" : {"Band","Band",STRING;"Event Date","Event Date",STRING;"Currency","Currency",STRING;"Bli Amt","Bli Amt",STRING;"Bli Stx Amt","Bli Stx Amt",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Band</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Band</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tariff Rate Name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tariff Rate Name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Bill Period</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Bill Period</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Currency Total Data Set" id="4720">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Currency</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Currency</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Total Amount</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Total Amount</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Total Amount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Total Amount</property>
+                    <property name="nativeName">Total Amount</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Currency", "Total Amount" from "Cross Fx Rate.tsv" : {"Currency","Currency",STRING;"Total Amount","Total Amount",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Total Amount</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Total Amount</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Marketing Message Data Set" id="4748">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">message</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">message</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">message</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">message</property>
+                    <property name="nativeName">message</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "message" from "marketing_msg_texts.tsv" : {"message","message",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>message</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>message</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-header>
+                <image id="4691">
+                    <property name="height">0.46875in</property>
+                    <property name="width">1.2395833333333333in</property>
+                    <property name="source">embed</property>
+                    <property name="imageName">OperatorLogo.jpg</property>
+                </image>
+            </page-header>
+            <page-footer>
+                <grid id="4815">
+                    <column id="4816"/>
+                    <row id="4817">
+                        <cell id="4818">
+                            <text-data id="4820">
+                                <expression name="valueExpr">"Bill Ref No: "+params["bilReferenceNoParam"].value</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4620">
+            <property name="height">11.052083333333334in</property>
+            <column id="4621"/>
+            <row id="4628">
+                <cell id="4629">
+                    <text id="4630">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[BILL]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4687">
+                <cell id="4688">
+                    <text id="4689"/>
+                </cell>
+            </row>
+            <row id="4652">
+                <cell id="4653">
+                    <grid id="4654">
+                        <column id="4655"/>
+                        <column id="4656"/>
+                        <row id="4657">
+                            <cell id="4658">
+                                <text id="4669">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Usage :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4659">
+                                <text-data id="4673">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["usageTotal"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4660">
+                            <cell id="4661">
+                                <text id="4670">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Charge :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4662">
+                                <text-data id="4678">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["chargeTotal"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4663">
+                            <cell id="4664">
+                                <text id="4671">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Credit :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4665">
+                                <text-data id="4679">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["creditTotal"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4806">
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">params["isBillProfileExemptFromTax"].value</expression>
+                                </structure>
+                            </list-property>
+                            <cell id="4807">
+                                <text id="4809">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Sales Tax:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4808">
+                                <text-data id="4811">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["salesTaxTotal"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4666">
+                            <cell id="4667">
+                                <text id="4672">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Total :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4668">
+                                <text-data id="4680">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["total"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4771">
+                            <cell id="4772"/>
+                            <cell id="4773"/>
+                        </row>
+                        <row id="4780">
+                            <cell id="4781">
+                                <text id="4783">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Due Date:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4782">
+                                <text-data id="4784">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["dueDate"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                        <row id="4774">
+                            <cell id="4775">
+                                <text id="4777">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Payment Term :]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="4776">
+                                <text-data id="4779">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["paymentTerms"].value</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="4681">
+                <cell id="4682">
+                    <text id="4683"/>
+                </cell>
+            </row>
+            <row id="4631">
+                <cell id="4632">
+                    <text id="4633">
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bill Breakdown Details]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4622">
+                <cell id="4623">
+                    <grid id="5063">
+                        <column id="5064"/>
+                        <row id="5065">
+                            <cell id="5066">
+                                <table id="5067">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <property name="dataSet">Breakdown Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Currency</property>
+                                            <text-property name="displayName">Currency</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Currency"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Band</property>
+                                            <text-property name="displayName">Band</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Band"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Event Date</property>
+                                            <text-property name="displayName">Event Date</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Event Date"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Transaction Amount</property>
+                                            <text-property name="displayName">Transaction Amount</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Transaction Amount"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Bill Profile Cur Id</property>
+                                            <text-property name="displayName">Bill Profile Cur Id</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Bill Profile Cur Id"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Bill Profile Amt</property>
+                                            <text-property name="displayName">Bill Profile Amt</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Bill Profile Amt"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Cross Fx Rate</property>
+                                            <text-property name="displayName">Cross Fx Rate</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Cross Fx Rate"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="5106">
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <column id="5107"/>
+                                    <column id="5108">
+                                        <property name="width">25%</property>
+                                    </column>
+                                    <column id="5109"/>
+                                    <column id="5110">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">!params["multiCurrency"].value</expression>
+                                            </structure>
+                                        </list-property>
+                                    </column>
+                                    <column id="5111">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">!params["multiCurrency"].value</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <column id="5112">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">!params["multiCurrency"].value</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <header>
+                                        <row id="5068">
+                                            <cell id="5069">
+                                                <label id="5070">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <text-property name="text">Currency</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5071">
+                                                <label id="5072">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <text-property name="text">Band</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5073">
+                                                <label id="5074">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <text-property name="text">Event Date</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5075">
+                                                <label id="5076">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <text-property name="text">Txn Amt</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5077">
+                                                <label id="5078">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <text-property name="text">BP Cur</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5079">
+                                                <label id="5080">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <text-property name="text">BP Amt</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5081">
+                                                <label id="5082">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <text-property name="text">Cross Fx Rate</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="5083">
+                                            <cell id="5084">
+                                                <data id="5085">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <property name="resultSetColumn">Currency</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5086">
+                                                <data id="5087">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Band</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5088">
+                                                <data id="5089">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Event Date</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5090">
+                                                <data id="5091">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Transaction Amount</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5092">
+                                                <data id="5093">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Bill Profile Cur Id</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5094">
+                                                <data id="5095">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <property name="resultSetColumn">Bill Profile Amt</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5096">
+                                                <data id="5097">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <property name="resultSetColumn">Cross Fx Rate</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                    <footer>
+                                        <row id="5098">
+                                            <cell id="5099"/>
+                                            <cell id="5100"/>
+                                            <cell id="5101"/>
+                                            <cell id="5102"/>
+                                            <cell id="5103"/>
+                                            <cell id="5104"/>
+                                            <cell id="5105"/>
+                                        </row>
+                                    </footer>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="4684">
+                <cell id="4685">
+                    <text id="4686"/>
+                </cell>
+            </row>
+            <row id="4649">
+                <cell id="4650">
+                    <text id="4651">
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bill Line Item Details]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4624">
+                <cell id="4625">
+                    <grid id="5113">
+                        <column id="5114"/>
+                        <row id="5115">
+                            <cell id="5116">
+                                <table id="5117">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <property name="dataSet">Line Item Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Band</property>
+                                            <text-property name="displayName">Band</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Band"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Event Date</property>
+                                            <text-property name="displayName">Event Date</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Event Date"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Currency</property>
+                                            <text-property name="displayName">Currency</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Currency"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Bli Amt</property>
+                                            <text-property name="displayName">Bli Amt</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Bli Amt"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Bli Stx Amt</property>
+                                            <text-property name="displayName">Bli Stx Amt</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Bli Stx Amt"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="5146">
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <column id="5147">
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <column id="5148">
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <column id="5149">
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <column id="5150">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">!params["salesTax"].value</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="textAlign">center</property>
+                                    </column>
+                                    <header>
+                                        <row id="5118">
+                                            <cell id="5119">
+                                                <label id="5120">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <text-property name="text">Band</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5121">
+                                                <label id="5122">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <text-property name="text">Event Date</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5123">
+                                                <label id="5124">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <text-property name="text">Currency</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5125">
+                                                <label id="5126">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <text-property name="text">Amount</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="5127">
+                                                <label id="5128">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="color">purple</property>
+                                                    <text-property name="text">Sales Tax</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="5129">
+                                            <cell id="5130">
+                                                <data id="5131">
+                                                    <property name="resultSetColumn">Band</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5132">
+                                                <data id="5133">
+                                                    <property name="resultSetColumn">Event Date</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5134">
+                                                <data id="5135">
+                                                    <property name="resultSetColumn">Currency</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5136">
+                                                <data id="5137">
+                                                    <property name="resultSetColumn">Bli Amt</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="5138">
+                                                <data id="5139">
+                                                    <property name="resultSetColumn">Bli Stx Amt</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                    <footer>
+                                        <row id="5140">
+                                            <cell id="5141"/>
+                                            <cell id="5142"/>
+                                            <cell id="5143"/>
+                                            <cell id="5144"/>
+                                            <cell id="5145"/>
+                                        </row>
+                                    </footer>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="4741">
+                <property name="height">0.3020833333333333in</property>
+                <cell id="4742">
+                    <text id="4743">
+                        <property name="contentType">auto</property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4715">
+                <property name="height">0.3020833333333333in</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">!params["multiCurrency"].value</expression>
+                    </structure>
+                </list-property>
+                <cell id="4716">
+                    <text id="4719">
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Currency Totals]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="4717">
+                <cell id="4718">
+                    <table id="4721">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="width">6in</property>
+                        <property name="dataSet">Currency Total Data Set</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">!params["multiCurrency"].value</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Currency</property>
+                                <text-property name="displayName">Currency</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Currency"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Total Amount</property>
+                                <text-property name="displayName">Total Amount</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Total Amount"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="4735"/>
+                        <column id="4736"/>
+                        <header>
+                            <row id="4722">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">medium</property>
+                                <cell id="4723">
+                                    <label id="4724">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Currency</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4725">
+                                    <label id="4726">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Total Amount</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="4727">
+                                <cell id="4728">
+                                    <data id="4729">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">Currency</property>
+                                    </data>
+                                </cell>
+                                <cell id="4730">
+                                    <data id="4731">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">Total Amount</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="4732">
+                                <cell id="4733"/>
+                                <cell id="4734"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="4794">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">if((params["isMarketingMsgAvailable"].value) &amp; (!params["isMarketingMsgImage"].value))&#13;
+	false&#13;
+else&#13;
+	true</expression>
+                    </structure>
+                </list-property>
+                <cell id="4795">
+                    <table id="4796">
+                        <property name="dataSet">Marketing Message Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">message</property>
+                                <text-property name="displayName">message</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["message"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="4805"/>
+                        <header>
+                            <row id="4797">
+                                <cell id="4798"/>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="4800">
+                                <cell id="4801">
+                                    <data id="4802">
+                                        <property name="resultSetColumn">message</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="4803">
+                                <cell id="4804"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="4746">
+                <property name="height">0.010416666666666666in</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">if((params["isMarketingMsgAvailable"].value) &amp; (!params["isMarketingMsgImage"].value))&#13;
+	false&#13;
+else&#13;
+	true</expression>
+                    </structure>
+                </list-property>
+                <cell id="4747"/>
+            </row>
+            <row id="4750">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">if((params["isMarketingMsgAvailable"].value) &amp; (params["isMarketingMsgImage"].value))&#13;
+	false&#13;
+else&#13;
+	true</expression>
+                    </structure>
+                </list-property>
+                <cell id="4751">
+                    <image id="4752">
+                        <property name="height">0.46875in</property>
+                        <property name="width">1.2395833333333333in</property>
+                        <method name="onPrepare"><![CDATA[if(params["imageWidth"].value > 720) {
+	this.width = '720px';
+}
+if(params["imageHeight"].value > 200) {
+	this.height = '200px';
+}]]></method>
+                        <property name="source">embed</property>
+                        <property name="imageName">MarketingMsgImage.png</property>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">OperatorLogo.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQA
+                BgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8f
+                Hx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f
+                Hx8fHx8fHx8f/8AAEQgALQB3AwERAAIRAQMRAf/EAKkAAAICAwEBAAAAAAAAAAAAAAYHAAUCAwQIAQEA
+                AgMBAQAAAAAAAAAAAAAAAAECBAUDBhAAAQMCAwUEBwQGCwEAAAAAAgEDBBEFABIGIUETFAcxUWEigTIj
+                MxUWCHGxQmKRoVJyQ3TBksLSU2OzxHU2FzcRAAEDAwIDBAcHBQEAAAAAAAEAAgMRBAUhEjFBE1FhgTLw
+                kaHB4SIzcbHR8UIjFFJicoKiFf/aAAwDAQACEQMRAD8A9U4EKYEKYEKYEKYEJWddtb6m0rGs52KWkQpZ
+                vjIVWmncyNo2o+8E6UzL2Yk0LXxNrHMXbxWlET9K77dL9oS23W6vcxOkcbjOoIhXI8YD5QQRTyim7CPF
+                VMhE2OYtboBT7kWYSpqYEKYELRLnRIYgclxGxMsoktaVpXdirdXsVuAZHbQTRdYoXSGjRVbEdRxlTYIX
+                KouRa+VV3bUrjvHI14q0gjuUC0g0OiFDXq2pVbGwAO4CKYa/1kQfux00Vsfxv7/+Vi3rG92qdFhattjc
+                Nqa4LEe7wnVeh8UvVB3OLbjSkuwaoqL34KINsx4JidWnI8fijDCVJLjq71XXRjMeDb2QfvMwFcDi1Vtp
+                qqjnJEVFJVJKCnht8ZNFVqY7H9cku0aErIP1BdQ4cpp+4NsS4h7VYNng5h/IYUX07cS2ha78PA4UbUH7
+                Uy+o3VG82bRtl1BZ4iR3Lo4iHGuDRZwBWyLaIkPdsXuxEBZVlYNfK5jjXb2K+6Uatumq9JDdrmLQylfd
+                aVGBUAyhSmxVLv78IhV8hbthl2t4UQf1g6s6o0hqWNbbU3FKO7ECQSvtkZZyccFaKJhsoCYbRVXcbjo5
+                oy51a1VD9QE56fpXRs59BR6Wyb7qClBzOMskVEWuyq4bVZw7A2SQDl+JQ/YutN4sWjbXp3T0QVmx0dWT
+                LeHibXHjMUabFdwklVL9GGWqxLjGySukedDy8F2WX6h9aQbiKXxhmbEqiPtI3wHhGu1QVKJXwJP0YNqh
+                LhonN+Q0PrXoGzajtF3sTN8hvotuebV7in5cgjXOh19VQVFQsc6LzcsLmP2EfMkprD6ibm7cChaQjAkc
+                SyjMfBXHXVTe212CPdWq/ZiYat62wrQ2sp17FTt9dOpFufBL9BakxT9eNJjLHUh/KSIP3LiMkLHja4Aj
+                vVj/AMqB30yQe0Gqb2kLxbdSWhL3pV4oxZlCVb3tqC4iIqgSbdy7FT9WPOzYV8B32jtjv6Tqw/h6cFmX
+                Dix3TnG4cnDiie23gJRlHeBY85v3jBb/ABFd6YtY/KtncY3jpzN4tP3jtCoz2pYNwO5h5oY60zYsXpvd
+                0fVEKQLbMcd5Ok4Kjl8Uy5vRjYbxXbFtJnbTkias/wCXa1X4hyfbv43C/vYSqab+6qU31AdO7vdnY+pb
+                SyUo4zHAnRm0zOI2BEYuAKbSpnVCRPDxxNpWzh71rKxu0qdEM6W62xXmIdp1zbGrjBhk2UaYDaK40bVE
+                AjaXylSm1Rp9i4Zb2K1cYsgl0LtpPJE/1GTYs7Rdjmw3RfiSJaOMvAtRISZJUVFwmqphWlsrgeIHvV79
+                PP8A86b/AJt/+zhO4qvmfr+AS2+pT/vEL/jm/wDWdxJq1cH9E/5e4Lu64f8ARtB/yn+3Ywm8VzxX1pft
+                95R30D0vbLdomNd22xK43XO4/IVKkgA4QA2K7hRBqvjhOKzsvO50pb+lqx6/aYttw0TIvBtiNxtStmzI
+                REQlA3BbNsl3p5qp4pgaU8RO5sob+lyUOndSXGL0g1NbmnFRo5kRsV3iMpDV1E8CSPRftXEiNVtTQNN0
+                x3cfZ+arOn+v3tGvyJcS1R5s19EAZT6nmbBO0QyqlMy9q4ZFV1vLMTgAuICJdRddbnqGzyLVc7BDdjSB
+                VO13MBfhMFrsIV2ouEGqrDiWxuDmvNQt304XOVG1nKt+1I06IROBtpnZJCAvQhEnpwOUc3GDEHcwV6Dv
+                UCO/HWQbqRnoyK43LVcqAg7VUi/Z78Y+TxjbloIO2Vvld2fBYFtOWGlKtPEJLR7zO6p9RbdDEEXTeni5
+                iSSLQHjAveKn+YSIIj+zVcXrUyCJvVp1aa0W1JE20hcR5n6Du/JPrHZebSt6o9ZXtIX2HaocDmTTK9PJ
+                5CASZJFoDJby7y2olKbdtJBtVr2GMEzC4mnZ8Uq+rOudDarahyrNa3ot5QqzJTgg2hN5VTISARcQs1KE
+                vYmJAUWvjrSaEkPdVvJEkzR99mfT5b0JgzkwZBXFpj8aRSVzaifuuZ6d2FXVVW3LG3p10Ip4+miqekvW
+                SBpC0v2i6w3n4pPFIYej5VMSMUQgITIEp5aoqLhubVdsjjHTODmmh71Qaqvlz6ma9ZWBFVtyTkiQI6rV
+                RaBVLM4vZ+IiLuT7MMCgVm3ibaw6nhqUf/UhECFZNKw29rcZH2QXwbbZFPuxFqzsI7c957ae9UHSrrQm
+                k7d8GvMV2Ta0JXIjrNOK1nVVIcpKKEKlt7di17dzLaqxkMZ1nb2Gjuax6rdZx1bAGy2eM7GtimLkhx6n
+                FeUVqA5RUkEUXb2rVadmANonj8Z0Tvcau+5Fuk+kMx3pFcYEttWL1eFGay0flVsmNsds69iltrXszeGE
+                XaqlcZEC5Dh5G6evj6dyB+mfUiR0/nzbPe4DjkE3ayGMqI+w+NBUkE6ItUSipXup4siq0L6yFyA5h19h
+                COdSfUdYGoeXTtuckTSpRyYAtsgm+ogSkS/owg1Z8GFeT85oO5HGi+oUK9aSc1Jc4fwOIwqi48+Q8I0F
+                EqTRbCIa7PV7diVxEhZ91ZlknTad5Si151Jv3US7N6U0qy4lsfNBQPVckqO3O4q+o0NM1F+1e5JgUW1a
+                WLLZvUkPzD2fFNLTOgY2h7BGcgrxZ7Ko5dHv8dSSh07hHsHw8cedzjHsLbpnmi4jtYeKoG8/kvLHeV3l
+                7uxHCS2Fic2hew4fFzflpm+7GsLpnR61fk27vClVldJ2/bzrRV+otKae1HFSLeoLcxodramioYKu8DFU
+                IfQuLIKlDcPiNWGiHLV0U6cW2WMtq18d0Fq2klw3gRe31CXKvpRcG4q1JlJ3Cm71I5RERKImzsphLPS/
+                v3SzpPcJ77kyNHiTABX5IMSOXoG9w2xJBFNvrZcPcVfiyc7BQO9equdLaT0HpsVWxsRmXXETNI4iOukK
+                5f4hkRUXOOxFptTvwErjPdyS+c1X3Utr0FqMIY3tI88G8xxParRBPYR1bJPL7OikuzZgBUYbmSKuw0qu
+                GVoTpdcrXAtJxYZxkRz4Yjb1HcqmpHwnBPiEmdVVUqqYKldWX8zXFwdqVwaX0V0htN4QbWEZ+6AJOtG+
+                8r6jwzMDVvOqhmAmyzZdo0wFxUpsjNIKF2ndojKVqKzxWmHnJCGzJzcF1lCeBUFUQiUm0JEEa7VXZhKi
+                hPUkPpZqg0+KxglSyypHdbafCQ8hKQCrJNiJvBVsto5hREr2bcMFWYLyWLymgQzqvSHSXp/aG74/ZTny
+                HTRuFEfccJCcUVLzia5URETbmFfswwSVpW1zc3LtgdtHNLCXddedUb01b4rVY7SJwLexVqHGbTYhFu2f
+                tLt3J3YloFrtjhtGbjx7eZXoHpz0zs+i7eotUlXV9E5ueQohLs9RveIIu7fvxAmq83e3zp3a6N5BGBgJ
+                gQGlRJFQkXei4g9gcCDqCqQNDUKls7anEn2hxVpHI2RLfw3EXL/TjzeJj3RTWjj5C5v+rq0WhdOo5ko/
+                VQ+IV3j0yzlMCFMCEtdTppv5nkrcTmrIWWxyKMDEQBm8GPw6KZKZLTL75Ea7a4E1Wn/5dzA5+e4/KrzG
+                WnueVd4vEybO3JmyfxODTZTAhdLn/n/wJzirJ4XCDmOHyvEpSZXNwfZ5ve56b6b64ELag6WXVNsW3uSR
+                pcl4gC2wTJPZ5nD8ymJCGfjU4Qr+bdgQsb18hZ5fxDnK5nfV4NcnHmZ+Hl82XPxu3bTLXAhWMj5L+B2j
+                nlcVrM/yS0jofMcUc3ufZ8biUy5d9a78CSr2Plrmbdyy3f4hlH5VokfPytXM3K5/Z8Lh+vzHmyZfDAmr
+                Pqz8l/JzPzjzHLcVvl+Dk5vj5V9XL7OuXNm/D+rDar+N6vU/a4058FZdOPkb5eb+T+FyGzjZPfcSn8fN
+                58/73o2YDVc73rb/AN3j6cEVYSpqYELS1ynMP8LJzHl5jLTN2eXN6OzFeLpdR+3b1NN1OPdXw4Lo7dtF
+                a7eS/9k=
+</property>
+        </structure>
+        <structure>
+            <property name="name">MarketingMsgImage.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAHcAAAAtCAYAAACULPQbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+                YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAC8cSURBVHhe1XwHmJTl2fWZ3ne2Uhdk6aggYENFsGAvFDti
+                wRZ7YtRPY2JijFFjjGInxoJYQMSCCIqKoIIgCor03tll+85Or/85z8wSYiJ//uv7+K98rw47O+V9n+eu
+                5z73/a4lxwP/yUcqAVhsaLVnEEUO7eBGiutt4iNQWLeXHwm5cnwnB2cGSNsAe8YK80H3gd1cDjFkcy7Y
+                wOvxkDDT/Cdj4RM+HAjxHRufOvkmF5bj59okzvdT1gzf04fNx/lWzpxp72sJfthp41ayQDYLh9We/z4/
+                nLbkYC9891/t0vIfr1ykjZISDm3XBmcrd2bhzignozz9bOFnOtn5axqOWBotHgsCFLiV8jDvH9BDi3BQ
+                8FxXNgn5SoZKtFipJHsWlsw+1lVQuPSRo7LS/M+e4L6sVKdNii8sdB93q6Eui2WjNFqeHGm7RRIB4nG4
+                LTQYV96o/lcqN0Mh2LixnM2KXEsc7971KBrWbkEslUIwZ0cdBVjVvgNO//Nt8HerMAIKUXhULd2HPw+0
+                cqVUGVuOF7NK7HqYBfMnNZNx5ZXGp1JqKpOEVXvh+lL8nFOGoYOGqBhqvJaf08Mcsu10HFaPmx/JwULv
+                tVttuoJ5UL3/e5UrATi48Qw3ZGP4ffPCX6J1xRak01kEKZgGRwYlJUFc+uFzQAUFmc6gyZ5jyHaCP/Kx
+                7kAe0qWNYucajQdapII4L8skEaMSPRFkMinYbQ7pj7uxcNVO/mtHQ20Loi9+gpaWFjTU1aGhoQGJGL9L
+                zToc/JTdgaqOHVB+bH94j+gNV+dyuLwes5skbSfEn+X/m5Ur67RRSVGKxpu0YsbYuxBbtR2RRBK+LK3f
+                oUcOVy2YjHSZg7mWIdxmgYvvGWnKYw7kIeXaaYJZB3I0pKweiDBy+GBJUpnOrPE4/Se/tPA3R5Y5NJTA
+                nh27MPeXf2FEtsElZTppkDTiLL0zxciUTqbQ0lCHRDaN6pZG9D/hGJxy2QUo7VcFS1kAGSp4f4HpPz7n
+                JtMpY8GtFE4gZcFbF96J1uVbkKSQAi4fsqkk0l4bxi+YhGSRHZQlvZyb1j8SPJ35gB4yIGsKSSpXgrbw
+                eTz2PbyeIrpXN77nEg5CVkamdSmK6zt6RFoQ8wWMp9r5kOP/QwaVPeyhhbRGsWPBEix6fw7Wf78C/Y8f
+                gpH3/hzoXrZf4/2PV64Uoz228N8Syz+Ch792O4+CysDdnmH5k4lIBp0EHgyKFr7G0Gei8k/jjf8RnStP
+                Zi0JhmUr0wBDb+vXaKx5GeWWON/oDlRdSI0xlDqoCIufIZq/Kqfq6vRIoq6/r+NfACq9GeLnfE47bDsi
+                WPaXl/H1x/PQ6+zhGHH3jUDpT4emA7z1/xH5GaChYkLHjNF3YXKXMea5g3HQTu0prEUikfzFKDkLBZbm
+                zuL/H3YXE3ZSsaMYjDCsmfWwNcwBaiYDu15A09rHkKx5k4tZxPd3cSMpMACZcgk2O5IEYSqH9EgTOaZs
+                aYbbNHIEinpEVflQsY38eLKLD4Mfuhk9LjkN8+fPR+3ML/YrYJ4yf6QStCJeMJVJM+Qxb/HBCs6Ev7SJ
+                IYJz+zwKryUI/3Wk4wkaYv5ssThf0+J5kkbz/fyvYT6L67cMz0NAlMnyA/qf2msqfC6dTvO6GX4uH1WR
+                ymEP45hPS+ARVdXhsmPyQRfgqm3T4UtKODkq2JFHyKwjbTy3nV/WOXTdtkcyReHpuoVzm/NzT+k0Qzuv
+                zx2YRygV5Wfye06pzjY1Jl9hDjRL4qMhnWCqALxUqo0QKWnxIW7zIFs2AiVHTaLH/hGt/mNREv4bnJsf
+                Bxb+BljzNNe2jPZHVVHJEqeTi3RQHrZcmqVbjs+5fiFwrkDy17MA5VoRTTAWpdHqiOHUu65Dzw7dsOKJ
+                txmytb48cmYNZh5tOrVaIlQEL+KgdQgQpFNZA6/JCcCjUJOmdxhwkicFqHtuxMqNWVHNi7lYa+W4OLub
+                uYVLSVLYbgfPUKgxS7lYOy9h4fcIFwTmjaD0w2qhWfKjceYbkQAKMHaWNx4CDntBQWIDOpHEsBEk5bhp
+                J61dh53gY2q/y3FR9ftcRQ4pp5UwJs8R2BXqYlmU8Jomv0VTsHDtTpYnDq6FcjXAy07DkeptTHbmrKwd
+                laKLHG4KOm9NFgKdcDIJlqP0IIImfo8AHWVZFwJRykN1Gg8nT+UmwrFmO/IDRwFdx8F9xN3IHPRHhH29
+                +d0dZF6mIL30Nth3v8Pr0dCZpDNuO3/KOCg/rVvuZomC/ARlwlDMc1tVA7N8Mtexc4VcS9ceVdjT1IC6
+                zduM9RrApnjPh3mu3J6j27S2NsFbVoIkE4KHaI0mY5Sz6bOFaF21FU0NjYiGI/AEfCg9qDPa9+uBjgP6
+                ACUs0Lme5kQUbpfXVGy21iTq1m6Fl4J0URFWWnssFoOna3tYe7ajN5FVIQiyW/lpbY5K1WternjXF9+j
+                k9VLgdmQJgoWkLIP6mI2lUua3WLGuHtR9+UKw/pk+Zlrt0zHE4dfjGu/eBVZr52Imga6qw6xr9fi+3Wr
+                kWqNw+v1IkFg5gr6MWD4sfD174kktZEmMeLlRjOMFjYZmrmQNCojpke6nFybhEqTpEe4lMAjGdQsWYFt
+                y1YiF44jFmlAJkFyheg4UNYRJT0OQrBfV3j7lSHjk3ga6J3NBEZvMYzpsY3ntCFWfgQ/ey3i/lHG02RK
+                TnqPg3DbmuFaFI4tMb7iMYYjVJZhCE9zna6EFaufehvzJ0zG0ROux+HnnkbjIRIv5Gw5qSVJAiUXT+dy
+                rPRbWCgH7G7YGCbqP1uGz6a8i+2r1qFjff7ETnpPlt7TxM/lSnzoe/xROPzEoSg6bzAStBaFXCdDROPC
+                VZh6/+OwN8YoDBvDHFmYgBdHXHwmjr1pLBK8lrxDHkXxEikWhLq7Cc+OvwOOnSHEqYgYQ61Kgl9t+AAJ
+                CtFJ1Cmhf3DlvWim4iy09iiB03Ubp2HCgIvw88VTGaLi+OqtmfhqxofwbqpHkmxOkCg2mWBIc7kQoVdE
+                fHZ0HDIAR445Hf1OPNJwDSl6pvK3hcbEGE0jovXb80RBazaFEhki5bJ99gJ8Pu19NG7YDheNLcv0UxJ1
+                wUGvslHxMaaZFu7Y3qUCvU84EocedxTKzhxMhXCfjEi2yE5g58M86XwaCfOvuxnxbs/DXXQyw2R3eq84
+                NhIbOXc+klh28vfKfL2u9MH1Z2gYrkgWy558C9++/B76/nIkhl09FsRyeRbEfI97YXSyJphVlWecVKw1
+                Qf526QZ88NiLqP18BcrqaS0Oep+L7AjDEyMlw7Ud2VAcK+ctxisPPYntM76EK5ojRWZHwOODL04Lr4ui
+                mAsI0Mrb06o9LQluTBvMh5aUwrJxENZ7zF3Gbnn9XF0I/tY0ymI2dM76jWJ1OJ1UbJ5wJdpk7mMOUm5O
+                F87TubQ9sHgL5t8/EUsmvAHrmmpUMGz6GSYjrBc9Xj+cRDFBUpcdG7Komf4FvvzNs6h55kOkm8Pcu9Nw
+                wVJ0mvk8ScUqryaZB0sYj1Ib6zDn149j2u0PIfXFarSvpSHXx1BEM024PGimyzRaYyzJsvB4KOCdu7Bl
+                ymzMvfNRbHzhFdjrLDREoM5fyeroaaDbi1TsAF4ggNz6O4EtVHjTN4YXZzHHtZBJlhsmqVgJQBDbUJaF
+                yocRsYbXkEFZVT/9xGFJ5VI5ARgnlZbb1IAXbvg1sit2o5OnhPmDoZKLVp5zMlxfteGNnzzRv3rj5UPG
+                wkNvCtP0Bo4ficPvugJxWpgJ36pHmcCSesLDUxPDk2dfh3bNBHGJLK7Y+Taer7oIFcd0w6hJ3LzSCIU/
+                69J7EVq42oTuhFsdAgeuXfUqXhx6A2LrtqGju4j5l+dmbRgudTNzBNC8px5e5rMip4cEFq/JsCHIpNDf
+                +aqTcObPrgKCDrQQHFqJFwS5lFbIjSC8cB3emzgJ9YtXooeVJsz8HeM5Un4nS5Qk/DTeDFGtKGSdT6At
+                Ry938QWPlXGZob/bqEoccs0FcPXrTVYpYhzBmQ0jUfMhXBvv53q2wjUsD9bajiy9UNWUaXwQa+S4Zvm1
+                00LpNQOvXnYHYsu34qgnrsfAc05lpFGOzX/bhGVVWVYuNEBxu9hK+fjlqXDWRlFu9xvgI0ToJYgQiohn
+                8qjslT5j8Wr3i/F65fl4vf1oPNH1DMx/8CW0trBnw7xU+/43eLLPaEzsOhLjV72Bi7e/g2s2v4tEileT
+                QnXxwg5UwuTbAVSSsACvlRVvWihOczQq07QSuBFVrBzN8CQWx3A9fD3eki+BLNGkITUsDJExXiFq50+n
+                BbU1dQgESFR6fdgTDZN3ppA8LpZJFmMg3738Lpa/zFzIXO2wC/DJ+KxwCIwxPM+670lElm6ChzgkQl44
+                6rGj1U3Z8HncQQ/nNUQFRoktolFSh4xOHp8fVrcTEYbpaGMdNn3UjK+f+RTumhqU8QoJKjhqJRAtHgf0
+                fsQotvlLLmFRf+Q2T8rvhwtJt/UcBJJMr0ShiwXVgq8RrqlnlmeK6daVshFCbpOqPiJwxQLNKndQ6RJJ
+                YdfytUjWNcNNb2iMMYsWexjLLeh5WD8ccfJQc9EwYXQLi/Y0NwVu9NRrxmL4zePJDnnQxBVl+HAR7Xb2
+                FuPlTiPxQtUo873j7r8mz9Bo4QXlpmkMTgrFqZqA33EyUmRiDOGC9DzsLAaNcukRefAlQEuIo7XzLKLn
+                lNdf7XIxrlr2osmxjcrjpX70GHgI+g0ciP6jT0GuR3s0Bu1IBF3M5XkA5SeK9zJV9Mj6sGj6LIbGanho
+                VPIOj1YYzaeOiz97FtevewvXV3+AS7ZMw/mbXseV297CTVun49b1b6I/684T/nwnTrvnBhx5znBUdKSr
+                pBpYotWQdKmFs3MKDaHvsGHRtwh9TygVZorIlTAyBFhVEMV3HI1c40IEi86BI7ECuT135L0vU0d7Ey+d
+                Jy7lbFYZPXX11dz5SDS3osIfRFkl0blQsvlS4aHnfM0ap7WmCf0zO4kwN1WjmKVNazoGX3EAHtZWVfeM
+                wclv/w79n/+F+f5VE+9H+cAe2GWPYcj40eh7zzhkAiRKGFVKuIAEUVuWXrMrGjKelMs5MbnHxVh0/0uw
+                0CCYUagYgQMqj4k/y1CpmBJRmy7FF/naFbun0yguYu1HpinDyKF8w4dKNA+9JcIiP8nFu035QCrenc87
+                jZ4Eet54Fi6d9QSOn3E/Tnnlbhz/7M24ZNYjuGz6n9D/mjMRcpJNYkRK8JEjuo45fUhUt2LJ01OZYzMm
+                ZCYYEbJfrCyYIJsVnS7GuweNxTPtzsCE48bhhykfsSnAOpWfH3zJUHQ/axC6X3Eqhjx6G0Z/8Ayq7rwC
+                20mJOmkmubCHQLUMnkgcr/yGtW5TzNCNysEWlnM6osFjkev3PjJVjyCaVvXM96ofIJLfhhZGD1ZGlJnM
+                OYzqt6YjOmcpU5QfnpOPhr0iaD5v+roSg+RacB+rm9qmLgiYGOo8pO98XvjdHrS28iIEFu32MD61MHSK
+                5JBwj+2FE28bjzN+exO6/+ISGotywd8txsL8YIItN5BgyfPjY2/J8U/v5F+4fMc7eKk7Kbt/8xAeiCTj
+                mNBrNO5aMwPDx10Ie6mP5I+EIVSugg/wsaMy7KIxGHHJGISZTO0MzRYiRCFeHwHVmuUr0LJ9j+F+CS3x
+                xUef7F1BOGDDjkwYuYPKceLlF6L/2Schyfq0PpdCWLnRQwOknpL8kQq4cOQFZ+Lkmy7HWjdTGY1Q6UME
+                iHDA6rmfmy5XTtFKYqOMPLJp5gFbxenwdb3dvF67cTaw8WmUZhuZ0/kCA0lsYw5fffg9MrUEgZk4qs4d
+                tF8pKQ4xTLFT0Y2Is8RvPCoWiSLo9xm26qsJ07D6yamIrCR056FQWnHcweg59mS0FjHEMceZANZWJhLJ
+                WvkZFd7y4H0PkRA6rAyl/+oYu+yVf1Olf/+Ym+eKchNVQw/Pv1jhJkBpQxb8XYLlQ4ADHf0YfNFZKB3Q
+                i55DRErF2knasJhB3dZd2LZ4uRFiYncDvvuC1UDXPM2Zo+FbAh4cfPThGHDaCCqSWZkyK2Pk8Or9OKMH
+                jdmgXZE1fg8GjToLfU8/HnbWymrfeVny+UgILf14PmVjgZ+4wciDOdpi6Bcezv5Ah5vMU78mDeooj41P
+                weZcZwDSklfnY+Pna1FZVIGuPStRcsLB+5WXkb7IAA4u4LTLzkd9PAQXPTjDllqW+a0s5cG8F97BhKv/
+                y5zIrjDBC4nTVQkl75ANtpVYsvysakUemR8p17zG8iLLcObY243+x/W18cb7XfU+b+ZYE8PnwvHjRtIL
+                6EXECAmeP22oUhEfFCIXGaGhRpSse5bj+EvPNa1CNyOTi0KXokrcPmz/6ju6XxZbv10FB1Hx3tzP+t0b
+                p5FUN+L7l6fj4/uewey7JmDeb57D3Pv+inn3PYd5tz/BOtmCj3/3DD7k70teeBO52lbEkglTvokE8XCp
+                tas2mtULDWtdcBASp4iqk5okUYuwE9PGbvhO2Ew5WtFc8yiJh/dR8/mn+H7GbLSzuBFmhdH3jGHUW763
+                +1OHQrnSNqM50O+sk9Ht+MOxJxtDOB5Bp/J2JLNt8BKmHhS246mqvCVLgO6dYZQbKo9ez9dUcxpEJwRs
+                AC5LGnGV+zmERv/bB6nPQIdylBxxKBKF6KFQTTmbkiZLEkKX0WtJ5mfKEF2OOwJWemI+cCvN29h18SK2
+                eY9+w66V60lBeveyVi5ew0PSYs/yjVj82ntYP20uWj5aim2T5mDjpFnYPnUudr39Ofnu83Dmgzdj67R5
+                Ji83Lttg6nGjSCpYtOUdP7yN7bO+NjJSxEuqe2XyRx43qiZJ2giSeMQr7kSwuBQ1sxZgxgNPwVLfiiCR
+                +BZ3DBUjBjOjt7HI/1qKrISSphwxQIuGcPbt16Lo6D7IdSzGztrdaMxG4SsitcYqv13s78qYfNU92Pri
+                R8zHCShvO6hUGr0BRH8X2k8rL2U2TKL8Jzz431Y6I3xZJVMKLaxtq6aFq3kjFvhxkcE8RM776KVRRZUi
+                J4rakW5lzkwqNJJXj0ajLHcUVy2Ik9jIMGRrtOdvvS7CJTvfYvqxsLlCEEaix02PcsZy8KdsKCLgs3OI
+                zUcluZTTeJRbSBmSzLHS2x00KhuJIEOSFMJb8566vfUgp75Ms58ILc/l8PsJw/+yKdH9t8jWj8LiV0JI
+                ruG1rH7UpkI48qpz4Tm4A/nxf8Y0+8rNaiNa9lEdOdKKFhbmOLQzRv3hl+h55vEIexm6Ak40RZsRZc2W
+                Zu32RtVY8/0rPnkWHz8xBetnfsqiWtU29apa1CA2AjAKVo8DfaimEweswyaDobKU/wSk1Omxcn/qlFhI
+                LqiR79XvXJY7yCa5mCi6UNwQBPysrFPgRt81dJ9AUj5/S7lqjngCRYata+HoTI7nSLIcDDOSabQnStT+
+                QrcLceGGyexUEUiJ3TPDfMQl/P4l1e/iub7nIckOmnp+8gUFVrlARrWsSrykeIf8NRNsHn0/PYgtawPo
+                VNqJdteMksHtMezaC/kdVRH7l6+qEiLhBIKk/2TjtVSis3cHnHrn9bjx3rtQxJkdp9uBODdRx5ZKrar7
+                wuGigU159gWsX/q9cRstyc6NS7gKy8o1/7dDHvzfCc9SSkuEyJ4erMkk0LPMIcVwUYZGZIoxH4hwb1ok
+                txAKt+bTBsGShu28RUEko9yQwjlBoYdUqlqRQtQ6rmSNayKSgBOVamU0i3PyMEPU7WIUyLHOzxJI2fm6
+                jmu2vWkaLS5y2h6Ph06Sf10ki9/vN/y1+T3dQtnJe9WESRGMNnMPefZixusPYeXstTy3H/XhzeTH9xDx
+                H2tYK7UGswR0+zvYYeMC+aEIPdfDC1SYthYtq5j022WH4/yzD0XzDxsx57nXkf5hE3xCXoXjyu1v4K84
+                H8sfeAO9Bx0Bl9+OkqIi7CZy6F3PEsXrMLkqpA4c8wVhLbI+MUik7YwUZaoE7AZg2TBx0DjysNygWmDM
+                4Q4KPdyRO1FgoIlLbVZyxGKWrGK8OM8bjLtRw1yZ28PQ1aWII7AF4yOCLZZlC+GxYyXdysN8vGxy4y4k
+                ttSjPO3CHtbeDF+ItYbRsXtvNsvZiu3bCzvfmAd3KSv3Qg9XWz7vtQdo+J3pUfWsj3OIEJm7yJ9rH27S
+                m6IGLQz/Y7MT4OR0yOhPHjWkjLe4GJZi8tA1pFjo4c6SAJstZNeUcW1UOiOHTbw7L25xl+Un33i4/rwc
+                jeUu9GhyoL7ViqoxNVzj9YjXrSfy/wNRvkK55qEV8ynHAuYgN5Jn/JhdTNgK2tgRosAkwBSFm+Iineq8
+                cFHFwwfhoucfxrBfjEe9iHEer/W93Px00lN3kmJrXr2RC+cLFUXwc5NNufwMr7owTYwG1c0NxmOU3wud
+                Us1s0rMYSqlE8dktLa1coAX1kZAJiS5afBEFvJfS0poVcgsPxTHV0tZwAj/MWcCcp1FWF+pjLbB4aRSk
+                CbMUYtiaJO3IsGyjb9NQvn3vU9gY/iIUtJs8dlrDdhwddQ6oMqAnW0aCgN6Z4/pE8bUdO7ZvJ/HBHNu9
+                I4orO6CzvRjlgTKUF7eDP1gKm5ekCjtglnbkt7k2d3tSIge1M4rNqhdND3cHAgyvJFyZ+4sYa5rzIwlG
+                FhkRQKEUPnqQk5w8Gots8JPt2E6vKD5pEPqOGEkBFBGFf8m8TzaR3SMN7BvBkt/Om7/pPhiDsXr5pglP
+                Sg1K6JwwbFixgcPdgnNkawi365ibmkpd6D32DIy87Tq8cOSVGLd2sllAju0y8c4tW3cipMZ1Oz/aB4vh
+                KGKYZxmg8KzzJhppjqGYeZ7mRqN0pQRDGkVFgt6FVZ8tgp/CV23sKSlCSAom0u3A/qhxcn5PgUwGI0M1
+                3RDlV+IAOwcOFr8+A6nvtpGwp07ZPNCh6Y4kvTLLHrEQl5PbTH29HlvmLja92Di9upgeV8LOTlMqhjIi
+                UMmm+1D+5D6yLLPi3MOUnnmc0fOC4QhvqzGBRHc/KObLMNu43TTzud3FHSkghfNKixdMOUYZm3XTGWSU
+                UrBCvoWMoDi7GD3cUhPG2799DGumfWi+qzasjY2XTN8KHPeryxEYOoapoheZw+VIrXuSkYIOpEhkuGU2
+                +LkgxjVG4pgpU602ttgcDMWmjOY6s5/9gClX/AYzf/e0CXV+ARG+1UrrsBW70XPYMAPr2w4HQ18xmw4p
+                Ls6pgRMK21dRCh8VpWZ7gKixnC7dumY71k3XbFGYAtWNHyTcNX3BEYfQgpVYMmUWe69Ozu0mOObphNft
+                ptGk0LlPD5M/pVTBB5PLlQvlvRSOxoA8hKI+Uoiv3cPu0dYWWNmS1CHP0Eyii3chFKnGWFGNKX98Ao2b
+                dsDLNqbKtoyiBkmbwMDu6DqEJAKt3tu+BN1OG0IWi+mB1thWr88eyEqid0e4aloJ0PJAKUVvVT87ziE2
+                l0AkL51cth3z//i8WUOQSszVJ1kn5/kBKVZeLcCl8wYZTsVXOJuTeOum+1H39gIE1Pnh0YnlWDrgwMi7
+                x6H4aDYISg6Dq/IKRFpjrMM/hiU035RUOaZVnVo9YzUuzGVotKrkzTyTk0rMrN+NN+59DBW7Y9j1wWJM
+                vu2PyHy2BkH2QLuyQMxubsbat2chvKsW7/S9zCzgsu1v0bqicJDyE2QQTxA85CDEm5pNxBBf6/d4YScR
+                MHfSNCx47k3El2yGf0crArui2PDWp3jv4eeQ2VIHL2OxmBx5uYtCc3cuRUX3LiZfmlKwUD+rM9SmbCfD
+                oBg1h2aJNtfj+Z/djbVT8tShbRebEAwYrk1c95+m4I2b70Nsyx507NgRoRCvwUZFlI2QKFPIUeTJvQQ/
+                DFxqOOPoK0YhxlHZCtaV4Whrvob9/m/mvO+zt1szdylQHeGAApXKisQnULQthB3vfo4PH/kb1k39xDRO
+                dLx91d2om/O16Txlee4so0lKo0okdBDi3UbLtmLy9fci9c0mlNERPKRDdYRDLRhw2emoOmmA4ZXTaUq4
+                w8VwdD6LOqtBejMNKLXDRArdKaUJDgu/T7rEcA+WpmQ0V8zRy9DidbT8P6G4gX2RhjAcDFUaTUmqHOrS
+                Dj7mjpptO5HaXgtvKIl2LK4befGra2bitYGX4bwpD8FNsKFoVb14BT695c+oZx81y4UWk/0pojfWtzQh
+                wtznKWXnhBu0cN4qSRCW3FSHzuwfaypf3qohupA/h5G3jEfVdWcazy10/fDeObdj17otrLsJXmiQzawP
+                2zHv2fi8qTUEG8/dSN7VX16CGxa/hGfP/jksnPIoi7DkYSclQ2+MqgnPkibe0IRdBGBDTj4OJzxzJ+ey
+                yG5poD3JsoT5b+GDL2Pzs+8jFyClSYB33fq3MKnqfCLn6fhT7zHo1rM7PF1KYWc4DjW3oH7XHiQbeOMX
+                R43UdSoRkKtrRJwhfrUrglNvvwbDxo0y2CTfhGf7bua3mP3wRASqW+iRYZR2as+vNOBn7ELNv/4xDH+A
+                3TSCULg5NZkiMFMLO/4RQstuRVG2Gej7EAv9q7luGrGAFOWf0C1EtBsCU8JQIsuZL72ObBP7na0ROILc
+                OMOVAJWPCC65vhotX65Cdn2N6RoFSopR29pswtZzfS7AwePOhLt7Z9OhyTCMdTzqUBx69UhTIvjotbFQ
+                GBESA0GHj3d8FHH0M4EAm/JBelViGxVb1oE5IocGkgpNnMdysXnRZ/iRqLriTFM3K8zsLZkZCnXbhjzX
+                rjBID1DurE6G4a3g3AQH4ypzHFbfyiJRx7paWBvjiIQ5S0g+N8D1kBM0pEWa5V2wfxUOv2aM2Ysu4uLn
+                lIcUxYfeejm6njccdVmaW4FSzRInPN95FO5a/w5C327AVo7eVH+6lN63GfbtjTR8thM5lqOmf4jO4Sgt
+                QgO/33lAPxx39qkmComzQHUMnz/4PKb/+jHmWuELKoRzbLUcVM8FhRGA4Q/fhmgZF8PJSkS9PKf2wOVn
+                BqKo8jwKJoRUzRTzs41Ob2uragcGaqjWu/QG5pN2ZSaEhhqa4SwOop5oU3Wkl97nY24s5+immJswmRG1
+                y1SYC/AMHHeOWbTukFHu1uDZIIa5fkcMZKlCYXuChlfNsKywsrAXaRCjLFsIxMp8xaZHK+Qa5zltRV7T
+                /D7jOuaWQvmTLkwiyioNvbkPq1XkZ1nB81Wy51wXY5hUG40AK6hWIg8X0acG5NRkj5FkCIci6FLWzuRu
+                f+d2uOW3d6NkSN98ka7BLnK3rNg0p4GE34YTHvw5jjp3BFuP+bpU89GlASJ4HkF6f4AtQ0ucmJ8tPT/D
+                op8+qSlI9aJZcmAb+3Xtjz4UV917B6zlNHR21xJbqzHjt4/gh1dnomsdMY/fyxEcNkA0lEeEVDGIw4da
+                Q1DD+DQzAWFimDj28Oxhjg11YAU0iFYSQKxpHq/TQGNnzFfy5h7MSjNNmqFiKlCIH9wFo57+DUouPAah
+                TmzWN+xApbomTPxJttQIC0wHxUGqzUqazu0LotPB/XDKtPuQLiU/ymRL2yKIKYyJMpwPffYX6MUG9p5i
+                C/ZwXMfKMqeEnZEyrsNJQsFFLywj2PESFWdJc0ZdUXhP6YtTXuRc0WGcluSytDQh4wRDuMq6KEdbPBSa
+                w5Q4eVI+EbBj9IN3YvD1Y7DRHWEqYdbRNL8OMmzpMKdL2CsuIfDTbMLWXAQdTxyMS/5yH3BUZb4PaiTC
+                fMU+rPahEkjlSpqF8bAHbkKvX1+Mp865Abdsew8tyWZz6hSnRi1UaEZzZQwxLjYugpwd87C0ynFNrV0I
+                QO8YiTHP3Q1L3/Y07gwav1iO6bc+hLoPl6Ey6UMN+QwnZdCOoTxORQbPHIjhvx1PAitj+t0dM0WMMPRD
+                xlw7urFA4Be4b2tpDzR0uBuBbClj+90Ec5SDAA+vbe4PdpUxbTG+pVhjmTFUgWCGsNqvV2D5x59jzZLv
+                YIuSxCNjo7ZVjPkw43Wisn8fHHnaiegxYhgnMGgAzDlSgELlvl4l77Ayjuwigb7604VY/ckCJHdw7IVT
+                F+rChNkzbvCx/iOr04mo+JSLR6FkENtY5YwQ8iIy6RYyTtnCfZj2cA6fPzXJIG/dQ2Txa1qTQ+zt/bjo
+                Pk4wUEmhRauw7J05WLHoG9y6bCpe73cZ6pnD3GR5MpzE6HJkfwwYfTK6njDYDLgrcpmujblXJ0/nJcjY
+                aU+KEubQWK1o3DA/19GBSaNvw5XvPo7HBpxPAMPvFO7u0+dt6ja1L8Vhpw7D4WeNQK4qSGxBy+HQ4NzH
+                nsfiWZ+ivSuIDKOLWo7lTnof42MTmYfB55+K42+/mgQSb9lmrR4MFJMW1nQLJ06pHDUnLbzpyGDp3C7m
+                9+XIrbkZLtbOOOQFKnQQsQdxElOtNRdmqDYtiwL7I161QM+pmMvWN6F27QaDLKU4H2+VrOhWCVcXEvW0
+                cO3XsY9Cf6xcrUFFiRllVZ7RLYuc/Wmo5Z1rFKAeZV27okMndkHKGINUbzM056GxXJYPbk5hOssIIurQ
+                qhutxQ/rfcleBsn6Os5hOQ3FexkZzMKaWK5UFmHd65xd8nngZ5pxFPsR6Mu6mdIRKlbUolj+4VBulWKN
+                Z1JQem7ucpdc6HlEKbC48iFax5ap8+BiyWdhulEOL+5VCT9ntLX2lCIMFd66YC3mPfICwrw7UR2oBqJv
+                dXvMxERjM+oDYp+G4+SbL+N8Nxkqc3rVwIw0MixSTTndZkIUnOX9vppwMnVrug6plTfQAWbD0vl+2Lre
+                ov4tcQolQRLKkoswzrI2FfsVY4mR4uYcBAMKhwah8oN7557y5JQ4JXPLvqK7/mDAfo998qWpV7mwsO5A
+                J+jQvapCeC71unReMmXqF2thurhFnqNyhWM/Fta94nYN+SlShF+R4QRpEAmGd00zaj7fweiiprmG7SSc
+                WFujWQ0GftGoyhiwinpRkyRb6LltXqr87+a12g4p20IFx9U61PwyD4VXH3FKnp/gPwRoJOBpdGTkVL/y
+                Wn6eO1PTgq+eeQdrv/gaiY27ec8We0fEBDk1CVSv03PjZTYcedko9LxoBOxUrL5r4aCdm9Mw4tyNcnUf
+                Em/bYA+Ntp7/iwH5GxBo6NXPI7vtJur0LA7wT+S5CWwtrczdRdynRivEwVLocvzcjzoNutPHNAQlAIYf
+                M6RVOPK3V/5zw3jfP7MRp8uavxeh1psoTQ1+GwMhMULy3uvPg5MIa9UiouQ2n0gxdzg4Q2y8hYpqa1e0
+                mZKcU1OOxSIEmF9VqrgdBVNjGhGNKa6X+0MqzqKf3isnbw43IcDaVeRLlt/JMKy2heM2BStES6l63cyk
+                aZRVhkFqM5qKm9tNtIsEa+tEgK1Ew7MJxcpTXbCT/do480t8MWk6MqvqTUtRHSWN16TJCYj5yvk5gckv
+                nXDveBwy5gzOPOerAmNW6k7JuIngeUdIXtqC2BIjr2WClXmRn0mQZ14xjPf7lsJx2HNIB0/kZ5lWOLdt
+                zdLSKQHZo1GCCmKxiHroublRieWQg4NuVsZ7DThogEzsUk73rUhRiux7PSS/lrbfdb+LDo2vmvtcZIlE
+                0MpDRc4gOV4KjdcKEtFKEdK6AJwUa8oPeYgG6pIEZNqwQCjBWI7De8xmhoBxMOz4KFQbUStrOMO36rYM
+                DbCpredgCSbJtdbWo4wTg7p7IspbXKwMseaG533yq1KFbn+p453uBkfwP6emOUizZrmuEipW9bUUINkl
+                +JqkF6VgPLwrgnODmP/Yq/jqsdfg/qEafnq0+XMn9NYY0xujN2+cdiPRswQn3n89Drn0DII4AWuWTRKu
+                Jj8lSxqEOQq+lGW4VT5py0b5UQSuw9GL0Wcgdc/GTNNCI20iKNM/tlo0l6y/0cATauRTh6zVKMxoRavh
+                CwqV5u5gBj/VcXlO8B8UmV9N/mgj951EkU4ahVEylaDgojSgjk6a8cWiURylNCLxNg+SwDXZoV6z3oux
+                JnXzrgOF6wTD5jfLOAWxeUv+Ji9+JkplGynozgRzo5QkYhI1w1gOO+uqEeLM8gsvvYy1P6zm7klXOtmX
+                KrCoUmjbeufOnYuJEydi2jSyaQsWYPfu3fiv22/HtFdfx2MPPIQYyYrtm7bgjl/dhSnvTOdIzkrTxLfp
+                j49way1L12LNnEVI7g6Re/CSZGGlwfAarqmFh8RIzM+K4pg+uPwv9+DgC09CzIARGoZuReUeVF6mCSBF
+                serQ7Bf9Kr8l7VdRWvI1O2YVoVks3yDmfJ4nRGaO+VlRTcq1xHNxfl/K4ndN7mEo0JuFc4lckOXpvLId
+                40csS5wSvBHu3720DSnvC6zMXeVc6JeLv8Jnn89HMdtfl186jvUmueBXJqNH9+448cQT8d13SzFkyBB8
+                MvdjnHvuuViyZAl69+6JaW++id49++Ckk07C9OnT4WaftZidoq5dumHN6tVYsWEDqroehDGjR2Pt2rX4
+                YNYsFBE9nn3GmejerQs+/WYJHn34T3jw/t/j7anTaBxRdDmoK268+WasXL0CX3w6H926dcPZZ59tjGvG
+                jBnoSpAnA1uxYgVWrvoep51yOoYNHY7HHnoIJRXtsHzNKlz+s+vQr9/BnN6gQ3B8MUJh+Eg97fxgEd74
+                1V9QwVFIGztOYQ9JDUq7iNRmIxXdZ/SJOO62K0gjchiR1tnGVBl2gqGyVb1wakPJzqUJUqJeuofQRN6Y
+                pZw2b+Zz/tkN+Pawi7TxXvoOnWXICt7e0pnfZ1phq9lYjIZjpFjjdXmdGVDFeQVTLrC6MmDGvK6QoQsU
+                IsfeFpz5dt5r2w7NS6tW/nzOxzjrhJPQKViCiROewDOPP44LxozmnQrNWLRwAb5etBgfvD8Tr7z4ClZ8
+                twKtRLvPPfVXkipBvD39XXy3bLl5HHP0EKz+YSU9dxM+mj0Lxw0aiAVzP8HW9Wsx7bXJuPKSi7Bi6TdY
+                u+oHE1kOreyCoRxO79WlK1t7cRw75Bg01TXgwxkzMXXS6+jcubPx0KamJhOt5MXvvfcennzySfTq1QuN
+                dS04fPCRJmqNoAF8uegrE0EG9+kHdT/jBcjhE5WmoFTsZQBRulDYT6KY9bXqzz3lbgy57wYc99AtSHQs
+                YnbS7bESIB+KjgKVTBccA2C6ycteh+4elPMZiRYCUpvrKpCyymaFMRqN7nKE3OThdd+WunsC2Xu1cICf
+                lJaWYtCgQaioqDAsj8qrvv368S/RkFNmFNB7Cok33ngjJkyYgP79+6OGt1/Iq+644w5UVlaaR3l5uam5
+                5WXBYBAn0Ot79OCQ/K5dBvWqKdCpUyczAaGpCZ+PDY3CQ9c54ogj0L59e4TD9Aieo3fv3rjhhhug9el3
+                oeWzzjoLI0aMMOeU8rUuHbNnz8bQoUMN46U723Wo2aYop3Ktlc3g8uMOQ7tDeprxHd1f1UiSt8upR+Ga
+                iX/AweefYioY8b6M0GZYb3/Hvyotf/x5ISV426G027MIVk1kFGlvyrwUGzC2+3gcYL2a08+cyVsrv/oK
+                GxhGx48fjw4dOuC5Z58leEpiNEOqlKFQOHLkSCPEsWPHoqysDLMYZrXJvn37Ytu2bUY529k0l6L06F5V
+                herqahx88MEmnL722mtYunQpjj32WHTjexom+Oyzz8y5da0qvibjkoIDDN/zqCR5q5Qs5QpIyYAGDBiA
+                nTt34txzzsHUqVMxfx7rWa7xlltvRSUVPnnyZCxcuJBkfwv69OjFOlR//ItroqwPO/Qw3rAdRz2VPezm
+                SzDk5sth7USmicjRKozB9+SpSdK45i/C7ef4/e9/j/2qSIwj+XyLi61RV5f8vVbyXAWCA/4X5BgeIvSS
+                OXPmmDAn4frFqFBh+vtL8irNXZkboAvkQdteVQsKMcsj3ZzK0O9qGpj7aQW6RDLs813l4K1bt2Ljxo04
+                5ZRT0KdPnqM1dz9QgS7Wrz8+RzPTgkogrUNGpOdi1nRdw1MrrxHQKVpoHTqHsIkOebmXM9NmbEQAiMg+
+                ozsu9PeK6J0Z0YbMoJqxI91uPFxjxKq1Dacv/PqjPf8/OxpLMzZ3eVb+6SKOJzhz7fIkjqPxwCtX1KXu
+                PmhmTitmCDahrO1PElBRP1bQvpszhT4F2SZUI0Aqqs0Q2n4KQUvobUdLczMZoGKjhDY88FPKTRdmq9tY
+                KbM+1c7qihWUa4ypoNx9DTB/Uzdd9T9Uuf8Hoy8V02oXdZwAAAAASUVORK5CYII=
+</property>
+        </structure>
+    </list-property>
+</report>

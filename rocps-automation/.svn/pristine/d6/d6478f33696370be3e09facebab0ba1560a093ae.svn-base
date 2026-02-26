@@ -1,0 +1,242 @@
+package com.subex.rocps.automation.helpers.application.aggregation.aggregationresult;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.Map;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CalendarHelper;
+import com.subex.automation.helpers.component.CheckBoxHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.EntityComboHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.PopupHelper;
+import com.subex.automation.helpers.component.TextAreaHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.data.DateHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+import com.subex.rocps.automation.helpers.application.filters.AdvanceSearchFiltersHelper;
+import com.subex.rocps.automation.helpers.application.filters.GridFilterSearchHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.application.networkConfiguraiton.Route;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+
+public class AggregationResultImpl extends PSAcceptanceTest
+{
+
+	protected Map<String, String> dataMap;
+	protected String aggregationName;
+	protected String eventFromDate;
+	protected String eventToDate;
+	protected String billProfile;
+	protected String stream;
+	protected String billPeriodDate;
+	protected String service;
+	protected String tariff;
+	protected String band;
+	protected String tariffRateName;
+	protected String isRatable;
+	protected String status;
+	protected String itemCode;
+	PSGenericHelper genHelperObj = new PSGenericHelper();
+
+	public AggregationResultImpl( Map<String, String> agcConfigMap ) throws Exception
+	{
+
+		this.dataMap = agcConfigMap;
+		initialise();
+	}
+
+	/*
+	 * Method for initialising the variables
+	 */
+	private void initialise() throws Exception
+	{
+
+		aggregationName = ExcelHolder.getKey( dataMap, "AggregationName" );
+		eventFromDate = ExcelHolder.getKey( dataMap, "EventFromDate" );
+		eventToDate = ExcelHolder.getKey( dataMap, "EventToDate" );
+		billProfile = ExcelHolder.getKey( dataMap, "BillProfile" );
+		stream = ExcelHolder.getKey( dataMap, "Stream" );
+		billPeriodDate = ExcelHolder.getKey( dataMap, "BillPeriod" );
+		service = ExcelHolder.getKey( dataMap, "Service" );
+		tariff = ExcelHolder.getKey( dataMap, "Tariff" );
+		band = ExcelHolder.getKey( dataMap, "Band" );
+		tariffRateName = ExcelHolder.getKey( dataMap, "TariffRateName" );
+		isRatable = ExcelHolder.getKey( dataMap, "IsRatable" );
+		status = ExcelHolder.getKey( dataMap, "Status" );
+		itemCode = ExcelHolder.getKey( dataMap, "ItemCode" );
+
+	}
+
+	/*
+	 * Method for performing aggregation filter search
+	 */
+	public void aggregationFilterSearch() throws Exception
+	{
+		AdvanceSearchFiltersHelper advFilterObj = new AdvanceSearchFiltersHelper();
+
+		setCalendar();
+
+		if ( !billProfile.isEmpty() )
+			advFilterObj.billProfileAdvanceSearch( "Bill Profile", billProfile );
+		if ( !billPeriodDate.isEmpty() )
+			advFilterObj.billPeriodAdvanceSearch( "Bill Period", billPeriodDate );
+		if ( !service.isEmpty() )
+			advFilterObj.serviceAdvanceSearch( "Service", service );
+		if ( !stream.isEmpty() )
+			advFilterObj.streamAdvanceSearch( "Stream", stream );
+		if ( !tariff.isEmpty() )
+			advFilterObj.tariffAdvanceSearch( "Tariff", tariff );
+		if ( !band.isEmpty() )
+			GridFilterSearchHelper.gridFilterAdvancedSearch( "bnd$bnd_name", band, "Band" );
+		if ( !tariffRateName.isEmpty() )
+			ComboBoxHelper.select( "trn_trn_name_gwt_uid_", tariffRateName );
+		if ( !isRatable.isEmpty() )
+			ComboBoxHelper.select( "vocb_rev_ratable_fl_gwt_uid_", isRatable );
+		if ( !status.isEmpty() )
+			ComboBoxHelper.select( "status_gwt_uid_", status );
+		if ( !itemCode.isEmpty() )
+			TextBoxHelper.type( "//input[contains(@id,'$item_code')]", itemCode );
+
+	}
+
+	/*
+	 * Method for performing aggregation filter search
+	 */
+	public void aggregationFilterSearchAccountView() throws Exception
+	{
+		AdvanceSearchFiltersHelper advFilterObj = new AdvanceSearchFiltersHelper();
+
+		setCalendar();
+
+		/*if (!billProfile.isEmpty())
+			advFilterObj.billProfileAdvanceSearch("Bill Profile", billProfile);*/
+		if ( !billPeriodDate.isEmpty() )
+			advFilterObj.billPeriodAdvanceSearch( "Bill Period", billPeriodDate );
+		if ( !service.isEmpty() )
+			advFilterObj.serviceAdvanceSearch( "Service", service );
+		if ( !stream.isEmpty() )
+			advFilterObj.streamAdvanceSearch( "Stream", stream );
+		if ( !tariff.isEmpty() )
+			advFilterObj.tariffAdvanceSearch( "Tariff", tariff );
+		if ( !band.isEmpty() )
+			advFilterObj.bandAdvanceSearch( "Band", band );
+		if ( !tariffRateName.isEmpty() )
+			ComboBoxHelper.select( "trn_trn_name_gwt_uid_", tariffRateName );
+		if ( !isRatable.isEmpty() )
+			ComboBoxHelper.select( "vocb_rev_ratable_fl_gwt_uid_", isRatable );
+		if ( !status.isEmpty() )
+			ComboBoxHelper.select( "status_gwt_uid_", status );
+		if ( !itemCode.isEmpty() )
+			TextBoxHelper.type( "//input[contains(@id,'$item_code')]", itemCode );
+
+	}
+
+	public void newlineFilter() throws Exception
+	{
+		AdvanceSearchFiltersHelper advFilterObj = new AdvanceSearchFiltersHelper();
+		setCalendar();
+
+		if ( !billProfile.isEmpty() )
+			advFilterObj.billProfileAdvanceSearch( "Bill Profile", billProfile );
+		if ( !stream.isEmpty() )
+			advFilterObj.streamAdvanceSearch( "Stream", stream );
+	}
+
+	/*
+	 * Method for selecting calendar in aggregation result screen
+	 */
+	public void setCalendar() throws Exception
+	{
+
+		if ( !eventFromDate.isEmpty() && !eventToDate.isEmpty() )
+			CalendarHelper.setDate( "PS_searchPanelId", "PS_calendarButtonId", "Between", eventFromDate, eventToDate );
+		else if ( !eventFromDate.isEmpty() )
+			CalendarHelper.setOnDate( "PS_searchPanelId", "PS_calendarButtonId", eventFromDate );
+		else
+			throw new RuntimeException( "From date field cannot be left empty" );
+	}
+
+	public void newlineActionConfig( String eventDate ) throws Exception
+	{
+		NavigationHelper.navigateToAction( "Add", "Newline" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Add Newline" );
+		AddNewLineImpl newLineObj = new AddNewLineImpl( dataMap );
+		newLineObj.newlineConfig();
+
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+		int row = GridHelper.getRowNumber( "SearchGrid", band, "Band" );
+
+		ButtonHelper.click( "//*[@id='caseGridContainer']//table/tbody/tr[" + row + "]/td[1]//img" );
+		String date = DateHelper.getCurrentDate();
+		String actualDate = GridHelper.getCellValue( "SearchGrid", row + 1, "Created Date" );
+		if ( actualDate.contains( date ) )
+			Log4jHelper.logInfo( "Tariff has been reversed." );
+
+	}
+
+	public void addadjustments() throws Exception
+	{
+		int row = GridHelper.getRowNumber( "SearchGrid", band, "Band" );
+
+		ButtonHelper.click( "//*[@id='caseGridContainer']//table/tbody/tr[" + row + "]/td[1]//img" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		int rowCount = GridHelper.getRowCount( "SearchGrid" );
+		if ( rowCount > 2 )
+		{
+			for ( int i = 2; i <= rowCount - 1; i++ )
+			{
+				GridHelper.clickRow( "SearchGrid", i + 1, "Event Date" );
+				if ( genHelperObj.validateActionText( "Add", "Adjustment" ) )
+				{
+
+					NavigationHelper.navigateToAction( "Add", "Adjustment" );
+					GenericHelper.waitForLoadmask( searchScreenWaitSec );
+					break;
+				}
+			}
+		}
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		/*GridHelper.clickRow( "SearchGrid", row+1, "Event Date" );
+		NavigationHelper.navigateToAction( "Add", "Adjustment" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );*/
+		assertEquals( NavigationHelper.getScreenTitle(), "Add Adjustment" );
+		AddNewLineImpl newLineObj = new AddNewLineImpl( dataMap );
+		newLineObj.addAjustments();
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "//*[@id='caseGridContainer']//table/tbody/tr[" + row + "]/td[1]//img" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		int rowFinal = GridHelper.getRowCount( "SearchGrid" );
+		if ( rowFinal > rowCount )
+			Log4jHelper.logInfo( "adjustments has been added" );
+		else
+			FailureHelper.failTest( "Adjustments has not been added" );
+
+	}
+
+	public void deleteSummaryRowsInterserted() throws Exception
+	{
+
+		NavigationHelper.navigateToAction( "Delete", "Added Summary Items" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		assertEquals( NavigationHelper.getScreenTitle(), "Confirm" );
+		PopupHelper.isTextPresent( "//*[@id='window-scroll-panel']//img", "Are you sure you want to delete the corresponding row(s)" );
+		ButtonHelper.click( "YesButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		PopupHelper.isTextPresent( "//*[@id='window-scroll-panel']//img", "Row(s) successfully deleted" );
+		ButtonHelper.click( "OKButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+}

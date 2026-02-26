@@ -1,0 +1,209 @@
+package com.subex.rocps.automation.testcases.systemtesting;
+
+import com.subex.rocps.automation.helpers.application.matchandrate.EventIdentiferDefinition;
+import com.subex.rocps.automation.helpers.application.matchandrate.Operator;
+import com.subex.rocps.automation.helpers.application.networkConfiguraiton.Route;
+import com.subex.rocps.automation.helpers.application.networkConfiguraiton.RouteGroup;
+import com.subex.rocps.automation.helpers.application.networkConfiguraiton.Switch;
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.Account;
+import com.subex.rocps.automation.helpers.application.partnerConfiguration.Agent;
+import com.subex.rocps.automation.helpers.application.referenceTable.Bank;
+import com.subex.rocps.automation.helpers.application.referenceTable.ServiceTariffType;
+import com.subex.rocps.automation.helpers.application.referenceTable.SignallingType;
+import com.subex.rocps.automation.helpers.application.referenceTable.TrafficType;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+import com.subex.automation.helpers.application.TariffReferenceTableHelper;
+import com.subex.automation.helpers.application.screens.TaskControllerHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class TCConfigurations extends PSAcceptanceTest {
+
+	String path = System.getProperty("user.dir") + "\\src\\main\\resources\\";
+	String workBookName = "SystemTestCases.xlsx";
+	String sheetName = "Configurations";
+
+	@org.testng.annotations.Test(priority = 1, description = "task Controller capabilities", dependsOnGroups = {
+			"Prerequisites1", "Prerequisites2", "Prerequisites3", "Prerequisites4", "Prerequisites5" }, groups = { "Prerequisites6" })
+	public void taskControllerCapabilities() throws Exception {
+		try {
+
+			TaskControllerHelper taskObj = new TaskControllerHelper();
+			taskObj.setTaskControllerCapability(path, workBookName, sheetName, "TCCapability", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 2, description = "signalling type creation", dependsOnMethods = {
+			"taskControllerCapabilities" }, groups = { "Prerequisites6" })
+	public void createsignallingtype() throws Exception {
+		try {
+			SignallingType sigObj = new SignallingType(path, workBookName, sheetName, "SignallingType");
+			sigObj.signallingTypeCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 3, description = "tariffMetricType creation", dependsOnMethods = {
+			"createsignallingtype" }, groups = { "Prerequisites6" })
+	public void createtariffMetricType() throws Exception {
+		try {
+			TariffReferenceTableHelper tariffObj = new TariffReferenceTableHelper();
+			tariffObj.tariffMetricType(path, workBookName, sheetName, "TariffMetricType", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 4, description = "tariffRateName creation", dependsOnMethods = {
+			"createtariffMetricType" }, groups = { "Prerequisites6" })
+	public void createtariffRateName() throws Exception {
+		try {
+			TariffReferenceTableHelper tariffRateObj = new TariffReferenceTableHelper();
+			tariffRateObj.tariffRateName(path, workBookName, sheetName, "TariffRateName", 1);
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 5, description = "tariffType creation", dependsOnMethods = {
+			"createtariffRateName" }, groups = { "Prerequisites6" })
+	public void createtariffType() throws Exception {
+		try {
+			TrafficType trafficObj = new TrafficType( path, workBookName, sheetName, "TrafficType" );
+			trafficObj.trafficTypeCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 6, description = "Service TariffType creation", dependsOnMethods = {
+			"createtariffType" }, groups = { "Prerequisites6" })
+	public void createServiceTariffType() throws Exception {
+		try {
+			ServiceTariffType serviceObj = new ServiceTariffType(path, workBookName, sheetName, "ServiceTariffType");
+			serviceObj.serviceTariffTypeCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 7, description = "bank creation", dependsOnMethods = {
+			"createServiceTariffType" }, groups = { "Prerequisites6" })
+	public void createBank() throws Exception {
+		try {
+			Bank bankObj = new Bank(path, workBookName, sheetName, "Bank");
+			bankObj.bankCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			;
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 8, description = "agent creation", dependsOnMethods = {
+			"createBank" }, groups = { "Prerequisites6" })
+	public void createAgent() throws Exception {
+		try {
+			Agent agentObj = new Agent(path, workBookName, sheetName, "Agent");
+			agentObj.agentCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 9, description = "account creation", dependsOnMethods = {
+			"createAgent" }, groups = { "Prerequisites6" })
+	public void createAccount() throws Exception {
+		try {
+			Account accObj = new Account(path, workBookName, sheetName, "Account");
+			accObj.accountCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			;
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 10, description = "Operator creation", dependsOnMethods = {
+			"createAccount" }, groups = { "Prerequisites6" })
+	public void createOperator() throws Exception {
+		try {
+
+			Operator opeObj = new Operator(path, workBookName, sheetName, "Operator");
+			opeObj.operatorCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 11, description = "switch creation", dependsOnMethods = {
+			"createOperator" }, groups = { "Prerequisites6" })
+	public void createSwitch() throws Exception {
+		try {
+
+			Switch switchObj = new Switch(path, workBookName, sheetName, "Switch");
+			switchObj.configureSwitch();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 12, description = "route group creation", dependsOnMethods = {
+			"createSwitch" }, groups = { "Prerequisites6" })
+	public void createrouteGroup() throws Exception {
+		try {
+
+			RouteGroup routegrpObj = new RouteGroup(path, workBookName, sheetName, "RouteGroup");
+			routegrpObj.routeGrpCreation();
+
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 13, description = "route creation", dependsOnMethods = {
+			"createrouteGroup" }, groups = { "Prerequisites6" })
+	public void createRoute() throws Exception {
+		try {
+			Route routeObj = new Route(path, workBookName, sheetName, "Route");
+			routeObj.routeCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+	@org.testng.annotations.Test(priority = 14, description = "event identifier Definition creation", dependsOnMethods = {
+			"createRoute" }, groups = { "Prerequisites6" })
+	public void createEventIdentifierDefn() throws Exception {
+		try {
+			EventIdentiferDefinition eidObj = new EventIdentiferDefinition(path, workBookName, sheetName, "EventDefn");
+			eidObj.eventCreation();
+		} catch (Exception e) {
+			FailureHelper.setErrorMessage(e);
+			throw e;
+		}
+	}
+
+}

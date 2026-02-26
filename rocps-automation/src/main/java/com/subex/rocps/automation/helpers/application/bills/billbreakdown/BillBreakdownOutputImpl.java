@@ -1,0 +1,373 @@
+/*
+ * package com.subex.rocps.automation.helpers.application.bills.billbreakdown;
+ * 
+ * import java.util.Map;
+ * 
+ * import com.subex.automation.helpers.component.ButtonHelper; import
+ * com.subex.automation.helpers.component.ComboBoxHelper; import
+ * com.subex.automation.helpers.component.ElementHelper; import
+ * com.subex.automation.helpers.component.EntityComboHelper; import
+ * com.subex.automation.helpers.component.GenericHelper; import
+ * com.subex.automation.helpers.component.PopupHelper; import
+ * com.subex.automation.helpers.component.PropertyGridHelper; import
+ * com.subex.automation.helpers.component.TextBoxHelper; import
+ * com.subex.automation.helpers.data.ValidationHelper; import
+ * com.subex.automation.helpers.scripts.TestDataHelper; import
+ * com.subex.rocps.automation.helpers.application.genericHelpers.
+ * PSGenericHelper; import
+ * com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest; import
+ * com.subex.rocps.automation.utils.ExcelHolder;
+ * 
+ * public class BillBreakdownOutputImpl extends PSAcceptanceTest {
+ * 
+ * protected String clientPartition; protected String billOutputName; protected
+ * String generationBasedOn; protected String billImageName; protected String
+ * billReportComp; protected String billReportConfig; protected String
+ * reportGenerationComponent; protected String billComp; protected String
+ * birtDesignerFile; protected String birtFileFormat; protected String
+ * fileWritterDir; protected String logoImgFile; protected String
+ * retainTempFiles; protected PSGenericHelper genericHelperObj = new
+ * PSGenericHelper(); protected Map<String, String> billOutputImplMap = null;
+ * 
+ * public BillBreakdownOutputImpl( Map<String, String> billoutputMap ) throws
+ * Exception {
+ * 
+ * this.billOutputImplMap = billoutputMap; initializeVariables(
+ * billOutputImplMap );
+ * 
+ * }
+ * 
+ * 
+ * This method is to create new BillBreakdown Configuration
+ * 
+ * public void createNewbillBreakdownConfig() throws Exception {
+ * genericHelperObj.clickNewAction( clientPartition );
+ * GenericHelper.waitForLoadmask( searchScreenWaitSec );
+ * 
+ * }
+ * 
+ * 
+ * This method is to create new Bill Breakdown Input
+ * 
+ * public void detailconfig() throws Exception { TextBoxHelper.type(
+ * "PS_Detail_billOutput_name_txtID", billOutputName ); ComboBoxHelper.select(
+ * "PS_Detail_billOutput_generationBasedOn_comboId", generationBasedOn );
+ * PropertyGridHelper.typeInTextBox( "Bill Image Name *", billImageName ); if (
+ * generationBasedOn.contentEquals( "Component" ) )
+ * PropertyGridHelper.selectInComboBox( "Bill Report Parameter Component *",
+ * billReportComp ); if ( generationBasedOn.contentEquals( "Configuration" ) ) {
+ * PropertyGridHelper.selectInComboBox( "Bill Report Configuration *",
+ * billReportConfig ); PropertyGridHelper.selectInComboBox(
+ * "Report Generation Component *", reportGenerationComponent ); }
+ * //PropertyGridHelper.typeInDataDir("Birt Designer File *", birtDesignerFile);
+ * updateBirtDesignerFile( birtDesignerFile ); checkConfirmationPopup();
+ * PropertyGridHelper.typeInTextBox( "Birt File Format", birtFileFormat );
+ * PropertyGridHelper.typeInDataDir( "File Writer Temporary Directory *",
+ * birtDesignerFile ); PropertyGridHelper.typeInDataDir( "Logo Image File",
+ * logoImgFile ); if ( ValidationHelper.isTrue( retainTempFiles ) )
+ * PropertyGridHelper.checkCheckBox( "Retain Temporary Files" ); }
+ * 
+ * 
+ * This method is used to confirmationpoup for selecting configuration type
+ * 
+ * private void checkConfirmationPopup() throws Exception { if (
+ * PopupHelper.isTextPresent( "Selected File Exists. Do you want to replace?" )
+ * ) ButtonHelper.click( "YesButton" ); }
+ * 
+ * private void updateBirtDesignerFile( String birtDesignerFile ) throws
+ * Exception { TestDataHelper testData = new TestDataHelper(); String[] values =
+ * testData.getStringValue( birtDesignerFile, ";" ); String birtSrcPath =
+ * automationPath + "\\src\\main\\resources\\Birt\\"; String filePathName =
+ * birtSrcPath + values[2]; String fileUploadXpath =
+ * "//*[@id='billBrkdwnFileUploadDetail.window']//button[@id='FileUpload-upload']";
+ * String fileTypeImageName = configProp.getProperty( "fileTypeUploadImageName"
+ * ); String openButtonImageName = configProp.getProperty(
+ * "openButtoneUploadImageName" ); ButtonHelper.click( "trigger-pbboFilePath" );
+ * String uploadBirtDesignFilPopupXpath =
+ * "//*[@id='billBrkdwnFileUploadDetail.window']//div[text()='Birt  Designer  File']"
+ * ; if ( !ElementHelper.isElementPresent( uploadBirtDesignFilPopupXpath ) )
+ * ButtonHelper.click( "trigger-pbboFilePath" ); GenericHelper.waitForAJAXReady(
+ * detailScreenWaitSec ); ComboBoxHelper.select(
+ * "billBrkdwnFileUploadDetail.window", "DataDir_Token_Dropdown", values[0] );
+ * TextBoxHelper.type( "billBrkdwnFileUploadDetail.window", "pbboRelativePath",
+ * values[1] );
+ * 
+ * GenericHelper.waitForLoadmask( searchScreenWaitSec );
+ * PSGenericHelper.psFileUploadSikuliWithoutRobot(
+ * "//div[@class='roc-trigger roc-fileupload-trigger']", filePathName,
+ * fileTypeImageName, openButtonImageName ); ButtonHelper.click( fileUploadXpath
+ * ); if ( ElementHelper.isElementPresent( fileUploadXpath ) )
+ * ButtonHelper.click( fileUploadXpath ); GenericHelper.waitForLoadmask(
+ * searchScreenWaitSec ); ElementHelper.waitForElementToDisappear(
+ * fileUploadXpath, 5 ); }
+ * 
+ * 
+ * This method is to save bill breakdown Configuration
+ * 
+ * 
+ * public void billbreakdownConfigSave() throws Exception {
+ * ButtonHelper.click("PS_Detail_billOutput_Save_BtnID");
+ * GenericHelper.waitForSave(searchScreenWaitSec); genericHelperObj.detailSave(
+ * "PS_Detail_billOutput_Save_BtnID", billOutputName, "Name" ); }
+ * 
+ * 
+ * This method is to edit Bill Breakdown Input
+ * 
+ * public void editDetailconfig() throws Exception { if (
+ * ValidationHelper.isNotEmpty( billOutputName ) ) TextBoxHelper.type(
+ * "PS_Detail_billOutput_name_txtID", billOutputName ); if (
+ * ValidationHelper.isNotEmpty( billImageName ) )
+ * PropertyGridHelper.typeInTextBox( "Bill Image Name *", billImageName ); if (
+ * ValidationHelper.isNotEmpty( billReportComp ) )
+ * PropertyGridHelper.selectInComboBox( "Bill Report Parameter Component *",
+ * billReportComp ); if ( ValidationHelper.isNotEmpty( birtDesignerFile ) )
+ * PropertyGridHelper.typeInDataDir( "Birt Designer File *", birtDesignerFile );
+ * if ( ValidationHelper.isNotEmpty( birtFileFormat ) )
+ * PropertyGridHelper.typeInTextBox( "Birt File Format", birtFileFormat ); if (
+ * ValidationHelper.isNotEmpty( birtDesignerFile ) )
+ * PropertyGridHelper.typeInDataDir( "File Writer Temporary Directory *",
+ * birtDesignerFile ); if ( ValidationHelper.isNotEmpty( logoImgFile ) )
+ * PropertyGridHelper.typeInDataDir( "Logo Image File", logoImgFile ); if (
+ * ValidationHelper.isNotEmpty( retainTempFiles ) && ValidationHelper.isTrue(
+ * retainTempFiles ) ) PropertyGridHelper.checkCheckBox(
+ * "Retain Temporary Files" );
+ * 
+ * }
+ * 
+ * 
+ * This method is to initialize instance variables
+ * 
+ * public void initializeVariables( Map<String, String> map ) throws Exception {
+ * 
+ * clientPartition = ExcelHolder.getKey( map, "Partition" ); billOutputName =
+ * ExcelHolder.getKey( map, "BillOutputName" ); generationBasedOn =
+ * ExcelHolder.getKey( map, "GenerationBasedOn" ); billImageName =
+ * ExcelHolder.getKey( map, "BillImageName" ); birtDesignerFile =
+ * ExcelHolder.getKey( map, "BirtDesignerFile" ); birtFileFormat =
+ * ExcelHolder.getKey( map, "BirtFileFormat" ); fileWritterDir =
+ * ExcelHolder.getKey( map, "FileWritterDir" ); logoImgFile =
+ * ExcelHolder.getKey( map, "LogoImgFile" ); retainTempFiles =
+ * ExcelHolder.getKey( map, "RetainTempFiles" ); billReportComp = map.get(
+ * "BillReportParameterComponent" ); billReportConfig = map.get(
+ * "BillReportConfiguration" ); reportGenerationComponent = map.get(
+ * "ReportGenerationComponent" ); }
+ * 
+ * 
+ * method for clicking delete action in bill breakdown Output search screen
+ * 
+ * public void clickDeleteAction( String billOutputName ) throws Exception {
+ * 
+ * genericHelperObj.clickDeleteOrUnDeleteAction( billOutputName, "Name",
+ * "Delete" ); GenericHelper.waitForLoadmask(); }
+ * 
+ * 
+ * method for clicking un delete action in bill breakdown Output search screen
+ * 
+ * public void clickUnDeleteAction( String billOutputName ) throws Exception {
+ * genericHelperObj.clickDeleteOrUnDeleteAction( billOutputName, "Name",
+ * "Undelete" ); GenericHelper.waitForLoadmask(); }
+ * 
+ * }
+ */
+
+package com.subex.rocps.automation.helpers.application.bills.billbreakdown;
+
+import java.time.Duration;
+import java.util.Map;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.ElementHelper;
+import com.subex.automation.helpers.component.EntityComboHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.PopupHelper;
+import com.subex.automation.helpers.component.PropertyGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.scripts.TestDataHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+
+public class BillBreakdownOutputImpl extends PSAcceptanceTest
+{
+
+	protected String clientPartition;
+	protected String billOutputName;
+	protected String generationBasedOn;
+	protected String billImageName;
+	protected String billReportComp;
+	protected String billReportConfig;
+	protected String reportGenerationComponent;
+	protected String billComp;
+	protected String birtDesignerFile;
+	protected String birtFileFormat;
+	protected String fileWritterDir;
+	protected String logoImgFile;
+	protected String retainTempFiles;
+	protected PSGenericHelper genericHelperObj = new PSGenericHelper();
+	protected Map<String, String> billOutputImplMap = null;
+
+	public BillBreakdownOutputImpl( Map<String, String> billoutputMap ) throws Exception
+	{
+
+		this.billOutputImplMap = billoutputMap;
+		initializeVariables( billOutputImplMap );
+
+	}
+
+	/*
+	 * This method is to create new BillBreakdown Configuration
+	 */
+	public void createNewbillBreakdownConfig() throws Exception
+	{
+		genericHelperObj.clickNewAction( clientPartition );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+	}
+
+	/*
+	 * This method is to create new Bill Breakdown Input
+	 */
+	public void detailconfig() throws Exception
+	{
+		TextBoxHelper.type( "PS_Detail_billOutput_name_txtID", billOutputName );
+		ComboBoxHelper.select( "PS_Detail_billOutput_generationBasedOn_comboId", generationBasedOn );
+		PropertyGridHelper.typeInTextBox( "Bill Image Name *", billImageName );
+		if ( generationBasedOn.contentEquals( "Component" ) )
+			PropertyGridHelper.selectInComboBox( "Bill Report Parameter Component *", billReportComp );
+		if ( generationBasedOn.contentEquals( "Configuration" ) )
+		{
+			PropertyGridHelper.selectInComboBox( "Bill Report Configuration *", billReportConfig );
+			PropertyGridHelper.selectInComboBox( "Report Generation Component *", reportGenerationComponent );
+		}
+		//PropertyGridHelper.typeInDataDir("Birt Designer File *", birtDesignerFile);
+		updateBirtDesignerFile( birtDesignerFile );
+		checkConfirmationPopup();
+		PropertyGridHelper.typeInTextBox( "Birt File Format", birtFileFormat );
+		PropertyGridHelper.typeInDataDir( "File Writer Temporary Directory *", birtDesignerFile );
+		PropertyGridHelper.typeInDataDir( "Logo Image File", logoImgFile );
+		if ( ValidationHelper.isTrue( retainTempFiles ) )
+			PropertyGridHelper.checkCheckBox( "Retain Temporary Files" );
+	}
+
+	/*
+	 * This method is used to confirmationpoup for selecting configuration type
+	 */
+	private void checkConfirmationPopup() throws Exception
+	{
+		if ( PopupHelper.isTextPresent( "Selected File Exists. Do you want to replace?" ) )
+			ButtonHelper.click( "YesButton" );
+	}
+
+	private void updateBirtDesignerFile( String birtDesignerFile ) throws Exception
+	{
+		TestDataHelper testData = new TestDataHelper();
+		String[] values = testData.getStringValue( birtDesignerFile, ";" );
+		String birtSrcPath = automationPath + "\\src\\main\\resources\\Birt\\";
+		String filePathName = birtSrcPath + values[2];
+		String fileUploadXpath = "//*[@id='billBrkdwnFileUploadDetail.window']//button[@id='FileUpload-upload']";
+		String fileTypeImageName = configProp.getProperty( "fileTypeUploadImageName" );
+		String openButtonImageName = configProp.getProperty( "openButtoneUploadImageName" );
+		ButtonHelper.click( "trigger-pbboFilePath" );
+		String uploadBirtDesignFilPopupXpath = "//*[@id='billBrkdwnFileUploadDetail.window']//div[text()='Birt  Designer  File']";
+		if ( !ElementHelper.isElementPresent( uploadBirtDesignFilPopupXpath ) )
+			ButtonHelper.click( "trigger-pbboFilePath" );
+		GenericHelper.waitForAJAXReady( detailScreenWaitSec );
+		ComboBoxHelper.select( "billBrkdwnFileUploadDetail.window", "DataDir_Token_Dropdown", values[0] );
+		TextBoxHelper.type( "billBrkdwnFileUploadDetail.window", "pbboRelativePath", values[1] );
+
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		//PSGenericHelper.psFileUploadSikuliWithoutRobot( "//div[@class='roc-trigger roc-fileupload-trigger']", filePathName, fileTypeImageName, openButtonImageName );
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement fileInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+			    By.cssSelector("input.gwt-FileUpload[type='file']")));
+		String fName = GenericHelper.getPath( automationOS, filePathName );
+		fileInput.sendKeys(fName);
+		ButtonHelper.click( fileUploadXpath );
+		if ( ElementHelper.isElementPresent( fileUploadXpath ) )
+			ButtonHelper.click( fileUploadXpath );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ElementHelper.waitForElementToDisappear( fileUploadXpath, 5 );
+	}
+
+	/*
+	 * This method is to save bill breakdown Configuration
+	 */
+
+	public void billbreakdownConfigSave() throws Exception
+	{
+		/*ButtonHelper.click("PS_Detail_billOutput_Save_BtnID");
+		GenericHelper.waitForSave(searchScreenWaitSec);*/
+		genericHelperObj.detailSave( "PS_Detail_billOutput_Save_BtnID", billOutputName, "Name" );
+	}
+
+	/*
+	 * This method is to edit Bill Breakdown Input
+	 */
+	public void editDetailconfig() throws Exception
+	{
+		if ( ValidationHelper.isNotEmpty( billOutputName ) )
+			TextBoxHelper.type( "PS_Detail_billOutput_name_txtID", billOutputName );
+		if ( ValidationHelper.isNotEmpty( billImageName ) )
+			PropertyGridHelper.typeInTextBox( "Bill Image Name *", billImageName );
+		if ( ValidationHelper.isNotEmpty( billReportComp ) )
+			PropertyGridHelper.selectInComboBox( "Bill Report Parameter Component *", billReportComp );
+		if ( ValidationHelper.isNotEmpty( birtDesignerFile ) )
+			PropertyGridHelper.typeInDataDir( "Birt Designer File *", birtDesignerFile );
+		if ( ValidationHelper.isNotEmpty( birtFileFormat ) )
+			PropertyGridHelper.typeInTextBox( "Birt File Format", birtFileFormat );
+		if ( ValidationHelper.isNotEmpty( birtDesignerFile ) )
+			PropertyGridHelper.typeInDataDir( "File Writer Temporary Directory *", birtDesignerFile );
+		if ( ValidationHelper.isNotEmpty( logoImgFile ) )
+			PropertyGridHelper.typeInDataDir( "Logo Image File", logoImgFile );
+		if ( ValidationHelper.isNotEmpty( retainTempFiles ) && ValidationHelper.isTrue( retainTempFiles ) )
+			PropertyGridHelper.checkCheckBox( "Retain Temporary Files" );
+
+	}
+
+	/*
+	 * This method is to initialize instance variables
+	 */
+	public void initializeVariables( Map<String, String> map ) throws Exception
+	{
+
+		clientPartition = ExcelHolder.getKey( map, "Partition" );
+		billOutputName = ExcelHolder.getKey( map, "BillOutputName" );
+		generationBasedOn = ExcelHolder.getKey( map, "GenerationBasedOn" );
+		billImageName = ExcelHolder.getKey( map, "BillImageName" );
+		birtDesignerFile = ExcelHolder.getKey( map, "BirtDesignerFile" );
+		birtFileFormat = ExcelHolder.getKey( map, "BirtFileFormat" );
+		fileWritterDir = ExcelHolder.getKey( map, "FileWritterDir" );
+		logoImgFile = ExcelHolder.getKey( map, "LogoImgFile" );
+		retainTempFiles = ExcelHolder.getKey( map, "RetainTempFiles" );
+		billReportComp = map.get( "BillReportParameterComponent" );
+		billReportConfig = map.get( "BillReportConfiguration" );
+		reportGenerationComponent = map.get( "ReportGenerationComponent" );
+	}
+
+	/*
+	 * method for clicking delete action in bill breakdown Output search screen
+	 */
+	public void clickDeleteAction( String billOutputName ) throws Exception
+	{
+
+		genericHelperObj.clickDeleteOrUnDeleteAction( billOutputName, "Name", "Delete" );
+		GenericHelper.waitForLoadmask();
+	}
+
+	/*
+	 * method for clicking un delete action in bill breakdown Output search screen
+	 */
+	public void clickUnDeleteAction( String billOutputName ) throws Exception
+	{
+		genericHelperObj.clickDeleteOrUnDeleteAction( billOutputName, "Name", "Undelete" );
+		GenericHelper.waitForLoadmask();
+	}
+
+}

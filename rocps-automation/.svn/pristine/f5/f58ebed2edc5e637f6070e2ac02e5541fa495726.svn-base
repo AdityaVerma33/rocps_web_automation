@@ -1,0 +1,132 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CTAF" verbose="2" annotations="JDK" configfailurepolicy="skip">
+	<!-- Web application fixture -->
+	<listeners>
+		  <listener class-name="com.subex.rocps.automation.helpers.listener.PSCustomTestListenerAdapter"/>
+  	</listeners>
+  	<parameter name="config" value="psconfig.properties"></parameter>
+  	<parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties,Users_OR.properties,Measures_Audits_OR.properties"></parameter>  	
+  	<parameter name="driverFile" value="SmokeTestDriver.xlsx"></parameter>
+	  <test name="Client" preserve-order="true">
+		
+		<classes>	
+		
+		    <class name="com.subex.rocps.automation.testcases.systemtesting.Prerequisites" /> 		    
+			 <class name="com.subex.rocps.automation.testcases.systemtesting.ROCPreRequisites" /> 			
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventModellingDefinition" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventModellingInst" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventType" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAggregationConfiguration" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAggregationProcessor" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCStreams" />	 	 					 	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAggrComponentMapping" />	 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSignallingType" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBank" />	 		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAgent" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEntities" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAccount" />					
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCOperator" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCRuleStringSet" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventLegCodeGroup" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventExtraRatingField" />		
+			  <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSwitch" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCRouteGroup" />	 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCRoute" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventNormalization" />						
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCCrossFXRateGroup" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCCrossFXRate" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSalesTax" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSalesTaxRate" />				
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSalesTaxGroup" /> 	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCServiceTariffType" />		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCTrafficType" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventIdentifierDefinition" />	 
+ 			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCDialStringMatch" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventIdentifierValue" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventIdentifierValueGroup" />
+			  <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownExtraField" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownConfiguration" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownInput" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownInputGroup" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownOutput" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownOutputGroup" />  	 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillingCycle" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillPackage" />		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillProfile" />			
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCElements" />  
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBands" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCTariffClass" />    
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCTariff" /> 		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventMatchRuleGroup" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventMatchRule" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCPrerating" />					 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.ROCPreRequisites2" /> 
+		  <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBulkLoadPreRequists" />
+		    <class name="com.subex.rocps.automation.testcases.functionaltesting.TCXdrExtTemplate" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.XdrRocPrerequiste" />	 
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventUsgRequest" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventUsage" />		 		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCReAggregationRequest" />					 	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSwitchAction" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCRouteGroupAction" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCAccountAction" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillProfileAction" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventMatchRuleGroupAction" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCApprovalWorkflows" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCCreditApprovalWorkflow" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAmountThreshold" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCPrePayments" /> 	
+			
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCBilateralRatedModelling" />	
+           <class name="com.subex.rocps.automation.testcases.functionaltesting.TCDealPrerequisites" />
+           <class name="com.subex.rocps.automation.testcases.functionaltesting.TCDealTrafficTypeOrder" />
+          <class name="com.subex.rocps.automation.testcases.functionaltesting.TCDeal" />	
+                	
+          <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillingGroupCode" />
+	     <class name="com.subex.rocps.automation.testcases.functionaltesting.TCProductArgumentType" />
+         <class name="com.subex.rocps.automation.testcases.functionaltesting.TCProductBundles" />	
+          <class name="com.subex.rocps.automation.testcases.functionaltesting.TCProductInstance" />	
+          <class name="com.subex.rocps.automation.testcases.functionaltesting.TCProductBundleDrillDown" />	 
+       
+   	       <class name="com.subex.rocps.automation.testcases.functionaltesting.TCRerateRequest" />	
+	  	 <class name="com.subex.rocps.automation.testcases.systemtesting.ControllerStartup" />	
+	  	
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCFieldMapping" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCSystemFieldList" /> 
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCCarrierInvoiceEmailConfig" />	 
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCAutomaticInvoiceConfig" />				
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCCarrierInvoiceExcelTemplate" />	
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCCarrierInvoiceManualTemplate" />				
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCCarrierInvoice" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCInvoiceReconConfig" />  
+			 					
+		</classes>
+	</test>  
+	
+
+	
+	
+  <test name="ServerSide" preserve-order="true">
+		<classes>	
+		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCMnrAndAggregationResults" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCReAggregationServerCases" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCTestBill" /> 
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCHotBill" />	
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillAction" />			
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCPrepaymentServerCases" />	 
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCCreditNotes" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCXdrExtractResult" />			
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCDispute" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventErrorTest" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCBulkLoaderStream" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCSettlementPrerequiste" />			
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCSettlements" />
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCSettlementsBill" /> 
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventErrorRerate" />	
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCRerateServerCases" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCProductInstanceServer" /> 		
+			
+		</classes>
+	</test>  
+</suite>

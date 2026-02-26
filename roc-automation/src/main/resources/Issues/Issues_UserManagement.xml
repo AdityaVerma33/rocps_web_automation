@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="User Management Issues" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Users_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="User Management Issues" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test140388" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test145550" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test145551" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test147534" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test147926" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test148344" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test149428" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test150466" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test154071" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test155453" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test161864" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test163128" />
+			<class name="com.subex.automation.testcases.regressiontesting.usermanagement.usermgnt_issues.test163254" />
+		</classes>
+	</test>
+</suite>

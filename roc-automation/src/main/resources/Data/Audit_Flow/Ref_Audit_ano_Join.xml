@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="2.2.0.0" version="7">
+    <Decoder name="ASCII_for_Sequence" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="sequenceOf">
+                <Logic recordType="CDR" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" allowEOFTerm="false" terminator="lf" root="false" name="CDR" type="delimitedascii" parseDoubleQuotes="false">
+            <Field trimQuotes="true" id="0" generate="field" name="Caller_Number" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field trimQuotes="true" generate="field" name="Time_Stamp" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true" id="1">
+                <FieldConverter format="yyyy/MM/dd HH:mm:ss" type="datetime"/>
+            </Field>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="80" xPos="145" name="CDR" width="50" type="Record" recordType="CDR" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="50" yPos="80" xPos="405" unicode="false" name="Spark Output" width="60" outputKey="1" filename="Concatenate($$Filename, '_', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$FileRecords, '.dat')" type="SparkOutput" nodeKey="shape6">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape3">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="80" xPos="260" name="Mapping" width="60" type="Mapping" recordType="reference_cdr" nodeKey="shape3">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="Gen_Id()" target="CDR_ID"/>
+                    <Mapping expression="Caller_Number" target="A_Number"/>
+                    <Mapping expression="Time_Stamp" target="Time_Stamp"/>
+                    <Mapping expression="Gen_Id()" target="cdr_id"/>
+                    <Mapping expression="Caller_Number" target="a_number"/>
+                    <Mapping expression="Time_Stamp" target="time_stamp"/>
+                </Mappings>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="1" name="Gen_Id" blockSize="20" type="GenerateId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="reference_cdr">
+                <Field id="2" name="cdr_id" nullable="true" type="integer"/>
+                <Field id="3" name="a_number" nullable="true" type="string"/>
+                <Field name="time_stamp" nullable="true" type="datetime" id="4"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals/>
+    </Mappings>
+</Diamond>

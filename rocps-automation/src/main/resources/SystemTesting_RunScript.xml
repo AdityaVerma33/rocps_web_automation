@@ -1,0 +1,73 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CTAF" verbose="2" annotations="JDK" configfailurepolicy="skip">
+	<!-- Web application fixture -->
+	<listeners>
+		<listener
+			class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter" />
+	</listeners>
+	<parameter name="config" value="psconfig.properties"></parameter>
+	<parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties"></parameter>
+	<parameter name="driverFile" value="SmokeTestDriver.xlsx"></parameter>
+	<test name="Testing" preserve-order="true">
+		<classes>
+				<!--<class
+				name="com.subex.rocps.automation.testcases.systemtesting.Prerequisites" />-->
+			<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.ROCPreRequisites" />-->
+			<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TCVoiceStream" />-->
+				<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.BillPreRequisites" />-->
+				<!--<class
+				name="com.subex.rocps.automation.testcases.systemtesting.ControllerStartup"
+			/>-->
+				<!--  <class
+				name="com.subex.rocps.automation.testcases.systemtesting.TCConfigurations"
+			 />-->
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase01" />-->
+			<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase02" />-->
+			<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase03" />-->
+		<!--<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase05" />-->
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase06" />-->
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase07" />-->
+				<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase08" />-->
+	<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase09" />-->
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase10" />-->
+				<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase11" />-->
+				
+			<!--<class name="com.subex.rocps.automation.testcases.systemtesting.TestCase12" />-->
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase13" />-->
+	<!--	<class name="com.subex.rocps.automation.testcases.systemtesting.TestCase14" />-->
+			<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase15" />-->
+	<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase16" />-->
+			
+				<!-- DONT NEED TO RUN 	-->	
+				
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase17" />-->
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase18" />-->
+		
+				<!-- DONT NEED TO RUN 	-->
+		
+		
+			<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase19" />
+		<!--	<class
+				name="com.subex.rocps.automation.testcases.systemtesting.TestCase20" />-->
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Data Federation ST" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value="Measures_Audits_OR.properties,ROCView_OR.properties"></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="Data Federation ST" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.systemtesting.datafederation.testPrerequisite1" />
+	    	<class name="com.subex.automation.testcases.systemtesting.datafederation.testPrerequisite2" />
+	    	<class name="com.subex.automation.testcases.systemtesting.datafederation.testPrerequisite3" />
+			<class name="com.subex.automation.testcases.systemtesting.datafederation.testRun" />
+			<class name="com.subex.automation.testcases.systemtesting.datafederation.testVerify" />
+		</classes>
+	</test>
+</suite>

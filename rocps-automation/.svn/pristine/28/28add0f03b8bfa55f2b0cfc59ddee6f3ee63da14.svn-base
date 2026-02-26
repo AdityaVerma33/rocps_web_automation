@@ -1,0 +1,121 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CTAF" verbose="2" annotations="JDK" configfailurepolicy="skip">
+	<!-- Web application fixture -->
+	<listeners>
+		  <listener class-name="com.subex.rocps.automation.helpers.listener.PSCustomTestListenerAdapter"/>
+  	</listeners>
+  	<parameter name="config" value="psconfig.properties"></parameter>
+  	<parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties,Users_OR.properties,Measures_Audits_OR.properties"></parameter>  	
+  	<parameter name="driverFile" value="SmokeTestDriver.xlsx"></parameter>
+	
+	  <test name="ROC Prerequisite" preserve-order="true">
+		<classes>	
+		      <class name="com.subex.rocps.automation.testcases.systemtesting.PSPrerequisites" /> 	     
+			 <class name="com.subex.rocps.automation.testcases.systemtesting.ROCPreRequisites" /> 			
+		</classes>
+	</test> 
+				 
+	  <test name="Event Modelling Definition,Event Modeling Instance, Event Type" preserve-order="true">
+		<classes>	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventModellingDefinition" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventModellingInst" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventType" /> 
+		</classes>
+	  </test> 
+	
+	  <test name="Aggregation Configuration,Aggregation Processor" preserve-order="true">
+		<classes>
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAggregationConfiguration" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAggregationProcessor" /> 
+	   </classes>
+	</test> 
+	
+	  <test name="Stream, Aggregation component mapping, Signalling Type" preserve-order="true">
+		<classes>	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCStreams" />		  	 					 	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAggrComponentMapping" />			  
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSignallingType" />	
+		</classes>
+	</test> 
+	
+	  <test name="Bank,Agent,Entities" preserve-order="true">
+		<classes>	
+
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBank" />	 		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAgent" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEntities" />
+		</classes>
+	</test> 
+	
+	  <test name="Account,Operator" preserve-order="true">
+		<classes>	 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCAccount" />					
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCOperator" />	
+	    </classes>
+	</test> 
+	
+	  <test name="RuleStringSet,EventLegCodeGoup,EventExtraRatingField" preserve-order="true">
+		<classes>
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCRuleStringSet" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventLegCodeGroup" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventExtraRatingField" />	
+		</classes>
+	</test> 
+	
+	  <test name="Switch,RoutGroup,Route" preserve-order="true">
+		<classes>	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSwitch" />	 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCRouteGroup" />	 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCRoute" /> 
+		</classes>
+	  </test>
+	 
+	  <test name="EventNormalization" preserve-order="true">
+		<classes>	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventNormalization" />	
+	   </classes>
+	</test> 
+	
+	  <test name="CrossFXRateGroup,CrossFXRate" preserve-order="true">
+		<classes>			
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCCrossFXRateGroup" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCCrossFXRate" /> 
+		</classes>
+	</test>
+	 
+	  <test name="SalesTax,SalesTaxRate,SalesTaxGroup" preserve-order="true">
+		<classes>
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSalesTax" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSalesTaxRate" />				
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCSalesTaxGroup" /> 
+	   </classes>
+	</test> 
+	
+	  <test name="ServiceTariffType,TrafficType" preserve-order="true">
+		<classes>		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCServiceTariffType" />		
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCTrafficType" /> 
+	   </classes>
+	</test> 
+	
+	  <test name="EventIdentifierDefinition,DialStringMatch,EventIdentifierValue,EventIdentifierValueGroup" preserve-order="true">
+		<classes>
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventIdentifierDefinition" />	 
+ 			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCDialStringMatch" />
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventIdentifierValue" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCEventIdentifierValueGroup" />
+	</classes>
+	</test> 
+	 
+	  <test name="BillBreakdown ExtraField,BillBreakdownConfiguration,BillBreakdown-Input,InputGroup,Output,OutputGroup-" preserve-order="true">
+		<classes>
+		     <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownExtraField" />	
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownConfiguration" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownInput" /> 
+			 <class name="com.subex.rocps.automation.testcases.functionaltesting.TCBillBreakdownInputGroup" /> 
+			 
+		</classes>
+	</test> 
+ 	
+
+</suite>

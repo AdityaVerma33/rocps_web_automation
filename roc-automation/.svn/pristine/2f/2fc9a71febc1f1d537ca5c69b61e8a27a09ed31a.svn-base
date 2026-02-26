@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+
+<Diamond application="spark" softwareVersion="1.0.14881.0" version="90">
+    <Decoder name="CDR" type="ascii">
+        <RecordType root="true" name="Root" type="none">
+            <Logic type="infrangibleSequenceOf">
+                <Logic recordType="CDRRecord" type="recordReference"/>
+            </Logic>
+        </RecordType>
+        <RecordType parseQuotes="false" delimiter="comma" generate="record" terminator="lf" allowEOFTerm="false" root="false" name="CDRRecord" type="delimitedascii" parseDoubleQuotes="false">
+            <Field id="0" trimQuotes="true" generate="field" name="RECEIVE_TIME_STAMP" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="1" trimQuotes="true" generate="field" name="NETWORK_ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="2" trimQuotes="true" generate="field" name="CALLER_NUMBER" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="3" trimQuotes="true" generate="field" name="CALLED_NUMBER" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="4" trimQuotes="true" generate="field" name="FORWARDED_NUMBER" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="5" trimQuotes="true" generate="field" name="RECORD_TYPE" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="6" trimQuotes="true" generate="field" name="DURATION" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="7" trimQuotes="true" generate="field" name="TIME_STAMP" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="8" trimQuotes="true" generate="field" name="EQUIPMENT_ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="9" trimQuotes="true" generate="field" name="IMSI_NUMBER" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="10" trimQuotes="true" generate="field" name="GEOGRAPHIC_POSITION" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="11" trimQuotes="true" generate="field" name="CALL_TYPE" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="12" trimQuotes="true" generate="field" name="SUBSCRIBER_ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="13" trimQuotes="true" generate="field" name="VALUE" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="14" trimQuotes="true" generate="field" name="CDR_TYPE" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="15" trimQuotes="true" generate="field" name="SERVICE_TYPE" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="16" trimQuotes="true" generate="field" name="CDR_CATEGORY" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="17" trimQuotes="true" generate="field" name="IS_COMPLETE" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="18" trimQuotes="true" generate="field" name="CO_RELATED_FIELD" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="19" trimQuotes="true" generate="field" name="IS_ATTEMPTED" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="20" trimQuotes="true" generate="field" name="SERVICE" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="21" trimQuotes="true" generate="field" name="PHONE_NUMBER" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="22" trimQuotes="true" generate="field" name="VPMN" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="23" trimQuotes="true" generate="field" name="corelation_id2" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+            <Field id="24" trimQuotes="true" generate="field" name="LEG_ID" encoding="windows-1252" trimWhiteSpaceInsideQuotes="true" type="string" trimWhiteSpace="true"/>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node height="50" yPos="90" xPos="-5" name="Record" width="50" recordType="CDRRecord" type="Record" nodeKey="shape1">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events>
+                            <Event expression="RECEIVE_TIME_STAMP" name="RecieveTime" target="$ReciveTime" type="assign"/>
+                            <Event expression="TIME_STAMP" name="timestamp" target="$timestamp" type="assign"/>
+                            <Event expression="CO_RELATED_FIELD" name="corelated" target="$corelationfiled" type="assign"/>
+                            <Event expression="If(Equal(RECORD_TYPE,'2'), CALLER_NUMBER, If(Equal(RECORD_TYPE,'3'), FORWARDED_NUMBER, CALLER_NUMBER))" name="GetOtherPartyNumber" target="$sOtherPartyNumber" type="assign"/>
+                            <Event expression="ToInteger(IS_COMPLETE)" name="IS complete" target="$iIS_COMPLETE" type="assign"/>
+                        </Events>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="60" yPos="85" xPos="70" name="Mapping" width="60" recordType="NIK_CDR" type="Mapping" nodeKey="shape2">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events>
+                            <Event expression="1" name="ProductID" target="$iProductID" type="assign"/>
+                            <Event expression="1024" name="SubscriberID" target="$iSubscirberID" type="assign"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="ToInteger(NETWORK_ID)" target="NETWORK_ID"/>
+                    <Mapping expression="CALLER_NUMBER" target="CALLER_NUMBER"/>
+                    <Mapping expression="CALLED_NUMBER" target="CALLED_NUMBER"/>
+                    <Mapping expression="FORWARDED_NUMBER" target="FORWARDED_NUMBER"/>
+                    <Mapping expression="ToInteger(RECORD_TYPE)" target="RECORD_TYPE"/>
+                    <Mapping expression="ToInteger(DURATION)" target="DURATION"/>
+                    <Mapping expression="ParseDateTime('yyyy/MM/dd HH:mm:ss', TIME_STAMP)" target="TIME_STAMP"/>
+                    <Mapping expression="EQUIPMENT_ID" target="EQUIPMENT_ID"/>
+                    <Mapping expression="IMSI_NUMBER" target="IMSI_NUMBER"/>
+                    <Mapping expression="GEOGRAPHIC_POSITION" target="GEOGRAPHIC_POSITION"/>
+                    <Mapping expression="ToInteger(CALL_TYPE)" target="CALL_TYPE"/>
+                    <Mapping expression="ToDecimal(1)" target="VAL"/>
+                    <Mapping expression="ToInteger(CDR_TYPE)" target="CDR_TYPE"/>
+                    <Mapping expression="ToInteger(SERVICE_TYPE)" target="SERVICE_TYPE"/>
+                    <Mapping expression="ToInteger(CDR_CATEGORY)" target="CDR_CATEGORY"/>
+                    <Mapping expression="ToInteger(IS_COMPLETE)" target="IS_COMPLETE"/>
+                    <Mapping expression="ToInteger(IS_ATTEMPTED)" target="IS_ATTEMPTED"/>
+                    <Mapping expression="ToInteger(SERVICE)" target="SERVICE"/>
+                    <Mapping expression="PHONE_NUMBER" target="PHONE_NUMBER"/>
+                    <Mapping expression="VPMN" target="VPMN"/>
+                    <Mapping expression="DayOfYear(ParseDateTime('yyyy/MM/dd HH:mm:ss', TIME_STAMP))" target="DAY_OF_YEAR"/>
+                    <Mapping expression="HourOfDay(ParseDateTime('yyyy/MM/dd HH:mm:ss', TIME_STAMP))" target="HOUR_OF_DAY"/>
+                    <Mapping expression="$$StreamStageId" target="STS_ID"/>
+                    <Mapping expression="$$StreamFileId" target="SFL_ID"/>
+                    <Mapping expression="$sCountryCode" target="OTHER_PARTY_COUNTRY_CODE"/>
+                    <Mapping expression="$iSubscirberID" target="SUBSCRIBER_ID"/>
+                    <Mapping expression="LEG_ID" target="LEG_ID"/>
+                    <Mapping expression="generateID()" target="CDR_ID"/>
+                    <Mapping target="corelation_id"/>
+                    <Mapping expression="corelation_id2" target="corelation_id2"/>
+                    <Mapping expression="ParseDateTime('yyyy/MM/dd HH:mm:ss', TIME_STAMP)" target="MAX_TIMESTAMP"/>
+                </Mappings>
+            </Node>
+            <Node height="50" yPos="205" xPos="475" unicode="false" width="210" name="Spark Output_LEG_ID_1" charset="windows-1252" filename="Concatenate($$Filename, '_FirstPartial', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$FileRecords, '.dat')" outputKey="2" type="SparkOutput" nodeKey="shape5">
+                <Inputs>
+                    <Input nodeOutput="LEG_ID_1" nodeKey="shape14">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="85" xPos="205" name="IS_COMPLETE_FILTER" width="80" recordType="NIK_CDR" type="Filter" nodeKey="shape13">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output expression="Equal(IS_COMPLETE, ToInteger('0'))" name="IsPartial">
+                        <Events/>
+                    </Output>
+                    <Output expression="NotEqual(IS_COMPLETE, ToInteger('0'))" name="isComplete">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="60" yPos="290" xPos="200" name="LEG_ID_FILTER" width="75" recordType="NIK_CDR2" type="Filter" nodeKey="shape14">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape17">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output expression="Equal(LEG_ID, '1')" name="LEG_ID_1">
+                        <Events/>
+                    </Output>
+                    <Output expression="Or(Equal(LEG_ID, '1'), Equal(LEG_ID, '2'), Equal(LEG_ID, '3'))" name="LEG_ID_1_2_3">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node height="50" UsagePartitionId="GetOnlineLDCSplitKey('Online LDC Flow')" yPos="345" xPos="475" unicode="false" width="200" name="Spark_LDC_OUTPUT" filename="Concatenate($$Filename, '_AllPArtial', ToString( Now(), 'yyyyMMdd_HHmmss' ), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" outputKey="2" charset="windows-1252" type="SparkOutput" nodeKey="shape15">
+                <Inputs>
+                    <Input nodeOutput="LEG_ID_1_2_3" nodeKey="shape14">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="50" UsagePartitionId="GetUsagePartitionId('Online LDC', TIME_STAMP, SecondPart(TIME_STAMP))" yPos="95" xPos="475" unicode="false" width="200" name="Spark Output" filename="Concatenate($$Filename, '_NormalRec', $$UsagePartitionId, '.dat')" outputKey="2" charset="windows-1252" type="SparkOutput" nodeKey="shape16">
+                <Inputs>
+                    <Input nodeOutput="isComplete" nodeKey="shape13">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+            <Node height="60" yPos="190" xPos="210" name="Mapping" width="60" recordType="NIK_CDR2" type="Mapping" nodeKey="shape17">
+                <Inputs>
+                    <Input nodeOutput="IsPartial" nodeKey="shape13">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping expression="CDR_ID" target="CDR_ID"/>
+                    <Mapping expression="NETWORK_ID" target="NETWORK_ID"/>
+                    <Mapping expression="CALLER_NUMBER" target="CALLER_NUMBER"/>
+                    <Mapping expression="CALLED_NUMBER" target="CALLED_NUMBER"/>
+                    <Mapping expression="FORWARDED_NUMBER" target="FORWARDED_NUMBER"/>
+                    <Mapping expression="RECORD_TYPE" target="RECORD_TYPE"/>
+                    <Mapping expression="DURATION" target="DURATION"/>
+                    <Mapping expression="TIME_STAMP" target="TIME_STAMP"/>
+                    <Mapping expression="EQUIPMENT_ID" target="EQUIPMENT_ID"/>
+                    <Mapping expression="IMSI_NUMBER" target="IMSI_NUMBER"/>
+                    <Mapping expression="GEOGRAPHIC_POSITION" target="GEOGRAPHIC_POSITION"/>
+                    <Mapping expression="CALL_TYPE" target="CALL_TYPE"/>
+                    <Mapping expression="SUBSCRIBER_ID" target="SUBSCRIBER_ID"/>
+                    <Mapping expression="VAL" target="VAL"/>
+                    <Mapping expression="CDR_TYPE" target="CDR_TYPE"/>
+                    <Mapping expression="SERVICE_TYPE" target="SERVICE_TYPE"/>
+                    <Mapping expression="CDR_CATEGORY" target="CDR_CATEGORY"/>
+                    <Mapping expression="IS_COMPLETE" target="IS_COMPLETE"/>
+                    <Mapping expression="IS_ATTEMPTED" target="IS_ATTEMPTED"/>
+                    <Mapping expression="SERVICE" target="SERVICE"/>
+                    <Mapping expression="PHONE_NUMBER" target="PHONE_NUMBER"/>
+                    <Mapping expression="LEG_ID" target="LEG_ID"/>
+                    <Mapping expression="0" target="STATUS"/>
+                    <Mapping expression="'0'" target="TAGGING"/>
+                    <Mapping expression="VPMN" target="VPMN"/>
+                    <Mapping expression="DAY_OF_YEAR" target="DAY_OF_YEAR"/>
+                    <Mapping expression="HOUR_OF_DAY" target="HOUR_OF_DAY"/>
+                    <Mapping expression="OTHER_PARTY_COUNTRY_CODE" target="OTHER_PARTY_COUNTRY_CODE"/>
+                    <Mapping expression="STS_ID" target="STS_ID"/>
+                    <Mapping expression="SFL_ID" target="SFL_ID"/>
+                    <Mapping expression="corelation_id2" target="corelation_id2"/>
+                    <Mapping expression="MAX_TIMESTAMP" target="MAX_TIMESTAMP"/>
+                    <Mapping expression="CANCAT_LEG_ID" target="CANCAT_LEG_ID"/>
+                    <Mapping expression="LEG_COUNT" target="LEG_COUNT"/>
+                </Mappings>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction objectKey="nikira_ldc" name="generateID" blockSize="3000" type="GenerateId"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="NIK_CDR">
+                <Field id="25" name="CDR_ID" nullable="false" type="integer"/>
+                <Field id="1" name="NETWORK_ID" nullable="false" type="integer"/>
+                <Field id="2" name="CALLER_NUMBER" nullable="true" type="string"/>
+                <Field id="3" name="CALLED_NUMBER" nullable="false" type="string"/>
+                <Field id="4" name="FORWARDED_NUMBER" nullable="true" type="string"/>
+                <Field id="5" name="RECORD_TYPE" nullable="false" type="integer"/>
+                <Field id="6" name="DURATION" nullable="false" type="integer"/>
+                <Field id="7" name="TIME_STAMP" nullable="false" type="datetime"/>
+                <Field id="26" name="MAX_TIMESTAMP" nullable="true" type="datetime"/>
+                <Field id="27" name="CANCAT_LEG_ID" nullable="true" type="string"/>
+                <Field id="28" name="LEG_COUNT" nullable="true" type="integer"/>
+                <Field id="8" name="EQUIPMENT_ID" nullable="true" type="string"/>
+                <Field id="9" name="IMSI_NUMBER" nullable="true" type="string"/>
+                <Field id="10" name="GEOGRAPHIC_POSITION" nullable="true" type="string"/>
+                <Field id="11" name="CALL_TYPE" nullable="false" type="integer"/>
+                <Field id="12" name="SUBSCRIBER_ID" nullable="false" type="integer"/>
+                <Field id="29" name="VAL" nullable="false" type="decimal"/>
+                <Field id="14" name="CDR_TYPE" nullable="false" type="integer"/>
+                <Field id="15" name="SERVICE_TYPE" nullable="false" type="integer"/>
+                <Field id="16" name="CDR_CATEGORY" nullable="false" type="integer"/>
+                <Field id="17" name="IS_COMPLETE" nullable="false" type="integer"/>
+                <Field id="19" name="IS_ATTEMPTED" nullable="false" type="integer"/>
+                <Field id="20" name="SERVICE" nullable="true" type="integer"/>
+                <Field id="21" name="PHONE_NUMBER" nullable="false" type="string"/>
+                <Field id="23" name="corelation_id2" nullable="true" type="string"/>
+                <Field id="24" name="LEG_ID" nullable="true" type="string"/>
+                <Field id="30" name="STATUS" nullable="true" type="integer"/>
+                <Field id="31" name="TAGGING" nullable="true" type="string"/>
+                <Field id="22" name="VPMN" nullable="true" type="string"/>
+                <Field id="32" name="DAY_OF_YEAR" nullable="true" type="integer"/>
+                <Field id="33" name="HOUR_OF_DAY" nullable="true" type="integer"/>
+                <Field id="34" name="OTHER_PARTY_COUNTRY_CODE" nullable="true" type="string"/>
+                <Field id="35" name="STS_ID" nullable="false" type="integer"/>
+                <Field id="36" name="SFL_ID" nullable="false" type="integer"/>
+            </RecordType>
+            <RecordType name="NFFdispatcher">
+                <Field id="37" name="dRECEIVE_TIME_STAMP" nullable="true" type="string"/>
+                <Field id="38" name="dNETWORK_ID" nullable="false" type="integer"/>
+                <Field id="39" name="dCALLER_NUMBER" nullable="true" type="string"/>
+                <Field id="40" name="dCALLED_NUMBER" nullable="false" type="string"/>
+                <Field id="41" name="dFORWARDED_NUMBER" nullable="true" type="string"/>
+                <Field id="42" name="dRECORD_TYPE" nullable="false" type="integer"/>
+                <Field id="43" name="dDURATION" nullable="false" type="integer"/>
+                <Field id="44" name="dTIME_STAMP" nullable="false" type="string"/>
+                <Field id="45" name="dEQUIPMENT_ID" nullable="true" type="string"/>
+                <Field id="46" name="dIMSI_NUMBER" nullable="true" type="string"/>
+                <Field id="47" name="dGEOGRAPHIC_POSITION" nullable="true" type="string"/>
+                <Field id="48" name="dCALL_TYPE" nullable="false" type="integer"/>
+                <Field id="49" name="dSUBSCRIBER_ID" nullable="false" type="integer"/>
+                <Field id="50" name="dVAL" nullable="false" type="decimal"/>
+                <Field id="51" name="dCDR_TYPE" nullable="false" type="integer"/>
+                <Field id="52" name="dSERVICE_TYPE" nullable="false" type="integer"/>
+                <Field id="53" name="dCDR_CATEGORY" nullable="false" type="integer"/>
+                <Field id="54" name="dIS_COMPLETE" nullable="false" type="integer"/>
+                <Field id="55" name="dCORELATION_ID" nullable="true" type="string"/>
+                <Field id="56" name="dIS_ATTEMPTED" nullable="false" type="integer"/>
+                <Field id="57" name="dSERVICE" nullable="true" type="integer"/>
+                <Field id="58" name="dPHONE_NUMBER" nullable="false" type="string"/>
+                <Field id="59" name="dCORELATION_ID2" nullable="true" type="string"/>
+                <Field id="60" name="dLEG_ID" nullable="true" type="string"/>
+                <Field id="61" name="dVPMN" nullable="true" type="string"/>
+                <Field id="62" name="dOtherPartyNumber" nullable="true" type="string"/>
+                <Field id="63" name="dDAY_OF_YEAR" nullable="true" type="integer"/>
+                <Field id="64" name="dHOUR_OF_DAY" nullable="true" type="integer"/>
+                <Field id="65" name="dCDR_ID" nullable="false" type="integer"/>
+            </RecordType>
+            <RecordType name="RecodType">
+                <Field id="66" name="HeaderRecord" nullable="true" type="string"/>
+            </RecordType>
+            <RecordType name="NIK_CDR2">
+                <Field id="25" name="CDR_ID" nullable="false" type="integer"/>
+                <Field id="1" name="NETWORK_ID" nullable="false" type="integer"/>
+                <Field id="2" name="CALLER_NUMBER" nullable="true" type="string"/>
+                <Field id="3" name="CALLED_NUMBER" nullable="false" type="string"/>
+                <Field id="4" name="FORWARDED_NUMBER" nullable="true" type="string"/>
+                <Field id="5" name="RECORD_TYPE" nullable="false" type="integer"/>
+                <Field id="6" name="DURATION" nullable="false" type="integer"/>
+                <Field id="7" name="TIME_STAMP" nullable="false" type="datetime"/>
+                <Field id="26" name="MAX_TIMESTAMP" nullable="true" type="datetime"/>
+                <Field id="27" name="CANCAT_LEG_ID" nullable="true" type="string"/>
+                <Field id="28" name="LEG_COUNT" nullable="true" type="integer"/>
+                <Field id="8" name="EQUIPMENT_ID" nullable="true" type="string"/>
+                <Field id="9" name="IMSI_NUMBER" nullable="true" type="string"/>
+                <Field id="10" name="GEOGRAPHIC_POSITION" nullable="true" type="string"/>
+                <Field id="11" name="CALL_TYPE" nullable="false" type="integer"/>
+                <Field id="12" name="SUBSCRIBER_ID" nullable="false" type="integer"/>
+                <Field id="29" name="VAL" nullable="false" type="decimal"/>
+                <Field id="14" name="CDR_TYPE" nullable="false" type="integer"/>
+                <Field id="15" name="SERVICE_TYPE" nullable="false" type="integer"/>
+                <Field id="16" name="CDR_CATEGORY" nullable="false" type="integer"/>
+                <Field id="17" name="IS_COMPLETE" nullable="false" type="integer"/>
+                <Field id="19" name="IS_ATTEMPTED" nullable="false" type="integer"/>
+                <Field id="20" name="SERVICE" nullable="true" type="integer"/>
+                <Field id="21" name="PHONE_NUMBER" nullable="false" type="string"/>
+                <Field id="23" name="corelation_id2" nullable="true" type="string"/>
+                <Field id="24" name="LEG_ID" nullable="true" type="string"/>
+                <Field id="30" name="STATUS" nullable="true" type="integer"/>
+                <Field id="31" name="TAGGING" nullable="true" type="string"/>
+                <Field id="22" name="VPMN" nullable="true" type="string"/>
+                <Field id="32" name="DAY_OF_YEAR" nullable="true" type="integer"/>
+                <Field id="33" name="HOUR_OF_DAY" nullable="true" type="integer"/>
+                <Field id="34" name="OTHER_PARTY_COUNTRY_CODE" nullable="true" type="string"/>
+                <Field id="35" name="STS_ID" nullable="false" type="integer"/>
+                <Field id="36" name="SFL_ID" nullable="false" type="integer"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global id="0" name="ReciveTime" serializable="false" type="string"/>
+            <Global id="1" name="timestamp" serializable="false" type="string"/>
+            <Global id="2" name="corelationfiled" serializable="false" type="string"/>
+            <Global id="3" initialValue="NullInteger()" name="iProductID" serializable="false" type="integer"/>
+            <Global id="4" initialValue="NullInteger()" name="iSubscirberID" serializable="false" type="integer"/>
+            <Global id="5" initialValue="0" name="iAcceptedCount" serializable="false" type="integer"/>
+            <Global id="6" name="sOtherPartyNumber" serializable="false" type="string"/>
+            <Global id="7" name="iCountryCode" serializable="false" type="integer"/>
+            <Global id="8" name="sCountryCode" serializable="false" type="string"/>
+            <Global id="9" name="T_sUsageParataionID" serializable="false" type="string"/>
+            <Global id="10" initialValue="NullInteger()" name="iIS_COMPLETE" serializable="false" type="integer"/>
+        </Globals>
+    </Mappings>
+</Diamond>

@@ -1,0 +1,60 @@
+package com.subex.rocps.automation.helpers.application.bills.hotbill;
+
+import java.util.List;
+
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CalendarHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.rocps.automation.helpers.application.filters.GridFilterSearchHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.DataVerificationHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+
+public class BillSearchImpl {
+
+	GridFilterSearchHelper gridHelperObj = new GridFilterSearchHelper();
+	DataVerificationHelper dataVerifyObj = new DataVerificationHelper();
+	PSGenericHelper genericHelperObj = new PSGenericHelper();
+
+	/*
+	 * This method is for Filter Selection
+	 */
+	public boolean filterSelection(String billProfileName, String accName, String billPeriodValue) throws Exception {
+
+		ButtonHelper.click("ClearButton");
+		// gridHelperObj.billProfileAdvanceFilter("Detail_eventDefn_gridID",
+		// "Bill Profile", billProfileName);
+		gridHelperObj.testbillProfileAdvanceSearch("PS_SearchFilter_TestBill_billprofile_EntityFilter", "Bill Profile",
+				billProfileName);
+		gridHelperObj.accountFilter("PS_SearchFilter_BillAction_accountEntityfilter",
+				"PS_SearchFilter_BillAction_account_txtID", accName, "Account");
+		if (ValidationHelper.isNotEmpty(billPeriodValue))
+			CalendarHelper.setOnDate("PS_SearchFilter_BillAction_date_calenderID", billPeriodValue);
+		ButtonHelper.click("SearchButton");
+		return GridHelper.isValuePresent("Detail_eventDefn_gridID", accName, "Account");
+	}
+
+	/*
+	 * This method is for latest Version Check
+	 */
+	public void latestVersionCheck() throws Exception {
+		String version = ComboBoxHelper.getValue("pbilTxnDeleteFl_gwt_uid_");
+		if (!version.contains("Latest Versions")) {
+			ComboBoxHelper.select("pbilTxnDeleteFl_gwt_uid_", "Latest Versions");
+			ButtonHelper.click("SearchButton");
+			GenericHelper.waitForLoadmask(  );
+		}
+	}
+
+	/*
+	 * This method is for bill Status Check
+	 */
+	public String billStatusCheck() throws Exception {
+		List<String> UIColumns = genericHelperObj.getGridColumns("grid_column_header_searchGrid_");
+		int colNum = UIColumns.indexOf("Bill Status");
+		String billActualstatus = GridHelper.getCellValue("searchGrid", 1, colNum + 1);
+		return billActualstatus;
+	}
+}

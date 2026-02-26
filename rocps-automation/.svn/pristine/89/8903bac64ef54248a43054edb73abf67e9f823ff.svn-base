@@ -1,0 +1,341 @@
+package com.subex.rocps.automation.helpers.application.filters;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.CalendarHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.ElementHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.componentHelpers.SearchHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+
+public class AdvanceSearchFiltersHelper extends PSAcceptanceTest
+{
+
+	String xpath = or.getProperty( "PS_SearchAdvanceFilterXpath" );
+	GridFilterSearchHelper gridFilterSrchObj = new GridFilterSearchHelper();
+	PSGenericHelper genericObj = new PSGenericHelper();
+
+	/*
+	 * Method for searching bill profile
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void billProfileAdvanceSearch( String labelName, String billProfileName ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		Thread.sleep( 3000 );
+		gridFilterSrchObj.billProfileFilterTxtSearch( "PS_popUpWindowId", billProfileName );
+
+	}
+
+	/*
+	 * Method for searching bill period
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void billPeriodAdvanceSearch( String labelName, String billPeriodFromDate ) throws Exception
+	{
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		CalendarHelper.setOnDate( "PS_popUpWindowId", "options", billPeriodFromDate );
+		ButtonHelper.click( "PS_popUpWindowId", "search" );
+		GenericHelper.waitForLoadmask();
+		GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", 1, "From Date" );
+		ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask();
+	}
+
+	/*
+	 * Method for searching service
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void serviceAdvanceSearch( String labelName, String serviceName ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		String screenName = NavigationHelper.getScreenTitle();
+		assertEquals( screenName, "Service Search", " Screen titles are not matching on advance search operation of Service" );
+		SearchGridHelper.gridFilterSearchWithTextBox( "PS_popUpWindowId", "PS_serviceSearchGridFilterTxtId", serviceName, "Name" );
+		boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", serviceName, "Name" );
+		assertTrue( rowValExists, "Service name does not exist : " + serviceName );
+		GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", serviceName, "Name" );
+		ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask();
+
+	}
+
+	/*
+	 * Method for searching tariff
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void tariffAdvanceSearch( String labelName, String tariffName ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		String screenName = NavigationHelper.getScreenTitle();
+		assertEquals( screenName, "Tariff Search", " Screen titles are not matching on advance search operation of Tariff" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		//PSSearchGridHelper.gridFilterSearchWithTextBox( "PS_searchTariffTxtId", tariffName, "Tariff Name" );
+		TextBoxHelper.type( "PS_searchTariffTxtId", tariffName );
+		ButtonHelper.click( "PS_popUpWindowId", "SearchButton" );
+		GenericHelper.waitForLoadmask();
+		boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", tariffName, "Tariff Name" );
+		assertTrue( rowValExists, "tariff does not exist" + tariffName );
+		GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", tariffName, "Name" );
+		ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask();
+
+	}
+
+	public void tariffAdvanceSearchGridFilter( String FilterIConID, String tariffName ) throws Exception
+	{
+
+		SearchHelper searchHelper = new SearchHelper();
+		searchHelper.clickFilterIcon( FilterIConID, "Tariff" );
+
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		String locator = "//div[text()='Advanced Search']";
+		click( locator );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		String screenName = NavigationHelper.getScreenTitle();
+		assertEquals( screenName, "Tariff Search", " Screen titles are not matching on advance search operation of Tariff" );
+		TextBoxHelper.type( "PS_searchTariffTxtId", tariffName );
+		ButtonHelper.click( "PS_popUpWindowId", "SearchButton" );
+		GenericHelper.waitForLoadmask();
+		boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", tariffName, "Tariff Name" );
+		assertTrue( rowValExists, "tariff does not exist" + tariffName );
+		GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", tariffName, "Name" );
+		ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask();
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask();
+
+	}
+
+	/*
+	 * Method for searching band
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void bandAdvanceSearch( String labelName, String bandName ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		String screenName = NavigationHelper.getScreenTitle();
+		assertEquals( screenName, "Band Search", " Screen titles are not matching on advance search operation of Band" );
+		SearchGridHelper.gridFilterSearchWithTextBox( "PS_popUpWindowId", "PS_bandSearchGridFilterColTxtId", bandName, "Name" );
+		GenericHelper.waitForLoadmask();
+		boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", bandName, "Name" );
+		assertTrue( rowValExists, "band does not exist" + bandName );
+		GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", bandName, "Name" );
+		ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask();
+
+	}
+
+	/*
+	 * Method for searching stream
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void streamAdvanceSearch( String labelName, String streamName ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		String screenName = NavigationHelper.getScreenTitle();
+		assertEquals( screenName, "Stream Search", " Screen titles are not matching on advance search operation of streams : " + screenName );
+		SearchGridHelper.gridFilterSearchWithTextBox( "PS_popUpWindowId", "PS_streamSearchGridFilterColTxtId", streamName, "Name" );
+		GenericHelper.waitForLoadmask();
+		boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", streamName, "Name" );
+		assertTrue( rowValExists, "Stream does not exist" + streamName );
+		GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", streamName, "Name" );
+		ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
+		GenericHelper.waitForLoadmask();
+
+	}
+
+	private void click( String xpath ) throws Exception
+	{
+
+		try
+		{
+			GenericHelper.waitForLoadmask( searchScreenWaitSec );
+			ElementHelper.waitForElement( xpath, configProp.getSearchScreenWaitSec() );
+			driver.findElement( By.xpath( xpath ) ).click();
+		}
+		catch ( TimeoutException e )
+		{
+			FailureHelper.setError( "Element '" + xpath + "' is not clickable" );
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * This method for brd Modelling advance filter
+	 */
+	public void brdModelingAdvanceSearch( String labelName, String brdName ) throws Exception
+	{
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		genericObj.waitforPopupHeaderElement( "Aggregation Configuration" );
+		SearchGridHelper.gridFilterSearchWithTextBox( "pbmdName", brdName, "Name" );
+		GridHelper.clickRow( "popupWindow", "SearchGrid", brdName, "Name" );
+		ButtonHelper.click( "OKButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+	/*
+	 * This method is for deal advance search
+	 */
+	public void dealAdvanceSearch( String labelName, String account, String contractNo ) throws Exception
+	{
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		genericObj.waitforPopupHeaderElement( "From" );
+		//CalendarHelper.setOnDate( "dummyDealValidOn", dealPeriod);
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		gridFilterSrchObj.accountFilter( "grid_column_header_filtersearchGrid_account$paccName", "account", account, "Account" );
+		SearchGridHelper.gridFilterSearchWithTextBox( "pdelContractNo", contractNo, "Contract No" );
+		GridHelper.clickRow( "popupWindow", "SearchGrid", account, "Account" );
+		ButtonHelper.click( "OKButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+	}
+
+	/*
+	 * Method for searching account
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void accountAdvanceSearch( String labelName, String accountName ) throws Exception
+	{
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		genericObj.waitforPopupHeaderElement( "Sales Region" );
+		GenericHelper.waitForLoadmask();
+		Thread.sleep( 1000 );
+		PSSearchGridHelper.gridFilterSearchWithTextBox( "paccName", accountName, "Account Name" );
+		GridHelper.clickRow( "popupWindow", "SearchGrid", accountName, "Account Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.click( "OKButton" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+
+	}
+
+	/*
+	 * Method for searching productInstance
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void productInstanceAdvanceSearch( String labelName, String productInstance ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		Thread.sleep( 2000 );
+		int row = PSSearchGridHelper.gridFilterSearchWithTextBox( "PS_Detail_prodInst_Instancename_textID", productInstance, "Name" );
+		GridHelper.clickRow( "popupWindow", "SearchGrid", row, "Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "OKButton" );
+
+	}
+
+	/*
+	 * Method for searching Roaming Definition
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void roamingDefnAdvanceSearch( String labelName, String tadigCode ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		Thread.sleep( 2000 );
+		int row = PSSearchGridHelper.gridFilterSearchWithComboBox( "PS_Detail_roamingDfn_tadig_comboId", tadigCode, "Tadig code" );
+		GridHelper.clickRow( "popupWindow", "SearchGrid", row, "Tadig code" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "OKButton" );
+
+	}
+
+	/*
+	 * Method for searching RAggregation Configuration
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public void aggregationConfigAdvanceSearch( String labelName, String aggregationConfig ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		Thread.sleep( 2000 );
+		int row = PSSearchGridHelper.gridFilterSearchWithTextBox( "pagcConfigName", aggregationConfig, "Name" );
+		GridHelper.clickRow( "popupWindow", "SearchGrid", row, "Table Prefix" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "OKButton" );
+
+	}
+
+	/*
+	 * Method for searching Roaming Definition
+	 * 
+	 * @param: labelname : filter label
+	 */
+	public String rapOutFileAdvanceSearch( String labelName, String linkedTapFileName ) throws Exception
+	{
+
+		String locator = xpath.replace( "labelName", labelName );
+		click( locator );
+		GenericHelper.waitForLoadmask();
+		Thread.sleep( 2000 );
+		genericObj.waitforPopupHeaderElement( "File Name" );
+		TextBoxHelper.type( "linkedFileTbl$filFilename", linkedTapFileName );
+		ButtonHelper.click( "SearchButton" );
+		GenericHelper.waitForLoadmask(searchScreenWaitSec);
+		boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", linkedTapFileName, "Linked Tap File" );
+		assertTrue( rowValExists, "The Given Linked Tap File Name is not found :-" + linkedTapFileName );
+		GridHelper.clickRow( "popupWindow", "SearchGrid", 1, "Linked Tap File" );
+		String rapOutFileName=GridHelper.getCellValue("popupWindow", "SearchGrid", 1, "File Name" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		ButtonHelper.clickIfEnabled( "OKButton" );
+		return rapOutFileName;
+
+	}
+
+}

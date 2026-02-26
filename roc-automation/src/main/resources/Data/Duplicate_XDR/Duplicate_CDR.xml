@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<Diamond softwareVersion="0.0.0.0" application="spark" version="2">
+    <Decoder type="ascii" name="ASCII_for_Sequence">
+        <RecordType type="none" root="true" name="Root">
+            <Logic type="sequenceOf">
+                <Logic type="recordReference" recordType="CDR"/>
+            </Logic>
+        </RecordType>
+        <RecordType delimiter="comma" terminator="lf" parseQuotes="false" type="delimitedascii" parseDoubleQuotes="false" allowEOFTerm="false" generate="record" root="false" name="CDR">
+            <Field trimWhiteSpaceInsideQuotes="true" encoding="windows-1252" type="string" trimQuotes="true" generate="field" trimWhiteSpace="true" name="Caller_Number" id="0"/>
+            <Field trimWhiteSpaceInsideQuotes="true" encoding="windows-1252" type="string" trimQuotes="true" generate="field" trimWhiteSpace="true" name="Called_Number" id="1"/>
+            <Field trimWhiteSpaceInsideQuotes="true" encoding="windows-1252" type="string" trimQuotes="true" generate="field" trimWhiteSpace="true" name="Time_Stamp" id="2">
+                <FieldConverter type="datetime" format="dd/MM/yyyy HH:mm:ss"/>
+            </Field>
+            <Field trimWhiteSpaceInsideQuotes="true" encoding="windows-1252" type="string" trimQuotes="true" generate="field" trimWhiteSpace="true" name="Duration" id="3">
+                <FieldConverter type="duration" format="HHmmss"/>
+            </Field>
+            <Field trimWhiteSpaceInsideQuotes="true" encoding="windows-1252" type="string" trimQuotes="true" generate="field" trimWhiteSpace="true" name="Amount" id="4">
+                <FieldConverter type="decimal"/>
+            </Field>
+        </RecordType>
+    </Decoder>
+    <Mappings>
+        <Nodes>
+            <Node width="50" height="50" type="Record" nodeKey="shape1" yPos="155" name="CDR" recordType="CDR" xPos="160">
+                <Inputs/>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+            </Node>
+            <Node width="65" height="60" type="Mapping" nodeKey="shape2" yPos="150" name="Mapping" recordType="Output_Fields" xPos="275">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape1">
+                        <Events>
+                            <Event type="assign" target="$usg_par_id" expression="GetUsagePartitionId('Duplicate Check UG',Time_Stamp, SecondPart(Time_Stamp))" name="usg_partition_id"/>
+                        </Events>
+                    </Input>
+                </Inputs>
+                <Outputs>
+                    <Output name="Output">
+                        <Events/>
+                    </Output>
+                </Outputs>
+                <Mappings>
+                    <Mapping target="A_Number" expression="Caller_Number"/>
+                    <Mapping target="Sequence_Number" expression="Sequence_Number"/>
+                    <Mapping target="Time_Stamp" expression="Time_Stamp"/>
+                    <Mapping target="Gap" expression="CheckGap(Sequence_Number, $$Filename)"/>
+                    <Mapping target="Seq_Number" expression="Sequence_Number"/>
+                    <Mapping target="Duration" expression="ToInteger(Duration)"/>
+                    <Mapping target="Amount" expression="Amount"/>
+                    <Mapping target="B_Number" expression="Called_Number"/>
+                    <Mapping target="Hash_Value" expression="Hash(Caller_Number, Called_Number, Time_Stamp, Duration)"/>
+                    <Mapping target="SFL_ID" expression="$$StreamFileId"/>
+                    <Mapping target="SST_ID" expression="$$StreamStageId"/>
+                    <Mapping target="CDR_ID" expression="ID()"/>
+                    <Mapping target="jjj" expression="ToString(Time_Stamp, 'dd/MM/yyyy HH:mm:ss')"/>
+                    <Mapping target="Flag_Field" expression="false"/>
+                    <Mapping target="Is_Duplicate" expression="false"/>
+                    <Mapping target="partid" expression="$usg_par_id"/>
+                    <Mapping target="Tag_Status" expression="'ND'"/>
+                </Mappings>
+            </Node>
+            <Node width="60" height="50" type="SparkOutput" UsagePartitionId="$usg_par_id" nodeKey="shape4" yPos="155" unicode="false" filename="Concatenate($$Filename, '_', ToString(Now(), 'yyyyMMdd_HHmmss'), '_', $$UsagePartitionId, '_', $$FileRecords, '.dat')" outputKey="1" name="Spark Output" xPos="405">
+                <Inputs>
+                    <Input nodeOutput="Output" nodeKey="shape2">
+                        <Events/>
+                    </Input>
+                </Inputs>
+                <Outputs/>
+            </Node>
+        </Nodes>
+        <DynamicFunctions>
+            <DynamicFunction blockSize="200" type="GenerateId" name="ID" objectKey="12"/>
+        </DynamicFunctions>
+        <RecordTypes>
+            <RecordType name="Output_Fields">
+                <Field type="integer" name="CDR_ID" id="5" nullable="true"/>
+                <Field type="string" name="A_Number" id="6" nullable="true"/>
+                <Field type="string" name="B_Number" id="7" nullable="true"/>
+                <Field type="datetime" name="Time_Stamp" id="2" nullable="true"/>
+                <Field type="integer" name="Duration" id="3" nullable="true"/>
+                <Field type="decimal" name="Amount" id="4" nullable="true"/>
+                <Field type="integer" name="Hash_Value" id="8" nullable="true"/>
+                <Field type="boolean" name="Is_Duplicate" id="9" nullable="true"/>
+                <Field type="string" name="Tag_Status" nullable="true" id="10"/>
+                <Field type="integer" name="SFL_ID" id="11" nullable="true"/>
+                <Field type="integer" name="SST_ID" id="12" nullable="true"/>
+            </RecordType>
+        </RecordTypes>
+        <Globals>
+            <Global type="integer" name="usg_par_id" id="0"/>
+        </Globals>
+    </Mappings>
+</Diamond>

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestExecution" verbose="2" annotations="JDK" configfailurepolicy="skip">
+	<!-- Web application fixture -->
+	<listeners>
+		  <listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+  	</listeners>
+  	<parameter name="config" value="psconfig.properties"></parameter>
+  	<parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties"></parameter>
+  	<parameter name="driverFile" value="SmokeTestDriver.xlsx"></parameter>
+	<test name="Testing" preserve-order="true">
+		<classes>
+			<class name="com.subex.rocps.automation.testcases.systemtesting.Demo" />
+		</classes>
+	</test>
+</suite>

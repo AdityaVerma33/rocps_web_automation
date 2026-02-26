@@ -1,0 +1,164 @@
+utilPath=E:\\NewFramework\\ROC-UTIL
+downloadDirectory=D:\\NewFramework\\Downloads\\
+browser=firefox
+recordExecution=No
+embedImageInReport=Yes
+product=ROCPS
+
+# Deployment Details
+clientUrl=http://10.113.112.221:8086/ROCPSRO_10.5.23_Client/sparkLogin.jsp
+http://10.113.59.182:8080/ControlPanel-3.7.3.2
+deployPath=E:\\10.5.23\\ROCPSRO_10.5.23_Server\\rocps-server-distribution-10.5.23.0
+tomcatPath=E://ApplicationTomcat-7.0.54
+dateFormat=MM/dd/yyyy
+timeFormat=HH:mm:ss
+os=Windows
+machineName=10.113.112.221
+taskControllerExeFile=tc.bat
+taskControllerName=Task Controller
+
+#Path Details
+dataDir=E:\\10.5.23\\DataDir\\
+cdrPath=\\src\\main\\resources\\Data\\FunctionalTesting\\CDRS\\
+ratesheetPath=\\src\\main\\resources\\Data\\FunctionalTesting\\RateSheet\\
+
+#Bulk loader Path Details
+bulkLoadStreamPath=\\src\\main\\resources\\Data\\FunctionalTesting\\BulkLoadStream\\
+bulkExportPath=BulkDataExportConfiguration\\
+
+#Carrier Invoice Path Details
+carrierInvoiecPath=\\src\\main\\resources\\Data\\FunctionalTesting\\CarrierInvoice\\
+
+#XDR Path Details
+xdrExtFullPath=XDRExtraction\\XDRExtractionFull\\
+xdrExtFullPath2=XDRExtraction\\XDRExtractionFullWithBill\\
+
+#Roaming Path Details
+roamingFilePath=\\src\\main\\resources\\Data\\FunctionalTesting\\RoamingFilePath\\
+roamingRapOutFilePath=Roaming\\RapOut\\
+roamingTapOutFilePath=Roaming\\TapOut\\
+
+#Reports and Extracts Path Details
+repExtFlLocAdhocPath=ExtractFlLocation\\adhoc\\
+repExtFlLocSchedulePath=ExtractFlLocation\\scheduled\\
+repExtGenBirtRepTargetPath=GenBirtReport\\Target\\
+
+#Event Usage Request Path Details
+rocpsExpAllRowsPath=ROCPSExportAllRows\\
+
+#File Upload Path Details
+fileUploadFiles=\\src\\main\\resources\\Data\\FunctionalTesting\\FileUpload\\
+
+#PDF Excle Template Path Details
+pdfToExcelFiles=\\src\\main\\resources\\Data\\FunctionalTesting\\PdfToExcel\\
+pdfConversionFolder=PdfToExcel
+
+#Deal Import Path Details
+dealImport=\\src\\main\\resources\\Data\\FunctionalTesting\\DealImport\\
+dealImportTemplateFolder=DealImportExcelWriter\\
+dealImportTempalteBackup=DealImportBackup\\
+
+#Sikulli Image Name xpath
+
+fileTypeUploadImageName=fileTypeFU1.png
+openButtoneUploadImageName=openButtonFU1.png
+
+# Linux Details
+remoteHostname=10.113.49.82
+remoteUsername=Root
+remotePassword=welcome2
+remotePortNumber=22
+
+# Application Details
+applicationName=ROC Partner Settlement
+applicationUsername=Root
+applicationPassword=welcome1
+clientPartitionFlag=
+partition=
+
+# Reference Database Details
+dbType=Oracle
+dbMachineName=10.113.112.221
+dbInstance=ora12c
+database=test5_ref
+dbUserName=test5_ref
+dbPassword=test5_ref
+dbPortNumber=1521
+dbUnicode=N
+dbLinkToReferenceDB=
+dbLinkToStagingDB=
+dbLinkToUsageServer=
+dbMaxActiveConnections=
+dbMaxIdleConnections=
+dbMinIdleConnections=
+dbExhaustedAction=
+dbONSConfig=
+
+# Performance Properties
+calculatePerformance=No
+
+# Usage Database Details
+usageDBType=Oracle
+usageMachineName=10.113.112.221
+usageInstance=ora12c
+usageDatabase=test5_usg
+usageUsername=test5_usg
+usagePassword=test5_usg
+usagePortNumber=1521
+usageUnicode=N
+usageSecondaryMachines=
+usageLinkToReferenceDB=
+usageLinkToStagingDB=
+usageLinkToUsageServer=
+usageMaxActiveConnections=
+usageMaxIdleConnections=
+usageMinIdleConnections=
+usageExhaustedAction=
+usageONSConfig=
+
+# PostgreSQL Properties (Required if database is PostgreSQL)
+postgreSQLRestoreExeFile=
+
+# Data Generation Properties
+dataDateFormat=ddMMyyyy_HHmm
+
+# Now Date Related Properties
+dateTimeFormat=ddMMyyyy_HHmmss
+currentNowDateTime=
+previousNowDateTime=
+
+# Mail Details (Required if Mail Notification has to be sent)
+sendMail=No
+mailSendingUserName=
+mailToAddress=
+mailCCAddress=
+
+# Performance Properties
+searchScreenWaitSec=120
+detailScreenWaitSec=60
+searchTryCount=3
+expectedTries=3
+
+# Automation Properties
+firstLevelDelimiter=|
+secondLevelDelimiter=;
+thirdLevelDelimiter=!
+
+startTomcat=No
+clientStartWaitTimeMins=60
+clientPreviousBuildNo=76
+serverPreviousBuildNo=37
+lastReportDate=06/14/2017 14:43:04
+automationSVNPath=svn://10.113.32.127/Spark/trunk/automation/2.0/roc-automation
+
+# Script Properties (User created properties)
+WaitSecs=2
+UsageGroupWaitTimeInSecs=300
+EntityImportWaitInSecs=300
+DataPath=D:\\selenium\\Automation\\Latest\\Data
+
+#Partner Settlement  Properties
+SearchLoopTimeLimitInSecs =20
+partitionerrorusagegroup=NewUsageGroup
+baselinedTestCases=1500
+automatedTestCases=1200

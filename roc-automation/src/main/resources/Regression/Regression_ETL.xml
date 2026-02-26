@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ETL Regression" configfailurepolicy="continue">
+	<!-- Web application fixture -->
+	<listeners>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter"/>
+      	<listener class-name="com.subex.automation.helpers.TestNG.CustomInvokedMethodListener"/>
+  	</listeners>
+	<parameter name="config" value="config.properties"></parameter>
+	<parameter name="orFiles" value=""></parameter>
+	<parameter name="login" value="Root"></parameter>
+	<parameter name="pass" value="welcome1"></parameter>
+	<test name="ETL Regression" preserve-order="true">
+		<classes>
+			<!-- <class name="com.subex.roc.automation.helpers.db.RestoreDBBackup" />  -->
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testPrerequisite" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testSkipRecordOnError" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testTruncateBeforeLoad" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithDetectDuplicate" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithZipCollectedFiles" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCForCompressedFiles" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithAutomaticRIC" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithManualRIC" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithAutomaticFileSizeCheck" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testFCWithManualFileSizeCheck" />
+			<class name="com.subex.automation.testcases.regressiontesting.etl.testTriggerWithActions" />
+		</classes>
+	</test>
+</suite>

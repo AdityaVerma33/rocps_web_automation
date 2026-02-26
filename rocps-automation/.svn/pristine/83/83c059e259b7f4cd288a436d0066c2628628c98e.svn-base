@@ -1,0 +1,386 @@
+package com.subex.rocps.automation.helpers.application.networkConfiguraiton;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.testng.Assert;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.ComboBoxHelper;
+import com.subex.automation.helpers.component.EntityComboHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+import com.subex.rocps.automation.utils.PSStringUtils;
+
+public class Switch extends PSAcceptanceTest
+{
+
+	protected ExcelReader excelData = null;
+	protected Map<String, ArrayList<String>> switchMapExcel = null;
+	protected Map<String, String> switchMap = null;
+	protected ExcelHolder excelHolderObj = null;
+	String path;
+	String workBookName;
+	String sheetName;
+	String testCaseName;
+	int paramVal;
+	protected int colSize;
+	protected String elementName;
+	protected String aNoRuleString;
+	protected String bNoRuleString;
+	protected String cNoRuleString;
+	protected String matchStringDetail;
+	protected String directionDetail;
+	protected String continueDetail;
+
+	protected String clientPartition;
+	protected String switchType;
+	protected String name;
+	protected String matchString;
+	PSGenericHelper psGenObj = new PSGenericHelper();
+	PSStringUtils strObj = new PSStringUtils();
+
+	/*
+	 * Constructor: for initialising the excel : identifying total value columns
+	 */
+	public Switch( String path, String workBookName, String sheetName, String testCaseName ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		switchMapExcel = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName );
+		excelHolderObj = new ExcelHolder( switchMapExcel );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Method: checks if switch exists new switch is not configured : if switch does
+	 * not exist new switch is configured
+	 * 
+	 */
+	public void configureSwitch() throws Exception
+	{
+
+		try
+		{
+			NavigationHelper.navigateToScreen( "Switch" );
+
+			for ( int paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+				switchMap = excelHolderObj.dataMap( paramVal );
+				initializeVariables();
+				ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				if ( !isSwitchExists() )
+				{
+					createSwitch();
+
+				}
+				else
+				{
+					Log4jHelper.logInfo( "switch with name : " + name + " already exists" );
+				}
+
+			}
+
+		}
+		catch ( Exception e )
+		{
+
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * Method: creating new switch
+	 */
+	protected void createSwitch() throws Exception
+	{
+
+		try
+		{
+
+			psGenObj.clickNewAction( clientPartition );
+			ComboBoxHelper.select( or.getProperty( "Detail_switchType_comboId" ), switchType );
+			TextBoxHelper.type( or.getProperty( "Detail_name_txtId" ), name );
+			TextBoxHelper.type( or.getProperty( "Detail_matchString_txtId" ), matchString );
+
+			elementAssociation();
+			routeRuleStringSet();
+			//ButtonHelper.click(or.getProperty("Detail_save_btnId"));
+			GenericHelper.waitForLoadmask();
+			psGenObj.detailSave( "Detail_save_btnId", name, "Name" );
+			Log4jHelper.logInfo( "switch is configured successfully" );
+
+		}
+		catch ( Exception e )
+		{
+			throw new Exception( "Failed to configure the switch" );
+		}
+
+	}
+
+	/*
+	 * This method is for element association
+	 */
+	public void elementAssociation() throws Exception
+	{
+		if ( ValidationHelper.isNotEmpty( elementName ) )
+		{
+			String[] elementsArr = strObj.stringSplitFirstLevel( elementName );
+			for ( int row = 0; row < elementsArr.length; row++ )
+			{
+				int rowno = GridHelper.getRowNumber( "switchElementGrid", elementsArr[row], 2 );
+				if ( rowno == 0 )
+				{
+					ButtonHelper.click( "toolbar-button-label-switchElementToolBar.Add" );
+					GenericHelper.waitForLoadmask( detailScreenWaitSec );
+					assertEquals( NavigationHelper.getScreenTitle(), "Element Search" );
+					SearchGridHelper.gridFilterSearchWithTextBox( "popupWindow", "eltName", elementsArr[row], "Name" );
+					GridHelper.clickRow( "SearchGrid", 1, "Name" );
+					ButtonHelper.click( "OKButton" );
+					GenericHelper.waitForLoadmask( detailScreenWaitSec );
+				}
+				else
+					assertEquals( GridHelper.getCellValue( "switchElementGrid", row + 1, 2 ), elementsArr[row] );
+			}
+
+		}
+	}
+
+	/*
+	 * This method is for rule string set config
+	 */
+	public void routeRuleStringSet() throws Exception
+	{
+		if ( ValidationHelper.isNotEmpty( aNoRuleString ) || ValidationHelper.isNotEmpty( bNoRuleString ) || ValidationHelper.isNotEmpty( cNoRuleString ) )
+		{
+			String[] aNoRuleStringArr = strObj.stringSplitFirstLevel( aNoRuleString );
+			String[] bNoRuleStringArr = strObj.stringSplitFirstLevel( bNoRuleString );
+			String[] cNoRuleStringArr = strObj.stringSplitFirstLevel( cNoRuleString );
+			String[] matchStringArr = strObj.stringSplitFirstLevel( matchStringDetail );
+
+			for ( int row = 0; row < aNoRuleStringArr.length; row++ )
+			{
+				int rowno = GridHelper.getRowNumber( "switchRuleStringSetGrid", aNoRuleStringArr[row], 1 );
+				if ( rowno == 0 )
+				{
+					ButtonHelper.click( "toolbar-button-label-switchRuleToolBar.Add" );
+					GenericHelper.waitForLoadmask( detailScreenWaitSec );
+					GridHelper.updateGridComboBox( "switchRuleStringSetGrid", "anoRuleStringSetEditor_gwt_uid_", row + 1, "A  No  Rule String", aNoRuleStringArr[row] );
+					GridHelper.updateGridComboBox( "switchRuleStringSetGrid", "bnoRuleStringSetEditor_gwt_uid_", row + 1, "B  No  Rule String", bNoRuleStringArr[row] );
+					GridHelper.updateGridComboBox( "switchRuleStringSetGrid", "cnoRuleStringSetEditor_gwt_uid_", row + 1, "C  No  Rule String", cNoRuleStringArr[row] );
+
+					GridHelper.updateGridTextBox( "switchRuleStringSetGrid", "sssMatchStrEditor", row + 1, "Match String", matchStringArr[row] );
+				}
+				else
+					assertEquals( GridHelper.getCellValue( "switchRuleStringSetGrid", row + 1, 1 ), aNoRuleStringArr[row] );
+			}
+		}
+	}
+
+	/*
+	 * 
+	 * This method is to edit switch
+	 */
+	public void editSwitch() throws Exception
+	{
+
+		try
+		{
+			NavigationHelper.navigateToScreen( "Switch" );
+
+			for ( int paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+				switchMap = excelHolderObj.dataMap( paramVal );
+				initializeVariables();
+				ButtonHelper.click( "ClearButton" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				if ( isSwitchExists() )
+				{
+					int row = GridHelper.getRowNumber( "SearchGrid", name, "Name" );
+					NavigationHelper.navigateToEdit( "SearchGrid", row );
+					TextBoxHelper.type( or.getProperty( "Detail_name_txtId" ), name );
+					TextBoxHelper.type( or.getProperty( "Detail_matchString_txtId" ), matchString );
+					elementAssociation();
+					routeRuleStringSet();
+					psGenObj.detailSave( "Detail_save_btnId", name, "Name" );
+
+				}
+				else
+				{
+					Log4jHelper.logInfo( "switch with name : " + name + " already exists" );
+				}
+
+			}
+
+		}
+		catch ( Exception e )
+		{
+
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * Method: initialising instance variables
+	 */
+	protected void initializeVariables() throws Exception
+	{
+
+		clientPartition = ExcelHolder.getKey( switchMap, "Partition" );
+		switchType = ExcelHolder.getKey( switchMap, "SwitchType" );
+		name = ExcelHolder.getKey( switchMap, "Name" );
+		matchString = ExcelHolder.getKey( switchMap, "MatchString" );
+		elementName = ExcelHolder.getKey( switchMap, "ElementName" );
+		aNoRuleString = ExcelHolder.getKey( switchMap, "ANoRuleString" );
+		bNoRuleString = ExcelHolder.getKey( switchMap, "BNoRuleString" );
+		cNoRuleString = ExcelHolder.getKey( switchMap, "CNoRuleString" );
+		matchStringDetail = ExcelHolder.getKey( switchMap, "MatchStringDetail" );
+	}
+
+	/*
+	 * This method is to validate search screen columns
+	 */
+	public void searchScreenColumnsValidation() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Switch" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			switchMap = excelHolderObj.dataMap( paramVal );
+			String searchScreenColumns = ExcelHolder.getKey( switchMap, "SearchScreenColumns" );
+			ArrayList<String> excelColumnNames = new ArrayList<String>();
+			String[] searchGridColumnsArr = strObj.stringSplitFirstLevel( searchScreenColumns );
+			for ( int col = 0; col < searchGridColumnsArr.length; col++ )
+			{
+				excelColumnNames.add( searchGridColumnsArr[col] );
+			}
+			psGenObj.totalColumns( excelColumnNames );
+		}
+
+	}
+
+	/*
+	 * Method : checking switch exists in switch search screen : true - switch
+	 * exists : false - switch does not exist
+	 */
+	protected boolean isSwitchExists() throws Exception
+	{
+
+		return psGenObj.isGridTextValuePresent( "SearchGrid_swtNameCol_txtId", name, "Name" );
+	}
+
+	/*
+	 * This method is for switch - Tairff MApping
+	 */
+	public void switchTariffMapping() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Switch" );
+
+		for ( int paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			switchMap = excelHolderObj.dataMap( paramVal );
+			String tariffName = ExcelHolder.getKey( switchMap, "Tariff Name" );
+			name = ExcelHolder.getKey( switchMap, "Name" );
+
+			boolean isSwitchExists = psGenObj.isGridTextValuePresent( "SearchGrid_swtNameCol_txtId", name, "Name" );
+			if ( isSwitchExists )
+			{
+				GridHelper.clickRow( "SearchGrid", name, "Name" );
+				NavigationHelper.navigateToAction( "Tariff Mapping", "Map Tariff" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				assertEquals( NavigationHelper.getScreenTitle(), "Switch Tariff Map" );
+				EntityComboHelper.selectUsingSearchTextBox( "tariff", "Tariff Search", "tffName", tariffName, "Tariff Name" );
+				ButtonHelper.click( "switchTariffMapDetail.save" );
+				GenericHelper.waitForLoadmask( searchScreenWaitSec );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "switch is deleted successfully : " + name );
+
+			}
+			else
+			{
+				Log4jHelper.logInfo( "switch is not available : " + name );
+			}
+
+		}
+	}
+
+	/*
+	 * This method is for switch deletion
+	 */
+	public void switchDelete() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Switch" );
+
+		for ( int paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			switchMap = excelHolderObj.dataMap( paramVal );
+			clientPartition = ExcelHolder.getKey( switchMap, "Partition" );
+			name = ExcelHolder.getKey( switchMap, "Name" );
+
+			psGenObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+			GenericHelper.waitForLoadmask();
+
+			if ( isSwitchExists() )
+			{
+				psGenObj.clickDeleteOrUnDeleteAction( name, "Name", "Delete" );
+				GenericHelper.waitForLoadmask();
+				psGenObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "switch is deleted successfully : " + name );
+
+			}
+			else
+			{
+				Log4jHelper.logInfo( "switch is not available : " + name );
+			}
+
+		}
+	}
+
+	/*
+	 * This method is for switch un delete
+	 */
+	public void switchUnDelete() throws Exception
+	{
+		NavigationHelper.navigateToScreen( "Switch" );
+
+		for ( int paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			switchMap = excelHolderObj.dataMap( paramVal );
+			clientPartition = ExcelHolder.getKey( switchMap, "Partition" );
+			name = ExcelHolder.getKey( switchMap, "Name" );
+
+			psGenObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+			if ( isSwitchExists() )
+			{
+				psGenObj.clickDeleteOrUnDeleteAction( name, "Name", "Undelete" );
+				GenericHelper.waitForLoadmask();
+				psGenObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "switch is un deleted successfully : " + name );
+
+			}
+			else
+			{
+				Log4jHelper.logInfo( "switch is not available : " + name );
+			}
+
+		}
+	}
+}

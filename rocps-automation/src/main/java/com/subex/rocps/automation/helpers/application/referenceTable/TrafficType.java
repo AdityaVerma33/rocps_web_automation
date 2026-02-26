@@ -1,0 +1,296 @@
+package com.subex.rocps.automation.helpers.application.referenceTable;
+
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import com.subex.rocps.automation.helpers.application.genericHelpers.PSGenericHelper;
+import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
+import com.subex.rocps.automation.utils.ExcelHolder;
+import com.subex.rocps.automation.utils.PSStringUtils;
+
+import com.subex.automation.helpers.application.NavigationHelper;
+import com.subex.automation.helpers.component.ButtonHelper;
+import com.subex.automation.helpers.component.GenericHelper;
+import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.component.SearchGridHelper;
+import com.subex.automation.helpers.component.TextBoxHelper;
+import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.file.ExcelReader;
+import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.util.FailureHelper;
+
+public class TrafficType extends PSAcceptanceTest
+{
+	protected ExcelReader excelData = null;
+	protected Map<String, ArrayList<String>> trafficTypeExcel = null;
+	protected Map<String, String> trafficTypeMap = null;
+	protected ExcelHolder excelHolderObj = null;
+	protected String path;
+	protected String workBookName;
+	protected String sheetName;
+	protected String testCaseName;
+	protected int paramVal;
+	protected int colSize;
+	protected String clientPartition;
+	protected String name;
+	protected String code;
+	protected String enableTariffType;
+	protected String tableName;
+	protected PSGenericHelper genericHelperObj = new PSGenericHelper();
+
+	/*
+	 * Constructor for initializing excel Identifying the column size from the
+	 * map passed
+	 */
+	@Test
+	public TrafficType( String path, String workBookName, String sheetName, String testCaseName ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		trafficTypeExcel = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName );
+		excelHolderObj = new ExcelHolder( trafficTypeExcel );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Overloaded constructor for reading data from excel if test case name
+	 * appears more than once
+	 * 
+	 * @Param occurance : Test case instance in excel sheet Constructor for
+	 * initializing excel Identifying the column size from the map
+	 */
+	public TrafficType( String path, String workBookName, String sheetName, String testCaseName, int occurance ) throws Exception
+	{
+		this.path = path;
+		this.workBookName = workBookName;
+		this.sheetName = sheetName;
+		this.testCaseName = testCaseName;
+		excelData = new ExcelReader();
+		trafficTypeExcel = excelData.readDataByColumn( this.path, this.workBookName, this.sheetName, this.testCaseName, occurance );
+		excelHolderObj = new ExcelHolder( trafficTypeExcel );
+		colSize = excelHolderObj.totalColumns();
+	}
+
+	/*
+	 * Configuring the traffic Type
+	 * 
+	 */
+	public void trafficTypeCreation() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToReferenceTable( "Traffic Type" );
+			for ( paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+
+				trafficTypeMap = excelHolderObj.dataMap( paramVal );
+
+				initializeVariables( trafficTypeMap );
+
+				if ( !isTrafficTypePresent() )
+				{
+
+					genericHelperObj.clickNewAction( clientPartition );
+					GenericHelper.waitForLoadmask();
+					newTrafficType();
+
+					//ButtonHelper.click( "OK_Button_ByID" );
+					genericHelperObj.detailSaveWithRetry( "OK_Button_ByID", name, "Name" );
+					GenericHelper.waitForSave();
+					Log4jHelper.logInfo( "Tariff type is created successfully with name " + name );
+				}
+				else
+				{
+					Log4jHelper.logInfo( "Tariff type is available with name " + name );
+				}
+
+			}
+
+		}
+		catch ( Exception e )
+		{
+
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * Edit the traffic Type
+	 * 
+	 */
+	public void trafficTypeEdit() throws Exception
+	{
+		try
+		{
+			NavigationHelper.navigateToReferenceTable( "Traffic Type" );
+			for ( paramVal = 0; paramVal < colSize; paramVal++ )
+			{
+
+				trafficTypeMap = excelHolderObj.dataMap( paramVal );
+
+				initializeVariables( trafficTypeMap );
+
+				if ( isTrafficTypePresent() )
+				{
+
+					int row = GridHelper.getRowNumber( "SearchGrid", name, "Name" );
+					NavigationHelper.navigateToEdit( "SearchGrid", row );
+					GenericHelper.waitForLoadmask();
+					editTrafficType();
+					genericHelperObj.detailSaveWithRetry( "OK_Button_ByID", name, "Name" );
+					Log4jHelper.logInfo( "Tariff type is updated successfully with name " + name );
+				}
+				else
+				{
+					Log4jHelper.logInfo( "Tariff type is not available with name " + name );
+				}
+
+			}
+
+		}
+		catch ( Exception e )
+		{
+
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+	}
+
+	/*
+	 * This method is to create new Traffic Type
+	 */
+	protected void newTrafficType() throws Exception
+	{
+		assertEquals(NavigationHelper.getScreenTitle(), "New Traffic Type");
+		TextBoxHelper.type( "PS_Detail_wrapperID", "traCode", code );
+		TextBoxHelper.type( "PS_Detail_wrapperID", "traName", name );
+
+	}
+
+	/*
+	 * This method is to edit  Traffic Type
+	 */
+	protected void editTrafficType() throws Exception
+	{
+
+		assertEquals( TextBoxHelper.getValue( "traName" ), name, "Traffic name is not matched" );
+		if ( ValidationHelper.isNotEmpty( code ) )
+			TextBoxHelper.type( "PS_Detail_wrapperID", "traCode", code );
+	}
+
+	/*
+	 * This method is to initialize instance variables
+	 */
+	protected void initializeVariables( Map<String, String> map ) throws Exception
+	{
+
+		clientPartition = ExcelHolder.getKey( map, "Partition" );
+		code = ExcelHolder.getKey( map, "Code" );
+		name = ExcelHolder.getKey( map, "Name" );
+
+	}
+
+	/*
+	 * This method is to check if the traffictype is already present
+	 */
+	protected boolean isTrafficTypePresent() throws Exception
+	{
+
+		SearchGridHelper.searchWithTextBox( "traName", name, "Name" );
+
+		return GridHelper.isValuePresent( "Detail_eventDefn_gridID", name, "Name" );
+	}
+
+	/*
+	 * This method is to validate search screen columns
+	 */
+	public void searchScreenColumnsValidation() throws Exception
+	{
+		NavigationHelper.navigateToReferenceTable( "Traffic Type" );
+		GenericHelper.waitForLoadmask( searchScreenWaitSec );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+			trafficTypeMap = excelHolderObj.dataMap( paramVal );
+			String searchScreenColumns = ExcelHolder.getKey( trafficTypeMap, "SearchScreenColumns" );
+			ArrayList<String> excelColumnNames = new ArrayList<String>();
+			PSStringUtils strObj = new PSStringUtils();
+			String[] searchGridColumnsArr = strObj.stringSplitFirstLevel( searchScreenColumns );
+			for ( int col = 0; col < searchGridColumnsArr.length; col++ )
+			{
+				excelColumnNames.add( searchGridColumnsArr[col] );
+			}
+			genericHelperObj.totalColumns( excelColumnNames );
+		}
+
+	}
+
+	/*
+	 * This method is for Traffic type deletion
+	 */
+	public void trafficTypeDelete() throws Exception
+	{
+		NavigationHelper.navigateToReferenceTable( "Traffic Type" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+
+			trafficTypeMap = excelHolderObj.dataMap( paramVal );
+			name = ExcelHolder.getKey( trafficTypeMap, "Name" );
+			clientPartition = ExcelHolder.getKey( trafficTypeMap, "Partition" );
+			genericHelperObj.collapsableXpath();
+			genericHelperObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+
+			if ( isTrafficTypePresent() )
+			{
+				genericHelperObj.clickDeleteOrUnDeleteAction( name, "Name", "Delete" );
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "Traffic type is deleted successfully :" + name );
+
+			}
+			else
+			{
+				Log4jHelper.logInfo( "Traffic type is not available with :" + name );
+			}
+
+		}
+	}
+
+	/*
+	 * This method is for Traffic Type un delete
+	 */
+	public void trafficTypeUnDelete() throws Exception
+	{
+
+		NavigationHelper.navigateToReferenceTable( "Traffic Type" );
+		for ( paramVal = 0; paramVal < colSize; paramVal++ )
+		{
+
+			trafficTypeMap = excelHolderObj.dataMap( paramVal );
+			name = ExcelHolder.getKey( trafficTypeMap, "Name" );
+			clientPartition = ExcelHolder.getKey( trafficTypeMap, "Partition" );
+			genericHelperObj.selectPartitionFilter( clientPartition, "Deleted Items" );
+
+			if ( isTrafficTypePresent() )
+			{
+				genericHelperObj.clickDeleteOrUnDeleteAction( name, "Name", "Undelete" );
+				GenericHelper.waitForLoadmask();
+				genericHelperObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", name, "Name" ), name );
+				Log4jHelper.logInfo( "Traffic type is un deleted successfully :" + name );
+
+			}
+			else
+			{
+				Log4jHelper.logInfo( "Traffic type is not available with :" + name );
+			}
+
+		}
+	}
+}
