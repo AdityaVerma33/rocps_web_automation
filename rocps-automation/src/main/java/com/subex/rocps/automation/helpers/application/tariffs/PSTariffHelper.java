@@ -89,50 +89,90 @@ public class PSTariffHelper extends ROCAcceptanceTest {
 			String effectiveDate, boolean addAllBands, boolean saveFastEntry) throws Exception
 	{
 		try {
+			Log4jHelper.logInfo("=== Starting Tariff Creation: " + tariffName + " ===");
 			int row = navigateToTariff(tariffName);
 			
 			if (row > 0 ) {
 				Log4jHelper.logWarning("Tariff '" + tariffName + " ' is already present.");
 			}
 			else {
+				Log4jHelper.logInfo("Navigating to New Tariff screen for partition: " + partition);
 				NavigationHelper.navigateToNew(partition);
 				String detailScreenTitle = NavigationHelper.getScreenTitle();
-				
-				TextBoxHelper.type("Tariff_Name", tariffName);
-				ComboBoxHelper.select("Tariff_TariffClass", tariffClass);
-				ComboBoxHelper.select("Tariff_TariffType", tariffType);
-				if (ComboBoxHelper.isEnabled("Tariff_TrafficType"))
-					ComboBoxHelper.select("Tariff_TrafficType", trafficType);
-				ComboBoxHelper.select("Tariff_Country", country);
-				ComboBoxHelper.select("Tariff_Currency", currency);
-				ComboBoxHelper.select("Tariff_CashFlow", cashflow);
-				ComboBoxHelper.select("Tariff_Rounding", rounding);
-				ComboBoxHelper.select("Tariff_DP", trafficDP);
-				
-				if (crossPeriodCharge)
-					CheckBoxHelper.check("Tariff_CrossPeriodCharging");
-				TextBoxHelper.type("Tariff_ExternalReference", externalReference);
-				if (allowNegativeRates)
-					CheckBoxHelper.check("Tariff_AllowNegativeRates");
+				Log4jHelper.logInfo("Detail screen opened with title: " + detailScreenTitle);
 
+				Log4jHelper.logInfo("Step 1: Entering basic tariff details");
+				TextBoxHelper.type("Tariff_Name", tariffName);
+				Log4jHelper.logInfo("  - Name: " + tariffName);
+
+				ComboBoxHelper.select("Tariff_TariffClass", tariffClass);
+				Log4jHelper.logInfo("  - Tariff Class: " + tariffClass);
+
+				ComboBoxHelper.select("Tariff_TariffType", tariffType);
+				Log4jHelper.logInfo("  - Tariff Type: " + tariffType);
+
+				if (ComboBoxHelper.isEnabled("Tariff_TrafficType")) {
+					ComboBoxHelper.select("Tariff_TrafficType", trafficType);
+					Log4jHelper.logInfo("  - Traffic Type: " + trafficType);
+				}
+
+				ComboBoxHelper.select("Tariff_Country", country);
+				Log4jHelper.logInfo("  - Country: " + country);
+
+				ComboBoxHelper.select("Tariff_Currency", currency);
+				Log4jHelper.logInfo("  - Currency: " + currency);
+
+				ComboBoxHelper.select("Tariff_CashFlow", cashflow);
+				Log4jHelper.logInfo("  - Cashflow: " + cashflow);
+
+				ComboBoxHelper.select("Tariff_Rounding", rounding);
+				Log4jHelper.logInfo("  - Rounding: " + rounding);
+
+				ComboBoxHelper.select("Tariff_DP", trafficDP);
+				Log4jHelper.logInfo("  - DP: " + trafficDP);
+
+				if (crossPeriodCharge) {
+					CheckBoxHelper.check("Tariff_CrossPeriodCharging");
+					Log4jHelper.logInfo("  - Cross Period Charging: Enabled");
+				}
+
+				TextBoxHelper.type("Tariff_ExternalReference", externalReference);
+				Log4jHelper.logInfo("  - External Reference: " + externalReference);
+
+				if (allowNegativeRates) {
+					CheckBoxHelper.check("Tariff_AllowNegativeRates");
+					Log4jHelper.logInfo("  - Allow Negative Rates: Enabled");
+				}
+
+				Log4jHelper.logInfo("Step 2: Updating tariff defaults");
 				updateTariffDefaults(usagePerUnit, minUsage, setupUsage, minAmount, maxAmount, setupAmount);
 				
+				Log4jHelper.logInfo("Step 3: Adding element sets (count: " + (elementSets != null ? elementSets.length : 0) + ")");
 				TariffHelper tariff = new TariffHelper();
 				tariff.addElementSets("Tariff_ElementSet_Grid", "Tariff_ElementSet_Add", elementSets, elementSetTypes);
 				
+				Log4jHelper.logInfo("Step 4: Switching to Rate Definitions tab");
 				TabHelper.gotoTab("Rate Definitions");
+
+				Log4jHelper.logInfo("Step 5: Adding rate names (count: " + (tariffRateNames != null ? tariffRateNames.length : 0) + ")");
 				addRateName(tariffRateNames);
 				
-				//ROCHelper rocHelper = new ROCHelper();				
-				addDayGroup("Tariff_RateDefinition_Grid", rateDefinitions);  
+				Log4jHelper.logInfo("Step 6: Adding day groups/rate definitions (count: " + (rateDefinitions != null ? rateDefinitions.length : 0) + ")");
+				addDayGroup("Tariff_RateDefinition_Grid", rateDefinitions);
 				
+				Log4jHelper.logInfo("Step 7: Setting effective date: " + effectiveDate);
 				TextBoxHelper.type("Tariff_EffectiveDate", effectiveDate);
+				GenericHelper.waitForLoadmask(detailScreenWaitSec);
+
 				if (addAllBands) {
+					Log4jHelper.logInfo("Step 8: Adding all bands");
 					CheckBoxHelper.check("Tariff_AddAllBands");
 					GenericHelper.waitForLoadmask(detailScreenWaitSec);
 				}
 				
+				Log4jHelper.logInfo("Step 9: Saving tariff");
 				saveTariff(tariffName, detailScreenTitle, false, saveFastEntry);
+				Log4jHelper.logInfo("=== Tariff Creation Completed Successfully: " + tariffName + " ===");
 			}
 		} catch (Exception e) {
 			FailureHelper.setErrorMessage(e);
@@ -321,11 +361,38 @@ public class PSTariffHelper extends ROCAcceptanceTest {
 	
 	protected void saveTariff(String tariffName, String detailScreenTitle, boolean isChildTariff, boolean saveFastEntry) throws Exception {
 		try {
+			Log4jHelper.logInfo("Attempting to save tariff: " + tariffName);
 			ButtonHelper.click("SaveButton");
-			GenericHelper.waitForLoadmask(detailScreenWaitSec);
-			assertTrue(LabelHelper.isTitleNotPresent(detailScreenTitle), "Tariff save did not happen.");
-			assertTrue(LabelHelper.isTitlePresent("Open Fast Entry Screen"), "Open Fast Entry popup did not appear.");
-			
+
+			// Enhanced wait for save operation - increased timeout
+			Log4jHelper.logInfo("Waiting for save operation to complete...");
+			Thread.sleep(3000); // Wait 3 seconds for any client-side validations
+			GenericHelper.waitForLoadmask(detailScreenWaitSec * 2); // Double the wait time
+
+			// Check if detail screen has closed
+			boolean detailScreenClosed = LabelHelper.isTitleNotPresent(detailScreenTitle);
+			String currentTitle = NavigationHelper.getScreenTitle();
+
+			Log4jHelper.logInfo("After save - Detail screen closed: " + detailScreenClosed + ", Current title: " + currentTitle);
+
+			// If save failed, capture additional debug information
+			if (!detailScreenClosed) {
+				Log4jHelper.logError("SAVE FAILED - Detail screen still present. Current title: " + currentTitle);
+				Log4jHelper.logError("Expected screen to close: " + detailScreenTitle);
+				// Try to capture any validation error messages
+				String errorInfo = capturePageErrors();
+				if (!errorInfo.isEmpty()) {
+					Log4jHelper.logError("Error messages found on page: " + errorInfo);
+				}
+			}
+
+			assertTrue(LabelHelper.isTitleNotPresent(detailScreenTitle), "Tariff save did not happen. Current screen: " + currentTitle);
+
+			// Check for Fast Entry popup
+			boolean fastEntryPresent = LabelHelper.isTitlePresent("Open Fast Entry Screen");
+			Log4jHelper.logInfo("Fast Entry popup present: " + fastEntryPresent);
+			assertTrue(fastEntryPresent, "Open Fast Entry popup did not appear.");
+
 			if (saveFastEntry) {
 				ButtonHelper.click("Yes");
 				GenericHelper.waitForLoadmask(searchScreenWaitSec);
@@ -393,6 +460,61 @@ public class PSTariffHelper extends ROCAcceptanceTest {
 		} catch (Exception e) {
 			FailureHelper.setErrorMessage(e);
 			throw e;
+		}
+	}
+
+	/**
+	 * Helper method to capture any validation errors or error messages displayed on the page
+	 * @return String containing error messages found on the page
+	 */
+	private String capturePageErrors() {
+		try {
+			StringBuilder errors = new StringBuilder();
+
+			// Try to find common GXT error message patterns
+			try {
+				// Check for message boxes
+				java.util.List<org.openqa.selenium.WebElement> messageBoxes = driver.findElements(
+					org.openqa.selenium.By.xpath("//div[contains(@class, 'x-message-box') or contains(@class, 'x-window-dlg')]//span[@class='ext-mb-text']")
+				);
+				for (org.openqa.selenium.WebElement msg : messageBoxes) {
+					if (msg.isDisplayed()) {
+						errors.append("MessageBox: ").append(msg.getText()).append("; ");
+					}
+				}
+			} catch (Exception e) {
+				// Ignore if elements not found
+			}
+
+			// Check for field validation errors
+			try {
+				java.util.List<org.openqa.selenium.WebElement> fieldErrors = driver.findElements(
+					org.openqa.selenium.By.xpath("//div[contains(@class, 'x-form-invalid-msg') or contains(@class, 'x-form-invalid-icon')]")
+				);
+				if (!fieldErrors.isEmpty()) {
+					errors.append("Field validation errors found (").append(fieldErrors.size()).append(" fields); ");
+				}
+			} catch (Exception e) {
+				// Ignore if elements not found
+			}
+
+			// Check for error labels
+			try {
+				java.util.List<org.openqa.selenium.WebElement> errorLabels = driver.findElements(
+					org.openqa.selenium.By.xpath("//label[contains(@class, 'error')] | //span[contains(@class, 'error')] | //div[contains(@class, 'error-msg')]")
+				);
+				for (org.openqa.selenium.WebElement lbl : errorLabels) {
+					if (lbl.isDisplayed() && !lbl.getText().trim().isEmpty()) {
+						errors.append("Error: ").append(lbl.getText()).append("; ");
+					}
+				}
+			} catch (Exception e) {
+				// Ignore if elements not found
+			}
+
+			return errors.toString();
+		} catch (Exception e) {
+			return "Unable to capture error information: " + e.getMessage();
 		}
 	}
 }

@@ -113,6 +113,7 @@ public class TaskControllerHelper extends ROCAcceptanceTest {
 			String[] weightagePerTask, String[] distribution) throws Exception {
 		try {
 			int row = navigateToTaskController(tcName);
+			Thread.sleep(5000);
 			
 			if (row == 0) {
 				FailureHelper.failTest("Task Controller '" + tcName + "' is not found");

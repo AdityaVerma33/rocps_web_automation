@@ -125,7 +125,7 @@ public class OperatorActImpl extends PSAcceptanceTest
 	{
 		if(PopupHelper.isPresent())
 			ButtonHelper.click( "OKButton" );
-		
+
 	}
 
 	private void configureTrnMappingConfig(String popupWindow, String gridId ) throws Exception

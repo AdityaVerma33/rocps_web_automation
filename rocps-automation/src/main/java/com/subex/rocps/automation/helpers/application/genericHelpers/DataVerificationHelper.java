@@ -200,6 +200,9 @@ public class DataVerificationHelper
 			else
 				colCellValues = GridHelper.getCellValue( gridID, rowNum, colNum + 1 );
 
+			// Trim the cell value to remove leading/trailing whitespace
+			colCellValues = (colCellValues != null) ? colCellValues.trim() : "";
+
 			actualValue.append( colCellValues ).append( col == excelColNames.length - 1 ? "" : ";" );
 		}
 		Log4jHelper.logInfo( "Actual value : " + actualValue );
@@ -228,6 +231,9 @@ public class DataVerificationHelper
 				colCellValues = GridHelper.getCellValue( wrapperID, gridID, rowNum + 1, colNum + 1 );
 			else
 				colCellValues = GridHelper.getCellValue( wrapperID, gridID, rowNum, colNum + 1 );
+
+			// Trim the cell value to remove leading/trailing whitespace
+			colCellValues = (colCellValues != null) ? colCellValues.trim() : "";
 
 			actualValue.append( colCellValues ).append( col == excelColNames.length - 1 ? "" : ";" );
 		}

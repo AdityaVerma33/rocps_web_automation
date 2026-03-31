@@ -442,10 +442,10 @@ public class Account extends PSAcceptanceTest
 			boolean isAccountPresent = genHelperObj.isGridTextValuePresent( "accountName_Detail", accountName, "Account Name" );
 			if ( isAccountPresent )
 			{
-				genHelperObj.clickDeleteOrUnDeleteAction( accountName, "Name", "Delete" );
+				genHelperObj.clickDeleteOrUnDeleteAction( accountName, "Account Name", "Delete" );
 				GenericHelper.waitForLoadmask();
 				genHelperObj.selectPartitionFilter( clientPartition, "Deleted Items" );
-				assertTrue( GridHelper.isValuePresent( "SearchGrid", accountName, "Name" ), accountName );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", accountName, "Account Name" ), accountName );
 				Log4jHelper.logInfo( "Account is deleted successfully with name " + accountName );
 
 			}
@@ -472,10 +472,10 @@ public class Account extends PSAcceptanceTest
 
 			if ( isAccountPresent )
 			{
-				genHelperObj.clickDeleteOrUnDeleteAction( accountName, "Name", "Undelete" );
+				genHelperObj.clickDeleteOrUnDeleteAction( accountName, "Account Name", "Undelete" );
 				GenericHelper.waitForLoadmask();
 				genHelperObj.selectPartitionFilter( clientPartition, "Non Deleted Items" );
-				assertTrue( GridHelper.isValuePresent( "SearchGrid", accountName, "Name" ), accountName );
+				assertTrue( GridHelper.isValuePresent( "SearchGrid", accountName, "Account Name" ), accountName );
 				Log4jHelper.logInfo( "Account is un deleted successfully : " + accountName );
 
 			}

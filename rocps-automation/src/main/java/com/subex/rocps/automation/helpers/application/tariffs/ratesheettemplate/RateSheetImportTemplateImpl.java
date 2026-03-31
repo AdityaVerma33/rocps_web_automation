@@ -1,11 +1,6 @@
 package com.subex.rocps.automation.helpers.application.tariffs.ratesheettemplate;
 
 import org.testng.Assert;
-import org.sikuli.script.FindFailed;
-import org.sikuli.script.Key;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
-
 
 import java.util.Map;
 
@@ -48,7 +43,7 @@ public class RateSheetImportTemplateImpl extends PSAcceptanceTest
 	String configureSheetNames;
 	PSStringUtils strUtilObj = new PSStringUtils();
 	PSGenericHelper genericObj = new PSGenericHelper();
-	
+
 
 	public RateSheetImportTemplateImpl( Map<String, String> map )
 	{
@@ -105,7 +100,7 @@ public class RateSheetImportTemplateImpl extends PSAcceptanceTest
 		TabHelper.gotoTab( "//div[text()='Mapping']" );
 		GenericHelper.waitForLoadmask();
 	}
-	
+
 	/*public void navigateToMappingsSheetTab() throws Exception
 	{
 		TabHelper.gotoTab( "//div[@id='topPanelContainer']//div[text()='Mapping']" );
@@ -121,11 +116,7 @@ public class RateSheetImportTemplateImpl extends PSAcceptanceTest
 		ButtonHelper.click( "PS_RSDetailTemplateRateFileBtnId" );
 		GenericHelper.waitForLoadmask();
 		String rateSheetFilePath = automationPath + configProp.getProperty( "ratesheetPath" ) + rateFilePath;
-		//GenericHelper.fileUpload( rateSheetFilePath );
-		//FileHelper.fileUploadRobot( or.getProperty( "PS_RSDetailfileUploadBtnXpath" ), rateSheetFilePath );
-		String fileTypeImageName = configProp.getProperty( "fileTypeUploadImageName" );
-		String openButtonImageName = configProp.getProperty( "openButtoneUploadImageName" );
-		PSGenericHelper.psFileUploadSikuli("FileUpload_Browse", rateSheetFilePath,fileTypeImageName,openButtonImageName);
+		FileHelper.fileUploadRobot( "FileUpload_Browse", rateSheetFilePath );
 		GenericHelper.waitForLoadmask();
 		ButtonHelper.click( "FileUpload-upload" );
 		GenericHelper.waitForLoadmask();
@@ -171,25 +162,25 @@ public class RateSheetImportTemplateImpl extends PSAcceptanceTest
 		{
 			tariffArr = strUtilObj.stringSplitFirstLevel( tariffs );
 			//navigateToTariffsTab();
-		
-		
-		for ( int rowIndex = 0; rowIndex < tariffArr.length; rowIndex++ )
-		{
-			ButtonHelper.click( or.getProperty( "PS_RSTariffAddBtnId" ) );
-			GenericHelper.waitForLoadmask();
-			String screenName = NavigationHelper.getScreenTitle();
-			assertEquals( screenName, "Tariff Search", " Screen titles are not matching on advance search operation of Tariff" );
-			TextBoxHelper.type( "PS_searchTariffTxtId", tariffArr[rowIndex] );
-			ButtonHelper.click( "PS_popUpWindowId", "SearchButton" );
-			GenericHelper.waitForLoadmask();
-			boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", tariffArr[rowIndex], "Tariff Name" );
-			assertTrue( rowValExists, "tariff does not exist" + tariffArr[rowIndex] );
-			GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", tariffArr[rowIndex], "Name" );
-			ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
-			GenericHelper.waitForLoadmask();
-			Log4jHelper.logInfo( "Tariff saved successfully : " + tariffArr[rowIndex] );
-			Assert.assertTrue( GridHelper.isValuePresent( "tariffGrid", tariffArr[rowIndex], "Tariff" ), tariffArr[rowIndex] + " : tariff not saved in the tariff grid" );
-		}
+
+
+			for ( int rowIndex = 0; rowIndex < tariffArr.length; rowIndex++ )
+			{
+				ButtonHelper.click( or.getProperty( "PS_RSTariffAddBtnId" ) );
+				GenericHelper.waitForLoadmask();
+				String screenName = NavigationHelper.getScreenTitle();
+				assertEquals( screenName, "Tariff Search", " Screen titles are not matching on advance search operation of Tariff" );
+				TextBoxHelper.type( "PS_searchTariffTxtId", tariffArr[rowIndex] );
+				ButtonHelper.click( "PS_popUpWindowId", "SearchButton" );
+				GenericHelper.waitForLoadmask();
+				boolean rowValExists = GridHelper.isValuePresent( "PS_popUpWindowId", "SearchGrid", tariffArr[rowIndex], "Tariff Name" );
+				assertTrue( rowValExists, "tariff does not exist" + tariffArr[rowIndex] );
+				GridHelper.clickRow( "PS_popUpWindowId", "SearchGrid", tariffArr[rowIndex], "Name" );
+				ButtonHelper.clickIfEnabled( "OK_Button_ByID" );
+				GenericHelper.waitForLoadmask();
+				Log4jHelper.logInfo( "Tariff saved successfully : " + tariffArr[rowIndex] );
+				Assert.assertTrue( GridHelper.isValuePresent( "tariffGrid", tariffArr[rowIndex], "Tariff" ), tariffArr[rowIndex] + " : tariff not saved in the tariff grid" );
+			}
 		}
 	}
 
@@ -203,7 +194,6 @@ public class RateSheetImportTemplateImpl extends PSAcceptanceTest
 
 		if ( !mapSheet1.isEmpty() )
 		{
-
 			navigateToMappingsTab();
 			mapSheet1Arr = strUtilObj.stringSplitFirstLevel( mapSheet1 );
 			mapColumn1Arr = strUtilObj.stringSplitFirstLevel( mapColumn1 );
@@ -229,6 +219,6 @@ public class RateSheetImportTemplateImpl extends PSAcceptanceTest
 		ButtonHelper.click( "rateSheetImportTemplateDetail.save" );
 		GenericHelper.waitForLoadmask();
 	}
-	
-	
+
+
 }

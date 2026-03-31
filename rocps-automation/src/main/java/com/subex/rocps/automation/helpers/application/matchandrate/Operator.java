@@ -51,7 +51,7 @@ public class Operator extends PSAcceptanceTest
 	/*
 	 * Constructor: for initializing excel Identifying the column size from the map
 	 * passed
-	 * 
+	 *
 	 */
 	public Operator( String path, String workBookName, String sheetName, String testCaseName ) throws Exception
 	{
@@ -68,7 +68,7 @@ public class Operator extends PSAcceptanceTest
 	/*
 	 * Overloaded constructor for reading data from excel if test case name appears
 	 * more than once
-	 * 
+	 *
 	 * @Param occurance : Test case instance in excel sheet Constructor for
 	 * initializing excel Identifying the column size from the map
 	 */
@@ -86,7 +86,7 @@ public class Operator extends PSAcceptanceTest
 
 	/*
 	 * Configuring the Operator
-	 * 
+	 *
 	 * @method : isOperatorPresent returns false then Operator is configured
 	 * isOperatorPresent returns true then Operator is not configured
 	 */
@@ -152,7 +152,7 @@ public class Operator extends PSAcceptanceTest
 
 	/*
 	 * private void extraInfoDigi() throws Exception {
-	 * 
+	 *
 	 * if ( ValidationHelper.isTrue( considerSwforPOI ) ) { CheckBoxHelper.check(
 	 * "Digi_Detail_consider_sw_for_POI_radiobtn" ); } }
 	 */
@@ -234,7 +234,7 @@ public class Operator extends PSAcceptanceTest
 		priority = ExcelHolder.getKey( map, "Priority" );
 		globalExclusionFlag = ExcelHolder.getKey( map, "GlobalExclusionFlag" );
 		//considerSwforPOI = ExcelHolder.getKey( map, "ConsiderSwforPOI" );
-		
+
 	}
 
 	/*
@@ -271,9 +271,9 @@ public class Operator extends PSAcceptanceTest
 			if ( isOperatorPresent )
 			{
 				GridHelper.clickRow( "SearchGrid", name, "Name" );
-				NavigationHelper.navigateToAction( "Actions", "Operator ElementSet Mapping" );
+				NavigationHelper.navigateToAction( "Actions", "Operator Tariff Mapping" );
 				GenericHelper.waitForLoadmask( searchScreenWaitSec );
-				assertEquals( NavigationHelper.getScreenTitle(), "Operator ElementSet Mapping" );
+				assertEquals( NavigationHelper.getScreenTitle(), "Operator Tariff Mapping" );
 				ComboBoxHelper.select( "escombo_gwt_uid_", elementSet );
 				ButtonHelper.click( "okButton" );
 				GenericHelper.waitForLoadmask( searchScreenWaitSec );

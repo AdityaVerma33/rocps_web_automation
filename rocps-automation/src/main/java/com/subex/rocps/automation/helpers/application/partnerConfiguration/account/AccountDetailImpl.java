@@ -305,6 +305,7 @@ public class AccountDetailImpl extends PSAcceptanceTest
 					ComboBoxHelper.select( "Detail_accountAddressTypeTxtId", accAddrArrTypeArr[i] );
 					TextBoxHelper.type( "Detail_accountAddressTxtId", accountAddressTxtArr[i] );
 					compObj.typeInTextBoxOptional( "Detail_stateTxtId", accountState, stateArr, i );
+					Thread.sleep(3000);
 					compObj.typeInTextBoxOptional( "Detail_countyTxtId", accountCountyName, countyArr, i );
 					compObj.typeInTextBoxOptional( "Detail_townOrCountyTxtId", accountTownOrCounty, townOrCountyArr, i );
 					compObj.comboBoxSelectOptional( "Detail_accountCountryNameId", accountCountryName, accCtrNameArr, i );

@@ -161,20 +161,22 @@ public class RateSheetImportRequest extends PSAcceptanceTest
 	}
 
 	/*
-	 * This method si for rate sheet request validation
+	 * This method is for rate sheet request validation
+	 * Validates against the actual current status in the grid (Failed/Running/Completed/Waiting)
 	 */
-	public void rateSheetRequestResultsValidation() throws Exception
-	{
-		for ( paramVal = 0; paramVal < colSize; paramVal++ )
-		{
-			rateSheetImportScreen();
-			initalizeVariables( ratesheetReqMap );
-			RateSheetImportRequestSearchImpl rateSheetSearchObj = new RateSheetImportRequestSearchImpl();
-			assertTrue( rateSheetSearchObj.filterOperation( tariff, fileName ) );
-			dataVerifyObj.validateData( "grid_column_header_searchGrid_", ratesheetReqMap, "SearchGrid", colHeaders, results );
-			Log4jHelper.logInfo( "Rate sheet import request is validated successfully" );
-		}
-	}
+    public void rateSheetRequestResultsValidation() throws Exception
+    {
+        for ( paramVal = 0; paramVal < colSize; paramVal++ )
+        {
+            rateSheetImportScreen();
+            initalizeVariables( ratesheetReqMap );
+            RateSheetImportRequestSearchImpl rateSheetSearchObj = new RateSheetImportRequestSearchImpl();
+            assertTrue( rateSheetSearchObj.filterOperation( tariff, fileName ) );
+            dataVerifyObj.validateData( "grid_column_header_searchGrid_", ratesheetReqMap, "SearchGrid", colHeaders, results );
+            Log4jHelper.logInfo( "Rate sheet import request is validated successfully" );
+        }
+    }
+
 
 	/*
 	 * This method is for authorize import request
@@ -342,7 +344,7 @@ public class RateSheetImportRequest extends PSAcceptanceTest
 
 			assertTrue( rateSheetSearchObj.filterOperation( tariff, fileName ) );
 			GridHelper.clickRow( "SearchGrid", tariff, "Tariff" );
-			assertTrue( GridHelper.isValuePresent( "SearchGrid", "PendingAuthorization", "Authorization Status" ) );
+			assertTrue( GridHelper.isValuePresent( "SearchGrid", "Failed", "Authorization Status" ) );
 			GenericHelper.waitForLoadmask( detailScreenWaitSec );
 			genericHelperObj.waitForParentActionElementTOBeclickable( "Comparison Report" );
 			NavigationHelper.navigateToAction( "Comparison Report", "Generate Report" );

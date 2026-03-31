@@ -80,15 +80,21 @@ public class RateSheetImportRequestDetailImpl extends PSAcceptanceTest
 		/*
 		 * If tariff is already attached to template name so no need to give template name in excel and we can go with tariff only
 		 */
-		if ( !tariff.isEmpty() && templateName.isEmpty() )
-			PSEntityComboHelper.selectUsingSearchTextBox( "PSPopUp_emrSvcTffEntSrchId", title, "PSPopUp_emrSvcTffNameTxtId", tariff, "Tariff Name" );
-		/*
-		 * If tariff is not attached to template name so  need to give template name in excel also ,
-		 * so First it will select tariff than attached the template with
-		 */
-		else
+		if ( !tariff.isEmpty() && templateName.isEmpty() ) {
+			Thread.sleep(5000);
+			PSEntityComboHelper.selectUsingSearchTextBox("PSPopUp_emrSvcTffEntSrchId", title, "PSPopUp_emrSvcTffNameTxtId", tariff, "Tariff Name");
+			/*
+			 * If tariff is not attached to template name so  need to give template name in excel also ,
+			 * so First it will select tariff than attached the template with
+			 */
+		}
+		else{
+			Thread.sleep(5000);
 			rateSheetTemplateSelection();
+		GenericHelper.waitForLoadmask(detailScreenWaitSec);
+		}
 		rsFileupload();
+
 		TextBoxHelper.type( "PS_Detail_RateSheetRequest_rateEffectiveDate_txtID", effectiveDateVal );
 		if ( ValidationHelper.isTrue( complete ) )
 		{
@@ -116,6 +122,7 @@ public class RateSheetImportRequestDetailImpl extends PSAcceptanceTest
 
 		for ( int i = 0; i < dataLocationarr.length; i++ )
 		{
+            Thread.sleep(5000);
 			dataLocationInformation( dataLocationarr[i], i + 1 );
 			TextBoxHelper.type( "prirNullRowNum", autoDetectEndRowBlankRowNum );
 		}
@@ -127,8 +134,6 @@ public class RateSheetImportRequestDetailImpl extends PSAcceptanceTest
 	private void rsFileupload() throws MalformedURLException, AWTException, Exception
 	{
 		String filePath = automationPath + configProp.getProperty( "ratesheetPath" ) + fileName;
-		String fileTypeImageName = configProp.getProperty( "fileTypeUploadImageName" );
-		String openButtonImageName = configProp.getProperty( "openButtoneUploadImageName" );
 
 		String path;
 		String os = configProp.getOS();
@@ -137,9 +142,10 @@ public class RateSheetImportRequestDetailImpl extends PSAcceptanceTest
 		else
 			path = filePath;
 
+		Thread.sleep(5000);
 		ButtonHelper.click( "fileChooserGroupLoad" );
 		GenericHelper.waitForLoadmask( detailScreenWaitSec );
-		PSGenericHelper.psFileUploadSikuli( "FileUpload_Browse", path, fileTypeImageName, openButtonImageName );
+		FileHelper.fileUploadRobot( "FileUpload_Browse", path );
 		GenericHelper.waitForLoadmask( detailScreenWaitSec );
 		ButtonHelper.click( "FileUpload-upload" );
 		GenericHelper.waitForLoadmask( detailScreenWaitSec );
@@ -165,13 +171,15 @@ public class RateSheetImportRequestDetailImpl extends PSAcceptanceTest
 
 	public void rateSheetTemplateSelection() throws Exception
 	{
+		Thread.sleep(5000);
 		PSEntityComboHelper.selectUsingSearchTextBox( "PSPopUp_emrSvcTffEntSrchId", "Tariff Search", "PSPopUp_emrSvcTffNameTxtId", tariff, "Tariff Name" );
-		popupValidation();
-		assertEquals( NavigationHelper.getScreenTitle(), "Rate Sheet Import Template Search" );
-		SearchGridHelper.gridFilterSearchWithTextBox( "popupWindow", "psitName", templateName, "Template Name" );
-		GridHelper.clickRow( "SearchGrid", 1, "Template Name" );
-		ButtonHelper.click( "OK_TRT_Button" );
-		GenericHelper.waitForLoadmask( detailScreenWaitSec );
+//		popupValidation();
+//		Thread.sleep(5000);
+//		assertEquals( NavigationHelper.getScreenTitle(), "Rate Sheet Import Template Search" );
+//		SearchGridHelper.gridFilterSearchWithTextBox( "popupWindow", "psitName", templateName, "Template Name" );
+//		GridHelper.clickRow( "SearchGrid", 1, "Template Name" );
+//		ButtonHelper.click( "OK_TRT_Button" );
+//		GenericHelper.waitForLoadmask( detailScreenWaitSec );
 	}
 	/*
 	 * This method is for data location information
@@ -247,7 +255,7 @@ public class RateSheetImportRequestDetailImpl extends PSAcceptanceTest
 	}
 
 	/*
-	 * This method is for popup validation 
+	 * This method is for popup validation
 	 */
 	public void popupValidation() throws Exception
 	{

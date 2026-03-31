@@ -122,6 +122,7 @@ public class RateSheetTemplateConfiguration extends PSAcceptanceTest
 					configuratonMap = excelTestDataInitialize(this.path, this.workBook, this.sheetName,destinationConfigTestCase);
 					rstImpTmpObj.destinationConfig( this.path, this.workBook, this.sheetName,configuratonMap );					
 					rstImpTmpObj.tariffsConfig();
+					Thread.sleep(5000);
 					rstImpTmpObj.mappingSheets();
 					rstImpTmpObj.rateSheetTemplateDetailSave();
 					Assert.assertTrue(GridHelper.isValuePresent("SearchGrid", templateName, rstSrchTemplateColHeader),

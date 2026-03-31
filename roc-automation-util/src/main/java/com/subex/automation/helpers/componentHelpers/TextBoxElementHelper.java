@@ -1,11 +1,14 @@
 package com.subex.automation.helpers.componentHelpers;
 
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 
 import com.subex.automation.helpers.component.ElementHelper;
 import com.subex.automation.helpers.data.ValidationHelper;
+import com.subex.automation.helpers.report.Log4jHelper;
 import com.subex.automation.helpers.selenium.AcceptanceTest;
 import com.subex.automation.helpers.util.FailureHelper;
 
@@ -156,6 +159,30 @@ public class TextBoxElementHelper extends AcceptanceTest {
 				ElementHelper.clear(element);
 				ElementHelper.pressKey(element, Keys.TAB);
 				element.sendKeys(value);
+			}
+		}
+		catch (ElementNotInteractableException e) {
+			// Fallback for elements not reachable by keyboard (e.g., date fields in Firefox)
+			try {
+				Log4jHelper.logInfo("Element not keyboard-accessible, using JavaScript to set value for: " + locator);
+				JavascriptExecutor js = (JavascriptExecutor) AcceptanceTest.getDriver();
+
+				// Clear the field first
+				js.executeScript("arguments[0].value = '';", element);
+
+				// Set the new value
+				js.executeScript("arguments[0].value = arguments[1];", element, value);
+
+				// Trigger change event to ensure value is registered
+				js.executeScript("var event = new Event('change', { bubbles: true }); arguments[0].dispatchEvent(event);", element);
+				js.executeScript("var event = new Event('input', { bubbles: true }); arguments[0].dispatchEvent(event);", element);
+
+				Log4jHelper.logInfo("Successfully set value using JavaScript for: " + locator);
+			}
+			catch (Exception jsException) {
+				FailureHelper.setError("Failed to set value for '" + locator + "' using both keyboard and JavaScript");
+				FailureHelper.setErrorMessage(jsException);
+				throw jsException;
 			}
 		}
 		catch (WebDriverException e) {
