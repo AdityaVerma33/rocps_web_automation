@@ -2,7 +2,10 @@ package com.subex.rocps.automation.helpers.application.genericHelpers;
 
 import static org.testng.Assert.assertTrue;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +17,9 @@ import org.testng.Assert;
 import com.subex.automation.helpers.component.ElementHelper;
 import com.subex.automation.helpers.component.GenericHelper;
 import com.subex.automation.helpers.component.GridHelper;
+import com.subex.automation.helpers.config.PropertyReader;
 import com.subex.automation.helpers.report.Log4jHelper;
+import com.subex.automation.helpers.selenium.AcceptanceTest;
 import com.subex.rocps.automation.utils.PSStringUtils;
 
 public class DataVerificationHelper
@@ -205,9 +210,13 @@ public class DataVerificationHelper
 
 			actualValue.append( colCellValues ).append( col == excelColNames.length - 1 ? "" : ";" );
 		}
+
+		// Normalize date formats in the excel expected value to match the UI format (yyyy-MM-dd HH:mm:ss)
+		String normalizedRowValue = normalizeExcelDateFormats( rowValue );
+
 		Log4jHelper.logInfo( "Actual value : " + actualValue );
-		Log4jHelper.logInfo( "Excel value : " + rowValue );
-		Assert.assertEquals( actualValue.toString(), rowValue, "Values are not matching " );
+		Log4jHelper.logInfo( "Excel value : " + normalizedRowValue );
+		Assert.assertEquals( actualValue.toString(), normalizedRowValue, "Values are not matching " );
 	}
 
 	/*
@@ -237,9 +246,13 @@ public class DataVerificationHelper
 
 			actualValue.append( colCellValues ).append( col == excelColNames.length - 1 ? "" : ";" );
 		}
+
+		// Normalize date formats in the excel expected value to match the UI format (yyyy-MM-dd HH:mm:ss)
+		String normalizedRowValue = normalizeExcelDateFormats( rowValue );
+
 		Log4jHelper.logInfo( "Actual value : " + actualValue );
-		Log4jHelper.logInfo( "Excel value : " + rowValue );
-		Assert.assertEquals( actualValue.toString(), rowValue, "Values are not matching " );
+		Log4jHelper.logInfo( "Excel value : " + normalizedRowValue );
+		Assert.assertEquals( actualValue.toString(), normalizedRowValue, "Values are not matching " );
 	}
 
 	/*
@@ -348,6 +361,110 @@ public class DataVerificationHelper
 		}
 		return listOfRows;
 
+	}
+
+	/*
+	 * Normalizes date tokens in an expected (Excel) row value string to the
+	 * canonical UI date format (yyyy-MM-dd HH:mm:ss).
+	 *
+	 * Strategy:
+	 *  1. First candidate format is built from configProp.getDateFormat()+timeFormat
+	 *     (matches how ExcelReaderHelper formats date-typed cells).
+	 *  2. All other known date formats used across the project are added as fallbacks
+	 *     (handles text-typed Excel cells that store dates as plain strings in a
+	 *     different format, e.g. MM/dd/yyyy HH:mm:ss).
+	 *  3. Each semicolon-delimited token is tried against each candidate format in order.
+	 *     First successful parse wins; the token is then reformatted to yyyy-MM-dd HH:mm:ss.
+	 *  4. Tokens that do not match any date format are left unchanged.
+	 *
+	 * This approach is resilient to dateFormat changes in psconfig.properties and
+	 * also handles the case where Excel cells contain plain-text date strings.
+	 */
+	private String normalizeExcelDateFormats( String value ) throws Exception
+	{
+		if ( value == null )
+			return null;
+
+		final String UI_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+
+		// Build the list of candidate input formats to try, in priority order
+		List<String> candidateFormats = new ArrayList<String>();
+		try
+		{
+			PropertyReader configProp = AcceptanceTest.configProp;
+			if ( configProp != null )
+			{
+				String dateFmt = configProp.getDateFormat();
+				String timeFmt = configProp.getTimeFormat();
+				if ( dateFmt != null && !dateFmt.trim().isEmpty() )
+				{
+					String combined = ( timeFmt != null && !timeFmt.trim().isEmpty() )
+							? dateFmt.trim() + " " + timeFmt.trim()
+							: dateFmt.trim() + " HH:mm:ss";
+					candidateFormats.add( combined );
+				}
+			}
+		}
+		catch ( Exception e )
+		{
+			Log4jHelper.logInfo( "normalizeExcelDateFormats: could not read config, continuing with fallback formats. " + e.getMessage() );
+		}
+
+		// Add all other known formats used across the project as fallbacks.
+		// Ensures text-typed Excel cells with any of these formats are normalized correctly.
+		String[] knownFormats = {
+				"MM/dd/yyyy HH:mm:ss",
+				"dd/MM/yyyy HH:mm:ss",
+				"yyyy-MM-dd HH:mm:ss",
+				"MM/dd/yyyy",
+				"dd/MM/yyyy",
+				"yyyy-MM-dd"
+		};
+		for ( String fmt : knownFormats )
+		{
+			if ( !candidateFormats.contains( fmt ) )
+				candidateFormats.add( fmt );
+		}
+
+		SimpleDateFormat uiSdf = new SimpleDateFormat( UI_DATE_FORMAT );
+		uiSdf.setLenient( false );
+
+		// Process each semicolon-delimited token independently
+		String[] tokens = value.split( ";", -1 );
+		StringBuilder result = new StringBuilder();
+		for ( int i = 0; i < tokens.length; i++ )
+		{
+			String token = tokens[i].trim();
+			String normalized = token;
+
+			for ( String fmt : candidateFormats )
+			{
+				// Skip trying to reformat if the token is already in the UI format
+				if ( UI_DATE_FORMAT.equals( fmt ) )
+					continue;
+
+				try
+				{
+					SimpleDateFormat candidateSdf = new SimpleDateFormat( fmt );
+					candidateSdf.setLenient( false );
+					Date parsed = candidateSdf.parse( token );
+					// Verify full token was consumed (no trailing garbage)
+					if ( candidateSdf.format( parsed ).equals( token ) )
+					{
+						normalized = uiSdf.format( parsed );
+						break;
+					}
+				}
+				catch ( ParseException e )
+				{
+					// This format did not match — try the next one
+				}
+			}
+			result.append( normalized );
+			if ( i < tokens.length - 1 )
+				result.append( ";" );
+		}
+		return result.toString();
 	}
 
 }

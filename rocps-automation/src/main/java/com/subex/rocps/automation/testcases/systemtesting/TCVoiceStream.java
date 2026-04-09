@@ -125,29 +125,24 @@ public class TCVoiceStream extends PSAcceptanceTest {
 		}
 	}
 
-	/*
-	 * @org.testng.annotations.Test(priority = 7, description = "Streams creation",
-	 * groups = { "Prerequisites3" }, retryAnalyzer =
-	 * com.subex.rocps.automation.helpers.listener.Retry.class,dependsOnMethods = {
-	 * "createAggregationProcessor" }) public void createStream() throws Exception {
-	 * // String partition = null;
-	 * 
-	 * try { Streams streamObj = new Streams(); streamObj.newStreamConfig(path,
-	 * workBookName, sheetName, "Streams", 1); streamObj.voiceStreamNewConfig(path,
-	 * workBookName, sheetName, testCaseName, 1); streamObj.saveStreamDetail(); }
-	 * catch (Exception e) { FailureHelper.setErrorMessage(e); throw e; }
-	 * 
-	 * try {
-	 * 
-	 * Streams streamObj = new Streams(); if (!streamObj.newStreamConfig(path,
-	 * workBookName, sheetName, "Streams", 1)) {
-	 * streamObj.voiceStreamNewConfig(path, workBookName, sheetName, testCaseName,
-	 * 1); streamObj.saveStreamDetail(); }
-	 * 
-	 * } catch (Exception e) { FailureHelper.setErrorMessage(e); throw e; }
-	 * 
-	 * }
-	 */
+
+	 @org.testng.annotations.Test(priority = 7, description = "Streams creation",
+	 groups = { "Prerequisites3" }, retryAnalyzer =
+	  com.subex.rocps.automation.helpers.listener.Retry.class,dependsOnMethods = {"createAggregationProcessor" })
+	 public void createStream() throws Exception {
+	 // String partition = null;
+	 try { Streams streamObj = new Streams(); streamObj.newStreamConfig(path,
+	 workBookName, sheetName, "Streams", 1); streamObj.voiceStreamNewConfig(path,
+	 workBookName, sheetName, testCaseName, 1); streamObj.saveStreamDetail(); }
+	 catch (Exception e) { FailureHelper.setErrorMessage(e); throw e; }
+	 try {
+	 Streams streamObj = new Streams(); if (!streamObj.newStreamConfig(path,
+	 workBookName, sheetName, "Streams", 1)) {
+	 streamObj.voiceStreamNewConfig(path, workBookName, sheetName, testCaseName, 1);
+	   streamObj.saveStreamDetail(); }
+	  } catch (Exception e) { FailureHelper.setErrorMessage(e); throw e; }
+	  }
+
 
 	@org.testng.annotations.Test(priority = 8, description = "file source creation", groups = {
 			"Prerequisites3" }, retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class,dependsOnMethods = {

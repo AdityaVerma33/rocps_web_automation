@@ -375,7 +375,7 @@ public class RateSheetImportRequest extends PSAcceptanceTest
 			assertTrue( GridHelper.isValuePresent( "SearchGrid", "PendingAuthorization", "Authorization Status" ) );
 			GenericHelper.waitForLoadmask( detailScreenWaitSec );
 			PSGenericHelper.waitForParentActionElementTOBeclickable( "Comparison Report" );
-			NavigationHelper.navigateToAction( "Comparison Report", "Download Report" );
+			NavigationHelper.navigateToAction( "Comparison Report", "Download Excel Report" );
 			GenericHelper.waitForLoadmask( detailScreenWaitSec );
 			String fileNAme = PSFileHelper.fileDownloadSikuli();
 

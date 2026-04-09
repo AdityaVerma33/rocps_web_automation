@@ -188,7 +188,8 @@ public class PSTaskSearchHelper extends PSAcceptanceTest {
 				row = GridHelper.getRowNumber("SearchGrid", currentStatus, "Status");
 
 			Log4jHelper.logInfo("Row  number returned" + row);
-			ImageHelper.click("TaskSearch_LeftTree_FilterCross");
+			if (ImageHelper.isPresent("TaskSearch_LeftTree_FilterCross"))
+				ImageHelper.click("TaskSearch_LeftTree_FilterCross");
 			return row;
 		} catch (Exception e) {
 			FailureHelper.setErrorMessage(e);

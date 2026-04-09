@@ -93,6 +93,7 @@ public class RateSheetImportRequestDetailImpl extends PSAcceptanceTest
 			rateSheetTemplateSelection();
 		GenericHelper.waitForLoadmask(detailScreenWaitSec);
 		}
+
 		rsFileupload();
 
 		TextBoxHelper.type( "PS_Detail_RateSheetRequest_rateEffectiveDate_txtID", effectiveDateVal );

@@ -39,8 +39,7 @@ public class TCConfigurations extends PSAcceptanceTest {
 	}
 
 	@org.testng.annotations.Test(priority = 2, description = "signalling type creation", groups = {
-			"Prerequisites6" }, retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class, dependsOnMethods = {
-					"taskControllerCapabilities" })
+			"Prerequisites6" }, retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class)
 	public void createsignallingtype() throws Exception {
 		try {
 			SignallingType sigObj = new SignallingType(path, workBookName, sheetName, "SignallingType");

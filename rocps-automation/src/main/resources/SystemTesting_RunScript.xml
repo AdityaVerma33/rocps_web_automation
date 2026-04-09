@@ -13,7 +13,7 @@
 			<!--	<class
 				name="com.subex.rocps.automation.testcases.systemtesting.Prerequisites" />-->
 				<class
-				name="com.subex.rocps.automation.testcases.systemtesting.ROCPreRequisites" />
+				name="com.subex.rocps.automation.testcases.systemtesting.TCConfigurations" />
 			<!--	<class
 				name="com.subex.rocps.automation.testcases.systemtesting.TCVoiceStream" />-->
 				<!--	<class

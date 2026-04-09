@@ -696,14 +696,14 @@ public class GridElementHelper extends AcceptanceTest {
 	public static int getHeaderColumn( String gridId, String headerName ) throws Exception {
 		try {
 			WebElement grid = getElement(gridId);
-			
+
 			if (grid != null) {
 				GridElementHelper.gridId = gridId;
 				List<WebElement> headers = ElementHelper.getElements(grid, "Grid_Header");
 				if (headers == null || headers.size() == 0)
 					headers = ElementHelper.getElements(grid, "//tr[contains(@class,'roc-property-grid-col-header')]/td");
 				int colNo = getColumnNumber(headers, headerName);
-				
+
 				return colNo;
 			}
 			else
@@ -717,12 +717,12 @@ public class GridElementHelper extends AcceptanceTest {
 	public static int getHeaderColumn( String gridWrapper, String gridId, String headerName ) throws Exception {
 		try {
 			WebElement grid = getElement(gridWrapper, gridId);
-			
+
 			if (grid != null) {
 				GridElementHelper.gridId = gridId;
 				List<WebElement> headers = ElementHelper.getElements(grid, "Grid_Header");
 				int colNo = getColumnNumber(headers, headerName);
-				
+
 				return colNo;
 			}
 			else
