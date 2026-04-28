@@ -11,9 +11,9 @@
 
 	<test name="Functional Tests" preserve-order="true">
 		<classes>
-			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCAutoRateSheetConfig">
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCRateSheetTemplate">
 				<methods>
-					<include name="autoRateSheetConfig" />
+					<include name="rateSheetTemplateConfigDest" />
 				</methods>
 			</class>
 		</classes>

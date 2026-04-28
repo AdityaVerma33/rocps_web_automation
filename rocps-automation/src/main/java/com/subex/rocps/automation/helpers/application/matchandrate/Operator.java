@@ -314,7 +314,7 @@ public class Operator extends PSAcceptanceTest
 	 */
 	public void operatorDelete() throws Exception
 	{
-		NavigationHelper.navigateToScreen( "operator" );
+		NavigationHelper.navigateToScreen( "Operator" );
 		for ( paramVal = 0; paramVal < colSize; paramVal++ )
 		{
 			opeMap = excelHolderObj.dataMap( paramVal );
@@ -344,7 +344,7 @@ public class Operator extends PSAcceptanceTest
 	 */
 	public void operatorUnDelete() throws Exception
 	{
-		NavigationHelper.navigateToScreen( "operator" );
+		NavigationHelper.navigateToScreen( "Operator" );
 		for ( paramVal = 0; paramVal < colSize; paramVal++ )
 		{
 			opeMap = excelHolderObj.dataMap( paramVal );

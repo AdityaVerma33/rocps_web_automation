@@ -9,6 +9,7 @@ import com.subex.rocps.automation.helpers.selenium.PSAcceptanceTest;
 
 import com.subex.automation.helpers.application.screens.TariffClassHelper;
 import com.subex.automation.helpers.util.FailureHelper;
+import org.testng.annotations.Test;
 
 public class TCRateSheetTemplate extends PSAcceptanceTest
 {
@@ -201,6 +202,24 @@ public class TCRateSheetTemplate extends PSAcceptanceTest
 		try
 		{
 			RateSheetTemplateConfiguration ratesheetObj = new RateSheetTemplateConfiguration( path, workBookName, sheetName, "T1_DestinationEXPMax" );
+			ratesheetObj.destinationConfigRateSheetTemplate();
+
+		}
+		catch ( Exception e )
+		{
+			FailureHelper.setErrorMessage( e );
+			throw e;
+		}
+
+	}
+
+	@org.testng.annotations.Test( priority = 11, description = "RateSheet tempalte config- CS Expiration Strategy Countrywise - Maximum", retryAnalyzer = com.subex.rocps.automation.helpers.listener.Retry.class )
+	public void rsTemplateCSExpirationStrategyMax() throws Exception
+	{
+
+		try
+		{
+			RateSheetTemplateConfiguration ratesheetObj = new RateSheetTemplateConfiguration( path, workBookName, sheetName, "T1_Destination_CSEXPMax" );
 			ratesheetObj.destinationConfigRateSheetTemplate();
 
 		}

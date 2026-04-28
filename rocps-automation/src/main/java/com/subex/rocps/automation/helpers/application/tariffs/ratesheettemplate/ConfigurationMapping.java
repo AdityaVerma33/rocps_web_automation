@@ -70,6 +70,7 @@ public class ConfigurationMapping extends PSAcceptanceTest
 	String spcecialCharParserType;
 	String spcecialCharParserTypeCharacters;
 	String expirationStrategy;
+	String destinationExpirationStrategy;
 	String columnIndex;
 	String rowNumber;
 	String sheetName;
@@ -146,7 +147,7 @@ public class ConfigurationMapping extends PSAcceptanceTest
 		boolean isdstColumnMapping = Boolean.valueOf(!dstColumnMapping.isEmpty());
 		boolean iscurrLookUpMapping = Boolean.valueOf(!currLookUpMapping.isEmpty());
 		boolean istrnMapping = Boolean.valueOf(!trnMapping.isEmpty());
-		
+
 		if(isdstTypeLookUpMapping || isdstColumnMapping || iscurrLookUpMapping || istrnMapping) {
 			naivgateToMappingTab();
 		
@@ -155,7 +156,7 @@ public class ConfigurationMapping extends PSAcceptanceTest
 			
 			if(isdstTypeLookUpMapping)
 			dstTypeLookUpMappingConfig();
-		
+
 		
 		if(iscurrLookUpMapping)
 			currencyLookUpMapping();
@@ -189,7 +190,7 @@ public class ConfigurationMapping extends PSAcceptanceTest
 		System.out.println( dstDetailsSheetNameArr+" length "+dstDetailsSheetNameArr.length );
 		System.out.println( dstDetailsColumnArr+" length "+dstDetailsColumnArr.length );
 		System.out.println( dstDetailsDefaultArr+" length "+dstDetailsDefaultArr.length );
-		
+
 		for(int rowIndex =0 ; rowIndex < dstDetailsFieldNameArr.length; rowIndex++) {
 			
 			GridHelper.clickRow( or.getProperty( "PS_RSDestinationDetailGridId" ), dstDetailsFieldNameArr[rowIndex] , "Field");
@@ -220,31 +221,31 @@ public class ConfigurationMapping extends PSAcceptanceTest
 		boolean isruleDefintionRuleType = Boolean.valueOf( ruleDefintionRuleType.isEmpty() );
 		boolean isspcecialCharParserType = Boolean.valueOf( spcecialCharParserType.isEmpty());
 		AdvanceRatingImpl advRatingObj= null;
-		
+
 		if(isflatRateMatchString || isrejectDuplicate ||isruleDefintionRuleType || isspcecialCharParserType) {
-			
+
 			ButtonHelper.click("advanceConfiguration");
 			GenericHelper.waitForLoadmask();
 			advRatingObj = new AdvanceRatingImpl( this.configMap );
-			
+
 			if(isflatRateMatchString)
 				advRatingObj.validateScreenTitle();
-			
+
 			if(isrejectDuplicate)
 				advRatingObj.elementMatchingAndRecordConfig();
-			
+
 			if(isruleDefintionRuleType)
 				advRatingObj.ruleDefinitions();
-			
+
 			if(isspcecialCharParserType)
 				advRatingObj.specialCharacterDefinitions();
-			
+
 			ButtonHelper.click( "ratesheetAdvConfigDetail.oK" );
 			GenericHelper.waitForLoadmask();
 			Log4jHelper.logInfo( "advance rating is configured" );
 		}
 	}
-	
+
 	protected void includeTimeOfDayGridConfig() throws Exception {
 		
 		if(ValidationHelper.isTrue( includeTimeOfDay )) 			
@@ -277,7 +278,7 @@ public class ConfigurationMapping extends PSAcceptanceTest
 		ComboBoxHelper.select( or.getProperty( "PS_RSDayGrpDetailWorkSheetComboId" ), worksheet );
 		ButtonHelper.click( "rateSheetDgpimpLookupDetail.ok" );
 		GenericHelper.waitForLoadmask();
-		
+
 	}
 	
 	protected void dstTypeLookUpMappingConfig() throws Exception {
@@ -354,23 +355,38 @@ public class ConfigurationMapping extends PSAcceptanceTest
 	{
 		initializeStrategy( map );
 		
-			ButtonHelper.click( "completeExpiryConfig" );
-			Thread.sleep( 2000 );
+		ButtonHelper.click( "completeExpiryConfig" );
+		Thread.sleep( 2000 );
 		GenericHelper.waitForLoadmask( searchScreenWaitSec );
-		assertTrue( ElementHelper.isElementPresent( "//div[contains(text(),'Expiration  Strategy')]") , "Expiration Strategy popup is not opened");
-		ComboBoxHelper.select( "pedcStrategyCmpId_gwt_uid_" , expirationStrategy);
-		
+		assertTrue( ElementHelper.isElementPresent( "//div[contains(text(),'Expiration  Strategy')]") ,
+				"Expiration Strategy popup is not opened" );
+
+		// Select Destination Expiration Strategy first (e.g. "Country  Specific  Destinations"
+		// or "All  Missing  Destinations") before choosing the expiration strategy type.
+		if ( destinationExpirationStrategy != null && !destinationExpirationStrategy.isEmpty() )
+		{
+			//ComboBoxHelper.selectDropdown(or.getProperty("PS_RSExpirationStrategyDestComboXpath"));
+			GenericHelper.waitForLoadmask();
+			//ComboBoxHelper.selectDropdownValue("PS_RSExpirationStrategyDestComboId");
+			ComboBoxHelper.select( "pedcDestExpStrategy_gwt_uid_" , destinationExpirationStrategy );
+			GenericHelper.waitForLoadmask();
+			Log4jHelper.logInfo( "Destination expiration strategy selected: " + destinationExpirationStrategy );
+		}
+
+		GenericHelper.waitForLoadmask();
+		ComboBoxHelper.select( "pedcStrategyCmpId_gwt_uid_" , expirationStrategy );
+
 		if(expirationStrategy.contains( "Input From Cell" ))
 		{
 			//GridHelper.updateGridTextBox( "property", "id", 1, "VAlue", value );
 			PropertyGridHelper.typeInTextBox( "Column Index *", columnIndex );
 			PropertyGridHelper.typeInTextBox( "Row Number *", rowNumber );
 			PropertyGridHelper.typeInTextBox( "Sheet Name *", sheetName );
-			
+
 		}
 		ButtonHelper.click( "completeRateSheetExpiryConfDetail.oK" );
 		GenericHelper.waitForLoadmask( searchScreenWaitSec );
-		
+
 	}
 	
 	private void expirationStrategyTestCase( String path, String workBookName, String sheetName, String testCaseName ) throws Exception
@@ -385,6 +401,7 @@ public class ConfigurationMapping extends PSAcceptanceTest
 	public void initializeStrategy(Map<String, String> map)
 	{
 		expirationStrategy  = map.get( "ExpirationStrategy" );
+		destinationExpirationStrategy = map.get( "DestinationExpirationStrategy" );
 		columnIndex  = map.get( "ColumnIndex" );
 		rowNumber  = map.get( "RowNumber" );
 		sheetName  = map.get( "SheetName" );

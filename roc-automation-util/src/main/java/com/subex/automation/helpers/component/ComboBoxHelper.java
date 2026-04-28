@@ -1,5 +1,6 @@
 package com.subex.automation.helpers.component;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -79,6 +80,14 @@ public class ComboBoxHelper extends ComponentHelper {
 			FailureHelper.setErrorMessage(e);
 			throw e;
 		}
+	}
+
+	public static void selectDropdown(String idOrXpath){
+		driver.findElement(By.xpath(idOrXpath)).click();
+	}
+
+	public static void selectDropdownValue(String idOrXpath){
+		driver.findElement(By.xpath(idOrXpath)).click();
 	}
 	
 	/**

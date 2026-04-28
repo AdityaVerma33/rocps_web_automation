@@ -53,7 +53,7 @@ public class NavigationMenuHelper extends AcceptanceTest {
 			LoginHelper login = new LoginHelper();
 			login.login();
 			ButtonHelper.click("NavigationMenu");
-			Thread.sleep(100);
+			GenericHelper.waitForElement("ScreenSelect_Textbox", searchScreenWaitSec);
 			TextBoxHelper.type( "ScreenSelect_Textbox", selectionName );
 			Thread.sleep(500);
 			

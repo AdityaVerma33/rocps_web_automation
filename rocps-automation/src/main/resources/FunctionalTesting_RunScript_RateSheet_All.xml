@@ -1,0 +1,101 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional_Test_Suite_RateSheet" verbose="2" annotations="JDK" configfailurepolicy="skip">
+	<!-- Test suite for RateSheet functional testing - All classes in order -->
+	<listeners>
+		<listener class-name="com.subex.automation.helpers.TestNG.CustomTestListenerAdapter" />
+	</listeners>
+
+	<!-- Required parameters for framework initialization -->
+	<parameter name="config" value="psconfig.properties"></parameter>
+	<parameter name="orFiles" value="PS_OR.properties,Tariff_OR.properties,OR.properties"></parameter>
+
+	<!-- 1. RateSheet Template Tests (Client Side) - Stream config, Tariff creation, Template config -->
+	<test name="RateSheet Template Tests" preserve-order="true">
+		<classes>
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCRateSheetTemplate">
+				<methods>
+					<include name="editVoiceStream" />
+					<include name="createTariffTransit" />
+					<include name="ratesheetTemplateConfigDestination" />
+					<include name="ratesheetTemplateConfigOrigin" />
+					<include name="rsTemplateConfigDestAllFields" />
+					<include name="rsTemplateConfigOriginAllFields" />
+					<include name="rsTemplateColVal" />
+					<include name="rsTemplateExpirationStrategy" />
+					<include name="rsTemplateExpirationStrategyMin" />
+					<include name="rsTemplateExpirationStrategyMax" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- 2. RateSheet Server Side Tests - Task controller, Import requests, Tariff band validation -->
+	<test name="RateSheet Server Side Tests" preserve-order="true">
+		<classes>
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCRatesheetServerCases">
+				<methods>
+					<include name="taskControllerCapabilities" />
+					<include name="createTariffTransit" />
+					<include name="rateSheetTemplateConfigDest" />
+					<include name="rateSheetTemplateConfigOrigin" />
+					<include name="rsRequest1_destinationBand" />
+					<include name="rsAuthorize1_destinationBand" />
+					<include name="rsResultAndTariffValidation_destinationBand" />
+					<include name="rsRequest2_DestinationBased" />
+					<include name="rsesult2AndTariffValidation_destinationBased" />
+					<include name="rsRequest3_DestinationBased" />
+					<include name="rs3ResultAndTariffValidation_DestinationBased" />
+					<include name="rsRequest4_OriginBased" />
+					<include name="rsResult4AndTariffValidation_OriginBased" />
+					<include name="rsRequest5_OriginBased" />
+					<include name="rsResult5AndTariffValidation_OriginBased" />
+					<include name="rsRequest6OriginBased" />
+					<include name="rsResult6AndTariffValidation_OriginBased" />
+					<include name="rsReq7AndResult_DestBased_updateFuturePeriod" />
+					<include name="rsReq8AndResult_DestBased_updateFuturePeriod" />
+					<include name="rsReq9AndResult_DestBased_updateFuturePeriod" />
+					<include name="rsTariffValidation_DestBased_updateFuturePeriod" />
+					<include name="createTariffTransit_Expiry" />
+					<include name="rsTemplateExpirationStrategy" />
+					<include name="rsRequestExpriry1Validation" />
+					<include name="rsRequestExpriry1TariffValidation" />
+					<include name="rsRequestExpriry2Validation" />
+					<include name="rsRequestExpriry2TariffValidation" />
+					<include name="rsTemplateExpirationStrategyMin" />
+					<include name="rsRequestExpriryValidationMin1" />
+					<include name="rsRequestExpriryMin1_tariffBandValidation" />
+					<include name="rsRequestExpriryValidationMin2" />
+					<include name="rsRequestExpriryMin2_tariffBandValidation" />
+					<include name="rsTemplateExpirationStrategyMax" />
+					<include name="rsRequestExpriryValidationMax1" />
+					<include name="rsRequestExpriryMax1_tariffBandValidation" />
+					<include name="rsRequestExpriryValidationMax2" />
+					<include name="rsRequestExprirytariffBandValidationMax2" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- 3. RateSheet Import Request Tests - Import requests, view operations, report generation -->
+	<test name="RateSheet Import Request Tests" preserve-order="true">
+		<classes>
+			<class name="com.subex.rocps.automation.testcases.functionaltesting.TCRateSheetImportRequest">
+				<methods>
+					<include name="rateSheetImportRequest" />
+					<include name="rateSheetImportRequestOrigin" />
+					<include name="rateSheetImportRequestTemplate" />
+					<include name="rateSheetImportRequestColVal" />
+					<include name="rateSheetImportRequestViewTemplate" />
+					<include name="rateSheetImportRequestViewStatistics" />
+					<include name="rateSheetImportRequestViewErrors" />
+					<include name="rateSheetGenerateReport" />
+					<include name="rateSheetDownloadReport" />
+					<include name="rateSheetImportRequestCreation2" />
+					<include name="rateSheetImportRequestRejectImport" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>
+
